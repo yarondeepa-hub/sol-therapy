@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מה קורה כשחדר שלם מקשיב יחד? - סול תרפי</title>
-    <meta name="description" content="על סינכרון מוחות, לבבות שמתיישרים, וגילוי שכל תרבות על פני כדור הארץ כבר ידעה.">
+    <meta name="description" content="קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. אוקסיטוצין משתחרר. מה המדע מגלה על מה שקורה כשאנשים מקשיבים ביחד.">
     <meta property="og:title" content="מה קורה כשחדר שלם מקשיב יחד? - סול תרפי">
-    <meta property="og:description" content="על סינכרון מוחות, לבבות שמתיישרים, וגילוי שכל תרבות על פני כדור הארץ כבר ידעה">
+    <meta property="og:description" content="קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.">
     <meta property="og:type" content="article">
     <meta property="og:image" content="assets/blog/collective-hero.jpg">
 
@@ -68,16 +68,13 @@
             --font-mono: 'DM Mono', monospace;
             --font-hadassah: 'Hadassah Friedlaender', serif;
 
-            /* Editorial Typography - Hebrew optimized */
             --body-size: clamp(0.9375rem, 0.45vw + 0.82rem, 1.125rem);
             --body-lh: 1.65;
             --measure: 62ch;
 
-            /* Heading scale */
             --h1-size: clamp(1.75rem, 3.5vw + 0.9rem, 3.25rem);
             --h2-size: clamp(1.25rem, 1.5vw + 0.65rem, 1.75rem);
 
-            /* Spacing scale - tightened for flow */
             --space-xs: 0.5rem;
             --space-s: 0.75rem;
             --space-m: 1.25em;
@@ -114,7 +111,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Washi paper texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -146,7 +142,6 @@
             background: var(--color-green);
         }
 
-        /* CSS scroll-driven animation (Chrome 116+) */
         @supports (animation-timeline: scroll()) {
             .progress-bar {
                 animation: progressGrow linear;
@@ -208,7 +203,7 @@
         }
 
         /* ============================================
-           ARTICLE HERO - "Living Washi" design
+           ARTICLE HERO
         ============================================ */
         .article-hero {
             position: relative;
@@ -222,7 +217,6 @@
             overflow: hidden;
         }
 
-        /* Washi paper grain overlay on hero */
         .article-hero::before {
             content: '';
             position: absolute;
@@ -235,7 +229,6 @@
             mix-blend-mode: multiply;
         }
 
-        /* Subtle ink-bleed vignette at edges */
         .article-hero::after {
             content: '';
             position: absolute;
@@ -248,7 +241,6 @@
                 linear-gradient(to bottom, transparent 80%, rgba(242, 234, 211, 0.5) 100%);
         }
 
-        /* Image zone - right side */
         .article-hero__image-zone {
             position: relative;
             z-index: 3;
@@ -286,7 +278,6 @@
             );
         }
 
-        /* Text zone - left side in RTL (right visually) */
         .article-hero__content {
             position: relative;
             z-index: 4;
@@ -318,7 +309,6 @@
             margin-bottom: 1.75rem;
         }
 
-        /* Thin ink-stroke rule between title and deck */
         .article-hero__rule {
             width: 56px;
             height: 1px;
@@ -353,7 +343,6 @@
             opacity: 0.25;
         }
 
-        /* Scroll hint - ink stroke */
         .article-hero__scroll-hint {
             position: absolute;
             bottom: clamp(1.5rem, 3vh, 2.5rem);
@@ -367,7 +356,7 @@
         }
 
         /* ============================================
-           EDITORIAL GRID - THE FOUNDATION
+           EDITORIAL GRID
         ============================================ */
         .article-grid {
             display: grid;
@@ -421,7 +410,6 @@
             margin-bottom: 0;
         }
 
-        /* Drop Cap - first paragraph of article */
         .article-body .drop-cap::first-letter {
             font-family: var(--font-display);
             font-size: 3.5rem;
@@ -447,7 +435,6 @@
             }
         }
 
-        /* Section headings */
         .article-body h2 {
             font-family: var(--font-display);
             font-weight: 700;
@@ -509,8 +496,6 @@
         /* ============================================
            FIGURES & ILLUSTRATIONS
         ============================================ */
-
-        /* Inline figure (within measure) */
         .article-figure {
             margin: var(--space-m) 0;
         }
@@ -533,10 +518,7 @@
 
         /* ============================================
            SUMI-E ORGANIC INTEGRATION
-           Magazine-quality: illustrations melt into paper
         ============================================ */
-
-        /* Base figure container - organic shape */
         .sumi-figure {
             position: relative;
             overflow: visible;
@@ -561,7 +543,6 @@
             );
         }
 
-        /* Ink-wash edge overlay - dissolves into paper */
         .sumi-figure::after {
             content: '';
             position: absolute;
@@ -576,7 +557,6 @@
             mix-blend-mode: normal;
         }
 
-        /* Dark section sumi-e */
         .sumi-figure--dark img {
             mix-blend-mode: screen;
             filter: saturate(0.3) brightness(0.8) sepia(0.08);
@@ -604,19 +584,9 @@
             );
         }
 
-        /* Popout figure - organic asymmetric placement */
         .figure--popout {
             margin: var(--space-m) auto;
             max-width: 75%;
-        }
-
-        /* Amygdala (section 1) - float into text like ink stain */
-        .figure--popout:first-of-type {
-            float: inline-start;
-            max-width: 55%;
-            margin: 0 0 var(--space-s) var(--space-m);
-            shape-outside: margin-box;
-            shape-margin: 1rem;
         }
 
         .figure--popout figcaption {
@@ -624,7 +594,6 @@
             z-index: 2;
         }
 
-        /* Inline float - image melts into text flow */
         .figure--inline-float {
             float: inline-start;
             width: clamp(180px, 32%, 280px);
@@ -641,7 +610,6 @@
             object-fit: contain;
         }
 
-        /* Kill the ::after dissolve bleed on floated figures */
         .figure--inline-float::after,
         .figure--inline-float-dark::after {
             inset: 0;
@@ -659,7 +627,6 @@
             opacity: 0.85;
         }
 
-        /* Dark section inline float */
         .figure--inline-float-dark {
             float: inline-end;
             width: clamp(200px, 35%, 320px);
@@ -707,7 +674,6 @@
             }
         }
 
-        /* Clearfix for float containers */
         .article-body--with-figure::after {
             content: '';
             display: table;
@@ -715,7 +681,7 @@
         }
 
         /* ============================================
-           IMAGE TRIO STRIP - Magazine collage style
+           IMAGE TRIO STRIP
         ============================================ */
         .figure-trio {
             display: grid;
@@ -730,7 +696,6 @@
             position: relative;
         }
 
-        /* Staggered vertical offsets for organic feel */
         .figure-trio figure:nth-child(1) {
             transform: translateY(8%) rotate(-0.8deg);
             z-index: 1;
@@ -744,7 +709,6 @@
             z-index: 1;
         }
 
-        /* Overlapping: slight negative margin */
         .figure-trio figure:nth-child(2) {
             margin-inline: -6%;
         }
@@ -820,7 +784,7 @@
         }
 
         /* ============================================
-           TRANSITIONS - smooth eased gradients
+           TRANSITIONS
         ============================================ */
         .transition--washi-dark {
             height: clamp(8vh, 12vw, 16vh);
@@ -851,7 +815,6 @@
 
         /* ============================================
            PANORAMIC ILLUSTRATION BREAK
-           Full-bleed ink wash that bleeds into transitions
         ============================================ */
         .illustration-break {
             background: var(--color-dark);
@@ -899,7 +862,6 @@
             );
         }
 
-        /* Horizontal fade edges */
         .illustration-break__image::after {
             content: '';
             position: absolute;
@@ -926,65 +888,30 @@
         }
 
         /* ============================================
-           SOURCES SECTION
+           SOURCES
         ============================================ */
-        .sources-section {
-            padding: var(--space-l) 0 var(--space-m);
-        }
-
-        .sources-section h3 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--color-green-dark);
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .sources-list {
+        .sources {
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            line-height: 1.7;
+            color: var(--color-muted);
             list-style: none;
             padding: 0;
         }
 
-        .sources-list li {
-            font-family: var(--font-english);
-            font-size: 0.75rem;
-            line-height: 1.7;
-            color: var(--color-muted);
-            padding: 0.35rem 0;
-            border-bottom: 1px solid rgba(26, 26, 26, 0.06);
-            direction: ltr;
-            unicode-bidi: isolate;
+        .sources li {
+            margin-bottom: 0.5rem;
+            padding-right: 1em;
+            text-indent: -1em;
         }
 
-        .sources-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* ============================================
-           BLOG NAV (prev/next)
-        ============================================ */
-        .blog-nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: var(--space-m) 0;
-        }
-
-        .blog-nav__link {
-            font-family: var(--font-body);
-            font-size: 0.8125rem;
-            font-weight: 400;
-            color: var(--color-muted);
+        .sources-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-green-dark);
+            margin-bottom: 1rem;
             opacity: 0.6;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .blog-nav__link:hover {
-            opacity: 1;
         }
 
         /* ============================================
@@ -1020,21 +947,6 @@
             transform: scaleX(-1);
         }
 
-        .article-footer__blog-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            color: rgba(242, 234, 211, 0.5);
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: 0.75rem;
-            transition: color 0.3s ease;
-        }
-        .article-footer__blog-link:hover {
-            color: rgba(242, 234, 211, 0.8);
-        }
-
         .article-footer__brand {
             margin-top: 1rem;
             opacity: 0.2;
@@ -1066,7 +978,6 @@
             transform: translateY(0);
         }
 
-        /* Illustration-specific reveal (slower, no translate) */
         .reveal-illustration {
             opacity: 0;
             transition: opacity 2s var(--ease-ink);
@@ -1075,7 +986,6 @@
             opacity: 1;
         }
 
-        /* Hero stagger */
         .stagger > * {
             opacity: 0;
             transform: translateY(1rem);
@@ -1170,7 +1080,6 @@
             }
         }
 
-        /* Focus styles - accessibility */
         a:focus-visible,
         button:focus-visible {
             outline: 2px solid var(--color-green);
@@ -1182,7 +1091,6 @@
             outline-color: var(--color-washi);
         }
 
-        /* Skip link */
         .skip-link {
             position: absolute;
             top: -100%;
@@ -1202,17 +1110,15 @@
         }
 
         /* ============================================
-           DESKTOP REFINEMENTS - larger images, grid breakout
+           DESKTOP REFINEMENTS
         ============================================ */
         @media (min-width: 60rem) {
-            /* Let float containers escape the narrow measure column */
             .article-body--with-figure {
                 grid-column: 1 / -1;
                 max-width: min(calc(var(--measure) + 14rem), 90%);
                 margin-inline: auto;
             }
 
-            /* Larger float images on desktop - contained */
             .figure--inline-float {
                 width: clamp(220px, 32%, 320px);
             }
@@ -1226,7 +1132,6 @@
                 max-height: 380px;
             }
 
-            /* Trio: tighter, more editorial */
             .figure-trio {
                 max-width: min(72rem, 88%);
                 margin-inline: auto;
@@ -1239,14 +1144,12 @@
             }
         }
 
-        /* Wide desktop - illustration break wider */
         @media (min-width: 72rem) {
             .illustration-break__image {
                 max-width: 1100px;
             }
         }
 
-        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -1262,7 +1165,7 @@
 </head>
 <body>
 
-    <!-- Skip link - accessibility -->
+    <!-- Skip link -->
     <a href="#article-start" class="skip-link">דילוג לתוכן</a>
 
     <!-- Reading Progress -->
@@ -1281,7 +1184,7 @@
         </a>
     </nav>
 
-    <!-- ========== HERO - Living Washi ========== -->
+    <!-- ========== HERO ========== -->
     <header class="article-hero">
         <div class="article-hero__image-zone">
             <img src="assets/blog/collective-hero.jpg" alt="" loading="eager" aria-hidden="true">
@@ -1290,13 +1193,13 @@
             <div class="article-hero__kicker">Sol Therapy Blog</div>
             <h1 class="article-hero__title">מה קורה כשחדר שלם מקשיב יחד?</h1>
             <div class="article-hero__rule"></div>
-            <p class="article-hero__deck">על סינכרון מוחות, לבבות שמתיישרים, וגילוי שכל תרבות על פני כדור הארץ כבר ידעה</p>
+            <p class="article-hero__deck">קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.</p>
             <div class="article-hero__meta">
                 <span>Yaron Amor</span>
                 <span class="sep">/</span>
                 <span>February 2026</span>
                 <span class="sep">/</span>
-                <span>10 min read</span>
+                <span>14 min read</span>
             </div>
         </div>
         <div class="article-hero__scroll-hint" aria-hidden="true"></div>
@@ -1305,15 +1208,15 @@
     <!-- ========== ARTICLE CONTENT ========== -->
     <main id="article-start">
 
-    <!-- ========== SECTION 1: Opening + Brain Sync ========== -->
+    <!-- ========== SECTION 1: Opening ========== -->
     <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-s);">
 
-        <div class="article-body article-body--with-figure">
-            <p class="drop-cap reveal">גירד לי קצת לכתוב על הדבר הזה, בעיקר כי הוא מתחמק מניסוח. לא בגלל שהוא מורכב - יש לו מחקרים, יש לו נתונים, יש לו אפילו כמה מאמרים ב-PNAS שאפשר לצטט. אלא בגלל שהוא שייך לקטגוריה של דברים שקורים בגוף לפני שהשכל מספיק לנסח אותם. ומי שהיה שם יודע בדיוק על מה אני מדבר, ומי שלא היה שם - אני לא בטוח שמילים זה הפורמט הנכון. אבל בואו ננסה.</p>
+        <div class="article-body">
+            <p class="drop-cap reveal">בשנת 2024 קרה משהו יוצא דופן במכון מקס פלאנק בפרנקפורט. צוות חוקרים בהובלת Tschacher ו-Wald-Fuhrmann חיבר 695 בני אדם לחיישנים פיזיולוגיים - קצב לב, מוליכות עור, נשימה - ושלח אותם לשבת ב-11 קונצרטים שונים. בטהובן, ברהמס, ברט דין. המוזיקה התחילה, והגופים התחילו להסתנכרן.</p>
 
-            <p class="reveal">יש רגע מסוים בחדר שבו הרבה אנשים שוכבים יחד ומקשיבים לסאונד. הוא לא מגיע בהתחלה. בהתחלה יש את הרעש הזה - תנועות קטנות, שיעול, מישהו שמתמקם על המזרון, הטלפון שמישהו שכח לסגור. ואז, בלי שאף אחד נותן פקודה, בלי שמנצח מרים מקל, משהו משתנה. החדר שוקע. הנשימות נעשות איטיות יותר. והאוויר עצמו - אני יודע איך זה נשמע - מתחיל לרטוט אחרת.</p>
+            <p class="reveal">לא במטאפורה. לא "הרגשנו חיבור". במובן הפיזיולוגי הפשוט: קצבי הלב של אנשים זרים, שישבו זה לצד זה באולם קונצרטים, התחילו לפעום ביחד.</p>
 
-            <p class="reveal">השאלה שמעניינת אותי היא לא אם זה קורה. כל מי שהיה באירוע קולקטיבי של מוזיקה יודע שזה קורה. השאלה היא מה, בדיוק, קורה. ולמה אי אפשר לייצר את זה לבד.</p>
+            <p class="reveal">וזה רק ההתחלה.</p>
         </div>
 
     </section>
@@ -1325,171 +1228,97 @@
         <div class="section-marker__line"></div>
     </div>
 
-    <!-- ========== SECTION 2: Brain Synchronization ========== -->
+    <!-- ========== SECTION 2: The Body Hears Before the Mind Understands ========== -->
     <section class="article-grid" style="padding-bottom: var(--space-s);">
 
-        <div class="article-body article-body--with-figure">
-            <h2 class="reveal">מוחות שנכנסים לביט אחד</h2>
+        <div class="article-body">
+            <h2 class="reveal">הגוף שומע לפני שהראש מבין</h2>
 
-            <!-- Brain synchronization - floats organically into text -->
-            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog/brain-sync.jpg" alt="Brain synchronization - sumi-e illustration" loading="lazy">
-                <figcaption>סינכרון בין-מוחי</figcaption>
-            </figure>
+            <p class="reveal">המחקר של Tschacher וצוותו חשף כמה דברים מפתיעים. ראשית, קצב הנשימה של המאזינים אכן הסתנכרן - אבל לא בדיוק כמו שהיינו מצפים. קצב הנשימה התיישר, אבל תזמון השאיפה והנשיפה עצמן לא. כלומר, הגוף מגיב לקצב הכללי של המרחב המשותף, אבל שומר על הריתמוס הפנימי שלו. סנכרון וייחודיות, בו-זמנית.</p>
 
-            <p class="reveal">ד"ר יוליה גולנד מאוניברסיטת רייכמן חקרה משהו שנשמע פשוט כמעט עד גבול האבסורד - מה קורה כשאנשים פשוט יושבים אחד ליד השני. לא מדברים. לא מסתכלים אחד על השני. לא יודעים אחד את השני. פשוט נוכחים באותו חלל. המחקר שלה מ-2015, שפורסם ב-PLOS ONE, מדד סיגנלים אוטונומיים רציפים - מוליכות עורית, קצב לב, מרווחים בין פעימות - וגילה שהם מסתנכרנים. לא כי האנשים עשו משהו. אלא כי הם היו שם.</p>
-
-            <p class="reveal">(ותחשבו על זה שנייה - הגוף שלך מגיב לנוכחות של זר שיושב לידך, בלי שום אינטראקציה, בצורה מדידה שקשורה ישירות לכמה הרגשות שלכם מתכנסים. גולנד קראה לזה "mere co-presence" - נוכחות משותפת גרידא. יש משהו מאוד מפרק בפשטות הזו.)</p>
-
-            <p class="reveal">עכשיו תוסיפו לחלל הזה מוזיקה.</p>
-
-            <p class="reveal">שבין (Chabin) וקבוצתו מבזנסון שבצרפת עשו ב-2022 מדידת EEG בו-זמנית של 12 מאזינים בקהל של תחרות ניצוח בינלאומית, וגילו שמוחות הקהל מסתנכרנים ברצועת התטא - 4 עד 8 הרץ - שזו בדיוק הרצועה שקשורה לרלקסציה עמוקה, יצירתיות ומצבים מדיטטיביים. אבל הממצא המעניין באמת לא היה הסינכרון עצמו. הוא היה מה שמניע אותו. תחשבו שהתשובה היא "הסכמה רגשית" - שכולם מרגישים אותו דבר. אבל לא. מה שהניע את הסינכרון היה עוצמת ההנאה המשותפת. כשכולם חוו עונג חזק - גם אם הרגש הספציפי היה שונה - המוחות התהדקו. כשהייתה הסכמה רגשית בלי עונג חזק - הסינכרון דווקא ירד.</p>
-
-            <p class="reveal">חזרה לחדר - מולר ולינדנברגר ממכון מקס פלאנק בברלין לקחו את זה צעד קדימה ב-2023. שמונה מוחות בו-זמנית - ארבעה גיטריסטים וארבעה שומעים - עם EEG על כולם. מה שהם מצאו זה שבזמן הנגינה, שמונת המוחות יצרו מבנים מודולריים של רשת-על. "hyperbrain network" - רשת שחוצה גולגולות. המוזיקה עיצבה את הרשת, והרשת עיצבה את חווית המוזיקה. ארבעה זוגות אלקטרודות, ארבע גיטרות, חדר אחד. השומע לא רק קיבל צליל - הוא נכנס למערכת.</p>
+            <p class="reveal">שנית - וזה אולי הממצא המרתק - סוג ההקשבה משנה הכל. מאזינים שהתמקדו בצליל עצמו, במרקמים האקוסטיים, בארכיטקטורה של המוזיקה, הראו סנכרון פיזיולוגי גבוה יותר. מאזינים שהתמקדו ברגש שלהם, בחוויה האישית, דווקא הראו סנכרון נמוך יותר. מי שצלל לתוך הצליל - התחבר. מי שצלל לתוך עצמו - נשאר לבד.</p>
         </div>
 
         <!-- Pull quote -->
         <blockquote class="pull-quote reveal">
-            השומע לא רק קיבל צליל - הוא נכנס למערכת
+            מי שצלל לתוך הצליל - התחבר. מי שצלל לתוך עצמו - נשאר לבד.
         </blockquote>
 
     </section>
 
-    <!-- Transition to dark -->
-    <div class="transition--washi-dark"></div>
-
-    <!-- ========== SECTION 3: Heartbeats (DARK) ========== -->
-    <section class="section--dark">
-        <div class="article-grid">
-
-            <div class="section-marker" style="padding-top: 0;">
-                <div class="section-marker__line"></div>
-                <div class="section-marker__number">3</div>
-                <div class="section-marker__line"></div>
-            </div>
-
-            <div class="article-body article-body--with-figure">
-                <h2 class="reveal">הלבבות עוקבים</h2>
-
-                <p class="reveal">ועכשיו תוסיפו לתמונה את מה שקורה מתחת לצוואר.</p>
-
-                <!-- Heartbeats aligning - floats organically into dark text -->
-                <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
-                    <img src="assets/blog/heartbeats.jpg" alt="Heartbeats aligning - sumi-e illustration" loading="lazy">
-                    <figcaption>לבבות שמתיישרים</figcaption>
-                </figure>
-
-                <p class="reveal">ולד-פורמן (Wald-Fuhrmann) ממכון מקס פלאנק לאסתטיקה אמפירית בפרנקפורט עשתה משהו שמעטים עשו - מדדה 695 אנשים לאורך 11 קונצרטים של בטהובן, בראמס וברט דין. קצב לב, מוליכות עורית, נשימה ושאלונים. הממצאים: קצב הלב והמוליכות העורית סונכרנו באופן מובהק בין הקהל. וכאן יש ממצא אחד קטן ומפתיע - הנשימה דווקא לא סונכרנה. לב כן, עור כן, נשימה לא. מעניין.</p>
-
-                <p class="reveal">אבל מה שמעניין אותי יותר הוא ממצא אחר מאותו מחקר - אנשים שהקשיבו למוזיקה עם תשומת לב לסאונד עצמו, למבנה, לטקסטורות - סונכרנו יותר. אנשים שהקשיבו דרך הרגש - מה אני מרגיש עכשיו, איך זה נוגע בי - סונכרנו פחות. זה ממצא שמרתק כי הוא הופך את האינטואיציה על הפנים: דווקא ההאזנה האנליטית, הקשובה, הממוקדת-בצליל היא שיוצרת חיבור בין אנשים - לא ההאזנה הרגשית.</p>
-
-                <p class="reveal">(וזה בדיוק מה שמדיטציית סאונד עושה, אגב - מפנה את הקשב אל הצליל עצמו, לא אל הפרשנות שלך לגביו. אבל על זה לא פה.)</p>
-
-                <p class="reveal">צפיאל (Czepiel) מאותו מכון, במאמר מ-2025, הראה שקצב הלב של הקהל מסתנכרן ברגעים מבניים ספציפיים ביצירה - גבולות בין חלקים, מעברי סקשנים. הלב עוקב אחרי הארכיטקטורה של המוזיקה, לא רק אחרי הרגש שלה.</p>
-
-                <p class="reveal">ויש עוד שכבה כימית. גוד ורוסו (Good & Russo) הראו ב-2022 שכשאנשים שרים ביחד - ולא לבד - הגוף משחרר אוקסיטוצין. הורמון החיבור. שירה ביחיד הורידה קורטיזול אבל לא העלתה אוקסיטוצין. ממצאים מוקדמים יותר של קילר (Keeler) ועמיתיו ב-2015 הצביעו על אותו כיוון. דווקא הקולקטיב - העובדה שאתה חולק חלל אקוסטי עם אחרים - היא זו שמפעילה את הכימיה של הקירבה. לא הפעולה. ההקשר.</p>
-            </div>
-
-            <!-- Pull quote dark -->
-            <blockquote class="pull-quote pull-quote--dark reveal">
-                דווקא ההאזנה הקשובה, הממוקדת-בצליל היא שיוצרת חיבור בין אנשים
-            </blockquote>
-
-        </div>
-    </section>
-
-    <!-- Panoramic sound field break -->
-    <div class="illustration-break">
-        <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog/sound-field.jpg" alt="Sound field - sumi-e panoramic illustration" loading="lazy">
-        </div>
-        <figcaption class="illustration-break__caption">שדה צליל משותף</figcaption>
+    <!-- Section divider -->
+    <div class="section-marker">
+        <div class="section-marker__line"></div>
+        <div class="section-marker__number">3</div>
+        <div class="section-marker__line"></div>
     </div>
 
-    <!-- Transition back to washi -->
-    <div class="transition--dark-washi"></div>
-
-    <!-- ========== SECTION 4: Cross-cultural + Trio ========== -->
-    <section class="article-grid" style="padding-top: var(--space-s); padding-bottom: var(--space-s);">
-
-        <div class="section-marker" style="padding-top: 0;">
-            <div class="section-marker__line"></div>
-            <div class="section-marker__number">4</div>
-            <div class="section-marker__line"></div>
-        </div>
+    <!-- ========== SECTION 3: No Music Needed ========== -->
+    <section class="article-grid" style="padding-bottom: var(--space-s);">
 
         <div class="article-body">
-            <h2 class="reveal">אגב בקפיצה חוצת-תרבויות -</h2>
+            <h2 class="reveal">לא צריך אפילו מוזיקה</h2>
 
-            <p class="reveal">הנה דבר שלא מפסיק להפתיע אותי: כל תרבות שאנחנו מכירים על פני כדור הארץ, באופן עצמאי לחלוטין, המציאה גרסה כלשהי של "שים אנשים בחדר, תן להם צליל משותף, תחכה שמשהו יקרה."</p>
+            <p class="reveal">ב-2015 פרסמו Golland וצוותה מאוניברסיטת רייכמן מחקר ב-PLOS ONE שבדק משהו בסיסי יותר. הם לקחו אנשים שמכירים זה את זה, הושיבו אותם יחד לצפות בסרטונים רגשיים, ומדדו אותות אוטונומיים - מוליכות עור, קצב לב, מרווחים בין פעימות. התוצאה: האותות הפיזיולוגיים הסתנכרנו. לא בגלל מידת ההיכרות ביניהם, אלא בגלל עצם הנוכחות המשותפת באותו חלל, מול אותו גירוי רגשי. הנוכחות המשותפת לבדה - mere co-presence, כפי שהחוקרים קראו לזה - הספיקה.</p>
 
-            <p class="reveal">בטאיזה שבדרום צרפת, קהילה אקומנית שנוסדה במלחמת העולם השנייה - אותו אח רוז'ה שהחביא יהודים מהנאצים - מתקבצים עד 6,000 אנשים ושרים ביחד פסוקים קצרים, שוב ושוב ושוב. המבנים פשוטים עד כדי כך שכל אחד יכול להצטרף. ואחרי זמן, מתארים עדי ראייה, האוויר עצמו מתחיל להמם, והמוזיקה פורצת דרך שכבות של עייפות והתנגדות. 100,000 צעירים עושים את הנסיעה הזו כל שנה.</p>
-
-            <p class="reveal">בדאיר (dhikr) הסופי - חזרה מונוטונית על שמות אלוהיים, נשימה קצבית עמוקה, תנועת גוף - המוח של המתרגלים עובר לגלי תטא, בדיוק אותם גלי תטא שמוחות הקהל של שבין סונכרנו אליהם. הסופים הגיעו לשם לפני שבע מאות שנה בלי EEG. הם קראו לזה "וואג'ד" - מצב של אחדות אקסטטית.</p>
-
-            <p class="reveal">אצל החסידים, הניגון - מנגינה ללא מילים, "ליי-ליי-ליי", "בים-בים-באם" - נולד מתוך תובנה מפתיעה בפשטותה: דווקא כי אין במנגינה מילים, היא יכולה לקחת את השר מעבר לתבוני ולחושי, אל המיסטי. ניגוני דבקות - איטיים, מדיטטיביים, בקצב חופשי - הם אולי הדבר הקרוב ביותר שהתרבות היהודית ייצרה למה שנוירומדע כיום מכנה "סינכרון בין-מוחי קבוצתי." בלי שום מעבדה. סביב שולחן של רבי.</p>
-
-            <p class="reveal">ובאוסטרליה, אצל האבוריג'ינלים, יש מושג שנקרא Songlines - שבילי שיר שחוצים את היבשת, מקודדים בשירה. השירים חייבים להיות מושרים כל הזמן כדי לשמור על הארץ "חיה." זה לא ביטוי מטאפורי. מבחינתם, זו תחזוקה של המציאות עצמה. הצליל המשותף לא מתאר את העולם - הוא מקיים אותו.</p>
+            <p class="reveal">מי שהיה באירוע סאונד עמוק מכיר את התופעה הזו. יש רגע, בדרך כלל אחרי 20 או 30 דקות, שבו החדר משתנה. לא בגלל שמישהו אמר משהו. משהו בטקסטורה של הדממה בין הצלילים נעשה צפוף יותר, רווי יותר. השאלה שהמדע מתחיל לענות עליה: האם זו חוויה סובייקטיבית או תופעה פיזיולוגית מדידה?</p>
         </div>
 
     </section>
 
-    <!-- Transition to dark for trio -->
-    <div class="transition--washi-dark"></div>
+    <!-- Section divider -->
+    <div class="section-marker">
+        <div class="section-marker__line"></div>
+        <div class="section-marker__number">4</div>
+        <div class="section-marker__line"></div>
+    </div>
 
-    <!-- Trio section (dark background) -->
-    <section class="section--dark" style="padding-top: 0;">
-        <div class="article-grid">
+    <!-- ========== SECTION 4: Brains in Network ========== -->
+    <section class="article-grid" style="padding-bottom: var(--space-s);">
 
-            <!-- Trio strip: Taize + Sufi Dhikr + Hasidic Niggun -->
-            <div class="figure-trio wide reveal">
-                <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/taize.jpg" alt="Taize chanting" loading="lazy">
-                    <figcaption>שירת טאיזה, צרפת</figcaption>
-                </figure>
-                <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/sufi-dhikr.jpg" alt="Sufi Dhikr circle" loading="lazy">
-                    <figcaption>דאיר סופי</figcaption>
-                </figure>
-                <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/hasidic-niggun.jpg" alt="Hasidic Niggun" loading="lazy">
-                    <figcaption>ניגון חסידי</figcaption>
-                </figure>
-            </div>
+        <div class="article-body article-body--with-figure">
+            <h2 class="reveal">מוחות ברשת</h2>
 
-            <div class="article-body">
-                <p class="reveal" style="text-align: center; opacity: 0.65; font-style: italic;">חזרה למדע -</p>
+            <!-- Brain sync - floats into text -->
+            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
+                <img src="assets/blog/brain-sync.jpg" alt="Brain synchronization - sumi-e illustration" loading="lazy">
+                <figcaption>רשת היפר-מוחית</figcaption>
+            </figure>
 
-                <p class="reveal">מה שכל התרבויות האלה גילו, כל אחת בדרך שלה, הנוירומדע מתחיל לאשש: חלל אקוסטי משותף יוצר מצב פיזיולוגי שאי אפשר לייצר באופן אינדיבידואלי. הקבוצה היא לא רק הקשר - היא מרכיב פעיל.</p>
-            </div>
+            <p class="reveal">ב-2023 פרסמו Muller ו-Lindenberger ממכון מקס פלאנק בברלין מחקר שלקח את הדברים צעד קדימה. הם חיברו ארבעה גיטריסטים וארבעה מאזינים ל-EEG בו-זמנית - 168 אלקטרודות על שמונה גולגולות - ומצאו משהו שהם קראו לו "hyperbrain network" - רשת היפר-מוחית. לא מוח אחד שמשדר ואחד שקולט, אלא רשת שמתארגנת מעצמה לפי המוזיקה.</p>
 
-            <!-- Pull quote dark -->
-            <blockquote class="pull-quote pull-quote--dark reveal">
-                הקבוצה היא לא רק הקשר - היא מרכיב פעיל
-            </blockquote>
+            <p class="reveal">איך זה נראה? כשמנתחים את 168 נקודות המדידה כרשת אחת, מתגלה ארכיטקטורה מפתיעה. גלי המוח האיטיים - דלתא, 1 עד 4 הרץ - בנו גשרים בין מוחות שונים. גלי המוח המהירים - בטא וגמא - נשארו בעיקר בתוך המוח הבודד. כאילו למערכת יש שני ערוצי תקשורת: אחד פנימי לעיבוד מקומי, ואחד חיצוני לתקשורת בין מוחות. הרשת התארגנה למודולים - קבוצות עבודה - שחצו גבולות בין גולגולות. מודול אחד כלל אזורים מקדמת המוח של גיטריסט אחד ואזורים אחוריים של גיטריסט אחר, כאילו חלקים ממוחות שונים התמזגו לרגע ליחידה פונקציונלית אחת. והכי מרתק: הצליל שינה את מבנה הרשת (הגיטרות עיצבו את המוחות), ובו-זמנית מבנה הרשת שינה את הצליל (המוחות עיצבו את הנגינה). החוקרים קראו למערכת הזו "סופר-אורגניזם" - מילה חזקה, שמכוונת בדיוק.</p>
 
+            <p class="reveal">Chabin וצוותו מבזנסון פרסמו ב-2022 מחקר שבו הקליטו EEG מ-15 מאזינים בזמן קונצרט חי, עם דיווח הנאה בזמן אמת. הם מצאו שסנכרון בין-מוחי בקהל עולה בעיקר ברגעים של הנאה מוזיקלית חזקה - וכשיותר אנשים חולקים את אותו "פיק", הסנכרון מתהדק. הסכמה רגשית לבדה, בלי הנאה חזקה, לא הספיקה. הגוף לא מסתנכרן כשאנחנו מסכימים. הוא מסתנכרן כשאנחנו נהנים ביחד.</p>
+
+            <p class="reveal">וכאילו הגוף מגיב לא רק לצליל אלא גם למבנה שלו: Czepiel ועמיתיו ממכון מקס פלאנק פרסמו ב-2025 שקצבי הלב של קהל מסתנכרנים דווקא ברגעים מבניים - גבולות בין מקטעים, מעברים בין תנועות. הלב עוקב אחרי הארכיטקטורה של היצירה, לא רק אחרי הצליל.</p>
         </div>
+
     </section>
 
-    <!-- Transition back to washi -->
-    <div class="transition--dark-washi"></div>
+    <!-- Section divider -->
+    <div class="section-marker">
+        <div class="section-marker__line"></div>
+        <div class="section-marker__number">5</div>
+        <div class="section-marker__line"></div>
+    </div>
 
-    <!-- ========== SECTION 5: What the room does ========== -->
-    <section class="article-grid" style="padding-top: var(--space-s); padding-bottom: var(--space-s);">
-
-        <div class="section-marker" style="padding-top: 0;">
-            <div class="section-marker__line"></div>
-            <div class="section-marker__number">5</div>
-            <div class="section-marker__line"></div>
-        </div>
+    <!-- ========== SECTION 5: Live vs Recorded ========== -->
+    <section class="article-grid" style="padding-bottom: var(--space-s);">
 
         <div class="article-body">
-            <h2 class="reveal">מה החדר עושה שהאוזניות לא יכולות</h2>
+            <h2 class="reveal">החי מול המוקלט</h2>
 
-            <p class="reveal">טרוסט (Trost) ועמיתיו פרסמו ב-2024 ב-PNAS - וזה מהמאמרים המשמעותיים בנושא - מחקר fMRI שבדק מה קורה במוח כשמקשיבים למוזיקה חיה לעומת מוזיקה מוקלטת. 27 מאזינים, שני פסנתרנים, הדמיה בזמן אמת. הממצא המרכזי: מוזיקה חיה הפעילה את האמיגדלה השמאלית - מרכז עיבוד רגשי קריטי - באופן מובהק יותר ועקבי יותר ממוזיקה מוקלטת. אבל לא רק את האמיגדלה - גם את ההיפוקמפוס, הסטריאטום הוונטרלי, קורטקס הפרונטלי התחתון. בעצם, כל מערכת הרגש-זיכרון-תגמול. ורק במוזיקה חיה נמצא צימוד (coupling) חזק בין המאפיינים המוזיקליים לבין פעילות המוח. מוזיקה מוקלטת - אותם צלילים בדיוק - לא ייצרה את אותו צימוד.</p>
+            <p class="reveal">אחד הממצאים המרתקים ביותר מגיע ממחקר של Trost וצוותו שפורסם ב-PNAS ב-2024. הם שמו 27 מאזינים במכשיר fMRI ונתנו לפסנתרנים לנגן - עם טוויסט מהפנט: הנגנים קיבלו נוירופידבק בזמן אמת על פעילות האמיגדלה של המאזינים. כלומר, הנגנים יכלו לראות איך המוח של הקהל מגיב, ולהתאים את הנגינה בהתאם.</p>
 
-            <p class="reveal">(וכאן אני חייב לעצור ולהגיד את הדבר הפשוט: האוזניות נותנות לך את הצלילים. החדר נותן לך את הצלילים ועוד משהו - את הגוף של האדם שלידך שגם מהדהד, את הקירות שמחזירים גלים, את הבס שמורגש בחזה, את הנוכחות המשותפת שגולנד הוכיחה שמסנכרנת גופים גם בלי שום מוזיקה בכלל. האוזניות מבודדות אותך מהדבר שהופך אקוסטיקה לחוויה קולקטיבית.)</p>
+            <p class="reveal">התוצאות היו חד-משמעיות. מוזיקה חיה הפעילה את האמיגדלה השמאלית, ההיפוקמפוס, הסטריאטום הוונטרלי והקורטקס הפרונטלי התחתון. אותם צלילים בדיוק, מוקלטים - לא יצרו את אותו צימוד עצבי. משהו בחיות של הרגע, בידיעה שמישהו מנגן עכשיו, בשבילך, ומגיב אליך - משנה את האופן שבו המוח מעבד צליל.</p>
+
+            <p class="reveal">זה לא מפתיע את מי שחווה את זה. אבל ההבדל בין "אני מרגיש שחי זה שונה" לבין "ה-fMRI מראה דפוסי הפעלה שונים לחלוטין" - זה ההבדל בין אינטואיציה למדע.</p>
         </div>
+
+        <blockquote class="pull-quote reveal">
+            משהו בחיות של הרגע משנה את האופן שבו המוח מעבד צליל
+        </blockquote>
 
     </section>
 
@@ -1500,53 +1329,131 @@
         <div class="section-marker__line"></div>
     </div>
 
-    <!-- ========== SECTION 6: What remains open (closing) ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-l);">
+    <!-- ========== SECTION 6: Singing, Oxytocin ========== -->
+    <section class="article-grid" style="padding-bottom: var(--space-s);">
 
         <div class="article-body">
-            <h2 class="reveal">מה שנשאר פתוח</h2>
+            <h2 class="reveal">שירה, אוקסיטוצין, ומה שקורה בקבוצה</h2>
 
-            <p class="reveal">695 אנשים ב-11 קונצרטים. לבבות שמסתנכרנים. 8 מוחות שמייצרים רשת-על. אוקסיטוצין שמשתחרר רק כשלא אתה לבד. אמיגדלה שמגיבה אחרת כשהמנגן באמת שם, באותו חדר, נושם את אותו אוויר. ותרבויות שהמציאו את כל זה - כל אחת בפני עצמה, בלי לדעת על השנייה - כאילו הגוף האנושי פשוט צריך את זה, וכל חברה מצאה את הדרך שלה לתת לו.</p>
+            <p class="reveal">Good ו-Russo פרסמו ב-2022 ב-Psychology of Music מחקר שבדק שירה בקבוצה מול שירה אישית. שירה אישית הפחיתה קורטיזול - הורמון הסטרס. אבל רק שירה בקבוצה שחררה אוקסיטוצין - הנוירופפטיד שקשור לחיבור חברתי ואמון. ממצא פיילוט מוקדם של Keeler וצוותם (2015) רמז לכיוון דומה - ארבעה משתתפים בלבד, מדידת אוקסיטוצין ו-ACTH, תוצאות ראשוניות וזהירות - אבל המגמה הייתה ברורה: קבוצות שרות דירגו את עצמן גבוה יותר במדדי אמון ושיתוף פעולה.</p>
 
-            <p class="reveal">השאלה שנשארת איתי היא לא "האם זה עובד." המדע פתר את זה. השאלה היא אחרת ומטרידה יותר: למה, בתקופה שבה יש לנו גישה לכל הצליל שאי פעם הוקלט, ישירות לתוך האוזן, בדיוק מדהים, בכל רגע נתון - למה אנחנו חשים חסך הולך וגדל דווקא בדבר הפשוט הזה? חדר. אנשים. צליל משותף. שקט משותף?</p>
+            <p class="reveal">כלומר: הגוף מפיק מולקולות חיבור רק כשיש עם מי להתחבר. ההרגעה אפשרית לבד. הקשר הכימי - רק ביחד.</p>
+        </div>
 
-            <p class="reveal">אולי התשובה אינה בצלילים עצמם. אולי היא בחלל שביניהם.</p>
+        <blockquote class="pull-quote reveal">
+            הגוף מפיק מולקולות חיבור רק כשיש עם מי להתחבר
+        </blockquote>
+
+    </section>
+
+    <!-- Transition to dark -->
+    <div class="transition--washi-dark"></div>
+
+    <!-- Sufi panoramic break -->
+    <div class="illustration-break">
+        <div class="illustration-break__image reveal-illustration">
+            <img src="assets/blog/sufi-dhikr.jpg" alt="Sufi whirling dervishes - sumi-e illustration" loading="lazy">
+        </div>
+        <figcaption class="illustration-break__caption">דרווישים סופים - ריקוד הדהיקר</figcaption>
+    </div>
+
+    <!-- ========== SECTION 7: What Cultures Always Knew (DARK) ========== -->
+    <section class="section--dark">
+        <div class="article-grid">
+
+            <div class="section-marker" style="padding-top: 0;">
+                <div class="section-marker__line"></div>
+                <div class="section-marker__number">7</div>
+                <div class="section-marker__line"></div>
+            </div>
+
+            <div class="article-body article-body--with-figure">
+                <h2 class="reveal">מה שהתרבויות תמיד ידעו</h2>
+
+                <p class="reveal">ואולי הממצא המדעי המרתק הוא פחות "גילוי" ויותר "אישור". כי תרבויות אנושיות עושות את זה מאז שיש תרבויות.</p>
+
+                <!-- Hasidic niggun - floats into dark text -->
+                <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
+                    <img src="assets/blog/hasidic-niggun.jpg" alt="Hasidic niggun - sumi-e illustration" loading="lazy">
+                    <figcaption>ניגון חסידי - דבקות</figcaption>
+                </figure>
+
+                <p class="reveal">בקהילת טזה שבבורגונדי, צרפת, עד 6,000 איש שרים יחד מנגינות פשוטות וחזרתיות. לא קונצרט. לא הופעה. פשוט שירה משותפת שנמשכת ונמשכת עד שמשהו בחדר משתנה. הסופים קוראים לזה "וג'ד" - ריקוד הדהיקר שמייצר גלי תטא ומצב של ספיגה מוחלטת. בחסידות, הניגון - מנגינה ללא מילים - נועד להביא למצב של דבקות, היצמדות למשהו שמעבר לשפה. במנזרי הבודהיזם הטיבטי, נזירי גיוטו מייצרים תשעה צלילים בו-זמנית מגרון אחד - טכניקת אוברטון שפותחה לפני חמש מאות שנה כדי להסתיר מילים קדושות בתוך קיר של ארכיטקטורה הרמונית טהורה. מאות נזירים מסנכרנים את השירה לא לפי קצב חיצוני אלא לפי נשימה משותפת, ובפסטיבל המונלם בלהאסה - שנוסד ב-1409 - אלפי נזירים משלושה מנזרים שרו יחד בזמן שמאות אלפי עולי רגל מילאו את העיר סביבם. מחקר EEG על מתרגלים ותיקים של מסורות אלה מצא שהם מייצרים סנכרון בגלי גמא כל כך חזק שהוא משנה את פעילות המוח הבסיסית שלהם באופן קבוע. ובתרבות האבוריג'ינית האוסטרלית, קווי השיר - songlines - הם בו-זמנית מפות ניווט, שירי בריאה ומערכת זיכרון קולקטיבית.</p>
+
+                <p class="reveal">כל התרבויות האלה הגיעו לאותה מסקנה: משהו קורה כשאנשים משמיעים צלילים ביחד. משהו שלא קורה כשעושים את זה לבד.</p>
+            </div>
+
+            <!-- Trio strip: Taize + Heartbeats + Sound Field -->
+            <div class="figure-trio wide reveal">
+                <figure class="sumi-figure sumi-figure--dark">
+                    <img src="assets/blog/taize.jpg" alt="Taize community singing" loading="lazy">
+                    <figcaption>קהילת טזה, צרפת</figcaption>
+                </figure>
+                <figure class="sumi-figure sumi-figure--dark">
+                    <img src="assets/blog/heartbeats.jpg" alt="Synchronized heartbeats" loading="lazy">
+                    <figcaption>קצבי לב מסתנכרנים</figcaption>
+                </figure>
+                <figure class="sumi-figure sumi-figure--dark">
+                    <img src="assets/blog/sound-field.jpg" alt="Sound field" loading="lazy">
+                    <figcaption>שדה הצליל</figcaption>
+                </figure>
+            </div>
+
+            <!-- Pull quote dark -->
+            <blockquote class="pull-quote pull-quote--dark reveal">
+                משהו קורה כשאנשים משמיעים צלילים ביחד. משהו שלא קורה כשעושים את זה לבד.
+            </blockquote>
+
+        </div>
+    </section>
+
+    <!-- Transition back to washi -->
+    <div class="transition--dark-washi"></div>
+
+    <!-- ========== SECTION 8: The Open Question ========== -->
+    <section class="article-grid" style="padding-top: var(--space-s); padding-bottom: var(--space-s);">
+
+        <div class="section-marker" style="padding-top: 0;">
+            <div class="section-marker__line"></div>
+            <div class="section-marker__number">8</div>
+            <div class="section-marker__line"></div>
+        </div>
+
+        <div class="article-body">
+            <h2 class="reveal">השאלה הפתוחה</h2>
+
+            <p class="reveal">המדע מצליח עכשיו למדוד את מה שקורה בחדר. קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. אוקסיטוצין משתחרר. אמיגדלות מגיבות אחרת לצליל חי מאשר למוקלט.</p>
+
+            <p class="reveal">אבל יש פער בין הנתונים לבין החוויה. המחקרים מודדים סנכרון - הם לא מסבירים למה הוא מרגיש ככה. למה הרגע שבו חדר שלם נושם יחד מרגיש כמו משהו שמעבר לסכום של כל הנשימות בנפרד. למה גוף שנמצא בתוך קבוצה מקשיבה מגיב אחרת מגוף שמקשיב לבד, גם כשהצליל זהה.</p>
+
+            <p class="reveal">התשובה, כנראה, נמצאת איפשהו בין ה-EEG ללחישת השיר של אבוריג'ין במדבר. ומי שרוצה למצוא אותה - יצטרך גם לקרוא את הנתונים וגם להיכנס לחדר, להתמסר ולהקשיב.</p>
         </div>
 
         <!-- Closing pull quote -->
         <blockquote class="pull-quote reveal">
-            אולי התשובה אינה בצלילים עצמם. אולי היא בחלל שביניהם.
+            מי שרוצה למצוא אותה - יצטרך גם לקרוא את הנתונים וגם להיכנס לחדר, להתמסר ולהקשיב.
         </blockquote>
 
     </section>
 
     <!-- ========== SOURCES ========== -->
-    <section class="article-grid sources-section" style="padding-bottom: var(--space-s);">
-        <div>
-            <h3>מקורות</h3>
-            <ol class="sources-list">
-                <li>Golland, Y. et al. (2015). Mere co-presence: Synchronization of autonomic signals and emotional responses across co-present individuals not engaged in direct interaction. <em>PLOS ONE</em>, 10(10), e0141050.</li>
-                <li>Chabin, T. et al. (2022). Audience inter-brain synchrony during live classical music concerts. <em>Frontiers in Human Neuroscience</em>, 16, 909942.</li>
-                <li>Muller, V. & Lindenberger, U. (2023). Hyper-frequency network topology changes during ensemble music performance. <em>Annals of the New York Academy of Sciences</em>, 1525(1), 120-131.</li>
-                <li>Trost, W. et al. (2024). Live versus recorded music: An fMRI study reveals enhanced amygdala and hippocampal responses to live performance. <em>PNAS</em>, 121(4), e2313881121.</li>
-                <li>Wald-Fuhrmann, M. et al. (2024). Physiological and emotional responses to classical music concerts: Audience synchronization and the role of listening strategies. <em>Scientific Reports</em>, 14, 1234.</li>
-                <li>Czepiel, A. et al. (2025). Heart rate synchronization in live music audiences tracks musical structure. <em>Annals of the New York Academy of Sciences</em>.</li>
-                <li>Good, A. & Russo, F. A. (2022). Changes in mood, oxytocin, and cortisol following group and individual singing. <em>Psychology of Music</em>, 50(4), 1340-1347.</li>
-                <li>Keeler, J. R. et al. (2015). The neurochemistry and social flow of singing: Bonding and oxytocin. <em>Frontiers in Human Neuroscience</em>, 9, 518.</li>
-            </ol>
-        </div>
-    </section>
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
-    <!-- Blog navigation -->
-    <section class="article-grid" style="padding-bottom: var(--space-m);">
-        <nav class="blog-nav">
-            <a href="blog-sound-meditation.html" class="blog-nav__link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                הכתבה הקודמת: האם מדיטציות סאונד באמת עובדות?
-            </a>
-        </nav>
+        <div class="reveal">
+            <div class="sources-title">מקורות</div>
+            <ul class="sources">
+                <li>Golland, Y., Arzouan, Y., & Levit-Binnun, N. (2015). The Mere Co-Presence Effect and Its Neural Correlates. PLOS ONE, Reichman University.</li>
+                <li>Chabin, T., et al. (2022). Audience Interbrain Synchrony During Live Music. Frontiers in Human Neuroscience, Besancon.</li>
+                <li>Muller, V. & Lindenberger, U. (2023). Intra- and interbrain synchrony and hyperbrain network dynamics of a guitarist quartet and its audience. Annals of the New York Academy of Sciences, Max Planck Institute, Berlin.</li>
+                <li>Tschacher, W., Wald-Fuhrmann, M., et al. (2024). Physiological audience synchrony in classical concerts. Scientific Reports, Max Planck Institute, Frankfurt.</li>
+                <li>Czepiel, A., et al. (2025). Audio-visual concert performances synchronize audience's heart rates. Annals of the New York Academy of Sciences, Max Planck Institute, Frankfurt.</li>
+                <li>Trost, W., et al. (2024). Live music stimulates the affective brain and emotionally entrains listeners in real time. PNAS, University of Zurich.</li>
+                <li>Good, A. & Russo, F.A. (2022). Changes in mood, oxytocin, and cortisol following group and individual singing. Psychology of Music.</li>
+                <li>Keeler, J.R., et al. (2015). The neurochemistry and social flow of singing: bonding and oxytocin. Frontiers in Human Neuroscience.</li>
+                <li>Lutz, A., Greischar, L.L., Rawlings, N.B., Ricard, M. & Davidson, R.J. (2004). Long-term meditators self-induce high-amplitude gamma synchrony during mental practice. PNAS.</li>
+            </ul>
+        </div>
+
     </section>
 
     <!-- Transition to footer -->
@@ -1562,9 +1469,6 @@
             </svg>
             חזרה לאתר הראשי
         </a>
-        <a href="blog-sound-meditation.html" class="article-footer__blog-link">
-            הכתבה הקודמת: האם מדיטציות סאונד באמת עובדות?
-        </a>
         <div class="article-footer__brand">
             <img src="assets/sol-therapy-logo-white.png" alt="Sol Therapy">
         </div>
@@ -1573,7 +1477,7 @@
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // Progress bar fallback for browsers without scroll-driven animations
+        // Progress bar fallback
         if (!CSS.supports('animation-timeline', 'scroll()')) {
             const bar = document.getElementById('progressBar');
             window.addEventListener('scroll', () => {
