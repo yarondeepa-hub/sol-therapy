@@ -1031,7 +1031,28 @@
             will-change: transform;
         }
 
-        /* --- Gallery section (legacy accent removed) --- */
+        /* --- Gallery section illustration accent --- */
+        .event-gallery {
+            position: relative;
+        }
+        .gallery__illustration-accent {
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            width: 30%;
+            max-width: 300px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+        }
+        .gallery__illustration-accent img {
+            display: block;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+            filter: saturate(0.5);
+            opacity: 0.18;
+        }
 
         /* --- Desktop: illustrations breathe wider --- */
         @media (min-width: 1024px) {
@@ -1051,6 +1072,9 @@
             }
             .sumi-bg--waves img {
                 opacity: 0.35;
+            }
+            .gallery__illustration-accent {
+                width: 25%;
             }
             .illustration-break {
                 height: clamp(100px, 12vh, 180px);
@@ -1083,12 +1107,16 @@
             .illustration-break {
                 height: clamp(50px, 8vh, 100px);
             }
+            .gallery__illustration-accent {
+                display: none;
+            }
         }
 
         /* Reduced motion: show illustrations immediately, no parallax */
         @media (prefers-reduced-motion: reduce) {
             .manifesto__landscape,
-            .sumi-bg {
+            .sumi-bg,
+            .gallery__illustration-accent {
                 opacity: 1 !important;
                 transform: none !important;
             }
@@ -1267,37 +1295,21 @@
         }
 
         /* ============================================
-           EMAKIMONO GALLERY - Vertical scroll journey
-           Ink-mask reveal with GSAP ScrollTrigger
+           EVENT GALLERY - Dynamic horizontal scroll
         ============================================ */
-        .emaki-gallery {
-            position: relative;
+        .event-gallery {
             background: var(--color-washi);
-            padding: var(--space-xl) 0;
+            padding: var(--space-l) 0 var(--space-m) 0;
             overflow: hidden;
         }
 
-        /* Ink thread connecting events */
-        .emaki-thread {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .emaki-gallery__header {
-            text-align: center;
+        .event-gallery__header {
             padding: 0 var(--gutter);
-            margin-bottom: var(--space-l);
-            position: relative;
-            z-index: 1;
+            margin-bottom: var(--space-m);
+            text-align: center;
         }
 
-        .emaki-gallery__title {
+        .event-gallery__title {
             font-family: var(--font-display);
             font-weight: 600;
             font-size: var(--type-manifesto);
@@ -1306,7 +1318,7 @@
             margin-bottom: 0.75rem;
         }
 
-        .emaki-gallery__subtitle {
+        .event-gallery__subtitle {
             font-family: var(--font-body);
             font-weight: 300;
             font-size: var(--type-body);
@@ -1314,174 +1326,116 @@
             opacity: 0.45;
         }
 
-        /* Individual event block */
-        .emaki-event {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
+        .event-gallery__track {
+            display: flex;
+            gap: clamp(0.75rem, 1.5vw, 1.25rem);
             padding: 0 var(--gutter);
-            margin-bottom: clamp(4rem, 8vh, 7rem);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            cursor: grab;
+        }
+        .event-gallery__track::-webkit-scrollbar {
+            display: none;
+        }
+        .event-gallery__track:active {
+            cursor: grabbing;
         }
 
-        /* Staggered sizes */
-        .emaki-event--large .emaki-event__mask {
-            width: 100%;
-            aspect-ratio: 16 / 10;
-        }
-        .emaki-event--medium .emaki-event__mask {
-            width: 75%;
-            aspect-ratio: 4 / 3;
-        }
-        .emaki-event--small .emaki-event__mask {
-            width: 55%;
-            aspect-ratio: 1 / 1;
-        }
-
-        /* Offset positioning for staggered layout */
-        .emaki-event--offset-start .emaki-event__visual {
-            display: flex;
-            justify-content: flex-start;
-        }
-        .emaki-event--offset-end .emaki-event__visual {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Visual container */
-        .emaki-event__visual {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Ink mask - clip-path reveal */
-        .emaki-event__mask {
+        .gallery-card {
+            flex: 0 0 auto;
+            width: clamp(260px, 42vw, 380px);
             position: relative;
             overflow: hidden;
+            scroll-snap-align: start;
             border-radius: 2px;
-            clip-path: inset(0 100% 0 0);
         }
 
-        .emaki-event__mask img {
+        .gallery-card__photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+        }
+        .gallery-card__photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: saturate(0) contrast(1.1) brightness(0.92);
-            transition: filter 1.2s var(--ease-ink);
+            filter: contrast(1.05) saturate(0.7) brightness(0.95);
+            transition: transform 0.6s var(--ease-out), filter 0.6s ease;
+        }
+        .gallery-card:hover .gallery-card__photo img {
+            transform: scale(1.04);
+            filter: contrast(1.05) saturate(0.85) brightness(1);
+        }
+        .gallery-card__photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 40%,
+                rgba(0, 0, 0, 0.55) 100%
+            );
+            pointer-events: none;
         }
 
-        /* Color reveal on scroll - applied via JS */
-        .emaki-event.is-revealed .emaki-event__mask img {
-            filter: saturate(0.75) contrast(1.05) brightness(0.97);
+        .gallery-card__info {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 1.25rem;
+            z-index: 1;
         }
-
-        /* Text block */
-        .emaki-event__text {
-            padding-right: 0.5rem;
-            opacity: 0;
-            transform: translateY(16px);
+        .gallery-card__name {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.2rem);
+            color: var(--color-washi);
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
         }
-
-        .emaki-event__meta {
-            display: block;
+        .gallery-card__meta {
             font-family: var(--font-english);
             font-size: var(--type-micro);
             font-weight: 300;
-            color: var(--color-green-dark);
-            opacity: 0.4;
-            letter-spacing: 0.2em;
+            color: var(--color-washi);
+            opacity: 0.55;
+            letter-spacing: 0.15em;
             direction: ltr;
             unicode-bidi: isolate;
-            margin-bottom: 0.35rem;
         }
 
-        .emaki-event__name {
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-            color: var(--color-green-dark);
-            line-height: 1.2;
-            margin-bottom: 0.4rem;
+        .event-gallery__dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding-top: var(--space-s);
+        }
+        .event-gallery__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-green-dark);
+            opacity: 0.15;
+            transition: opacity 0.3s ease;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        .event-gallery__dot--active {
+            opacity: 0.5;
         }
 
-        .emaki-event__sense {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-body);
-            color: var(--color-green-dark);
-            opacity: 0.55;
-            line-height: 1.6;
-            max-width: 400px;
-        }
-
-        /* Offset text alignment follows image */
-        .emaki-event--offset-end .emaki-event__text {
-            text-align: left;
-            padding-right: 0;
-            padding-left: 0.5rem;
-            margin-left: auto;
-            max-width: 75%;
-        }
-        .emaki-event--offset-end .emaki-event__sense {
-            margin-left: auto;
-        }
-
-        /* Desktop refinements */
         @media (min-width: 1024px) {
-            .emaki-event {
-                max-width: 1080px;
-                margin-bottom: clamp(5rem, 10vh, 9rem);
+            .gallery-card {
+                width: clamp(300px, 28vw, 420px);
             }
-            .emaki-event--medium .emaki-event__mask {
-                width: 65%;
-            }
-            .emaki-event--small .emaki-event__mask {
-                width: 45%;
-            }
-        }
-
-        /* Mobile: everything stacks full-width */
-        @media (max-width: 640px) {
-            .emaki-gallery {
-                padding: var(--space-l) 0;
-            }
-            .emaki-event--medium .emaki-event__mask,
-            .emaki-event--small .emaki-event__mask {
-                width: 100%;
-            }
-            .emaki-event--offset-start .emaki-event__visual,
-            .emaki-event--offset-end .emaki-event__visual {
-                justify-content: center;
-            }
-            .emaki-event--offset-end .emaki-event__text {
-                text-align: right;
-                padding-left: 0;
-                padding-right: 0.5rem;
-                margin-left: 0;
-                max-width: 100%;
-            }
-            .emaki-event--offset-end .emaki-event__sense {
-                margin-left: 0;
-            }
-            .emaki-thread {
-                display: none;
-            }
-            .emaki-event {
-                margin-bottom: clamp(3rem, 6vh, 5rem);
-            }
-        }
-
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .emaki-event__mask {
-                clip-path: none !important;
-            }
-            .emaki-event__mask img {
-                filter: saturate(0.75) contrast(1.05) brightness(0.97) !important;
-            }
-            .emaki-event__text {
-                opacity: 1 !important;
-                transform: none !important;
+            .event-gallery__track {
+                gap: clamp(1rem, 2vw, 1.5rem);
             }
         }
 
@@ -2252,102 +2206,80 @@
              PAST EVENTS CONDENSED
         ======================================== -->
 
-        <section class="emaki-gallery" aria-label="גלריית אירועים">
-
-            <!-- Ink thread SVG connecting all events -->
-            <svg class="emaki-thread" aria-hidden="true" viewBox="0 0 2 2000" preserveAspectRatio="none">
-                <path class="emaki-thread__path" d="M1,0 Q1.5,250 0.8,500 Q0.3,750 1.2,1000 Q1.7,1250 0.5,1500 Q0.8,1750 1,2000" fill="none" stroke="var(--color-green-dark)" stroke-width="0.5" opacity="0.12" />
-            </svg>
-
-            <div class="emaki-gallery__header">
-                <h2 class="emaki-gallery__title text-reveal">רגעים שנשארו</h2>
-                <p class="emaki-gallery__subtitle ink-bleed">מתוך האירועים שלנו</p>
+        <section class="event-gallery" aria-label="גלריית אירועים">
+            <!-- Decorative bamboo accent - subtle, integrated -->
+            <div class="gallery__illustration-accent" aria-hidden="true">
+                <img src="assets/illustrations/decor-bamboo.jpg" alt="" loading="lazy">
             </div>
 
-            <!-- Event 1 - Large -->
-            <article class="emaki-event emaki-event--large" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+            <div class="event-gallery__header fade-in">
+                <h2 class="event-gallery__title">רגעים שנשארו</h2>
+                <p class="event-gallery__subtitle">מתוך האירועים שלנו</p>
+            </div>
+
+            <div class="event-gallery__track" id="galleryTrack">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/museum-meditation.jpg" alt="מדיטציה בגלריה של מוזיאון תל אביב" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">מוזיאון תל אביב</h3>
-                    <p class="emaki-event__sense">שקט שנמשך בין הקירות עוד שעות אחרי</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">מוזיאון תל אביב</h3>
+                        <span class="gallery-card__meta">2025</span>
+                    </div>
+                </article>
 
-            <!-- Event 2 - Medium, offset right -->
-            <article class="emaki-event emaki-event--medium emaki-event--offset-start" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/orchestra-stage.jpg" alt="תזמורת על הבמה במרכז סוזן דלל" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">סוזן דלל</h3>
-                    <p class="emaki-event__sense">הרצפה רעדה מהבאסים. הגוף זכר לפני הראש</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">סוזן דלל</h3>
+                        <span class="gallery-card__meta">2024</span>
+                    </div>
+                </article>
 
-            <!-- Event 3 - Small, offset end -->
-            <article class="emaki-event emaki-event--small emaki-event--offset-end" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/museum-wide.jpg" alt="מבט רחב על אירוע במוזיאון" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">מוזיאון תל אביב</h3>
-                    <p class="emaki-event__sense">המרחב עצמו הפך לכלי נגינה</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">מוזיאון תל אביב</h3>
+                        <span class="gallery-card__meta">2024</span>
+                    </div>
+                </article>
 
-            <!-- Event 4 - Large -->
-            <article class="emaki-event emaki-event--large" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/dj-perspective-bw.jpg" alt="מבט מאחורי ה-DJ לעבר הקהל" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">הספריה הלאומית</h3>
-                    <p class="emaki-event__sense">ספרים על המדפים, צלילים באוויר. ידע שנכנס דרך העור</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">הספריה הלאומית</h3>
+                        <span class="gallery-card__meta">2025</span>
+                    </div>
+                </article>
 
-            <!-- Event 5 - Medium, offset start -->
-            <article class="emaki-event emaki-event--medium emaki-event--offset-end" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/outdoor-night.jpg" alt="אירוע לילי במואה, ערבה" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">מואה</h3>
-                    <p class="emaki-event__sense">המדבר החזיר לנו את הלילה. הכוכבים עשו את השאר</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">מואה</h3>
+                        <span class="gallery-card__meta">2025</span>
+                    </div>
+                </article>
 
-            <!-- Event 6 - Small -->
-            <article class="emaki-event emaki-event--small emaki-event--offset-start" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
+                <article class="gallery-card fade-in">
+                    <div class="gallery-card__photo">
                         <img src="assets/events/projection-building.jpg" alt="הקרנה על בניין בלילה" loading="lazy" width="1920" height="1080">
                     </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">הקרנה</h3>
-                    <p class="emaki-event__sense">האור כתב על הקירות מה שהמילים לא יכלו</p>
-                </div>
-            </article>
+                    <div class="gallery-card__info">
+                        <h3 class="gallery-card__name">הקרנה</h3>
+                        <span class="gallery-card__meta">2024</span>
+                    </div>
+                </article>
+            </div>
 
+            <div class="event-gallery__dots fade-in" id="galleryDots" aria-hidden="true"></div>
         </section>
 
         <!-- ========================================
@@ -2734,10 +2666,78 @@
         });
 
         // ========================================
-        // EMAKIMONO GALLERY - Ink mask reveal
+        // EVENT GALLERY - Drag scroll + dots
         // ========================================
-        var emakiEvents = document.querySelectorAll('[data-emaki]');
-        // Gallery animations are initialized in the GSAP section below
+        var galleryTrack = document.getElementById('galleryTrack');
+        var galleryDots = document.getElementById('galleryDots');
+
+        if (galleryTrack) {
+            var cards = galleryTrack.querySelectorAll('.gallery-card');
+            var isDragging = false;
+            var startX, scrollLeft;
+
+            // Create dots
+            if (galleryDots && cards.length > 0) {
+                cards.forEach(function(_, i) {
+                    var dot = document.createElement('button');
+                    dot.className = 'event-gallery__dot' + (i === 0 ? ' event-gallery__dot--active' : '');
+                    dot.setAttribute('aria-label', 'תמונה ' + (i + 1));
+                    dot.addEventListener('click', function() {
+                        cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    });
+                    galleryDots.appendChild(dot);
+                });
+            }
+
+            // Update active dot on scroll
+            var dots = galleryDots ? galleryDots.querySelectorAll('.event-gallery__dot') : [];
+            var updateDots = function() {
+                var trackRect = galleryTrack.getBoundingClientRect();
+                var centerX = trackRect.left + trackRect.width * 0.3;
+                var closestIdx = 0;
+                var closestDist = Infinity;
+                cards.forEach(function(card, i) {
+                    var cardRect = card.getBoundingClientRect();
+                    var cardCenter = cardRect.left + cardRect.width / 2;
+                    var dist = Math.abs(cardCenter - centerX);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closestIdx = i;
+                    }
+                });
+                dots.forEach(function(dot, i) {
+                    dot.classList.toggle('event-gallery__dot--active', i === closestIdx);
+                });
+            };
+
+            galleryTrack.addEventListener('scroll', updateDots, { passive: true });
+
+            // Mouse drag
+            galleryTrack.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                startX = e.pageX - galleryTrack.offsetLeft;
+                scrollLeft = galleryTrack.scrollLeft;
+                galleryTrack.style.cursor = 'grabbing';
+            });
+
+            galleryTrack.addEventListener('mouseleave', function() {
+                isDragging = false;
+                galleryTrack.style.cursor = 'grab';
+            });
+
+            galleryTrack.addEventListener('mouseup', function() {
+                isDragging = false;
+                galleryTrack.style.cursor = 'grab';
+            });
+
+            galleryTrack.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                var x = e.pageX - galleryTrack.offsetLeft;
+                var walk = (x - startX) * 1.5;
+                galleryTrack.scrollLeft = scrollLeft - walk;
+            });
+        }
 
         // ========================================
         // ADVANCED ANIMATION ENGINE
@@ -3010,71 +3010,23 @@
                 });
             });
 
-            // ----- EMAKIMONO GALLERY: Ink mask reveal -----
-            var emakiItems = document.querySelectorAll('[data-emaki]');
-            emakiItems.forEach(function(item, i) {
-                var mask = item.querySelector('.emaki-event__mask');
-                var textBlock = item.querySelector('.emaki-event__text');
-                var img = mask ? mask.querySelector('img') : null;
-
-                if (mask) {
-                    // Ink-wipe reveal: clip-path sweeps from left to right (RTL site, so visual reads right to left)
-                    gsap.fromTo(mask,
-                        { clipPath: 'inset(0 100% 0 0)' },
-                        {
-                            clipPath: 'inset(0 0% 0 0)',
-                            duration: 1.4,
-                            ease: 'power3.inOut',
-                            scrollTrigger: {
-                                trigger: item,
-                                start: 'top 75%',
-                                toggleActions: 'play none none none'
-                            },
-                            onComplete: function() {
-                                // Desaturation to color transition
-                                item.classList.add('is-revealed');
-                            }
+            // ----- GALLERY ACCENT: Subtle fade -----
+            var galleryAccent = document.querySelector('.gallery__illustration-accent');
+            if (galleryAccent) {
+                gsap.fromTo(galleryAccent,
+                    { opacity: 0, x: -20 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        duration: 2,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: '.event-gallery',
+                            start: 'top 70%',
+                            toggleActions: 'play none none none'
                         }
-                    );
-                }
-
-                // Text fade-in after image reveals
-                if (textBlock) {
-                    gsap.fromTo(textBlock,
-                        { opacity: 0, y: 16 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.9,
-                            ease: 'power2.out',
-                            scrollTrigger: {
-                                trigger: item,
-                                start: 'top 60%',
-                                toggleActions: 'play none none none'
-                            }
-                        }
-                    );
-                }
-            });
-
-            // Ink thread draw animation
-            var threadPath = document.querySelector('.emaki-thread__path');
-            if (threadPath) {
-                var pathLength = threadPath.getTotalLength();
-                gsap.set(threadPath, {
-                    strokeDasharray: pathLength,
-                    strokeDashoffset: pathLength
-                });
-                gsap.to(threadPath, {
-                    strokeDashoffset: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: '.emaki-gallery',
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        scrub: 1.5
                     }
-                });
+                );
             }
 
             // ----- EVENT TITLES: Staggered char reveal -----
