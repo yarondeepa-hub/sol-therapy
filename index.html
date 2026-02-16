@@ -1268,6 +1268,7 @@
 
         /* ============================================
            MOSAIC GALLERY - Pure visual mood board
+           10 items: 8 photos + 2 videos, zero gaps
         ============================================ */
         .mosaic {
             background: var(--color-washi);
@@ -1276,27 +1277,32 @@
 
         .mosaic__grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: clamp(180px, 22vw, 320px);
-            gap: clamp(4px, 0.5vw, 8px);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, clamp(140px, 18vw, 260px));
+            gap: clamp(3px, 0.4vw, 6px);
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Span variations for visual rhythm */
-        .mosaic__item--wide {
-            grid-column: span 2;
-        }
-        .mosaic__item--tall {
-            grid-row: span 2;
-        }
+        /* Explicit placement - every cell filled */
+        .mosaic__item--a { grid-column: 1 / 3; grid-row: 1 / 2; }  /* wide */
+        .mosaic__item--b { grid-column: 3 / 4; grid-row: 1 / 3; }  /* tall */
+        .mosaic__item--c { grid-column: 4 / 5; grid-row: 1 / 2; }
+        .mosaic__item--d { grid-column: 1 / 2; grid-row: 2 / 3; }
+        .mosaic__item--e { grid-column: 2 / 3; grid-row: 2 / 3; }  /* video */
+        .mosaic__item--f { grid-column: 1 / 2; grid-row: 3 / 5; }  /* tall */
+        .mosaic__item--g { grid-column: 2 / 4; grid-row: 3 / 4; }  /* wide */
+        .mosaic__item--h { grid-column: 4 / 5; grid-row: 3 / 4; }
+        .mosaic__item--i { grid-column: 2 / 3; grid-row: 4 / 5; }
+        .mosaic__item--j { grid-column: 3 / 5; grid-row: 4 / 5; }  /* video, wide */
 
         .mosaic__item {
             overflow: hidden;
             position: relative;
         }
 
-        .mosaic__item img {
+        .mosaic__item img,
+        .mosaic__item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -1305,7 +1311,8 @@
             transition: filter 0.8s var(--ease-ink), transform 0.8s var(--ease-out);
         }
 
-        .mosaic__item:hover img {
+        .mosaic__item:hover img,
+        .mosaic__item:hover video {
             filter: saturate(0.85) contrast(1.05) brightness(0.97);
             transform: scale(1.03);
         }
@@ -1319,21 +1326,31 @@
         /* Desktop */
         @media (min-width: 1024px) {
             .mosaic__grid {
-                grid-auto-rows: clamp(220px, 24vw, 360px);
-                gap: clamp(5px, 0.6vw, 10px);
+                grid-template-rows: repeat(4, clamp(180px, 20vw, 300px));
+                gap: clamp(4px, 0.5vw, 8px);
             }
         }
 
-        /* Mobile: 2 columns, simpler layout */
+        /* Mobile: 2 columns, auto flow */
         @media (max-width: 640px) {
             .mosaic__grid {
                 grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: clamp(140px, 30vw, 220px);
+                grid-template-rows: auto;
+                grid-auto-rows: clamp(120px, 28vw, 200px);
                 gap: 3px;
             }
-            .mosaic__item--wide {
-                grid-column: span 2;
+            /* Reset explicit placement, let auto-flow handle it */
+            .mosaic__item--a, .mosaic__item--b, .mosaic__item--c,
+            .mosaic__item--d, .mosaic__item--e, .mosaic__item--f,
+            .mosaic__item--g, .mosaic__item--h, .mosaic__item--i,
+            .mosaic__item--j {
+                grid-column: auto;
+                grid-row: auto;
             }
+            /* Keep some variety on mobile */
+            .mosaic__item--a { grid-column: span 2; }
+            .mosaic__item--g { grid-column: span 2; }
+            .mosaic__item--j { grid-column: span 2; }
         }
 
         /* Reduced motion */
@@ -1341,6 +1358,9 @@
             .mosaic__item {
                 opacity: 1 !important;
                 transform: none !important;
+            }
+            .mosaic__item video {
+                display: none;
             }
         }
 
@@ -2113,23 +2133,35 @@
 
         <section class="mosaic" aria-label="גלריית אירועים">
             <div class="mosaic__grid">
-                <div class="mosaic__item mosaic__item--wide" data-mosaic>
-                    <img src="assets/events/museum-meditation.jpg" alt="מדיטציית סאונד" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--a" data-mosaic>
+                    <img src="assets/events/museum-meditation.jpg" alt="סול תרפי" loading="lazy">
                 </div>
-                <div class="mosaic__item mosaic__item--tall" data-mosaic>
-                    <img src="assets/events/orchestra-stage.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--b" data-mosaic>
+                    <img src="assets/events/orchestra-stage.jpg" alt="סול תרפי" loading="lazy">
                 </div>
-                <div class="mosaic__item" data-mosaic>
-                    <img src="assets/events/museum-wide.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--c" data-mosaic>
+                    <img src="assets/events/dark-performance.jpg" alt="סול תרפי" loading="lazy">
                 </div>
-                <div class="mosaic__item mosaic__item--tall" data-mosaic>
-                    <img src="assets/events/dj-perspective-bw.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--d" data-mosaic>
+                    <img src="assets/events/meditation-hall.jpg" alt="סול תרפי" loading="lazy">
                 </div>
-                <div class="mosaic__item mosaic__item--wide" data-mosaic>
-                    <img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--e" data-mosaic>
+                    <video src="assets/events/moa-documentary.mp4" autoplay muted loop playsinline></video>
                 </div>
-                <div class="mosaic__item" data-mosaic>
-                    <img src="assets/events/projection-building.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                <div class="mosaic__item mosaic__item--f" data-mosaic>
+                    <img src="assets/events/dj-perspective-bw.jpg" alt="סול תרפי" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--g" data-mosaic>
+                    <img src="assets/events/outdoor-night.jpg" alt="סול תרפי" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--h" data-mosaic>
+                    <img src="assets/events/projection-building.jpg" alt="סול תרפי" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--i" data-mosaic>
+                    <img src="assets/events/museum-wide.jpg" alt="סול תרפי" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--j" data-mosaic>
+                    <video src="assets/events/pastoral-retreat-bg.mp4" autoplay muted loop playsinline></video>
                 </div>
             </div>
         </section>
