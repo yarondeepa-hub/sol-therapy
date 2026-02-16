@@ -1267,219 +1267,78 @@
         }
 
         /* ============================================
-           EMAKIMONO GALLERY - Vertical scroll journey
-           Ink-mask reveal with GSAP ScrollTrigger
+           MOSAIC GALLERY - Pure visual mood board
         ============================================ */
-        .emaki-gallery {
-            position: relative;
+        .mosaic {
             background: var(--color-washi);
-            padding: var(--space-xl) 0;
-            overflow: hidden;
+            padding: var(--space-l) var(--gutter);
         }
 
-        /* Ink thread connecting events */
-        .emaki-thread {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .emaki-gallery__header {
-            text-align: center;
-            padding: 0 var(--gutter);
-            margin-bottom: var(--space-l);
-            position: relative;
-            z-index: 1;
-        }
-
-        .emaki-gallery__title {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: var(--type-manifesto);
-            color: var(--color-green-dark);
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-        }
-
-        .emaki-gallery__subtitle {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-body);
-            color: var(--color-green-dark);
-            opacity: 0.45;
-        }
-
-        /* Individual event block */
-        .emaki-event {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
+        .mosaic__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: clamp(180px, 22vw, 320px);
+            gap: clamp(4px, 0.5vw, 8px);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--gutter);
-            margin-bottom: clamp(4rem, 8vh, 7rem);
         }
 
-        /* Staggered sizes */
-        .emaki-event--large .emaki-event__mask {
-            width: 100%;
-            aspect-ratio: 16 / 10;
+        /* Span variations for visual rhythm */
+        .mosaic__item--wide {
+            grid-column: span 2;
         }
-        .emaki-event--medium .emaki-event__mask {
-            width: 75%;
-            aspect-ratio: 4 / 3;
-        }
-        .emaki-event--small .emaki-event__mask {
-            width: 55%;
-            aspect-ratio: 1 / 1;
+        .mosaic__item--tall {
+            grid-row: span 2;
         }
 
-        /* Offset positioning for staggered layout */
-        .emaki-event--offset-start .emaki-event__visual {
-            display: flex;
-            justify-content: flex-start;
-        }
-        .emaki-event--offset-end .emaki-event__visual {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Visual container */
-        .emaki-event__visual {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Ink mask - clip-path reveal */
-        .emaki-event__mask {
-            position: relative;
+        .mosaic__item {
             overflow: hidden;
-            border-radius: 2px;
-            clip-path: inset(0 100% 0 0);
+            position: relative;
         }
 
-        .emaki-event__mask img {
+        .mosaic__item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: saturate(0) contrast(1.1) brightness(0.92);
-            transition: filter 1.2s var(--ease-ink);
+            filter: saturate(0.6) contrast(1.05) brightness(0.93);
+            transition: filter 0.8s var(--ease-ink), transform 0.8s var(--ease-out);
         }
 
-        /* Color reveal on scroll - applied via JS */
-        .emaki-event.is-revealed .emaki-event__mask img {
-            filter: saturate(0.75) contrast(1.05) brightness(0.97);
+        .mosaic__item:hover img {
+            filter: saturate(0.85) contrast(1.05) brightness(0.97);
+            transform: scale(1.03);
         }
 
-        /* Text block */
-        .emaki-event__text {
-            padding-right: 0.5rem;
+        /* Scroll reveal - starts hidden */
+        .mosaic__item {
             opacity: 0;
-            transform: translateY(16px);
+            transform: translateY(20px);
         }
 
-        .emaki-event__meta {
-            display: block;
-            font-family: var(--font-english);
-            font-size: var(--type-micro);
-            font-weight: 300;
-            color: var(--color-green-dark);
-            opacity: 0.4;
-            letter-spacing: 0.2em;
-            direction: ltr;
-            unicode-bidi: isolate;
-            margin-bottom: 0.35rem;
-        }
-
-        .emaki-event__name {
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-            color: var(--color-green-dark);
-            line-height: 1.2;
-            margin-bottom: 0.4rem;
-        }
-
-        .emaki-event__sense {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-body);
-            color: var(--color-green-dark);
-            opacity: 0.55;
-            line-height: 1.6;
-            max-width: 400px;
-        }
-
-        /* Offset text alignment follows image */
-        .emaki-event--offset-end .emaki-event__text {
-            text-align: left;
-            padding-right: 0;
-            padding-left: 0.5rem;
-            margin-left: auto;
-            max-width: 75%;
-        }
-        .emaki-event--offset-end .emaki-event__sense {
-            margin-left: auto;
-        }
-
-        /* Desktop refinements */
+        /* Desktop */
         @media (min-width: 1024px) {
-            .emaki-event {
-                max-width: 1080px;
-                margin-bottom: clamp(5rem, 10vh, 9rem);
-            }
-            .emaki-event--medium .emaki-event__mask {
-                width: 65%;
-            }
-            .emaki-event--small .emaki-event__mask {
-                width: 45%;
+            .mosaic__grid {
+                grid-auto-rows: clamp(220px, 24vw, 360px);
+                gap: clamp(5px, 0.6vw, 10px);
             }
         }
 
-        /* Mobile: everything stacks full-width */
+        /* Mobile: 2 columns, simpler layout */
         @media (max-width: 640px) {
-            .emaki-gallery {
-                padding: var(--space-l) 0;
+            .mosaic__grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: clamp(140px, 30vw, 220px);
+                gap: 3px;
             }
-            .emaki-event--medium .emaki-event__mask,
-            .emaki-event--small .emaki-event__mask {
-                width: 100%;
-            }
-            .emaki-event--offset-start .emaki-event__visual,
-            .emaki-event--offset-end .emaki-event__visual {
-                justify-content: center;
-            }
-            .emaki-event--offset-end .emaki-event__text {
-                text-align: right;
-                padding-left: 0;
-                padding-right: 0.5rem;
-                margin-left: 0;
-                max-width: 100%;
-            }
-            .emaki-event--offset-end .emaki-event__sense {
-                margin-left: 0;
-            }
-            .emaki-thread {
-                display: none;
-            }
-            .emaki-event {
-                margin-bottom: clamp(3rem, 6vh, 5rem);
+            .mosaic__item--wide {
+                grid-column: span 2;
             }
         }
 
         /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            .emaki-event__mask {
-                clip-path: none !important;
-            }
-            .emaki-event__mask img {
-                filter: saturate(0.75) contrast(1.05) brightness(0.97) !important;
-            }
-            .emaki-event__text {
+            .mosaic__item {
                 opacity: 1 !important;
                 transform: none !important;
             }
@@ -2252,102 +2111,27 @@
              PAST EVENTS CONDENSED
         ======================================== -->
 
-        <section class="emaki-gallery" aria-label="גלריית אירועים">
-
-            <!-- Ink thread SVG connecting all events -->
-            <svg class="emaki-thread" aria-hidden="true" viewBox="0 0 2 2000" preserveAspectRatio="none">
-                <path class="emaki-thread__path" d="M1,0 Q1.5,250 0.8,500 Q0.3,750 1.2,1000 Q1.7,1250 0.5,1500 Q0.8,1750 1,2000" fill="none" stroke="var(--color-green-dark)" stroke-width="0.5" opacity="0.12" />
-            </svg>
-
-            <div class="emaki-gallery__header">
-                <h2 class="emaki-gallery__title text-reveal">רגעים שנשארו</h2>
-                <p class="emaki-gallery__subtitle ink-bleed">מתוך האירועים שלנו</p>
+        <section class="mosaic" aria-label="גלריית אירועים">
+            <div class="mosaic__grid">
+                <div class="mosaic__item mosaic__item--wide" data-mosaic>
+                    <img src="assets/events/museum-meditation.jpg" alt="מדיטציית סאונד" loading="lazy" width="1920" height="1080">
+                </div>
+                <div class="mosaic__item mosaic__item--tall" data-mosaic>
+                    <img src="assets/events/orchestra-stage.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                </div>
+                <div class="mosaic__item" data-mosaic>
+                    <img src="assets/events/museum-wide.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                </div>
+                <div class="mosaic__item mosaic__item--tall" data-mosaic>
+                    <img src="assets/events/dj-perspective-bw.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                </div>
+                <div class="mosaic__item mosaic__item--wide" data-mosaic>
+                    <img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                </div>
+                <div class="mosaic__item" data-mosaic>
+                    <img src="assets/events/projection-building.jpg" alt="אירוע סול תרפי" loading="lazy" width="1920" height="1080">
+                </div>
             </div>
-
-            <!-- Event 1 - Large -->
-            <article class="emaki-event emaki-event--large" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/museum-meditation.jpg" alt="מדיטציה בגלריה של מוזיאון תל אביב" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">מוזיאון תל אביב</h3>
-                    <p class="emaki-event__sense">שקט שנמשך בין הקירות עוד שעות אחרי</p>
-                </div>
-            </article>
-
-            <!-- Event 2 - Medium, offset right -->
-            <article class="emaki-event emaki-event--medium emaki-event--offset-start" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/orchestra-stage.jpg" alt="תזמורת על הבמה במרכז סוזן דלל" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">סוזן דלל</h3>
-                    <p class="emaki-event__sense">הרצפה רעדה מהבאסים. הגוף זכר לפני הראש</p>
-                </div>
-            </article>
-
-            <!-- Event 3 - Small, offset end -->
-            <article class="emaki-event emaki-event--small emaki-event--offset-end" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/museum-wide.jpg" alt="מבט רחב על אירוע במוזיאון" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">מוזיאון תל אביב</h3>
-                    <p class="emaki-event__sense">המרחב עצמו הפך לכלי נגינה</p>
-                </div>
-            </article>
-
-            <!-- Event 4 - Large -->
-            <article class="emaki-event emaki-event--large" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/dj-perspective-bw.jpg" alt="מבט מאחורי ה-DJ לעבר הקהל" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">הספריה הלאומית</h3>
-                    <p class="emaki-event__sense">ספרים על המדפים, צלילים באוויר. ידע שנכנס דרך העור</p>
-                </div>
-            </article>
-
-            <!-- Event 5 - Medium, offset start -->
-            <article class="emaki-event emaki-event--medium emaki-event--offset-end" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/outdoor-night.jpg" alt="אירוע לילי במואה, ערבה" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2025</span>
-                    <h3 class="emaki-event__name">מואה</h3>
-                    <p class="emaki-event__sense">המדבר החזיר לנו את הלילה. הכוכבים עשו את השאר</p>
-                </div>
-            </article>
-
-            <!-- Event 6 - Small -->
-            <article class="emaki-event emaki-event--small emaki-event--offset-start" data-emaki>
-                <div class="emaki-event__visual">
-                    <div class="emaki-event__mask">
-                        <img src="assets/events/projection-building.jpg" alt="הקרנה על בניין בלילה" loading="lazy" width="1920" height="1080">
-                    </div>
-                </div>
-                <div class="emaki-event__text">
-                    <span class="emaki-event__meta">2024</span>
-                    <h3 class="emaki-event__name">הקרנה</h3>
-                    <p class="emaki-event__sense">האור כתב על הקירות מה שהמילים לא יכלו</p>
-                </div>
-            </article>
-
         </section>
 
         <!-- ========================================
@@ -2734,10 +2518,8 @@
         });
 
         // ========================================
-        // EMAKIMONO GALLERY - Ink mask reveal
+        // MOSAIC GALLERY - no interaction needed
         // ========================================
-        var emakiEvents = document.querySelectorAll('[data-emaki]');
-        // Gallery animations are initialized in the GSAP section below
 
         // ========================================
         // ADVANCED ANIMATION ENGINE
@@ -3010,71 +2792,24 @@
                 });
             });
 
-            // ----- EMAKIMONO GALLERY: Ink mask reveal -----
-            var emakiItems = document.querySelectorAll('[data-emaki]');
-            emakiItems.forEach(function(item, i) {
-                var mask = item.querySelector('.emaki-event__mask');
-                var textBlock = item.querySelector('.emaki-event__text');
-                var img = mask ? mask.querySelector('img') : null;
-
-                if (mask) {
-                    // Ink-wipe reveal: clip-path sweeps from left to right (RTL site, so visual reads right to left)
-                    gsap.fromTo(mask,
-                        { clipPath: 'inset(0 100% 0 0)' },
-                        {
-                            clipPath: 'inset(0 0% 0 0)',
-                            duration: 1.4,
-                            ease: 'power3.inOut',
-                            scrollTrigger: {
-                                trigger: item,
-                                start: 'top 75%',
-                                toggleActions: 'play none none none'
-                            },
-                            onComplete: function() {
-                                // Desaturation to color transition
-                                item.classList.add('is-revealed');
-                            }
+            // ----- MOSAIC GALLERY: Staggered reveal -----
+            var mosaicItems = document.querySelectorAll('[data-mosaic]');
+            if (mosaicItems.length > 0) {
+                gsap.fromTo(mosaicItems,
+                    { opacity: 0, y: 20 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.7,
+                        ease: 'power2.out',
+                        stagger: 0.12,
+                        scrollTrigger: {
+                            trigger: '.mosaic',
+                            start: 'top 75%',
+                            toggleActions: 'play none none none'
                         }
-                    );
-                }
-
-                // Text fade-in after image reveals
-                if (textBlock) {
-                    gsap.fromTo(textBlock,
-                        { opacity: 0, y: 16 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.9,
-                            ease: 'power2.out',
-                            scrollTrigger: {
-                                trigger: item,
-                                start: 'top 60%',
-                                toggleActions: 'play none none none'
-                            }
-                        }
-                    );
-                }
-            });
-
-            // Ink thread draw animation
-            var threadPath = document.querySelector('.emaki-thread__path');
-            if (threadPath) {
-                var pathLength = threadPath.getTotalLength();
-                gsap.set(threadPath, {
-                    strokeDasharray: pathLength,
-                    strokeDashoffset: pathLength
-                });
-                gsap.to(threadPath, {
-                    strokeDashoffset: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: '.emaki-gallery',
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        scrub: 1.5
                     }
-                });
+                );
             }
 
             // ----- EVENT TITLES: Staggered char reveal -----
