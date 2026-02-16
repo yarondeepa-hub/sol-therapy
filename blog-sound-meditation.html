@@ -522,7 +522,7 @@
 
         .article-figure figcaption {
             font-family: var(--font-body);
-            font-size: 0.6875rem;
+            font-size: 0.8125rem;
             line-height: 1.6;
             color: var(--color-muted);
             margin-top: 0.75rem;
@@ -652,11 +652,11 @@
             z-index: 2;
             text-align: center;
             font-family: var(--font-body);
-            font-size: 0.6875rem;
+            font-size: 0.8125rem;
             color: var(--color-muted);
             letter-spacing: 0.02em;
             margin-top: 0.35rem;
-            opacity: 0.7;
+            opacity: 0.85;
         }
 
         /* Dark section inline float */
@@ -681,8 +681,8 @@
             z-index: 2;
             text-align: center;
             font-family: var(--font-body);
-            font-size: 0.6875rem;
-            color: rgba(242, 234, 211, 0.45);
+            font-size: 0.8125rem;
+            color: rgba(242, 234, 211, 0.65);
             letter-spacing: 0.02em;
             margin-top: 0.35rem;
         }
@@ -757,8 +757,8 @@
 
         .figure-trio figcaption {
             font-family: var(--font-body);
-            font-size: 0.6875rem;
-            color: rgba(242, 234, 211, 0.5);
+            font-size: 0.8125rem;
+            color: rgba(242, 234, 211, 0.65);
             text-align: center;
             margin-top: 0.5rem;
             letter-spacing: 0.02em;
@@ -912,6 +912,17 @@
                 var(--color-dark) 100%
             );
             pointer-events: none;
+        }
+
+        .illustration-break__caption {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: rgba(242, 234, 211, 0.6);
+            text-align: center;
+            letter-spacing: 0.04em;
+            padding-top: 0.75rem;
+            padding-bottom: 0.5rem;
         }
 
         /* ============================================
@@ -1269,11 +1280,12 @@
     <!-- Transition to dark -->
     <div class="transition--washi-dark"></div>
 
-    <!-- Singing bowl panoramic break -->
+    <!-- Avalokiteshvara panoramic break -->
     <div class="illustration-break">
         <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog/singing-bowl.jpg" alt="Tibetan Singing Bowl - sumi-e" loading="lazy">
+            <img src="assets/blog/avalokiteshvara.jpg" alt="Avalokiteshvara - sumi-e illustration" loading="lazy">
         </div>
+        <figcaption class="illustration-break__caption">אבלוקיטשוורה - מי ששומע את בכי העולם</figcaption>
     </div>
 
     <!-- ========== SECTION 3: Ancient Traditions (DARK) ========== -->
@@ -1289,10 +1301,10 @@
             <div class="article-body article-body--with-figure">
                 <p class="reveal">שורנגמה סוטרה, טקסט בודהיסטי מתחילת המאה ה-8, מתאר את הדרך של בודהיסטווה אבלוקיטשוורה - דמות מרכזית בבודהיזם שמגלמת את החמלה האינסופית, ונחשבת לאחד המדריכים הרוחניים החשובים במסורת - להארה. ומעניין, הדרך הזו עוברת דווקא דרך השמיעה. לא דרך הראייה, לא דרך המגע, לא דרך המחשבה. דרך האוזן. ארבעה שלבים: קודם נכנסים לזרם הצליל, אחר כך מגיעים למקום שבו הצליל נפסק, אז מגיע מצב שבו ההבחנה בין שומע לנשמע מתמוססת, ולבסוף הריקנות עצמה מתמוססת.</p>
 
-                <!-- Avalokiteshvara - floats organically into dark text -->
+                <!-- Singing bowl - floats organically into dark text -->
                 <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
-                    <img src="assets/blog/avalokiteshvara.jpg" alt="Avalokiteshvara - sumi-e illustration" loading="lazy">
-                    <figcaption>אבלוקיטשוורה - מי ששומע את בכי העולם</figcaption>
+                    <img src="assets/blog/singing-bowl.jpg" alt="Tibetan Singing Bowl - sumi-e" loading="lazy">
+                    <figcaption>קערת סאונד טיבטית</figcaption>
                 </figure>
 
                 <p class="reveal">במסורת ההינדואיסטית יש את הקונספט של Nada Brahma - העולם הוא צליל. הרעיון שהרטט קודם לצורה, שהתדר קדם לחומר. זו לא רק פואזיה - זו טענה אונטולוגית: המציאות בבסיסה היא תנודה.</p>
