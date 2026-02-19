@@ -1,13 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="59.775" height="60.201" viewBox="0 0 59.775 60.201">
-  <g id="logo-icon" transform="translate(0 197.855)">
-    <path id="Path_1727" data-name="Path 1727" d="M10.227-187.512h6.392V-193.9H10.227Z" transform="translate(-6.797 -3.951)" fill="#1a1a1a"/>
-    <path id="Path_1728" data-name="Path 1728" d="M5.866-114.615h9.318v-9.318H5.866Z" transform="translate(-3.898 -50.452)" fill="#1a1a1a"/>
-    <path id="Path_1729" data-name="Path 1729" d="M0-40.686H13.253V-53.939H0Z" transform="translate(0 -96.968)" fill="#1a1a1a"/>
-    <path id="Path_1730" data-name="Path 1730" d="M86.762-186.579h4.491v-4.491H86.762Z" transform="translate(-57.66 -5.835)" fill="#1a1a1a"/>
-    <path id="Path_1731" data-name="Path 1731" d="M83.535-113.308h6.656v-6.656H83.535Z" transform="translate(-55.515 -53.09)" fill="#1a1a1a"/>
-    <path id="Path_1732" data-name="Path 1732" d="M158.364-37.912h6.656v-6.656h-6.656Z" transform="translate(-105.245 -103.196)" fill="#1a1a1a"/>
-    <path id="Path_1733" data-name="Path 1733" d="M79.37-38.819h9.45v-9.45H79.37Z" transform="translate(-52.747 -100.736)" fill="#1a1a1a"/>
-    <path id="Path_1734" data-name="Path 1734" d="M163.15-186.066h3.445v-3.445H163.15Z" transform="translate(-108.425 -6.871)" fill="#1a1a1a"/>
-    <path id="Path_1735" data-name="Path 1735" d="M161.482-112.281h4.564v-4.564h-4.564Z" transform="translate(-107.317 -55.163)" fill="#1a1a1a"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Left text: SUZANNE DELLAL CENTRE -->
+  <text x="10" y="72" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="6" fill="#1a1a1a">SUZANNE</text>
+  <text x="10" y="122" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="6" fill="#1a1a1a">DELLAL</text>
+  <text x="10" y="172" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="6" fill="#1a1a1a">CENTRE</text>
+
+  <!-- Dots/squares pattern - row 1 (small) -->
+  <rect x="238" y="52" width="12" height="12" fill="#1a1a1a"/>
+  <rect x="260" y="54" width="8" height="8" fill="#1a1a1a"/>
+  <rect x="280" y="56" width="5" height="5" fill="#1a1a1a"/>
+
+  <!-- Dots/squares pattern - row 2 (medium) -->
+  <rect x="234" y="102" width="16" height="16" fill="#1a1a1a"/>
+  <rect x="258" y="104" width="12" height="12" fill="#1a1a1a"/>
+  <rect x="278" y="107" width="7" height="7" fill="#1a1a1a"/>
+
+  <!-- Dots/squares pattern - row 3 (large) -->
+  <rect x="228" y="148" width="22" height="22" fill="#1a1a1a"/>
+  <rect x="256" y="150" width="18" height="18" fill="#1a1a1a"/>
+  <rect x="280" y="154" width="10" height="10" fill="#1a1a1a"/>
+
+  <!-- Right text: Hebrew -->
+  <text x="590" y="72" font-family="'Arial Hebrew', 'Heebo', Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="4" fill="#1a1a1a" text-anchor="end" direction="rtl">מרכז</text>
+  <text x="590" y="122" font-family="'Arial Hebrew', 'Heebo', Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="4" fill="#1a1a1a" text-anchor="end" direction="rtl">סוזן</text>
+  <text x="590" y="172" font-family="'Arial Hebrew', 'Heebo', Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="4" fill="#1a1a1a" text-anchor="end" direction="rtl">דלל</text>
 </svg>
