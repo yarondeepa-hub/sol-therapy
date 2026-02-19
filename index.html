@@ -1618,7 +1618,7 @@
         .newsletter-cta__title {
             font-family: var(--font-display);
             font-weight: 700;
-            font-size: clamp(1.6rem, 1.2rem + 2.5vw, 2.8rem);
+            font-size: clamp(1.8rem, 1.4rem + 2.8vw, 3.2rem);
             color: var(--color-green-dark);
             line-height: 1.15;
             margin-bottom: 0.75rem;
@@ -1641,10 +1641,11 @@
             display: flex;
             align-items: stretch;
             gap: 0;
-            max-width: 460px;
+            max-width: 500px;
             margin: 0 auto;
-            background: #fff;
-            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 14px;
+            border: 1px solid rgba(59, 81, 75, 0.06);
             box-shadow: 0 2px 20px rgba(59, 81, 75, 0.08);
             overflow: hidden;
             transition: box-shadow 0.3s ease;
@@ -1667,13 +1668,15 @@
             min-height: 56px;
         }
         .newsletter-cta__input::placeholder {
-            color: rgba(59, 81, 75, 0.3);
+            color: rgba(59, 81, 75, 0.25);
             direction: ltr;
+            font-style: italic;
         }
 
         .newsletter-cta__btn {
             background: var(--color-beni);
             border: none;
+            border-radius: 0 13px 13px 0;
             color: #fff;
             font-family: var(--font-body);
             font-weight: 500;
@@ -1699,29 +1702,12 @@
             margin-top: 1rem;
         }
 
-        /* Decorative ink stroke behind */
-        .newsletter-cta__deco {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: radial-gradient(
-                circle,
-                rgba(190, 80, 105, 0.04) 0%,
-                rgba(190, 80, 105, 0.01) 50%,
-                transparent 70%
-            );
-            pointer-events: none;
-            z-index: 1;
-        }
+        /* Deco element removed per Illustrator review - invisible gradient adds no value */
 
         @media (max-width: 480px) {
             .newsletter-cta__form {
                 flex-direction: column;
-                border-radius: 16px;
+                border-radius: 12px;
             }
             .newsletter-cta__input {
                 padding: 1rem 1.25rem;
@@ -1730,7 +1716,7 @@
             }
             .newsletter-cta__btn {
                 justify-content: center;
-                border-radius: 0 0 16px 16px;
+                border-radius: 0 0 12px 12px;
             }
         }
 
@@ -1743,10 +1729,7 @@
                 padding: 1rem 2.5rem;
                 font-size: 1rem;
             }
-            .newsletter-cta__deco {
-                width: 500px;
-                height: 500px;
-            }
+            /* deco element removed */
         }
 
         /* ============================================
@@ -2241,7 +2224,6 @@
         ======================================== -->
 
         <section class="newsletter-cta" aria-label="הרשמה לעדכונים">
-            <div class="newsletter-cta__deco" aria-hidden="true"></div>
             <div class="newsletter-cta__inner fade-in">
                 <p class="newsletter-cta__kicker">Newsletter</p>
                 <h2 class="newsletter-cta__title">הישארו מחוברים</h2>
