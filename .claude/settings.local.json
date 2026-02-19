@@ -51,7 +51,9 @@
       "Bash(lsof:*)",
       "Bash(identify:*)",
       "Bash(md5:*)",
-      "Bash(ps:*)"
+      "Bash(ps:*)",
+      "Bash(gh run list:*)",
+      "Bash(echo:*)"
     ]
   }
 }
