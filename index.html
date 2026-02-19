@@ -1278,7 +1278,7 @@
         .mosaic__grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, clamp(140px, 18vw, 260px)) clamp(32px, 4.5vw, 64px);
+            grid-template-rows: repeat(4, clamp(140px, 18vw, 260px));
             gap: clamp(3px, 0.4vw, 6px);
             max-width: 1200px;
             margin: 0 auto;
@@ -1295,7 +1295,6 @@
         .mosaic__item--h { grid-column: 4 / 5; grid-row: 3 / 4; }
         .mosaic__item--i { grid-column: 2 / 3; grid-row: 4 / 5; }
         .mosaic__item--j { grid-column: 3 / 5; grid-row: 4 / 5; }  /* video, wide */
-        .mosaic__item--k { grid-column: 1 / 5; grid-row: 5 / 6; max-height: clamp(32px, 4.5vw, 64px); }  /* full-width video */
 
         .mosaic__item {
             overflow: hidden;
@@ -1327,7 +1326,7 @@
         /* Desktop */
         @media (min-width: 1024px) {
             .mosaic__grid {
-                grid-template-rows: repeat(4, clamp(180px, 20vw, 300px)) clamp(32px, 4.5vw, 64px);
+                grid-template-rows: repeat(4, clamp(180px, 20vw, 300px));
                 gap: clamp(4px, 0.5vw, 8px);
             }
         }
@@ -1344,7 +1343,7 @@
             .mosaic__item--a, .mosaic__item--b, .mosaic__item--c,
             .mosaic__item--d, .mosaic__item--e, .mosaic__item--f,
             .mosaic__item--g, .mosaic__item--h, .mosaic__item--i,
-            .mosaic__item--j, .mosaic__item--k {
+            .mosaic__item--j {
                 grid-column: auto;
                 grid-row: auto;
             }
@@ -1352,7 +1351,6 @@
             .mosaic__item--a { grid-column: span 2; }
             .mosaic__item--g { grid-column: span 2; }
             .mosaic__item--j { grid-column: span 2; }
-            .mosaic__item--k { grid-column: span 2; }
         }
 
         /* Reduced motion */
@@ -2164,9 +2162,6 @@
                 </div>
                 <div class="mosaic__item mosaic__item--j" data-mosaic>
                     <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline></video>
-                </div>
-                <div class="mosaic__item mosaic__item--k" data-mosaic>
-                    <video src="assets/events/gallery-wide-bottom.mp4" autoplay muted loop playsinline></video>
                 </div>
             </div>
         </section>
