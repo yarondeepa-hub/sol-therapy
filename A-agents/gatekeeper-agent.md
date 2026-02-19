@@ -89,7 +89,8 @@ Before reviewing ANY work, read these files:
 5. **CTO Website Skills (for reviewing website work):**
    - `T-tools/skills/css-advanced-layout-skill/css-advanced-layout-skill.md` - Layout quality standards
    - `T-tools/skills/advanced-typography-skill.md` - Typography quality standards
-   - `T-tools/skills/performance-production-skill/performance-production-skill.md` - Performance benchmarks (Core Web Vitals)
+   - `T-tools/skills/responsive-qa-skill/responsive-qa-skill.md` - **Responsive QA checklist (10 sections, 132 checkpoints)**
+   - Performance benchmarks: check via Chrome Lighthouse (no separate skill file - use responsive-qa-skill Section 7)
 
 6. **מאגר ידע מרכזי:**
    - `B-brain/sol-therapy-knowledge-base.md` - **חובה לקרוא!**
