@@ -1,0 +1,14 @@
+# Obsidian
+.obsidian/
+
+# Node modules (website project)
+sol-therapy-website/node_modules/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.bak

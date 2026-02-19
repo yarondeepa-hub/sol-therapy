@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git clone:*)",
+      "Bash(curl:*)",
+      "Bash(tmutil listbackups:*)",
+      "Bash(# Check Obsidian file recovery plugin ls \"\"/Users/yaronamor/Documents/yaronamor-vault/.obsidian/plugins/file-recovery\"\" ; ls \"\"/Users/yaronamor/Documents/yaronamor-vault/.trash/\"\")",
+      "Bash(# Check iCloud backup or other vault backup locations ls \"\"/Users/yaronamor/Library/Mobile Documents/iCloud~md~obsidian/Documents/\"\")",
+      "Bash(# Check if there''s a conversation log that has the file contents ls -la \"\"/Users/yaronamor/.claude/projects/-Users-yaronamor-Documents-yaronamor-vault-sol/\"\")",
+      "Bash(# Find the previous session that had all the files ls -lt \"\"/Users/yaronamor/.claude/projects/-Users-yaronamor-Documents-yaronamor-vault-sol/\"\"*.jsonl)",
+      "Bash(BLOG_SRC=\"$HOME/Downloads\")",
+      "Bash(BLOG_DST=\"$HOME/Desktop/sol-deploy-temp/assets/blog\")",
+      "Bash(sips -s format jpeg:*)",
+      "Bash(sips:*)",
+      "Bash(git add:*)",
+      "Bash(git hash-object:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(for f in collective-hero brain-sync sufi-dhikr hasidic-niggun taize heartbeats sound-field)",
+      "Bash(do echo -n \"$f.jpg: repo=\")",
+      "Bash(done)",
+      "Bash(# Extract file paths and contents from the most recent large session log # The 5d353946 session from today \\(42MB\\) should have all file reads grep -o ''\"\"file_path\"\":\"\"[^\"\"]*\"\"'' \"\"/Users/yaronamor/.claude/projects/-Users-yaronamor-Documents-yaronamor-vault-sol/5d353946-e463-4e88-a938-fbce3cef32bd.jsonl\"\")",
+      "Bash(rsync:*)",
+      "Bash(find:*)",
+      "Bash(test:*)",
+      "Bash(du -sh:*)",
+      "Bash(# Search ALL session logs for missing agent files\npython3 << 'PYEOF'\nimport json, os, re, glob\n\nSOL_DIR = \"/Users/yaronamor/Documents/yaronamor-vault/sol\"\nLOG_DIR = \"/Users/yaronamor/.claude/projects/-Users-yaronamor-Documents-yaronamor-vault-sol\"\n\n# Get all session logs\nall_logs = sorted\\(glob.glob\\(os.path.join\\(LOG_DIR, \"*.jsonl\"\\)\\), key=os.path.getmtime, reverse=True\\)\n\ntargets = [\n    'A-agents/copywriter-agent.md',\n    'A-agents/researcher-agent.md', \n    'A-agents/cto-agent.md',\n    'A-agents/producer-agent.md',\n    'A-agents/board-agent.md',\n    'B-brain/references/writing-samples/sample-01.md',\n    'B-brain/references/writing-samples/sample-02.md',\n    'B-brain/references/writing-samples/sample-03.md',\n]\n\ndef strip_line_numbers\\(text\\):\n    lines = text.split\\('\\\\n'\\)\n    cleaned = []\n    for line in lines:\n        m = re.match\\(r'^\\\\s*\\\\d+[\\\\t→]\\(.*\\), line\\)\n        if m:\n            cleaned.append\\(m.group\\(1\\)\\)\n        else:\n            cleaned.append\\(line\\)\n    return '\\\\n'.join\\(cleaned\\)\n\nfound = {}\n\nfor log_path in all_logs:\n    log_name = os.path.basename\\(log_path\\)\n    if all\\(t in found for t in targets\\):\n        break\n    \n    with open\\(log_path, 'r', errors='replace'\\) as f:\n        pending_reads = {}\n        for line in f:\n            try:\n                obj = json.loads\\(line\\)\n            except:\n                continue\n            msg = obj.get\\('message', {}\\)\n            content = msg.get\\('content', []\\)\n            if isinstance\\(content, list\\):\n                for item in content:\n                    if not isinstance\\(item, dict\\):\n                        continue\n                    if item.get\\('type'\\) == 'tool_use' and item.get\\('name'\\) == 'Read':\n                        tool_id = item.get\\('id', ''\\)\n                        fp = item.get\\('input', {}\\).get\\('file_path', ''\\)\n                        if fp.startswith\\(SOL_DIR\\):\n                            rel = fp[len\\(SOL_DIR\\)+1:]\n                            if rel in targets and rel not in found:\n                                pending_reads[tool_id] = rel\n                    if item.get\\('type'\\) == 'tool_result':\n                        tool_id = item.get\\('tool_use_id', ''\\)\n                        if tool_id in pending_reads:\n                            rel = pending_reads[tool_id]\n                            result = item.get\\('content', ''\\)\n                            if isinstance\\(result, str\\) and len\\(result\\) > 50:\n                                found[rel] = strip_line_numbers\\(result\\)\n                                print\\(f\"Found {rel} in {log_name} \\({len\\(result\\)} chars\\)\"\\)\n\n# Write found files\nfor rel, content in found.items\\(\\):\n    full_path = os.path.join\\(SOL_DIR, rel\\)\n    os.makedirs\\(os.path.dirname\\(full_path\\), exist_ok=True\\)\n    with open\\(full_path, 'w'\\) as f:\n        f.write\\(content\\)\n    print\\(f\"Wrote: {rel}\"\\)\n\nmissing = [t for t in targets if t not in found]\nif missing:\n    print\\(f\"\\\\nStill missing: {missing}\"\\)\nelse:\n    print\\(\"\\\\nAll target files recovered!\"\\)\nPYEOF)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(tmutil latestbackup:*)",
+      "Bash(tmutil status:*)",
+      "Bash(sort:*)",
+      "Bash(ffprobe:*)",
+      "Bash(python3:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(git init:*)"
+    ]
+  }
+}
