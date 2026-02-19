@@ -1,37 +1,32 @@
 # Active Task
 
-> Blog post #3: Science Meets Buddhism
+> Blog #3 illustrations - awaiting Yaron's direction
 
 ---
 
 ## Request
-"אוקי אני רוצה כתבת בלוג חדשה על בסיס הקובץ המדע פוגש את הבודהיזם שהכנסתי לך בתקיית מוח"
+איורים לבלוג "כשהמדע פוגש את הבודהיזם"
 
 ## Current Step
-Dispatching Researcher (fact-check) + Copywriter (draft) in parallel
+Proposing illustration concepts to Yaron
 
 ## Done
-- Read CLAUDE.md, blog-post-workflow.md, voice-dna.md, icp-profile.md
-- Read first blog post as style reference
-- Created output directory
-- Updated session state
+- Blog text written, fact-checked, Gatekeeper approved, smoothed, Yaron approved
+- Learnings saved to learning-log.md
 
 ## Next
-- Gatekeeper review (fact-check + voice)
-- Corrections loop if needed
-- Present to Yaron in chat
+- Yaron chooses illustration direction
+- Generate illustrations via Gemini Nano Banana Pro in Chrome
+- Integrate into blog HTML
 
 ## Blocking
 (none)
 
 ## Key Files
-- Source: B-brain/data/המדע פוגש את הבודהיזם.docx (content pasted in chat)
-- Output: O-output/03-blog-science-buddhism/
-- Reference: O-output/02-blog-sound-meditation/final-blog-post.md
+- Final text: O-output/03-blog-science-buddhism/final-blog-post.md
+- Research: O-output/03-blog-science-buddhism/research-data.md
 
 ## Agent States
 | Agent | Status | Task |
 |-------|--------|------|
-| Researcher | dispatching | Fact-check document sources |
-| Copywriter | dispatching | Write Mode C blog post |
-| Gatekeeper | pending | Review after writing |
+| Illustrator | pending | Awaiting concept approval |

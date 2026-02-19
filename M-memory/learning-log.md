@@ -77,6 +77,34 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-19 - Blog #3: Science Meets Buddhism - Writing Learnings
+
+**What happened:** Third blog post, Mode C (analytical-journalistic). Source document was Yaron's Hebrew research paper on meditation neuroscience. Full workflow: fact-check -> copywriter -> gatekeeper -> 6 fixes -> smoothing pass.
+
+**Key learnings:**
+
+1. **Academic references kill the magazine feel.** "בשנת 2007 פרסם X ב-Y" repeated 5 times reads like a term paper. Fix: name the finding, not the paper. "ממצא אחר חשף ש..." instead of "ב-2011 פרסם ברוואר ב-PNAS...". Full citations go in the sources list at the bottom.
+
+2. **Smoothing pass is a separate step.** First draft gets the facts and structure right. Second pass (after Gatekeeper) removes the academic scaffolding. Don't try to do both at once.
+
+3. **Gatekeeper surgical fixes work well.** 6 factual corrections applied without touching structure or voice. Key: "fix only X, Y, Z - change nothing else." This kept the Copywriter's voice intact.
+
+4. **Fact-checking without a separate agent works.** When API limits hit, doing WebSearch directly was faster than waiting. All 11 claims verified. Consider this as default for Mode C posts with academic sources.
+
+5. **Hook structure:** Opening with a specific dramatic moment (Dalai Lama at SfN 2005, scientists petitioning against him) then zooming out works for Mode C. Tension first, context second.
+
+6. **50/50 balance matters.** Yaron's source was ~70% science. The blog needed equal weight for the Buddhist methodology side. Added Kalama Sutta, Abhidharma, McMindfulness critique to balance.
+
+**Template for Mode C blog posts:**
+- Hook: specific dramatic moment with tension
+- Context: historical background that explains the hook
+- Evidence: findings presented as narrative, not citations
+- Counterweight: honest limitations and criticism
+- Synthesis: both sides meeting
+- Open ending: question, not answer
+
+---
+
 ## 2026-02-19 - Blog Post HTML/CSS Template (Desktop Typography Fix)
 
 **What happened:** Fixed desktop typography in both blog posts. Mobile was perfect, desktop font was too small and hard to read. Two issues found: (1) font-size too small (18px -> 20px), (2) font-weight 300 (light) on washi background = hard to read.
