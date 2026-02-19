@@ -42,7 +42,10 @@
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault status)",
       "mcp__gemini__gemini-analyze-document",
       "Bash(textutil:*)",
-      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault rev-parse:*)"
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault rev-parse:*)",
+      "Bash(# The image was uploaded in the conversation - let me check the clipboard/recent files find /Users/yaronamor -maxdepth 2 -newer /Users/yaronamor/tmp-deploy/sol-therapy-deploy/assets/events/gallery-wide-bottom.mp4 -name \"\"*.png\"\" -o -name \"\"*.jpg\"\" -o -name \"\"*.jpeg\"\")",
+      "Bash(# Let me check if the image from the conversation was saved somewhere accessible # The image was pasted directly in chat - I need to find where Claude Code stores uploaded images find /tmp -name \"\"*.png\"\" -newer /Users/yaronamor/tmp-deploy/sol-therapy-deploy/assets/events/gallery-wide-bottom.mp4)",
+      "Bash(# Check recent files in common upload locations find /Users/yaronamor/Desktop /Users/yaronamor/Downloads -maxdepth 1 -name \"\"*.png\"\" -newer ~/tmp-deploy/sol-therapy-deploy/assets/events/gallery-wide-bottom.mp4)"
     ]
   }
 }
