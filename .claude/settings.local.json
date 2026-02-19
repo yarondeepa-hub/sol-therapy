@@ -49,7 +49,9 @@
       "Bash(magick identify:*)",
       "Bash(magick:*)",
       "Bash(lsof:*)",
-      "Bash(identify:*)"
+      "Bash(identify:*)",
+      "Bash(md5:*)",
+      "Bash(ps:*)"
     ]
   }
 }
