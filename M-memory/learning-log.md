@@ -77,6 +77,96 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-19 - Blog Post HTML/CSS Template (Desktop Typography Fix)
+
+**What happened:** Fixed desktop typography in both blog posts. Mobile was perfect, desktop font was too small and hard to read. Two issues found: (1) font-size too small (18px -> 20px), (2) font-weight 300 (light) on washi background = hard to read.
+
+**Blog CSS Architecture Template (for all future blog posts):**
+
+### Design Tokens (:root)
+```css
+:root {
+    --body-size: clamp(0.9375rem, 0.45vw + 0.82rem, 1.125rem);
+    --body-lh: 1.65;
+    --measure: 62ch;
+    --h2-size: clamp(1.35rem, 1vw + 1rem, 1.75rem);
+    /* Colors */
+    --washi: #F2EAD3;
+    --green-dark: #3B514B;
+    --dark: #1a1a1a;
+    --ink: rgba(0,0,0,0.85);
+}
+```
+
+### Desktop Override (@media min-width: 64rem)
+```css
+@media (min-width: 64rem) {
+    .nav { height: 60px; }
+    :root {
+        --body-size: 1.25rem;      /* flat, not clamp */
+        --body-lh: 1.75;           /* more spacious */
+        --measure: 66ch;           /* wider reading */
+        --h2-size: 1.95rem;        /* larger headings */
+    }
+    .article-body { font-weight: 400; }  /* regular, not light */
+    .pull-quote { font-size: 1.85rem; }
+    .article-hero__deck { font-size: 1.2rem; line-height: 1.7; }
+}
+```
+
+### Font Stack
+- **Body:** Heebo (weight 300 mobile, 400 desktop)
+- **Display/Headings:** Masada
+- **Section markers:** Hadassah Friedlaender
+- **English text:** Inter
+- **Meta/code:** DM Mono
+
+### Layout Structure
+- `.article-grid` - 3-column CSS grid (1fr min(var(--measure),90%) 1fr)
+- `.article-body` - main text column
+- `.section-marker` - decorative section dividers
+- `.pull-quote` - large quote blocks
+
+### Section Transitions
+- `.transition--washi-dark` - gradient from washi to dark
+- `.transition--dark-washi` - gradient from dark to washi
+- Uses `background: linear-gradient(to bottom, ...)` with bokashi style
+
+### Image Integration (Sumi-e Style)
+- `.sumi-figure` with `mix-blend-mode: multiply` (light bg) or `screen` (dark bg)
+- Radial-gradient masks for soft edges
+- `.sumi-figure__img` with object-fit: cover
+
+### Animations
+- `.reveal` class with IntersectionObserver
+- `opacity: 0; transform: translateY(30px)` -> `opacity: 1; transform: translateY(0)`
+- `.stagger` for sequential children reveal
+- `transition: opacity 0.8s ease, transform 0.8s ease`
+
+### Key Rules
+1. **Mobile breakpoints: DON'T TOUCH** - clamp() handles mobile perfectly
+2. **Desktop overrides use FLAT values** - no clamp() in the 64rem media query
+3. **font-weight 400 on desktop** is critical for readability on washi background
+4. **Color contrast:** #3B514B on #F2EAD3 with weight 300 = bad. Weight 400 = good.
+5. **Template files:** blog-collective-sync.html (1491 lines) and blog-sound-meditation.html (1466 lines) in O-output/website-sol-therapy/
+
+### Deployment
+- GitHub Pages: yarondeepa-hub.github.io/sol-therapy/
+- Deploy: clone repo to temp dir, copy files, commit, push, cleanup
+- Local git in sol/ is gone (rsync incident) - deploy via temp clone only
+
+---
+
+## 2026-02-19 - Illustrations via Gemini Nano Banana Pro in Chrome
+
+**What happened:** Replaced all 7 blog illustrations (both posts) with images generated via Gemini in Chrome browser using Nano Banana Pro model.
+
+**New iron rule:** ALL illustrations are created in Chrome browser via gemini.google.com using Nano Banana Pro model. NEVER use Replicate/Flux for illustration generation. This overrides the previous Replicate-based workflow.
+
+**Process:** Chrome MCP -> navigate to gemini.google.com -> generate images -> download -> integrate into blog HTML.
+
+---
+
 ## 2026-02-14 - New Agent: The Board (External Advisory Council)
 
 **What happened:** Created a new agent - "The Board" - an External Advisory Council providing strategic guidance to the CEO.

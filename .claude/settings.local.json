@@ -35,7 +35,14 @@
       "Bash(ffmpeg:*)",
       "Bash(git init:*)",
       "Bash(git rm:*)",
-      "Bash(printf:*)"
+      "Bash(printf:*)",
+      "Bash(gdown:*)",
+      "Bash(kill:*)",
+      "Bash(git pull:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault status)",
+      "mcp__gemini__gemini-analyze-document",
+      "Bash(textutil:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault rev-parse:*)"
     ]
   }
 }

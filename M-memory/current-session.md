@@ -9,8 +9,8 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-19 |
-| בקשה מקורית | System restoration after file corruption + git safety setup |
-| סטטוס | **IN PROGRESS - system check and repairs** |
+| בקשה מקורית | Desktop typography fix + save blog template |
+| סטטוס | **COMPLETE** |
 
 ---
 
