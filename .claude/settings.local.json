@@ -47,7 +47,9 @@
       "Bash(# Let me check if the image from the conversation was saved somewhere accessible # The image was pasted directly in chat - I need to find where Claude Code stores uploaded images find /tmp -name \"\"*.png\"\" -newer /Users/yaronamor/tmp-deploy/sol-therapy-deploy/assets/events/gallery-wide-bottom.mp4)",
       "Bash(# Check recent files in common upload locations find /Users/yaronamor/Desktop /Users/yaronamor/Downloads -maxdepth 1 -name \"\"*.png\"\" -newer ~/tmp-deploy/sol-therapy-deploy/assets/events/gallery-wide-bottom.mp4)",
       "Bash(magick identify:*)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "Bash(lsof:*)",
+      "Bash(identify:*)"
     ]
   }
 }

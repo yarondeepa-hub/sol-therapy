@@ -1,42 +1,35 @@
 # Active Task
 
-> Blog #3 illustrations - generating via Gemini in Chrome
+> Update main website blog section with all 3 real blog posts
 
 ---
 
 ## Request
-5-7 איורים לבלוג "כשהמדע פוגש את הבודהיזם"
+עדכן את האתר הראשי סקשן הבלוג עם כתבות הבלוג האמתיות 1+2+3
 
 ## Current Step
-Generating illustration 1/7 via Gemini Nano Banana Pro in Chrome
+Reading main website and locating all 3 blog posts
 
 ## Done
-- Blog text approved by Yaron
-- Illustration concepts approved (7 concepts)
-- Learnings saved
+(starting)
 
 ## Next
-- Generate all 7 illustrations in Chrome via Gemini
-- Save to O-output/03-blog-science-buddhism/images/
-- Integrate into blog HTML
+- Read main site HTML blog section
+- Find all 3 blog HTML files
+- Update blog section with real posts
+- Verify in Chrome
+- Git commit
 
 ## Blocking
 (none)
 
 ## Key Files
-- Final text: O-output/03-blog-science-buddhism/final-blog-post.md
-- Images dir: O-output/03-blog-science-buddhism/images/
-
-## Illustration Plan
-1. Hero - גלימה כתומה מול קהל (כתם כתום על מונוכרום)
-2. הטלסקופ של התודעה - טלסקופ מופנה פנימה
-3. דהרמסאלה 1987 - שלוש דמויות סביב שולחן
-4. גלי גמא - מוח חצי אנטומי חצי מנדלה
-5. הפער - מסך EEG מול דמות מדיטציה
-6. McMindfulness - סמארטפון עם אייקון מדיטציה
-7. סגירה - שתי דמויות משני צדדים של שולחן
+- Main site: O-output/website-sol-therapy/index.html
+- Blog 1: ?
+- Blog 2: ?
+- Blog 3: O-output/website-sol-therapy/blog-science-buddhism.html
 
 ## Agent States
 | Agent | Status | Task |
 |-------|--------|------|
-| Illustrator | active | Generating in Chrome/Gemini |
+| CTO | active | Updating blog section |
