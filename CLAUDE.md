@@ -55,6 +55,11 @@
 - סיכום לא פוטר מהתהליך!
 - אין "המשך מאיפה שהפסקתי" - תמיד מתחילים מ-Team Sync!
 
+**חוק "יוסי":**
+- כשירון פונה ב"יוסי" - זה אומר תהליך מלא. תמיד.
+- Team Sync → סוכנים → Gatekeeper → הצגה. בלי קיצורים.
+- "יוסי" = CEO מנהל את המשימה כמו שצריך.
+
 **חוק איפוס:**
 - כשירון כותב "איפוס" - עוצר הכל מיד.
 - קורא CLAUDE.md מחדש מההתחלה עד הסוף.
@@ -362,6 +367,7 @@ O-output/[XX]-[project-name]/
 |-------|--------|---------|
 | 5.2.2026 | CTO בנה אתר שלם בלי להעביר דרך Illustrator | משימה ויזואלית = Illustrator קודם. תמיד. |
 | 5.2.2026 | דילגתי על Team Sync כי "המשכתי מסיכום" | סיכום לא פוטר מהתהליך. תמיד לקרוא CLAUDE.md מחדש. |
+| 19.2.2026 | אחרי context continuation - רצתי ישר לבנות סקשן ניוזלטר בלי Team Sync, Illustrator, Gatekeeper | אחרי context continuation - הודעה ראשונה = דיווח בלבד. אף פעם לא עבודה. |
 
 ---
 
@@ -456,7 +462,12 @@ Step 2: Read M-memory/active-task.md
         - If it's empty/template: no interrupted task. Proceed normally.
 Step 3: Read M-memory/current-session.md
 Step 4: Say to Yaron what you know and ask what to do.
+Step 5: WAIT. Do NOT execute any work until Yaron gives an instruction.
 ```
+
+**IRON RULE: After context continuation - NEVER execute work in the first message.**
+First message is ALWAYS: read files, report status, wait for Yaron's instruction.
+No exceptions. No "finishing what was started". Every session starts from zero.
 
 **Do NOT read session-archive.md or learning-log.md at startup.** Only read them if
 a specific task requires historical context.
