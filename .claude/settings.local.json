@@ -33,7 +33,8 @@
       "Bash(ffprobe:*)",
       "Bash(python3:*)",
       "Bash(ffmpeg:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
