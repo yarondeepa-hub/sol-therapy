@@ -1224,47 +1224,6 @@
         /* ============================================
            VIDEO MOMENT
         ============================================ */
-        .video-moment {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            min-height: 100svh;
-            background: var(--color-dark-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-m) var(--gutter);
-        }
-
-        .video-moment__container {
-            width: 100%;
-            max-width: 960px;
-            position: relative;
-        }
-
-        .video-moment video {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            background: #000;
-        }
-
-        .video-moment__sound-hint {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-micro);
-            color: var(--color-washi);
-            opacity: 0.4;
-            text-align: center;
-            margin-top: 1rem;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         /* ============================================
            MOSAIC GALLERY - Pure visual mood board
@@ -2105,26 +2064,6 @@
         </section>
 
         <!-- ========================================
-             VIDEO MOMENT
-        ======================================== -->
-
-        <section class="video-moment" id="video" aria-label="סרטון">
-            <div class="video-moment__container">
-                <video
-                    id="mainVideo"
-                    src="assets/events/between-frequencies.mp4"
-                    muted
-                    playsinline
-                    preload="metadata"
-                    controls
-                    poster="assets/events/dark-performance.jpg"
-                    aria-label="בין תדרים - סרטון סול תרפי"
-                ></video>
-                <button class="video-moment__sound-hint" id="soundToggle" aria-label="הפעלת שמע">לחצו להפעלת שמע</button>
-            </div>
-        </section>
-
-        <!-- ========================================
              PAST EVENTS CONDENSED
         ======================================== -->
 
@@ -2480,34 +2419,6 @@
             floatingObserver.observe(eventsSection);
         }
 
-        // ========================================
-        // VIDEO AUTOPLAY / PAUSE
-        // ========================================
-        const video = document.getElementById('mainVideo');
-        const soundToggle = document.getElementById('soundToggle');
-
-        if (video) {
-            const videoObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        video.play().catch(function() {
-                            // Autoplay blocked - that's fine
-                        });
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            videoObserver.observe(video);
-
-            if (soundToggle) {
-                soundToggle.addEventListener('click', function() {
-                    video.muted = !video.muted;
-                    soundToggle.textContent = video.muted ? 'לחצו להפעלת שמע' : 'לחצו להשתקה';
-                });
-            }
-        }
 
         // ========================================
         // DESKTOP PARALLAX (optional, GSAP)
