@@ -77,6 +77,16 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-19 - Gemini Image Generation: Click "Create image" First
+
+**What happened:** Tried to generate image by typing prompt in Gemini's regular text box. Wrong approach.
+
+**Correct flow:** Click the "Create image" button FIRST, then write the prompt. The button activates Gemini's image generation model (Nano Banana Pro) automatically - no need to select it from the model dropdown.
+
+**Saved as skill:** `T-tools/skills/gemini-image-skill/gemini-image-skill.md`
+
+---
+
 ## 2026-02-19 - Blog #3: Science Meets Buddhism - Writing Learnings
 
 **What happened:** Third blog post, Mode C (analytical-journalistic). Source document was Yaron's Hebrew research paper on meditation neuroscience. Full workflow: fact-check -> copywriter -> gatekeeper -> 6 fixes -> smoothing pass.

@@ -1,22 +1,23 @@
 # Active Task
 
-> Blog #3 illustrations - awaiting Yaron's direction
+> Blog #3 illustrations - generating via Gemini in Chrome
 
 ---
 
 ## Request
-איורים לבלוג "כשהמדע פוגש את הבודהיזם"
+5-7 איורים לבלוג "כשהמדע פוגש את הבודהיזם"
 
 ## Current Step
-Proposing illustration concepts to Yaron
+Generating illustration 1/7 via Gemini Nano Banana Pro in Chrome
 
 ## Done
-- Blog text written, fact-checked, Gatekeeper approved, smoothed, Yaron approved
-- Learnings saved to learning-log.md
+- Blog text approved by Yaron
+- Illustration concepts approved (7 concepts)
+- Learnings saved
 
 ## Next
-- Yaron chooses illustration direction
-- Generate illustrations via Gemini Nano Banana Pro in Chrome
+- Generate all 7 illustrations in Chrome via Gemini
+- Save to O-output/03-blog-science-buddhism/images/
 - Integrate into blog HTML
 
 ## Blocking
@@ -24,9 +25,18 @@ Proposing illustration concepts to Yaron
 
 ## Key Files
 - Final text: O-output/03-blog-science-buddhism/final-blog-post.md
-- Research: O-output/03-blog-science-buddhism/research-data.md
+- Images dir: O-output/03-blog-science-buddhism/images/
+
+## Illustration Plan
+1. Hero - גלימה כתומה מול קהל (כתם כתום על מונוכרום)
+2. הטלסקופ של התודעה - טלסקופ מופנה פנימה
+3. דהרמסאלה 1987 - שלוש דמויות סביב שולחן
+4. גלי גמא - מוח חצי אנטומי חצי מנדלה
+5. הפער - מסך EEG מול דמות מדיטציה
+6. McMindfulness - סמארטפון עם אייקון מדיטציה
+7. סגירה - שתי דמויות משני צדדים של שולחן
 
 ## Agent States
 | Agent | Status | Task |
 |-------|--------|------|
-| Illustrator | pending | Awaiting concept approval |
+| Illustrator | active | Generating in Chrome/Gemini |
