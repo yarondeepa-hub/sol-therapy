@@ -53,7 +53,13 @@
       "Bash(md5:*)",
       "Bash(ps:*)",
       "Bash(gh run list:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(chmod:*)",
+      "Bash(launchctl load:*)",
+      "Bash(launchctl list:*)",
+      "Bash(bash -n:*)",
+      "Bash(plutil -lint:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault log --oneline -5)"
     ]
   }
 }

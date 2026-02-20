@@ -8,54 +8,95 @@
 
 | שדה | ערך |
 |-----|-----|
-| תאריך | 2026-02-19 |
-| בקשה מקורית | כתבת בלוג חדשה על בסיס "המדע פוגש את הבודהיזם" |
-| סטטוס | **PAGE LIVE - awaiting Yaron's design feedback** |
+| תאריך | 2026-02-20 |
+| בקשה מקורית | אלמנט אנימציית שמות אמנים בסגנון aroke01 |
+| סטטוס | **DEPLOYED - commit 54f52a2** |
 
 ---
 
-## Session 55: Blog #3 - Science Meets Buddhism (19.02.2026)
+## Session 58: Artists Roll - aroke01-style Kinetic Typography (20.02.2026)
 
 ### מה בוצע:
 
-**1. Research & Fact-Check**
-- Verified 11 claims via WebSearch (all confirmed)
+**Full CEO Process ("yossi" triggered)**
 
-**2. Copywriter - Mode C Draft**
-- ~1,700 words, 6 sections, open ending
+**1. Team Sync Intake**
+- Analyzed: visual+technical task, animated artist names element
+- aroke01 style = kinetic typography, contemplative, "98% static, 2% alive"
+- Placement: between mosaic gallery and partners logos
 
-**3. Gatekeeper Review + Smoothing Pass**
-- All fixes applied, Yaron approved text
+**2. Illustrator Art Direction**
+- Recommended: museum credits wall aesthetic, Hadassah Friedlaender Light font
+- Vertical centered layout with generous spacing
+- Ink-bleed reveal on scroll, breathing opacity loop
+- Label: "ניגנו אצלנו" in editorial micro-typography
+- Dark background option for drama
 
-**4. Illustration Generation (7 sumi-e illustrations)**
-- All 7 generated via Gemini Nano Banana Pro in Chrome
-- Saved to O-output/03-blog-science-buddhism/images/
+**3. CTO Technical Analysis**
+- 3 options analyzed: Ink Condensation (SplitText chars), Slow Marquee, Breath Cycle
+- Recommended: Ink Condensation - best match for aroke01 kinetic typography
+- SplitText Hebrew confirmed working (no niqqud = no issues)
+- Performance plan: IntersectionObserver, mobile no-blur, SplitText revert
 
-**5. HTML Page Built**
-- Full blog page following design system from blog-collective-sync.html
-- CSS: washi background, sumi-figure blend modes, dark sections, scroll reveal
-- Served at http://localhost:8766/blog-science-buddhism.html
+**4. Merge + Implementation**
+- CTO's "one name at a time" Ink Condensation approach chosen
+- Dark background (#1a1a1a) with washi text (#F2EAD3) for contrast
+- Hadassah Friedlaender Light (300) at --type-manifesto size
+- Animation phases: condense (0.55s stagger 0.08), hold (2.8s), dissolve (1s), breath (0.6s)
+- Counter in DM Mono at 0.2 opacity
+- Reduced-motion: all names shown as static list
+- Mobile: no blur, smaller type
 
-**6. Yaron's Initial Feedback**
-- Filters look cool, loading is slow (images 8-9MB each)
-- Pending: detailed design feedback, image compression
+**5. Gatekeeper: APPROVED round 1**
+- Zero blocking issues
+- All 10 names verified correct (including correcting "תיחזקאל" to "יחזקאל")
+- Voice, brand, accessibility, performance all pass
+
+### Artists:
+התזמורת הקאמרית, אסף אמדורסקי, יחזקאל רז, שלומי שב, עמרי סמדר, רן סלוין, יוסי פיין, רד אקסס, אנה הלטה, נעה ארגוב
 
 ### Git Log:
 ```
-a0b4973 - checkpoint before blog post
-31ea311 - Blog #3: final version
-0378eaa - checkpoint before smoothing
-b24a61a - smoothed academic references
-ce415d4 - add 7 sumi-e illustrations
-8254891 - add blog 3 HTML page with illustrations
+54f52a2 - Add artists-roll section: aroke01-style ink condensation kinetic typography
 ```
 
 ### Agent Status Board:
 
 | Agent | Status | Output |
 |-------|--------|--------|
-| Researcher | complete | research-data.md |
-| Copywriter | complete | final-blog-post.md |
-| Gatekeeper | complete | gatekeeper-review.md |
-| Illustrator | complete | 7 illustrations |
-| CTO | waiting | blog-science-buddhism.html - awaiting feedback |
+| Team Sync | complete | intake + merge |
+| Illustrator | complete | art direction (placement, font, animation, colors) |
+| CTO | complete | technical analysis + implementation |
+| Gatekeeper | complete | APPROVED round 1 |
+
+---
+
+## Session 57: Dissolve Fix + Blog Sumi-e Integration (20.02.2026)
+
+### מה בוצע:
+
+**Full CEO Process ("yossi" triggered)**
+
+**1. Team Sync Intake**
+- Analyzed 2 issues from Yaron's feedback
+- Issue 1: mosaic-partners dissolve still broken despite multiple prior fixes
+- Issue 2: blog illustrations look "pasted on"
+
+**2. Illustrator + CTO Parallel Dispatch**
+- Both agents identified root causes independently
+- Merged recommendations with consistent conclusions
+
+**3. Issue 1 - Mosaic Dissolve Fix (index.html)**
+- Root cause: one-directional dissolve
+- Added .mosaic::after bottom fade, increased padding, deeper overlap
+
+**4. Issue 2 - Blog Illustrations (3 files)**
+- Root cause: contain:paint clipping blend mode
+- Softened mask, added grain overlay, improved filters
+
+**5. Gatekeeper: APPROVED round 1**
+
+### Git Log:
+```
+0269a3d - fix: mosaic-partners dissolve + blog sumi-e integration
+```
