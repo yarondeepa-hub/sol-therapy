@@ -54,12 +54,20 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - בדוק אם learning-log מכיל לקחים שלא הוטמעו בסוכנים
 - בדוק אם connected-tools.md מעודכן
 
-### 5. הצעות לשיפור
+### 5. Learning Integration (Evening Sync)
+- קרא את דוח הבוקר: T-tools/learning/morning-reports/'"$DATE"'-scout.md (אם קיים)
+- סקור: האם משהו מהדוח רלוונטי למשימות של היום?
+- בדוק: האם היו Tool Cards חדשים שנוצרו? האם נוצלו במשימות?
+- בדוק: האם היו Trigger Experiments? מה התוצאות?
+- רשום: אילו תגליות צריכות להיכנס לתכנון של מחר
+- הצע: שיפור אחד לתהליך הלמידה עצמו (meta-learning)
+
+### 6. הצעות לשיפור
 - מה עובד טוב ולמה
 - מה לא עובד ומה לשנות
 - האם יש כלים/תהליכים חדשים שכדאי לשקול
 
-### 6. שמור את הדוח
+### 7. שמור את הדוח
 שמור את הדוח כקובץ: M-memory/daily-reports/'"$DATE"'-daily-review.md
 
 הפורמט:
@@ -70,6 +78,12 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 
 ## Open Items
 [Pending items]
+
+## Learning Sync
+- Morning Scout highlights: [top finding from morning report]
+- Tool Cards created today: [count and names]
+- Relevance to today work: [how morning discoveries connected to actual tasks]
+- Learning process health: [is the engine producing value or noise?]
 
 ## Claude Code Updates
 [New features or "No updates"]

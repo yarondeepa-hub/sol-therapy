@@ -16,6 +16,10 @@
    - חפש את הקובץ האחרון ב-M-memory/daily-reports/ (לפי תאריך)
    - בדוק אם קיים קובץ .seen לאותו דוח (למשל 2026-02-19-daily-review.md.seen)
    - אם יש דוח בלי .seen - הצג את הדוח המלא לירון בתחילת השיחה, וצור קובץ .seen
+4b. בדוק אם יש דוח Morning Scout שירון לא ראה:
+   - חפש את הקובץ האחרון ב-T-tools/learning/morning-reports/ (לפי תאריך, סיומת -scout.md)
+   - בדוק אם קיים קובץ .seen לאותו דוח
+   - אם יש דוח בלי .seen - הצג סיכום קצר (top finding + surprise slot) וצור קובץ .seen
 5. אם active-task.md לא ריק - דווח לירון: "משימה קודמת נקטעה: [תיאור]. להמשיך או משימה חדשה?"
 6. אם ריק - אמור לירון: "קראתי את ההנחיות. במה אוכל לעזור?"
 ```
@@ -213,6 +217,9 @@ git add -A && git commit -m "[תיאור קצר של מה נעשה]"
 | `M-memory/session-archive.md` | היסטוריה - קרא רק כשצריך פרטים ספציפיים |
 | `M-memory/learning-log.md` | מה למדנו - קרא רק כשצריך |
 | `M-memory/illustrator-taste-profile.md` | **הטעם הויזואלי של ירון - חובה לפני כל איור** |
+| `T-tools/learning/scout-config.md` | **Learning Engine - ציונים, מקורות, שאלות מסתובבות** |
+| `T-tools/learning/tool-cards/illustrator/` | **כרטיסי כלי - Illustrator קורא 3 אחרונים לפני כל משימה** |
+| `T-tools/learning/tool-cards/cto/` | **כרטיסי כלי - CTO קורא 3 אחרונים לפני כל משימה** |
 
 ---
 
@@ -320,6 +327,70 @@ Team Sync מעדכן את current-session.md עם:
 | **Board** | דירקטוריון - ייעוץ אסטרטגי | **כש-CEO צריך עזרה/ייעוץ, או כשירון קורא ל-Board** |
 | **Producer** | הפקה | אירועים, deals, לוגיסטיקה |
 | **Gatekeeper** | בקרת איכות | **תמיד אחרון לפני הצגה** |
+
+---
+
+## Learning Engine - למידה עצמית יומית
+
+> **המנגנון שגורם לסוכנים להתפתח כל יום. לא ניוזלטר - סקרנות עם שיניים.**
+
+### שתי פעימות יומיות
+
+| שעה | מה | סקריפט |
+|-----|-----|--------|
+| **08:30** | **Morning Scout** - 3 תגליות Illustrator, 3 CTO, 1 cross-pollination, 1 surprise | `T-tools/scripts/morning-scout.sh` |
+| **21:00** | **Evening Review** - אינטגרציה: מה מהבוקר רלוונטי למשימות? | `T-tools/scripts/daily-review.sh` |
+
+### Adoption Score - סף כניסה
+
+כל תגלית מקבלת ציון 0-25 (5 פרמטרים x 0-5):
+- **Brand Fit** / **Leverage** / **Repeatability** / **Workflow Export** / **Risk/License**
+- **19+** = Trigger Experiment (ניסוי מיקרו היום)
+- **16-18** = Weekly Lab Queue (ניסוי ביום שישי)
+- **10-15** = Parking Lot (נבדק שוב בעוד חודש)
+- **0-9** = Skip
+
+### Tool Cards - הידע שבידיים
+
+כל תגלית שעוברת סף הופכת ל-Tool Card (`T-tools/learning/tool-cards/`).
+Tool Card = לא מאמר. מתכון. Steps. Pitfalls. "How we use it at Soul Therapy".
+**סוכנים קוראים 3 Tool Cards אחרונים לפני כל משימה** (מוגדר ב-dispatch prompts).
+
+### Cross-Pollination - חובה יומית
+
+כל דוח בוקר חייב לכלול פריט אחד שמקורו **לא** בעולם ה-AI/טכנולוגיה.
+קרמיקה, אדריכלות, מוזיקה, ביולוגיה, טקסטיל, קולנוע...
+עם תרגום קונקרטי: "איך זה הופך לפרומפט/טכניקה/קומפוזיציה שלנו"
+
+### Surprise Slot - חובה יומית
+
+דבר אחד שלא היה מגיע מקריאת חדשות AI. שגרם לסקאוט לעצור.
+
+### קבצים
+
+```
+T-tools/learning/
+  scout-config.md              # מוח המנגנון - ציונים, מקורות, 30 שאלות מסתובבות
+  tool-card-template.md        # תבנית Tool Card
+  recipe-template.md           # תבנית Recipe
+  parking-lot.md               # פריטים 10-15 - נבדקים חודשית
+  tool-cards/illustrator/      # כרטיסי כלי - מאייר
+  tool-cards/cto/              # כרטיסי כלי - CTO
+  recipes/illustrator/         # מתכוני יצירה
+  recipes/cto/                 # מתכוני קוד
+  weekly-lab/                  # דוחות ניסוי שבועיים
+  morning-reports/             # דוחות בוקר יומיים
+```
+
+### launchd
+
+```bash
+# להפעלה:
+launchctl load ~/Library/LaunchAgents/com.sol.morning-scout.plist
+
+# לכיבוי:
+launchctl unload ~/Library/LaunchAgents/com.sol.morning-scout.plist
+```
 
 ---
 
