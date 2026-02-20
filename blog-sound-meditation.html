@@ -540,39 +540,56 @@
         .sumi-figure {
             position: relative;
             overflow: visible;
-            contain: layout style paint;
+            contain: layout style;
         }
 
         .sumi-figure img {
             will-change: opacity, transform;
             mix-blend-mode: multiply;
-            filter: saturate(0.6) sepia(0.12);
+            filter: saturate(0.4) sepia(0.18) brightness(1.03) contrast(0.92);
             mask-image: radial-gradient(
-                ellipse 92% 88% at 50% 50%,
-                black 40%,
-                rgba(0,0,0,0.7) 65%,
-                rgba(0,0,0,0.2) 85%,
-                transparent 100%
+                ellipse 95% 90% at 50% 50%,
+                black 20%,
+                rgba(0,0,0,0.6) 40%,
+                rgba(0,0,0,0.3) 60%,
+                rgba(0,0,0,0.1) 80%,
+                transparent 95%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 92% 88% at 50% 50%,
-                black 40%,
-                rgba(0,0,0,0.7) 65%,
-                rgba(0,0,0,0.2) 85%,
-                transparent 100%
+                ellipse 95% 90% at 50% 50%,
+                black 20%,
+                rgba(0,0,0,0.6) 40%,
+                rgba(0,0,0,0.3) 60%,
+                rgba(0,0,0,0.1) 80%,
+                transparent 95%
             );
+        }
+
+        /* Paper grain overlay - ink absorbed into washi fiber */
+        .sumi-figure::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.1;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
         }
 
         /* Ink-wash edge overlay - dissolves into paper */
         .sumi-figure::after {
             content: '';
             position: absolute;
-            inset: -8%;
+            inset: -12%;
             pointer-events: none;
             background: radial-gradient(
-                ellipse 58% 52% at 50% 50%,
-                transparent 35%,
-                var(--color-washi) 100%
+                ellipse 65% 60% at 50% 50%,
+                transparent 25%,
+                rgba(242, 234, 211, 0.3) 45%,
+                rgba(242, 234, 211, 0.7) 65%,
+                var(--color-washi) 85%
             );
             z-index: 1;
             mix-blend-mode: normal;
@@ -581,28 +598,32 @@
         /* Dark section sumi-e */
         .sumi-figure--dark img {
             mix-blend-mode: screen;
-            filter: saturate(0.3) brightness(0.8) sepia(0.08);
+            filter: saturate(0.25) brightness(0.75) sepia(0.06) contrast(0.88);
             mask-image: radial-gradient(
-                ellipse 90% 85% at 50% 50%,
-                black 35%,
-                rgba(0,0,0,0.6) 60%,
-                rgba(0,0,0,0.15) 82%,
-                transparent 100%
+                ellipse 93% 88% at 50% 50%,
+                black 18%,
+                rgba(0,0,0,0.55) 38%,
+                rgba(0,0,0,0.2) 60%,
+                rgba(0,0,0,0.05) 80%,
+                transparent 95%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 90% 85% at 50% 50%,
-                black 35%,
-                rgba(0,0,0,0.6) 60%,
-                rgba(0,0,0,0.15) 82%,
-                transparent 100%
+                ellipse 93% 88% at 50% 50%,
+                black 18%,
+                rgba(0,0,0,0.55) 38%,
+                rgba(0,0,0,0.2) 60%,
+                rgba(0,0,0,0.05) 80%,
+                transparent 95%
             );
         }
 
         .sumi-figure--dark::after {
             background: radial-gradient(
-                ellipse 58% 52% at 50% 50%,
-                transparent 35%,
-                var(--color-dark) 100%
+                ellipse 65% 60% at 50% 50%,
+                transparent 25%,
+                rgba(26, 26, 26, 0.3) 45%,
+                rgba(26, 26, 26, 0.7) 65%,
+                var(--color-dark) 85%
             );
         }
 
@@ -633,7 +654,7 @@
             margin: 0.5rem 0 var(--space-s) var(--space-m);
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .figure--inline-float img {
@@ -641,12 +662,27 @@
             width: 100%;
             height: auto;
             object-fit: contain;
+            opacity: 0.88;
+            mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
         }
 
-        /* Kill the ::after dissolve bleed on floated figures */
+        /* Restore ::after dissolve for proper feathering on floats */
         .figure--inline-float::after,
         .figure--inline-float-dark::after {
-            inset: 0;
+            inset: -5%;
         }
 
         .figure--inline-float figcaption {
@@ -668,7 +704,7 @@
             margin: 0.5rem var(--space-m) var(--space-s) 0;
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .figure--inline-float-dark img {
@@ -676,6 +712,21 @@
             width: 100%;
             height: auto;
             object-fit: contain;
+            opacity: 0.88;
+            mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
         }
 
         .figure--inline-float-dark figcaption {
