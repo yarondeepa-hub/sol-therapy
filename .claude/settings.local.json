@@ -78,7 +78,8 @@
       "Bash(/opt/homebrew/bin/ffprobe:*)",
       "Bash(# Let''s check what the captured frame looks like - get dimensions and basic info /opt/homebrew/bin/ffprobe -v quiet -show_streams /Users/yaronamor/tmp-deploy/sol-therapy-deploy/frames-tmp/frame_0000.png)",
       "Bash(node capture-text-layer.mjs:*)",
-      "Bash(# Install freetype for magick, or find alternative # Check if magick can use any system fonts magick -list font)"
+      "Bash(# Install freetype for magick, or find alternative # Check if magick can use any system fonts magick -list font)",
+      "Bash(gh api:*)"
     ]
   }
 }
