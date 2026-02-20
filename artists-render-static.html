@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920">
+    <title>Artists Static Render</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Hadassah Friedlaender';
+            src: url('fonts/HadassahFriedlaender-Light.otf') format('opentype');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            width: 1920px;
+            height: 800px;
+            overflow: hidden;
+            background: transparent;
+            font-family: 'Hadassah Friedlaender', 'Noto Serif Hebrew', serif;
+        }
+
+        .canvas {
+            width: 1920px;
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Label */
+        .label {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Noto Serif Hebrew', serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(200, 195, 185, 0.5);
+            letter-spacing: 0.2em;
+            text-align: center;
+        }
+
+        /* Names constellation */
+        .names-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 100px 60px;
+        }
+
+        .name-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 0;
+            max-width: 1400px;
+        }
+
+        .artist-name {
+            color: #F2EAD3;
+            font-weight: 300;
+            line-height: 1.6;
+            white-space: nowrap;
+            padding: 0 20px;
+        }
+
+        /* Size hierarchy */
+        .artist-name.size-lg { font-size: 52px; }
+        .artist-name.size-md { font-size: 44px; }
+        .artist-name.size-sm { font-size: 38px; }
+
+        /* Slight rotation variations */
+        .artist-name.rot-1 { transform: rotate(-0.8deg); }
+        .artist-name.rot-2 { transform: rotate(0.5deg); }
+        .artist-name.rot-3 { transform: rotate(-0.3deg); }
+
+        /* Opacity variations for depth */
+        .artist-name.depth-1 { opacity: 0.95; }
+        .artist-name.depth-2 { opacity: 0.75; }
+        .artist-name.depth-3 { opacity: 0.55; }
+
+        /* Separator dots */
+        .sep {
+            color: rgba(242, 234, 211, 0.2);
+            font-size: 28px;
+            padding: 0 12px;
+            align-self: center;
+        }
+
+        /* Vignette edges */
+        .vignette {
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 200px 80px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas" id="renderCanvas">
+        <!-- Label -->
+        <div class="label">ניגנו אצלנו</div>
+
+        <!-- Names constellation - static, fully visible -->
+        <div class="names-layer">
+            <div class="name-group">
+                <span class="artist-name size-lg depth-1 rot-2">התזמורת הקאמרית</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-md depth-2 rot-1">אסף אמדורסקי</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-sm depth-1 rot-3">יחזקאל רז</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-md depth-3 rot-2">שלומי שב</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-lg depth-1 rot-1">עמרי סמדר</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-sm depth-2 rot-3">רן סלוין</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-md depth-1 rot-2">יוסי פיין</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-lg depth-2 rot-1">רד אקסס</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-sm depth-1 rot-2">אנה הלטה</span>
+                <span class="sep">&middot;</span>
+                <span class="artist-name size-md depth-3 rot-3">נעה ארגוב</span>
+            </div>
+        </div>
+
+        <!-- Vignette -->
+        <div class="vignette"></div>
+    </div>
+</body>
+</html>
