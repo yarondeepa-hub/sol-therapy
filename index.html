@@ -635,6 +635,21 @@
             border-radius: clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0 0;
         }
 
+        /* Deeper overlap for descents into darkness */
+        .dissolve-from-light--deep {
+            margin-top: -10vh;
+        }
+
+        /* Mosaic: contain washi gradient within padding area */
+        .mosaic.dissolve-from-light::before {
+            height: min(12vh, var(--space-l));
+        }
+
+        /* Anchor scroll offset: compensate for negative margin overlap */
+        #events, #blog, #contact {
+            scroll-margin-top: 8vh;
+        }
+
         @media (max-width: 768px) {
             .dissolve-from-dark,
             .dissolve-from-light {
@@ -645,6 +660,16 @@
             }
             .dissolve-from-dark::before {
                 border-radius: clamp(6px, 1.5vw, 16px) clamp(6px, 1.5vw, 16px) 0 0;
+                height: 4vh;
+            }
+            .dissolve-from-light::before {
+                height: 8vh;
+            }
+            .dissolve-from-light--deep {
+                margin-top: -7vh;
+            }
+            #events, #blog, #contact {
+                scroll-margin-top: 5vh;
             }
         }
 
@@ -2039,7 +2064,7 @@
              EVENT 1 - UPCOMING - Pastoral Retreat
         ======================================== -->
 
-        <article class="event dissolve-from-light" id="events" aria-label="ריטריט סול תרפי - פסטורל">
+        <article class="event dissolve-from-light dissolve-from-light--deep" id="events" aria-label="ריטריט סול תרפי - פסטורל">
             <div class="event__photo">
                 <video autoplay muted loop playsinline preload="metadata" poster="assets/events/meditation-hall.jpg" class="event__photo-img" aria-label="ריטריט פסטורל - סרטון רקע">
                     <source src="assets/events/pastoral-retreat-bg.mp4" type="video/mp4">
@@ -2240,7 +2265,7 @@
              CLOSING
         ======================================== -->
 
-        <footer class="closing dissolve-from-light" id="contact" aria-label="יצירת קשר">
+        <footer class="closing dissolve-from-light dissolve-from-light--deep" id="contact" aria-label="יצירת קשר">
             <div class="closing__inner">
                 <!-- Top: Brand -->
                 <div class="closing__top fade-in">
