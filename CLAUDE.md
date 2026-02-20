@@ -21,8 +21,16 @@ When starting ANY new conversation from this folder, ALWAYS read these files fir
 - `M-memory/decisions.md` - Strategic choices made
 
 ### 3. Agent Definitions (A-agents/)
+- `A-agents/ceo-agent.md` - Managing director, Yaron's single point of contact
+- `A-agents/team-sync-agent.md` - Coordination and intake for every request
 - `A-agents/copywriter-agent.md` - Content creation agent
-- `A-agents/gatekeeper-agent.md` - Quality review agent
+- `A-agents/researcher-agent.md` - Research and information gathering
+- `A-agents/illustrator-agent.md` - Visual design and illustration
+- `A-agents/cto-agent.md` - Technology and development
+- `A-agents/producer-agent.md` - Events and deals
+- `A-agents/gatekeeper-agent.md` - Quality review, always last before delivery
+- `A-agents/board-agent.md` - Advisory council (requires Yaron's approval)
+- `A-agents/seo-agent.md` - SEO optimization
 
 ### 4. Reports Check
 - `M-memory/daily-reports/` (check for `.seen` marker)
