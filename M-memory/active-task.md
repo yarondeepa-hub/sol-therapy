@@ -1,6 +1,6 @@
 # Active Task
 
-> CEO: קריאת 22 מסמכים מ-B-brain/data/sol - Batch 1
+> CEO: קריאת 22 מסמכים מ-B-brain/data/sol - Batch 2
 
 ---
 
@@ -8,14 +8,15 @@
 "הכנסתי קבצים חדשים לתקיית מוח למד אותם" - חלוקה ל-5 באצ'ים
 
 ## Current Step
-Batch 1 - קריאת 5 מסמכים ראשונים
+Batch 2 - שיתופי פעולה (3 מסמכים)
 
 ## Done
 - אופטימיזציית קונטקסט (CLAUDE-lite + ניקוי current-session)
+- Batch 1: 5 מסמכים כלליים (אירועים עם נועה ארגוב, אנה הלטה, תאי רונה, Danny Vek, רשימת אמנים בינלאומיים, קהל יעד כפול)
 
 ## Batch Plan
-- **Batch 1 (NOW):** Sol therapy 5, Sol therapy 6, Sol therapy 2, _Sol therapy, Sol therapy heb
-- Batch 2: Sol Therapy x Moa, Sol Therapy x Tel Aviv Museum, Between the Frequencies
+- Batch 1: DONE
+- **Batch 2 (NOW):** Sol Therapy x Moa, Sol Therapy x Tel Aviv Museum, Between the Frequencies
 - Batch 3: סוזן דלל x2, Sol therapy 13.3, אתר סול תרפי, סול תרפי x דיגיתל
 - Batch 4: מגדל דוד x2, תוכן לילה לבן x2, סול תרפי ריטריט
 - Batch 5: 3 אקסלים + תוכנית עבודה 2026

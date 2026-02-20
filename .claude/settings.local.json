@@ -101,7 +101,8 @@
       "mcp__filesystem__read_text_file",
       "Bash(unzip:*)",
       "Bash(xmllint:*)",
-      "Bash(pip3 install:*)"
+      "Bash(pip3 install:*)",
+      "mcp__filesystem__read_media_file"
     ]
   }
 }
