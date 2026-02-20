@@ -1,29 +1,1109 @@
-            opacity: 0.25;
-            will-change: transform;
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סול תרפי - אירועי מדיטציית סאונד</title>
+    <meta name="description" content="מסעות טרנספורמטיביים אל תוך התודעה. אירועי מדיטציית סאונד עם אמנים מובילים.">
+    <meta property="og:title" content="סול תרפי - Sol Therapy">
+    <meta property="og:description" content="אירועי מדיטציית סאונד">
+    <meta property="og:type" content="website">
+
+    <!-- Preload entry photo -->
+    <link rel="preload" as="image" href="assets/events/dark-performance.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Inter:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           FONT FACE - Self-hosted
+        ============================================ */
+        @font-face {
+            font-family: 'Masada';
+            src: url('fonts/Masada-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Masada';
+            src: url('fonts/Masada-Demi.otf') format('opentype');
+            font-weight: 600;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Masada';
+            src: url('fonts/Masada-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Guttman Haim';
+            src: url('fonts/Guttman-Haim-Condensed.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Hadassah Friedlaender';
+            src: url('fonts/HadassahFriedlaender-Light.otf') format('opentype');
+            font-weight: 300;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Hadassah Friedlaender';
+            src: url('fonts/HadassahFriedlaender-Black.otf') format('opentype');
+            font-weight: 900;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'HaimG';
+            src: url('fonts/HaimG_Regular.otf') format('opentype');
+            font-weight: 400;
+            font-display: swap;
         }
 
-        /* --- Gallery section illustration accent --- */
-        .event-gallery {
-            position: relative;
+        /* ============================================
+           DESIGN TOKENS
+        ============================================ */
+        :root {
+            /* Backgrounds */
+            --color-dark: #1a1a1a;
+            --color-dark-deep: #0d0d0d;
+            --color-washi: #F2EAD3;
+            --color-washi-warm: #EDE5CE;
+
+            /* Primary palette */
+            --color-green: #588475;
+            --color-green-dark: #3B514B;
+            --color-green-light: #6A9A89;
+            --color-indigo: #264348;
+            --color-indigo-light: #314D59;
+
+            /* Accent */
+            --color-beni: #BE5069;
+            --color-beni-light: #D4728A;
+            --color-vermilion: #D3381C;
+
+            /* Neutral */
+            --color-muted: #949495;
+
+            /* Typography tokens */
+            --font-display: 'Masada', 'Frank Ruhl Libre', serif;
+            --font-body: 'Heebo', sans-serif;
+            --font-english: 'Inter', sans-serif;
+            --font-stamp: 'Guttman Haim', serif;
+            --font-mono: 'DM Mono', monospace;
+            --font-hadassah: 'Hadassah Friedlaender', serif;
+
+            --type-monument: clamp(3rem, 2rem + 8vw, 12rem);
+            --type-event: clamp(2.2rem, 1.5rem + 4.5vw, 6rem);
+            --type-manifesto: clamp(1.6rem, 1.2rem + 2.5vw, 3.5rem);
+            --type-sub: clamp(1.1rem, 0.9rem + 1vw, 1.8rem);
+            --type-body: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
+            --type-small: clamp(0.7rem, 0.65rem + 0.2vw, 0.8rem);
+            --type-micro: clamp(0.55rem, 0.5rem + 0.15vw, 0.65rem);
+
+            /* Spacing tokens */
+            --gutter: 1.5rem;
+            --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+            --space-s: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+            --space-m: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+            --space-l: clamp(4rem, 3rem + 5vw, 7rem);
+            --space-xl: clamp(6rem, 4rem + 10vw, 14rem);
+
+            /* Motion tokens */
+            --ease-ink: cubic-bezier(0.23, 1, 0.32, 1);
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.45, 0, 0.15, 1);
+            --duration-fast: 0.2s;
+            --duration-normal: 0.4s;
+            --duration-slow: 0.8s;
         }
-        .gallery__illustration-accent {
-            position: absolute;
-            top: -2rem;
-            left: 0;
-            width: 30%;
-            max-width: 300px;
-            z-index: 0;
+
+        @media (min-width: 1024px) {
+            :root {
+                --gutter: clamp(2rem, 1.5rem + 3vw, 6rem);
+            }
+        }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background: var(--color-dark);
+            color: var(--color-washi);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        /* Washi paper texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
             pointer-events: none;
+            z-index: 9997;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 300px 300px;
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            z-index: 10001;
+        }
+        .scroll-progress__bar {
+            height: 100%;
+            width: 0%;
+            background: var(--color-green);
+            transition: width 0.1s linear;
+        }
+
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            right: 0;
+            background: var(--color-beni);
+            color: var(--color-washi);
+            padding: 0.75rem 1.5rem;
+            z-index: 10002;
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Focus visible */
+        :focus-visible {
+            outline: 2px solid var(--color-green);
+            outline-offset: 3px;
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--gutter);
+            height: 56px;
+            transition: background 0.4s ease, color 0.4s ease;
             opacity: 0;
         }
-        .gallery__illustration-accent img {
+        .nav--visible {
+            opacity: 1;
+        }
+
+        .nav--dark {
+            background: transparent;
+            color: var(--color-washi);
+        }
+        .nav--washi {
+            background: rgba(242, 234, 211, 0.85);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            color: var(--color-green-dark);
+        }
+
+        .nav__brand {
+            display: flex;
+            align-items: center;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        .nav__brand-logo {
+            height: 28px;
+            width: auto;
+        }
+        .nav--dark .nav__brand-logo {
+            filter: brightness(0) invert(1);
+        }
+        .nav--washi .nav__brand-logo {
+            filter: brightness(0) invert(0);
+        }
+
+        .nav__hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 24px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 48px;
+            padding: 0;
+        }
+        .nav__hamburger span {
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: currentColor;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .nav__hamburger--open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+        .nav__hamburger--open span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav__hamburger--open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        .nav__links {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .nav__hamburger {
+                display: none;
+            }
+            .nav__links {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                list-style: none;
+            }
+            .nav__links a {
+                font-family: var(--font-body);
+                font-size: var(--type-small);
+                font-weight: 400;
+                opacity: 0.7;
+                transition: opacity 0.3s ease;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+            .nav__links a::after {
+                content: '';
+                position: absolute;
+                bottom: 14px;
+                right: 0;
+                width: 0;
+                height: 1px;
+                background: currentColor;
+                transition: width 0.3s ease;
+            }
+            .nav__links a:hover {
+                opacity: 1;
+            }
+            .nav__links a:hover::after {
+                width: 100%;
+            }
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--color-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu--open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: var(--color-washi);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu a:focus {
+            opacity: 1;
+        }
+        .mobile-menu__cta {
+            margin-top: 1.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--color-beni);
+            color: var(--color-washi);
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            font-weight: 400;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+        }
+        .mobile-menu__close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-washi);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+
+        /* ============================================
+           ENTRY SECTION
+        ============================================ */
+        .entry {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 var(--gutter);
+            background: var(--color-dark);
+            overflow: hidden;
+        }
+
+        /* Entry with photo background */
+        .entry--photo {
+            background: var(--color-dark-deep);
+        }
+        .entry__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .entry__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: contrast(1.05) saturate(0.85);
+        }
+        .entry__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.3) 0%,
+                rgba(0, 0, 0, 0.1) 30%,
+                rgba(0, 0, 0, 0.1) 50%,
+                rgba(0, 0, 0, 0.5) 80%,
+                rgba(0, 0, 0, 0.75) 100%
+            );
+        }
+
+        .entry__content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .entry__title {
+            margin-bottom: var(--space-s);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            position: relative;
+        }
+        /* Soft glow behind logo - subtle, no visible stain */
+        .entry__title::before {
+            content: '';
+            position: absolute;
+            inset: -60%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+            opacity: var(--glow-opacity, 0);
+            will-change: opacity;
+        }
+        .entry__logo {
+            display: block;
+            width: clamp(120px, 18vw, 220px);
+            height: auto;
+            filter: brightness(0) invert(1) blur(12px);
+            opacity: 0;
+        }
+
+        .entry__tagline {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-sub);
+            color: var(--color-washi);
+            opacity: 0;
+            line-height: 1.6;
+            letter-spacing: 0.15em;
+        }
+
+        .entry__scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            opacity: 0;
+        }
+        .entry__scroll-hint .ink-drop {
+            width: 3px;
+            height: 40px;
+            background: var(--color-vermilion);
+            opacity: 0.5;
+            animation: inkDrop 2s ease-in-out infinite;
+        }
+
+        @keyframes inkDrop {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.3; transform-origin: top; }
+            50% { transform: scaleY(1); opacity: 0.6; transform-origin: top; }
+        }
+
+        /* Logo glow - brief pulse then fade out completely */
+        @keyframes logoGlowFade {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .entry__title--revealed::before {
+            animation: logoGlowFade 2s ease-out forwards;
+        }
+
+        @media (min-width: 1024px) {
+            .entry {
+                padding: 0 var(--gutter);
+            }
+        }
+
+        /* ============================================
+           MANIFESTO THREAD
+        ============================================ */
+        .manifesto-thread {
+            background: var(--color-washi);
+            padding: var(--space-l) var(--gutter);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-s);
+        }
+
+        .manifesto-body {
+            max-width: min(720px, 100% - 2rem);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-m);
+        }
+        .manifesto-body p {
+            font-family: var(--font-hadassah);
+            font-weight: 300;
+            font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+            color: var(--color-green-dark);
+            line-height: 2.1;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+        .manifesto-body p:first-child::first-line {
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+
+        /* ============================================
+           DISSOLVE TRANSITIONS
+           Board v6.1: Sections overlap with negative
+           margin-top. Dark fades while washi revealed
+           underneath. CSS-driven, works on mobile.
+        ============================================ */
+
+        /* Washi section dissolves FROM dark above */
+        .dissolve-from-dark {
+            position: relative;
+            z-index: 2;
+            margin-top: -8vh;
+            border-radius: clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0 0;
+            overflow: hidden;
+        }
+
+        /* Dark section dissolves FROM washi above */
+        .dissolve-from-light {
+            position: relative;
+            z-index: 2;
+            margin-top: -8vh;
+        }
+        /* Soft fade overlay at top of dark sections */
+        .dissolve-from-light::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12vh;
+            background: linear-gradient(
+                to bottom,
+                var(--color-washi) 0%,
+                rgba(242, 234, 211, 0.6) 30%,
+                rgba(242, 234, 211, 0) 100%
+            );
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* Washi sections get a dark anchor at top for depth */
+        .dissolve-from-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8vh;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 26, 26, 0.35) 0%,
+                rgba(26, 26, 26, 0.12) 45%,
+                transparent 100%
+            );
+            pointer-events: none;
+            z-index: 3;
+            border-radius: clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0 0;
+        }
+
+        /* Deeper overlap for descents into darkness */
+        .dissolve-from-light--deep {
+            margin-top: -10vh;
+        }
+
+        /* Mosaic: contain washi gradient within padding area */
+        .mosaic.dissolve-from-light::before {
+            height: min(12vh, var(--space-l));
+        }
+
+        /* Mosaic bottom fade: photos dissolve into darkness before partners */
+        .mosaic::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            background: linear-gradient(
+                to top,
+                var(--color-dark) 0%,
+                rgba(26, 26, 26, 0.85) 30%,
+                rgba(26, 26, 26, 0.4) 60%,
+                transparent 100%
+            );
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Partners: deeper overlap into the faded mosaic zone */
+        .partners.dissolve-from-dark {
+            margin-top: -12vh;
+            border-radius: clamp(16px, 4vw, 48px) clamp(16px, 4vw, 48px) 0 0;
+        }
+        .partners.dissolve-from-dark::before {
+            height: 10vh;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 26, 26, 0.3) 0%,
+                rgba(26, 26, 26, 0.1) 50%,
+                transparent 100%
+            );
+            border-radius: clamp(16px, 4vw, 48px) clamp(16px, 4vw, 48px) 0 0;
+        }
+
+        /* Anchor scroll offset: compensate for negative margin overlap */
+        #events, #blog, #contact {
+            scroll-margin-top: 8vh;
+        }
+
+        @media (max-width: 768px) {
+            .dissolve-from-dark,
+            .dissolve-from-light {
+                margin-top: -5vh;
+            }
+            .dissolve-from-dark {
+                border-radius: clamp(6px, 1.5vw, 16px) clamp(6px, 1.5vw, 16px) 0 0;
+            }
+            .dissolve-from-dark::before {
+                border-radius: clamp(6px, 1.5vw, 16px) clamp(6px, 1.5vw, 16px) 0 0;
+                height: 5vh;
+            }
+            .dissolve-from-light::before {
+                height: 8vh;
+            }
+            .dissolve-from-light--deep {
+                margin-top: -7vh;
+            }
+            .mosaic::after {
+                height: 15vh;
+            }
+            .partners.dissolve-from-dark {
+                margin-top: -8vh;
+                border-radius: clamp(10px, 3vw, 28px) clamp(10px, 3vw, 28px) 0 0;
+            }
+            .partners.dissolve-from-dark::before {
+                height: 7vh;
+                border-radius: clamp(10px, 3vw, 28px) clamp(10px, 3vw, 28px) 0 0;
+            }
+            #events, #blog, #contact {
+                scroll-margin-top: 5vh;
+            }
+        }
+
+        /* ============================================
+           EVENT SECTIONS
+        ============================================ */
+        .event {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 var(--gutter) 2.5rem var(--gutter);
+        }
+
+        .event--past {
+            min-height: 75vh;
+        }
+
+        .event__photo {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .event__photo img,
+        .event__photo video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: contrast(1.05) saturate(0.85);
+        }
+        .event--past .event__photo img,
+        .event--past .event__photo video {
+            filter: contrast(1.05) saturate(0.6) brightness(0.9);
+        }
+        .event__photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1) 0%,
+                rgba(0, 0, 0, 0.0) 30%,
+                rgba(0, 0, 0, 0.0) 50%,
+                rgba(0, 0, 0, 0.5) 80%,
+                rgba(0, 0, 0, 0.75) 100%
+            );
+        }
+
+        .event__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .event__date {
+            position: absolute;
+            top: max(env(safe-area-inset-top, 0px) + 5rem, 5rem);
+            right: var(--gutter);
+            font-family: var(--font-english);
+            font-size: var(--type-micro);
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.5;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            direction: ltr;
+            unicode-bidi: isolate;
+            z-index: 1;
+        }
+
+        .event__name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.6rem, 1.2rem + 3vw, 3.5rem);
+            color: var(--color-washi);
+            line-height: 1.05;
+            margin-bottom: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .event__details {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-body);
+            color: var(--color-washi);
+            opacity: 0.6;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .event__location {
+            font-family: var(--font-english);
+            font-size: var(--type-small);
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.4;
+            letter-spacing: 0.15em;
+            direction: ltr;
+            unicode-bidi: isolate;
+            margin-bottom: 1.5rem;
+        }
+
+        .event__cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 2rem;
+            background: var(--color-beni);
+            color: var(--color-washi);
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: var(--type-small);
+            letter-spacing: 0.05em;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 48px;
+            min-width: 160px;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .event__cta:hover {
+            background: var(--color-beni-light);
+        }
+
+        .event__cta--soldout {
+            background: transparent;
+            border: 1px solid rgba(242, 234, 211, 0.2);
+            color: var(--color-washi);
+            opacity: 0.4;
+            cursor: default;
+            pointer-events: none;
+            font-family: var(--font-english);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-size: var(--type-small);
+        }
+
+        .event__manifesto-fragment {
+            margin-top: 2rem;
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-small);
+            color: var(--color-washi);
+            opacity: 0.35;
+            max-width: 280px;
+            line-height: 1.7;
+        }
+
+        /* ---- EVENT SPEC STRIP ---- */
+        /* Board v6.1: Decision-ready event info */
+        .event__spec-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.25rem;
+            margin-bottom: 1.25rem;
+            padding: 0.75rem 0;
+            border-top: 1px solid rgba(242, 234, 211, 0.12);
+            border-bottom: 1px solid rgba(242, 234, 211, 0.12);
+        }
+        .event__spec-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+        .event__spec-label {
+            font-family: var(--font-english);
+            font-size: var(--type-micro);
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.35;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        .event__spec-value {
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            font-weight: 400;
+            color: var(--color-washi);
+            opacity: 0.75;
+            line-height: 1.3;
+        }
+
+        /* Past events: dimmer spec strip */
+        .event--past .event__spec-strip {
+            border-top-color: rgba(242, 234, 211, 0.08);
+            border-bottom-color: rgba(242, 234, 211, 0.08);
+        }
+        .event--past .event__spec-value {
+            opacity: 0.5;
+        }
+
+        @media (min-width: 1024px) {
+            .event {
+                padding: 0 var(--gutter) 5rem var(--gutter);
+                align-items: flex-start;
+            }
+            .event__name {
+                max-width: 60%;
+            }
+            .event__manifesto-fragment {
+                max-width: 380px;
+            }
+            .event__spec-strip {
+                gap: 0.5rem 2rem;
+            }
+        }
+
+        /* ============================================
+           BREATHING SPACE
+        ============================================ */
+        .breathing-space {
+            background: var(--color-washi);
+            min-height: 22vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-m) var(--gutter);
+        }
+        .breathing-space--tall {
+            min-height: 30vh;
+        }
+
+        .breathing-space__text {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: var(--type-manifesto);
+            color: var(--color-green-dark);
+            text-align: center;
+            line-height: 1.3;
+            max-width: min(600px, 100% - 2rem);
+        }
+
+        .breathing-space__accent {
+            width: 3px;
+            height: 50px;
+            background: var(--color-vermilion);
+            opacity: 0.5;
+            margin-top: var(--space-m);
+        }
+
+        /* ============================================
+           SUMI-E ILLUSTRATION INTEGRATION
+           Illustrations woven INTO text compositions -
+           not decorative boxes, but unified design
+        ============================================ */
+
+        /* --- MANIFESTO: Side illustration beside text --- */
+        .manifesto-thread {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Soft illustration - positioned to the side, not behind */
+        .manifesto__landscape {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: clamp(200px, 30vw, 420px);
+            z-index: 0;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .manifesto__landscape img {
             display: block;
             width: 100%;
             height: auto;
             mix-blend-mode: multiply;
-            filter: saturate(0.5);
-            opacity: 0.18;
+            filter: saturate(0.5) sepia(0.15) brightness(1.05);
+            opacity: 0.65;
+            mask-image: radial-gradient(ellipse 90% 80% at 60% 50%, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 90%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 60% 50%, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 90%);
         }
+
+        /* Manifesto content floats above the landscape */
+        .manifesto-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- BREATHING SPACE: Full composition --- */
+        .breathing-space {
+            position: relative;
+            overflow: hidden;
+        }
+        .breathing-space__text,
+        .breathing-space__accent {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bamboo illustration - spans full height, bleeds into text space */
+        .sumi-bg {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .sumi-bg img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            filter: saturate(0.55);
+        }
+
+        .sumi-bg--bamboo {
+            top: -10%;
+            right: -5%;
+            width: 55%;
+            height: 120%;
+        }
+        .sumi-bg--bamboo img {
+            opacity: 0.28;
+        }
+
+        /* --- WAVES: Integrated section divider, not a box --- */
+        /* Waves flow INTO the breathing space above AND the video below */
+        .sumi-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-top: -6vh;
+            margin-bottom: -6vh;
+            z-index: 2;
+        }
+        .sumi-divider img {
+            display: block;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+            filter: saturate(0.55);
+            opacity: 0.35;
+            will-change: transform;
+        }
+
+        /* --- BREATHING SPACE 2: Waves as integrated background --- */
+        .breathing-space--waves {
+            min-height: 30vh;
+            background: var(--color-washi);
+        }
+        .sumi-bg--waves {
+            bottom: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+        }
+        .sumi-bg--waves img {
+            opacity: 0.30;
+            object-position: center bottom;
+        }
+
+        /* --- PANORAMIC ILLUSTRATION BREAK --- */
+        /* Replaces dead gradient transitions with living illustration */
+        .illustration-break {
+            position: relative;
+            width: 100%;
+            height: clamp(80px, 10vh, 150px);
+            overflow: hidden;
+            background: var(--color-washi);
+        }
+        .illustration-break img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            min-height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            filter: saturate(0.5);
+            opacity: 0.25;
+            will-change: transform;
+        }
+
+        /* --- Gallery section (legacy accent removed) --- */
 
         /* --- Desktop: illustrations breathe wider --- */
         @media (min-width: 1024px) {
@@ -43,9 +1123,6 @@
             }
             .sumi-bg--waves img {
                 opacity: 0.35;
-            }
-            .gallery__illustration-accent {
-                width: 25%;
             }
             .illustration-break {
                 height: clamp(100px, 12vh, 180px);
@@ -78,16 +1155,12 @@
             .illustration-break {
                 height: clamp(50px, 8vh, 100px);
             }
-            .gallery__illustration-accent {
-                display: none;
-            }
         }
 
         /* Reduced motion: show illustrations immediately, no parallax */
         @media (prefers-reduced-motion: reduce) {
             .manifesto__landscape,
-            .sumi-bg,
-            .gallery__illustration-accent {
+            .sumi-bg {
                 opacity: 1 !important;
                 transform: none !important;
             }
@@ -223,190 +1296,140 @@
         /* ============================================
            VIDEO MOMENT
         ============================================ */
-        .video-moment {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            min-height: 100svh;
-            background: var(--color-dark-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-m) var(--gutter);
-        }
-
-        .video-moment__container {
-            width: 100%;
-            max-width: 960px;
-            position: relative;
-        }
-
-        .video-moment video {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            background: #000;
-        }
-
-        .video-moment__sound-hint {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-micro);
-            color: var(--color-washi);
-            opacity: 0.4;
-            text-align: center;
-            margin-top: 1rem;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         /* ============================================
-           EVENT GALLERY - Dynamic horizontal scroll
+           MOSAIC GALLERY - Pure visual mood board
+           10 items: 8 photos + 2 videos, zero gaps
         ============================================ */
-        .event-gallery {
-            background: var(--color-washi);
-            padding: var(--space-l) 0 var(--space-m) 0;
-            overflow: hidden;
-        }
-
-        .event-gallery__header {
-            padding: 0 var(--gutter);
-            margin-bottom: var(--space-m);
-            text-align: center;
-        }
-
-        .event-gallery__title {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: var(--type-manifesto);
-            color: var(--color-green-dark);
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-        }
-
-        .event-gallery__subtitle {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-body);
-            color: var(--color-green-dark);
-            opacity: 0.45;
-        }
-
-        .event-gallery__track {
-            display: flex;
-            gap: clamp(0.75rem, 1.5vw, 1.25rem);
-            padding: 0 var(--gutter);
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            cursor: grab;
-        }
-        .event-gallery__track::-webkit-scrollbar {
-            display: none;
-        }
-        .event-gallery__track:active {
-            cursor: grabbing;
-        }
-
-        .gallery-card {
-            flex: 0 0 auto;
-            width: clamp(260px, 42vw, 380px);
+        .mosaic {
+            background: var(--color-dark);
+            padding: var(--space-l) var(--gutter) calc(var(--space-l) + 12vh);
             position: relative;
-            overflow: hidden;
-            scroll-snap-align: start;
-            border-radius: 2px;
         }
 
-        .gallery-card__photo {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            overflow: hidden;
+        .mosaic__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, clamp(140px, 18vw, 260px));
+            gap: clamp(3px, 0.4vw, 6px);
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .gallery-card__photo img {
+
+        /* Explicit placement - every cell filled */
+        .mosaic__item--a { grid-column: 1 / 3; grid-row: 1 / 2; }  /* wide */
+        .mosaic__item--b { grid-column: 3 / 4; grid-row: 1 / 3; }  /* tall */
+        .mosaic__item--c { grid-column: 4 / 5; grid-row: 1 / 3; }  /* tall */
+        .mosaic__item--d { grid-column: 1 / 2; grid-row: 2 / 3; }
+        .mosaic__item--e { grid-column: 2 / 3; grid-row: 2 / 3; }  /* video */
+        .mosaic__item--f { grid-column: 1 / 2; grid-row: 3 / 5; }  /* tall */
+        .mosaic__item--g { grid-column: 2 / 4; grid-row: 3 / 4; }  /* wide */
+        .mosaic__item--h { grid-column: 4 / 5; grid-row: 3 / 4; }
+        .mosaic__item--i { grid-column: 2 / 3; grid-row: 4 / 5; }
+        .mosaic__item--j { grid-column: 3 / 5; grid-row: 4 / 5; }  /* video, wide */
+        .mosaic__item--k { grid-column: 1 / 5; grid-row: 5 / 6; }  /* full-width video */
+
+        .mosaic__item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mosaic__item img,
+        .mosaic__item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: contrast(1.05) saturate(0.7) brightness(0.95);
-            transition: transform 0.6s var(--ease-out), filter 0.6s ease;
-        }
-        .gallery-card:hover .gallery-card__photo img {
-            transform: scale(1.04);
-            filter: contrast(1.05) saturate(0.85) brightness(1);
-        }
-        .gallery-card__photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                transparent 40%,
-                rgba(0, 0, 0, 0.55) 100%
-            );
-            pointer-events: none;
+            filter: saturate(0.6) contrast(1.05) brightness(0.93);
+            transition: filter 0.8s var(--ease-ink), transform 0.8s var(--ease-out);
         }
 
-        .gallery-card__info {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            padding: 1.25rem;
-            z-index: 1;
-        }
-        .gallery-card__name {
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.2rem);
-            color: var(--color-washi);
-            margin-bottom: 0.2rem;
-            line-height: 1.2;
-        }
-        .gallery-card__meta {
-            font-family: var(--font-english);
-            font-size: var(--type-micro);
-            font-weight: 300;
-            color: var(--color-washi);
-            opacity: 0.55;
-            letter-spacing: 0.15em;
-            direction: ltr;
-            unicode-bidi: isolate;
+        .mosaic__item:hover img,
+        .mosaic__item:hover video {
+            filter: saturate(0.85) contrast(1.05) brightness(0.97);
+            transform: scale(1.03);
         }
 
-        .event-gallery__dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            padding-top: var(--space-s);
+        /* Micro-drift: subtle ambient movement per item (aroke01 "living gallery") */
+        @keyframes mosaicDriftA {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(2px, -1.5px); }
         }
-        .event-gallery__dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--color-green-dark);
-            opacity: 0.15;
-            transition: opacity 0.3s ease;
-            border: none;
-            padding: 0;
-            cursor: pointer;
+        @keyframes mosaicDriftB {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-1.5px, 2px); }
         }
-        .event-gallery__dot--active {
-            opacity: 0.5;
+        @keyframes mosaicDriftC {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(1px, 1.5px); }
+        }
+        .mosaic__item--drifting img,
+        .mosaic__item--drifting video {
+            will-change: transform;
+        }
+        .mosaic__item--drift-a img,
+        .mosaic__item--drift-a video { animation: mosaicDriftA 6s ease-in-out infinite; }
+        .mosaic__item--drift-b img,
+        .mosaic__item--drift-b video { animation: mosaicDriftB 7.5s ease-in-out infinite; }
+        .mosaic__item--drift-c img,
+        .mosaic__item--drift-c video { animation: mosaicDriftC 9s ease-in-out infinite; }
+
+        /* Pause drift when not in viewport (GPU savings) */
+        .mosaic__item--drift-paused img,
+        .mosaic__item--drift-paused video {
+            animation-play-state: paused;
         }
 
+        /* Scroll reveal - starts hidden */
+        .mosaic__item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Desktop */
         @media (min-width: 1024px) {
-            .gallery-card {
-                width: clamp(300px, 28vw, 420px);
+            .mosaic__grid {
+                grid-template-rows: repeat(5, clamp(180px, 20vw, 300px));
+                gap: clamp(4px, 0.5vw, 8px);
             }
-            .event-gallery__track {
-                gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        /* Mobile: 2 columns, auto flow */
+        @media (max-width: 640px) {
+            .mosaic__grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                grid-auto-rows: clamp(120px, 28vw, 200px);
+                gap: 3px;
+            }
+            /* Reset explicit placement, let auto-flow handle it */
+            .mosaic__item--a, .mosaic__item--b, .mosaic__item--c,
+            .mosaic__item--d, .mosaic__item--e, .mosaic__item--f,
+            .mosaic__item--g, .mosaic__item--h, .mosaic__item--i,
+            .mosaic__item--j, .mosaic__item--k {
+                grid-column: auto;
+                grid-row: auto;
+            }
+            /* Keep some variety on mobile */
+            .mosaic__item--a { grid-column: span 2; }
+            .mosaic__item--g { grid-column: span 2; }
+            .mosaic__item--j { grid-column: span 2; }
+            .mosaic__item--k { grid-column: span 2; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .mosaic__item {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .mosaic__item--drift-a img, .mosaic__item--drift-a video,
+            .mosaic__item--drift-b img, .mosaic__item--drift-b video,
+            .mosaic__item--drift-c img, .mosaic__item--drift-c video {
+                animation: none !important;
+            }
+            .mosaic__item video {
+                display: none;
             }
         }
 
@@ -418,3 +1441,1557 @@
             background: var(--color-washi);
             padding: var(--space-l) 0 var(--space-m) 0;
             overflow: hidden;
+        }
+
+        .blog-feed__inner {
+            max-width: 1200px;
+            margin-inline: auto;
+            padding: 0 var(--gutter);
+        }
+
+        .blog-feed__header {
+            text-align: center;
+            margin-bottom: var(--space-m);
+        }
+
+        .blog-feed__title {
+            font-family: var(--font-display);
+            font-size: var(--type-manifesto);
+            font-weight: 600;
+            color: var(--color-green-dark);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-feed__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2vw, 1.75rem);
+        }
+
+        .blog-card {
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card--linked {
+            cursor: pointer;
+        }
+
+        .blog-card__link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+
+        .blog-card__image {
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            position: relative;
+            background: var(--color-washi-warm);
+        }
+
+        .blog-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            filter: saturate(0.7) sepia(0.08) contrast(1.05) brightness(0.95);
+            transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+        }
+
+        .blog-card--linked:hover .blog-card__image img,
+        .blog-card__link:hover .blog-card__image img {
+            transform: scale(1.03);
+            filter: saturate(0.75) sepia(0.04) contrast(1.05) brightness(1);
+        }
+
+        .blog-card__body {
+            padding: var(--space-s) 0 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex: 1;
+        }
+
+        .blog-card__category {
+            font-family: var(--font-english);
+            font-size: var(--type-micro);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--color-green-dark);
+            opacity: 0.5;
+        }
+
+        .blog-card__title {
+            font-family: var(--font-display);
+            font-size: var(--type-sub);
+            font-weight: 600;
+            color: var(--color-green-dark);
+            line-height: 1.35;
+            margin: 0;
+            transition: color 0.4s var(--ease-out);
+        }
+
+        .blog-card--linked:hover .blog-card__title,
+        .blog-card__link:hover .blog-card__title {
+            color: var(--color-green);
+        }
+
+        .blog-card__teaser {
+            font-family: var(--font-body);
+            font-size: var(--type-body);
+            font-weight: 300;
+            color: var(--color-green-dark);
+            opacity: 0.7;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .blog-feed__more {
+            text-align: center;
+            margin-top: var(--space-m);
+        }
+
+        .blog-feed__more-link {
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            font-weight: 400;
+            color: var(--color-green);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            transition: color 0.3s var(--ease-out);
+        }
+
+        .blog-feed__more-link:hover {
+            color: var(--color-green-dark);
+        }
+
+        .blog-feed__more-arrow {
+            display: inline-block;
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .blog-feed__more-link:hover .blog-feed__more-arrow {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 1024px) {
+            .blog-feed__grid {
+                display: flex;
+                gap: clamp(0.75rem, 1.5vw, 1.25rem);
+                padding: 0;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .blog-feed__grid::-webkit-scrollbar {
+                display: none;
+            }
+            .blog-card {
+                flex: 0 0 auto;
+                width: clamp(260px, 42vw, 380px);
+                scroll-snap-align: start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .blog-card {
+                width: clamp(240px, 72vw, 320px);
+            }
+            .blog-card__body {
+                padding: 0.75rem 0 0 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blog-card__image img,
+            .blog-card__title,
+            .blog-feed__more-arrow {
+                transition: none;
+            }
+        }
+
+        /* ARTISTS ROLL - removed, pending redesign */
+
+        /* ============================================
+           PARTNERS SECTION
+        ============================================ */
+        .partners {
+            background: var(--color-washi);
+            padding: var(--space-s) var(--gutter) var(--space-l);
+            text-align: center;
+        }
+
+        .partners__label {
+            font-family: var(--font-english);
+            font-weight: 300;
+            font-size: var(--type-sub);
+            color: var(--color-green-dark);
+            opacity: 0.3;
+            letter-spacing: 0.02em;
+            margin-bottom: var(--space-m);
+        }
+
+        .partners__grid {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(1.5rem, 3vw, 3rem) clamp(2rem, 5vw, 4.5rem);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .partners__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            opacity: 0.35;
+            filter: grayscale(1) brightness(0.3);
+            transition: opacity 0.4s ease, filter 0.4s ease;
+        }
+
+        .partners__item:hover {
+            opacity: 0.7;
+            filter: grayscale(0.5) brightness(0.4);
+        }
+
+        .partners__item img {
+            display: block;
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        /* Size adjustments per logo for visual balance (+10%) */
+        .partners__item--municipality { height: 65px; }
+        .partners__item--museum { height: 48px; }
+        .partners__item--suzanne { height: 43px; }
+        .partners__item--library { height: 37px; }
+        .partners__item--digitel { height: 41px; }
+        .partners__item--amazon { height: 37px; }
+
+        @media (max-width: 640px) {
+            .partners__grid {
+                gap: 1.5rem 2rem;
+            }
+            .partners__item { height: 41px; }
+            .partners__item--municipality { height: 50px; }
+            .partners__item--museum { height: 37px; }
+            .partners__item--suzanne { height: 33px; }
+            .partners__item--library { height: 31px; }
+            .partners__item--digitel { height: 31px; }
+            .partners__item--amazon { height: 27px; }
+        }
+
+        /* ============================================
+           NEWSLETTER CTA - Standalone section
+        ============================================ */
+        .newsletter-cta {
+            position: relative;
+            z-index: 2;
+            background: var(--color-washi);
+            padding: clamp(3rem, 6vw, 5.5rem) var(--gutter);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .newsletter-cta__inner {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-cta__kicker {
+            font-family: var(--font-english);
+            font-weight: 400;
+            font-size: var(--type-micro);
+            letter-spacing: 0.02em;
+            color: var(--color-beni);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-cta__title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 1.4rem + 2.8vw, 3.2rem);
+            color: var(--color-green-dark);
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-cta__desc {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-body);
+            color: var(--color-green-dark);
+            opacity: 0.65;
+            line-height: 1.65;
+            margin-bottom: 2rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-cta__form {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 14px;
+            border: 1px solid rgba(59, 81, 75, 0.06);
+            box-shadow: 0 2px 20px rgba(59, 81, 75, 0.08);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .newsletter-cta__form:focus-within {
+            box-shadow: 0 4px 30px rgba(190, 80, 105, 0.15);
+        }
+
+        .newsletter-cta__input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--color-green-dark);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            padding: 1rem 0 1rem 1.5rem;
+            outline: none;
+            direction: ltr;
+            unicode-bidi: isolate;
+            min-height: 56px;
+        }
+        .newsletter-cta__input::placeholder {
+            color: rgba(59, 81, 75, 0.25);
+            direction: ltr;
+            font-style: italic;
+        }
+
+        .newsletter-cta__btn {
+            background: var(--color-beni);
+            border: none;
+            border-radius: 0 13px 13px 0;
+            color: #fff;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            white-space: nowrap;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .newsletter-cta__btn:hover {
+            background: var(--color-beni-light);
+        }
+
+        .newsletter-cta__note {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-micro);
+            color: var(--color-green-dark);
+            opacity: 0.35;
+            margin-top: 1rem;
+        }
+
+        /* Deco element removed per Illustrator review - invisible gradient adds no value */
+
+        @media (max-width: 480px) {
+            .newsletter-cta__form {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+            .newsletter-cta__input {
+                padding: 1rem 1.25rem;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 81, 75, 0.08);
+            }
+            .newsletter-cta__btn {
+                justify-content: center;
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .newsletter-cta__input {
+                font-size: 1.05rem;
+                padding-left: 2rem;
+            }
+            .newsletter-cta__btn {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+            /* deco element removed */
+        }
+
+        /* ============================================
+           FOOTER - Redesigned two-column layout
+        ============================================ */
+        .closing {
+            position: relative;
+            background: var(--color-dark);
+            padding: var(--space-l) var(--gutter) var(--space-m) var(--gutter);
+        }
+
+        .closing__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-m);
+        }
+
+        /* Top row - brand + newsletter side by side on desktop */
+        .closing__top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-m);
+            padding-bottom: var(--space-m);
+            border-bottom: 1px solid rgba(242, 234, 211, 0.08);
+        }
+
+        .closing__brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .closing__brand {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 1.4rem + 2vw, 2.8rem);
+            color: var(--color-washi);
+            line-height: 0.95;
+        }
+
+        .closing__tagline {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-body);
+            color: var(--color-washi);
+            opacity: 0.35;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        /* Newsletter moved to standalone section above footer */
+
+        /* Bottom row - links, social, legal */
+        .closing__bottom {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-s);
+            align-items: flex-start;
+        }
+
+        .closing__contact-row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .closing__email-link {
+            font-family: var(--font-english);
+            font-size: var(--type-small);
+            color: var(--color-washi);
+            opacity: 0.35;
+            letter-spacing: 0.08em;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-flex;
+            align-items: center;
+            min-height: 48px;
+            transition: opacity 0.3s ease;
+        }
+        .closing__email-link:hover {
+            opacity: 0.6;
+        }
+
+        .closing__social {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .closing__social a {
+            color: var(--color-washi);
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+            min-height: 48px;
+            min-width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .closing__social a:hover {
+            opacity: 0.7;
+        }
+        .closing__social svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .closing__legal {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding-top: var(--space-xs);
+        }
+
+        .closing__hanko {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+        }
+        .closing__hanko svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .closing__copyright {
+            font-family: var(--font-english);
+            font-size: var(--type-micro);
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.18;
+            letter-spacing: 0.1em;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+
+        @media (min-width: 768px) {
+            .closing__bottom {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .closing__hanko {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        /* ============================================
+           FLOATING CTA
+        ============================================ */
+        .floating-cta {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 44px;
+            height: 44px;
+            background: var(--color-beni);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 90;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: var(--color-washi);
+        }
+        .floating-cta--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .floating-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (min-width: 1024px) {
+            .floating-cta {
+                display: none;
+            }
+        }
+
+        /* ============================================
+           FADE-IN ANIMATION
+        ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+            .entry__title {
+                opacity: 1;
+                transform: none !important;
+                --glow-opacity: 0;
+            }
+            .entry__logo {
+                opacity: 0.92 !important;
+                filter: brightness(0) invert(1) blur(0px) !important;
+            }
+            .entry__tagline {
+                opacity: 0.5;
+            }
+            .entry__scroll-hint {
+                opacity: 1;
+            }
+            .nav {
+                opacity: 1;
+            }
+        }
+
+        /* ============================================
+           VIEW TRANSITIONS - aroke01-inspired dissolve
+           Blur crossfade between pages (ink dissolving)
+        ============================================ */
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root) {
+            animation: sol-vt-fade-out 0.4s ease-out both;
+        }
+        ::view-transition-new(root) {
+            animation: sol-vt-fade-in 0.4s ease-in both;
+        }
+
+        @keyframes sol-vt-fade-out {
+            from { opacity: 1; filter: blur(0px); }
+            to   { opacity: 0; filter: blur(3px); }
+        }
+        @keyframes sol-vt-fade-in {
+            from { opacity: 0; filter: blur(3px); }
+            to   { opacity: 1; filter: blur(0px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            ::view-transition-old(root),
+            ::view-transition-new(root) {
+                animation: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="nav nav--dark" role="navigation" aria-label="ניווט ראשי">
+            <button class="nav__hamburger" aria-label="תפריט" aria-expanded="false" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav__brand"><img src="assets/sol-therapy-logo-300.png" alt="Sol Therapy" class="nav__brand-logo"></div>
+            <ul class="nav__links">
+                <li><a href="#events">אירועים</a></li>
+                <li><a href="#archive">ארכיון</a></li>
+                <li><a href="#contact">קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="תפריט ניווט">
+        <button class="mobile-menu__close" aria-label="סגור תפריט" id="menuClose">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="4" y1="4" x2="16" y2="16"/>
+                <line x1="16" y1="4" x2="4" y2="16"/>
+            </svg>
+        </button>
+        <a href="#events" class="menu-link">אירועים</a>
+        <a href="#archive" class="menu-link">ארכיון</a>
+        <a href="#video" class="menu-link">סרטון</a>
+        <a href="#contact" class="menu-link">קשר</a>
+        <a href="https://www.kfarblum-hotel.co.il/Event?id=1257&order=5057&s=5057&hotel=10088_1&in=2026-04-09&out=2026-04-11&rooms=1&ad1=2&ch1=0&inf1=0" class="mobile-menu__cta" target="_blank" rel="noopener">לפרטים והרשמה</a>
+    </div>
+
+    <main id="main-content">
+
+        <!-- ========================================
+             ENTRY - 100vh
+        ======================================== -->
+        <section class="entry entry--photo" aria-label="פתיחה">
+            <div class="entry__bg">
+                <img src="assets/events/dark-performance.jpg" alt="אמן על הבמה במופע מדיטציית סאונד, קהל שוכב באולם חשוך" width="1920" height="1080">
+            </div>
+            <div class="entry__content">
+                <h1 class="entry__title" id="brandTitle"><img src="assets/sol-therapy-logo-300.png" alt="סול תרפי" class="entry__logo"></h1>
+                <p class="entry__tagline">מדיטציות סאונד עמוקות</p>
+            </div>
+            <div class="entry__scroll-hint" aria-hidden="true">
+                <div class="ink-drop"></div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             MANIFESTO THREAD
+        ======================================== -->
+
+        <section class="manifesto-thread dissolve-from-dark" aria-label="מניפסט">
+            <div class="manifesto-body fade-in">
+                <p>מיזם "סול תרפי" נשען על פרקטיקה המלווה את התרבות האנושית משחר ההיסטוריה - שימוש במוזיקה ככלי להרחבת תודעה, וצלילה למצבים מדיטטיביים עמוקים. במשך אלפי שנים רתמו בני האדם את הטכנולוגיה המתקדמת ביותר ברשותם כדי לייצר כלים, פעימות ופרקטיקות שמעמיקות את החיבור בין נפש, תודעה ומוזיקה.</p>
+                <p>במסגרת אירועי סול תרפי אנו מזמינים אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים - אנשים שהקדישו את חייהם לחקר התדר והצליל - להוביל מפגשים של מדיטציית סאונד בשכיבה, עם הנחיה מוקפדת הנשענת על עקרונות הזן-בודהיזם. אלו מסעות טרנספורמטיביים אל תוך התודעה, לעיתים בעלי אופי רוחני, הנערכים באמצעות מוזיקה המתעלה מעל גבולות של שפה ותרבות - ומאפשרת חיבור ישיר אל הגוף והנפש.</p>
+                <p>מסגרת הפעילות שלנו נשענת על בסיס רוחני ומדעי עמוק, ומלווה על ידי נזירים בודהיסטים המחזיקים בידע בן 2,500 שנה על התודעה האנושית - לצד מדענים וחוקרי מוח מהמובילים בעולם, הלוקחים חלק באירועים ובריטריטים שלנו.</p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             EVENT 1 - UPCOMING - Pastoral Retreat
+        ======================================== -->
+
+        <article class="event dissolve-from-light dissolve-from-light--deep" id="events" aria-label="ריטריט סול תרפי - פסטורל">
+            <div class="event__photo">
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/events/meditation-hall.jpg" class="event__photo-img" aria-label="ריטריט פסטורל - סרטון רקע">
+                    <source src="assets/events/pastoral-retreat-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            <span class="event__date fade-in">9-11 APRIL 2026</span>
+            <div class="event__content">
+                <h2 class="event__name fade-in">ריטריט סול תרפי x פסטורל</h2>
+                <div class="event__spec-strip fade-in">
+                    <div class="event__spec-item">
+                        <span class="event__spec-label">Date</span>
+                        <span class="event__spec-value">9-11 באפריל, חמישי-שבת</span>
+                    </div>
+                    <div class="event__spec-item">
+                        <span class="event__spec-label">Duration</span>
+                        <span class="event__spec-value">3 ימים, 2 לילות</span>
+                    </div>
+                    <div class="event__spec-item">
+                        <span class="event__spec-label">Location</span>
+                        <span class="event__spec-value">מלון פסטורל, כפר בלום</span>
+                    </div>
+                    <div class="event__spec-item">
+                        <span class="event__spec-label">Price</span>
+                        <span class="event__spec-value">החל מ-2,575 לאדם</span>
+                    </div>
+                    <div class="event__spec-item">
+                        <span class="event__spec-label">Includes</span>
+                        <span class="event__spec-value">לינה, חצי פנסיון, כל הסשנים</span>
+                    </div>
+                </div>
+                <a href="https://www.kfarblum-hotel.co.il/Event?id=1257&order=5057&s=5057&hotel=10088_1&in=2026-04-09&out=2026-04-11&rooms=1&ad1=2&ch1=0&inf1=0" class="event__cta fade-in" target="_blank" rel="noopener">לפרטים והרשמה</a>
+            </div>
+        </article>
+
+        <!-- ========================================
+             BLOG FEED
+        ======================================== -->
+
+        <section class="blog-feed dissolve-from-dark" id="blog">
+            <div class="blog-feed__inner">
+
+                <header class="blog-feed__header">
+                    <h2 class="blog-feed__title">מרחיבי תודעה</h2>
+                </header>
+
+                <div class="blog-feed__grid">
+
+                    <!-- Blog 3: Science Meets Buddhism (newest) -->
+                    <article class="blog-card blog-card--linked">
+                        <a href="blog-science-buddhism.html" class="blog-card__link">
+                            <div class="blog-card__image">
+                                <img src="assets/blog-science/01-hero-orange-robe.webp"
+                                     alt="נזיר בגלימה כתומה - כשהמדע פוגש את הבודהיזם"
+                                     loading="lazy"
+                                     width="380" height="475">
+                            </div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__category">מדע</span>
+                                <h3 class="blog-card__title">כשהמדע פוגש את הבודהיזם</h3>
+                                <p class="blog-card__teaser">2,500 שנה של מחקר תודעה. מה קורה כשנוירומדע פוגש מדיטציה.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Blog 2: Collective Sync -->
+                    <article class="blog-card blog-card--linked">
+                        <a href="blog-collective-sync.html" class="blog-card__link">
+                            <div class="blog-card__image">
+                                <img src="assets/blog/collective-hero.webp"
+                                     alt="הקשבה קולקטיבית - סנכרון קבוצתי"
+                                     loading="lazy"
+                                     width="380" height="475">
+                            </div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__category">מחקר</span>
+                                <h3 class="blog-card__title">מה קורה כשחדר שלם מקשיב יחד?</h3>
+                                <p class="blog-card__teaser">קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Blog 1: Sound Meditation -->
+                    <article class="blog-card blog-card--linked">
+                        <a href="blog-sound-meditation.html" class="blog-card__link">
+                            <div class="blog-card__image">
+                                <img src="assets/blog/singing-bowl.webp"
+                                     alt="קערת שירה - מדיטציית סאונד"
+                                     loading="lazy"
+                                     width="380" height="475">
+                            </div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__category">מחקר</span>
+                                <h3 class="blog-card__title">האם מדיטציות סאונד באמת עובדות?</h3>
+                                <p class="blog-card__teaser">מה קורה במוח כשהגוף שוכב והצליל עוטף.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+
+                <div class="blog-feed__more">
+                    <a href="blog-science-buddhism.html" class="blog-feed__more-link">
+                        להמשיך לקרוא
+                        <span class="blog-feed__more-arrow" aria-hidden="true">&larr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================
+             PAST EVENTS CONDENSED
+        ======================================== -->
+
+        <section class="mosaic dissolve-from-light" aria-label="גלריית אירועים">
+            <div class="mosaic__grid">
+                <div class="mosaic__item mosaic__item--a" data-mosaic>
+                    <img src="assets/events/museum-meditation.jpg" alt="קהל שוכב על הרצפה במדיטציית סאונד במוזיאון תל אביב" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--b" data-mosaic>
+                    <img src="assets/events/orchestra-stage.jpg" alt="אמנים על הבמה באירוע סול תרפי עם תאורה חמה" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--c" data-mosaic>
+                    <img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך עם פס אור על הבמה" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--d" data-mosaic>
+                    <img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים שוכבים על מזרנים" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--e" data-mosaic>
+                    <video src="assets/events/gallery-new-video.mp4?v=2" autoplay muted loop playsinline aria-label="קטע וידאו מאירוע מדיטציית סאונד"></video>
+                </div>
+                <div class="mosaic__item mosaic__item--f" data-mosaic>
+                    <img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--g" data-mosaic>
+                    <img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה תחת כיפת השמיים" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--h" data-mosaic>
+                    <img src="assets/events/projection-building.jpg" alt="הקרנת אור על מבנה בזמן אירוע סול תרפי" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--i" data-mosaic>
+                    <img src="assets/events/museum-wide.jpg" alt="מבט רחב על אולם המוזיאון מלא במשתתפים שוכבים" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--j" data-mosaic>
+                    <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי"></video>
+                </div>
+                <div class="mosaic__item mosaic__item--k" data-mosaic>
+                    <video poster="assets/events/gallery-wide-bottom-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-wide-bottom.mp4"></video>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTISTS ROLL - removed, pending redesign -->
+
+        <!-- ========================================
+             PARTNERS
+        ======================================== -->
+        <section class="partners dissolve-from-dark" aria-label="שותפים">
+            <p class="partners__label fade-in">שותפים</p>
+            <div class="partners__grid fade-in">
+                <div class="partners__item partners__item--municipality">
+                    <img src="assets/partners/tel-aviv-municipality.png" alt="עיריית תל אביב-יפו" loading="lazy">
+                </div>
+                <div class="partners__item partners__item--digitel">
+                    <img src="assets/partners/digitel.png" alt="דיגיתל תל אביב" loading="lazy">
+                </div>
+                <div class="partners__item partners__item--museum">
+                    <img src="assets/partners/tel-aviv-museum.png" alt="מוזיאון תל אביב לאמנות" loading="lazy">
+                </div>
+                <div class="partners__item partners__item--suzanne">
+                    <img src="assets/partners/suzanne-dellal.png" alt="מרכז סוזן דלל" loading="lazy">
+                </div>
+                <div class="partners__item partners__item--library">
+                    <img src="assets/partners/national-library.png" alt="הספריה הלאומית" loading="lazy">
+                </div>
+                <div class="partners__item partners__item--amazon">
+                    <img src="assets/partners/amazon-logo.png" alt="Amazon Israel" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             NEWSLETTER CTA
+        ======================================== -->
+
+        <section class="newsletter-cta" aria-label="הרשמה לעדכונים">
+            <div class="newsletter-cta__inner fade-in">
+                <p class="newsletter-cta__kicker">עדכונים</p>
+                <h2 class="newsletter-cta__title">הישארו מחוברים</h2>
+                <p class="newsletter-cta__desc">עדכונים על אירועים קרובים, כתבות חדשות ומסעות צלילה - ישירות אליכם.</p>
+                <form class="newsletter-cta__form" action="#" method="POST" aria-label="הרשמה לעדכונים">
+                    <input type="email" class="newsletter-cta__input" placeholder="your@email.com" aria-label="כתובת אימייל" required>
+                    <button type="submit" class="newsletter-cta__btn">הרשמה לעדכונים</button>
+                </form>
+                <p class="newsletter-cta__note">ללא ספאם. תוכן שאכפת לנו ממנו בלבד.</p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CLOSING
+        ======================================== -->
+
+        <footer class="closing dissolve-from-light dissolve-from-light--deep" id="contact" aria-label="יצירת קשר">
+            <div class="closing__inner">
+                <!-- Top: Brand -->
+                <div class="closing__top fade-in">
+                    <div class="closing__brand-col">
+                        <div class="closing__brand">סול תרפי</div>
+                        <p class="closing__tagline">מסעות טרנספורמטיביים אל תוך התודעה.<br>אירועי מדיטציית סאונד.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom: Contact + Social + Legal -->
+                <div class="closing__bottom fade-in">
+                    <div class="closing__contact-row">
+                        <div class="closing__social">
+                            <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.987 4.088 4.088 0 0 1 .987 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.987 1.518 4.088 4.088 0 0 1-1.518.987c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.987 4.088 4.088 0 0 1-.987-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .987-1.518A4.088 4.088 0 0 1 5.14 2.636c.46-.163 1.26-.349 2.43-.403C8.836 2.175 9.216 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a6.21 6.21 0 0 0-2.246 1.463A6.21 6.21 0 0 0 .43 4.34C.133 5.102-.069 5.975.072 7.253.014 8.533 0 8.941 0 12.2s.014 3.668.072 4.948c.058 1.278.261 2.15.558 2.913a6.21 6.21 0 0 0 1.463 2.245 6.21 6.21 0 0 0 2.246 1.464c.762.296 1.636.499 2.913.558C8.533 23.986 8.941 24 12 24s3.468-.014 4.748-.072c1.278-.059 2.15-.262 2.913-.558a6.21 6.21 0 0 0 2.245-1.464 6.21 6.21 0 0 0 1.464-2.245c.296-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.059-1.278-.262-2.15-.558-2.913a6.21 6.21 0 0 0-1.464-2.246A6.21 6.21 0 0 0 19.66.63C18.898.333 18.025.131 16.748.072 15.468.014 15.06 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                                </svg>
+                            </a>
+                            <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01 0-.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="closing__legal">
+                        <div class="closing__hanko" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <rect x="2" y="2" width="36" height="36" rx="3" stroke="#D3381C" stroke-width="2.5" opacity="0.85"/>
+                                <text x="20" y="24" text-anchor="middle" font-family="serif" font-size="14" font-weight="700" fill="#D3381C" opacity="0.85">Sol</text>
+                            </svg>
+                        </div>
+                        <span class="closing__copyright">Sol Therapy 2026</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Floating CTA (mobile only) -->
+    <a href="https://www.kfarblum-hotel.co.il/Event?id=1257&order=5057&s=5057&hotel=10088_1&in=2026-04-09&out=2026-04-11&rooms=1&ad1=2&ch1=0&inf1=0" class="floating-cta" id="floatingCta" target="_blank" rel="noopener" aria-label="לפרטים והרשמה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+    </a>
+
+    <!-- GSAP 3.13 + Full Plugin Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ========================================
+        // SCROLL PROGRESS BAR
+        // ========================================
+        const progressBar = document.querySelector('.scroll-progress__bar');
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+        // ========================================
+        // ENTRY ANIMATION
+        // ========================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const nav = document.querySelector('.nav');
+
+        if (!prefersReducedMotion) {
+            var titleEl = document.getElementById('brandTitle');
+            var logoImg = titleEl.querySelector('.entry__logo');
+            var glowEl = titleEl; // ::before pseudo on titleEl
+            var tagline = document.querySelector('.entry__tagline');
+            var scrollHint = document.querySelector('.entry__scroll-hint');
+
+            // Cinematic logo reveal timeline - fast load
+            var logoTimeline = gsap.timeline({ delay: 0.15 });
+
+            // Phase 1: Logo emerges from darkness - blur to sharp, rise up
+            logoTimeline.to(titleEl, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.9,
+                ease: 'power3.out'
+            });
+
+            // Logo image: deblur + fade in (overlaps with title move)
+            logoTimeline.to(logoImg, {
+                opacity: 0.92,
+                filter: 'brightness(0) invert(1) blur(0px)',
+                duration: 1.0,
+                ease: 'power2.inOut'
+            }, '<0.1');
+
+            // Phase 2: Glow pulse reveal
+            logoTimeline.fromTo(titleEl,
+                { '--glow-opacity': 0 },
+                {
+                    '--glow-opacity': 1,
+                    duration: 0.6,
+                    ease: 'power2.inOut',
+                    onComplete: function() {
+                        titleEl.classList.add('entry__title--revealed');
+                    }
+                }, '-=0.5'
+            );
+
+            // Phase 3: Tagline fades in with letter-spacing animation
+            logoTimeline.fromTo(tagline,
+                { opacity: 0, letterSpacing: '0.4em' },
+                {
+                    opacity: 0.5,
+                    letterSpacing: '0.15em',
+                    duration: 0.6,
+                    ease: 'power2.out'
+                }, '-=0.2'
+            );
+
+            // Phase 4: Scroll hint appears
+            logoTimeline.to(scrollHint, {
+                opacity: 1,
+                duration: 0.4,
+                ease: 'power2.out'
+            }, '-=0.1');
+
+            // Phase 5: Nav slides in
+            logoTimeline.to(nav, {
+                opacity: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            }, '-=0.2');
+
+        } else {
+            // Reduced motion: show everything immediately
+            var titleEl = document.getElementById('brandTitle');
+            var logoImg = titleEl.querySelector('.entry__logo');
+            titleEl.style.opacity = '1';
+            titleEl.style.transform = 'translateY(0) scale(1)';
+            logoImg.style.opacity = '0.92';
+            logoImg.style.filter = 'brightness(0) invert(1) blur(0px)';
+            titleEl.classList.add('entry__title--revealed');
+            document.querySelector('.entry__tagline').style.opacity = '0.5';
+            document.querySelector('.entry__scroll-hint').style.opacity = '1';
+            nav.classList.add('nav--visible');
+        }
+
+        // ========================================
+        // INTERSECTION OBSERVER - FADE-INS
+        // ========================================
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in--visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeEls.forEach(function(el) {
+            if (prefersReducedMotion) {
+                el.classList.add('fade-in--visible');
+            } else {
+                fadeObserver.observe(el);
+            }
+        });
+
+        // ========================================
+        // NAV COLOR STATE
+        // ========================================
+        const washiSections = document.querySelectorAll('.manifesto-thread, .breathing-space, .event-gallery, .blog-feed');
+        const navObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    nav.classList.remove('nav--dark');
+                    nav.classList.add('nav--washi');
+                } else {
+                    // Check if any washi section is in view
+                    let anyWashi = false;
+                    washiSections.forEach(function(section) {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top < 60 && rect.bottom > 60) {
+                            anyWashi = true;
+                        }
+                    });
+                    if (!anyWashi) {
+                        nav.classList.remove('nav--washi');
+                        nav.classList.add('nav--dark');
+                    }
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '-10px 0px -90% 0px'
+        });
+
+        washiSections.forEach(function(section) {
+            navObserver.observe(section);
+        });
+
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuClose = document.getElementById('menuClose');
+        const menuLinks = mobileMenu.querySelectorAll('.menu-link');
+
+        // Focusable elements inside mobile menu
+        function getMenuFocusables() {
+            return mobileMenu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+        }
+
+        function openMenu() {
+            mobileMenu.classList.add('mobile-menu--open');
+            mobileMenu.setAttribute('aria-modal', 'true');
+            menuToggle.classList.add('nav__hamburger--open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            // Move focus to close button
+            menuClose.focus();
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('mobile-menu--open');
+            mobileMenu.removeAttribute('aria-modal');
+            menuToggle.classList.remove('nav__hamburger--open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            // Return focus to trigger
+            menuToggle.focus();
+        }
+
+        menuToggle.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('mobile-menu--open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        menuClose.addEventListener('click', closeMenu);
+
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Escape key closes menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('mobile-menu--open')) {
+                closeMenu();
+            }
+        });
+
+        // Focus trap inside mobile menu
+        mobileMenu.addEventListener('keydown', function(e) {
+            if (e.key !== 'Tab') return;
+            var focusables = getMenuFocusables();
+            if (focusables.length === 0) return;
+            var first = focusables[0];
+            var last = focusables[focusables.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+
+        // ========================================
+        // FLOATING CTA
+        // ========================================
+        const floatingCta = document.getElementById('floatingCta');
+        const eventsSection = document.getElementById('events');
+
+        if (floatingCta && eventsSection) {
+            const floatingObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting && window.scrollY > 300) {
+                        floatingCta.classList.add('floating-cta--visible');
+                    } else {
+                        floatingCta.classList.remove('floating-cta--visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            floatingObserver.observe(eventsSection);
+        }
+
+
+        // ========================================
+        // DESKTOP PARALLAX (optional, GSAP)
+        // ========================================
+        if (!prefersReducedMotion && window.innerWidth >= 1024) {
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.querySelectorAll('.event__photo img, .event__photo video').forEach(function(img) {
+                gsap.fromTo(img, {
+                    y: '-8%'
+                }, {
+                    y: '8%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: img.closest('.event'),
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            });
+        }
+
+        // ========================================
+        // SMOOTH SCROLL FOR NAV LINKS
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 60; // Nav height
+                    const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // MOSAIC GALLERY - no interaction needed
+        // ========================================
+
+        // ========================================
+        // ADVANCED ANIMATION ENGINE
+        // GSAP 3.13 + SplitText + ScrollTrigger
+        // ========================================
+        if (!prefersReducedMotion && typeof SplitText !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+
+            // Custom easing curves
+            CustomEase.create('inkFlow', 'M0,0 C0.23,1 0.32,1 1,1');
+            CustomEase.create('brushStroke', 'M0,0 C0.17,0.67 0.38,0.98 1,1');
+
+            // ----- MANIFESTO BODY: Word-by-word reveal -----
+            var manifestoBody = document.querySelector('.manifesto-body');
+            if (manifestoBody) {
+                var bodyParagraphs = manifestoBody.querySelectorAll('p');
+                bodyParagraphs.forEach(function(p, index) {
+                    var splitP = new SplitText(p, {
+                        type: 'words',
+                        wordsClass: 'word'
+                    });
+
+                    gsap.fromTo(splitP.words,
+                        {
+                            opacity: 0,
+                            y: 12,
+                            filter: 'blur(2px)'
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            duration: 0.5,
+                            ease: 'brushStroke',
+                            stagger: 0.02,
+                            scrollTrigger: {
+                                trigger: p,
+                                start: 'top 85%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // ----- BREATHING SPACE: Ink bleed text -----
+            var breathingTexts = document.querySelectorAll('.breathing-space__text');
+            breathingTexts.forEach(function(text) {
+                gsap.fromTo(text,
+                    {
+                        filter: 'blur(8px)',
+                        opacity: 0,
+                        scale: 0.95
+                    },
+                    {
+                        filter: 'blur(0px)',
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1.8,
+                        ease: 'inkFlow',
+                        scrollTrigger: {
+                            trigger: text,
+                            start: 'top 75%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+
+            // ----- BREATHING SPACE ACCENT: Brush stroke line draw -----
+            var breathingAccents = document.querySelectorAll('.breathing-space__accent');
+            breathingAccents.forEach(function(accent) {
+                gsap.fromTo(accent,
+                    {
+                        scaleX: 0,
+                        transformOrigin: 'right center'
+                    },
+                    {
+                        scaleX: 1,
+                        duration: 1.2,
+                        ease: 'brushStroke',
+                        scrollTrigger: {
+                            trigger: accent,
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+
+            // ----- BREATHING IMAGERY: Slow scale drift on event photos -----
+            // Board v6.1: 1.0 to 1.03 over 8 seconds when in viewport
+            document.querySelectorAll('.event__photo-img').forEach(function(img) {
+                var breatheTween = gsap.fromTo(img,
+                    { scale: 1.0 },
+                    {
+                        scale: 1.03,
+                        duration: 8,
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                        paused: true
+                    }
+                );
+
+                ScrollTrigger.create({
+                    trigger: img.closest('.event'),
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onEnter: function() { breatheTween.play(); },
+                    onLeave: function() { breatheTween.pause(); },
+                    onEnterBack: function() { breatheTween.play(); },
+                    onLeaveBack: function() { breatheTween.pause(); }
+                });
+            });
+
+            // ----- MOSAIC GALLERY: Staggered reveal -----
+            var mosaicItems = document.querySelectorAll('[data-mosaic]');
+            if (mosaicItems.length > 0) {
+                gsap.fromTo(mosaicItems,
+                    { opacity: 0, y: 20 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.7,
+                        ease: 'power2.out',
+                        stagger: 0.12,
+                        scrollTrigger: {
+                            trigger: '.mosaic',
+                            start: 'top 75%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            // ----- MOSAIC: Micro-drift (aroke01 "living gallery") -----
+            // Each item gets a different drift pattern (a/b/c), cycles through
+            // Paused when out of viewport to save GPU
+            var driftPatterns = ['drift-a', 'drift-b', 'drift-c'];
+            mosaicItems.forEach(function(item, i) {
+                var pattern = driftPatterns[i % driftPatterns.length];
+                item.classList.add('mosaic__item--drifting', 'mosaic__item--' + pattern, 'mosaic__item--drift-paused');
+            });
+
+            // Use IntersectionObserver to play/pause drift
+            if ('IntersectionObserver' in window) {
+                var mosaicSection = document.querySelector('.mosaic');
+                if (mosaicSection) {
+                    var driftObserver = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            var items = entry.target.querySelectorAll('[data-mosaic]');
+                            items.forEach(function(item) {
+                                if (entry.isIntersecting) {
+                                    item.classList.remove('mosaic__item--drift-paused');
+                                } else {
+                                    item.classList.add('mosaic__item--drift-paused');
+                                }
+                            });
+                        });
+                    }, { threshold: 0.05 });
+                    driftObserver.observe(mosaicSection);
+                }
+            }
+
+        // ARTISTS ROLL - removed, pending redesign
+
+        // ========================================
+        // BLOG FEED ANIMATIONS
+        // ========================================
+
+        var blogTitle = document.querySelector('.blog-feed__title');
+        var blogCards = gsap.utils.toArray('.blog-card');
+        var blogMore = document.querySelector('.blog-feed__more');
+
+        if (!prefersReducedMotion) {
+            if (blogTitle) {
+                var splitBlogTitle = new SplitText(blogTitle, { type: "words" });
+                gsap.from(splitBlogTitle.words, {
+                    opacity: 0,
+                    y: 25,
+                    duration: 0.7,
+                    stagger: 0.08,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: blogTitle,
+                        start: "top 82%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            }
+
+            if (blogCards.length) {
+                gsap.from(blogCards, {
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".blog-feed__grid",
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            }
+
+            if (blogMore) {
+                gsap.from(blogMore, {
+                    opacity: 0,
+                    y: 15,
+                    duration: 0.6,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: blogMore,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            }
+        }
+
+        } // end animation engine
+
+    })();
+    </script>
+
+    <script>
+    // Lazy-load video when scrolled into view
+    (function() {
+        var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+        if (!lazyVideos.length) return;
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var video = entry.target;
+                        video.src = video.getAttribute('data-lazy-video');
+                        video.removeAttribute('data-lazy-video');
+                        video.load();
+                        observer.unobserve(video);
+                    }
+                });
+            }, { rootMargin: '200px' });
+
+            lazyVideos.forEach(function(video) {
+                observer.observe(video);
+            });
+        } else {
+            // Fallback: load immediately
+            lazyVideos.forEach(function(video) {
+                video.src = video.getAttribute('data-lazy-video');
+                video.removeAttribute('data-lazy-video');
+                video.load();
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

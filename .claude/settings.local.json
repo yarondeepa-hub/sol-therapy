@@ -102,7 +102,8 @@
       "Bash(unzip:*)",
       "Bash(xmllint:*)",
       "Bash(pip3 install:*)",
-      "mcp__filesystem__read_media_file"
+      "mcp__filesystem__read_media_file",
+      "WebFetch(domain:yarondeepa-hub.github.io)"
     ]
   }
 }
