@@ -90,7 +90,14 @@
       "Bash(fc-list:*)",
       "Bash(# Check if we can find Hadassah anywhere on disk find /Users/yaronamor -iname \"\"*hadassah*\"\" -o -iname \"\"*friedlaender*\"\")",
       "Bash(# Check if After Effects was ever installed or if it needs to be downloaded # Also check Media Encoder mdfind \"\"kMDItemKind == ''Application''\"\")",
-      "Bash(system_profiler:*)"
+      "Bash(system_profiler:*)",
+      "Bash(open:*)",
+      "Bash(brew install:*)",
+      "Bash(for f in *.docx)",
+      "Bash(do echo \"=== $f ===\")",
+      "Bash(pandoc:*)",
+      "Bash(do echo \"===== $f =====\")",
+      "Bash(do echo \"========== $f ==========\")"
     ]
   }
 }
