@@ -111,7 +111,8 @@
       "Bash(if [ -d \"/Users/yaronamor/Documents/yaronamor-vault/sol/$dir\" ])",
       "Bash(then)",
       "Bash(else)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(xattr:*)"
     ]
   }
 }

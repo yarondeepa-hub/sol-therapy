@@ -86,7 +86,7 @@
 ## Replicate MCP
 
 **Connection:** `replicate-mcp` via stdio
-**Token:** `REDACTED_REPLICATE_TOKEN`
+**Token:** Stored in environment / MCP config. Never expose in docs.
 **Skill file:** `T-tools/skills/replicate-skill/replicate-skill.md`
 
 ### Key Capabilities

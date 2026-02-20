@@ -77,6 +77,95 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-21 - ABC-TOM Loop Must Be Mandatory (Process Fix)
+
+**What happened:** Learning-log wasn't updated for 3 sessions straight (Feb 20). Root cause: the Loop was written as a recommendation ("After completing significant work") instead of being part of the mandatory workflow.
+
+**Fix applied:** Loop is now embedded in the mandatory workflow in CLAUDE.md:
+- Added to the workflow flow diagram (after "final version")
+- Added to the STOP checklist (item 6)
+- Added to Session State (before archive/cleanup)
+- Added to "mistakes" table
+
+**Rule:** ABC-TOM Loop = part of the process, not a suggestion. No task is "done" until the Loop closes.
+
+---
+
+## 2026-02-20 - CEO Full Process Works Well with 3 Parallel Agents
+
+**What happened:** Session 61 - animation learning plan. Full "yossi" process: Team Sync dispatched Researcher + Illustrator + CTO in parallel. CEO synthesized. Gatekeeper caught 7 issues, round 2 approved.
+
+**Learnings:**
+1. 3 agents in parallel for planning/learning tasks is the sweet spot - each brings a different lens
+2. CEO synthesis is the critical step - raw agent outputs overlap and contradict; synthesis resolves that
+3. Gatekeeper on learning plans catches practical gaps (missing timelines, vague next steps) that agents skip
+4. The full process for a planning task took one session - not slower than skipping steps
+
+---
+
+## 2026-02-20 - Context Window Problem: CLAUDE-lite Solves It
+
+**What happened:** Session 62 - system was hitting context limits because CLAUDE.md was too heavy for auto-load. Solution: split into CLAUDE.md (lite, auto-loaded) and CLAUDE-full.md (on demand).
+
+**Pattern:**
+- Auto-loaded file = checklist + rules + structure (what you need every time)
+- On-demand file = detailed processes + examples (what you need sometimes)
+- current-session.md also trimmed - archive old sessions, keep only last 2-3
+
+**Rule:** When a config file grows past effective size, split it into layers. Don't just keep adding.
+
+---
+
+## 2026-02-20 - Hebrew CSS: Don't Apply Latin Typography Rules
+
+**What happened:** Session 63 - website QA found Hebrew text with `text-transform: uppercase` and `letter-spacing: 2px`. Both are Latin typography conventions that break Hebrew readability.
+
+**Rules for Hebrew web typography:**
+1. Never `text-transform: uppercase` on Hebrew - Hebrew has no case
+2. Never positive `letter-spacing` on Hebrew - breaks connected reading flow
+3. `font-weight: 300` on textured backgrounds (washi) = hard to read. Use 400 minimum
+4. These rules apply to ALL Hebrew text, including labels and UI elements
+
+---
+
+## 2026-02-20 - Video Lazy-Load Pattern (IntersectionObserver)
+
+**What happened:** Session 63 - website had a 69MB hero video loading eagerly. Fixed with IntersectionObserver lazy-load + poster image for immediate visual feedback.
+
+**Pattern:**
+```html
+<video poster="poster.webp" data-src="video.mp4" preload="none">
+```
+```javascript
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      video.src = video.dataset.src;
+      video.load();
+      observer.unobserve(video);
+    }
+  });
+});
+```
+
+**Key:** poster image gives instant visual. Video loads only when scrolled into view. No quality compression needed - just delayed loading.
+
+---
+
+## 2026-02-20 - Learning Engine: Autonomous Daily Learning
+
+**What happened:** Built the Learning Engine - automated Morning Scout that runs daily, finds visual/technical inspiration, and writes reports.
+
+**Architecture:**
+- Config: `T-tools/learning/scout-config.md`
+- Reports: `T-tools/learning/morning-reports/`
+- Trigger: daily scheduled prompt
+- Focus areas: Illustrator (visual inspiration) + CTO (technical patterns)
+
+**Key insight:** The scout needs mandatory "Trigger Experiments" - without them, reports are just bookmarks. Experiments force actionable output ("try applying X technique to our Y").
+
+---
+
 ## 2026-02-19 - Gemini Image Generation: Click "Create image" First
 
 **What happened:** Tried to generate image by typing prompt in Gemini's regular text box. Wrong approach.

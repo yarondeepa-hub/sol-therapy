@@ -62,6 +62,7 @@ The files above are your "memory". They persist between sessions. When you updat
 3. עברתי דרך Team Sync? -> אם לא, עצור
 4. משימה ויזואלית? -> Illustrator לפני CTO
 5. תוכן user-facing? -> Gatekeeper חייב לאשר
+6. סיימתי משימה? -> ABC-TOM Loop חובה לפני שממשיכים
 ```
 
 ---
@@ -123,7 +124,7 @@ The files above are your "memory". They persist between sessions. When you updat
 - **תחילת משימה:** קרא active-task.md + current-session.md, עדכן שניהם
 - **כל שינוי שלב:** overwrite active-task.md עם snapshot (לא append)
 - **לפני פעולה ארוכה:** checkpoint ב-active-task.md
-- **סיום משימה:** העבר ל-archive, נקה active-task.md
+- **סיום משימה:** ABC-TOM Loop -> העבר ל-archive -> נקה active-task.md
 
 ---
 
@@ -146,7 +147,7 @@ The files above are your "memory". They persist between sessions. When you updat
 
 ## The ABC-TOM Loop (v7)
 
-After completing significant work, close The Loop:
+**חובה אחרי כל משימה.** לא המלצה. חלק מתהליך העבודה:
 
 1. **New insight about what works?** Update `M-memory/learning-log.md`
 2. **Received feedback?** Update `M-memory/feedback.md`
@@ -173,3 +174,4 @@ O-output/[XX]-[project-name]/
 | CTO בנה אתר בלי Illustrator | משימה ויזואלית = Illustrator קודם |
 | דילגתי על Team Sync כי "המשכתי מסיכום" | סיכום לא פוטר מהתהליך |
 | אחרי context continuation רצתי ישר לעבוד | הודעה ראשונה = דיווח בלבד |
+| ABC-TOM Loop לא נסגר ב-3 סשנים רצופים | Loop הוא חלק מתהליך חובה, לא המלצה |
