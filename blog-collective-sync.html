@@ -356,33 +356,34 @@
         }
 
         /* ============================================
-           EDITORIAL GRID
+           EDITORIAL GRID - Multi-zone magazine layout
         ============================================ */
         .article-grid {
             display: grid;
             grid-template-columns:
-                1fr
-                min(var(--measure), calc(100% - 3rem))
-                1fr;
+                [bleed-start] minmax(1rem, 1fr)
+                [margin-start] minmax(0, 6rem)
+                [content-start] min(var(--measure), calc(100% - 2rem))
+                [content-end] minmax(0, 6rem)
+                [margin-end] minmax(1rem, 1fr)
+                [bleed-end];
         }
 
         .article-grid > * {
-            grid-column: 2;
+            grid-column: content;
         }
 
         .full-bleed {
-            grid-column: 1 / -1;
+            grid-column: bleed-start / bleed-end;
             width: 100%;
         }
 
         .popout {
-            grid-column: 1 / -1;
-            max-width: min(calc(var(--measure) + 12rem), 92%);
-            margin-inline: auto;
+            grid-column: margin-start / margin-end;
         }
 
         .wide {
-            grid-column: 1 / -1;
+            grid-column: bleed-start / bleed-end;
             max-width: min(80rem, 94%);
             margin-inline: auto;
         }
@@ -445,30 +446,30 @@
         }
 
         /* ============================================
-           SECTION MARKERS
+           SECTION MARKERS - Simplified/subtler
         ============================================ */
         .section-marker {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.35rem;
-            padding: var(--space-s) 0;
+            padding: var(--space-l) 0;
         }
 
         .section-marker__number {
             font-family: var(--font-hadassah);
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 300;
             color: var(--color-green);
-            opacity: 0.35;
+            opacity: 0.25;
             line-height: 1;
         }
 
         .section-marker__line {
             width: 1px;
-            height: 20px;
+            height: 28px;
             background: var(--color-green);
-            opacity: 0.2;
+            opacity: 0.15;
         }
 
         /* ============================================
@@ -494,10 +495,10 @@
         }
 
         /* ============================================
-           FIGURES & ILLUSTRATIONS
+           FIGURES & ILLUSTRATIONS - Base
         ============================================ */
         .article-figure {
-            margin: var(--space-m) 0;
+            margin: var(--space-xl) 0;
         }
 
         .article-figure img {
@@ -607,8 +608,125 @@
             );
         }
 
+        /* ============================================
+           FIGURE MODE A: Companion - margin sticky
+        ============================================ */
+        .figure--companion {
+            grid-column: margin-end / bleed-end;
+            grid-row: span 3;
+            align-self: start;
+            position: sticky;
+            top: 5rem;
+            padding-inline-start: 1rem;
+            margin: 0;
+        }
+
+        .figure--companion img {
+            width: 100%;
+            max-width: 200px;
+            mix-blend-mode: multiply;
+            filter: saturate(0.3) sepia(0.15) contrast(0.92);
+            opacity: 0.85;
+        }
+
+        .figure--companion figcaption {
+            font-family: var(--font-hadassah);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--color-muted);
+            margin-top: 0.5rem;
+            max-width: 18ch;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Companion: simplified sumi treatment */
+        .figure--companion::before {
+            opacity: 0.06;
+        }
+        .figure--companion::after {
+            inset: -5%;
+        }
+
+        /* ============================================
+           FIGURE MODE B: Feature - full-width break
+        ============================================ */
+        .figure--feature {
+            grid-column: bleed-start / bleed-end;
+            padding-block: var(--space-xl);
+            margin: 0;
+        }
+
+        .figure--feature img {
+            max-width: min(85vw, 55rem);
+            margin-inline: auto;
+            display: block;
+            width: 100%;
+            mix-blend-mode: multiply;
+            filter: saturate(0.35) sepia(0.12) contrast(0.95);
+            mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                black 6%,
+                black 94%,
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                black 6%,
+                black 94%,
+                transparent 100%
+            );
+        }
+
+        .figure--feature figcaption {
+            max-width: min(var(--measure), calc(100% - 3rem));
+            margin-inline: auto;
+            font-family: var(--font-hadassah);
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+            color: var(--color-muted);
+            padding-block-start: 1rem;
+            padding-inline: 1rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Feature: simplified sumi - no halo needed at full bleed */
+        .figure--feature::after {
+            display: none;
+        }
+
+        /* ============================================
+           FIGURE MODE C: Outset - wider than text
+        ============================================ */
+        .figure--outset {
+            grid-column: margin-start / margin-end;
+            padding-block: var(--space-l);
+            margin: 0;
+        }
+
+        .figure--outset img {
+            width: 100%;
+            mix-blend-mode: multiply;
+            filter: saturate(0.35) sepia(0.12) contrast(0.95);
+        }
+
+        .figure--outset figcaption {
+            font-family: var(--font-hadassah);
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            padding-top: 0.75rem;
+            max-width: 30ch;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* ============================================
+           FIGURE MODE D: Column - standard content width
+        ============================================ */
         .figure--popout {
-            margin: var(--space-m) auto;
+            margin: var(--space-xl) auto;
             max-width: 75%;
         }
 
@@ -617,120 +735,26 @@
             z-index: 2;
         }
 
-        .figure--inline-float {
-            float: inline-start;
-            width: clamp(180px, 32%, 280px);
-            margin: 0.5rem 0 var(--space-s) var(--space-m);
-            shape-outside: margin-box;
-            shape-margin: 1.5rem;
-            overflow: visible;
+        /* ============================================
+           DARK SECTION - Companion variant
+        ============================================ */
+        .section--dark .figure--companion img {
+            mix-blend-mode: screen;
+            filter: saturate(0.2) brightness(0.8) sepia(0.06) contrast(0.88);
         }
 
-        .figure--inline-float img {
-            max-height: 320px;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-        }
-
-        .figure--inline-float::after,
-        .figure--inline-float-dark::after {
-            inset: -5%;
-        }
-
-        .figure--inline-float figcaption {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            font-family: var(--font-body);
-            font-size: 0.8125rem;
-            color: var(--color-muted);
-            letter-spacing: 0.02em;
-            margin-top: 0.35rem;
-            opacity: 0.85;
-        }
-
-        .figure--inline-float-dark {
-            float: inline-end;
-            width: clamp(200px, 35%, 320px);
-            margin: 0.5rem var(--space-m) var(--space-s) 0;
-            shape-outside: margin-box;
-            shape-margin: 1.5rem;
-            overflow: visible;
-        }
-
-        .figure--inline-float-dark img {
-            max-height: 320px;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-        }
-
-        .figure--inline-float-dark figcaption {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            font-family: var(--font-body);
-            font-size: 0.8125rem;
+        .section--dark .figure--companion figcaption {
             color: rgba(242, 234, 211, 0.65);
-            letter-spacing: 0.02em;
-            margin-top: 0.35rem;
         }
 
-        @media (max-width: 48rem) {
-            .figure--inline-float,
-            .figure--inline-float-dark {
-                float: none;
-                width: 80%;
-                max-width: 400px;
-                margin: var(--space-m) auto;
-                shape-outside: none;
-                overflow: visible;
-            }
-            .figure--inline-float img,
-            .figure--inline-float-dark img {
-                max-height: none;
-            }
-            .figure--inline-float::after,
-            .figure--inline-float-dark::after {
-                inset: -8%;
-            }
-        }
-
-        .article-body--with-figure::after {
-            content: '';
-            display: table;
-            clear: both;
+        .section--dark .figure--companion::after {
+            background: radial-gradient(
+                ellipse 65% 60% at 50% 50%,
+                transparent 25%,
+                rgba(26, 26, 26, 0.3) 45%,
+                rgba(26, 26, 26, 0.7) 65%,
+                var(--color-dark) 85%
+            );
         }
 
         /* ============================================
@@ -742,6 +766,11 @@
             gap: 0;
             margin: var(--space-m) 0;
             padding: 0 2%;
+        }
+
+        .figure-trio.figure--outset {
+            grid-column: margin-start / margin-end;
+            padding-block: var(--space-l);
         }
 
         .figure-trio figure {
@@ -800,6 +829,49 @@
             .figure-trio figure:nth-child(3) { transform: rotate(-0.4deg); }
             .figure-trio img {
                 aspect-ratio: 4 / 3;
+            }
+        }
+
+        /* ============================================
+           SCROLL-DRIVEN ANIMATIONS
+        ============================================ */
+        @supports (animation-timeline: view()) {
+            .figure--feature img {
+                animation: feature-reveal linear;
+                animation-timeline: view();
+                animation-range: entry 10% cover 50%;
+            }
+            @keyframes feature-reveal {
+                from {
+                    transform: scale(1.06) translateY(15px);
+                    opacity: 0.3;
+                    filter: saturate(0) sepia(0.2) blur(1px) contrast(0.88);
+                }
+                to {
+                    transform: scale(1) translateY(0);
+                    opacity: 1;
+                    filter: saturate(0.35) sepia(0.12) blur(0) contrast(0.95);
+                }
+            }
+
+            .figure--companion img {
+                animation: companion-reveal linear;
+                animation-timeline: view();
+                animation-range: entry 0% entry 70%;
+            }
+            @keyframes companion-reveal {
+                from { opacity: 0; transform: translateX(12px); }
+                to { opacity: 0.85; transform: translateX(0); }
+            }
+
+            .figure--outset img {
+                animation: outset-reveal linear;
+                animation-timeline: view();
+                animation-range: entry 5% cover 45%;
+            }
+            @keyframes outset-reveal {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
             }
         }
 
@@ -865,81 +937,6 @@
                 var(--color-washi) 100%
             );
         }
-
-        /* ============================================
-           PANORAMIC ILLUSTRATION BREAK
-        ============================================ */
-        .illustration-break {
-            background: var(--color-dark);
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .illustration-break__image {
-            width: 100%;
-            max-width: 900px;
-            position: relative;
-        }
-
-        .illustration-break__image img {
-            width: 100%;
-            height: auto;
-            opacity: 0.5;
-            filter: saturate(0.3) brightness(1.2) sepia(0.08);
-            mix-blend-mode: screen;
-            mask-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                rgba(0,0,0,0.3) 8%,
-                rgba(0,0,0,0.8) 25%,
-                black 40%,
-                black 60%,
-                rgba(0,0,0,0.8) 75%,
-                rgba(0,0,0,0.3) 92%,
-                transparent 100%
-            );
-            -webkit-mask-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                rgba(0,0,0,0.3) 8%,
-                rgba(0,0,0,0.8) 25%,
-                black 40%,
-                black 60%,
-                rgba(0,0,0,0.8) 75%,
-                rgba(0,0,0,0.3) 92%,
-                transparent 100%
-            );
-        }
-
-        .illustration-break__image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to right,
-                var(--color-dark) 0%,
-                transparent 15%,
-                transparent 85%,
-                var(--color-dark) 100%
-            );
-            pointer-events: none;
-        }
-
-        .illustration-break__caption {
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-            font-weight: 400;
-            color: rgba(242, 234, 211, 0.6);
-            text-align: center;
-            letter-spacing: 0.04em;
-            padding-top: 0.75rem;
-            padding-bottom: 0.5rem;
-        }
-
 
         /* ============================================
            FOOTER
@@ -1033,7 +1030,7 @@
         }
 
         /* ============================================
-           RESPONSIVE
+           RESPONSIVE - Mobile collapse
         ============================================ */
         @media (max-width: 48rem) {
             .article-hero {
@@ -1082,22 +1079,51 @@
                 font-size: 2.75rem;
             }
 
+            /* Mobile: collapse multi-zone grid to simple layout */
             .article-grid {
                 grid-template-columns:
-                    0
-                    minmax(0, 1fr)
-                    0;
-                padding-inline: 1.25rem;
+                    [bleed-start] 1rem
+                    [margin-start content-start] 1fr
+                    [content-end margin-end] 1rem
+                    [bleed-end];
             }
 
             .full-bleed {
-                margin-inline: -1.25rem;
-                width: calc(100% + 2.5rem);
+                grid-column: bleed-start / bleed-end;
             }
 
             .popout, .wide {
-                max-width: calc(100% + 2.5rem);
-                margin-inline: -1.25rem;
+                grid-column: bleed-start / bleed-end;
+            }
+
+            /* Companion collapses to inline on mobile */
+            .figure--companion {
+                grid-column: content;
+                grid-row: auto;
+                position: relative;
+                top: auto;
+                max-width: 60%;
+                margin: var(--space-m) auto;
+                padding-inline-start: 0;
+            }
+            .figure--companion img {
+                max-width: 100%;
+            }
+
+            /* Feature loses mask on mobile */
+            .figure--feature img {
+                max-width: 100%;
+                mask-image: none;
+                -webkit-mask-image: none;
+            }
+
+            /* Outset goes full bleed on mobile */
+            .figure--outset {
+                grid-column: bleed-start / bleed-end;
+            }
+
+            .figure-trio.figure--outset {
+                grid-column: bleed-start / bleed-end;
             }
         }
 
@@ -1161,25 +1187,6 @@
            DESKTOP REFINEMENTS
         ============================================ */
         @media (min-width: 60rem) {
-            .article-body--with-figure {
-                grid-column: 1 / -1;
-                max-width: min(calc(var(--measure) + 14rem), 90%);
-                margin-inline: auto;
-            }
-
-            .figure--inline-float {
-                width: clamp(220px, 32%, 320px);
-            }
-            .figure--inline-float img {
-                max-height: 380px;
-            }
-            .figure--inline-float-dark {
-                width: clamp(240px, 35%, 350px);
-            }
-            .figure--inline-float-dark img {
-                max-height: 380px;
-            }
-
             .figure-trio {
                 max-width: min(72rem, 88%);
                 margin-inline: auto;
@@ -1190,11 +1197,9 @@
             .figure-trio img {
                 aspect-ratio: 4 / 5;
             }
-        }
 
-        @media (min-width: 72rem) {
-            .illustration-break__image {
-                max-width: 1100px;
+            .figure--companion img {
+                max-width: 240px;
             }
         }
 
@@ -1265,7 +1270,7 @@
     <main id="article-start">
 
     <!-- ========== SECTION 1: Opening ========== -->
-    <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-l);">
 
         <div class="article-body">
             <p class="drop-cap reveal">בשנת 2024 קרה משהו יוצא דופן במכון מקס פלאנק בפרנקפורט. צוות חוקרים בהובלת Tschacher ו-Wald-Fuhrmann חיבר 695 בני אדם לחיישנים פיזיולוגיים - קצב לב, מוליכות עור, נשימה - ושלח אותם לשבת ב-11 קונצרטים שונים. בטהובן, ברהמס, ברט דין. המוזיקה התחילה, והגופים התחילו להסתנכרן.</p>
@@ -1285,7 +1290,7 @@
     </div>
 
     <!-- ========== SECTION 2: The Body Hears Before the Mind Understands ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
         <div class="article-body">
             <h2 class="reveal">הגוף שומע לפני שהראש מבין</h2>
@@ -1310,7 +1315,7 @@
     </div>
 
     <!-- ========== SECTION 3: No Music Needed ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
         <div class="article-body">
             <h2 class="reveal">לא צריך אפילו מוזיקה</h2>
@@ -1330,16 +1335,16 @@
     </div>
 
     <!-- ========== SECTION 4: Brains in Network ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
-        <div class="article-body article-body--with-figure">
+        <!-- Brain sync - companion in the end margin -->
+        <figure class="article-figure sumi-figure figure--companion reveal-illustration">
+            <img src="assets/blog/brain-sync.webp" alt="Brain synchronization - sumi-e illustration" loading="lazy" decoding="async">
+            <figcaption>רשת היפר-מוחית</figcaption>
+        </figure>
+
+        <div class="article-body">
             <h2 class="reveal">מוחות ברשת</h2>
-
-            <!-- Brain sync - floats into text -->
-            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog/brain-sync.webp" alt="Brain synchronization - sumi-e illustration" loading="lazy" decoding="async">
-                <figcaption>רשת היפר-מוחית</figcaption>
-            </figure>
 
             <p class="reveal">ב-2023 פרסמו Muller ו-Lindenberger ממכון מקס פלאנק בברלין מחקר שלקח את הדברים צעד קדימה. הם חיברו ארבעה גיטריסטים וארבעה מאזינים ל-EEG בו-זמנית - 168 אלקטרודות על שמונה גולגולות - ומצאו משהו שהם קראו לו "hyperbrain network" - רשת היפר-מוחית. לא מוח אחד שמשדר ואחד שקולט, אלא רשת שמתארגנת מעצמה לפי המוזיקה.</p>
 
@@ -1360,7 +1365,7 @@
     </div>
 
     <!-- ========== SECTION 5: Live vs Recorded ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
         <div class="article-body">
             <h2 class="reveal">החי מול המוקלט</h2>
@@ -1386,7 +1391,7 @@
     </div>
 
     <!-- ========== SECTION 6: Singing, Oxytocin ========== -->
-    <section class="article-grid" style="padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-bottom: var(--space-l);">
 
         <div class="article-body">
             <h2 class="reveal">שירה, אוקסיטוצין, ומה שקורה בקבוצה</h2>
@@ -1402,16 +1407,16 @@
 
     </section>
 
+    <!-- Sufi - feature image: full-width on washi before dark section -->
+    <section class="article-grid" style="padding-bottom: 0;">
+        <figure class="article-figure sumi-figure figure--feature reveal-illustration">
+            <img src="assets/blog/sufi-dhikr.webp" alt="Sufi whirling dervishes - sumi-e illustration" loading="lazy" decoding="async">
+            <figcaption>דרווישים סופים - ריקוד הדהיקר</figcaption>
+        </figure>
+    </section>
+
     <!-- Transition to dark -->
     <div class="transition--washi-dark"></div>
-
-    <!-- Sufi panoramic break -->
-    <div class="illustration-break">
-        <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog/sufi-dhikr.webp" alt="Sufi whirling dervishes - sumi-e illustration" loading="lazy" decoding="async">
-        </div>
-        <figcaption class="illustration-break__caption">דרווישים סופים - ריקוד הדהיקר</figcaption>
-    </div>
 
     <!-- ========== SECTION 7: What Cultures Always Knew (DARK) ========== -->
     <section class="section--dark">
@@ -1423,24 +1428,24 @@
                 <div class="section-marker__line"></div>
             </div>
 
-            <div class="article-body article-body--with-figure">
+            <!-- Hasidic niggun - companion in margin, dark variant -->
+            <figure class="article-figure sumi-figure sumi-figure--dark figure--companion reveal-illustration">
+                <img src="assets/blog/hasidic-niggun.webp" alt="Hasidic niggun - sumi-e illustration" loading="lazy" decoding="async">
+                <figcaption>ניגון חסידי - דבקות</figcaption>
+            </figure>
+
+            <div class="article-body">
                 <h2 class="reveal">מה שהתרבויות תמיד ידעו</h2>
 
                 <p class="reveal">ואולי הממצא המדעי המרתק הוא פחות "גילוי" ויותר "אישור". כי תרבויות אנושיות עושות את זה מאז שיש תרבויות.</p>
-
-                <!-- Hasidic niggun - floats into dark text -->
-                <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
-                    <img src="assets/blog/hasidic-niggun.webp" alt="Hasidic niggun - sumi-e illustration" loading="lazy" decoding="async">
-                    <figcaption>ניגון חסידי - דבקות</figcaption>
-                </figure>
 
                 <p class="reveal">בקהילת טזה שבבורגונדי, צרפת, עד 6,000 איש שרים יחד מנגינות פשוטות וחזרתיות. לא קונצרט. לא הופעה. פשוט שירה משותפת שנמשכת ונמשכת עד שמשהו בחדר משתנה. הסופים קוראים לזה "וג'ד" - ריקוד הדהיקר שמייצר גלי תטא ומצב של ספיגה מוחלטת. בחסידות, הניגון - מנגינה ללא מילים - נועד להביא למצב של דבקות, היצמדות למשהו שמעבר לשפה. במנזרי הבודהיזם הטיבטי, נזירי גיוטו מייצרים תשעה צלילים בו-זמנית מגרון אחד - טכניקת אוברטון שפותחה לפני חמש מאות שנה כדי להסתיר מילים קדושות בתוך קיר של ארכיטקטורה הרמונית טהורה. מאות נזירים מסנכרנים את השירה לא לפי קצב חיצוני אלא לפי נשימה משותפת, ובפסטיבל המונלם בלהאסה - שנוסד ב-1409 - אלפי נזירים משלושה מנזרים שרו יחד בזמן שמאות אלפי עולי רגל מילאו את העיר סביבם. מחקר EEG על מתרגלים ותיקים של מסורות אלה מצא שהם מייצרים סנכרון בגלי גמא כל כך חזק שהוא משנה את פעילות המוח הבסיסית שלהם באופן קבוע. ובתרבות האבוריג'ינית האוסטרלית, קווי השיר - songlines - הם בו-זמנית מפות ניווט, שירי בריאה ומערכת זיכרון קולקטיבית.</p>
 
                 <p class="reveal">כל התרבויות האלה הגיעו לאותה מסקנה: משהו קורה כשאנשים משמיעים צלילים ביחד. משהו שלא קורה כשעושים את זה לבד.</p>
             </div>
 
-            <!-- Trio strip: Taize + Heartbeats + Sound Field -->
-            <div class="figure-trio wide reveal">
+            <!-- Trio strip: Taize + Heartbeats + Sound Field - outset gallery -->
+            <div class="figure-trio figure--outset wide reveal">
                 <figure class="sumi-figure sumi-figure--dark">
                     <img src="assets/blog/taize.webp" alt="Taize community singing" loading="lazy" decoding="async">
                     <figcaption>קהילת טזה, צרפת</figcaption>
@@ -1467,7 +1472,7 @@
     <div class="transition--dark-washi"></div>
 
     <!-- ========== SECTION 8: The Open Question ========== -->
-    <section class="article-grid" style="padding-top: var(--space-s); padding-bottom: var(--space-s);">
+    <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-l);">
 
         <div class="section-marker" style="padding-top: 0;">
             <div class="section-marker__line"></div>
