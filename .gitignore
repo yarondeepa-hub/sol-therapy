@@ -1,0 +1,26 @@
+# Dev artifacts
+node_modules/
+frames-tmp/
+*.mjs
+deploy.sh
+package.json
+package-lock.json
+
+# Internal docs (not for deploy)
+art-direction-research.md
+gallery-design-brief.md
+gatekeeper-review.md
+illustration-integration-brief.md
+illustrator-design-brief.md
+v6-visual-architecture.md
+visual-specs-code-art.md
+website-spec-v4.md
+website-spec-v5.md
+
+# Backup/dev HTML
+artists-render*.html
+index-backup-*.html
+
+# OS files
+.DS_Store
+Thumbs.db
