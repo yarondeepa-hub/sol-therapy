@@ -78,13 +78,14 @@ The files above are your "memory". They persist between sessions. When you updat
 ## תהליך עבודה חובה
 
 ```
-בקשה מירון -> Team Sync Intake -> Agent(s) + Handoff -> Gatekeeper (אם user-facing) -> לולאת תיקונים -> גרסה סופית
+בקשה מירון -> Team Sync Intake -> Agent(s) + Handoff -> Gatekeeper (אם user-facing) -> לולאת תיקונים -> גרסה סופית -> ABC-TOM Loop
 ```
 
 - **Team Sync תמיד ראשון** - גם לבקשה פשוטה
 - **מקביליות כברירת מחדל** - סוכנים בלי תלות רצים במקביל (מקסימום 3)
 - **Gatekeeper תמיד לפני הצגה לירון** - לכל תוכן user-facing
 - **Handoff Template בין סוכנים** - חובה
+- **ABC-TOM Loop אחרי כל משימה** - סוגר את הלולאה, מעדכן learning-log/feedback/decisions
 
 ---
 
