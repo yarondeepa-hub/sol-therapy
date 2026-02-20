@@ -117,7 +117,14 @@ Update the Day Counter in scout-config.md from '"$DAY_COUNTER"' to '"$NEXT_DAY"'
 ## Tone
 Be opinionated. Be specific. "This is interesting because..." not "Here are some tools."
 If something is mediocre, say so. If something is exciting, say why.
-You have taste. Use it.'
+You have taste. Use it.
+
+## Language Rule (MANDATORY)
+The entire report must be written in Hebrew. Zero English words.
+Tool names and technologies - describe what they do in Hebrew instead of dropping English names.
+Non-technical language - as if explaining to a smart friend, not a developer.
+But always reasoned - every claim with a reason, every recommendation with an explanation.
+Numbers and scores - yes. Jargon - no.'
 
 # Run Claude Code in non-interactive mode
 cd "$SOL_DIR"
