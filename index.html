@@ -1302,6 +1302,36 @@
             transform: scale(1.03);
         }
 
+        /* Micro-drift: subtle ambient movement per item (aroke01 "living gallery") */
+        @keyframes mosaicDriftA {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(2px, -1.5px); }
+        }
+        @keyframes mosaicDriftB {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-1.5px, 2px); }
+        }
+        @keyframes mosaicDriftC {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(1px, 1.5px); }
+        }
+        .mosaic__item--drifting img,
+        .mosaic__item--drifting video {
+            will-change: transform;
+        }
+        .mosaic__item--drift-a img,
+        .mosaic__item--drift-a video { animation: mosaicDriftA 6s ease-in-out infinite; }
+        .mosaic__item--drift-b img,
+        .mosaic__item--drift-b video { animation: mosaicDriftB 7.5s ease-in-out infinite; }
+        .mosaic__item--drift-c img,
+        .mosaic__item--drift-c video { animation: mosaicDriftC 9s ease-in-out infinite; }
+
+        /* Pause drift when not in viewport (GPU savings) */
+        .mosaic__item--drift-paused img,
+        .mosaic__item--drift-paused video {
+            animation-play-state: paused;
+        }
+
         /* Scroll reveal - starts hidden */
         .mosaic__item {
             opacity: 0;
@@ -1344,6 +1374,11 @@
             .mosaic__item {
                 opacity: 1 !important;
                 transform: none !important;
+            }
+            .mosaic__item--drift-a img, .mosaic__item--drift-a video,
+            .mosaic__item--drift-b img, .mosaic__item--drift-b video,
+            .mosaic__item--drift-c img, .mosaic__item--drift-c video {
+                animation: none !important;
             }
             .mosaic__item video {
                 display: none;
@@ -1987,6 +2022,38 @@
                 opacity: 1;
             }
         }
+
+        /* ============================================
+           VIEW TRANSITIONS - aroke01-inspired dissolve
+           Blur crossfade between pages (ink dissolving)
+        ============================================ */
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root) {
+            animation: sol-vt-fade-out 0.4s ease-out both;
+        }
+        ::view-transition-new(root) {
+            animation: sol-vt-fade-in 0.4s ease-in both;
+        }
+
+        @keyframes sol-vt-fade-out {
+            from { opacity: 1; filter: blur(0px); }
+            to   { opacity: 0; filter: blur(3px); }
+        }
+        @keyframes sol-vt-fade-in {
+            from { opacity: 0; filter: blur(3px); }
+            to   { opacity: 1; filter: blur(0px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            ::view-transition-old(root),
+            ::view-transition-new(root) {
+                animation: none;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -2757,6 +2824,35 @@
                         }
                     }
                 );
+            }
+
+            // ----- MOSAIC: Micro-drift (aroke01 "living gallery") -----
+            // Each item gets a different drift pattern (a/b/c), cycles through
+            // Paused when out of viewport to save GPU
+            var driftPatterns = ['drift-a', 'drift-b', 'drift-c'];
+            mosaicItems.forEach(function(item, i) {
+                var pattern = driftPatterns[i % driftPatterns.length];
+                item.classList.add('mosaic__item--drifting', 'mosaic__item--' + pattern, 'mosaic__item--drift-paused');
+            });
+
+            // Use IntersectionObserver to play/pause drift
+            if ('IntersectionObserver' in window) {
+                var mosaicSection = document.querySelector('.mosaic');
+                if (mosaicSection) {
+                    var driftObserver = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            var items = entry.target.querySelectorAll('[data-mosaic]');
+                            items.forEach(function(item) {
+                                if (entry.isIntersecting) {
+                                    item.classList.remove('mosaic__item--drift-paused');
+                                } else {
+                                    item.classList.add('mosaic__item--drift-paused');
+                                }
+                            });
+                        });
+                    }, { threshold: 0.05 });
+                    driftObserver.observe(mosaicSection);
+                }
             }
 
         // ========================================
