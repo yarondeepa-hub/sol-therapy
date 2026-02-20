@@ -97,7 +97,11 @@
       "Bash(do echo \"=== $f ===\")",
       "Bash(pandoc:*)",
       "Bash(do echo \"===== $f =====\")",
-      "Bash(do echo \"========== $f ==========\")"
+      "Bash(do echo \"========== $f ==========\")",
+      "mcp__filesystem__read_text_file",
+      "Bash(unzip:*)",
+      "Bash(xmllint:*)",
+      "Bash(pip3 install:*)"
     ]
   }
 }
