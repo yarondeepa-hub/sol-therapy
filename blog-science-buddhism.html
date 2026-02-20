@@ -350,26 +350,17 @@
         ============================================ */
         .article-grid {
             display: grid;
-            grid-template-columns:
-                [bleed-start] minmax(1rem, 1fr)
-                [margin-start] minmax(0, 6rem)
-                [content-start] min(var(--measure), calc(100% - 2rem))
-                [content-end] minmax(0, 6rem)
-                [margin-end] minmax(1rem, 1fr)
-                [bleed-end];
+            grid-template-columns: 1fr min(var(--measure), calc(100% - 3rem)) 1fr;
         }
-        .article-grid > * {
-            grid-column: content;
-        }
-        .full-bleed {
-            grid-column: bleed-start / bleed-end;
-            width: 100%;
-        }
+        .article-grid > * { grid-column: 2; }
+        .full-bleed { grid-column: 1 / -1; width: 100%; }
         .popout {
-            grid-column: margin-start / margin-end;
+            grid-column: 1 / -1;
+            max-width: min(calc(var(--measure) + 12rem), 92%);
+            margin-inline: auto;
         }
         .wide {
-            grid-column: bleed-start / bleed-end;
+            grid-column: 1 / -1;
             max-width: min(80rem, 94%);
             margin-inline: auto;
         }
@@ -578,7 +569,7 @@
         }
 
         .figure--popout {
-            margin: var(--space-xl) auto;
+            margin: var(--space-m) auto;
             max-width: 75%;
         }
         .figure--popout figcaption {
@@ -586,106 +577,100 @@
             z-index: 2;
         }
 
-        /* ============================================
-           FIGURE MODE A: Companion - margin sticky
-        ============================================ */
-        .figure--companion {
-            grid-column: margin-end / bleed-end;
-            grid-row: span 3;
-            align-self: start;
-            position: sticky;
-            top: 5rem;
-            padding-inline-start: 1rem;
-            margin: 0;
+        .figure--inline-float {
+            float: inline-start;
+            width: clamp(180px, 32%, 280px);
+            margin: 0.5rem 0 var(--space-s) var(--space-m);
+            shape-outside: margin-box;
+            shape-margin: 1.5rem;
+            overflow: visible;
         }
-        .figure--companion img {
+        .figure--inline-float img {
+            max-height: 320px;
             width: 100%;
-            max-width: 200px;
-            mix-blend-mode: multiply;
-            filter: saturate(0.3) sepia(0.15) contrast(0.92);
+            height: auto;
+            object-fit: contain;
+            opacity: 0.88;
+            mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+        }
+        .figure--inline-float::after,
+        .figure--inline-float-dark::after {
+            inset: -5%;
+        }
+        .figure--inline-float figcaption {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            color: var(--color-muted);
+            letter-spacing: 0.02em;
+            margin-top: 0.35rem;
             opacity: 0.85;
         }
-        .figure--companion figcaption {
-            font-family: var(--font-hadassah);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: var(--color-muted);
-            margin-top: 0.5rem;
-            max-width: 18ch;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .figure--companion::before { opacity: 0.06; }
-        .figure--companion::after { inset: -5%; }
 
-        /* ============================================
-           FIGURE MODE B: Feature - full-width break
-        ============================================ */
-        .figure--feature {
-            grid-column: bleed-start / bleed-end;
-            padding-block: var(--space-xl);
-            margin: 0;
+        .figure--inline-float-dark {
+            float: inline-end;
+            width: clamp(200px, 35%, 320px);
+            margin: 0.5rem var(--space-m) var(--space-s) 0;
+            shape-outside: margin-box;
+            shape-margin: 1.5rem;
+            overflow: hidden;
         }
-        .figure--feature img {
-            max-width: min(85vw, 55rem);
-            margin-inline: auto;
-            display: block;
+        .figure--inline-float-dark img {
+            max-height: 320px;
             width: 100%;
-            mix-blend-mode: multiply;
-            filter: saturate(0.35) sepia(0.12) contrast(0.95);
-            mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
+            height: auto;
+            object-fit: contain;
         }
-        .figure--feature figcaption {
-            max-width: min(var(--measure), calc(100% - 3rem));
-            margin-inline: auto;
-            font-family: var(--font-hadassah);
-            font-size: clamp(0.85rem, 1.1vw, 1rem);
-            color: var(--color-muted);
-            padding-block-start: 1rem;
-            padding-inline: 1rem;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .figure--feature::after { display: none; }
-
-        /* ============================================
-           FIGURE MODE C: Outset - wider than text
-        ============================================ */
-        .figure--outset {
-            grid-column: margin-start / margin-end;
-            padding-block: var(--space-l);
-            margin: 0;
-        }
-        .figure--outset img {
-            width: 100%;
-            mix-blend-mode: multiply;
-            filter: saturate(0.35) sepia(0.12) contrast(0.95);
-        }
-        .figure--outset figcaption {
-            font-family: var(--font-hadassah);
-            font-size: 0.85rem;
-            color: var(--color-muted);
-            padding-top: 0.75rem;
-            border-bottom: none;
-            padding-bottom: 0;
+        .figure--inline-float-dark figcaption {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            color: rgba(242, 234, 211, 0.65);
+            letter-spacing: 0.02em;
+            margin-top: 0.35rem;
         }
 
-        /* Dark section companion */
-        .section--dark .figure--companion img {
-            mix-blend-mode: screen;
-            filter: saturate(0.2) brightness(0.8) sepia(0.06) contrast(0.88);
-        }
-        .section--dark .figure--companion figcaption {
-            color: rgba(242, 234, 211, 0.6);
-        }
-        .section--dark .figure--companion::after {
-            background: radial-gradient(ellipse 65% 60% at 50% 50%, transparent 25%, rgba(26,26,26,0.3) 45%, rgba(26,26,26,0.7) 65%, var(--color-dark) 85%);
+        @media (max-width: 48rem) {
+            .figure--inline-float,
+            .figure--inline-float-dark {
+                float: none;
+                width: 80%;
+                max-width: 400px;
+                margin: var(--space-m) auto;
+                shape-outside: none;
+                overflow: visible;
+            }
+            .figure--inline-float img,
+            .figure--inline-float-dark img {
+                max-height: none;
+            }
+            .figure--inline-float::after,
+            .figure--inline-float-dark::after {
+                inset: -8%;
+            }
         }
 
-        /* Outset figure-trio */
-        .figure-trio.figure--outset {
-            grid-column: margin-start / margin-end;
+        .article-body--with-figure::after {
+            content: '';
+            display: table;
+            clear: both;
         }
 
         /* ============================================
@@ -727,39 +712,6 @@
         }
 
         /* ============================================
-           SCROLL-DRIVEN ANIMATIONS
-        ============================================ */
-        @supports (animation-timeline: view()) {
-            .figure--feature img {
-                animation: feature-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 10% cover 50%;
-            }
-            @keyframes feature-reveal {
-                from { transform: scale(1.06) translateY(15px); opacity: 0.3; filter: saturate(0) sepia(0.2) blur(1px) contrast(0.88); }
-                to { transform: scale(1) translateY(0); opacity: 1; filter: saturate(0.35) sepia(0.12) blur(0) contrast(0.95); }
-            }
-            .figure--companion img {
-                animation: companion-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 0% entry 70%;
-            }
-            @keyframes companion-reveal {
-                from { opacity: 0; transform: translateX(12px); }
-                to { opacity: 0.85; transform: translateX(0); }
-            }
-            .figure--outset img {
-                animation: outset-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 5% cover 45%;
-            }
-            @keyframes outset-reveal {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        }
-
-        /* ============================================
            DARK SECTION
         ============================================ */
         .section--dark {
@@ -790,6 +742,54 @@
                 #8a7e67 52%, #c9bfa0 70%, #e8dfc5 86%, var(--color-washi) 100%);
         }
 
+        /* ============================================
+           PANORAMIC ILLUSTRATION BREAK
+        ============================================ */
+        .illustration-break {
+            background: var(--color-dark);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .illustration-break__image {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+        }
+        .illustration-break__image img {
+            width: 100%;
+            height: auto;
+            opacity: 0.5;
+            filter: saturate(0.3) brightness(1.2) sepia(0.08);
+            mix-blend-mode: screen;
+            mask-image: linear-gradient(to bottom,
+                transparent 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 25%,
+                black 40%, black 60%, rgba(0,0,0,0.8) 75%, rgba(0,0,0,0.3) 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom,
+                transparent 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,0.8) 25%,
+                black 40%, black 60%, rgba(0,0,0,0.8) 75%, rgba(0,0,0,0.3) 92%, transparent 100%);
+        }
+        .illustration-break__image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                var(--color-dark) 0%, transparent 15%, transparent 85%, var(--color-dark) 100%);
+            pointer-events: none;
+        }
+        .illustration-break__caption {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: rgba(242, 234, 211, 0.6);
+            text-align: center;
+            letter-spacing: 0.04em;
+            padding-top: 0.75rem;
+            padding-bottom: 0.5rem;
+        }
 
         /* ============================================
            FOOTER
@@ -874,33 +874,9 @@
             .article-hero__scroll-hint { display: none; }
             .pull-quote { max-width: 95%; font-size: 1.1rem; padding: 1rem 0; }
             .article-body .drop-cap::first-letter { font-size: 2.75rem; }
-            /* Mobile: collapse multi-zone grid to simple layout */
-            .article-grid {
-                grid-template-columns:
-                    [bleed-start] 1rem
-                    [margin-start content-start] 1fr
-                    [content-end margin-end] 1rem
-                    [bleed-end];
-            }
-            .full-bleed { grid-column: bleed-start / bleed-end; }
-            .popout, .wide { grid-column: bleed-start / bleed-end; }
-            .figure--companion {
-                grid-column: content;
-                grid-row: auto;
-                position: relative;
-                top: auto;
-                max-width: 60%;
-                margin: var(--space-m) auto;
-                padding-inline-start: 0;
-            }
-            .figure--companion img { max-width: 100%; }
-            .figure--feature img {
-                max-width: 100%;
-                mask-image: none;
-                -webkit-mask-image: none;
-            }
-            .figure--outset { grid-column: bleed-start / bleed-end; }
-            .figure-trio.figure--outset { grid-column: bleed-start / bleed-end; }
+            .article-grid { grid-template-columns: 0 minmax(0, 1fr) 0; padding-inline: 1.25rem; }
+            .full-bleed { margin-inline: -1.25rem; width: calc(100% + 2.5rem); }
+            .popout, .wide { max-width: calc(100% + 2.5rem); margin-inline: -1.25rem; }
         }
 
         @media (min-width: 64rem) {
@@ -912,6 +888,15 @@
         }
 
         @media (min-width: 60rem) {
+            .article-body--with-figure {
+                grid-column: 1 / -1;
+                max-width: min(calc(var(--measure) + 14rem), 90%);
+                margin-inline: auto;
+            }
+            .figure--inline-float { width: clamp(220px, 32%, 320px); }
+            .figure--inline-float img { max-height: 380px; }
+            .figure--inline-float-dark { width: clamp(240px, 35%, 350px); }
+            .figure--inline-float-dark img { max-height: 380px; }
             .figure-trio { max-width: min(72rem, 88%); margin-inline: auto; }
             .figure-trio figure:nth-child(1) { transform: rotate(-1.2deg); }
             .figure-trio figure:nth-child(2) { transform: rotate(0.6deg); }
@@ -919,6 +904,9 @@
             .figure-trio img { aspect-ratio: 4 / 5; }
         }
 
+        @media (min-width: 72rem) {
+            .illustration-break__image { max-width: 1100px; }
+        }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1018,14 +1006,14 @@
     <!-- ========== SECTION 2: The Telescope of Consciousness ========== -->
     <section class="article-grid" style="padding-bottom: var(--space-s);">
 
-        <!-- Telescope illustration - companion in margin -->
-        <figure class="article-figure sumi-figure figure--companion reveal-illustration">
-            <img src="assets/blog-science/02-telescope-consciousness.webp" alt="טלסקופ מופנה פנימה לתוך ראש שקוף" loading="lazy" decoding="async">
-            <figcaption>הטלסקופ הפנימי</figcaption>
-        </figure>
-
-        <div class="article-body">
+        <div class="article-body article-body--with-figure">
             <h2 class="reveal">הטלסקופ של התודעה</h2>
+
+            <!-- Telescope illustration - floats into text -->
+            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
+                <img src="assets/blog-science/02-telescope-consciousness.webp" alt="טלסקופ מופנה פנימה לתוך ראש שקוף" loading="lazy" decoding="async">
+                <figcaption>הטלסקופ הפנימי</figcaption>
+            </figure>
 
             <p class="reveal">ב-1987, שמונה-עשרה שנה לפני אותו כנס סוער, הדלאי לאמה ישב בדהרמסאלה שבהודו מול ביולוג ופילוסוף צ'יליאני בשם פרנסיסקו ורלה ועורך דין אמריקאי בשם אדם אנגל. השלושה הקימו את Mind & Life Institute - ארגון שמטרתו ליצור דיאלוג אמיתי בין מדע קונטמפלטיבי למדע ניסויי. לא השוואה, לא ויכוח - דיאלוג. הסיבה שהדלאי לאמה ראה בזה צורך אמיתי נעוצה בהיסטוריה שקדמה לו ב-2,500 שנה.</p>
 
@@ -1037,12 +1025,16 @@
     </section>
 
     <!-- Dharamsala panoramic break -->
-    <section class="article-grid" style="padding-bottom: 0;">
-        <figure class="article-figure sumi-figure figure--feature reveal-illustration">
+    <div class="transition--washi-dark"></div>
+
+    <div class="illustration-break">
+        <div class="illustration-break__image reveal-illustration">
             <img src="assets/blog-science/03-dharamsala-meeting.webp" alt="שלוש דמויות סביב שולחן בדהרמסאלה" loading="lazy" decoding="async">
-            <figcaption>דהרמסאלה, 1987 - הדלאי לאמה, פרנסיסקו ורלה ואדם אנגל</figcaption>
-        </figure>
-    </section>
+        </div>
+        <figcaption class="illustration-break__caption">דהרמסאלה, 1987 - הדלאי לאמה, פרנסיסקו ורלה ואדם אנגל</figcaption>
+    </div>
+
+    <div class="transition--dark-washi"></div>
 
     <!-- Section divider -->
     <div class="section-marker">
@@ -1054,14 +1046,14 @@
     <!-- ========== SECTION 3: What Science Measures ========== -->
     <section class="article-grid" style="padding-bottom: var(--space-s);">
 
-        <!-- Gamma brain/mandala - companion in margin -->
-        <figure class="article-figure sumi-figure figure--companion reveal-illustration">
-            <img src="assets/blog-science/04-gamma-brain-mandala.webp" alt="מוח מפוצל - חצי מדע חצי מנדלה" loading="lazy" decoding="async">
-            <figcaption>מוח ומנדלה - שפות שונות לאותו דבר</figcaption>
-        </figure>
-
-        <div class="article-body">
+        <div class="article-body article-body--with-figure">
             <h2 class="reveal">מה שהמדע מודד</h2>
+
+            <!-- Gamma brain/mandala - floats into text -->
+            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
+                <img src="assets/blog-science/04-gamma-brain-mandala.webp" alt="מוח מפוצל - חצי מדע חצי מנדלה" loading="lazy" decoding="async">
+                <figcaption>מוח ומנדלה - שפות שונות לאותו דבר</figcaption>
+            </figure>
 
             <p class="reveal">ואז הגיע המדע עם הכלים שלו, וגילה שחלק מהמפה הבודהיסטית מדויקת להפליא.</p>
 
@@ -1084,14 +1076,14 @@
     <!-- ========== SECTION 4: What Science Doesn't Measure Yet ========== -->
     <section class="article-grid" style="padding-bottom: var(--space-s);">
 
-        <!-- EEG gap illustration - companion in margin -->
-        <figure class="article-figure sumi-figure figure--companion reveal-illustration">
-            <img src="assets/blog-science/05-eeg-gap.webp" alt="מסך EEG עם דמות מדיטציה מאחוריו" loading="lazy" decoding="async">
-            <figcaption>הפער - בין הנתונים לחוויה</figcaption>
-        </figure>
-
-        <div class="article-body">
+        <div class="article-body article-body--with-figure">
             <h2 class="reveal">מה שהמדע עדיין לא מודד</h2>
+
+            <!-- EEG gap illustration - floats into text -->
+            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
+                <img src="assets/blog-science/05-eeg-gap.webp" alt="מסך EEG עם דמות מדיטציה מאחוריו" loading="lazy" decoding="async">
+                <figcaption>הפער - בין הנתונים לחוויה</figcaption>
+            </figure>
 
             <p class="reveal">אבל פה צריך לעצור ולהיות כנים.</p>
 
@@ -1104,16 +1096,15 @@
 
     </section>
 
-    <!-- McMindfulness panoramic break -->
-    <section class="article-grid" style="padding-bottom: 0;">
-        <figure class="article-figure sumi-figure figure--feature reveal-illustration">
-            <img src="assets/blog-science/06-mcmindfulness.webp" alt="סמארטפון עם אפליקציית מדיטציה בין קוביקלים" loading="lazy" decoding="async">
-            <figcaption>McMindfulness - כשמדיטציה הופכת למוצר צריכה</figcaption>
-        </figure>
-    </section>
-
-    <!-- Transition to dark -->
+    <!-- Transition to dark - McMindfulness break -->
     <div class="transition--washi-dark"></div>
+
+    <div class="illustration-break">
+        <div class="illustration-break__image reveal-illustration">
+            <img src="assets/blog-science/06-mcmindfulness.webp" alt="סמארטפון עם אפליקציית מדיטציה בין קוביקלים" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="illustration-break__caption">McMindfulness - כשמדיטציה הופכת למוצר צריכה</figcaption>
+    </div>
 
     <!-- ========== SECTION 5: Different Language, Same Table (DARK) ========== -->
     <section class="section--dark">

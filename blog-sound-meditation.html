@@ -372,29 +372,28 @@
         .article-grid {
             display: grid;
             grid-template-columns:
-                [bleed-start] minmax(1rem, 1fr)
-                [margin-start] minmax(0, 6rem)
-                [content-start] min(var(--measure), calc(100% - 2rem))
-                [content-end] minmax(0, 6rem)
-                [margin-end] minmax(1rem, 1fr)
-                [bleed-end];
+                1fr
+                min(var(--measure), calc(100% - 3rem))
+                1fr;
         }
 
         .article-grid > * {
-            grid-column: content;
+            grid-column: 2;
         }
 
         .full-bleed {
-            grid-column: bleed-start / bleed-end;
+            grid-column: 1 / -1;
             width: 100%;
         }
 
         .popout {
-            grid-column: margin-start / margin-end;
+            grid-column: 1 / -1;
+            max-width: min(calc(var(--measure) + 12rem), 92%);
+            margin-inline: auto;
         }
 
         .wide {
-            grid-column: bleed-start / bleed-end;
+            grid-column: 1 / -1;
             max-width: min(80rem, 94%);
             margin-inline: auto;
         }
@@ -630,8 +629,17 @@
 
         /* Popout figure - organic asymmetric placement */
         .figure--popout {
-            margin: var(--space-xl) auto;
+            margin: var(--space-m) auto;
             max-width: 75%;
+        }
+
+        /* Amygdala (section 1) - float into text like ink stain */
+        .figure--popout:first-of-type {
+            float: inline-start;
+            max-width: 55%;
+            margin: 0 0 var(--space-s) var(--space-m);
+            shape-outside: margin-box;
+            shape-margin: 1rem;
         }
 
         .figure--popout figcaption {
@@ -639,106 +647,124 @@
             z-index: 2;
         }
 
-        /* ============================================
-           FIGURE MODE A: Companion - margin sticky
-        ============================================ */
-        .figure--companion {
-            grid-column: margin-end / bleed-end;
-            grid-row: span 3;
-            align-self: start;
-            position: sticky;
-            top: 5rem;
-            padding-inline-start: 1rem;
-            margin: 0;
+        /* Inline float - image melts into text flow */
+        .figure--inline-float {
+            float: inline-start;
+            width: clamp(180px, 32%, 280px);
+            margin: 0.5rem 0 var(--space-s) var(--space-m);
+            shape-outside: margin-box;
+            shape-margin: 1.5rem;
+            overflow: visible;
         }
-        .figure--companion img {
+
+        .figure--inline-float img {
+            max-height: 320px;
             width: 100%;
-            max-width: 200px;
-            mix-blend-mode: multiply;
-            filter: saturate(0.3) sepia(0.15) contrast(0.92);
+            height: auto;
+            object-fit: contain;
+            opacity: 0.88;
+            mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+        }
+
+        /* Restore ::after dissolve for proper feathering on floats */
+        .figure--inline-float::after,
+        .figure--inline-float-dark::after {
+            inset: -5%;
+        }
+
+        .figure--inline-float figcaption {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            color: var(--color-muted);
+            letter-spacing: 0.02em;
+            margin-top: 0.35rem;
             opacity: 0.85;
         }
-        .figure--companion figcaption {
-            font-family: var(--font-hadassah);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: var(--color-muted);
-            margin-top: 0.5rem;
-            max-width: 18ch;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .figure--companion::before { opacity: 0.06; }
-        .figure--companion::after { inset: -5%; }
 
-        /* ============================================
-           FIGURE MODE B: Feature - full-width break
-        ============================================ */
-        .figure--feature {
-            grid-column: bleed-start / bleed-end;
-            padding-block: var(--space-xl);
-            margin: 0;
+        /* Dark section inline float */
+        .figure--inline-float-dark {
+            float: inline-end;
+            width: clamp(200px, 35%, 320px);
+            margin: 0.5rem var(--space-m) var(--space-s) 0;
+            shape-outside: margin-box;
+            shape-margin: 1.5rem;
+            overflow: visible;
         }
-        .figure--feature img {
-            max-width: min(85vw, 55rem);
-            margin-inline: auto;
-            display: block;
+
+        .figure--inline-float-dark img {
+            max-height: 320px;
             width: 100%;
-            mix-blend-mode: multiply;
-            filter: saturate(0.35) sepia(0.12) contrast(0.95);
-            mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-        }
-        .figure--feature figcaption {
-            max-width: min(var(--measure), calc(100% - 3rem));
-            margin-inline: auto;
-            font-family: var(--font-hadassah);
-            font-size: clamp(0.85rem, 1.1vw, 1rem);
-            color: var(--color-muted);
-            padding-block-start: 1rem;
-            padding-inline: 1rem;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .figure--feature::after { display: none; }
-
-        /* ============================================
-           FIGURE MODE C: Outset - wider than text
-        ============================================ */
-        .figure--outset {
-            grid-column: margin-start / margin-end;
-            padding-block: var(--space-l);
-            margin: 0;
-        }
-        .figure--outset img {
-            width: 100%;
-            mix-blend-mode: multiply;
-            filter: saturate(0.35) sepia(0.12) contrast(0.95);
-        }
-        .figure--outset figcaption {
-            font-family: var(--font-hadassah);
-            font-size: 0.85rem;
-            color: var(--color-muted);
-            padding-top: 0.75rem;
-            border-bottom: none;
-            padding-bottom: 0;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.88;
+            mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 88% 84% at 50% 50%,
+                black 30%,
+                rgba(0,0,0,0.5) 60%,
+                rgba(0,0,0,0.1) 82%,
+                transparent 95%
+            );
         }
 
-        /* Dark section companion */
-        .section--dark .figure--companion img {
-            mix-blend-mode: screen;
-            filter: saturate(0.2) brightness(0.8) sepia(0.06) contrast(0.88);
-        }
-        .section--dark .figure--companion figcaption {
-            color: rgba(242, 234, 211, 0.6);
-        }
-        .section--dark .figure--companion::after {
-            background: radial-gradient(ellipse 65% 60% at 50% 50%, transparent 25%, rgba(26,26,26,0.3) 45%, rgba(26,26,26,0.7) 65%, var(--color-dark) 85%);
+        .figure--inline-float-dark figcaption {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            color: rgba(242, 234, 211, 0.65);
+            letter-spacing: 0.02em;
+            margin-top: 0.35rem;
         }
 
-        /* Trio outset mode */
-        .figure-trio.figure--outset {
-            grid-column: margin-start / margin-end;
+        @media (max-width: 48rem) {
+            .figure--inline-float,
+            .figure--inline-float-dark {
+                float: none;
+                width: 80%;
+                max-width: 400px;
+                margin: var(--space-m) auto;
+                shape-outside: none;
+                overflow: visible;
+            }
+            .figure--inline-float img,
+            .figure--inline-float-dark img {
+                max-height: none;
+            }
+            .figure--inline-float::after,
+            .figure--inline-float-dark::after {
+                inset: -8%;
+            }
+        }
+
+        /* Clearfix for float containers */
+        .article-body--with-figure::after {
+            content: '';
+            display: table;
+            clear: both;
         }
 
         /* ============================================
@@ -814,39 +840,6 @@
         }
 
         /* ============================================
-           SCROLL-DRIVEN ANIMATIONS
-        ============================================ */
-        @supports (animation-timeline: view()) {
-            .figure--feature img {
-                animation: feature-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 10% cover 50%;
-            }
-            @keyframes feature-reveal {
-                from { transform: scale(1.06) translateY(15px); opacity: 0.3; filter: saturate(0) sepia(0.2) blur(1px) contrast(0.88); }
-                to { transform: scale(1) translateY(0); opacity: 1; filter: saturate(0.35) sepia(0.12) blur(0) contrast(0.95); }
-            }
-            .figure--companion img {
-                animation: companion-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 0% entry 70%;
-            }
-            @keyframes companion-reveal {
-                from { opacity: 0; transform: translateX(12px); }
-                to { opacity: 0.85; transform: translateX(0); }
-            }
-            .figure--outset img {
-                animation: outset-reveal linear;
-                animation-timeline: view();
-                animation-range: entry 5% cover 45%;
-            }
-            @keyframes outset-reveal {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        }
-
-        /* ============================================
            DARK SECTION
         ============================================ */
         .section--dark {
@@ -907,6 +900,82 @@
                 #e8dfc5 86%,
                 var(--color-washi) 100%
             );
+        }
+
+        /* ============================================
+           PANORAMIC ILLUSTRATION BREAK
+           Full-bleed ink wash that bleeds into transitions
+        ============================================ */
+        .illustration-break {
+            background: var(--color-dark);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .illustration-break__image {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .illustration-break__image img {
+            width: 100%;
+            height: auto;
+            opacity: 0.5;
+            filter: saturate(0.3) brightness(1.2) sepia(0.08);
+            mix-blend-mode: screen;
+            mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0,0,0,0.3) 8%,
+                rgba(0,0,0,0.8) 25%,
+                black 40%,
+                black 60%,
+                rgba(0,0,0,0.8) 75%,
+                rgba(0,0,0,0.3) 92%,
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0,0,0,0.3) 8%,
+                rgba(0,0,0,0.8) 25%,
+                black 40%,
+                black 60%,
+                rgba(0,0,0,0.8) 75%,
+                rgba(0,0,0,0.3) 92%,
+                transparent 100%
+            );
+        }
+
+        /* Horizontal fade edges */
+        .illustration-break__image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                var(--color-dark) 0%,
+                transparent 15%,
+                transparent 85%,
+                var(--color-dark) 100%
+            );
+            pointer-events: none;
+        }
+
+        .illustration-break__caption {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: rgba(242, 234, 211, 0.6);
+            text-align: center;
+            letter-spacing: 0.04em;
+            padding-top: 0.75rem;
+            padding-bottom: 0.5rem;
         }
 
         /* ============================================
@@ -1052,33 +1121,23 @@
                 font-size: 2.75rem;
             }
 
-            /* Mobile: collapse multi-zone grid to simple layout */
             .article-grid {
                 grid-template-columns:
-                    [bleed-start] 1rem
-                    [margin-start content-start] 1fr
-                    [content-end margin-end] 1rem
-                    [bleed-end];
+                    0
+                    minmax(0, 1fr)
+                    0;
+                padding-inline: 1.25rem;
             }
-            .full-bleed { grid-column: bleed-start / bleed-end; }
-            .popout, .wide { grid-column: bleed-start / bleed-end; }
-            .figure--companion {
-                grid-column: content;
-                grid-row: auto;
-                position: relative;
-                top: auto;
-                max-width: 60%;
-                margin: var(--space-m) auto;
-                padding-inline-start: 0;
+
+            .full-bleed {
+                margin-inline: -1.25rem;
+                width: calc(100% + 2.5rem);
             }
-            .figure--companion img { max-width: 100%; }
-            .figure--feature img {
-                max-width: 100%;
-                mask-image: none;
-                -webkit-mask-image: none;
+
+            .popout, .wide {
+                max-width: calc(100% + 2.5rem);
+                margin-inline: -1.25rem;
             }
-            .figure--outset { grid-column: bleed-start / bleed-end; }
-            .figure-trio.figure--outset { grid-column: bleed-start / bleed-end; }
         }
 
         @media (min-width: 64rem) {
@@ -1140,9 +1199,30 @@
         }
 
         /* ============================================
-           DESKTOP REFINEMENTS
+           DESKTOP REFINEMENTS - larger images, grid breakout
         ============================================ */
         @media (min-width: 60rem) {
+            /* Let float containers escape the narrow measure column */
+            .article-body--with-figure {
+                grid-column: 1 / -1;
+                max-width: min(calc(var(--measure) + 14rem), 90%);
+                margin-inline: auto;
+            }
+
+            /* Larger float images on desktop - contained */
+            .figure--inline-float {
+                width: clamp(220px, 32%, 320px);
+            }
+            .figure--inline-float img {
+                max-height: 380px;
+            }
+            .figure--inline-float-dark {
+                width: clamp(240px, 35%, 350px);
+            }
+            .figure--inline-float-dark img {
+                max-height: 380px;
+            }
+
             /* Trio: tighter, more editorial */
             .figure-trio {
                 max-width: min(72rem, 88%);
@@ -1153,6 +1233,13 @@
             .figure-trio figure:nth-child(3) { transform: rotate(-0.8deg); }
             .figure-trio img {
                 aspect-ratio: 4 / 5;
+            }
+        }
+
+        /* Wide desktop - illustration break wider */
+        @media (min-width: 72rem) {
+            .illustration-break__image {
+                max-width: 1100px;
             }
         }
 
@@ -1226,13 +1313,14 @@
     <!-- ========== SECTION 1: Brain Measurements ========== -->
     <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-s);">
 
-        <figure class="article-figure sumi-figure figure--companion reveal-illustration">
-            <img src="assets/blog/amygdala.webp" alt="Amygdala - sumi-e illustration" loading="lazy" decoding="async">
-            <figcaption>אמיגדלה - שם הפחד נולד</figcaption>
-        </figure>
-
-        <div class="article-body">
+        <div class="article-body article-body--with-figure">
             <p class="drop-cap reveal">בפברואר 2025 קרה משהו שלא קרה קודם במעבדת מוח. צוות חוקרים מ-Mount Sinai בניו יורק הצליח למדוד מדיטציה בזמן אמת - לא על קליפת המוח החיצונית, כמו שמכשירי EEG עושים כבר עשרות שנים, אלא בתוך המוח עצמו. בתוך האמיגדלה, שם הפחד נוצר. בתוך ההיפוקמפוס, שם הזיכרון מתגבש. במקומות שעד עכשיו היו חומה שחורה למדידה.</p>
+
+            <!-- Amygdala - floats organically into text -->
+            <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
+                <img src="assets/blog/amygdala.webp" alt="Amygdala - sumi-e illustration" loading="lazy" decoding="async">
+                <figcaption>אמיגדלה - שם הפחד נולד</figcaption>
+            </figure>
 
             <p class="reveal">הם עשו את זה עם מטופלי אפילפסיה שכבר היו מחוברים לאלקטרודות תוך-מוחיות - חוטים דקים שנכנסים דרך הגולגולת עד לשכבות הפנימיות, כמו מעבדה שנכנסת לתוך הראש - ואז ביקשו מהם לעשות מדיטציה. מה שהם ראו: שינויים בגלי Beta - הגלים שקשורים לערנות, למחשבה פעילה ולחרדה - ו-Gamma, הגלים המהירים ביותר, שמעורבים בריכוז גבוה ובעיבוד מידע. בדיוק הגלים ששינויים בהם קשורים לדיכאון ולחרדה.</p>
 
@@ -1271,16 +1359,16 @@
         </div>
     </section>
 
-    <!-- Avalokiteshvara feature break -->
-    <section class="article-grid" style="padding-bottom: 0;">
-        <figure class="article-figure sumi-figure figure--feature reveal-illustration">
-            <img src="assets/blog/avalokiteshvara.webp" alt="Avalokiteshvara - sumi-e illustration" loading="lazy" decoding="async">
-            <figcaption>אבלוקיטשוורה - מי ששומע את בכי העולם</figcaption>
-        </figure>
-    </section>
-
     <!-- Transition to dark -->
     <div class="transition--washi-dark"></div>
+
+    <!-- Avalokiteshvara panoramic break -->
+    <div class="illustration-break">
+        <div class="illustration-break__image reveal-illustration">
+            <img src="assets/blog/avalokiteshvara.webp" alt="Avalokiteshvara - sumi-e illustration" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="illustration-break__caption">אבלוקיטשוורה - מי ששומע את בכי העולם</figcaption>
+    </div>
 
     <!-- ========== SECTION 3: Ancient Traditions (DARK) ========== -->
     <section class="section--dark">
@@ -1292,13 +1380,14 @@
                 <div class="section-marker__line"></div>
             </div>
 
-            <figure class="article-figure sumi-figure sumi-figure--dark figure--companion reveal-illustration">
-                <img src="assets/blog/singing-bowl.webp" alt="Tibetan Singing Bowl - sumi-e" loading="lazy" decoding="async">
-                <figcaption>קערת סאונד טיבטית</figcaption>
-            </figure>
-
-            <div class="article-body">
+            <div class="article-body article-body--with-figure">
                 <p class="reveal">שורנגמה סוטרה, טקסט בודהיסטי מתחילת המאה ה-8, מתאר את הדרך של בודהיסטווה אבלוקיטשוורה - דמות מרכזית בבודהיזם שמגלמת את החמלה האינסופית, ונחשבת לאחד המדריכים הרוחניים החשובים במסורת - להארה. ומעניין, הדרך הזו עוברת דווקא דרך השמיעה. לא דרך הראייה, לא דרך המגע, לא דרך המחשבה. דרך האוזן. ארבעה שלבים: קודם נכנסים לזרם הצליל, אחר כך מגיעים למקום שבו הצליל נפסק, אז מגיע מצב שבו ההבחנה בין שומע לנשמע מתמוססת, ולבסוף הריקנות עצמה מתמוססת.</p>
+
+                <!-- Singing bowl - floats organically into dark text -->
+                <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
+                    <img src="assets/blog/singing-bowl.webp" alt="Tibetan Singing Bowl - sumi-e" loading="lazy" decoding="async">
+                    <figcaption>קערת סאונד טיבטית</figcaption>
+                </figure>
 
                 <p class="reveal">במסורת ההינדואיסטית יש את הקונספט של Nada Brahma - העולם הוא צליל. הרעיון שהרטט קודם לצורה, שהתדר קדם לחומר. זו לא רק פואזיה - זו טענה אונטולוגית: המציאות בבסיסה היא תנודה.</p>
 
@@ -1308,7 +1397,7 @@
             </div>
 
             <!-- Trio strip: Yoruba + Didgeridoo + Pythagoras -->
-            <div class="figure-trio figure--outset wide reveal">
+            <div class="figure-trio wide reveal">
                 <figure class="sumi-figure sumi-figure--dark">
                     <img src="assets/blog/yoruba-drums.webp" alt="Yoruba Bata Drums" loading="lazy" decoding="async">
                     <figcaption>תופי באטא, יורובה</figcaption>
