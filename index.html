@@ -1522,8 +1522,7 @@
             font-family: var(--font-english);
             font-size: var(--type-micro);
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.02em;
             color: var(--color-green-dark);
             opacity: 0.5;
         }
@@ -1637,8 +1636,7 @@
             font-size: var(--type-sub);
             color: var(--color-green-dark);
             opacity: 0.3;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
+            letter-spacing: 0.02em;
             margin-bottom: var(--space-m);
         }
 
@@ -1719,8 +1717,7 @@
             font-family: var(--font-english);
             font-weight: 400;
             font-size: var(--type-micro);
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
+            letter-spacing: 0.02em;
             color: var(--color-beni);
             margin-bottom: 1rem;
         }
@@ -2239,7 +2236,7 @@
                                      width="380" height="475">
                             </div>
                             <div class="blog-card__body">
-                                <span class="blog-card__category">Science</span>
+                                <span class="blog-card__category">מדע</span>
                                 <h3 class="blog-card__title">כשהמדע פוגש את הבודהיזם</h3>
                                 <p class="blog-card__teaser">2,500 שנה של מחקר תודעה. מה קורה כשנוירומדע פוגש מדיטציה.</p>
                             </div>
@@ -2256,7 +2253,7 @@
                                      width="380" height="475">
                             </div>
                             <div class="blog-card__body">
-                                <span class="blog-card__category">Research</span>
+                                <span class="blog-card__category">מחקר</span>
                                 <h3 class="blog-card__title">מה קורה כשחדר שלם מקשיב יחד?</h3>
                                 <p class="blog-card__teaser">קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.</p>
                             </div>
@@ -2273,7 +2270,7 @@
                                      width="380" height="475">
                             </div>
                             <div class="blog-card__body">
-                                <span class="blog-card__category">Research</span>
+                                <span class="blog-card__category">מחקר</span>
                                 <h3 class="blog-card__title">האם מדיטציות סאונד באמת עובדות?</h3>
                                 <p class="blog-card__teaser">מה קורה במוח כשהגוף שוכב והצליל עוטף.</p>
                             </div>
@@ -2329,7 +2326,7 @@
                     <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--k" data-mosaic>
-                    <video src="assets/events/gallery-wide-bottom.mp4" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד"></video>
+                    <video poster="assets/events/gallery-wide-bottom-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-wide-bottom.mp4"></video>
                 </div>
             </div>
         </section>
@@ -2340,7 +2337,7 @@
              PARTNERS
         ======================================== -->
         <section class="partners dissolve-from-dark" aria-label="שותפים">
-            <p class="partners__label fade-in">Partners</p>
+            <p class="partners__label fade-in">שותפים</p>
             <div class="partners__grid fade-in">
                 <div class="partners__item partners__item--municipality">
                     <img src="assets/partners/tel-aviv-municipality.png" alt="עיריית תל אביב-יפו" loading="lazy">
@@ -2369,7 +2366,7 @@
 
         <section class="newsletter-cta" aria-label="הרשמה לעדכונים">
             <div class="newsletter-cta__inner fade-in">
-                <p class="newsletter-cta__kicker">Newsletter</p>
+                <p class="newsletter-cta__kicker">עדכונים</p>
                 <h2 class="newsletter-cta__title">הישארו מחוברים</h2>
                 <p class="newsletter-cta__desc">עדכונים על אירועים קרובים, כתבות חדשות ומסעות צלילה - ישירות אליכם.</p>
                 <form class="newsletter-cta__form" action="#" method="POST" aria-label="הרשמה לעדכונים">
@@ -2438,11 +2435,8 @@
     <!-- GSAP 3.13 + Full Plugin Suite -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js"></script>
 
     <script>
     (function() {
@@ -2746,7 +2740,7 @@
         // GSAP 3.13 + SplitText + ScrollTrigger
         // ========================================
         if (!prefersReducedMotion && typeof SplitText !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, DrawSVGPlugin);
+            gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
             // Custom easing curves
             CustomEase.create('inkFlow', 'M0,0 C0.23,1 0.32,1 1,1');
@@ -2964,6 +2958,39 @@
 
         } // end animation engine
 
+    })();
+    </script>
+
+    <script>
+    // Lazy-load video when scrolled into view
+    (function() {
+        var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+        if (!lazyVideos.length) return;
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var video = entry.target;
+                        video.src = video.getAttribute('data-lazy-video');
+                        video.removeAttribute('data-lazy-video');
+                        video.load();
+                        observer.unobserve(video);
+                    }
+                });
+            }, { rootMargin: '200px' });
+
+            lazyVideos.forEach(function(video) {
+                observer.observe(video);
+            });
+        } else {
+            // Fallback: load immediately
+            lazyVideos.forEach(function(video) {
+                video.src = video.getAttribute('data-lazy-video');
+                video.removeAttribute('data-lazy-video');
+                video.load();
+            });
+        }
     })();
     </script>
 </body>
