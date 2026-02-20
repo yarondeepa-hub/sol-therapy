@@ -44,6 +44,16 @@ When starting ANY new conversation from this folder, ALWAYS read these files fir
 
 ---
 
+## How This Works
+
+Claude Code automatically reads this file when you open a conversation from this folder.
+
+The files above are your "memory". They persist between sessions. When you update them, future sessions will have that context.
+
+**IMPORTANT:** Actually read these files before responding. Don't just acknowledge them. Scan C-core to understand the brand, check what's in A-agents, and review M-memory for context. This makes your responses relevant to THIS user's system.
+
+---
+
 ## STOP - לפני כל פעולה
 
 ```
@@ -133,12 +143,17 @@ When starting ANY new conversation from this folder, ALWAYS read these files fir
 
 ---
 
-## Auto-Learning Protocol
+## The ABC-TOM Loop (v7)
 
-After completing significant work, update the relevant memory file:
-- **New insight about what works?** -> Update `M-memory/learning-log.md`
-- **Received feedback?** -> Update `M-memory/feedback.md`
-- **Made a strategic decision?** -> Update `M-memory/decisions.md`
+After completing significant work, close The Loop:
+
+1. **New insight about what works?** Update `M-memory/learning-log.md`
+2. **Received feedback?** Update `M-memory/feedback.md`
+3. **Made a strategic decision?** Update `M-memory/decisions.md`
+4. **Pattern strong enough to become a rule?** Promote it to `C-core/voice-dna.md`
+5. **Research worth keeping?** Move it from `B-brain/04-INBOX/` to the right subfolder
+
+The Loop is what makes the system compound. Every project that closes The Loop makes the next project better.
 
 ---
 

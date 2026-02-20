@@ -105,7 +105,13 @@
       "mcp__filesystem__read_media_file",
       "WebFetch(domain:yarondeepa-hub.github.io)",
       "Bash(bash /Users/yaronamor/Documents/yaronamor-vault/sol/O-output/website-sol-therapy/deploy.sh)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(for dir in A-agents B-brain C-core M-memory O-output T-tools)",
+      "Bash(do)",
+      "Bash(if [ -d \"/Users/yaronamor/Documents/yaronamor-vault/sol/$dir\" ])",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)"
     ]
   }
 }
