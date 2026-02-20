@@ -94,12 +94,18 @@ This is the most important item in the report.
 List items currently waiting for Weekly Lab.
 '"$(if [ "$IS_LAB_DAY" = "true" ]; then echo "TODAY IS FRIDAY - flag the top Lab Queue item for this week'\''s lab."; fi)"'
 
-### 6. Trigger Experiments
-If anything scored 19+, run a micro-experiment:
-- Use the appropriate tool (Gemini via Chrome for images, code for CTO items)
-- Try 3 variations
-- Document results
-- If successful: create a Tool Card in the appropriate directory
+### 6. Trigger Experiments (MANDATORY if 19+ exists)
+If ANYTHING scored 19+, you MUST run a micro-experiment IMMEDIATELY. Do NOT ask permission. Do NOT skip this step. Do NOT just "flag it for later."
+
+Steps:
+- For Illustrator items: check if model exists on Replicate (search_models). If yes, run 3 test generations. If not on Replicate, check if available via pip/GitHub and document setup steps.
+- For CTO items: test the tool/feature directly in our environment.
+- Try 3 variations minimum
+- Document results in the report
+- If successful: CREATE a Tool Card file in the appropriate directory (T-tools/learning/tool-cards/illustrator/ or T-tools/learning/tool-cards/cto/) using the template from T-tools/learning/tool-card-template.md
+- If failed: document WHY it failed and move to Parking Lot
+
+This is autonomous. You have full permission. The whole point of --dangerously-skip-permissions is that you act.
 
 ## Output
 Save the full report to: T-tools/learning/morning-reports/'"$DATE"'-scout.md
