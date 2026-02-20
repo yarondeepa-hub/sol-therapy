@@ -5,6 +5,36 @@
 
 ---
 
+## Session 61: Animation Learning Plan (20.02.2026)
+
+### Request:
+"תבנה תוכנית איך אתה לומד + טיפוגרפיה + סטופ מושן + אנמציה מתקדמת מאוד בשילוב כלי AI - יוסי תוכנית שכולם מעורבים בבנייתה"
+
+### What was done:
+- Full CEO process (yossi triggered)
+- Removed artists-roll section from website (failed aroke01-style animation attempt)
+- Team Sync Intake: analyzed task, dispatched 3 agents in parallel
+- Researcher: learning resources, animation studios, AI workflows, Codrops tutorials
+- Illustrator: "settle not arrive" aesthetic standard, 5 animation effects, 12-15fps target, priority ranking
+- CTO: technical audit - discovered AE NOT INSTALLED, mapped all capabilities, recommended 4-phase hybrid approach
+- CEO synthesized all 3 outputs into unified Hebrew learning plan
+- Gatekeeper round 1: REVISIONS_NEEDED (7 issues - too much English, code snippets, missing sections)
+- Applied all 7 fixes: full Hebrew rewrite, removed code, added "what Yaron needs" section
+- Gatekeeper round 2: APPROVED
+- Presented to Yaron
+- Yaron installed After Effects + Media Encoder
+- Hadassah font system-installed (copied to ~/Library/Fonts/)
+- Updated connected-tools.md with verified install status
+
+### Key output:
+- O-output/animation-learning-plan/animation-learning-plan.md (approved plan)
+
+### Key discovery:
+- After Effects was NOT installed despite connected-tools.md listing it as "Available"
+- Now installed and verified at /Applications/Adobe After Effects 2026/
+
+---
+
 ## How to Use This File
 
 - **Append only.** New sessions go at the TOP (newest first).

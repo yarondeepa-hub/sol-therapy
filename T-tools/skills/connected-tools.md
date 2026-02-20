@@ -17,8 +17,8 @@
 | **Photoshop** | Local App | Available | Image editing, compositing, scripting |
 | **Illustrator** | Local App | Available | Vector graphics, typography, logo design |
 | **InDesign** | Local App | Available | Layout design, typography, print/PDF |
-| **After Effects** | Local App | Available | Animation, compositing, motion graphics, grain/texture loops |
-| **Premiere Pro** | Local App | Available | Video editing, export |
+| **After Effects** | Local App | **Installed** | Animation, compositing, motion graphics, grain/texture loops |
+| **Premiere Pro** | Local App | Available (not verified) | Video editing, export |
 | **Adobe CC (Full)** | Subscription | Active | Full Creative Cloud - all apps available |
 | **GSAP 3.14.2** | CDN Library | Installed | Scroll animations, timelines, text effects, SVG drawing |
 | **Three.js r182** | CDN Library | Installed | 3D scenes, shaders, particles, WebGL effects |
@@ -365,7 +365,8 @@ mcp__gemini__gemini-query:
 
 ## Adobe After Effects (Local)
 
-**Location:** `/Applications/Adobe After Effects 2026/` (verify exact path)
+**Location:** `/Applications/Adobe After Effects 2026/`
+**Status:** Installed and verified (2026-02-20)
 **License:** Full subscription (Yaron's Adobe CC account)
 
 ### Key Capabilities
@@ -658,7 +659,7 @@ brew install ffmpeg imagemagick
 
 ---
 
-*Last updated: 2026-02-15 (Added Illustrator + InDesign, NOT YET INSTALLED section, Session Continuity Protocol)*
+*Last updated: 2026-02-20 (After Effects + Media Encoder installed and verified, Hadassah font system-installed)*
 
 ---
 
