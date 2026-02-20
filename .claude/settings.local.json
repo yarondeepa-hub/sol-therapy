@@ -59,7 +59,25 @@
       "Bash(launchctl list:*)",
       "Bash(bash -n:*)",
       "Bash(plutil -lint:*)",
-      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault log --oneline -5)"
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault log --oneline -5)",
+      "WebFetch(domain:aroke01.com)",
+      "WebFetch(domain:www.itsnicethat.com)",
+      "WebFetch(domain:www.wix.com)",
+      "WebFetch(domain:www.forwardcreatives.com)",
+      "WebFetch(domain:demofestival.com)",
+      "Bash(/opt/homebrew/bin/ffmpeg:*)",
+      "mcp__replicate__get_models",
+      "mcp__replicate__search_models",
+      "Bash(osascript:*)",
+      "mcp__replicate__create_models_predictions",
+      "Bash(npx:*)",
+      "mcp__replicate__get_predictions",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(node capture-frames.mjs:*)",
+      "Bash(/opt/homebrew/bin/ffprobe:*)",
+      "Bash(# Let''s check what the captured frame looks like - get dimensions and basic info /opt/homebrew/bin/ffprobe -v quiet -show_streams /Users/yaronamor/tmp-deploy/sol-therapy-deploy/frames-tmp/frame_0000.png)",
+      "Bash(node capture-text-layer.mjs:*)"
     ]
   }
 }

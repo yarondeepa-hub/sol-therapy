@@ -1,26 +1,36 @@
 # Active Task
 
-> No active task. Waiting for Yaron's next request.
+> Building Learning Engine - autonomous daily learning for Illustrator + CTO
 
 ---
 
 ## Request
-(empty)
+Build complete Learning Engine: scout-config, morning-scout.sh, Tool Cards, Recipes, updated dispatch prompts, evening integration
 
 ## Current Step
-(none)
+Building scout-config.md - the brain of the learning engine
 
 ## Done
-(none)
+- Read all required files (CLAUDE.md, active-task, current-session, connected-tools, taste-profile, dispatch-prompts, daily-review.sh)
 
 ## Next
-(none)
+- Create morning-scout.sh
+- Create launchd plist
+- Create Tool Card + Recipe templates
+- Build directory structure
+- Update dispatch prompts
+- Update daily-review.sh
+- Update CLAUDE.md
 
 ## Blocking
 (none)
 
 ## Key Files
-(none)
+- T-tools/learning/scout-config.md (new)
+- T-tools/scripts/morning-scout.sh (new)
+- T-tools/templates/agent-dispatch-prompts.md (update)
+- T-tools/scripts/daily-review.sh (update)
+- CLAUDE.md (update)
 
 ## Agent States
-(none)
+CEO building directly - no agent dispatch needed for infrastructure
