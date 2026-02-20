@@ -103,7 +103,9 @@
       "Bash(xmllint:*)",
       "Bash(pip3 install:*)",
       "mcp__filesystem__read_media_file",
-      "WebFetch(domain:yarondeepa-hub.github.io)"
+      "WebFetch(domain:yarondeepa-hub.github.io)",
+      "Bash(bash /Users/yaronamor/Documents/yaronamor-vault/sol/O-output/website-sol-therapy/deploy.sh)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

@@ -9,8 +9,30 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-20 |
-| בקשה אחרונה | אופטימיזציית קונטקסט + קריאת מסמכים |
-| סטטוס | **IN PROGRESS** |
+| בקשה אחרונה | QA + תיקון אתר |
+| סטטוס | **DONE** |
+
+---
+
+## Session 63: Website QA + Fixes (20.02.2026)
+
+### מה בוצע:
+
+1. בדיקת QA מלאה לאתר (GitHub Pages)
+2. זיהוי 6 ממצאים, צמצום ל-3 ממצאים אמיתיים
+3. Illustrator - המלצות לתגיות עברית + CSS
+4. תיקון: poster image + lazy-load לווידאו 69MB (בלי דחיסת איכות)
+5. תיקון: תגיות אנגלית לעברית (Partners, Newsletter, Science, Research)
+6. תיקון: CSS - הסרת uppercase + letter-spacing לטקסט עברי
+7. תיקון: הסרת 3 GSAP plugins שלא בשימוש (ScrollSmoother, DrawSVGPlugin, Flip)
+8. תיקון: JS lazy-load עם IntersectionObserver
+9. Deploy ל-GitHub Pages
+
+### Key changes:
+- yarondeepa-hub/sol-therapy commit: e243b8d
+- 3 GSAP scripts removed (חיסכון ~90KB)
+- poster image added (192KB) for immediate visual feedback
+- Video loads only when scrolled into view
 
 ---
 
