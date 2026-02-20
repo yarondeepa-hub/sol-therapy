@@ -9,8 +9,68 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-20 |
-| בקשה מקורית | שדרוג Gatekeeper + עיצוב מחדש רדיקלי לבלוגים |
-| סטטוס | **DEPLOYED - commit cc34d4e** |
+| בקשה מקורית | Learning Engine - מנגנון למידה עצמית יומית |
+| סטטוס | **COMPLETE - commit be16ce5** |
+
+---
+
+## Session 60: Learning Engine Build (20.02.2026)
+
+### מה בוצע:
+
+**CEO built directly - infrastructure task, no agent dispatch needed**
+
+**1. Designed with Yaron**
+- Discussed 3 options: Lean Scout, Full Lab, Hybrid
+- Yaron chose Hybrid + Trigger Experiment (option C with twist)
+- Defined: Adoption Score 0-25, two daily pulses, Cross-Pollination, Surprise Slot
+- Yaron's key requirement: "not an AI news roundup - curiosity with teeth"
+
+**2. Built scout-config.md (brain of the engine)**
+- 5-parameter Adoption Score with thresholds (19+/16+/10+/skip)
+- 8 Illustrator sources + 8 CTO sources
+- 30 rotating Illustrator questions (lateral thinking, not news)
+- 30 rotating CTO questions (simplification, not complexity)
+- Cross-Pollination Protocol (mandatory daily, non-AI/tech source)
+- Morning Report format + Weekly Lab Protocol
+
+**3. Built morning-scout.sh**
+- launchd script for 08:30 daily
+- Opus model, reads taste profile + voice DNA + connected tools
+- Cycles through rotating questions via day counter
+- Flags Friday as Weekly Lab day
+- Creates Tool Cards for high-scoring items
+- macOS notification on completion
+
+**4. Built templates**
+- Tool Card template: recipe-oriented, "How we use it at Soul Therapy"
+- Recipe template: step-by-step, variations, quality checks
+- Parking Lot: items scored 10-15, monthly review
+
+**5. Updated existing systems**
+- agent-dispatch-prompts.md: Illustrator + CTO now read 3 latest Tool Cards
+- daily-review.sh: Added "Learning Sync" section for evening integration
+- CLAUDE.md: Learning Engine section, Required Reading table, First Message Protocol
+
+**6. Directory structure**
+```
+T-tools/learning/
+  scout-config.md, tool-card-template.md, recipe-template.md, parking-lot.md
+  tool-cards/illustrator/, tool-cards/cto/
+  recipes/illustrator/, recipes/cto/
+  weekly-lab/, morning-reports/
+```
+
+### Git Log:
+```
+be16ce5 - feat: Learning Engine - autonomous daily learning for Illustrator + CTO
+cccd682 - checkpoint before building Learning Engine
+```
+
+### To Activate:
+```bash
+launchctl load ~/Library/LaunchAgents/com.sol.morning-scout.plist
+```
 
 ---
 
