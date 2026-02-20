@@ -112,7 +112,9 @@
       "Bash(then)",
       "Bash(else)",
       "Bash(fi)",
-      "Bash(xattr:*)"
+      "Bash(xattr:*)",
+      "Bash(launchctl unload:*)",
+      "Bash(/tmp/sol-therapy-clean/.gitignore:*)"
     ]
   }
 }
