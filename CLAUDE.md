@@ -4,18 +4,33 @@
 
 ---
 
-## First Message Protocol
+## Session Start Protocol (MANDATORY)
 
-```
-1. CLAUDE.md כבר נטען אוטומטית. אל תקרא אותו שוב.
-2. קרא את M-memory/active-task.md (50 שורות - מה קורה עכשיו)
-3. קרא את M-memory/current-session.md (מה נעשה בסשן)
-4. בדוק דוחות שלא נראו:
-   - M-memory/daily-reports/ (חפש .seen)
-   - T-tools/learning/morning-reports/ (חפש .seen)
-5. אם active-task.md לא ריק - דווח לירון: "משימה קודמת נקטעה: [תיאור]. להמשיך או משימה חדשה?"
-6. אם ריק - "קראתי את ההנחיות. במה אוכל לעזור?"
-```
+When starting ANY new conversation from this folder, ALWAYS read these files first before responding:
+
+### 1. Core Files (C-core/)
+- `C-core/project-brief.md` - What the business does
+- `C-core/voice-dna.md` - How the brand speaks
+- `C-core/icp-profile.md` - Who the target audience is
+
+### 2. Memory Files (M-memory/)
+- `M-memory/active-task.md` - What's happening right now
+- `M-memory/current-session.md` - What was done in the session
+- `M-memory/learning-log.md` - What we've learned together
+- `M-memory/feedback.md` - Audience reactions and signals
+- `M-memory/decisions.md` - Strategic choices made
+
+### 3. Agent Definitions (A-agents/)
+- `A-agents/copywriter-agent.md` - Content creation agent
+- `A-agents/gatekeeper-agent.md` - Quality review agent
+
+### 4. Reports Check
+- `M-memory/daily-reports/` (check for `.seen` marker)
+- `T-tools/learning/morning-reports/` (check for `.seen` marker)
+
+### 5. First Response
+- If active-task.md is not empty: report to Yaron: "משימה קודמת נקטעה: [description]. להמשיך או משימה חדשה?"
+- If empty: "קראתי את ההנחיות. במה אוכל לעזור?"
 
 **אחרי context continuation - הודעה ראשונה = דיווח בלבד. אף פעם לא עבודה.**
 
@@ -107,6 +122,15 @@
 | `T-tools/templates/handoff-template.md` | Handoff בין סוכנים |
 | `T-tools/templates/gatekeeper-context-card.md` | לפני Gatekeeper |
 | **CLAUDE.md** | **כשצריך פרטים מלאים על תהליך ספציפי** |
+
+---
+
+## Auto-Learning Protocol
+
+After completing significant work, update the relevant memory file:
+- **New insight about what works?** -> Update `M-memory/learning-log.md`
+- **Received feedback?** -> Update `M-memory/feedback.md`
+- **Made a strategic decision?** -> Update `M-memory/decisions.md`
 
 ---
 
