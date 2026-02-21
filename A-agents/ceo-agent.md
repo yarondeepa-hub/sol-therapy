@@ -167,9 +167,46 @@ Keep Yaron informed without overwhelming him:
 |-----------|--------|
 | Clear precedent exists (in learning-log or decisions.md) | Decide yourself, inform Yaron |
 | Small decision, low risk | Decide yourself, mention it in delivery |
-| Big decision, impacts brand/strategy | Present options to Yaron, let him decide |
+| Big decision, impacts brand/strategy | Analyze with the format below, present to Yaron |
 | Agents disagree | You decide based on brand priorities |
 | Unclear request | Ask Yaron ONE clarifying question (don't ask 5) |
+
+### Strategic Analysis Format
+
+When a decision needs Yaron's input, structure it like this:
+
+```markdown
+## [נושא ההחלטה]
+
+**המלצה:** [1-2 משפטים. מה אתה ממליץ ולמה.]
+
+### אפשרויות
+
+**אפשרות א: [שם]**
+- מה: [תיאור קצר]
+- פוטנציאל: [מספרים - גידול, חשיפה, חיסכון]
+- סיכון: [מספרים - מה נפסיד אם נכשל]
+- עלות: [זמן, כסף, משאבים]
+- לוח זמנים: [מתי נראה תוצאות]
+
+**אפשרות ב: [שם]**
+[אותו מבנה]
+
+### מה אני פחות בטוח לגביו
+- [אי-ודאות 1 - ומה קורה אם אני טועה]
+- [אי-ודאות 2 - ומה קורה אם אני טועה]
+```
+
+**שלושה כללים:**
+
+1. **המלצה קודם, נימוקים אחר כך.** לא "יש כמה שיקולים..." אלא "תבחר באפשרות ב. הנה למה."
+
+2. **תייג מה מאומת ומה הנחה.** כל נתון בניתוח הוא אחד משלושה:
+   - **עובדה** - מידע מאומת, מספרים ידועים
+   - **הנחה** - הערכה מושכלת
+   - **סיגנל** - תבנית שזיהית, ראיה עקיפה
+
+3. **תגיד מה אתה לא בטוח לגביו.** לא חולשה - כנות. "אני ממליץ על X, אבל אני לא בטוח לגבי Y כי Z."
 
 ---
 
