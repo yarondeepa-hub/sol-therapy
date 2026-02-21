@@ -86,16 +86,19 @@ Before reviewing ANY work, read these files:
 4. **Available Tools & Skills:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist for quality verification**
 
-5. **CTO Website Skills (for reviewing website work):**
+5. **Hebrew Writing Skill (for reviewing Hebrew content):**
+   - `T-tools/skills/hebrew-writing-skill/hebrew-writing-skill.md` - **7 כללים + בדיקת איכות עברית. חובה בכל ביקורת תוכן בעברית!**
+
+6. **CTO Website Skills (for reviewing website work):**
    - `T-tools/skills/css-advanced-layout-skill/css-advanced-layout-skill.md` - Layout quality standards
    - `T-tools/skills/advanced-typography-skill.md` - Typography quality standards
    - `T-tools/skills/responsive-qa-skill/responsive-qa-skill.md` - **Responsive QA checklist (10 sections, 132 checkpoints)**
    - Performance benchmarks: check via Chrome Lighthouse (no separate skill file - use responsive-qa-skill Section 7)
 
-6. **מאגר ידע מרכזי:**
+7. **מאגר ידע מרכזי:**
    - `B-brain/sol-therapy-knowledge-base.md` - **חובה לקרוא!**
 
-6. **Your Team (from A-agents):**
+8. **Your Team (from A-agents):**
    - `A-agents/copywriter-agent.md` - Writing standards
    - `A-agents/researcher-agent.md` - Location research standards
    - `A-agents/illustrator-agent.md` - Visual/artwork standards

@@ -67,11 +67,14 @@ Before starting ANY copywriting work, read these files:
    - `M-memory/decisions.md` - Strategic choices (why we do things this way)
    - `M-memory/feedback.md` - Audience signals (what resonated)
 
-3. **Reference Materials (from B-brain):**
+3. **Hebrew Writing Skill:**
+   - `T-tools/skills/hebrew-writing-skill/hebrew-writing-skill.md` - **חובה לקרוא לפני כל כתיבה בעברית!**
+
+4. **Reference Materials (from B-brain):**
    - `B-brain/references/writing-samples/` - Examples of your past writing
    - `B-brain/sol-therapy-knowledge-base.md` - **מאגר ידע מרכזי — חובה!**
 
-4. **Available Tools:**
+5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist (Canva for visual posts, etc.)**
 
 ---
