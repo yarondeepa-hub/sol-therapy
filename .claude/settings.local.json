@@ -114,7 +114,12 @@
       "Bash(fi)",
       "Bash(xattr:*)",
       "Bash(launchctl unload:*)",
-      "Bash(/tmp/sol-therapy-clean/.gitignore:*)"
+      "Bash(/tmp/sol-therapy-clean/.gitignore:*)",
+      "Bash(xxd:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol show 4de4535:T-tools/scripts/daily-review.sh)",
+      "Bash(/bin/bash)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol add -A)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol commit:*)"
     ]
   }
 }
