@@ -1647,16 +1647,16 @@
         ============================================ */
         .partners {
             background: var(--color-washi);
-            padding: var(--space-s) var(--gutter) var(--space-l);
+            padding: var(--space-s) var(--gutter) var(--space-s);
             text-align: center;
         }
 
         .partners__label {
             font-family: var(--font-english);
-            font-weight: 300;
+            font-weight: 400;
             font-size: var(--type-sub);
             color: var(--color-green-dark);
-            opacity: 0.3;
+            opacity: 0.5;
             letter-spacing: 0.02em;
             margin-bottom: var(--space-m);
         }
@@ -1676,14 +1676,14 @@
             align-items: center;
             justify-content: center;
             height: 32px;
-            opacity: 0.35;
-            filter: grayscale(1) brightness(0.3);
+            opacity: 0.85;
+            filter: grayscale(1) brightness(0);
             transition: opacity 0.4s ease, filter 0.4s ease;
         }
 
         .partners__item:hover {
-            opacity: 0.7;
-            filter: grayscale(0.5) brightness(0.4);
+            opacity: 1;
+            filter: grayscale(0) brightness(0);
         }
 
         .partners__item img {
@@ -1722,7 +1722,7 @@
             position: relative;
             z-index: 2;
             background: var(--color-washi);
-            padding: clamp(3rem, 6vw, 5.5rem) var(--gutter);
+            padding: clamp(2rem, 4vw, 3.5rem) var(--gutter) clamp(3rem, 6vw, 5.5rem);
             text-align: center;
             overflow: hidden;
         }

@@ -1,12 +1,17 @@
 # Active Task
 
-## משימה: סקירת אתר מלאה + תיקוני דסקטופ + תוכנית SEO
+## משימה: יישום תיקונים לפי אישור ירון - P1+P2+P3
 
-### בקשות ירון:
-1. שטח מת בדסקטופ (אזור Partners -> Newsletter)
-2. לוגואים מטושטשים - רוצה שחור בולד
-3. יוסי: סקירה מלאה של האתר בדומיין החדש + דוח שיפורים
-4. תוכנית SEO - מה קיים מה חסר
+### סעיפים מאושרים:
+- Partners label -> English (revert)
+- P1: robots.txt, sitemap.xml, favicon, 404.html
+- P1: הסרת ארכיון+סרטון מניווט, ניגודיות event card, כפתור צף
+- P1: canonical URLs, OG tags, structured data, social sharing fix
+- P2: h1 text, copyright 2026, orphaned CSS, meta title+description
+- P3: blog index page
 
-### שלב נוכחי: Team Sync Intake
-### סוכנים: Team Sync -> CTO (fixes) + CTO+Copywriter+Researcher+Illustrator (scan) + SEO -> Gatekeeper -> הצגה
+### לא לגעת (ירון ביקש במפורש):
+- הצעת ערך, מניפסט, labels באנגלית, "מרחיבי תודעה", אירוע יחיד, קשר, "הסשנים", "חצי פנסיון", "הישארו מחוברים"
+- לא להכניס "סאונד הילינג"
+
+### שלב נוכחי: ביצוע תיקונים
