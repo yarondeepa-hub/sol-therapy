@@ -56,6 +56,7 @@ Every tool, technique, or discovery gets scored on 5 parameters (0-5 each).
 | CSS New Features | WebSearch "new CSS features 2026 shipping" | Container queries, scroll-driven, etc |
 | Netlify Blog | WebSearch "netlify blog new features" | Deploy/hosting improvements |
 | GSAP Updates | WebSearch "gsap greensock new plugins 2026" | Animation capabilities |
+| Claude Plugins | WebFetch "https://claude.com/plugins" | New skills, integrations |
 
 ---
 
@@ -188,6 +189,11 @@ Every tool, technique, or discovery gets scored on 5 parameters (0-5 each).
 
 ## Surprise Slot
 [One thing that doesn't fit any category but made the scout stop and think]
+
+## Plugin Catalog Scan
+- New plugins found: [count]
+- Recommended: [names + scores]
+- Already installed: [confirmation that nothing was missed]
 
 ## Lab Queue Update
 - In queue: [items waiting for Weekly Lab]

@@ -90,11 +90,20 @@ One thing that made you stop. That does not fit any category.
 That you would not have found by reading "AI news".
 This is the most important item in the report.
 
-### 5. Lab Queue Update
+### 5. Plugin Catalog Scan
+Check https://claude.com/plugins for new or updated plugins since last report.
+- WebFetch the plugins page and look for anything marked "New" or recently added
+- Compare against our installed plugins (check T-tools/skills/connected-tools.md)
+- Score any promising new plugin with Adoption Score
+- Focus on: plugins that add capability without adding MCP server processes
+- Ignore: plugins for tools we do not use (Notion, Slack, Jira, etc.)
+- Report format: plugin name, what it does, install count, score, recommendation
+
+### 6. Lab Queue Update
 List items currently waiting for Weekly Lab.
 '"$(if [ "$IS_LAB_DAY" = "true" ]; then echo "TODAY IS FRIDAY - flag the top Lab Queue item for this week'\''s lab."; fi)"'
 
-### 6. Trigger Experiments (MANDATORY if 19+ exists)
+### 7. Trigger Experiments (MANDATORY if 19+ exists)
 If ANYTHING scored 19+, you MUST run a micro-experiment IMMEDIATELY. Do NOT ask permission. Do NOT skip this step. Do NOT just "flag it for later."
 
 Steps:

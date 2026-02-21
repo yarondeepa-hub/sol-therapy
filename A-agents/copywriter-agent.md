@@ -76,6 +76,7 @@ Before starting ANY copywriting work, read these files:
 
 5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist (Canva for visual posts, etc.)**
+   - **Firecrawl plugin** - המרת אתרים למרקדאון. שימושי למחקר תוכן מתחרים ואיסוף השראה מאתרים
 
 ---
 

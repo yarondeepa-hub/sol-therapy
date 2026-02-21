@@ -106,6 +106,10 @@ Before starting ANY technical work, read these files:
    - `T-tools/skills/replicate-skill/replicate-skill.md` - יצירת תמונות AI
    - `T-tools/skills/photoshop-skill/photoshop-skill.md` - עיבוד תמונות ואוטומציה
 
+4b. **Claude Code Plugins (inline tools - zero process overhead):**
+   - **Playground** - סביבות HTML אינטראקטיביות לאב-טיפוס מהיר של רכיבי UI
+   - **Firecrawl** - המרת אתרים למרקדאון קריא, ניתוח מתחרים וסריקת מבנה
+
 5. **Website Development Skills (read per-task as needed):**
    - `T-tools/skills/css-advanced-layout-skill/css-advanced-layout-skill.md` - CSS Grid advanced, subgrid, container queries, magazine layouts, RTL
    - `T-tools/skills/advanced-typography-skill.md` - Fluid type scales, variable fonts, Hebrew typography, SplitText animations

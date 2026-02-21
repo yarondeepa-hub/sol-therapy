@@ -64,6 +64,7 @@ Before conducting ANY research:
 
 5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist**
+   - **Firecrawl plugin** - המרת אתרים למרקדאון קריא. שימושי במיוחד למחקר מיקומים, מתחרים, וסריקת תוכן אתרים
 
 ---
 

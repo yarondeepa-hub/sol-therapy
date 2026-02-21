@@ -22,6 +22,39 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-21 - Custom Domain: GoDaddy to GitHub Pages
+
+**What happened:** Connected sol-therapy.com (GoDaddy) to GitHub Pages. Full HTTPS working.
+
+**Key learnings:**
+
+1. **GitHub Pages custom domain flow:** CNAME file in repo -> `gh api repos/.../pages -X PUT -f cname="domain"` -> DNS records -> wait for cert -> `gh api -F https_enforced=true`. Order matters.
+
+2. **SSL cert provisioning trick:** If certificate shows "does not exist yet", remove the cname via API then re-add it. This triggers GitHub's Let's Encrypt provisioning. Certificate approval takes ~60 seconds.
+
+3. **API flag types matter:** `-f https_enforced=true` sends string "true" (fails). `-F https_enforced=true` sends boolean true (works). Capital F = proper JSON typing in gh CLI.
+
+4. **GoDaddy Chrome MCP incompatibility:** GoDaddy's "Add Record" and "Edit" buttons open modal dialogs that redirect to chrome-extension:// URLs, making them inaccessible to Chrome MCP. Workaround: guide user through manual DNS changes.
+
+5. **DNS records for GitHub Pages:** 4 A records (185.199.108-111.153) + CNAME www -> username.github.io. Three of four IPs is enough for the site to work while the fourth propagates.
+
+6. **www redirect works automatically:** GitHub Pages handles www -> apex redirect when CNAME www points to username.github.io and the custom domain is set to the apex (sol-therapy.com).
+
+---
+
+## 2026-02-21 - Plugin Catalog Scan + Morning Scout Update
+
+**What happened:** Yaron asked to scan claude.com/plugins for useful additions and add recurring check to morning report.
+
+**Key learnings:**
+1. Plugins (skills) are NOT MCP servers - they run inline, zero process weight. Safe to add freely.
+2. Plugin catalog has mix of dev tools and business tools. Most dev tools not relevant for us.
+3. Interesting finds: CLAUDE.md Management (audit/learning), Marketing (campaigns), Skill Creator (custom commands), Playground (HTML prototyping).
+4. Morning scout now has Plugin Catalog Scan as section 5, with source added to CTO sources table.
+5. Connected-tools.md should be updated when plugins are installed so scout can track what we have vs what's new.
+
+---
+
 ## 2026-02-21 - Website Contact Button + Session Performance Fix
 
 ### Contact Button (Gatekeeper findings)

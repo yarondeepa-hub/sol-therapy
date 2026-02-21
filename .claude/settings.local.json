@@ -158,7 +158,12 @@
       "Bash(# Kill the two zombie Claude Code sessions and their children # Current session is PID 2891 - DO NOT TOUCH echo \"\"=== Killing zombie session PID 97248 \\(1:31PM\\) and its MCP children ===\"\" pgrep -P 97248)",
       "Bash(# Some processes survived - force kill the remaining zombies echo \"\"=== Force killing remaining zombies ===\"\" kill -9 77042 77102 77040 echo \"\"Done\"\" sleep 1 echo \"\"\"\" echo \"\"=== Final verification ===\"\" ps aux)",
       "Bash(# Find where MCP servers are configured echo \"\"=== User-level Claude settings ===\"\" ls -la ~/.claude/settings*.json echo \"\"\"\" echo \"\"=== Project-level settings ===\"\" ls -la /Users/yaronamor/Documents/yaronamor-vault/sol/.claude/settings*.json echo \"\"\"\" echo \"\"=== Check for MCP config files ===\"\" find ~/.claude -name \"\"*.json\"\" -maxdepth 2)",
-      "Bash(# The MCPs are spawned by Claude Code connectors \\(marketplace extensions\\) # Let me check what''s installed echo \"\"=== Claude Code connectors/plugins ===\"\" ls -la ~/.claude/plugins/ echo \"\"\"\" echo \"\"=== Marketplace plugins ===\"\" ls ~/.claude/plugins/marketplaces/ echo \"\"\"\" echo \"\"=== Check settings for mcpServers ===\"\" # Look in the project settings for MCP config grep -r \"\"openai\\\\|mcp-server-openai\"\" ~/.claude/ --include=\"\"*.json\"\" -l)"
+      "Bash(# The MCPs are spawned by Claude Code connectors \\(marketplace extensions\\) # Let me check what''s installed echo \"\"=== Claude Code connectors/plugins ===\"\" ls -la ~/.claude/plugins/ echo \"\"\"\" echo \"\"=== Marketplace plugins ===\"\" ls ~/.claude/plugins/marketplaces/ echo \"\"\"\" echo \"\"=== Check settings for mcpServers ===\"\" # Look in the project settings for MCP config grep -r \"\"openai\\\\|mcp-server-openai\"\" ~/.claude/ --include=\"\"*.json\"\" -l)",
+      "WebFetch(domain:claude.com)",
+      "Bash(claude plugins:*)",
+      "Bash(claude plugin:*)",
+      "Bash(dig:*)",
+      "Bash(openssl s_client:*)"
     ]
   },
   "hooks": {

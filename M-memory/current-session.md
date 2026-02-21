@@ -9,8 +9,51 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-21 |
-| בקשה אחרונה | תיקון בעיית ביצועים בין צ'אטים |
+| בקשה אחרונה | חיבור דומיין sol-therapy.com לאתר |
 | סטטוס | **DONE** |
+
+---
+
+## Session 68: Custom Domain Connection (21.02.2026)
+
+### מה בוצע:
+
+1. יצירת קובץ CNAME ב-repo של GitHub Pages (sol-therapy.com)
+2. הגדרת custom domain דרך GitHub Pages API
+3. הנחיית ירון בהגדרות DNS ב-GoDaddy (מחיקת A record ישן, הוספת 4 A records חדשים, עריכת CNAME www)
+4. אישור SSL certificate דרך GitHub (Let's Encrypt)
+5. הפעלת HTTPS enforcement
+6. אימות: https://sol-therapy.com + https://www.sol-therapy.com עובדים
+
+### מצב סופי:
+- https://sol-therapy.com - HTTP/2 200, SSL תקין, תפוגה 2026-05-22
+- https://www.sol-therapy.com - מפנה ל-sol-therapy.com (301)
+- 3/4 A records פעילים (הרביעי בהתפשטות)
+
+### קבצים שעודכנו:
+- NEW: CNAME in yarondeepa-hub/sol-therapy repo (commit f800fb3)
+- MOD: M-memory/active-task.md
+- MOD: M-memory/learning-log.md
+- MOD: M-memory/current-session.md
+
+---
+
+## Session 67: Plugin Catalog Scan (21.02.2026)
+
+### מה בוצע:
+
+1. סריקת קטלוג התוספים של Claude Code (claude.com/plugins)
+2. זיהוי 4 תוספים מומלצים + 2 אפשריים
+3. הוספת סעיף "סריקת תוספים" לדוח הבוקר (morning-scout.sh)
+4. עדכון טבלת המקורות של CTO ב-scout-config.md
+5. עדכון פורמט הדוח ב-scout-config.md
+6. ABC-TOM Loop נסגר
+
+### קבצים שעודכנו:
+- MOD: T-tools/scripts/morning-scout.sh (section 5: Plugin Catalog Scan)
+- MOD: T-tools/learning/scout-config.md (CTO sources + report format)
+- MOD: M-memory/learning-log.md
+- MOD: M-memory/current-session.md
 
 ---
 

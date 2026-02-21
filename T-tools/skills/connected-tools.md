@@ -639,6 +639,40 @@ cd /tmp/sol-therapy-deploy && npx netlify-cli deploy --prod --dir=. --site=285d7
 
 ---
 
+## Claude Code Plugins (Skills)
+
+> **תוספים אלה רצים בתוך הצ'אט - אין תהליכים נוספים, אפס עומס על המערכת.**
+
+| Plugin | Version | Status | Use |
+|--------|---------|--------|-----|
+| **Skill Creator** | aa296ec | Active | Build, improve, measure custom slash commands |
+| **Playground** | aa296ec | Active | Interactive HTML playgrounds with visual controls |
+| **Firecrawl** | 1.0.3 | Active | Convert websites to LLM-ready markdown, scrape pages |
+
+### Skill Creator
+- Create custom `/commands` from repeating workflows
+- Measure skill effectiveness
+- Improve existing skills based on usage
+
+### Playground
+- Spin up interactive HTML environments
+- Visual controls for prototyping
+- Useful for CTO rapid testing of UI components
+
+### Firecrawl
+- Convert any website to clean markdown (great for competitor research)
+- Scrape structured data from pages
+- Use for morning scout research tasks
+
+### Plugin Management
+```bash
+claude plugin list              # See installed plugins
+claude plugin install <name>    # Install from marketplace
+claude plugin uninstall <name>  # Remove plugin
+```
+
+---
+
 ## NOT YET INSTALLED (Needs Homebrew)
 
 These tools require Homebrew first. Yaron needs to run:
@@ -659,7 +693,7 @@ brew install ffmpeg imagemagick
 
 ---
 
-*Last updated: 2026-02-20 (After Effects + Media Encoder installed and verified, Hadassah font system-installed)*
+*Last updated: 2026-02-21 (3 Claude Code plugins installed: Skill Creator, Playground, Firecrawl)*
 
 ---
 
