@@ -136,7 +136,14 @@
       "Bash(git stash:*)",
       "Bash(git stash pop:*)",
       "Bash(git clean:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol add:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol rev-parse:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol log --oneline -3)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol status:*)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol diff O-output/blog-02-collective-sync/blog-text-v3.md)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol diff HEAD~1 -- O-output/blog-02-collective-sync/blog-text-v3.md)",
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol log --oneline -- O-output/blog-02-collective-sync/blog-text-v3.md)"
     ]
   }
 }
