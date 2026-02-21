@@ -1861,121 +1861,87 @@
         }
 
         /* ============================================
-           FOOTER - Redesigned two-column layout
+           CONTACT BUTTON (inside footer)
+        ============================================ */
+        .closing__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2.4rem;
+            background: transparent;
+            border: 1px solid rgba(242, 234, 211, 0.40);
+            color: var(--color-washi);
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, background 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 48px;
+            text-decoration: none;
+        }
+        .closing__contact-btn:hover {
+            border-color: rgba(242, 234, 211, 0.7);
+            background: rgba(242, 234, 211, 0.06);
+        }
+
+        /* ============================================
+           FOOTER - Centered column layout
         ============================================ */
         .closing {
             position: relative;
             background: var(--color-dark);
-            padding: var(--space-l) var(--gutter) var(--space-m) var(--gutter);
+            padding: clamp(3rem, 4vw, 4rem) var(--gutter) var(--space-m) var(--gutter);
         }
 
         .closing__inner {
             max-width: 1100px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-m);
-        }
-
-        /* Top row - brand + newsletter side by side on desktop */
-        .closing__top {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-m);
-            padding-bottom: var(--space-m);
-            border-bottom: 1px solid rgba(242, 234, 211, 0.08);
-        }
-
-        .closing__brand-col {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            align-items: center;
+            text-align: center;
         }
 
-        .closing__brand {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(1.8rem, 1.4rem + 2vw, 2.8rem);
-            color: var(--color-washi);
-            line-height: 0.95;
-        }
 
-        .closing__tagline {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: var(--type-body);
-            color: var(--color-washi);
-            opacity: 0.35;
-            line-height: 1.7;
-            max-width: 320px;
-        }
-
-        /* Newsletter moved to standalone section above footer */
-
-        /* Bottom row - links, social, legal */
+        /* Bottom row - hanko flanked by social icons */
         .closing__bottom {
             display: flex;
             flex-direction: column;
-            gap: var(--space-s);
-            align-items: flex-start;
-        }
-
-        .closing__contact-row {
-            display: flex;
             align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .closing__email-link {
-            font-family: var(--font-english);
-            font-size: var(--type-small);
-            color: var(--color-washi);
-            opacity: 0.35;
-            letter-spacing: 0.08em;
-            direction: ltr;
-            unicode-bidi: isolate;
-            display: inline-flex;
-            align-items: center;
-            min-height: 48px;
-            transition: opacity 0.3s ease;
-        }
-        .closing__email-link:hover {
-            opacity: 0.6;
-        }
-
-        .closing__social {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .closing__social a {
-            color: var(--color-washi);
-            opacity: 0.4;
-            transition: opacity 0.3s ease;
-            min-height: 48px;
-            min-width: 48px;
+        .closing__stamp-row {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 2rem;
         }
-        .closing__social a:hover {
-            opacity: 0.7;
-        }
-        .closing__social svg {
-            width: 34px;
-            height: 34px;
-        }
-
-        .closing__legal {
+        .closing__stamp-row a {
+            color: var(--color-washi);
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 1.25rem;
-            padding-top: var(--space-xs);
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+        }
+        .closing__stamp-row a:hover {
+            opacity: 0.7;
+        }
+        .closing__stamp-row svg {
+            width: 20px;
+            height: 20px;
         }
 
         .closing__hanko {
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
             opacity: 0.7;
         }
         .closing__hanko svg {
@@ -1992,21 +1958,6 @@
             letter-spacing: 0.1em;
             direction: ltr;
             unicode-bidi: isolate;
-        }
-
-        @media (min-width: 768px) {
-            .closing__bottom {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .closing__hanko {
-                width: 22px;
-                height: 22px;
-            }
         }
 
         /* ============================================
@@ -2402,42 +2353,31 @@
              CLOSING
         ======================================== -->
 
-        <footer class="closing dissolve-from-light dissolve-from-light--deep" id="contact" aria-label="יצירת קשר">
+        <footer class="closing dissolve-from-light" id="contact" aria-label="פוטר">
             <div class="closing__inner">
-                <!-- Top: Brand -->
-                <div class="closing__top fade-in">
-                    <div class="closing__brand-col">
-                        <div class="closing__brand">סול תרפי</div>
-                        <p class="closing__tagline">מסעות טרנספורמטיביים אל תוך התודעה.<br>אירועי מדיטציית סאונד.</p>
-                    </div>
-                </div>
+                <a href="mailto:the.sol.therapy@gmail.com" class="closing__contact-btn fade-in" aria-label="דברו איתנו - שליחת אימייל">דברו איתנו</a>
 
-                <!-- Bottom: Contact + Social + Legal -->
                 <div class="closing__bottom fade-in">
-                    <div class="closing__contact-row">
-                        <div class="closing__social">
-                            <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.987 4.088 4.088 0 0 1 .987 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.987 1.518 4.088 4.088 0 0 1-1.518.987c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.987 4.088 4.088 0 0 1-.987-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .987-1.518A4.088 4.088 0 0 1 5.14 2.636c.46-.163 1.26-.349 2.43-.403C8.836 2.175 9.216 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a6.21 6.21 0 0 0-2.246 1.463A6.21 6.21 0 0 0 .43 4.34C.133 5.102-.069 5.975.072 7.253.014 8.533 0 8.941 0 12.2s.014 3.668.072 4.948c.058 1.278.261 2.15.558 2.913a6.21 6.21 0 0 0 1.463 2.245 6.21 6.21 0 0 0 2.246 1.464c.762.296 1.636.499 2.913.558C8.533 23.986 8.941 24 12 24s3.468-.014 4.748-.072c1.278-.059 2.15-.262 2.913-.558a6.21 6.21 0 0 0 2.245-1.464 6.21 6.21 0 0 0 1.464-2.245c.296-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.059-1.278-.262-2.15-.558-2.913a6.21 6.21 0 0 0-1.464-2.246A6.21 6.21 0 0 0 19.66.63C18.898.333 18.025.131 16.748.072 15.468.014 15.06 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-                                </svg>
-                            </a>
-                            <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01 0-.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="closing__legal">
+                    <div class="closing__stamp-row">
+                        <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.987 4.088 4.088 0 0 1 .987 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.987 1.518 4.088 4.088 0 0 1-1.518.987c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.987 4.088 4.088 0 0 1-.987-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .987-1.518A4.088 4.088 0 0 1 5.14 2.636c.46-.163 1.26-.349 2.43-.403C8.836 2.175 9.216 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a6.21 6.21 0 0 0-2.246 1.463A6.21 6.21 0 0 0 .43 4.34C.133 5.102-.069 5.975.072 7.253.014 8.533 0 8.941 0 12.2s.014 3.668.072 4.948c.058 1.278.261 2.15.558 2.913a6.21 6.21 0 0 0 1.463 2.245 6.21 6.21 0 0 0 2.246 1.464c.762.296 1.636.499 2.913.558C8.533 23.986 8.941 24 12 24s3.468-.014 4.748-.072c1.278-.059 2.15-.262 2.913-.558a6.21 6.21 0 0 0 2.245-1.464 6.21 6.21 0 0 0 1.464-2.245c.296-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.059-1.278-.262-2.15-.558-2.913a6.21 6.21 0 0 0-1.464-2.246A6.21 6.21 0 0 0 19.66.63C18.898.333 18.025.131 16.748.072 15.468.014 15.06 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                            </svg>
+                        </a>
                         <div class="closing__hanko" aria-hidden="true">
                             <svg viewBox="0 0 40 40" fill="none">
                                 <rect x="2" y="2" width="36" height="36" rx="3" stroke="#D3381C" stroke-width="2.5" opacity="0.85"/>
                                 <text x="20" y="24" text-anchor="middle" font-family="serif" font-size="14" font-weight="700" fill="#D3381C" opacity="0.85">Sol</text>
                             </svg>
                         </div>
-                        <span class="closing__copyright">Sol Therapy 2026</span>
+                        <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01 0-.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/>
+                            </svg>
+                        </a>
                     </div>
+                    <span class="closing__copyright">Sol Therapy 2026</span>
                 </div>
             </div>
         </footer>

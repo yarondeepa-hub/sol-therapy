@@ -39,12 +39,6 @@
         order: 1;
     }
 
-    /* Footer grid */
-    .footer__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-8);
-    }
-
     /* Events grid */
     .events__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -212,24 +206,6 @@
     .audio-player {
         flex-direction: column;
         text-align: center;
-    }
-
-    /* Footer */
-    .footer__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-8);
-    }
-
-    .footer__bottom {
-        flex-direction: column;
-        gap: var(--space-4);
-        text-align: center;
-    }
-
-    .footer__legal {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--space-4);
     }
 
     /* Newsletter */
