@@ -132,7 +132,11 @@
       "WebFetch(domain:www.heritageasianart.org)",
       "WebFetch(domain:seas.harvard.edu)",
       "mcp__filesystem__list_allowed_directories",
-      "mcp__filesystem__search_files"
+      "mcp__filesystem__search_files",
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)",
+      "Bash(git clean:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
