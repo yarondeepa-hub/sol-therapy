@@ -28,6 +28,11 @@
 - Why parked: Violates "boring technology" principle - adds complexity we don't need since our vanilla HTML/CSS/JS stack works fine
 - Revisit trigger: If we need component islands, SSR, or edge computing features
 
+### CalliffusionV2 (Score: 12/25, Date: 2026-02-21)
+- What: Academic diffusion model for calligraphy generation with stroke-level control (angle, thickness, style)
+- Why parked: Research model only - no API, no deployment, unclear commercial license. Concept is sound but not accessible
+- Revisit trigger: When deployed on Replicate or available via API
+
 ---
 
 ## Archived (no longer relevant)
