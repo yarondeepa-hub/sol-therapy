@@ -1861,12 +1861,99 @@
         }
 
         /* ============================================
+           CONTACT SECTION
+        ============================================ */
+        .contact-section {
+            position: relative;
+            z-index: 2;
+            background: var(--color-dark);
+            padding: var(--space-l) var(--gutter);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .contact-section__inner {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-section__kicker {
+            font-family: var(--font-english);
+            font-weight: 400;
+            font-size: var(--type-micro);
+            letter-spacing: 0.08em;
+            color: var(--color-washi);
+            opacity: 0.35;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section__title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.6rem, 1.2rem + 2.5vw, 2.8rem);
+            color: var(--color-washi);
+            line-height: 1.15;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section__email {
+            display: inline-block;
+            font-family: var(--font-english);
+            font-weight: 300;
+            font-size: clamp(1rem, 0.8rem + 1vw, 1.35rem);
+            letter-spacing: 0.04em;
+            color: var(--color-washi);
+            opacity: 0.6;
+            direction: ltr;
+            unicode-bidi: isolate;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(242, 234, 211, 0.12);
+            transition: opacity 0.4s var(--ease-ink), border-color 0.4s var(--ease-ink);
+        }
+        .contact-section__email:hover {
+            opacity: 1;
+            border-color: var(--color-beni);
+        }
+
+        .contact-section__divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(242, 234, 211, 0.1);
+            margin: 2.5rem auto;
+        }
+
+        .contact-section__social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .contact-section__social a {
+            color: var(--color-washi);
+            opacity: 0.3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            transition: opacity 0.3s ease;
+        }
+        .contact-section__social a:hover {
+            opacity: 0.7;
+        }
+        .contact-section__social svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ============================================
            FOOTER - Redesigned two-column layout
         ============================================ */
         .closing {
             position: relative;
             background: var(--color-dark);
-            padding: var(--space-l) var(--gutter) var(--space-m) var(--gutter);
+            padding: var(--space-s) var(--gutter) var(--space-m) var(--gutter);
         }
 
         .closing__inner {
@@ -2399,36 +2486,38 @@
         </section>
 
         <!-- ========================================
+             CONTACT
+        ======================================== -->
+
+        <section class="contact-section dissolve-from-light" id="contact" aria-label="צור קשר">
+            <div class="contact-section__inner fade-in">
+                <p class="contact-section__kicker">Contact</p>
+                <h2 class="contact-section__title">נשמח לשמוע מכם</h2>
+                <a href="mailto:the.sol.therapy@gmail.com" class="contact-section__email">the.sol.therapy@gmail.com</a>
+                <div class="contact-section__divider"></div>
+                <div class="contact-section__social">
+                    <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.987 4.088 4.088 0 0 1 .987 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.987 1.518 4.088 4.088 0 0 1-1.518.987c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.987 4.088 4.088 0 0 1-.987-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .987-1.518A4.088 4.088 0 0 1 5.14 2.636c.46-.163 1.26-.349 2.43-.403C8.836 2.175 9.216 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a6.21 6.21 0 0 0-2.246 1.463A6.21 6.21 0 0 0 .43 4.34C.133 5.102-.069 5.975.072 7.253.014 8.533 0 8.941 0 12.2s.014 3.668.072 4.948c.058 1.278.261 2.15.558 2.913a6.21 6.21 0 0 0 1.463 2.245 6.21 6.21 0 0 0 2.246 1.464c.762.296 1.636.499 2.913.558C8.533 23.986 8.941 24 12 24s3.468-.014 4.748-.072c1.278-.059 2.15-.262 2.913-.558a6.21 6.21 0 0 0 2.245-1.464 6.21 6.21 0 0 0 1.464-2.245c.296-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.059-1.278-.262-2.15-.558-2.913a6.21 6.21 0 0 0-1.464-2.246A6.21 6.21 0 0 0 19.66.63C18.898.333 18.025.131 16.748.072 15.468.014 15.06 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                        </svg>
+                    </a>
+                    <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01 0-.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
              CLOSING
         ======================================== -->
 
-        <footer class="closing dissolve-from-light dissolve-from-light--deep" id="contact" aria-label="יצירת קשר">
+        <footer class="closing" aria-label="פוטר">
             <div class="closing__inner">
-                <!-- Top: Brand -->
-                <div class="closing__top fade-in">
-                    <div class="closing__brand-col">
-                        <div class="closing__brand">סול תרפי</div>
-                        <p class="closing__tagline">מסעות טרנספורמטיביים אל תוך התודעה.<br>אירועי מדיטציית סאונד.</p>
-                    </div>
-                </div>
-
-                <!-- Bottom: Contact + Social + Legal -->
                 <div class="closing__bottom fade-in">
-                    <div class="closing__contact-row">
-                        <div class="closing__social">
-                            <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.987 4.088 4.088 0 0 1 .987 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.987 1.518 4.088 4.088 0 0 1-1.518.987c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.987 4.088 4.088 0 0 1-.987-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .987-1.518A4.088 4.088 0 0 1 5.14 2.636c.46-.163 1.26-.349 2.43-.403C8.836 2.175 9.216 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a6.21 6.21 0 0 0-2.246 1.463A6.21 6.21 0 0 0 .43 4.34C.133 5.102-.069 5.975.072 7.253.014 8.533 0 8.941 0 12.2s.014 3.668.072 4.948c.058 1.278.261 2.15.558 2.913a6.21 6.21 0 0 0 1.463 2.245 6.21 6.21 0 0 0 2.246 1.464c.762.296 1.636.499 2.913.558C8.533 23.986 8.941 24 12 24s3.468-.014 4.748-.072c1.278-.059 2.15-.262 2.913-.558a6.21 6.21 0 0 0 2.245-1.464 6.21 6.21 0 0 0 1.464-2.245c.296-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.059-1.278-.262-2.15-.558-2.913a6.21 6.21 0 0 0-1.464-2.246A6.21 6.21 0 0 0 19.66.63C18.898.333 18.025.131 16.748.072 15.468.014 15.06 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-                                </svg>
-                            </a>
-                            <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01 0-.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
                     <div class="closing__legal">
                         <div class="closing__hanko" aria-hidden="true">
                             <svg viewBox="0 0 40 40" fill="none">
