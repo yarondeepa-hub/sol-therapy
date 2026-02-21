@@ -22,6 +22,30 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-21 - P1-P3 Website Fixes: SEO + Accessibility + Infrastructure
+
+**What happened:** Yaron reviewed improvement report (36 findings), annotated each item with go/no-go, and we implemented all approved items in a single batch deploy.
+
+**Key learnings:**
+
+1. **Yaron's annotation style works:** Instead of choosing packages, he annotated each line item individually. This is faster and more precise than package-based decisions. Respect it.
+
+2. **Partners label is ALWAYS English.** Third time this came up. Iron rule: never translate it to Hebrew.
+
+3. **Batch deploy is efficient:** 11 files changed, all deployed in one push. No need to deploy per-item.
+
+4. **Non-blocking Google Fonts pattern:** `<link rel="preload" as="style" href="...">` + `<link ... media="print" onload="this.media='all'">` + `<noscript>` fallback. Apply to all pages, not just index.
+
+5. **macOS sips for favicon:** `sips -s format png -z 32 32 logo.png --out favicon-32.png`. No Pillow needed.
+
+6. **sr-only class is essential:** Google can't read image-only h1 tags. Add `<span class="sr-only">text</span>` inside h1 when the visible content is an image.
+
+7. **JSON-LD on GitHub Pages:** Works fine. Organization + Event schemas added. Google Search Console should pick them up within days.
+
+8. **Remove orphaned CSS safely:** grep for class names in HTML section only. If zero matches -> safe to delete. Removed 15 rules, saved ~65 lines.
+
+---
+
 ## 2026-02-21 - Custom Domain: GoDaddy to GitHub Pages
 
 **What happened:** Connected sol-therapy.com (GoDaddy) to GitHub Pages. Full HTTPS working.

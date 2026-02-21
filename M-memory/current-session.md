@@ -9,8 +9,43 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-21 |
-| בקשה אחרונה | חיבור דומיין sol-therapy.com לאתר |
+| בקשה אחרונה | יישום תיקוני P1-P3 לפי אישור ירון |
 | סטטוס | **DONE** |
+
+---
+
+## Session 70: P1-P3 Website Fixes per Yaron Approval (21.02.2026)
+
+### מה בוצע:
+1. Partners label חזר לאנגלית
+2. הסרת ניווט שבור (ארכיון + סרטון)
+3. תיקון ניגודיות event card (opacity 0.35 -> 0.6)
+4. כפתור צף: מעיגול גנרי לכפתור pill עם "הרשמה"
+5. h1 קיבל טקסט sr-only לגוגל
+6. תיקון copyright 2025 -> 2026 בבלוג
+7. יצירת robots.txt, sitemap.xml, .nojekyll, 404.html, favicon
+8. הוספת canonical URLs, OG tags מלאים, Twitter Cards, JSON-LD לכל הדפים
+9. כותרת ותיאור meta הורחבו (+תל אביב)
+10. Google Fonts הפך ל-non-blocking ב-index.html
+11. הסרת ~15 כללי CSS יתומים
+12. יצירת עמוד אינדקס בלוג (blog.html)
+13. Deploy לייב
+
+### Gatekeeper אישר עם 4 הערות קטנות (לא חוסמות):
+- תאריכים לא אחידים ב-blog.html
+- canonical מיותר ב-404.html (תוקן)
+- Google Fonts render-blocking ב-3 בלוגים (פרויקט עתידי)
+- שם קישור שונה ל"כל המאמרים" (שיפור)
+
+---
+
+## Session 69: Full Website Scan + Improvement Report (21.02.2026)
+
+### מה בוצע:
+- סקירה מלאה ע"י CTO + Copywriter + SEO (3 סוכנים במקביל)
+- Gatekeeper סינן ותיקן עדיפויות
+- הגשת דוח 36 ממצאים ב-3 עדיפויות + 7 חבילות עבודה
+- ירון אישר באופן פרטני כל סעיף (go/no-go)
 
 ---
 
