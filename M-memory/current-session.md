@@ -9,8 +9,49 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-21 |
-| בקשה אחרונה | בדיקת בריאות מערכת + תיקון קריטיות |
+| בקשה אחרונה | תיקון בעיית ביצועים בין צ'אטים |
 | סטטוס | **DONE** |
+
+---
+
+## Session 66: Performance Fix - Zombie Sessions (21.02.2026)
+
+### מה בוצע:
+
+1. אבחון בעיית "נתקע + מעתיק טקסט בין צ'אטים"
+2. מצאנו: 3 סשני Claude Code + 17 שרתי MCP + swap 1.8GB
+3. הרגנו 2 סשנים ישנים + crashpad handlers (מ-25 תהליכים ל-8)
+4. בנינו session-cleanup.sh - סקריפט ניקוי אוטומטי
+5. רשמנו SessionStart hook ב-settings.local.json (מופעל בכל צ'אט חדש)
+6. הוספנו System Health section לדו"ח היומי
+7. ABC-TOM Loop נסגר: learning-log + decisions + active-task
+
+### קבצים שנוצרו/עודכנו:
+- NEW: T-tools/scripts/session-cleanup.sh
+- MOD: .claude/settings.local.json (hooks)
+- MOD: T-tools/scripts/daily-review.sh (system health)
+- MOD: M-memory/learning-log.md
+- MOD: M-memory/decisions.md
+
+### Commits:
+- checkpoint before session cleanup hook: 5cf2be8
+- add session cleanup system: 9419434
+
+---
+
+## Session 65: Contact Button Deploy + Gatekeeper (21.02.2026)
+
+### מה בוצע:
+
+1. Gatekeeper dispatched - מצא 4 בעיות (2 P1, 2 P3)
+2. CTO תיקן: border opacity 0.25->0.40, aria-label, orphaned CSS, comment fix
+3. בדיקה: preview snapshot + inspect (desktop + mobile 375px), zero console errors
+4. הצגה לירון via Chrome screenshots
+5. Deploy ל-GitHub Pages (manual via /tmp clone)
+
+### Key changes:
+- yarondeepa-hub/sol-therapy: contact button deployed
+- WCAG non-text contrast: 2.09:1 -> ~3.5:1
 
 ---
 
@@ -18,29 +59,15 @@
 
 ### מה בוצע:
 
-**Full CEO process ("yossi" triggered)**
-
 1. הפעלת 4 סוכנים לביקורת (CTO, Copywriter, Researcher, Illustrator)
 2. CEO סינתז ממצאים לדוח מאוחד
-3. Gatekeeper סקר - אישר עם 3 תיקונים מינוריים
-4. דוח בריאות מערכת הוצג לירון (ציון 6.25/10)
-5. ירון הורה: טפל בקריטיות חוץ מ-5,6 (decisions + feedback), דלג על Producer
-
-### תיקונים קריטיים שבוצעו:
-1. **מפתח API חשוף** - הוסר מ-connected-tools.md (צריך לבטל ולחדש ב-Replicate)
-2. **daily-review.sh הרשאה** - plist שונה ל-eval+cat כדי לעקוף macOS provenance
-3. **GitHub Pages ניקוי** - הוסרו node_modules (52MB), frames-tmp, סקריפטים, מסמכים פנימיים. נוסף gitignore. commit: 402dcfd
-4. **סתירת אימוג'י** - הוסרו אימוג'י מדוגמה ב-voice-dna.md, הובהר כלל אפס-אימוג'י
-
-### Commits:
-- sol/ repo: a89e2f0
-- yarondeepa-hub/sol-therapy: 402dcfd
+3. דוח בריאות מערכת הוצג לירון (ציון 6.25/10)
+4. תיקונים קריטיים: API key, daily-review permissions, GitHub cleanup, emoji contradiction
 
 ### פתוח מהדוח (לא טופל):
 - decisions.md ריק (ירון דילג)
 - feedback.md ריק (ירון דילג)
 - Producer audit (ירון הורה לדלג)
-- 10 בעיות בינוניות (מתועדות בדוח)
 
 ---
 
@@ -49,59 +76,8 @@
 ### מה בוצע:
 
 1. בדיקת QA מלאה לאתר (GitHub Pages)
-2. זיהוי 6 ממצאים, צמצום ל-3 ממצאים אמיתיים
-3. Illustrator - המלצות לתגיות עברית + CSS
-4. תיקון: poster image + lazy-load לווידאו 69MB (בלי דחיסת איכות)
-5. תיקון: תגיות אנגלית לעברית (Partners, Newsletter, Science, Research)
-6. תיקון: CSS - הסרת uppercase + letter-spacing לטקסט עברי
-7. תיקון: הסרת 3 GSAP plugins שלא בשימוש (ScrollSmoother, DrawSVGPlugin, Flip)
-8. תיקון: JS lazy-load עם IntersectionObserver
-9. Deploy ל-GitHub Pages
-
-### Key changes:
-- yarondeepa-hub/sol-therapy commit: e243b8d
-- 3 GSAP scripts removed (חיסכון ~90KB)
-- poster image added (192KB) for immediate visual feedback
-- Video loads only when scrolled into view
-
----
-
-## Session 62: Context Optimization + Document Learning (20.02.2026)
-
-### מה בוצע:
-
-1. איפוס מלא
-2. ניתוח בעיית קונטקסט
-3. תוכנית פתרון: CLAUDE-lite.md + ניקוי current-session
-4. גיבוי: M-memory/backups/2026-02-20/
-5. ניקוי current-session.md (sessions 57-60 -> archive)
-
-### Next:
-- יצירת CLAUDE-lite.md
-- שינוי שורה אחת ב-CLAUDE.md
-- המשך למשימת קריאת 22 מסמכים (5 באצ'ים)
-
----
-
-## Session 61: Animation Learning Plan + AE Install (20.02.2026)
-
-### מה בוצע:
-
-**Full CEO process ("yossi" triggered)**
-
-1. Removed failed artists-roll animation from website
-2. Dispatched Researcher + Illustrator + CTO in parallel for learning plan
-3. CEO synthesized outputs into unified Hebrew plan
-4. Gatekeeper round 1: REVISIONS_NEEDED (7 issues)
-5. Applied all fixes, Gatekeeper round 2: APPROVED
-6. Presented plan to Yaron
-7. Yaron installed After Effects + Media Encoder
-8. System-installed Hadassah font (~/Library/Fonts/)
-9. Updated connected-tools.md with verified status
-
-### Key output:
-- O-output/animation-learning-plan/animation-learning-plan.md
-
-### Next step per plan:
-- Experiment 1: GSAP Hebrew dissolve animation in browser (2-3 hours)
-- Experiment 2: Puppeteer frame pipeline (1 day)
+2. תיקון: poster image + lazy-load לווידאו
+3. תיקון: תגיות אנגלית לעברית
+4. תיקון: CSS - הסרת uppercase + letter-spacing לטקסט עברי
+5. תיקון: הסרת 3 GSAP plugins שלא בשימוש
+6. Deploy ל-GitHub Pages

@@ -22,6 +22,28 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-21 - Website Contact Button + Session Performance Fix
+
+### Contact Button (Gatekeeper findings)
+**What happened:** Yaron rejected a full contact section ("זה מכוער"). CEO process: Team Sync -> Illustrator -> CTO -> Gatekeeper. Illustrator designed a ghost/outline button, CTO built it, Gatekeeper found issues.
+
+**Key learnings:**
+1. **Ghost button border contrast matters.** Border opacity 0.25 on dark bg = 2.09:1 contrast ratio. WCAG SC 1.4.11 requires 3:1 for non-text elements. Fix: opacity 0.40 = ~3.5:1.
+2. **Orphaned CSS accumulates.** When footer was redesigned from grid layout to simple centered layout, old `.footer__grid` / `.footer__bottom` / `.footer__legal` rules stayed in responsive.css. Gatekeeper caught them. Rule: when redesigning a section, search responsive.css for dead selectors.
+3. **Deploy workflow is fragile.** deploy.sh has a known `find` bug. Manual deploy (clone to /tmp, copy files, push) is safer. Consider fixing the script or replacing with rsync-based approach.
+
+### Session Performance (Zombie Process Investigation)
+**What happened:** Claude getting stuck and copying text between chats. Root cause: 3 concurrent Claude Code sessions with 17 MCP node processes eating 598MB RAM + 1.8GB swap.
+
+**Key learnings:**
+1. **Each Claude Code session spawns 5 node MCP servers** (Canva, Figma, Gemini, Replicate, WebResearch). On 16GB MacBook Air, max 2-3 concurrent sessions before swap kicks in.
+2. **Chrome MCP native host is a singleton.** Multiple sessions sharing one Chrome bridge = text bleeding between chats. No fix except: only one session uses Chrome at a time.
+3. **Claude Code SessionStart hooks exist.** Can run cleanup scripts automatically when a new session opens. Configured in `.claude/settings.local.json` under `hooks.SessionStart`.
+4. **Solution built:** `T-tools/scripts/session-cleanup.sh` - kills zombie sessions (idle >2hrs), preserves active ones. Runs automatically via SessionStart hook.
+5. **Daily review now monitors system health** - process count, swap usage, warnings.
+
+---
+
 ## Active Patterns (Apply These Now)
 
 ### Copy Patterns

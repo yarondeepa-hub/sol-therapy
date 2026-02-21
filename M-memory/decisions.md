@@ -79,13 +79,12 @@ Choices about direction and priorities.
 
 | Date | Decision | Rationale | Status |
 |------|----------|-----------|--------|
-| [Date] | [What you decided] | [Why] | [Active/Revisit/Deprecated] |
-
-**Example:**
 | Date | Decision | Rationale | Status |
 |------|----------|-----------|--------|
-| 2024-01-14 | Gatekeeper reviews all content before publish | Quality control is non-negotiable | Active |
-| 2024-01-11 | Version files as v1, v2, final | Need to track iterations | Active |
+| 2026-02-21 | SessionStart hook cleans zombie sessions (>2hrs idle) | 3 zombie sessions caused 598MB waste + text bleeding. Hook preserves active parallel work. | Active |
+| 2026-02-21 | Max 2-3 concurrent Claude Code chats | 16GB RAM + 5 MCP servers per session = swap above 3 chats. Hard limit. | Active |
+| 2026-02-21 | Only one chat uses Chrome MCP at a time | Chrome native host is singleton - multiple sessions = text cross-contamination | Active |
+| 2026-02-21 | Daily review monitors process count and swap | Early warning system for resource bloat | Active |
 
 ---
 
