@@ -5,6 +5,6 @@
 | שדה | ערך |
 |-----|-----|
 | בקשה | "מכוער, רוצה משהו כמו כפתור ליצירת קשר" - יוסי קח פיקוד |
-| סטטוס | IN_PROGRESS |
-| שלב | Team Sync -> Illustrator -> CTO -> Gatekeeper |
+| סטטוס | AWAITING_YARON_APPROVAL |
+| שלב | Team Sync -> Illustrator -> CTO -> Gatekeeper -> הצגה לירון |
 | פידבק ירון | הסקשן הנוכחי מכוער. רוצה כפתור, לא סקשן שלם |
