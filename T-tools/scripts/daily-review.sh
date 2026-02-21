@@ -69,12 +69,20 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - רשום: אילו תגליות צריכות להיכנס לתכנון של מחר
 - הצע: שיפור אחד לתהליך הלמידה עצמו (meta-learning)
 
-### 6. הצעות לשיפור
+### 6. בריאות מערכת - תהליכים
+- הרץ: ps aux | grep -E "claude|node.*mcp" | grep -v grep | wc -l
+- ספור כמה תהליכי Claude Code רצים
+- ספור כמה שרתי MCP רצים
+- בדוק swap: sysctl vm.swapusage
+- אם יש יותר מסשן Claude Code אחד, או swap מעל 2GB - דווח כ-WARNING
+- אם הכל תקין - דווח "מערכת נקייה"
+
+### 7. הצעות לשיפור
 - מה עובד טוב ולמה
 - מה לא עובד ומה לשנות
 - האם יש כלים/תהליכים חדשים שכדאי לשקול
 
-### 7. שמור את הדוח
+### 8. שמור את הדוח
 שמור את הדוח כקובץ: M-memory/daily-reports/'"$DATE"'-daily-review.md
 
 הפורמט:
@@ -98,6 +106,12 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 ## Agent System Health
 [Issues found]
 
+## System Health
+- Claude sessions: [count]
+- MCP servers: [count]
+- Swap usage: [amount]
+- Status: [OK / WARNING]
+
 ## Recommendations
 [3-5 suggestions]
 
@@ -110,7 +124,7 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 cd "$SOL_DIR"
 /usr/local/bin/claude -p \
     --model opus \
-    --allowedTools "Read Write Glob Grep WebFetch WebSearch Edit" \
+    --allowedTools "Read Write Glob Grep WebFetch WebSearch Edit Bash" \
     --dangerously-skip-permissions \
     "$PROMPT" \
     >> "$LOG_FILE" 2>&1

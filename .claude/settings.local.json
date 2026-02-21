@@ -160,5 +160,19 @@
       "Bash(# Find where MCP servers are configured echo \"\"=== User-level Claude settings ===\"\" ls -la ~/.claude/settings*.json echo \"\"\"\" echo \"\"=== Project-level settings ===\"\" ls -la /Users/yaronamor/Documents/yaronamor-vault/sol/.claude/settings*.json echo \"\"\"\" echo \"\"=== Check for MCP config files ===\"\" find ~/.claude -name \"\"*.json\"\" -maxdepth 2)",
       "Bash(# The MCPs are spawned by Claude Code connectors \\(marketplace extensions\\) # Let me check what''s installed echo \"\"=== Claude Code connectors/plugins ===\"\" ls -la ~/.claude/plugins/ echo \"\"\"\" echo \"\"=== Marketplace plugins ===\"\" ls ~/.claude/plugins/marketplaces/ echo \"\"\"\" echo \"\"=== Check settings for mcpServers ===\"\" # Look in the project settings for MCP config grep -r \"\"openai\\\\|mcp-server-openai\"\" ~/.claude/ --include=\"\"*.json\"\" -l)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/yaronamor/Documents/yaronamor-vault/sol/T-tools/scripts/session-cleanup.sh 120",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
   }
 }
