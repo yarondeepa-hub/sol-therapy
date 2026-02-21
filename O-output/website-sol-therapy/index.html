@@ -348,36 +348,57 @@
             }
         }
 
-        /* Mobile menu overlay */
+        /* Mobile menu overlay - @starting-style experiment
+           Uses display:none + @starting-style instead of opacity/pointer-events hack.
+           @starting-style tells the browser WHERE to animate FROM when display changes.
+           Supported: Chrome 117+, Firefox 129+, Safari 17.5+ */
         .mobile-menu {
             position: fixed;
             inset: 0;
             background: var(--color-dark);
             z-index: 9999;
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 2rem;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            transform: scale(0.97);
+            transition:
+                opacity 0.4s ease,
+                transform 0.4s ease,
+                display 0.4s ease allow-discrete;
         }
         .mobile-menu--open {
+            display: flex;
             opacity: 1;
-            pointer-events: auto;
+            transform: scale(1);
+        }
+        /* @starting-style: defines the START state when transitioning TO visible */
+        @starting-style {
+            .mobile-menu--open {
+                opacity: 0;
+                transform: scale(0.97);
+            }
         }
         .mobile-menu a {
             font-family: var(--font-display);
             font-weight: 500;
             font-size: 1.6rem;
             color: var(--color-washi);
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
             min-height: 48px;
             display: flex;
             align-items: center;
         }
+        /* Staggered entry: each link appears slightly later */
+        .mobile-menu--open a:nth-child(1) { opacity: 0.6; transform: translateY(0); transition-delay: 0.08s; }
+        .mobile-menu--open a:nth-child(2) { opacity: 0.6; transform: translateY(0); transition-delay: 0.14s; }
+        .mobile-menu--open a:nth-child(3) { opacity: 0.6; transform: translateY(0); transition-delay: 0.20s; }
+        .mobile-menu--open a:nth-child(4) { opacity: 0.6; transform: translateY(0); transition-delay: 0.26s; }
+        .mobile-menu--open .mobile-menu__cta { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
         .mobile-menu a:hover,
         .mobile-menu a:focus {
             opacity: 1;

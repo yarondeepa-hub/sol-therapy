@@ -4,7 +4,7 @@
     {
       "name": "sol-therapy-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "/tmp/sol-therapy-qa"],
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "/Users/yaronamor/Documents/yaronamor-vault/sol/O-output/website-sol-therapy"],
       "port": 8765
     }
   ]

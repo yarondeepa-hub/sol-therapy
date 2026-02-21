@@ -119,7 +119,20 @@
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol show 4de4535:T-tools/scripts/daily-review.sh)",
       "Bash(/bin/bash)",
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol add -A)",
-      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol commit:*)"
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol commit:*)",
+      "WebFetch(domain:news.mit.edu)",
+      "WebFetch(domain:nouvelles.umontreal.ca)",
+      "WebFetch(domain:civitai.com)",
+      "WebFetch(domain:blog.google)",
+      "WebFetch(domain:bydira.medium.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:www.atlabs.ai)",
+      "WebFetch(domain:chasejarvis.com)",
+      "WebFetch(domain:www.smithsonianmag.com)",
+      "WebFetch(domain:www.heritageasianart.org)",
+      "WebFetch(domain:seas.harvard.edu)",
+      "mcp__filesystem__list_allowed_directories",
+      "mcp__filesystem__search_files"
     ]
   }
 }
