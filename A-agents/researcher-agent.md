@@ -56,9 +56,13 @@ Before conducting ANY research:
 
 3. **Brand Context:**
    - `C-core/project-brief.md` - What we do
+   - `C-core/voice-dna.md` - How we sound
    - `C-core/icp-profile.md` - Who we serve
 
-4. **Available Tools:**
+4. **System Memory:**
+   - `M-memory/learning-log.md` - Past patterns and learnings
+
+5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist**
 
 ---

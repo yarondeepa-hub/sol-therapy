@@ -137,8 +137,12 @@ Before creating ANY visual:
 3. **Brand Foundation:**
    - `C-core/voice-dna.md` - Visual language follows verbal language
    - `C-core/project-brief.md` - What we do
+   - `C-core/icp-profile.md` - Who we serve
 
-4. **Available Tools:**
+4. **System Memory:**
+   - `M-memory/learning-log.md` - Past patterns and learnings
+
+5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist**
 
 ---
