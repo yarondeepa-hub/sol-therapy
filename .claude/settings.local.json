@@ -144,7 +144,21 @@
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol diff O-output/blog-02-collective-sync/blog-text-v3.md)",
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol diff HEAD~1 -- O-output/blog-02-collective-sync/blog-text-v3.md)",
       "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol log --oneline -- O-output/blog-02-collective-sync/blog-text-v3.md)",
-      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol log --oneline -- O-output/03-blog-science-buddhism/final-blog-post.md)"
+      "Bash(git -C /Users/yaronamor/Documents/yaronamor-vault/sol log --oneline -- O-output/03-blog-science-buddhism/final-blog-post.md)",
+      "Bash(git remote add:*)",
+      "Bash(bash deploy.sh:*)",
+      "Bash(sysctl:*)",
+      "Bash(xargs:*)",
+      "Bash(__NEW_LINE_b5a26aa941b3fc19__ echo \"\")",
+      "Bash(pgrep:*)",
+      "Bash(__NEW_LINE_374e31cc0b8a9925__ echo \"\")",
+      "Bash(# Check total RSS memory of all Claude + MCP processes echo \"\"=== Memory per process group ===\"\" echo \"\"Current session \\(2891\\):\"\" ps -p 2891 -o rss=)",
+      "Bash(# Check how many MCP servers were configured before vs now # Count unique MCP types in current config echo \"\"=== MCP servers configured per session ===\"\" echo \"\"Each session spawns: Canva, Figma, Gemini, OpenAI, Replicate = 5 servers\"\" echo \"\"\"\" echo \"\"=== Check: was Daily Review running during this time? ===\"\" ls -la ~/Library/LaunchAgents/com.sol.daily-review.plist launchctl list)",
+      "Bash(# The real question: what changed 2 days ago? # Check when MCP servers were added to project config echo \"\"=== .claude/settings.local.json timestamps ===\"\" ls -la /Users/yaronamor/Documents/yaronamor-vault/sol/.claude/ echo \"\"\"\" echo \"\"=== Claude Code version ===\"\" ls -la \"\"/Users/yaronamor/Library/Application Support/Claude/claude-code/\"\")",
+      "Bash(# Kill the two zombie Claude Code sessions and their children # Current session is PID 2891 - DO NOT TOUCH echo \"\"=== Killing zombie session PID 97248 \\(1:31PM\\) and its MCP children ===\"\" pgrep -P 97248)",
+      "Bash(# Some processes survived - force kill the remaining zombies echo \"\"=== Force killing remaining zombies ===\"\" kill -9 77042 77102 77040 echo \"\"Done\"\" sleep 1 echo \"\"\"\" echo \"\"=== Final verification ===\"\" ps aux)",
+      "Bash(# Find where MCP servers are configured echo \"\"=== User-level Claude settings ===\"\" ls -la ~/.claude/settings*.json echo \"\"\"\" echo \"\"=== Project-level settings ===\"\" ls -la /Users/yaronamor/Documents/yaronamor-vault/sol/.claude/settings*.json echo \"\"\"\" echo \"\"=== Check for MCP config files ===\"\" find ~/.claude -name \"\"*.json\"\" -maxdepth 2)",
+      "Bash(# The MCPs are spawned by Claude Code connectors \\(marketplace extensions\\) # Let me check what''s installed echo \"\"=== Claude Code connectors/plugins ===\"\" ls -la ~/.claude/plugins/ echo \"\"\"\" echo \"\"=== Marketplace plugins ===\"\" ls ~/.claude/plugins/marketplaces/ echo \"\"\"\" echo \"\"=== Check settings for mcpServers ===\"\" # Look in the project settings for MCP config grep -r \"\"openai\\\\|mcp-server-openai\"\" ~/.claude/ --include=\"\"*.json\"\" -l)"
     ]
   }
 }
