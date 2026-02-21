@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מה קורה כשחדר שלם מקשיב יחד? - סול תרפי</title>
     <meta name="description" content="קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. אוקסיטוצין משתחרר. מה המדע מגלה על מה שקורה כשאנשים מקשיבים ביחד.">
+    <link rel="canonical" href="https://sol-therapy.com/blog-collective-sync.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <meta property="og:title" content="מה קורה כשחדר שלם מקשיב יחד? - סול תרפי">
     <meta property="og:description" content="קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="assets/blog/collective-hero.webp">
+    <meta property="og:url" content="https://sol-therapy.com/blog-collective-sync.html">
+    <meta property="og:image" content="https://sol-therapy.com/assets/blog/collective-hero.jpg">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="Sol Therapy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="מה קורה כשחדר שלם מקשיב יחד? - סול תרפי">
+    <meta name="twitter:description" content="קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog/collective-hero.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -522,55 +531,36 @@
         .sumi-figure {
             position: relative;
             overflow: visible;
-            contain: layout style;
         }
 
         .sumi-figure img {
-            will-change: opacity, transform;
             mix-blend-mode: multiply;
-            filter: saturate(0.4) sepia(0.18) brightness(1.03) contrast(0.92);
+            filter: saturate(0.6) sepia(0.12);
             mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
-        }
-
-        /* Paper grain overlay - ink absorbed into washi fiber */
-        .sumi-figure::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.1;
-            mix-blend-mode: multiply;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
         }
 
         .sumi-figure::after {
             content: '';
             position: absolute;
-            inset: -12%;
+            inset: -8%;
             pointer-events: none;
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(242, 234, 211, 0.3) 45%,
-                rgba(242, 234, 211, 0.7) 65%,
-                var(--color-washi) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-washi) 100%
             );
             z-index: 1;
             mix-blend-mode: normal;
@@ -578,32 +568,28 @@
 
         .sumi-figure--dark img {
             mix-blend-mode: screen;
-            filter: saturate(0.25) brightness(0.75) sepia(0.06) contrast(0.88);
+            filter: saturate(0.3) brightness(0.8) sepia(0.08);
             mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
         }
 
         .sumi-figure--dark::after {
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(26, 26, 26, 0.3) 45%,
-                rgba(26, 26, 26, 0.7) 65%,
-                var(--color-dark) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-dark) 100%
             );
         }
 
@@ -623,7 +609,7 @@
             margin: 0.5rem 0 var(--space-s) var(--space-m);
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .figure--inline-float img {
@@ -631,26 +617,11 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
         }
 
         .figure--inline-float::after,
         .figure--inline-float-dark::after {
-            inset: -5%;
+            inset: 0;
         }
 
         .figure--inline-float figcaption {
@@ -671,7 +642,7 @@
             margin: 0.5rem var(--space-m) var(--space-s) 0;
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .figure--inline-float-dark img {
@@ -679,21 +650,6 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
         }
 
         .figure--inline-float-dark figcaption {
@@ -1209,16 +1165,6 @@
                 transform: none !important;
             }
         }
-
-        /* View Transitions - blur dissolve between pages */
-        @view-transition { navigation: auto; }
-        ::view-transition-old(root) { animation: sol-vt-out 0.4s ease-out both; }
-        ::view-transition-new(root) { animation: sol-vt-in 0.4s ease-in both; }
-        @keyframes sol-vt-out { from { opacity: 1; filter: blur(0px); } to { opacity: 0; filter: blur(3px); } }
-        @keyframes sol-vt-in { from { opacity: 0; filter: blur(3px); } to { opacity: 1; filter: blur(0px); } }
-        @media (prefers-reduced-motion: reduce) {
-            ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-        }
     </style>
 </head>
 <body>
@@ -1245,7 +1191,7 @@
     <!-- ========== HERO ========== -->
     <header class="article-hero">
         <div class="article-hero__image-zone">
-            <img src="assets/blog/collective-hero.webp" alt="" loading="eager" aria-hidden="true">
+            <img src="assets/blog/collective-hero.jpg" alt="" loading="eager" aria-hidden="true">
         </div>
         <div class="article-hero__content stagger" id="heroContent">
             <div class="article-hero__kicker">Sol Therapy Blog</div>
@@ -1253,6 +1199,8 @@
             <div class="article-hero__rule"></div>
             <p class="article-hero__deck">קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. מה המדע מגלה על הקשבה משותפת.</p>
             <div class="article-hero__meta">
+                <span>Yaron Amor</span>
+                <span class="sep">/</span>
                 <span>February 2026</span>
                 <span class="sep">/</span>
                 <span>14 min read</span>
@@ -1268,11 +1216,11 @@
     <section class="article-grid" style="padding-top: var(--space-l); padding-bottom: var(--space-s);">
 
         <div class="article-body">
-            <p class="drop-cap reveal">בשנת 2024 קרה משהו יוצא דופן במכון מקס פלאנק בפרנקפורט. צוות חוקרים בהובלת Tschacher ו-Wald-Fuhrmann חיבר 695 בני אדם לחיישנים פיזיולוגיים - קצב לב, מוליכות עור, נשימה - ושלח אותם לשבת ב-11 קונצרטים שונים. בטהובן, ברהמס, ברט דין. המוזיקה התחילה, והגופים התחילו להסתנכרן.</p>
+            <p class="drop-cap reveal">יש רגע, בדרך כלל אחרי עשרים או שלושים דקות, שבו החדר משתנה. לא בגלל שמישהו אמר משהו. משהו בטקסטורה של הדממה בין הצלילים נעשה צפוף יותר, רווי יותר. מי שהיה באירוע הקשבה עמוקה מכיר את זה.</p>
+
+            <p class="reveal">בשנת 2024, צוות חוקרים ממכון מקס פלאנק בפרנקפורט ניסה למדוד את מה שקורה שם. הם חיברו 695 בני אדם לחיישנים פיזיולוגיים - קצב לב, מוליכות עור, נשימה - ושלחו אותם לשבת ב-11 קונצרטים שונים. בטהובן, ברהמס, ברט דין. המוזיקה התחילה, והגופים התחילו להסתנכרן.</p>
 
             <p class="reveal">לא במטאפורה. לא "הרגשנו חיבור". במובן הפיזיולוגי הפשוט: קצבי הלב של אנשים זרים, שישבו זה לצד זה באולם קונצרטים, התחילו לפעום ביחד.</p>
-
-            <p class="reveal">וזה רק ההתחלה.</p>
         </div>
 
     </section>
@@ -1315,9 +1263,9 @@
         <div class="article-body">
             <h2 class="reveal">לא צריך אפילו מוזיקה</h2>
 
-            <p class="reveal">ב-2015 פרסמו Golland וצוותה מאוניברסיטת רייכמן מחקר ב-PLOS ONE שבדק משהו בסיסי יותר. הם לקחו אנשים שמכירים זה את זה, הושיבו אותם יחד לצפות בסרטונים רגשיים, ומדדו אותות אוטונומיים - מוליכות עור, קצב לב, מרווחים בין פעימות. התוצאה: האותות הפיזיולוגיים הסתנכרנו. לא בגלל מידת ההיכרות ביניהם, אלא בגלל עצם הנוכחות המשותפת באותו חלל, מול אותו גירוי רגשי. הנוכחות המשותפת לבדה - mere co-presence, כפי שהחוקרים קראו לזה - הספיקה.</p>
+            <p class="reveal">ב-2015 פרסמו Golland וצוותה מאוניברסיטת רייכמן מחקר ב-PLOS ONE שבדק משהו בסיסי יותר. הם לקחו אנשים שמכירים זה את זה, הושיבו אותם יחד לצפות בסרטונים רגשיים, ומדדו אותות אוטונומיים - מוליכות עור, קצב לב, מרווחים בין פעימות. התוצאה: האותות הפיזיולוגיים הסתנכרנו. לא בגלל מידת ההיכרות ביניהם, אלא בגלל עצם הנוכחות המשותפת באותו חלל, מול אותו גירוי רגשי. הנוכחות המשותפת לבדה הספיקה (מה שהחוקרים כינו mere co-presence).</p>
 
-            <p class="reveal">מי שהיה באירוע סאונד עמוק מכיר את התופעה הזו. יש רגע, בדרך כלל אחרי 20 או 30 דקות, שבו החדר משתנה. לא בגלל שמישהו אמר משהו. משהו בטקסטורה של הדממה בין הצלילים נעשה צפוף יותר, רווי יותר. השאלה שהמדע מתחיל לענות עליה: האם זו חוויה סובייקטיבית או תופעה פיזיולוגית מדידה?</p>
+            <p class="reveal">לא מוזיקה. לא מדיטציה מודרכת. מספיק לשבת באותו חדר, מול אותו דבר, כדי שהגופים יתחילו לדבר ביניהם.</p>
         </div>
 
     </section>
@@ -1337,7 +1285,7 @@
 
             <!-- Brain sync - floats into text -->
             <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog/brain-sync.webp" alt="Brain synchronization - sumi-e illustration" loading="lazy" decoding="async">
+                <img src="assets/blog/brain-sync.jpg" alt="Brain synchronization - sumi-e illustration" loading="lazy">
                 <figcaption>רשת היפר-מוחית</figcaption>
             </figure>
 
@@ -1408,7 +1356,7 @@
     <!-- Sufi panoramic break -->
     <div class="illustration-break">
         <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog/sufi-dhikr.webp" alt="Sufi whirling dervishes - sumi-e illustration" loading="lazy" decoding="async">
+            <img src="assets/blog/sufi-dhikr.jpg" alt="Sufi whirling dervishes - sumi-e illustration" loading="lazy">
         </div>
         <figcaption class="illustration-break__caption">דרווישים סופים - ריקוד הדהיקר</figcaption>
     </div>
@@ -1430,7 +1378,7 @@
 
                 <!-- Hasidic niggun - floats into dark text -->
                 <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
-                    <img src="assets/blog/hasidic-niggun.webp" alt="Hasidic niggun - sumi-e illustration" loading="lazy" decoding="async">
+                    <img src="assets/blog/hasidic-niggun.jpg" alt="Hasidic niggun - sumi-e illustration" loading="lazy">
                     <figcaption>ניגון חסידי - דבקות</figcaption>
                 </figure>
 
@@ -1442,15 +1390,15 @@
             <!-- Trio strip: Taize + Heartbeats + Sound Field -->
             <div class="figure-trio wide reveal">
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/taize.webp" alt="Taize community singing" loading="lazy" decoding="async">
+                    <img src="assets/blog/taize.jpg" alt="Taize community singing" loading="lazy">
                     <figcaption>קהילת טזה, צרפת</figcaption>
                 </figure>
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/heartbeats.webp" alt="Synchronized heartbeats" loading="lazy" decoding="async">
+                    <img src="assets/blog/heartbeats.jpg" alt="Synchronized heartbeats" loading="lazy">
                     <figcaption>קצבי לב מסתנכרנים</figcaption>
                 </figure>
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/sound-field.webp" alt="Sound field" loading="lazy" decoding="async">
+                    <img src="assets/blog/sound-field.jpg" alt="Sound field" loading="lazy">
                     <figcaption>שדה הצליל</figcaption>
                 </figure>
             </div>
@@ -1482,12 +1430,12 @@
 
             <p class="reveal">אבל יש פער בין הנתונים לבין החוויה. המחקרים מודדים סנכרון - הם לא מסבירים למה הוא מרגיש ככה. למה הרגע שבו חדר שלם נושם יחד מרגיש כמו משהו שמעבר לסכום של כל הנשימות בנפרד. למה גוף שנמצא בתוך קבוצה מקשיבה מגיב אחרת מגוף שמקשיב לבד, גם כשהצליל זהה.</p>
 
-            <p class="reveal">התשובה, כנראה, נמצאת איפשהו בין ה-EEG ללחישת השיר של אבוריג'ין במדבר. ומי שרוצה למצוא אותה - יצטרך גם לקרוא את הנתונים וגם להיכנס לחדר, להתמסר ולהקשיב.</p>
+            <p class="reveal">התשובה, כנראה, לא תימצא בנתונים לבד ולא בכתבי הקודש לבד. היא תימצא בחדר הבא שיתמלא אנשים, ברגע שהנשימות יתחילו - בלי שאף אחד תכנן את זה - לנוע ביחד.</p>
         </div>
 
         <!-- Closing pull quote -->
         <blockquote class="pull-quote reveal">
-            מי שרוצה למצוא אותה - יצטרך גם לקרוא את הנתונים וגם להיכנס לחדר, להתמסר ולהקשיב.
+            היא תימצא בחדר הבא שיתמלא אנשים, ברגע שהנשימות יתחילו - בלי שאף אחד תכנן את זה - לנוע ביחד.
         </blockquote>
 
     </section>

@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>האם מדיטציות סאונד באמת עובדות? - סול תרפי</title>
     <meta name="description" content="מה קורה במוח כשהגוף שוכב והצליל עוטף. מחקרים, מסורות עתיקות, ומה שביניהם.">
+    <link rel="canonical" href="https://sol-therapy.com/blog-sound-meditation.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <meta property="og:title" content="האם מדיטציות סאונד באמת עובדות? - סול תרפי">
-    <meta property="og:description" content="מה קורה במוח כשהגוף שוכב והצליל עוטף">
+    <meta property="og:description" content="מה קורה במוח כשהגוף שוכב והצליל עוטף. מחקרים, מסורות עתיקות, ומה שביניהם.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="assets/blog/singing-bowl.webp">
+    <meta property="og:url" content="https://sol-therapy.com/blog-sound-meditation.html">
+    <meta property="og:image" content="https://sol-therapy.com/assets/blog/singing-bowl.jpg">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="Sol Therapy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="האם מדיטציות סאונד באמת עובדות? - סול תרפי">
+    <meta name="twitter:description" content="מה קורה במוח כשהגוף שוכב והצליל עוטף. מחקרים, מסורות עתיקות, ומה שביניהם.">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog/singing-bowl.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -540,56 +549,37 @@
         .sumi-figure {
             position: relative;
             overflow: visible;
-            contain: layout style;
         }
 
         .sumi-figure img {
-            will-change: opacity, transform;
             mix-blend-mode: multiply;
-            filter: saturate(0.4) sepia(0.18) brightness(1.03) contrast(0.92);
+            filter: saturate(0.6) sepia(0.12);
             mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
-        }
-
-        /* Paper grain overlay - ink absorbed into washi fiber */
-        .sumi-figure::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.1;
-            mix-blend-mode: multiply;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
         }
 
         /* Ink-wash edge overlay - dissolves into paper */
         .sumi-figure::after {
             content: '';
             position: absolute;
-            inset: -12%;
+            inset: -8%;
             pointer-events: none;
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(242, 234, 211, 0.3) 45%,
-                rgba(242, 234, 211, 0.7) 65%,
-                var(--color-washi) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-washi) 100%
             );
             z-index: 1;
             mix-blend-mode: normal;
@@ -598,32 +588,28 @@
         /* Dark section sumi-e */
         .sumi-figure--dark img {
             mix-blend-mode: screen;
-            filter: saturate(0.25) brightness(0.75) sepia(0.06) contrast(0.88);
+            filter: saturate(0.3) brightness(0.8) sepia(0.08);
             mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
         }
 
         .sumi-figure--dark::after {
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(26, 26, 26, 0.3) 45%,
-                rgba(26, 26, 26, 0.7) 65%,
-                var(--color-dark) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-dark) 100%
             );
         }
 
@@ -654,7 +640,7 @@
             margin: 0.5rem 0 var(--space-s) var(--space-m);
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .figure--inline-float img {
@@ -662,27 +648,12 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
         }
 
-        /* Restore ::after dissolve for proper feathering on floats */
+        /* Kill the ::after dissolve bleed on floated figures */
         .figure--inline-float::after,
         .figure--inline-float-dark::after {
-            inset: -5%;
+            inset: 0;
         }
 
         .figure--inline-float figcaption {
@@ -704,7 +675,7 @@
             margin: 0.5rem var(--space-m) var(--space-s) 0;
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .figure--inline-float-dark img {
@@ -712,21 +683,6 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
         }
 
         .figure--inline-float-dark figcaption {
@@ -1255,16 +1211,6 @@
                 transform: none !important;
             }
         }
-
-        /* View Transitions - blur dissolve between pages */
-        @view-transition { navigation: auto; }
-        ::view-transition-old(root) { animation: sol-vt-out 0.4s ease-out both; }
-        ::view-transition-new(root) { animation: sol-vt-in 0.4s ease-in both; }
-        @keyframes sol-vt-out { from { opacity: 1; filter: blur(0px); } to { opacity: 0; filter: blur(3px); } }
-        @keyframes sol-vt-in { from { opacity: 0; filter: blur(3px); } to { opacity: 1; filter: blur(0px); } }
-        @media (prefers-reduced-motion: reduce) {
-            ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-        }
     </style>
 </head>
 <body>
@@ -1291,7 +1237,7 @@
     <!-- ========== HERO - Living Washi ========== -->
     <header class="article-hero">
         <div class="article-hero__image-zone">
-            <img src="assets/blog/singing-bowl.webp" alt="" loading="eager" aria-hidden="true">
+            <img src="assets/blog/singing-bowl.jpg" alt="" loading="eager" aria-hidden="true">
         </div>
         <div class="article-hero__content stagger" id="heroContent">
             <div class="article-hero__kicker">Sol Therapy Blog</div>
@@ -1299,6 +1245,8 @@
             <div class="article-hero__rule"></div>
             <p class="article-hero__deck">מה קורה במוח כשהגוף שוכב והצליל עוטף</p>
             <div class="article-hero__meta">
+                <span>Yaron Amor</span>
+                <span class="sep">/</span>
                 <span>February 2025</span>
                 <span class="sep">/</span>
                 <span>12 min read</span>
@@ -1318,7 +1266,7 @@
 
             <!-- Amygdala - floats organically into text -->
             <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog/amygdala.webp" alt="Amygdala - sumi-e illustration" loading="lazy" decoding="async">
+                <img src="assets/blog/amygdala.jpg" alt="Amygdala - sumi-e illustration" loading="lazy">
                 <figcaption>אמיגדלה - שם הפחד נולד</figcaption>
             </figure>
 
@@ -1365,7 +1313,7 @@
     <!-- Avalokiteshvara panoramic break -->
     <div class="illustration-break">
         <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog/avalokiteshvara.webp" alt="Avalokiteshvara - sumi-e illustration" loading="lazy" decoding="async">
+            <img src="assets/blog/avalokiteshvara.jpg" alt="Avalokiteshvara - sumi-e illustration" loading="lazy">
         </div>
         <figcaption class="illustration-break__caption">אבלוקיטשוורה - מי ששומע את בכי העולם</figcaption>
     </div>
@@ -1385,7 +1333,7 @@
 
                 <!-- Singing bowl - floats organically into dark text -->
                 <figure class="article-figure sumi-figure sumi-figure--dark figure--inline-float-dark reveal-illustration">
-                    <img src="assets/blog/singing-bowl.webp" alt="Tibetan Singing Bowl - sumi-e" loading="lazy" decoding="async">
+                    <img src="assets/blog/singing-bowl.jpg" alt="Tibetan Singing Bowl - sumi-e" loading="lazy">
                     <figcaption>קערת סאונד טיבטית</figcaption>
                 </figure>
 
@@ -1399,15 +1347,15 @@
             <!-- Trio strip: Yoruba + Didgeridoo + Pythagoras -->
             <div class="figure-trio wide reveal">
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/yoruba-drums.webp" alt="Yoruba Bata Drums" loading="lazy" decoding="async">
+                    <img src="assets/blog/yoruba-drums.jpg" alt="Yoruba Bata Drums" loading="lazy">
                     <figcaption>תופי באטא, יורובה</figcaption>
                 </figure>
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/didgeridoo.webp" alt="Aboriginal Didgeridoo" loading="lazy" decoding="async">
+                    <img src="assets/blog/didgeridoo.jpg" alt="Aboriginal Didgeridoo" loading="lazy">
                     <figcaption>דידג'רידו, אבוריג'ינים</figcaption>
                 </figure>
                 <figure class="sumi-figure sumi-figure--dark">
-                    <img src="assets/blog/pythagoras.webp" alt="Pythagoras" loading="lazy" decoding="async">
+                    <img src="assets/blog/pythagoras.jpg" alt="Pythagoras" loading="lazy">
                     <figcaption>פיתגורס</figcaption>
                 </figure>
             </div>
@@ -1483,7 +1431,7 @@
         <div class="article-footer__brand">
             <img src="assets/sol-therapy-logo-white.png" alt="Sol Therapy">
         </div>
-        <span class="article-footer__copy">Sol Therapy 2025</span>
+        <span class="article-footer__copy">Sol Therapy 2026</span>
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->

@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>כשהמדע פוגש את הבודהיזם - סול תרפי</title>
     <meta name="description" content="2,500 שנה של מחקר תודעה - מזוויות מנוגדות של אותו שולחן. מה קורה כשנוירומדע פוגש מדיטציה.">
+    <link rel="canonical" href="https://sol-therapy.com/blog-science-buddhism.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <meta property="og:title" content="כשהמדע פוגש את הבודהיזם - סול תרפי">
     <meta property="og:description" content="2,500 שנה של מחקר תודעה. מה קורה כשנוירומדע פוגש מדיטציה.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="assets/blog-science/01-hero-orange-robe.webp">
+    <meta property="og:url" content="https://sol-therapy.com/blog-science-buddhism.html">
+    <meta property="og:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="Sol Therapy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="כשהמדע פוגש את הבודהיזם - סול תרפי">
+    <meta name="twitter:description" content="2,500 שנה של מחקר תודעה. מה קורה כשנוירומדע פוגש מדיטציה.">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -487,52 +496,34 @@
         .sumi-figure {
             position: relative;
             overflow: visible;
-            contain: layout style;
         }
         .sumi-figure img {
-            will-change: opacity, transform;
             mix-blend-mode: multiply;
-            filter: saturate(0.4) sepia(0.18) brightness(1.03) contrast(0.92);
+            filter: saturate(0.6) sepia(0.12);
             mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 95% 90% at 50% 50%,
-                black 20%,
-                rgba(0,0,0,0.6) 40%,
-                rgba(0,0,0,0.3) 60%,
-                rgba(0,0,0,0.1) 80%,
-                transparent 95%
+                ellipse 92% 88% at 50% 50%,
+                black 40%,
+                rgba(0,0,0,0.7) 65%,
+                rgba(0,0,0,0.2) 85%,
+                transparent 100%
             );
-        }
-        /* Paper grain overlay - ink absorbed into washi fiber */
-        .sumi-figure::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.1;
-            mix-blend-mode: multiply;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
         }
         .sumi-figure::after {
             content: '';
             position: absolute;
-            inset: -12%;
+            inset: -8%;
             pointer-events: none;
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(242, 234, 211, 0.3) 45%,
-                rgba(242, 234, 211, 0.7) 65%,
-                var(--color-washi) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-washi) 100%
             );
             z-index: 1;
             mix-blend-mode: normal;
@@ -540,31 +531,27 @@
 
         .sumi-figure--dark img {
             mix-blend-mode: screen;
-            filter: saturate(0.25) brightness(0.75) sepia(0.06) contrast(0.88);
+            filter: saturate(0.3) brightness(0.8) sepia(0.08);
             mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 93% 88% at 50% 50%,
-                black 18%,
-                rgba(0,0,0,0.55) 38%,
-                rgba(0,0,0,0.2) 60%,
-                rgba(0,0,0,0.05) 80%,
-                transparent 95%
+                ellipse 90% 85% at 50% 50%,
+                black 35%,
+                rgba(0,0,0,0.6) 60%,
+                rgba(0,0,0,0.15) 82%,
+                transparent 100%
             );
         }
         .sumi-figure--dark::after {
             background: radial-gradient(
-                ellipse 65% 60% at 50% 50%,
-                transparent 25%,
-                rgba(26, 26, 26, 0.3) 45%,
-                rgba(26, 26, 26, 0.7) 65%,
-                var(--color-dark) 85%
+                ellipse 58% 52% at 50% 50%,
+                transparent 35%,
+                var(--color-dark) 100%
             );
         }
 
@@ -583,32 +570,17 @@
             margin: 0.5rem 0 var(--space-s) var(--space-m);
             shape-outside: margin-box;
             shape-margin: 1.5rem;
-            overflow: visible;
+            overflow: hidden;
         }
         .figure--inline-float img {
             max-height: 320px;
             width: 100%;
             height: auto;
             object-fit: contain;
-            opacity: 0.88;
-            mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 88% 84% at 50% 50%,
-                black 30%,
-                rgba(0,0,0,0.5) 60%,
-                rgba(0,0,0,0.1) 82%,
-                transparent 95%
-            );
         }
         .figure--inline-float::after,
         .figure--inline-float-dark::after {
-            inset: -5%;
+            inset: 0;
         }
         .figure--inline-float figcaption {
             position: relative;
@@ -792,6 +764,31 @@
         }
 
         /* ============================================
+           SOURCES
+        ============================================ */
+        .sources-list {
+            list-style: none;
+            padding: 0;
+            font-family: var(--font-english);
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: var(--color-muted);
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        .sources-list li {
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+        }
+        .sources-label {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.875rem;
+            color: var(--color-green-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        /* ============================================
            FOOTER
         ============================================ */
         .article-footer {
@@ -926,16 +923,6 @@
             border-radius: 0 0 4px 4px; transition: top 0.2s ease;
         }
         .skip-link:focus { top: 0; }
-
-        /* View Transitions - blur dissolve between pages */
-        @view-transition { navigation: auto; }
-        ::view-transition-old(root) { animation: sol-vt-out 0.4s ease-out both; }
-        ::view-transition-new(root) { animation: sol-vt-in 0.4s ease-in both; }
-        @keyframes sol-vt-out { from { opacity: 1; filter: blur(0px); } to { opacity: 0; filter: blur(3px); } }
-        @keyframes sol-vt-in { from { opacity: 0; filter: blur(3px); } to { opacity: 1; filter: blur(0px); } }
-        @media (prefers-reduced-motion: reduce) {
-            ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-        }
     </style>
 </head>
 <body>
@@ -962,7 +949,7 @@
     <!-- ========== HERO ========== -->
     <header class="article-hero">
         <div class="article-hero__image-zone">
-            <img src="assets/blog-science/01-hero-orange-robe.webp" alt="נזיר בודהיסטי עומד מול אולם מדענים" loading="eager" aria-hidden="true">
+            <img src="assets/blog-science/01-hero-orange-robe.png" alt="נזיר בודהיסטי עומד מול אולם מדענים" loading="eager" aria-hidden="true">
         </div>
         <div class="article-hero__content stagger" id="heroContent">
             <div class="article-hero__kicker">Sol Therapy Blog</div>
@@ -970,6 +957,8 @@
             <div class="article-hero__rule"></div>
             <p class="article-hero__deck">2,500 שנה של מחקר תודעה - מזוויות מנוגדות של אותו שולחן</p>
             <div class="article-hero__meta">
+                <span>Yaron Amor</span>
+                <span class="sep">/</span>
                 <span>February 2026</span>
                 <span class="sep">/</span>
                 <span>16 min read</span>
@@ -1011,7 +1000,7 @@
 
             <!-- Telescope illustration - floats into text -->
             <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog-science/02-telescope-consciousness.webp" alt="טלסקופ מופנה פנימה לתוך ראש שקוף" loading="lazy" decoding="async">
+                <img src="assets/blog-science/02-telescope-consciousness.png" alt="טלסקופ מופנה פנימה לתוך ראש שקוף" loading="lazy">
                 <figcaption>הטלסקופ הפנימי</figcaption>
             </figure>
 
@@ -1029,7 +1018,7 @@
 
     <div class="illustration-break">
         <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog-science/03-dharamsala-meeting.webp" alt="שלוש דמויות סביב שולחן בדהרמסאלה" loading="lazy" decoding="async">
+            <img src="assets/blog-science/03-dharamsala-meeting.png" alt="שלוש דמויות סביב שולחן בדהרמסאלה" loading="lazy">
         </div>
         <figcaption class="illustration-break__caption">דהרמסאלה, 1987 - הדלאי לאמה, פרנסיסקו ורלה ואדם אנגל</figcaption>
     </div>
@@ -1051,7 +1040,7 @@
 
             <!-- Gamma brain/mandala - floats into text -->
             <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog-science/04-gamma-brain-mandala.webp" alt="מוח מפוצל - חצי מדע חצי מנדלה" loading="lazy" decoding="async">
+                <img src="assets/blog-science/04-gamma-brain-mandala.png" alt="מוח מפוצל - חצי מדע חצי מנדלה" loading="lazy">
                 <figcaption>מוח ומנדלה - שפות שונות לאותו דבר</figcaption>
             </figure>
 
@@ -1059,7 +1048,9 @@
 
             <p class="reveal">המחקר שזעזע את התחום הגיע מאוניברסיטת ויסקונסין. חוקרים מדדו את הפעילות המוחית של נזירים טיבטיים עם עשרות אלפי שעות מדיטציה - ביניהם מתייה ריקאר, דוקטור לגנטיקה מולקולרית שהפך לנזיר בודהיסטי - וגילו סנכרון חסר תקדים של גלי גמא. לא שיפור של עשרה או עשרים אחוז - אלא דפוס של פעילות מוחית שלא נראה קודם לכן אצל שום נבדק. גלי גמא, המהירים בין גלי המוח, קשורים לריכוז גבוה, לעיבוד מידע מורכב, למה שמדענים מכנים "חיבור תודעתי" - היכולת של המוח ליצור חוויה מאוחדת מגירויים שונים. המוחות של הנזירים עבדו בסנכרון שהמדע לא ידע שאפשרי.</p>
 
-            <p class="reveal">ואז הממצאים התחילו להיערם. מיינדפולנס, התברר, לא סתם "מרגיעה את הנפש" בלשון כללית - היא משנה מנגנונים קוגניטיביים ספציפיים וניתנים למדידה: אלרטינג, אוריינטינג, ניטור קונפליקטים. מטא-אנליזה נרחבת של 111 ניסויים מבוקרים מצאה שמדיטציה משפרת תפקוד קוגניטיבי - קשב, זיכרון, תפקודים ניהוליים. ממצא אחר חשף שאצל מתרגלים מנוסים, הפעילות ברשת ברירת המחדל - default mode network, הרשת שפעילה כשהמוח "נודד" - ירדה משמעותית. פחות שוטטות מחשבתית. פחות רעש רקע. ואחד הממצאים המפתיעים הראה ששמונה שבועות של תרגול MBSR - הפרוטוקול שפיתח ג'ון קבט-זין באוניברסיטת מסצ'וסטס - הספיקו כדי לייצר עלייה מדידה בחומר האפור בהיפוקמפוס. שמונה שבועות. שינוי מבני במוח.</p>
+            <p class="reveal">ואז הממצאים התחילו להיערם. מיינדפולנס, התברר, לא סתם "מרגיעה את הנפש" בלשון כללית - היא משנה מנגנונים קוגניטיביים ספציפיים וניתנים למדידה: אלרטינג, אוריינטינג, ניטור קונפליקטים. מטא-אנליזה נרחבת של 111 ניסויים מבוקרים מצאה שמדיטציה משפרת תפקוד קוגניטיבי - קשב, זיכרון, תפקודים ניהוליים.</p>
+
+            <p class="reveal">אבל לא רק הקשב משתפר - המוח עצמו משתנה. אצל מתרגלים מנוסים, הפעילות ברשת ברירת המחדל - default mode network, הרשת שפעילה כשהמוח "נודד" - ירדה משמעותית. פחות שוטטות מחשבתית. פחות רעש רקע. ואחד הממצאים המפתיעים הראה ששמונה שבועות של תרגול MBSR - הפרוטוקול שפיתח ג'ון קבט-זין באוניברסיטת מסצ'וסטס - הספיקו כדי לייצר עלייה מדידה בחומר האפור בהיפוקמפוס. שמונה שבועות. שינוי מבני במוח.</p>
 
             <p class="reveal">ולא רק קשב. סקירה שיטתית של 22 ניסויים מבוקרים מצאה שמדיטציית Loving-Kindness - תרגול שמקורו בבודהיזם ומתמקד בפיתוח חמלה - מראה השפעה מתונה על הפחתת דיכאון וחרדה, בעיקר כשמשווים לקבוצות שלא עשו כלום. ההשפעות מתמתנות כשמשווים לפעילויות אחרות - מה שמעלה שאלות מעניינות על מה בדיוק מייצר את השינוי. במקביל, חוקרים בנו מסגרות מחקריות שלמות לנוירומדע של מדיטציה, ערכו מטא-אנליזות של שינויים מבניים במוח, וסיכמו את השדה כולו בכתבי עת מובילים. הטענה הבודהיסטית שמדיטציה משפרת קשב, שמדיטציה מפחיתה סבל, שחמלה ניתנת לאימון, שהמוח פלסטי ומשתנה - כל אלה מצאו תמיכה מדעית. לא מוחלטת, אבל רצינית.</p>
         </div>
@@ -1081,7 +1072,7 @@
 
             <!-- EEG gap illustration - floats into text -->
             <figure class="article-figure sumi-figure figure--inline-float reveal-illustration">
-                <img src="assets/blog-science/05-eeg-gap.webp" alt="מסך EEG עם דמות מדיטציה מאחוריו" loading="lazy" decoding="async">
+                <img src="assets/blog-science/05-eeg-gap.png" alt="מסך EEG עם דמות מדיטציה מאחוריו" loading="lazy">
                 <figcaption>הפער - בין הנתונים לחוויה</figcaption>
             </figure>
 
@@ -1101,7 +1092,7 @@
 
     <div class="illustration-break">
         <div class="illustration-break__image reveal-illustration">
-            <img src="assets/blog-science/06-mcmindfulness.webp" alt="סמארטפון עם אפליקציית מדיטציה בין קוביקלים" loading="lazy" decoding="async">
+            <img src="assets/blog-science/06-mcmindfulness.png" alt="סמארטפון עם אפליקציית מדיטציה בין קוביקלים" loading="lazy">
         </div>
         <figcaption class="illustration-break__caption">McMindfulness - כשמדיטציה הופכת למוצר צריכה</figcaption>
     </div>
@@ -1161,11 +1152,30 @@
     <!-- Closing illustration -->
     <div class="article-grid" style="padding-bottom: var(--space-l);">
         <figure class="article-figure sumi-figure figure--popout reveal-illustration">
-            <img src="assets/blog-science/07-closing-table.webp" alt="מדען ונזיר משני צדדי שולחן, מוח ביניהם" loading="lazy" decoding="async">
+            <img src="assets/blog-science/07-closing-table.png" alt="מדען ונזיר משני צדדי שולחן, מוח ביניהם" loading="lazy">
             <figcaption>שני צדדים של אותו שולחן</figcaption>
         </figure>
     </div>
 
+    <!-- Sources -->
+    <section class="article-grid" style="padding-bottom: var(--space-m);">
+        <div>
+            <p class="sources-label reveal">מקורות</p>
+            <ul class="sources-list reveal">
+                <li>Lutz, A., Greischar, L. L., Rawlings, N. B., Ricard, M., & Davidson, R. J. (2004). Long-term meditators self-induce high-amplitude gamma synchrony during mental practice. PNAS, 101(46), 16369-16373.</li>
+                <li>Jha, A. P., Krompinger, J., & Baime, M. J. (2007). Mindfulness training modifies subsystems of attention. Cognitive, Affective, & Behavioral Neuroscience, 7(2), 109-119.</li>
+                <li>Brewer, J. A., et al. (2011). Meditation experience is associated with differences in default mode network activity and connectivity. PNAS, 108(50), 20254-20259.</li>
+                <li>Holzel, B. K., et al. (2011). Mindfulness practice leads to increases in regional brain gray matter density. Psychiatry Research: Neuroimaging, 191(1), 36-43.</li>
+                <li>Galante, J., et al. (2014). Effect of kindness-based meditation on health and well-being: A systematic review and meta-analysis. Journal of Consulting and Clinical Psychology, 82(6), 1101-1114.</li>
+                <li>Davidson, R. J., & Lutz, A. (2008). Buddha's brain: Neuroplasticity and meditation. IEEE Signal Processing Magazine, 25(1), 176-174.</li>
+                <li>Fox, K. C. R., et al. (2014). Is meditation associated with altered brain structure? Neuroscience & Biobehavioral Reviews, 43, 48-73.</li>
+                <li>Tang, Y. Y., Holzel, B. K., & Posner, M. I. (2015). The neuroscience of mindfulness meditation. Nature Reviews Neuroscience, 16(4), 213-225.</li>
+                <li>Kabat-Zinn, J. (1979). Full Catastrophe Living. University of Massachusetts Medical Center.</li>
+                <li>Berkovich-Ohana, A. (2024). Suspension of bodily self during meditation. Journal of Neuroscience.</li>
+                <li>Mind & Life Institute. Founded 1987 by the Dalai Lama, Francisco Varela, and Adam Engle.</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Transition to footer -->
     <div class="transition--washi-dark"></div>
