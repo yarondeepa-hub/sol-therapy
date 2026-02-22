@@ -178,7 +178,7 @@
             --font-body: 'Heebo', sans-serif;
             --font-english: 'Inter', sans-serif;
             --font-stamp: 'Guttman Haim', serif;
-            --font-mono: 'DM Mono', monospace;
+            /* --font-mono removed - was unused */
             --font-hadassah: 'Hadassah Friedlaender', serif;
 
             --type-monument: clamp(3rem, 2rem + 8vw, 12rem);
@@ -822,11 +822,14 @@
             .dissolve-from-light--deep {
                 margin-top: -7vh;
             }
+            .mosaic {
+                padding-bottom: calc(var(--space-m) + 8vh);
+            }
             .mosaic::after {
-                height: 15vh;
+                height: 12vh;
             }
             .partners.dissolve-from-dark {
-                margin-top: -8vh;
+                margin-top: -10vh;
                 border-radius: clamp(10px, 3vw, 28px) clamp(10px, 3vw, 28px) 0 0;
             }
             .partners.dissolve-from-dark::before {
@@ -2338,7 +2341,7 @@
                     <picture><source srcset="assets/events/dj-perspective-bw.webp" type="image/webp"><img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--f2" data-mosaic>
-                    <img src="assets/events/mountain-meditation.jpg" alt="הר מואר באור אדום תחת שמי כוכבים באירוע סול תרפי" loading="lazy">
+                    <picture><source srcset="assets/events/mountain-meditation.webp" type="image/webp"><img src="assets/events/mountain-meditation.jpg" alt="הר מואר באור אדום תחת שמי כוכבים באירוע סול תרפי" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--g" data-mosaic>
                     <picture><source srcset="assets/events/outdoor-night.webp" type="image/webp"><img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה תחת כיפת השמיים" loading="lazy"></picture>
