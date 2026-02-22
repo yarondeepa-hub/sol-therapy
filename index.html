@@ -2306,7 +2306,7 @@
                     <img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים שוכבים על מזרנים" loading="lazy">
                 </div>
                 <div class="mosaic__item mosaic__item--e" data-mosaic>
-                    <video src="assets/events/gallery-new-video.mp4?v=2" autoplay muted loop playsinline aria-label="קטע וידאו מאירוע מדיטציית סאונד"></video>
+                    <video src="assets/events/gallery-new-video.mp4?v=2" autoplay muted loop playsinline preload="metadata" aria-label="קטע וידאו מאירוע מדיטציית סאונד"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--f" data-mosaic>
                     <img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy">
@@ -2321,7 +2321,7 @@
                     <img src="assets/events/museum-wide.jpg" alt="מבט רחב על אולם המוזיאון מלא במשתתפים שוכבים" loading="lazy">
                 </div>
                 <div class="mosaic__item mosaic__item--j" data-mosaic>
-                    <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי"></video>
+                    <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline preload="metadata" aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--k" data-mosaic>
                     <video poster="assets/events/gallery-wide-bottom-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-wide-bottom.mp4"></video>
@@ -2977,6 +2977,41 @@
                 video.src = video.getAttribute('data-lazy-video');
                 video.removeAttribute('data-lazy-video');
                 video.load();
+            });
+        }
+    })();
+    </script>
+
+    <script>
+    // Mobile video playback fix - explicitly play/pause mosaic videos
+    // Mobile browsers don't honor autoplay when video starts at opacity:0
+    // This observer triggers play() when videos scroll into view
+    (function() {
+        var mosaicVideos = document.querySelectorAll('.mosaic__item video');
+        if (!mosaicVideos.length) return;
+
+        if ('IntersectionObserver' in window) {
+            var videoObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    var video = entry.target;
+                    if (entry.isIntersecting) {
+                        // Small delay to let GSAP reveal animation start
+                        setTimeout(function() {
+                            var playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(function() {
+                                    // Autoplay blocked - silent fail, poster/frame shown
+                                });
+                            }
+                        }, 300);
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { rootMargin: '50px', threshold: 0.1 });
+
+            mosaicVideos.forEach(function(video) {
+                videoObserver.observe(video);
             });
         }
     })();
