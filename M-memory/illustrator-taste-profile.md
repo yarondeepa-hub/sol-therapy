@@ -408,6 +408,21 @@ no text no letters no numbers
 
 ---
 
+## Scout Discoveries (Auto-Integrated)
+
+> סעיף זה מעודכן אוטומטית על ידי סיור הבוקר (08:30 יומי).
+> טכניקות ומשנות-פרומפט חדשות שהתגלו דרך מנוע הלמידה.
+> סטטוס "new" = טרם נבדק. "tested" = נבדק בעבודה. "promoted" = הועבר לתבניות הראשיות. "rejected" = לא מתאים.
+
+| תאריך | תגלית | ציון | משנה-פרומפט | סטטוס |
+|-------|--------|------|-------------|-------|
+| 2026-02-22 | risograph halftone dots | 17/25 | risograph print texture, halftone dot pattern, slight color misregistration, paper texture visible | new |
+| 2026-02-22 | crackle glaze ceramics (kannyu) | 18/25 | crackle glaze texture like kannyu tea bowl, fine network of age cracks, smoke-veiled carbon marks, raku fired imperfection | new |
+| 2026-02-22 | Ma principle (tea ceremony) | 20/25 | chabana simplicity, single focal element, ma breathing room, intentional emptiness as active element | new |
+| 2026-02-22 | Ink Wash Fusion LoRA | 19/25 | dinkwfsn (LoRA trigger), ink wash fusion, traditional meets digital | new |
+
+---
+
 ## Evolution Protocol - פרוטוקול עדכון
 
 **אחרי כל פידבק מירון:**

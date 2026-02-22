@@ -697,6 +697,19 @@ brew install ffmpeg imagemagick
 
 ---
 
+## Learning Engine Discoveries (Pending Evaluation)
+
+> מעודכן אוטומטית על ידי סיור הבוקר. כלים שהתגלו אך טרם אומצו רשמית.
+> העבר לסעיפים הראשיים אחרי בדיקה מוצלחת.
+
+| תאריך | כלי | סוג | ציון | סטטוס | נתיב כרטיס כלי |
+|-------|------|-----|------|-------|---------------|
+| 2026-02-22 | Recraft V4 | API (Replicate) | 22/25 | verified | T-tools/learning/tool-cards/illustrator/recraft-v4.md |
+| 2026-02-22 | Flux 2 Pro editing | API (Replicate) | 19/25 | verified | - |
+| 2026-02-22 | CSS scroll-driven animations | technique | 16/25 | pending | - |
+
+---
+
 > **c Tom Even**
 > Workshops & future dates: [www.getagents.today](https://www.getagents.today)
 > Newsletter: [www.agentsandme.com](https://www.agentsandme.com)

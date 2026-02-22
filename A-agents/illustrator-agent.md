@@ -145,6 +145,11 @@ Before creating ANY visual:
 5. **Available Tools:**
    - `T-tools/skills/connected-tools.md` - **IRON RULE - know what tools exist**
 
+6. **Learning Engine (check at session start):**
+   - `T-tools/learning/tool-cards/` - כרטיסי כלים חדשים מהסיור
+   - See "Scout Discoveries" section in `M-memory/illustrator-taste-profile.md`
+   - See "Learning Engine Feed" section below in this file
+
 ---
 
 ## Visual Identity - "Neo-Japonism"
@@ -367,3 +372,24 @@ After every feedback cycle from Yaron:
 2. Update `M-memory/learning-log.md` with the lesson
 
 **This is not optional. This is what makes the system improve.**
+
+---
+
+## Learning Engine Feed (Auto-Updated)
+
+> סעיף זה מעודכן אוטומטית על ידי סיור הבוקר (08:30 יומי).
+> מכיל את התגלית הויזואלית המובילה מהסיור האחרון.
+> קרא סעיף זה בתחילת כל עבודה ויזואלית.
+
+### Latest Discovery
+
+| תאריך | תגלית | ציון | רלוונטיות |
+|-------|--------|------|-----------|
+| 2026-02-22 | Recraft V4 | 22/25 | מודל עם טעם עיצובי - מכבד חלל ריק, טקסטורות יד אנושית, קרוב ל-benchmark שלנו |
+
+### How to Use Learning Engine Outputs
+
+1. **בדוק Scout Discoveries** ב-`M-memory/illustrator-taste-profile.md` - טכניקות ומשנות-פרומפט חדשות
+2. **בדוק כרטיסי כלים** ב-`T-tools/learning/tool-cards/` - כלים חדשים שנבדקו
+3. **אם יש פריט בסטטוס "new"** - שקול לשלב בעבודה הנוכחית כניסוי
+4. **אחרי שימוש** - עדכן סטטוס ב-taste-profile מ-"new" ל-"tested" או "rejected"

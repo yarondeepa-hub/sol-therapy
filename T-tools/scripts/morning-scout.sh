@@ -103,6 +103,63 @@ Use the Morning Report Format from scout-config.md.
 ## After Saving Report
 Update Day Counter in scout-config.md to Next Day value.
 
+## Phase 2: Integration Pass (MANDATORY - Do Not Skip)
+
+After the report is saved and day counter updated, integrate findings into the system.
+Read the report you just saved. Then update each target:
+
+### 2a. Taste Profile Update
+File: M-memory/illustrator-taste-profile.md
+Find the "Scout Discoveries (Auto-Integrated)" table.
+For EVERY Illustrator discovery scored 16+:
+- Add a row: date, discovery name, score, prompt modifier (a concrete phrase for image generation), status "new"
+- Prompt modifier = a SHORT phrase that could be added to an image prompt. Example: "risograph halftone grain overlay" or "crackle glaze ceramic texture"
+
+### 2b. Connected Tools Update
+File: T-tools/skills/connected-tools.md
+Find the "Learning Engine Discoveries (Pending Evaluation)" table.
+For EVERY CTO discovery scored 16+:
+- Add a row: date, tool name, type (API/framework/technique), score, status "pending", tool card path (if created)
+
+### 2c. Parking Lot + Lab Queue Update
+File: T-tools/learning/parking-lot.md
+- Items scored 10-15: Add to "Active Items" section using the existing format (### Name, What, Why parked, Revisit trigger)
+- Items scored 16-18: Add to "Lab Queue" table at the top (name, score, date, agent type, status "waiting")
+- Skip items that already exist (check by name)
+
+### 2d. Agent Feeds Update
+File: A-agents/illustrator-agent.md
+Find "Learning Engine Feed" -> "Latest Discovery" table.
+Replace the row with today'\''s TOP Illustrator discovery (highest score).
+Format: date, discovery name, score, relevance note (1 sentence)
+
+File: A-agents/cto-agent.md
+Find "Learning Engine Feed" -> "Latest Discovery" table.
+Replace the row with today'\''s TOP CTO discovery (highest score).
+Format: date, discovery name, score, relevance note (1 sentence)
+
+### 2e. Learning Log Entry
+File: M-memory/learning-log.md
+Add a brief entry at the top (after header):
+## YYYY-MM-DD - Morning Scout Integration
+- Discoveries integrated: [count]
+- Targets updated: taste-profile, connected-tools, parking-lot, illustrator-agent, cto-agent
+- Top finding: [name] ([score]/25)
+- Experiments run: [count] (if any)
+
+### 2f. Integration Verification
+After all updates, verify by reading each target file and confirming the new rows exist.
+Count how many targets were successfully updated (out of 5).
+Log the result at the end of the scout report as:
+---
+## Integration Status
+Targets updated: X/5
+- taste-profile: [OK/FAIL]
+- connected-tools: [OK/FAIL]
+- parking-lot: [OK/FAIL]
+- illustrator-agent: [OK/FAIL]
+- cto-agent: [OK/FAIL]
+
 ## Tone
 Opinionated. Specific. "This is interesting because..." not "Here are some tools."
 Mediocre = say so. Exciting = say why. You have taste.

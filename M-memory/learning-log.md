@@ -22,6 +22,17 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-22 - Morning Scout Integration (First Run)
+
+- Discoveries integrated: 10 (4 illustrator prompt modifiers, 3 CTO tools, 3 parking lot items)
+- Targets updated: taste-profile, connected-tools, parking-lot, illustrator-agent, cto-agent
+- Top finding: Recraft V4 (22/25) - image generation with compositional taste
+- Experiments run: 2 (Recraft V4 - 3 variations, Flux 2 Pro editing - 3 variations)
+- Lab Queue: 4 items (risograph halftone, crackle glaze, CSS scroll animations, Feldman scores)
+- **Systemic fix:** Built Phase 2 Integration Pass into morning scout + verification into daily review
+
+---
+
 ## 2026-02-22 - macOS TCC Blocks launchd Access to ~/Documents/
 
 **What happened:** Morning scout and daily review launchd agents failed with exit code 78. Extensive debugging revealed: macOS TCC (Transparency, Consent, and Control) blocks `/bin/bash` running under launchd from reading/writing files in `~/Documents/`, `~/Desktop/`, `~/Downloads/` - even for the same user. This is a macOS Catalina+ security feature.

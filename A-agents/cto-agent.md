@@ -110,6 +110,11 @@ Before starting ANY technical work, read these files:
    - **Playground** - סביבות HTML אינטראקטיביות לאב-טיפוס מהיר של רכיבי UI
    - **Firecrawl** - המרת אתרים למרקדאון קריא, ניתוח מתחרים וסריקת מבנה
 
+5. **Learning Engine (check at session start):**
+   - `T-tools/learning/tool-cards/` - כרטיסי כלים חדשים מהסיור
+   - See "Learning Engine Discoveries" in `T-tools/skills/connected-tools.md`
+   - See "Learning Engine Feed" section below in this file
+
 5. **Website Development Skills (read per-task as needed):**
    - `T-tools/skills/css-advanced-layout-skill/css-advanced-layout-skill.md` - CSS Grid advanced, subgrid, container queries, magazine layouts, RTL
    - `T-tools/skills/advanced-typography-skill.md` - Fluid type scales, variable fonts, Hebrew typography, SplitText animations
@@ -1077,6 +1082,28 @@ After completing technical work, log it:
 ### Files Created/Modified
 - [List of files]
 ```
+
+---
+
+## Learning Engine Feed (Auto-Updated)
+
+> סעיף זה מעודכן אוטומטית על ידי סיור הבוקר (08:30 יומי).
+> מכיל את התגלית הטכנית המובילה מהסיור האחרון.
+> קרא סעיף זה בתחילת כל עבודה טכנית.
+
+### Latest Discovery
+
+| תאריך | תגלית | ציון | רלוונטיות |
+|-------|--------|------|-----------|
+| 2026-02-22 | Flux 2 Pro editing | 19/25 | עריכת איורים קיימים בשפה טבעית - איטרציות מהירות על עבודות מוצלחות |
+
+### How to Use Learning Engine Outputs
+
+1. **בדוק Learning Engine Discoveries** ב-`T-tools/skills/connected-tools.md` - כלים חדשים שהתגלו
+2. **בדוק כרטיסי כלים** ב-`T-tools/learning/tool-cards/` - כלים שנבדקו עם דוגמאות
+3. **בדוק Lab Queue** ב-`T-tools/learning/parking-lot.md` - פריטים שמחכים לבדיקה
+4. **אם יש כלי בסטטוס "pending"** - שקול לבדוק בעבודה הנוכחית
+5. **אחרי שימוש** - עדכן סטטוס ב-connected-tools מ-"pending" ל-"verified" או "rejected"
 
 ---
 

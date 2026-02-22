@@ -33,8 +33,12 @@ When starting ANY new conversation from this folder, ALWAYS read these files fir
 - `A-agents/seo-agent.md` - SEO optimization
 
 ### 4. Reports Check
-- `M-memory/daily-reports/` (check for `.seen` marker)
-- `T-tools/learning/morning-reports/` (check for `.seen` marker)
+- `M-memory/daily-reports/` (check for `.seen` marker - show full report if unseen)
+- `T-tools/learning/morning-reports/` (check for `.seen` marker - show structured briefing if unseen):
+  - Top discovery + surprise + what was auto-integrated + Lab Queue + experiments + integration health X/5
+  - If integration health < 3/5: alert "Learning engine integration failed"
+- Learning Engine health: check `Learning Engine Feed` in illustrator-agent.md and cto-agent.md
+  - If Latest Discovery empty or 2+ days old: alert
 
 ### 5. First Response
 - If active-task.md is not empty: report to Yaron: "משימה קודמת נקטעה: [description]. להמשיך או משימה חדשה?"
