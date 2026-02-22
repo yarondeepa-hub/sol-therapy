@@ -9,8 +9,37 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-22 |
-| בקשה אחרונה | תיקון וידאו קפוא במובייל |
+| בקשה אחרונה | הוספת תמונת הר למוזאיקה במובייל |
 | סטטוס | **DONE** |
+
+---
+
+## Session 73: Three Mobile Fixes - Video + Partners + Mountain Image (22.02.2026)
+
+### מה בוצע:
+
+**תיקון 1: וידאו קפוא במובייל** (Session 72 - המשך)
+- IntersectionObserver + preload="metadata" - כבר בוצע בתחילת הסשן
+
+**תיקון 2: לוגואים קטנים בשותפים במובייל**
+1. לוגואי Partners היו זעירים ולא קריאים במובייל (6 לוגואים בשורה אחת)
+2. שינוי מ-flex-row ל-CSS Grid 3 עמודות (3x2)
+3. הגדלת גבהים כמעט כפולה (עירייה: 50px->72px, מוזיאון: 38px->54px, וכו')
+4. Deploy לייב
+
+**תיקון 3: תמונת הר חסרה במוזאיקה במובייל**
+1. תא ריק בגריד 2-עמודות בין פריט F ל-G
+2. המרת HEIC->JPG (1200x900, 189KB), שמירה כ-mountain-meditation.jpg
+3. הוספת אלמנט HTML חדש (.mosaic__item--f2) בין F ל-G
+4. CSS: display:none בדסקטופ, display:block במובייל בלבד
+5. object-position: 65% 50% כדי למרכז את ההר בתמונה
+6. תיקון באג CSS ordering - display:none היה אחרי המדיה קוורי והדריס את display:block
+7. Deploy לייב
+
+### קבצים שעודכנו:
+- MOD: O-output/website-sol-therapy/index.html (video observer + partners grid + mountain image)
+- NEW: O-output/website-sol-therapy/assets/events/mountain-meditation.jpg
+- MOD: M-memory/current-session.md
 
 ---
 
