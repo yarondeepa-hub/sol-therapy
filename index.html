@@ -1435,6 +1435,14 @@
             }
         }
 
+        /* Mobile-only mosaic item (fills gap between F and G on 2-col grid) */
+        .mosaic__item--f2 {
+            display: none;
+        }
+        .mosaic__item--f2 img {
+            object-position: 65% 50%;
+        }
+
         /* Mobile: 2 columns, auto flow */
         @media (max-width: 640px) {
             .mosaic__grid {
@@ -1446,10 +1454,14 @@
             /* Reset explicit placement, let auto-flow handle it */
             .mosaic__item--a, .mosaic__item--b, .mosaic__item--c,
             .mosaic__item--d, .mosaic__item--e, .mosaic__item--f,
-            .mosaic__item--g, .mosaic__item--h, .mosaic__item--i,
-            .mosaic__item--j, .mosaic__item--k {
+            .mosaic__item--f2, .mosaic__item--g, .mosaic__item--h,
+            .mosaic__item--i, .mosaic__item--j, .mosaic__item--k {
                 grid-column: auto;
                 grid-row: auto;
+            }
+            /* Show mobile-only item */
+            .mosaic__item--f2 {
+                display: block;
             }
             /* Keep some variety on mobile */
             .mosaic__item--a { grid-column: span 2; }
@@ -2322,6 +2334,9 @@
                 </div>
                 <div class="mosaic__item mosaic__item--f" data-mosaic>
                     <img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy">
+                </div>
+                <div class="mosaic__item mosaic__item--f2" data-mosaic>
+                    <img src="assets/events/mountain-meditation.jpg" alt="הר מואר באור אדום תחת שמי כוכבים באירוע סול תרפי" loading="lazy">
                 </div>
                 <div class="mosaic__item mosaic__item--g" data-mosaic>
                     <img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה תחת כיפת השמיים" loading="lazy">
