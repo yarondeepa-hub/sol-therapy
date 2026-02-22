@@ -8,9 +8,26 @@
 
 | שדה | ערך |
 |-----|-----|
-| תאריך | 2026-02-21 |
-| בקשה אחרונה | יישום 4 שיפורי מערכת מייעוץ חיצוני |
+| תאריך | 2026-02-22 |
+| בקשה אחרונה | תיקון וידאו קפוא במובייל |
 | סטטוס | **DONE** |
+
+---
+
+## Session 72: Mobile Video Playback Fix (22.02.2026)
+
+### מה בוצע:
+1. אבחון באג: וידאו במוזאיקת הגלריה קפוא במובייל (לא רץ)
+2. שורש הבעיה: דפדפנים במובייל לא מכבדים autoplay כשהוידאו מתחיל עם opacity:0
+3. תיקון 1: הוספת preload="metadata" ל-2 וידאו שחסר להם
+4. תיקון 2: סקריפט IntersectionObserver שמפעיל play() כשוידאו נכנס לתצוגה ו-pause() כשיוצא
+5. הסקריפט גם חוסך ביצועים - וידאו שלא בתצוגה נעצר
+6. Deploy לייב ל-GitHub Pages
+
+### קבצים שעודכנו:
+- MOD: O-output/website-sol-therapy/index.html (preload + video observer)
+- MOD: M-memory/active-task.md
+- MOD: M-memory/current-session.md
 
 ---
 
