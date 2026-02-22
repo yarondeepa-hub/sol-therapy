@@ -9,8 +9,29 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-21 |
-| בקשה אחרונה | יישום תיקוני P1-P3 לפי אישור ירון |
+| בקשה אחרונה | יישום 4 שיפורי מערכת מייעוץ חיצוני |
 | סטטוס | **DONE** |
+
+---
+
+## Session 71: System Architecture + 4 Process Improvements (21.02.2026)
+
+### מה בוצע:
+1. יצירת מסמך ארכיטקטורה מלא למערכת (14 פרקים, self-contained)
+   - נשמר ב-O-output/system-architecture/sol-therapy-system-architecture.md
+2. ירון התייעץ עם מודל חיצוני - קיבל 6 המלצות
+3. ירון אישר 4: סעיפים 1+2+4+6
+4. יישום שינוי 1: Fast Track ב-Team Sync (שני מסלולים - מלא ומהיר)
+   - עדכון: team-sync-agent.md + CLAUDE-full.md
+5. יישום שינוי 2: איפוס סשן יזום
+   - עדכון: CLAUDE-full.md (Session State section)
+6. יישום שינוי 4: חילוץ החלטות/משוב לדוח יומי
+   - עדכון: CLAUDE.md (ABC-TOM v7 -> v8), daily-review.sh (סעיף 5 חדש + פורמט דוח)
+7. יישום שינוי 6: צ'קליסט טוקני סטייל חובה לפני Gatekeeper
+   - עדכון: illustrator-agent.md (Style Token Self-Check + workflow step)
+8. ABC-TOM Loop נסגר
+
+[DECISION] אימצנו 4 שיפורי מערכת: Fast Track, Proactive Reset, Decision Extraction, Style Token Self-Check
 
 ---
 

@@ -299,10 +299,31 @@ Before presenting any illustration:
 3. Choose appropriate prompt template
 4. Customize prompt for the specific task
 5. Generate in Chrome via Gemini Nano Banana Pro
-6. Self-check against Quality Gate
-7. Provide output via Handoff Template
-8. Gatekeeper reviews against taste profile
+6. Self-check against Quality Gate (4/6 minimum)
+7. MANDATORY: Style Token Self-Check (before Handoff!)
+8. Provide output via Handoff Template
+9. Gatekeeper reviews against taste profile
 ```
+
+### Style Token Self-Check (MANDATORY before Handoff)
+
+**לפני שמעבירים תוצר ל-Gatekeeper, המאייר חייב לבדוק ולתעד:**
+
+```
+STYLE TOKEN COMPLIANCE:
+[ ] paper_warm_offwhite - מרקם נייר חם (CRITICAL)
+[ ] ink_monochrome_brush - עבודת מכחול דיו (CRITICAL)
+[ ] negative_space_70 - 60-75% שטח שלילי (CRITICAL)
+[ ] shan_shui_nature - אלמנטים טבעיים (CRITICAL)
+[ ] wabi_sabi_restraint - ריסון ואי-שלמות (HIGH)
+
+Tokens present: X/5 (minimum 3 CRITICAL required)
+Additional tokens: [list any of tokens 5-9 present]
+```
+
+**כלל: אם פחות מ-3 טוקנים CRITICAL נוכחים - לא להעביר ל-Gatekeeper. לייצר מחדש.**
+
+הציון מתועד ב-NOTES של ה-Handoff Template.
 
 ### Iteration After Feedback
 

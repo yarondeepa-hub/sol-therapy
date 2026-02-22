@@ -61,7 +61,15 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - בדוק אם learning-log מכיל לקחים שלא הוטמעו בסוכנים
 - בדוק אם connected-tools.md מעודכן
 
-### 5. Learning Integration (Evening Sync)
+### 5. חילוץ החלטות ומשוב (Decision/Feedback Extraction)
+- קרא את M-memory/current-session.md
+- חפש את הסימונים [DECISION] ו-[FEEDBACK] בסשנים של היום
+- לכל [DECISION] שנמצא: הוסף רשומה מעוצבת ל-M-memory/decisions.md עם תאריך, הקשר, ההחלטה, והסיבה
+- לכל [FEEDBACK] שנמצא: הוסף רשומה מעוצבת ל-M-memory/feedback.md עם תאריך, מקור (ירון/קהל), והמשוב
+- אם לא נמצאו סימונים - בדוק בעצמך אם היו החלטות אסטרטגיות סמויות (לא סומנו) ותעד אותן
+- דווח בדוח: כמה החלטות/משובים חולצו, ואם היו כאלה שלא סומנו
+
+### 6. Learning Integration (Evening Sync)
 - קרא את דוח הבוקר: T-tools/learning/morning-reports/'"$DATE"'-scout.md (אם קיים)
 - סקור: האם משהו מהדוח רלוונטי למשימות של היום?
 - בדוק: האם היו Tool Cards חדשים שנוצרו? האם נוצלו במשימות?
@@ -69,7 +77,7 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - רשום: אילו תגליות צריכות להיכנס לתכנון של מחר
 - הצע: שיפור אחד לתהליך הלמידה עצמו (meta-learning)
 
-### 6. בריאות מערכת - תהליכים
+### 7. בריאות מערכת - תהליכים
 - הרץ: ps aux | grep -E "claude|node.*mcp" | grep -v grep | wc -l
 - ספור כמה תהליכי Claude Code רצים
 - ספור כמה שרתי MCP רצים
@@ -77,12 +85,12 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - אם יש יותר מסשן Claude Code אחד, או swap מעל 2GB - דווח כ-WARNING
 - אם הכל תקין - דווח "מערכת נקייה"
 
-### 7. הצעות לשיפור
+### 8. הצעות לשיפור
 - מה עובד טוב ולמה
 - מה לא עובד ומה לשנות
 - האם יש כלים/תהליכים חדשים שכדאי לשקול
 
-### 8. שמור את הדוח
+### 9. שמור את הדוח
 שמור את הדוח כקובץ: M-memory/daily-reports/'"$DATE"'-daily-review.md
 
 הפורמט:
@@ -93,6 +101,12 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 
 ## Open Items
 [Pending items]
+
+## Decision/Feedback Extraction
+- Tagged decisions found: [count]
+- Tagged feedback found: [count]
+- Untagged decisions detected: [count]
+- Updated files: [decisions.md / feedback.md / none]
 
 ## Learning Sync
 - Morning Scout highlights: [top finding from morning report]

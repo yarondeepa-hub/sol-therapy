@@ -145,7 +145,7 @@ The files above are your "memory". They persist between sessions. When you updat
 
 ---
 
-## The ABC-TOM Loop (v7)
+## The ABC-TOM Loop (v8)
 
 **חובה אחרי כל משימה.** לא המלצה. חלק מתהליך העבודה:
 
@@ -154,6 +154,10 @@ The files above are your "memory". They persist between sessions. When you updat
 3. **Made a strategic decision?** Update `M-memory/decisions.md`
 4. **Pattern strong enough to become a rule?** Promote it to `C-core/voice-dna.md`
 5. **Research worth keeping?** Move it from `B-brain/04-INBOX/` to the right subfolder
+6. **Tag in current-session.md** - אם היו החלטות או משוב, סמן בסשן:
+   - `[DECISION]` - החלטה אסטרטגית שנלקחה
+   - `[FEEDBACK]` - משוב מירון או מהקהל
+   - הדוח היומי (21:00) יחלץ את הסימונים האלה ויעדכן decisions.md ו-feedback.md
 
 The Loop is what makes the system compound. Every project that closes The Loop makes the next project better.
 

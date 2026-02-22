@@ -22,6 +22,26 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-21 - System Architecture Review + 4 Process Improvements
+
+**What happened:** Yaron requested full system architecture document for external AI model consultation. External model (unnamed) reviewed and suggested 6 improvements. Yaron approved 4 of 6 (#1, #2, #4, #6). Implemented all 4.
+
+**Key learnings:**
+
+1. **Fast Track works when Team Sync stays in the loop.** The solution isn't skipping Team Sync - it's giving Team Sync two speeds. He still sees every request, just decides faster on simple ones.
+
+2. **Proactive session reset prevents context window crashes.** After heavy tasks (3+ agents or 30+ messages), suggest Yaron opens a new session. active-task.md must be clean enough to resume seamlessly.
+
+3. **Tagging decisions/feedback in current-session.md + daily extraction is better than relying on end-of-task discipline.** Use [DECISION] and [FEEDBACK] tags. Daily review at 21:00 extracts and formats them into decisions.md and feedback.md.
+
+4. **Style Token Self-Check before Gatekeeper handoff catches problems earlier.** 3 out of 5 CRITICAL tokens required before illustration leaves the Illustrator. Documented in Handoff notes.
+
+5. **External AI review of system architecture is valuable.** The outside perspective identified real friction points (Team Sync rigidity, memory underuse) that we were too close to see. Worth doing periodically.
+
+[DECISION] Approved 4 system improvements based on external consultation: Fast Track, Proactive Reset, Decision/Feedback extraction, Style Token Self-Check.
+
+---
+
 ## 2026-02-21 - P1-P3 Website Fixes: SEO + Accessibility + Infrastructure
 
 **What happened:** Yaron reviewed improvement report (36 findings), annotated each item with go/no-go, and we implemented all approved items in a single batch deploy.
