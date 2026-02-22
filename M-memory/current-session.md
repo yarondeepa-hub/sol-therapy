@@ -9,8 +9,36 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-22 |
-| בקשה אחרונה | אינדיקטור גלילה לקרוסלת בלוג במובייל |
+| בקשה אחרונה | תיקון אינדיקטור בלוג + הסרת CTA צף |
 | סטטוס | **DONE** |
+
+---
+
+## Session 73 (cont-2): Blog Chevron Hint + Remove Floating CTA (22.02.2026)
+
+### מה בוצע:
+
+**תיקון 6: הסרת כפתור הרשמה צף (floating CTA)**
+- ירון ביקש להסיר את כפתור ה"הרשמה" הוורוד שהיה fixed בתחתית-שמאל
+- הוסר: HTML, CSS, JS (IntersectionObserver toggle)
+- הוחלף בהערה: "Floating CTA removed per Yaron's request (22.02.2026)"
+
+**תיקון 7: החלפת אינדיקטור התקדמות בחץ גלילה (chevron)**
+- ירון הבהיר: רצה סמן/אייקון שמראה שניתן לגלול, לא progress bar
+- הוסר: scroll progress indicator (HTML + CSS + JS)
+- נוסף: שברון (chevron) SVG עדין בצד שמאל של קרוסלת הבלוג
+  - 20x20px, stroke: color-green-dark, opacity: 0.3
+  - position: absolute, top: 50%, left: 0
+  - מוסתר בדסקטופ (display: none), מוצג במובייל (display: block)
+  - GSAP מנהל opacity - gsap.set(0) + gsap.to(1) כשהסקשן נכנס לוויופורט
+  - נעלם אחרי גלילה ראשונה (gsap.to opacity:0)
+- באג שנפתר: GSAP ticker לא רץ בסביבת preview (rAF לא פעיל)
+  - הפתרון: scroll listener + getBoundingClientRect במקום ScrollTrigger
+  - GSAP שולט באנימציית opacity (בלי קונפליקט עם אנימציות בלוג אחרות)
+- Deploy לייב
+
+### קבצים שעודכנו:
+- MOD: O-output/website-sol-therapy/index.html
 
 ---
 
@@ -23,16 +51,11 @@
 - שינוי object-position ל-38% 50% (במדיה קוורי 768px בלבד)
 - דסקטופ לא נפגע
 
-**תיקון 5: אינדיקטור גלילה לקרוסלת הבלוג (Illustrator + CTO)**
+**תיקון 5: אינדיקטור גלילה לקרוסלת הבלוג (Illustrator + CTO) - הוחלף בתיקון 7**
 - Team Sync -> Illustrator (עיצוב קונספט) -> CTO (מימוש)
 - Illustrator בחר: קו התקדמות דק 48px בסגנון קליגרפי
-  - דחה dots (app-like), gradient (מתנגש עם dissolves קיימים), arrows (imperative)
-  - Track: rgba(59,81,75,0.12), Fill: rgba(59,81,75,0.35)
-- CTO מימש: HTML element + CSS (hidden on desktop) + JS scroll listener
-  - Fill position מתעדכן ב-requestAnimationFrame
-  - RTL-aware (right:0 + translateX negative)
-  - prefers-reduced-motion support
-- Deploy לייב
+- ירון דחה ובקש סמן/אייקון במקום progress bar
+- ראה תיקון 7 למעלה
 
 ### קבצים שעודכנו:
 - MOD: O-output/website-sol-therapy/index.html

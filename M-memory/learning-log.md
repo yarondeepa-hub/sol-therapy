@@ -22,6 +22,28 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-22 - GSAP ScrollTrigger vs Custom Scroll Listeners
+
+**What happened:** Swipe hint chevron for blog carousel (mobile). GSAP ScrollTrigger didn't fire when scrollIntoView was used to navigate to the section. The toggle action "play" doesn't replay if the scroll position was already past the trigger point.
+
+**Key learnings:**
+- GSAP ScrollTrigger toggleActions don't re-fire if the element is already in the active zone when created
+- For simple show/hide animations, a scroll listener + getBoundingClientRect is more reliable than ScrollTrigger
+- GSAP must "own" opacity if any GSAP animation touches the same container - use gsap.set() + gsap.to() instead of CSS classes
+- Preview environments may not run requestAnimationFrame (GSAP ticker stays at frame 0). Test via real deployment.
+
+## 2026-02-22 - Yaron Prefers Icons Over Progress Bars
+
+**What happened:** Built a scroll progress line for blog carousel. Yaron said "I didn't understand what you did" and asked for an icon/marker instead.
+
+**Key learnings:**
+- [FEEDBACK] Yaron wants visual affordances that are immediately recognizable (arrow/chevron = "scroll here"), not abstract indicators (progress bar)
+- When Yaron says "סימן" (sign/marker), he means a visual icon, not a data visualization
+- Simpler is better: a 20px chevron communicates "swipe" more clearly than a 48px progress track
+- Always confirm the concept visually before implementing
+
+---
+
 ## 2026-02-21 - System Architecture Review + 4 Process Improvements
 
 **What happened:** Yaron requested full system architecture document for external AI model consultation. External model (unnamed) reviewed and suggested 6 improvements. Yaron approved 4 of 6 (#1, #2, #4, #6). Implemented all 4.

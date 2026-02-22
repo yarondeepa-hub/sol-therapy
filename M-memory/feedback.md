@@ -49,6 +49,16 @@ Track questions your audience asks — these are content ideas.
 
 ---
 
+## Yaron Feedback
+
+### Constructive Feedback
+| Date | Content | Feedback | Action |
+|------|---------|----------|--------|
+| 2026-02-22 | Blog scroll progress bar | "לא הבנתי מה עשית" - wanted a clear icon/marker, not progress bar | Use recognizable icons (chevrons/arrows) for scroll affordances. "סימן" = icon, not data viz |
+| 2026-02-22 | Floating CTA button | "תוריד את כפתור ההרשמה הזה" | Removed. Don't add UI elements Yaron didn't ask for |
+
+---
+
 ## Sample Entries
 
 ### Positive Signal
