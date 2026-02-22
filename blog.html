@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5VRCQ9M6V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C5VRCQ9M6V');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרחיבי תודעה - מאמרים | סול תרפי</title>
+    <meta name="description" content="מאמרים על מדיטציית סאונד, מדע התודעה, וחוויות קבוצתיות טרנספורמטיביות. מחקרים, תובנות, ומה שביניהם.">
+    <link rel="canonical" href="https://sol-therapy.com/blog.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <meta property="og:title" content="מרחיבי תודעה - מאמרים | סול תרפי">
+    <meta property="og:description" content="מאמרים על מדיטציית סאונד, מדע התודעה, וחוויות קבוצתיות טרנספורמטיביות.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sol-therapy.com/blog.html">
+    <meta property="og:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="Sol Therapy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="מרחיבי תודעה - מאמרים | סול תרפי">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Masada';
+            src: url('fonts/Masada-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-dark: #1a1a1a;
+            --color-washi: #F2EAD3;
+            --color-green: #588475;
+            --color-green-dark: #3B514B;
+            --color-beni: #BE5069;
+            --color-muted: #949495;
+            --font-display: 'Masada', serif;
+            --font-body: 'Heebo', sans-serif;
+            --font-english: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background: var(--color-dark);
+            color: var(--color-washi);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .blog-index {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+        }
+
+        .blog-index__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            text-decoration: none;
+            margin-bottom: 3rem;
+            transition: color 0.3s ease;
+        }
+        .blog-index__back:hover { color: var(--color-washi); }
+
+        .blog-index__title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 1.5rem + 3vw, 3.5rem);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-index__subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.5;
+            margin-bottom: 3rem;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .blog-item {
+            display: flex;
+            gap: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 234, 211, 0.06);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .blog-item:hover {
+            border-color: rgba(242, 234, 211, 0.15);
+            background: rgba(242, 234, 211, 0.03);
+        }
+
+        .blog-item__image {
+            flex-shrink: 0;
+            width: 140px;
+            height: 175px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .blog-item__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-item__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .blog-item__category {
+            font-family: var(--font-english);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-green);
+        }
+
+        .blog-item__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .blog-item__teaser {
+            font-size: 0.9rem;
+            font-weight: 300;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+
+        .blog-item__date {
+            font-family: var(--font-english);
+            font-size: 0.7rem;
+            color: var(--color-muted);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 600px) {
+            .blog-item {
+                flex-direction: column;
+            }
+            .blog-item__image {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        .blog-index__footer {
+            margin-top: 4rem;
+            text-align: center;
+            opacity: 0.3;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="blog-index">
+        <a href="/" class="blog-index__back">&rarr; חזרה לאתר הראשי</a>
+
+        <h1 class="blog-index__title">מרחיבי תודעה</h1>
+        <p class="blog-index__subtitle">מאמרים על מדיטציית סאונד, מדע התודעה, וחוויות קבוצתיות</p>
+
+        <div class="blog-list">
+
+            <a href="blog-science-buddhism.html" class="blog-item">
+                <div class="blog-item__image">
+                    <img src="assets/blog-science/01-hero-orange-robe.webp" alt="כשהמדע פוגש את הבודהיזם" loading="lazy">
+                </div>
+                <div class="blog-item__body">
+                    <span class="blog-item__category">Science</span>
+                    <h2 class="blog-item__title">כשהמדע פוגש את הבודהיזם</h2>
+                    <p class="blog-item__teaser">2,500 שנה של מחקר תודעה - מזוויות מנוגדות של אותו שולחן. מה קורה כשנוירומדע פוגש מדיטציה.</p>
+                    <span class="blog-item__date">2026</span>
+                </div>
+            </a>
+
+            <a href="blog-collective-sync.html" class="blog-item">
+                <div class="blog-item__image">
+                    <img src="assets/blog/collective-hero.webp" alt="הקשבה קולקטיבית" loading="lazy">
+                </div>
+                <div class="blog-item__body">
+                    <span class="blog-item__category">Research</span>
+                    <h2 class="blog-item__title">מה קורה כשחדר שלם מקשיב יחד?</h2>
+                    <p class="blog-item__teaser">קצבי לב מסתנכרנים. גלי מוח יוצרים רשתות. אוקסיטוצין משתחרר. מה המדע מגלה על הקשבה משותפת.</p>
+                    <span class="blog-item__date">2026</span>
+                </div>
+            </a>
+
+            <a href="blog-sound-meditation.html" class="blog-item">
+                <div class="blog-item__image">
+                    <img src="assets/blog/singing-bowl.webp" alt="מדיטציית סאונד" loading="lazy">
+                </div>
+                <div class="blog-item__body">
+                    <span class="blog-item__category">Research</span>
+                    <h2 class="blog-item__title">האם מדיטציות סאונד באמת עובדות?</h2>
+                    <p class="blog-item__teaser">מה קורה במוח כשהגוף שוכב והצליל עוטף. מחקרים, מסורות עתיקות, ומה שביניהם.</p>
+                    <span class="blog-item__date">February 2025</span>
+                </div>
+            </a>
+
+        </div>
+
+        <p class="blog-index__footer">Sol Therapy 2026</p>
+    </main>
+</body>
+</html>
