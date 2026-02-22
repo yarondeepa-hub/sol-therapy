@@ -9,8 +9,56 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-22 |
-| בקשה אחרונה | תיקון אינדיקטור בלוג + הסרת CTA צף |
+| בקשה אחרונה | אופטימיזציית ביצועים לאתר |
 | סטטוס | **DONE** |
+
+---
+
+## Session 73 (cont-3): Website Performance Optimization (22.02.2026)
+
+### מה בוצע:
+
+ירון דיווח שהאתר נטען איטי מהטלפון על סלולר (בלי WiFi).
+
+**ניתוח מצב:**
+- האתר שוקל 244MB סה"כ, דף הבית טען ~23MB
+- וידאו רקע: 16MB (autoplay!)
+- תמונות מוזאיקה: 5.3MB (8 JPG לא דחוסים)
+- פונטים מותאמים: 581KB (OTF/TTF)
+- תמונות בלוג: 404 errors (קבצי WebP לא קיימים!)
+- Google Fonts: טעינת 10 משקלים ב-3 משפחות (כולל DM Mono שלא בשימוש)
+
+**אופטימיזציה:**
+
+| נכס | לפני | אחרי | חיסכון |
+|-----|-------|-------|--------|
+| תמונת Hero | 432KB JPG | 72KB WebP | 83% |
+| וידאו רקע | 16,000KB | 1,891KB | 88% |
+| פונטים (7) | 581KB OTF/TTF | 325KB WOFF2 | 44% |
+| מוזאיקה (8) | 5,300KB JPG | 1,239KB WebP | 77% |
+| בלוג (3) | 404 (שבור!) | 970KB WebP | תוקן |
+| Google Fonts | 10 weights, 3 families | 6 weights, 2 families | -33% requests |
+
+**סה"כ חיסכון בדף הבית: ~23MB -> ~4.5MB (כ-80%)**
+
+**שינויים טכניים:**
+- כל התמונות עטופות ב-`<picture>` עם WebP + JPG fallback
+- פונטים: WOFF2 כמקור ראשי + OTF/TTF fallback + font-display:swap
+- Google Fonts: הוסר DM Mono (לא בשימוש), גזירת משקלים לא נדרשים
+  - Heebo: 300,400,700,800 -> 300,400,500
+  - Inter: 300,400,600,700 -> 300,400,500
+- preload לתמונת Hero בפורמט WebP
+- Deploy לייב - כל הנכסים מאומתים (200 OK)
+
+### קבצים שנוצרו:
+- NEW: assets/blog/singing-bowl.webp, collective-hero.webp
+- NEW: assets/blog-science/01-hero-orange-robe.webp
+- NEW: assets/events/dark-performance.webp + 6 mosaic webp files
+- NEW: assets/events/pastoral-retreat-bg-compressed.mp4
+- NEW: fonts/*.woff2 (7 files)
+
+### קבצים שעודכנו:
+- MOD: O-output/website-sol-therapy/index.html
 
 ---
 

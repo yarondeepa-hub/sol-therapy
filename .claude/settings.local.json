@@ -163,7 +163,16 @@
       "Bash(claude plugins:*)",
       "Bash(claude plugin:*)",
       "Bash(dig:*)",
-      "Bash(openssl s_client:*)"
+      "Bash(openssl s_client:*)",
+      "Bash(/tmp/fonttools-env/bin/pip install:*)",
+      "mcp__gemini__gemini-analyze-url",
+      "Bash(__NEW_LINE_24e240c1360b65f5__ echo \"\")",
+      "Bash(__NEW_LINE_354a53ec5d3690f2__ echo \"\")",
+      "Bash(__NEW_LINE_88a2bd417553b973__ echo \"\")",
+      "Bash(__NEW_LINE_bbc0851ff7e5d387__ echo \"\")",
+      "mcp__gemini__gemini-analyze-image",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(cwebp:*)"
     ]
   },
   "hooks": {

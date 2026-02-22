@@ -22,6 +22,26 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-22 - Website Performance: Asset Optimization Playbook
+
+**What happened:** Site loaded 23MB on homepage. On mobile cellular, this was painfully slow. Systematic optimization reduced it to ~4.5MB (80% reduction).
+
+**Key learnings:**
+- Video autoplay is the #1 performance killer - 16MB pastoral-retreat was 70% of homepage weight. ffmpeg with crf 32, 960px scale, no audio brought it to 1.8MB
+- WebP provides 77-83% savings over JPG/PNG for photos. Always use `<picture>` with WebP source + JPG fallback
+- WOFF2 saves 44% over OTF/TTF. Use fonttools+brotli for conversion. Always set font-display:swap
+- Google Fonts: audit actual CSS usage before loading weights. We were loading 10 weights across 3 families; only needed 6 weights across 2
+- DM Mono was loaded but never used in any CSS selector - dead code
+- Blog images were 404 (HTML referenced .webp files that didn't exist) - always verify asset paths after format changes
+- pip3 on macOS refuses --break-system-packages; use venv: `python3 -m venv /tmp/env && source /tmp/env/bin/activate`
+
+**Optimization checklist for future sites:**
+1. Videos: compress with ffmpeg (crf 28-32, scale to 960px for bg, -an for no audio, +faststart)
+2. Images: convert to WebP (cwebp -q 75-80), wrap in `<picture>` with fallback
+3. Fonts: convert to WOFF2, use font-display:swap, preload critical fonts
+4. Google Fonts: audit and trim unused weights/families
+5. Preload above-the-fold hero image
+
 ## 2026-02-22 - GSAP ScrollTrigger vs Custom Scroll Listeners
 
 **What happened:** Swipe hint chevron for blog carousel (mobile). GSAP ScrollTrigger didn't fire when scrollIntoView was used to navigate to the section. The toggle action "play" doesn't replay if the scroll position was already past the trigger point.
