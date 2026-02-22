@@ -84,14 +84,15 @@
     </script>
 
     <!-- Preload entry photo -->
+    <link rel="preload" as="image" href="assets/events/dark-performance.webp" type="image/webp">
     <link rel="preload" as="image" href="assets/events/dark-performance.jpg">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Inter:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Inter:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Inter:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Inter:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 
     <style>
         /* ============================================
@@ -99,43 +100,50 @@
         ============================================ */
         @font-face {
             font-family: 'Masada';
-            src: url('fonts/Masada-Medium.otf') format('opentype');
+            src: url('fonts/Masada-Medium.woff2') format('woff2'),
+                 url('fonts/Masada-Medium.otf') format('opentype');
             font-weight: 500;
             font-display: swap;
         }
         @font-face {
             font-family: 'Masada';
-            src: url('fonts/Masada-Demi.otf') format('opentype');
+            src: url('fonts/Masada-Demi.woff2') format('woff2'),
+                 url('fonts/Masada-Demi.otf') format('opentype');
             font-weight: 600;
             font-display: swap;
         }
         @font-face {
             font-family: 'Masada';
-            src: url('fonts/Masada-Bold.otf') format('opentype');
+            src: url('fonts/Masada-Bold.woff2') format('woff2'),
+                 url('fonts/Masada-Bold.otf') format('opentype');
             font-weight: 700;
             font-display: swap;
         }
         @font-face {
             font-family: 'Guttman Haim';
-            src: url('fonts/Guttman-Haim-Condensed.ttf') format('truetype');
+            src: url('fonts/Guttman-Haim-Condensed.woff2') format('woff2'),
+                 url('fonts/Guttman-Haim-Condensed.ttf') format('truetype');
             font-weight: 400;
             font-display: swap;
         }
         @font-face {
             font-family: 'Hadassah Friedlaender';
-            src: url('fonts/HadassahFriedlaender-Light.otf') format('opentype');
+            src: url('fonts/HadassahFriedlaender-Light.woff2') format('woff2'),
+                 url('fonts/HadassahFriedlaender-Light.otf') format('opentype');
             font-weight: 300;
             font-display: swap;
         }
         @font-face {
             font-family: 'Hadassah Friedlaender';
-            src: url('fonts/HadassahFriedlaender-Black.otf') format('opentype');
+            src: url('fonts/HadassahFriedlaender-Black.woff2') format('woff2'),
+                 url('fonts/HadassahFriedlaender-Black.otf') format('opentype');
             font-weight: 900;
             font-display: swap;
         }
         @font-face {
             font-family: 'HaimG';
-            src: url('fonts/HaimG_Regular.otf') format('opentype');
+            src: url('fonts/HaimG_Regular.woff2') format('woff2'),
+                 url('fonts/HaimG_Regular.otf') format('opentype');
             font-weight: 400;
             font-display: swap;
         }
@@ -2158,7 +2166,7 @@
         ======================================== -->
         <section class="entry entry--photo" aria-label="פתיחה">
             <div class="entry__bg">
-                <img src="assets/events/dark-performance.jpg" alt="אמן על הבמה במופע מדיטציית סאונד, קהל שוכב באולם חשוך" width="1920" height="1080">
+                <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="אמן על הבמה במופע מדיטציית סאונד, קהל שוכב באולם חשוך" width="1920" height="1080"></picture>
             </div>
             <div class="entry__content">
                 <h1 class="entry__title" id="brandTitle">
@@ -2191,7 +2199,7 @@
         <article class="event dissolve-from-light dissolve-from-light--deep" id="events" aria-label="ריטריט סול תרפי - פסטורל">
             <div class="event__photo">
                 <video autoplay muted loop playsinline preload="metadata" poster="assets/events/meditation-hall.jpg" class="event__photo-img" aria-label="ריטריט פסטורל - סרטון רקע">
-                    <source src="assets/events/pastoral-retreat-bg.mp4" type="video/mp4">
+                    <source src="assets/events/pastoral-retreat-bg-compressed.mp4" type="video/mp4">
                 </video>
             </div>
             <span class="event__date fade-in">9-11 APRIL 2026</span>
@@ -2312,34 +2320,34 @@
         <section class="mosaic dissolve-from-light" aria-label="גלריית אירועים">
             <div class="mosaic__grid">
                 <div class="mosaic__item mosaic__item--a" data-mosaic>
-                    <img src="assets/events/museum-meditation.jpg" alt="קהל שוכב על הרצפה במדיטציית סאונד במוזיאון תל אביב" loading="lazy">
+                    <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="קהל שוכב על הרצפה במדיטציית סאונד במוזיאון תל אביב" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--b" data-mosaic>
-                    <img src="assets/events/orchestra-stage.jpg" alt="אמנים על הבמה באירוע סול תרפי עם תאורה חמה" loading="lazy">
+                    <picture><source srcset="assets/events/orchestra-stage.webp" type="image/webp"><img src="assets/events/orchestra-stage.jpg" alt="אמנים על הבמה באירוע סול תרפי עם תאורה חמה" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--c" data-mosaic>
-                    <img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך עם פס אור על הבמה" loading="lazy">
+                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך עם פס אור על הבמה" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--d" data-mosaic>
-                    <img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים שוכבים על מזרנים" loading="lazy">
+                    <picture><source srcset="assets/events/meditation-hall.webp" type="image/webp"><img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים שוכבים על מזרנים" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--e" data-mosaic>
                     <video src="assets/events/gallery-new-video.mp4?v=2" autoplay muted loop playsinline preload="metadata" aria-label="קטע וידאו מאירוע מדיטציית סאונד"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--f" data-mosaic>
-                    <img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy">
+                    <picture><source srcset="assets/events/dj-perspective-bw.webp" type="image/webp"><img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--f2" data-mosaic>
                     <img src="assets/events/mountain-meditation.jpg" alt="הר מואר באור אדום תחת שמי כוכבים באירוע סול תרפי" loading="lazy">
                 </div>
                 <div class="mosaic__item mosaic__item--g" data-mosaic>
-                    <img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה תחת כיפת השמיים" loading="lazy">
+                    <picture><source srcset="assets/events/outdoor-night.webp" type="image/webp"><img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה תחת כיפת השמיים" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--h" data-mosaic>
-                    <img src="assets/events/projection-building.jpg" alt="הקרנת אור על מבנה בזמן אירוע סול תרפי" loading="lazy">
+                    <picture><source srcset="assets/events/projection-building.webp" type="image/webp"><img src="assets/events/projection-building.jpg" alt="הקרנת אור על מבנה בזמן אירוע סול תרפי" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--i" data-mosaic>
-                    <img src="assets/events/museum-wide.jpg" alt="מבט רחב על אולם המוזיאון מלא במשתתפים שוכבים" loading="lazy">
+                    <picture><source srcset="assets/events/museum-wide.webp" type="image/webp"><img src="assets/events/museum-wide.jpg" alt="מבט רחב על אולם המוזיאון מלא במשתתפים שוכבים" loading="lazy"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--j" data-mosaic>
                     <video src="assets/events/sol-mosaic-clip.mp4" autoplay muted loop playsinline preload="metadata" aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי"></video>
