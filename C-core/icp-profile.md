@@ -68,8 +68,10 @@
 ### Information Sources
 Where do they learn about new solutions?
 - המלצות מחברים שהם סומכים עליהם
-- Instagram (אבל לא כל דבר — רק מקורות מסוימים)
+- Instagram (אבל לא כל דבר - רק מקורות מסוימים)
 - קבוצות WhatsApp סגורות
+- אתר sol-therapy.com (מאמרי בלוג, מידע על אירועים)
+- ניוזלטר (Mailchimp - עדכונים על אירועים ותוכן חדש)
 
 ### Decision Factors
 What matters when they evaluate options?
@@ -139,7 +141,9 @@ What stops them from buying/signing up?
 ### Content Formats They Prefer
 - וידאו קצר מהאירועים (אווירה, לא הסברים)
 - תמונות איכותיות מהמיקומים
-- טקסט קצר וחד — לא מאמרים ארוכים
+- טקסט קצר וחד - לא מאמרים ארוכים
+- מאמרי בלוג מעמיקים (מדע, תרבות, מסורות - כשהנושא מצדיק עומק)
+- ניוזלטר תמציתי עם קישורים לתוכן מלא
 
 ### Best Times to Reach Them
 - ערבים אחרי העבודה
@@ -163,7 +167,7 @@ What stops them from buying/signing up?
 
 ---
 
-*Last updated: 2026-01-30*
+*Last updated: 2026-02-22*
 
 ---
 

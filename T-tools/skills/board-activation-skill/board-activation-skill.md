@@ -1,6 +1,6 @@
 ---
 name: board-activation-skill
-description: Dispatch the Board's 3 AI advisors (GPT-5.2, Gemini 3 Deep Think, Claude Opus) through a structured deliberation protocol to reach actionable recommendations.
+description: Dispatch the Board's 3 AI advisors (GPT-5.2, Gemini 3.1 Deep Think, Claude Opus) through a structured deliberation protocol to reach actionable recommendations.
 ---
 
 # Board Activation Skill
@@ -14,7 +14,7 @@ Three AI minds deliberate a problem. Not just opinions - a structured discussion
 | Member | Model | How to Call |
 |--------|-------|------------|
 | **GPT** | `gpt-5.2` | Bash curl to OpenAI API |
-| **Gemini** | `gemini-3-pro-preview` | `mcp__gemini__gemini-query` (model: pro, thinkingLevel: high) |
+| **Gemini** | `gemini-3.1-pro` | `mcp__gemini__gemini-query` (model: pro, thinkingLevel: high) |
 | **Claude** | Opus | Task tool (model: opus) |
 
 ---
@@ -94,7 +94,7 @@ Tool: Task
     Return ONLY GPT's response text.
 ```
 
-**Task 2 - Gemini 3:**
+**Task 2 - Gemini 3.1:**
 ```
 Tool: Task
   subagent_type: "general-purpose"

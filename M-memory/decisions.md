@@ -51,13 +51,11 @@ Choices about direction and priorities.
 
 | Date | Decision | Rationale | Status |
 |------|----------|-----------|--------|
-| [Date] | [What you decided] | [Why] | [Active/Revisit/Deprecated] |
-
-**Example:**
-| Date | Decision | Rationale | Status |
-|------|----------|-----------|--------|
-| 2024-01-15 | No emojis in headlines | Feels more professional, matches voice DNA | Active |
-| 2024-01-10 | Always use "you" not "we" | More direct, creates connection | Active |
+| 2026-02-20 | אפס אימוג'י - בשום מקום | Deal breaker של ירון. כלל מוחלט | Active |
+| 2026-02-21 | Partners label באנגלית בלבד | ירון החזיר ידנית לאנגלית אחרי שתורגם. לא לתרגם שוב | Active |
+| 2026-02-21 | ללא חותם vermilion אדום | ירון ביקש להסיר - לא מתאים לשפה הוויזואלית | Active |
+| 2026-02-22 | ללא כפתור CTA צף | ירון ביקש להסיר כפתור הרשמה צף. לא להוסיף אלמנטי UI שלא ביקש | Active |
+| 2026-02-22 | סמן גלילה = אייקון, לא data viz | ירון ציפה לחץ/שברון, לא progress bar. "סימן" = אייקון | Active |
 
 ---
 
@@ -65,13 +63,14 @@ Choices about direction and priorities.
 
 | Date | Decision | Rationale | Status |
 |------|----------|-----------|--------|
-| [Date] | [What you decided] | [Why] | [Active/Revisit/Deprecated] |
-
-**Example:**
-| Date | Decision | Rationale | Status |
-|------|----------|-----------|--------|
-| 2024-01-12 | LinkedIn posts max 300 words | Longer posts lose engagement | Active |
-| 2024-01-08 | One CTA per post only | Multiple CTAs dilute action | Active |
+| 2026-02-20 | WebP + JPG fallback ב-picture tags | תמיכה בדפדפנים ישנים + חיסכון משקל | Active |
+| 2026-02-20 | WOFF2 כפורמט פונט ראשי | חיסכון 44% מ-OTF/TTF, עם fallback | Active |
+| 2026-02-21 | עמוד אינדקס בלוג (blog.html) | נקודת כניסה מרכזית לכל המאמרים | Active |
+| 2026-02-21 | חבילת SEO מלאה (robots, sitemap, OG, JSON-LD) | תשתית לגילוי אורגני | Active |
+| 2026-02-21 | Mailchimp לניוזלטר | פלטפורמה חינמית עד 500 רשומות, אינטגרציה פשוטה | Active |
+| 2026-02-21 | GA4 לאנליטיקס (G-C5VRCQ9M6V) | מעקב תנועה ואירועים | Active |
+| 2026-02-22 | דחיסת וידאו רקע מ-16MB ל-1.9MB | מובייל על סלולר לא יכול לטעון 16MB | Active |
+| 2026-02-22 | preload לתמונת Hero בלבד | הנכס הראשון שהמשתמש רואה - חייב להיטען מהר | Active |
 
 ---
 
@@ -92,13 +91,10 @@ Choices about direction and priorities.
 
 | Date | Decision | Rationale | Status |
 |------|----------|-----------|--------|
-| [Date] | [What you decided] | [Why] | [Active/Revisit/Deprecated] |
-
-**Example:**
-| Date | Decision | Rationale | Status |
-|------|----------|-----------|--------|
-| 2024-01-16 | Focus on LinkedIn over Twitter | Audience is more active there | Active |
-| 2024-01-05 | Educational content over promotional | Builds trust, aligns with brand | Active |
+| 2026-02-21 | דומיין מותאם sol-therapy.com | מקצועיות, SEO, מיתוג. GitHub Pages + GoDaddy | Active |
+| 2026-02-21 | Learning Engine - סיור בוקר אוטומטי | גילוי כלים וטכניקות חדשות בלי עבודה ידנית | Active |
+| 2026-02-21 | 4 שיפורי תהליך: Fast Track, Proactive Reset, Decision Extraction, Style Token Self-Check | ירון אישר אחרי התייעצות עם מודל חיצוני | Active |
+| 2026-02-22 | iCloud duplicates לתיקייה נפרדת, לא מחיקה | ירון העדיף לשמור גיבוי: "תעביר לתקיית מחסן" | Active |
 
 ---
 

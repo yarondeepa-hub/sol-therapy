@@ -205,9 +205,9 @@ The installed `@mzxrai/mcp-openai` MCP server only supports `gpt-4o`, `gpt-4o-mi
 
 ---
 
-## Gemini MCP - Gemini 3 Pro Deep Think (Board Member 2)
+## Gemini MCP - Gemini 3.1 Pro Deep Think (Board Member 2)
 
-**Model:** `gemini-3-pro-preview` (Gemini 3 Pro Preview, thinking=True)
+**Model:** `gemini-3.1-pro` (Gemini 3.1 Pro, thinking=True)
 **Connection:** `@rlabs-inc/gemini-mcp` via stdio
 **Config:** User-level (`~/.claude.json`), env: `GEMINI_API_KEY` + `GEMINI_MODEL=gemini-2.5-flash` (for initial connection)
 **Billing:** Free tier from Google AI Studio (aistudio.google.com)
@@ -216,13 +216,13 @@ The installed `@mzxrai/mcp-openai` MCP server only supports `gpt-4o`, `gpt-4o-mi
 ```
 mcp__gemini__gemini-query:
   prompt: "[Advisory brief]"
-  model: "pro"              # Routes to gemini-3-pro-preview
+  model: "pro"              # Routes to gemini-3.1-pro
   thinkingLevel: "high"     # Deep thinking mode = "Deep Think"
 ```
 
 ### Available Models (via MCP)
-- **pro** -> `gemini-3-pro-preview` (Board default, deep thinking)
-- **flash** -> `gemini-3-flash-preview` (faster, cheaper)
+- **pro** -> `gemini-3.1-pro` (Board default, deep thinking)
+- **flash** -> `gemini-3.1-flash` (faster, cheaper)
 
 ### Additional MCP Tools (37 total)
 - `gemini-search` - Google Search grounded answers
@@ -236,7 +236,7 @@ mcp__gemini__gemini-query:
 ### Key Gotchas
 - Free tier has rate limits - sufficient for advisory sessions
 - API key from aistudio.google.com (NOT from Gemini Pro subscription)
-- Config uses `GEMINI_MODEL=gemini-2.5-flash` for initial handshake, but Pro calls route to `gemini-3-pro-preview` automatically
+- Config uses `GEMINI_MODEL=gemini-2.5-flash` for initial handshake, but Pro calls route to `gemini-3.1-pro` automatically
 - `thinkingLevel: "high"` is critical for Board-quality analysis
 
 ---
@@ -693,7 +693,7 @@ brew install ffmpeg imagemagick
 
 ---
 
-*Last updated: 2026-02-21 (3 Claude Code plugins installed: Skill Creator, Playground, Firecrawl)*
+*Last updated: 2026-02-22 (3 Claude Code plugins installed: Skill Creator, Playground, Firecrawl)*
 
 ---
 

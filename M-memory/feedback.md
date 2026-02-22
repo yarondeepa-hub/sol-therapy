@@ -54,8 +54,14 @@ Track questions your audience asks — these are content ideas.
 ### Constructive Feedback
 | Date | Content | Feedback | Action |
 |------|---------|----------|--------|
-| 2026-02-22 | Blog scroll progress bar | "לא הבנתי מה עשית" - wanted a clear icon/marker, not progress bar | Use recognizable icons (chevrons/arrows) for scroll affordances. "סימן" = icon, not data viz |
-| 2026-02-22 | Floating CTA button | "תוריד את כפתור ההרשמה הזה" | Removed. Don't add UI elements Yaron didn't ask for |
+| 2026-02-20 | איורי קישוט (במבוק, גלים, הרים) | "דהויים" - לא ברורים, חסרים נוכחות | קונטרסט גבוה יותר, קווים ברורים. עדכון ב-taste-profile |
+| 2026-02-20 | Schnell model output | "דיי גרוע" - לא ברמה מספקת | Schnell לא מתאים לסגנון Sol. להשתמש ב-models חזקים יותר |
+| 2026-02-21 | Partners label עברית | ירון החזיר ידנית לאנגלית | לא לתרגם Partners. הוחלט: נשאר באנגלית |
+| 2026-02-21 | חותם vermilion אדום | "תסיר" - לא מתאים | לא להוסיף seal/stamp elements |
+| 2026-02-22 | מהירות טעינה במובייל | "האתר נטען איטי מהטלפון על סלולר" | אופטימיזציה: 23MB -> 4.5MB (80% חיסכון) |
+| 2026-02-22 | Blog scroll progress bar | "לא הבנתי מה עשית" - רצה סמן ברור, לא progress bar | שברון (chevron) במקום. "סימן" = אייקון, לא data viz |
+| 2026-02-22 | Floating CTA button | "תוריד את כפתור ההרשמה הזה" | הוסר. לא להוסיף UI שירון לא ביקש |
+| 2026-02-22 | מורכבות מערכת | "אני לא מבין מה אתה עושה - ביקשתי רק להחליף תמונה אחת" | לשמור על פשטות. לא להסלים מורכבות בלי שירון מבין |
 
 ---
 

@@ -34,3 +34,6 @@ Thumbs.db
 # Temp files
 *.tmp
 *.bak
+
+# iCloud duplicates storage
+_icloud-duplicates/
