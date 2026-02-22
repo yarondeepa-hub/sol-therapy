@@ -172,7 +172,11 @@
       "Bash(__NEW_LINE_bbc0851ff7e5d387__ echo \"\")",
       "mcp__gemini__gemini-analyze-image",
       "WebFetch(domain:pagespeed.web.dev)",
-      "Bash(cwebp:*)"
+      "Bash(cwebp:*)",
+      "Bash(gh repo clone:*)",
+      "Bash(gh auth:*)",
+      "Bash(for f in blog-science-buddhism.html blog-collective-sync.html blog-sound-meditation.html)",
+      "Bash(do python3 -c \":*)"
     ]
   },
   "hooks": {

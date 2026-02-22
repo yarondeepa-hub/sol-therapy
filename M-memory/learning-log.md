@@ -22,6 +22,20 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-22 - Skill Output Must Be Saved to File
+
+**What happened:** Hebrew Writing Skill was run on 3 blog articles in a previous session. Output was not saved to a file. Session ended, output lost. Yaron had to ask to re-run.
+
+**Rule:** Every time a skill runs on content, the output MUST be saved to `O-output/[project]/skill-[name]-[date].md`. No exceptions. Skill output is work product - treat it like any deliverable.
+
+**Checklist:**
+1. Run skill on content
+2. Save raw output to file immediately
+3. Log in current-session.md
+4. Then present to Yaron
+
+---
+
 ## 2026-02-22 - Website Performance: Asset Optimization Playbook
 
 **What happened:** Site loaded 23MB on homepage. On mobile cellular, this was painfully slow. Systematic optimization reduced it to ~4.5MB (80% reduction).

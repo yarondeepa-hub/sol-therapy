@@ -1,6 +1,6 @@
 # Active Task
 
-## Visual QA - Post Performance Optimization
-- **בקשה:** בדיקה שהשיפורים במהירות לא פגעו בניראות/עיצוב/איכות
-- **שלב:** Gatekeeper סיים - ממתין להחלטת ירון
-- **סטטוס:** CONDITIONAL PASS - 2 בעיות ויזואליות + 1 חסר
+## PageSpeed Optimization - Analysis & Presentation
+- **בקשה:** תיקוני QA + ניתוח דוח PageSpeed + חוות דעת
+- **שלב:** מציג לירון - כל התיקונים הועלו, ממתין לתגובה
+- **סטטוס:** תיקוני QA הושלמו + תיקוני PageSpeed הועלו + מציג ניתוח
