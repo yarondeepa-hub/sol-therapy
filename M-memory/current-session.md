@@ -9,8 +9,33 @@
 | שדה | ערך |
 |-----|-----|
 | תאריך | 2026-02-22 |
-| בקשה אחרונה | הוספת תמונת הר למוזאיקה במובייל |
+| בקשה אחרונה | אינדיקטור גלילה לקרוסלת בלוג במובייל |
 | סטטוס | **DONE** |
+
+---
+
+## Session 73 (cont): Blog Scroll Indicator + Hero Crop (22.02.2026)
+
+### מה בוצע:
+
+**תיקון 4: קרופ תמונת פתיח במובייל**
+- הדיג'יי בחולצה הכחולה נחתך מהמסגרת במובייל
+- שינוי object-position ל-38% 50% (במדיה קוורי 768px בלבד)
+- דסקטופ לא נפגע
+
+**תיקון 5: אינדיקטור גלילה לקרוסלת הבלוג (Illustrator + CTO)**
+- Team Sync -> Illustrator (עיצוב קונספט) -> CTO (מימוש)
+- Illustrator בחר: קו התקדמות דק 48px בסגנון קליגרפי
+  - דחה dots (app-like), gradient (מתנגש עם dissolves קיימים), arrows (imperative)
+  - Track: rgba(59,81,75,0.12), Fill: rgba(59,81,75,0.35)
+- CTO מימש: HTML element + CSS (hidden on desktop) + JS scroll listener
+  - Fill position מתעדכן ב-requestAnimationFrame
+  - RTL-aware (right:0 + translateX negative)
+  - prefers-reduced-motion support
+- Deploy לייב
+
+### קבצים שעודכנו:
+- MOD: O-output/website-sol-therapy/index.html
 
 ---
 
