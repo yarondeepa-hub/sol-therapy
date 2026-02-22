@@ -1609,6 +1609,10 @@
             margin: 0;
         }
 
+        .blog-feed__scroll-indicator {
+            display: none;
+        }
+
         .blog-feed__more {
             text-align: center;
             margin-top: var(--space-m);
@@ -1657,6 +1661,30 @@
                 width: clamp(260px, 42vw, 380px);
                 scroll-snap-align: start;
             }
+            .blog-feed__scroll-indicator {
+                display: flex;
+                justify-content: center;
+                margin-top: var(--space-s);
+            }
+            .blog-feed__scroll-track {
+                width: 48px;
+                height: 1.5px;
+                border-radius: 0.75px;
+                background: rgba(59, 81, 75, 0.12);
+                position: relative;
+                overflow: hidden;
+            }
+            .blog-feed__scroll-fill {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                min-width: 16px;
+                border-radius: 0.75px;
+                background: rgba(59, 81, 75, 0.35);
+                transition: transform 0.1s ease-out;
+                will-change: transform;
+            }
         }
 
         @media (max-width: 640px) {
@@ -1671,7 +1699,8 @@
         @media (prefers-reduced-motion: reduce) {
             .blog-card__image img,
             .blog-card__title,
-            .blog-feed__more-arrow {
+            .blog-feed__more-arrow,
+            .blog-feed__scroll-fill {
                 transition: none;
             }
         }
@@ -2303,6 +2332,12 @@
                         </a>
                     </article>
 
+                </div>
+
+                <div class="blog-feed__scroll-indicator" aria-hidden="true">
+                    <div class="blog-feed__scroll-track">
+                        <span class="blog-feed__scroll-fill"></span>
+                    </div>
                 </div>
 
                 <div class="blog-feed__more">
@@ -2976,6 +3011,48 @@
         }
 
         } // end animation engine
+
+        // ========================================
+        // BLOG SCROLL PROGRESS INDICATOR
+        // ========================================
+        (function() {
+            var blogGrid = document.querySelector('.blog-feed__grid');
+            var scrollFill = document.querySelector('.blog-feed__scroll-fill');
+            if (!blogGrid || !scrollFill) return;
+
+            var ticking = false;
+            function updateProgress() {
+                var maxScroll = blogGrid.scrollWidth - blogGrid.clientWidth;
+                if (maxScroll <= 0) {
+                    scrollFill.style.width = '100%';
+                    scrollFill.style.transform = 'none';
+                    ticking = false;
+                    return;
+                }
+                // RTL: scrollLeft is negative in some browsers, use Math.abs
+                var progress = Math.abs(blogGrid.scrollLeft) / maxScroll;
+                progress = Math.max(0, Math.min(1, progress));
+                // Fill width = proportional to visible ratio, min 16px within 48px track
+                var visibleRatio = blogGrid.clientWidth / blogGrid.scrollWidth;
+                var fillWidth = Math.max(16, visibleRatio * 48);
+                scrollFill.style.width = fillWidth + 'px';
+                // Position: translate along the remaining track space (RTL: right to left)
+                var trackSpace = 48 - fillWidth;
+                var offset = progress * trackSpace;
+                scrollFill.style.transform = 'translateX(-' + offset + 'px)';
+                ticking = false;
+            }
+
+            blogGrid.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateProgress);
+                    ticking = true;
+                }
+            });
+
+            // Initial state
+            updateProgress();
+        })();
 
     })();
     </script>
