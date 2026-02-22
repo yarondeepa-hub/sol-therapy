@@ -1723,16 +1723,28 @@
         .partners__item--amazon { height: 37px; }
 
         @media (max-width: 640px) {
-            .partners__grid {
-                gap: 1.5rem 2rem;
+            .partners {
+                padding: var(--space-s) var(--gutter) var(--space-m);
             }
-            .partners__item { height: 41px; }
-            .partners__item--municipality { height: 50px; }
-            .partners__item--museum { height: 37px; }
-            .partners__item--suzanne { height: 33px; }
-            .partners__item--library { height: 31px; }
-            .partners__item--digitel { height: 31px; }
-            .partners__item--amazon { height: 27px; }
+            .partners__label {
+                margin-bottom: var(--space-s);
+            }
+            .partners__grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem 1.5rem;
+                justify-items: center;
+                align-items: center;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .partners__item { height: 44px; }
+            .partners__item--municipality { height: 72px; }
+            .partners__item--museum { height: 54px; }
+            .partners__item--suzanne { height: 48px; }
+            .partners__item--library { height: 44px; }
+            .partners__item--digitel { height: 46px; }
+            .partners__item--amazon { height: 38px; }
         }
 
         /* ============================================
