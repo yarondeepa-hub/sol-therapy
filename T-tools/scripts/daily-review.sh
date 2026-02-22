@@ -1,33 +1,28 @@
 #!/bin/bash
 # Daily Review - Sol Therapy Agent System
 # Runs at 21:00 daily via launchd
-# Activates CEO (Yossi) for autonomous daily review
+# TCC-safe: bash logs to /tmp/, Claude CLI handles ~/Documents/ access
 
-set -e
-
-# Config
-SOL_DIR="/Users/yaronamor/Documents/yaronamor-vault/sol"
-REPORTS_DIR="$SOL_DIR/M-memory/daily-reports"
 DATE=$(date +%Y-%m-%d)
-REPORT_FILE="$REPORTS_DIR/$DATE-daily-review.md"
-LOG_FILE="$REPORTS_DIR/daily-review.log"
+LOG_FILE="/tmp/sol-daily-review.log"
+SOL_DIR="/Users/yaronamor/Documents/yaronamor-vault/sol"
 
-# Ensure reports directory exists
-mkdir -p "$REPORTS_DIR"
-
-# Log start
 echo "[$DATE $(date +%H:%M:%S)] Starting daily review..." >> "$LOG_FILE"
 
-# Check if report already exists today (avoid double runs)
-if [ -f "$REPORT_FILE" ]; then
-    echo "[$DATE $(date +%H:%M:%S)] Report already exists for today. Skipping." >> "$LOG_FILE"
-    exit 0
-fi
+# Try to set working directory for Claude CLI
+cd "$SOL_DIR" 2>/dev/null || {
+    echo "[$DATE $(date +%H:%M:%S)] Warning: Cannot cd to $SOL_DIR (TCC). Claude will use absolute paths." >> "$LOG_FILE"
+}
 
-# The prompt - injected directly into Claude Code
 PROMPT='יוסי - סקירה יומית אוטומטית.
+Base directory: /Users/yaronamor/Documents/yaronamor-vault/sol/
+If relative paths do not work, prefix them with the base directory above.
 
 זו הרצה אוטומטית של סקירה יומית. אין צורך לחכות להוראות מירון.
+
+## FIRST - Before Anything Else:
+Check if today'\''s report already exists: M-memory/daily-reports/'"$DATE"'-daily-review.md
+If it exists, say "Report already exists" and STOP immediately.
 
 ## חוק שפה (חובה מוחלטת)
 כל הדוח בעברית בלבד. אפס מילים באנגלית.
@@ -61,15 +56,7 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - בדוק אם learning-log מכיל לקחים שלא הוטמעו בסוכנים
 - בדוק אם connected-tools.md מעודכן
 
-### 5. חילוץ החלטות ומשוב (Decision/Feedback Extraction)
-- קרא את M-memory/current-session.md
-- חפש את הסימונים [DECISION] ו-[FEEDBACK] בסשנים של היום
-- לכל [DECISION] שנמצא: הוסף רשומה מעוצבת ל-M-memory/decisions.md עם תאריך, הקשר, ההחלטה, והסיבה
-- לכל [FEEDBACK] שנמצא: הוסף רשומה מעוצבת ל-M-memory/feedback.md עם תאריך, מקור (ירון/קהל), והמשוב
-- אם לא נמצאו סימונים - בדוק בעצמך אם היו החלטות אסטרטגיות סמויות (לא סומנו) ותעד אותן
-- דווח בדוח: כמה החלטות/משובים חולצו, ואם היו כאלה שלא סומנו
-
-### 6. Learning Integration (Evening Sync)
+### 5. Learning Integration (Evening Sync)
 - קרא את דוח הבוקר: T-tools/learning/morning-reports/'"$DATE"'-scout.md (אם קיים)
 - סקור: האם משהו מהדוח רלוונטי למשימות של היום?
 - בדוק: האם היו Tool Cards חדשים שנוצרו? האם נוצלו במשימות?
@@ -77,20 +64,12 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 - רשום: אילו תגליות צריכות להיכנס לתכנון של מחר
 - הצע: שיפור אחד לתהליך הלמידה עצמו (meta-learning)
 
-### 7. בריאות מערכת - תהליכים
-- הרץ: ps aux | grep -E "claude|node.*mcp" | grep -v grep | wc -l
-- ספור כמה תהליכי Claude Code רצים
-- ספור כמה שרתי MCP רצים
-- בדוק swap: sysctl vm.swapusage
-- אם יש יותר מסשן Claude Code אחד, או swap מעל 2GB - דווח כ-WARNING
-- אם הכל תקין - דווח "מערכת נקייה"
-
-### 8. הצעות לשיפור
+### 6. הצעות לשיפור
 - מה עובד טוב ולמה
 - מה לא עובד ומה לשנות
 - האם יש כלים/תהליכים חדשים שכדאי לשקול
 
-### 9. שמור את הדוח
+### 7. שמור את הדוח
 שמור את הדוח כקובץ: M-memory/daily-reports/'"$DATE"'-daily-review.md
 
 הפורמט:
@@ -101,12 +80,6 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 
 ## Open Items
 [Pending items]
-
-## Decision/Feedback Extraction
-- Tagged decisions found: [count]
-- Tagged feedback found: [count]
-- Untagged decisions detected: [count]
-- Updated files: [decisions.md / feedback.md / none]
 
 ## Learning Sync
 - Morning Scout highlights: [top finding from morning report]
@@ -120,12 +93,6 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 ## Agent System Health
 [Issues found]
 
-## System Health
-- Claude sessions: [count]
-- MCP servers: [count]
-- Swap usage: [amount]
-- Status: [OK / WARNING]
-
 ## Recommendations
 [3-5 suggestions]
 
@@ -134,23 +101,18 @@ PROMPT='יוסי - סקירה יומית אוטומטית.
 
 חשוב: אתה מורשה לחפש ברשת, לקרוא קבצים, ולכתוב את הדוח. לא צריך אישור מירון.'
 
-# Run Claude Code in non-interactive mode
-cd "$SOL_DIR"
+# Run Claude Code
+echo "[$DATE $(date +%H:%M:%S)] Calling claude CLI..." >> "$LOG_FILE"
 /usr/local/bin/claude -p \
     --model opus \
-    --allowedTools "Read Write Glob Grep WebFetch WebSearch Edit Bash" \
+    --allowedTools "Read Write Glob Grep WebFetch WebSearch Edit" \
     --dangerously-skip-permissions \
     "$PROMPT" \
     >> "$LOG_FILE" 2>&1
+CLAUDE_EXIT=$?
+echo "[$DATE $(date +%H:%M:%S)] Claude exited with code: $CLAUDE_EXIT" >> "$LOG_FILE"
 
-# Log completion
-if [ -f "$REPORT_FILE" ]; then
-    echo "[$DATE $(date +%H:%M:%S)] Daily review completed. Report: $REPORT_FILE" >> "$LOG_FILE"
-else
-    echo "[$DATE $(date +%H:%M:%S)] Daily review ran but report file not created." >> "$LOG_FILE"
-fi
-
-# macOS notification to Yaron
-osascript -e 'display notification "הדוח היומי מוכן ב-daily-reports/" with title "יוסי - סקירה יומית" sound name "Glass"' 2>/dev/null || true
+# macOS notification
+osascript -e 'display notification "הדוח היומי מוכן" with title "יוסי - סקירה יומית" sound name "Glass"' 2>/dev/null || true
 
 echo "[$DATE $(date +%H:%M:%S)] Done." >> "$LOG_FILE"

@@ -22,6 +22,31 @@ Every pattern logged here makes future work better.
 
 ---
 
+## 2026-02-22 - macOS TCC Blocks launchd Access to ~/Documents/
+
+**What happened:** Morning scout and daily review launchd agents failed with exit code 78. Extensive debugging revealed: macOS TCC (Transparency, Consent, and Control) blocks `/bin/bash` running under launchd from reading/writing files in `~/Documents/`, `~/Desktop/`, `~/Downloads/` - even for the same user. This is a macOS Catalina+ security feature.
+
+**Root cause:** Both scripts were in `~/Documents/` AND their bash-level file operations (logging, config reads, report checks) accessed paths inside `~/Documents/`. Both caused "Operation not permitted" errors.
+
+**Fix:** Two-part solution:
+1. Script FILES moved to `~/.sol-scripts/` (outside TCC-protected dirs)
+2. All bash-level I/O redirected to `/tmp/` - only Claude CLI (which has its own TCC permissions) touches `~/Documents/` paths
+3. File checks and config reads moved from bash into Claude's prompt
+
+**Rule:** Any launchd agent that needs to access `~/Documents/` must:
+- Store its script outside protected directories (`~/.sol-scripts/` or `/usr/local/bin/`)
+- Log to `/tmp/` from bash, not to `~/Documents/`
+- Delegate all `~/Documents/` file operations to the CLI tool being called (Claude, etc.)
+- OR: Grant Full Disk Access to `/bin/bash` in System Settings (less secure)
+
+**Files changed:**
+- `~/.sol-scripts/morning-scout.sh` - TCC-safe version
+- `~/.sol-scripts/daily-review.sh` - TCC-safe version
+- `~/Library/LaunchAgents/com.sol.morning-scout.plist` - points to ~/.sol-scripts/
+- `~/Library/LaunchAgents/com.sol.daily-review.plist` - points to ~/.sol-scripts/
+
+---
+
 ## 2026-02-22 - Skill Output Must Be Saved to File
 
 **What happened:** Hebrew Writing Skill was run on 3 blog articles in a previous session. Output was not saved to a file. Session ended, output lost. Yaron had to ask to re-run.

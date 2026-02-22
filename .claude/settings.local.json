@@ -176,7 +176,18 @@
       "Bash(gh repo clone:*)",
       "Bash(gh auth:*)",
       "Bash(for f in blog-science-buddhism.html blog-collective-sync.html blog-sound-meditation.html)",
-      "Bash(do python3 -c \":*)"
+      "Bash(do python3 -c \":*)",
+      "Bash(claude --version:*)",
+      "Bash(# Check if the computer was asleep at 08:30 today - check wake/sleep log pmset -g log)",
+      "Bash(# Check system wake/sleep for today specifically log show --predicate ''eventMessage contains \"\"Wake\"\" OR eventMessage contains \"\"Sleep\"\"'' --style syslog --start \"\"2026-02-22 00:00:00\"\" --end \"\"2026-02-22 12:00:00\"\")",
+      "Bash(# Also check launchd specifically for our jobs log show --predicate ''subsystem == \"\"com.apple.xpc.launchd\"\" AND eventMessage contains \"\"sol\"\"'' --style syslog --start \"\"2026-02-22 00:00:00\"\")",
+      "Bash(# Simpler approach - when did the computer first become active today? last reboot)",
+      "Bash(bash -x /tmp/test-scout.sh)",
+      "Bash(# Kill any scout processes I spawned during debugging pkill -f \"\"full-scout.sh\"\" pkill -f \"\"test-scout\"\" # Check if any orphaned claude -p processes are running ps aux)",
+      "Bash(while read pid)",
+      "Bash(do kill $pid)",
+      "Bash(# Let me check syslog for any launchd messages about our job log show --predicate ''process == \"\"launchd\"\" AND eventMessage CONTAINS \"\"sol\"\"'' --last 5m)",
+      "Bash(# Check stderr for the new run - should be clean echo \"\"=== morning-scout stderr ===\"\" cat /tmp/sol-morning-scout-stderr.log)"
     ]
   },
   "hooks": {

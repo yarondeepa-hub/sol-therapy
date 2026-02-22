@@ -38,3 +38,71 @@ His masking tape technique and deliberate "kiln accidents" map directly to our w
 **Question for you:** Should I run the CSGO Trigger Experiment now (check availability, test with a Soul Therapy reference image)?
 [2026-02-20 13:39:59] Morning scout completed. Report: /Users/yaronamor/Documents/yaronamor-vault/sol/T-tools/learning/morning-reports/2026-02-20-scout.md
 [2026-02-20 13:39:59] Done.
+[2026-02-22 12:49:29] Starting morning scout...
+[2026-02-22 12:53:01] Starting morning scout...
+[2026-02-22 12:56:09] Starting morning scout...
+[2026-02-22 13:00:04] Starting morning scout...
+---
+
+## סיכום הסיור - 2026-02-22
+
+הסיור הושלם. הנה מה שמצאתי:
+
+### תגליות עיקריות
+
+**לאילוסטרייטור:**
+1. **Recraft V4** (22/25) - מודל עם "טעם עיצובי". רצתי 3 ניסויים - הכל הצליח. כרטיס כלי נוצר.
+2. **Ink Wash Fusion LoRA** (19/25) - מיזוג סגנונות דיו מסורתיים. ב-Lab Queue.
+3. **ריזוגרף כמשנה-הנחיה** (19/25) - halftone dots ו-color misregistration. ב-Lab Queue.
+
+**ל-CTO:**
+1. **CSS scroll-driven animations** (24/25) - Baseline 2026. מחליף חלק מ-GSAP.
+2. **content-visibility: auto** (22/25) - רינדור עצל ב-CSS. ירידה של 40% בזמן layout.
+3. **נגישות Native HTML** (23/25) - button ו-dialog במקום ARIA מותאם אישית.
+
+**הצלבה בין-תחומית:** עקרון ה-"מה" מטקס התה (20/25) - הריקנות כמרחב למחשבה.
+
+**הפתעה:** הפרטיטורות הגרפיות של מורטון פלדמן (17/25) - "קנבסים של זמן".
+
+### ניסויים שרצו
+
+**Recraft V4** - 3 וריאציות:
+- `variation-1-mountains.webp` - הרי דיו דרמטיים
+- `variation-2-bamboo.webp` - במבוק על נייר קרם (מושלם)
+- `variation-3-hills.webp` - גבעות ירוקות מתגלגלות
+
+התמונות ב: `T-tools/learning/trigger-experiments/2026-02-22-recraft-v4/`
+
+### קבצים שנוצרו/עודכנו
+- `T-tools/learning/tool-cards/illustrator/recraft-v4.md` - כרטיס כלי חדש
+- `T-tools/learning/morning-reports/2026-02-22-scout.md` - דוח מעודכן
+- `T-tools/learning/scout-config.md` - Day Counter: 3 -> 4
+
+### המלצה למעבדה השבועית
+**CSS scroll-driven animations** (24/25) - הציון הגבוה ביותר, ותשפיע על כל האתר.
+The day counter was already updated to 4 (likely from the earlier scout run today). The report is complete.
+
+**דוח סיור בוקר הושלם.**
+
+סיכום:
+
+**תגליות איור:**
+1. נקודות חצי-גוון ריסוגרף כמשנה-פרומפט (17/25) - Lab Queue
+2. Mystic Sumi LoRA (14/25) - Parking Lot (לא זמין על Replicate)
+3. פלאקס 2 פרו לעריכת תמונות (19/25) - **ניסוי הושלם**
+
+**תגליות טכנולוגיה:**
+1. CSS scroll-driven animations (16/25) - Lab Queue
+2. CSS Anchor Positioning + Popover (12/25) - Parking Lot
+3. ארכיטקטורת אפס-JS (15/25) - Parking Lot
+
+**הפריה צולבת:** סדקי זיגוג קרמיקה (קאנניו) כטקסטורה (18/25)
+
+**ניסוי טריגר פלאקס 2 פרו:**
+- 3 וריאציות רצו בהצלחה
+- תוצאות נשמרו ב: `T-tools/learning/experiments/2026-02-22-flux2pro/`
+- המודל עובד לעריכת תמונות עם הוראות בשפה טבעית
+
+**קבצים:**
+- דוח: `T-tools/learning/morning-reports/2026-02-22-scout.md`
+- ניסויים: `T-tools/learning/experiments/2026-02-22-flux2pro/`

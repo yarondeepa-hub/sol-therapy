@@ -261,7 +261,7 @@ File: `T-tools/learning/parking-lot.md`
 
 > Used to cycle through rotating questions.
 
-Current day: 3
+Current day: 4
 (Morning scout increments this. Resets at 30.)
 
 ---
