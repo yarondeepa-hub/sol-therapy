@@ -20,6 +20,10 @@ CLAUDE-full.md
 
 # Obsidian
 .obsidian/
+*.canvas
+*.base
+ideas.md
+Untitled*.md
 
 # Node modules
 node_modules/
