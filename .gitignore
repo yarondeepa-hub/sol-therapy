@@ -1,8 +1,27 @@
+# ===========================================
+# Sol Therapy - Public Repo (.gitignore)
+# Only website files are tracked here.
+# System files are in sol-system (private).
+# ===========================================
+
+# Agent system (tracked in private repo)
+A-agents/
+B-brain/
+C-content/
+C-core/
+M-memory/
+O-output/
+T-tools/
+sol-therapy-website/
+_icloud-duplicates/
+CLAUDE.md
+CLAUDE-full.md
+.claude/
+
 # Obsidian
 .obsidian/
 
 # Node modules
-sol-therapy-website/node_modules/
 node_modules/
 
 # Dev artifacts
@@ -34,6 +53,3 @@ Thumbs.db
 # Temp files
 *.tmp
 *.bak
-
-# iCloud duplicates storage
-_icloud-duplicates/
