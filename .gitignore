@@ -50,6 +50,10 @@ website-spec-v5.md
 artists-render*.html
 index-backup-*.html
 
+# iCloud conflict artifacts
+* 2/
+* 2
+
 # OS files
 .DS_Store
 Thumbs.db
