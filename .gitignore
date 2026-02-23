@@ -50,6 +50,9 @@ website-spec-v5.md
 artists-render*.html
 index-backup-*.html
 
+# iCloud protection
+.git.nosync/
+
 # iCloud conflict artifacts
 * 2/
 * 2
