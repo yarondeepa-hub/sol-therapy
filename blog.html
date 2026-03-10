@@ -19,12 +19,12 @@
     <meta property="og:description" content="מאמרים על מדיטציית סאונד, מדע התודעה, וחוויות קבוצתיות טרנספורמטיביות.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sol-therapy.com/blog.html">
-    <meta property="og:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
+    <meta property="og:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.webp">
     <meta property="og:locale" content="he_IL">
     <meta property="og:site_name" content="Sol Therapy">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="מרחיבי תודעה - מאמרים | סול תרפי">
-    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.png">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/blog-science/01-hero-orange-robe.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,11 +175,38 @@
             }
         }
 
-        .blog-index__footer {
+        .blog-footer {
             margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(242, 234, 211, 0.08);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .blog-footer__links {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-english);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .blog-footer__link {
+            color: var(--color-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .blog-footer__link:hover { color: var(--color-washi); }
+        .blog-footer__sep {
+            color: var(--color-muted);
             opacity: 0.3;
-            font-size: 0.75rem;
+        }
+        .blog-footer__copy {
+            font-size: 0.7rem;
+            opacity: 0.25;
         }
     </style>
 </head>
@@ -242,7 +269,18 @@
 
         </div>
 
-        <p class="blog-index__footer">Sol Therapy 2026</p>
+        <footer class="blog-footer" aria-label="footer">
+            <div class="blog-footer__links">
+                <a href="/" class="blog-footer__link">home</a>
+                <span class="blog-footer__sep">-</span>
+                <a href="private.html" class="blog-footer__link">corporate</a>
+                <span class="blog-footer__sep">-</span>
+                <a href="https://www.instagram.com/sol.therapyy/" target="_blank" rel="noopener" class="blog-footer__link">instagram</a>
+                <span class="blog-footer__sep">-</span>
+                <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" class="blog-footer__link">whatsapp</a>
+            </div>
+            <span class="blog-footer__copy">Sol Therapy 2026</span>
+        </footer>
     </main>
 </body>
 </html>
