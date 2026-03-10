@@ -500,6 +500,89 @@
         }
 
         /* ============================================
+           BLOG TEASER
+        ============================================ */
+        .blog-teaser {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(3rem, 5vw, 5rem) var(--gutter);
+        }
+        .blog-teaser__card {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            align-items: center;
+            background: var(--color-washi);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(40, 51, 53, 0.06);
+            transition: box-shadow 0.3s ease;
+        }
+        .blog-teaser__card:hover {
+            box-shadow: 0 6px 28px rgba(40, 51, 53, 0.12);
+        }
+        .blog-teaser__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+        .blog-teaser__content {
+            padding: 1.5rem 2rem 1.5rem 0;
+        }
+        .blog-teaser__kicker {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-dark);
+            opacity: 0.45;
+            margin-bottom: 0.6rem;
+        }
+        .blog-teaser__title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.4;
+            color: var(--color-dark);
+            margin-bottom: 0.75rem;
+        }
+        .blog-teaser__excerpt {
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--color-dark);
+            opacity: 0.7;
+            margin-bottom: 1.25rem;
+        }
+        .blog-teaser__cta {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--color-dark);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.25);
+            padding-bottom: 2px;
+            transition: border-color 0.3s ease;
+        }
+        .blog-teaser__cta:hover {
+            border-color: var(--color-dark);
+        }
+        @media (max-width: 640px) {
+            .blog-teaser__card {
+                grid-template-columns: 1fr;
+            }
+            .blog-teaser__image {
+                aspect-ratio: 16 / 9;
+            }
+            .blog-teaser__content {
+                padding: 1.25rem 1.5rem 1.5rem;
+            }
+        }
+
+        /* ============================================
            ARTIST LINEUP
         ============================================ */
         .lineup-section {
@@ -967,26 +1050,37 @@
             </div>
             <div class="gallery-captioned__grid">
                 <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="מדיטציית סאונד במוזיאון תל אביב לאמנות" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">סאונד מהפנט בין עבודות אמנות</div>
+                    <img src="assets/private/amazon-tel-aviv-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב לאמנות" loading="lazy" width="1920" height="1440">
+                    <div class="gallery-captioned__caption">מדיטציית סאונד להנהלת אמזון, מוזיאון תל אביב לאמנות</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד במרכז סוזן דלל" loading="lazy" width="1920" height="1080"></picture>
-                    <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
+                    <img src="assets/private/suzanne-dellal.jpg" alt="סול תרפי במרכז סוזן דלל" loading="lazy" width="1920" height="1280">
+                    <div class="gallery-captioned__caption">מפגש סאונד במרכז סוזן דלל</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/orchestra-stage.webp" type="image/webp"><img src="assets/events/orchestra-stage.jpg" alt="הספריה הלאומית בירושלים" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">צלילה עמוקה בין כתלי הידע</div>
-                </div>
-                <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/outdoor-night.webp" type="image/webp"><img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי במלון פסטורל כפר בלום" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">מרחבים ירוקים על גדות הירדן</div>
+                    <img src="assets/private/national-library-jerusalem.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy" width="1920" height="1280">
+                    <div class="gallery-captioned__caption">צלילה עמוקה בספרייה הלאומית, ירושלים</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <picture><source srcset="assets/events/mountain-meditation.webp" type="image/webp"><img src="assets/events/mountain-meditation.jpg" alt="מדיטציה במדבר - מואה" loading="lazy" width="1200" height="900"></picture>
-                    <div class="gallery-captioned__caption">שקט מוחלט, סאונד מוחלט</div>
+                    <img src="assets/private/asaf-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy" width="1920" height="1440">
+                    <div class="gallery-captioned__caption">אסף אמדורסקי בריטריט מדיטציית סאונד, סול תרפי</div>
                 </div>
             </div>
+        </section>
+
+        <!-- ========================================
+             BLOG TEASER
+        ======================================== -->
+        <section class="blog-teaser fade-in" aria-label="כתבה">
+            <a href="blog-meditation-workplace.html" class="blog-teaser__card" style="text-decoration:none;">
+                <img class="blog-teaser__image" src="assets/blog/sol-therapy-meditation-illustration.jpg" alt="איור מדיטציית סאונד" loading="lazy" width="560" height="420">
+                <div class="blog-teaser__content">
+                    <p class="blog-teaser__kicker">Sol Therapy Blog</p>
+                    <h3 class="blog-teaser__title">מ'וולנס' לעזרה ראשונה: המספרים מאחורי מהפכת השקט בארגונים מובילים</h3>
+                    <p class="blog-teaser__excerpt">מחקרים ונתונים מ-Aetna, Google ו-Intel - ומה הם אומרים למנהלי HR בישראל ב-2026</p>
+                    <span class="blog-teaser__cta">להמשך קריאה</span>
+                </div>
+            </a>
         </section>
 
         <!-- ========================================
