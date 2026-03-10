@@ -248,7 +248,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: saturate(0.5) contrast(1.05) brightness(0.35);
+            filter: saturate(0.5) contrast(1.05) brightness(0.50);
         }
         .hero-private__content {
             position: relative;
@@ -426,7 +426,7 @@
            GALLERY WITH CAPTIONS
         ============================================ */
         .gallery-captioned {
-            padding: var(--space-l) 0;
+            padding: var(--space-m) 0;
         }
         .gallery-captioned__header {
             text-align: center;
@@ -451,7 +451,7 @@
         .gallery-captioned__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: clamp(3px, 0.4vw, 6px);
+            gap: 2px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -1011,7 +1011,6 @@
                 <p class="hero-private__kicker">Corporate Programs</p>
                 <h1 class="hero-private__title">סול תרפי לארגונים</h1>
                 <p class="hero-private__subtitle">מחקרים בנוירומדע מצביעים על כך שמדיטציה ומוזיקה מפעילות אזורים במוח האחראים על ויסות רגשי, ריכוז ויצירתיות - תהליכים שמקום העבודה המודרני זקוק להם יותר מתמיד.</p>
-                <a href="#contact" class="hero-private__cta">צרו קשר לתוכנית מותאמת</a>
             </div>
         </section>
 
@@ -1021,6 +1020,21 @@
         <section class="section-text fade-in" aria-label="אודות הפעילות לארגונים">
             <p class="section-text__body">סול תרפי מביאה לארגונים חוויות מדיטציית סאונד מבוססות מדע ומסורת, בהנחיית מיטב המוזיקאים והיוצרים בישראל. מפגשים אלו נשענים על ידע של 2,500 שנה בחקר התודעה - לצד ממצאי מחקר עדכניים ממעבדות מוח מובילות.</p>
             <p class="section-text__body">אנו מעצבים תוכניות מותאמות לארגונים שמבינים שרווחה אמיתית של עובדים דורשת יותר ממשבצת כושר בלוח הזמנים. מרחב שקט. סאונד מדויק. הנחיה מוקפדת.</p>
+        </section>
+
+        <!-- ========================================
+             BLOG TEASER
+        ======================================== -->
+        <section class="blog-teaser fade-in" aria-label="כתבה">
+            <a href="blog-meditation-workplace.html" class="blog-teaser__card" style="text-decoration:none;">
+                <img class="blog-teaser__image" src="assets/blog/sol-therapy-meditation-illustration.jpg" alt="איור מדיטציית סאונד" loading="lazy" width="560" height="420">
+                <div class="blog-teaser__content">
+                    <p class="blog-teaser__kicker">Sol Therapy Blog</p>
+                    <h3 class="blog-teaser__title">מ'וולנס' לעזרה ראשונה: המספרים מאחורי מהפכת השקט בארגונים מובילים</h3>
+                    <p class="blog-teaser__excerpt">מחקרים ונתונים מ-Aetna, Google ו-Intel - ומה הם אומרים למנהלי HR בישראל ב-2026</p>
+                    <span class="blog-teaser__cta">להמשך קריאה</span>
+                </div>
+            </a>
         </section>
 
         <!-- ========================================
@@ -1079,38 +1093,31 @@
                 <h2 class="gallery-captioned__title">מיקומים נבחרים</h2>
             </div>
             <div class="gallery-captioned__grid">
-                <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <img src="assets/private/amazon-tel-aviv-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב לאמנות" loading="lazy" width="1920" height="1440">
-                    <div class="gallery-captioned__caption">מדיטציית סאונד להנהלת אמזון, מוזיאון תל אביב לאמנות</div>
+                <div class="gallery-captioned__item fade-in">
+                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך" loading="lazy" width="1920" height="1080"></picture>
+                    <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/private/suzanne-dellal.jpg" alt="סול תרפי במרכז סוזן דלל" loading="lazy" width="1920" height="1280">
-                    <div class="gallery-captioned__caption">מפגש סאונד במרכז סוזן דלל</div>
+                    <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="מדיטציית סאונד במוזיאון תל אביב" loading="lazy" width="1920" height="1280"></picture>
+                    <div class="gallery-captioned__caption">סאונד מהפנט בין עבודות אמנות</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/private/national-library-jerusalem.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy" width="1920" height="1280">
-                    <div class="gallery-captioned__caption">צלילה עמוקה בספרייה הלאומית, ירושלים</div>
+                    <picture><source srcset="assets/events/orchestra-stage.webp" type="image/webp"><img src="assets/events/orchestra-stage.jpg" alt="אמנים על הבמה באירוע סול תרפי" loading="lazy" width="1920" height="1280"></picture>
+                    <div class="gallery-captioned__caption">צלילה עמוקה בין כתלי הידע</div>
                 </div>
-                <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <img src="assets/private/asaf-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy" width="1920" height="1440">
-                    <div class="gallery-captioned__caption">אסף אמדורסקי בריטריט מדיטציית סאונד, סול תרפי</div>
+                <div class="gallery-captioned__item fade-in">
+                    <picture><source srcset="assets/events/outdoor-night.webp" type="image/webp"><img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה" loading="lazy" width="1920" height="1280"></picture>
+                    <div class="gallery-captioned__caption">מרחבים ירוקים על גדות הירדן</div>
+                </div>
+                <div class="gallery-captioned__item fade-in">
+                    <picture><source srcset="assets/events/meditation-hall.webp" type="image/webp"><img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים" loading="lazy" width="1920" height="1280"></picture>
+                    <div class="gallery-captioned__caption">שקט מוחלט, סאונד מוחלט</div>
+                </div>
+                <div class="gallery-captioned__item fade-in">
+                    <picture><source srcset="assets/events/projection-building.webp" type="image/webp"><img src="assets/events/projection-building.jpg" alt="הקרנת אור על מבנה באירוע סול תרפי" loading="lazy" width="1920" height="1077"></picture>
+                    <div class="gallery-captioned__caption">אור וצליל על קירות העיר</div>
                 </div>
             </div>
-        </section>
-
-        <!-- ========================================
-             BLOG TEASER
-        ======================================== -->
-        <section class="blog-teaser fade-in" aria-label="כתבה">
-            <a href="blog-meditation-workplace.html" class="blog-teaser__card" style="text-decoration:none;">
-                <img class="blog-teaser__image" src="assets/blog/sol-therapy-meditation-illustration.jpg" alt="איור מדיטציית סאונד" loading="lazy" width="560" height="420">
-                <div class="blog-teaser__content">
-                    <p class="blog-teaser__kicker">Sol Therapy Blog</p>
-                    <h3 class="blog-teaser__title">מ'וולנס' לעזרה ראשונה: המספרים מאחורי מהפכת השקט בארגונים מובילים</h3>
-                    <p class="blog-teaser__excerpt">מחקרים ונתונים מ-Aetna, Google ו-Intel - ומה הם אומרים למנהלי HR בישראל ב-2026</p>
-                    <span class="blog-teaser__cta">להמשך קריאה</span>
-                </div>
-            </a>
         </section>
 
         <!-- ========================================
@@ -1136,7 +1143,7 @@
 
             <!-- Tier 3 - Ensemble -->
             <div class="lineup-tier3">
-                <span class="artist-name">יחזקאל רז</span><span class="lineup-dot"></span><span class="artist-name">רן סלוין</span><span class="lineup-dot"></span><span class="artist-name">אנה הלטה</span><span class="lineup-dot"></span><span class="artist-name">נעה ארגוב</span><span class="lineup-dot"></span><span class="artist-name">יותם אבני</span><span class="lineup-dot"></span><span class="artist-name">יוסי פיין</span><span class="lineup-dot"></span><span class="artist-name">דור ציפור</span>
+                <span class="artist-name">יחזקאל רז</span><span class="lineup-dot"></span><span class="artist-name">רן סלוין</span><span class="lineup-dot"></span><span class="artist-name">אנה הלטה</span><span class="lineup-dot"></span><span class="artist-name">נעה ארגוב</span><span class="lineup-dot"></span><span class="artist-name">יותם אבני</span><span class="lineup-dot"></span><span class="artist-name">יוסי פיין</span><span class="lineup-dot"></span><span class="artist-name">טל פוסמן</span><span class="lineup-dot"></span><span class="artist-name">דור ציפור</span>
             </div>
 
             <p class="lineup-footnote">...ועוד חוקרים, מדעני מוח, נזירים בודהיסטים ומובילי תנועה</p>
