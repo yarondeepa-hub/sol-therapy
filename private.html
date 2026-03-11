@@ -647,17 +647,13 @@
             min-height: 550px;
             max-height: 700px;
         }
-        .star-field svg {
+        .star-field canvas {
             position: absolute;
             top: 0; left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
-        }
-        .star-field svg line {
-            stroke: rgba(88, 132, 117, 0.12);
-            stroke-width: 0.5;
+            z-index: 1;
         }
         .star {
             position: absolute;
@@ -670,7 +666,8 @@
             user-select: none;
             cursor: default;
             z-index: 2;
-            transition: text-shadow 0.5s ease, opacity 0.4s ease;
+            will-change: transform;
+            transition: text-shadow 0.5s ease;
         }
         .star:hover {
             text-shadow: 0 0 20px rgba(196, 149, 106, 0.25);
@@ -1113,7 +1110,7 @@
                 <h2 class="gallery-captioned__title">מיקומים נבחרים</h2>
             </div>
             <div class="gallery-captioned__grid">
-                <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
+                <div class="gallery-captioned__item fade-in">
                     <img src="assets/events/hr-web/sol-amazon-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב" loading="lazy">
                     <div class="gallery-captioned__caption">סול תרפי עבור הנהלת אמזון במוזיאון תל אביב</div>
                 </div>
@@ -1122,16 +1119,20 @@
                     <div class="gallery-captioned__caption">סול תרפי במרכז סוזן דלל</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספריה הלאומית ירושלים" loading="lazy">
-                    <div class="gallery-captioned__caption">סול תרפי בספריה הלאומית ירושלים</div>
+                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy">
+                    <div class="gallery-captioned__caption">סול תרפי בספרייה הלאומית ירושלים</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
                     <img src="assets/events/hr-web/sol-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy">
                     <div class="gallery-captioned__caption">אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך" loading="lazy" width="1920" height="1080"></picture>
-                    <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
+                    <img src="assets/events/hr-web/sol-multi-sensory.jpg" alt="חוויה רב חושית סול תרפי" loading="lazy">
+                    <div class="gallery-captioned__caption">חוויה רב חושית סול תרפי</div>
+                </div>
+                <div class="gallery-captioned__item fade-in">
+                    <img src="assets/events/hr-web/sol-desert-movement.jpg" alt="מדיטציה בתנועה יחד עם מואה במדבר" loading="lazy">
+                    <div class="gallery-captioned__caption">מדיטציה בתנועה יחד עם מואה במדבר</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--full fade-in">
                     <video autoplay muted loop playsinline preload="none" poster="assets/events/gallery-wide-bottom-poster.jpg" aria-label="וידאו פנורמי מריטריט מדיטציית סאונד">
@@ -1148,8 +1149,8 @@
             <p class="lineup__label">Artists</p>
 
             <div class="star-field" id="constellation-field">
-                <!-- SVG constellation lines -->
-                <svg id="constellation-lines"></svg>
+                <!-- Canvas constellation lines -->
+                <canvas id="constellation-canvas"></canvas>
 
                 <!-- All 16 artists - equal size, Hebrew only -->
                 <div class="star" style="right: 5%; top: 5%;">אסף אמדורסקי</div>
@@ -1270,12 +1271,13 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Artist constellation - draw lines and breathing animation
+        // Artist constellation - floating names with dynamic connection lines
         (function() {
-            var stars = document.querySelectorAll('.star');
-            var svg = document.getElementById('constellation-lines');
+            var canvas = document.getElementById('constellation-canvas');
+            var ctx = canvas.getContext('2d');
             var field = document.getElementById('constellation-field');
-            if (!stars.length || !svg || !field) return;
+            var starEls = field.querySelectorAll('.star');
+            if (!starEls.length || !canvas || !field) return;
 
             var connections = [
                 [0, 2], [1, 2], [2, 6], [3, 7], [0, 4],
@@ -1283,41 +1285,114 @@
                 [9, 13], [10, 14], [12, 15], [6, 9], [11, 13]
             ];
 
-            function drawLines() {
-                svg.innerHTML = '';
-                var fieldRect = field.getBoundingClientRect();
-                connections.forEach(function(pair) {
-                    var a = stars[pair[0]];
-                    var b = stars[pair[1]];
-                    if (!a || !b) return;
-                    var ar = a.getBoundingClientRect();
-                    var br = b.getBoundingClientRect();
-                    var ax = ar.left + ar.width / 2 - fieldRect.left;
-                    var ay = ar.top + ar.height / 2 - fieldRect.top;
-                    var bx = br.left + br.width / 2 - fieldRect.left;
-                    var by = br.top + br.height / 2 - fieldRect.top;
-                    var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                    line.setAttribute('x1', ax);
-                    line.setAttribute('y1', ay);
-                    line.setAttribute('x2', bx);
-                    line.setAttribute('y2', by);
-                    svg.appendChild(line);
+            var lineColor = { r: 88, g: 132, b: 117 };
+
+            // Each star gets a drift profile - two sine waves per axis for organic motion
+            var drifts = [];
+            for (var i = 0; i < starEls.length; i++) {
+                drifts.push({
+                    ax: 8 + Math.random() * 12,
+                    ay: 6 + Math.random() * 10,
+                    fx: 0.15 + Math.random() * 0.2,
+                    fy: 0.12 + Math.random() * 0.18,
+                    px: Math.random() * Math.PI * 2,
+                    py: Math.random() * Math.PI * 2,
+                    ax2: 3 + Math.random() * 5,
+                    ay2: 2 + Math.random() * 4,
+                    fx2: 0.08 + Math.random() * 0.12,
+                    fy2: 0.06 + Math.random() * 0.1,
+                    px2: Math.random() * Math.PI * 2,
+                    py2: Math.random() * Math.PI * 2
                 });
             }
 
-            drawLines();
-            window.addEventListener('resize', drawLines);
+            function resize() {
+                var rect = field.getBoundingClientRect();
+                var dpr = window.devicePixelRatio || 1;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                canvas.style.width = rect.width + 'px';
+                canvas.style.height = rect.height + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function getStarCenter(el) {
+                var fieldRect = field.getBoundingClientRect();
+                var sr = el.getBoundingClientRect();
+                return {
+                    x: sr.left + sr.width / 2 - fieldRect.left,
+                    y: sr.top + sr.height / 2 - fieldRect.top
+                };
+            }
 
             var time = 0;
+            var running = false;
+
             function animate() {
-                time += 0.003;
-                stars.forEach(function(star, i) {
-                    var breath = 0.82 + Math.sin(time * 0.3 + i * 0.5) * 0.08;
-                    star.style.opacity = breath.toFixed(3);
+                if (!running) return;
+                time += 0.008;
+
+                var w = canvas.width / (window.devicePixelRatio || 1);
+                var h = canvas.height / (window.devicePixelRatio || 1);
+                ctx.clearRect(0, 0, w, h);
+
+                // Move each star name
+                for (var i = 0; i < starEls.length; i++) {
+                    var d = drifts[i];
+                    var dx = Math.sin(time * d.fx + d.px) * d.ax
+                           + Math.sin(time * d.fx2 + d.px2) * d.ax2;
+                    var dy = Math.cos(time * d.fy + d.py) * d.ay
+                           + Math.cos(time * d.fy2 + d.py2) * d.ay2;
+
+                    starEls[i].style.transform = 'translate(' + dx.toFixed(1) + 'px, ' + dy.toFixed(1) + 'px)';
+
+                    // Breathing opacity
+                    var breath = 0.78 + Math.sin(time * 0.4 + i * 0.6) * 0.12;
+                    starEls[i].style.opacity = breath.toFixed(3);
+                }
+
+                // Draw connection lines
+                connections.forEach(function(pair) {
+                    var a = getStarCenter(starEls[pair[0]]);
+                    var b = getStarCenter(starEls[pair[1]]);
+
+                    var lineBreath = 0.08 + Math.sin(time * 0.5 + pair[0] * 0.3) * 0.03;
+
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.strokeStyle = 'rgba(' + lineColor.r + ',' + lineColor.g + ',' + lineColor.b + ',' + lineBreath.toFixed(3) + ')';
+                    ctx.lineWidth = 0.6;
+                    ctx.stroke();
+
+                    // Small dot at each endpoint
+                    [a, b].forEach(function(pt) {
+                        ctx.beginPath();
+                        ctx.arc(pt.x, pt.y, 1.5, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(' + lineColor.r + ',' + lineColor.g + ',' + lineColor.b + ',' + (lineBreath * 2.5).toFixed(3) + ')';
+                        ctx.fill();
+                    });
                 });
+
                 requestAnimationFrame(animate);
             }
-            animate();
+
+            // Only animate when section is visible (performance)
+            var constellationObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !running) {
+                        running = true;
+                        resize();
+                        animate();
+                    } else if (!entry.isIntersecting) {
+                        running = false;
+                    }
+                });
+            }, { threshold: 0.05 });
+            constellationObserver.observe(field);
+
+            resize();
+            window.addEventListener('resize', resize);
         })();
 
         // Smooth scroll for anchor links
