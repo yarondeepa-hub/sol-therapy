@@ -253,7 +253,7 @@
         .hero-private__content {
             position: relative;
             z-index: 2;
-            max-width: 720px;
+            max-width: 650px;
         }
         .hero-private__kicker {
             font-family: var(--font-english);
@@ -278,8 +278,7 @@
             font-size: var(--type-body);
             line-height: 1.8;
             opacity: 0.7;
-            max-width: 620px;
-            margin: 0 auto;
+            max-width: 580px;
         }
         .hero-private__cta {
             display: inline-flex;
@@ -533,20 +532,33 @@
         }
         @media (max-width: 640px) {
             .gallery-captioned__item--wide { grid-column: span 2; }
-            .gallery-captioned__item--fullvideo { aspect-ratio: 16 / 9; }
+            .gallery-captioned__item--fullvideo {
+                aspect-ratio: 16 / 9;
+                display: block;
+                overflow: hidden;
+            }
+            .gallery-captioned__item--fullvideo .gallery-captioned__caption {
+                position: absolute;
+                background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+            }
             .gallery-captioned__item {
+                display: flex;
+                flex-direction: column;
                 aspect-ratio: auto;
                 overflow: visible;
+                position: relative;
             }
-            .gallery-captioned__item img {
+            .gallery-captioned__item img,
+            .gallery-captioned__item video {
                 width: 100%;
+                height: auto;
                 aspect-ratio: 4 / 3;
                 object-fit: cover;
                 display: block;
+                flex-shrink: 0;
             }
             .gallery-captioned__item video {
-                width: 100%;
-                display: block;
+                aspect-ratio: auto;
             }
             .gallery-captioned__caption {
                 position: static;
@@ -554,10 +566,13 @@
                 padding: 0.45rem 0.8rem 0.55rem;
                 font-size: 0.75rem;
                 line-height: 1.35;
+                flex-shrink: 0;
             }
-            .gallery-captioned__item.fade-in {
+            .gallery-captioned__item.fade-in,
+            .gallery-captioned__item.fade-in.fade-in--visible {
                 opacity: 1;
                 transform: none;
+                transition: none;
             }
         }
 
@@ -764,11 +779,11 @@
         }
         @media (max-width: 768px) {
             .plexus-container { height: 620px; }
-            .node-label { font-size: 13px; letter-spacing: 0.01em; }
+            .node-label { font-size: 15px; letter-spacing: 0.01em; }
         }
         @media (max-width: 480px) {
             .plexus-container { height: 580px; }
-            .node-label { font-size: 12px; }
+            .node-label { font-size: 14px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .node-label { transition: none; }
