@@ -534,6 +534,27 @@
         @media (max-width: 640px) {
             .gallery-captioned__item--wide { grid-column: span 2; }
             .gallery-captioned__item--fullvideo { aspect-ratio: 16 / 9; }
+            .gallery-captioned__item {
+                aspect-ratio: auto;
+                overflow: visible;
+            }
+            .gallery-captioned__item img {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                display: block;
+            }
+            .gallery-captioned__item video {
+                width: 100%;
+                display: block;
+            }
+            .gallery-captioned__caption {
+                position: static;
+                background: rgba(13, 13, 13, 0.9);
+                padding: 0.45rem 0.8rem 0.55rem;
+                font-size: 0.75rem;
+                line-height: 1.35;
+            }
         }
 
         /* ============================================
@@ -738,8 +759,12 @@
             opacity: 0.5;
         }
         @media (max-width: 768px) {
-            .plexus-container { height: 500px; }
-            .node-label { font-size: 24px; }
+            .plexus-container { height: 420px; }
+            .node-label { font-size: 15px; letter-spacing: 0.01em; }
+        }
+        @media (max-width: 480px) {
+            .plexus-container { height: 360px; }
+            .node-label { font-size: 13px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .node-label { transition: none; }
@@ -1167,20 +1192,20 @@
                     <div class="gallery-captioned__caption">סול תרפי במרכז סוזן דלל</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספריה הלאומית ירושלים" loading="lazy">
-                    <div class="gallery-captioned__caption">סול תרפי בספריה הלאומית ירושלים</div>
+                    <img src="assets/events/hr-web/multisensory-experience.jpg" alt="חוויה רב חושית סול תרפי" loading="lazy">
+                    <div class="gallery-captioned__caption">חוויה רב חושית סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
                     <img src="assets/events/hr-web/sol-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy">
                     <div class="gallery-captioned__caption">אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך" loading="lazy" width="1920" height="1080"></picture>
-                    <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
+                    <img src="assets/events/hr-web/desert-movement-moa.jpg" alt="מדיטציה בתנועה יחד עם מואה במדבר" loading="lazy">
+                    <div class="gallery-captioned__caption">מדיטציה בתנועה יחד עם מואה במדבר</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--fullvideo fade-in">
-                    <video poster="assets/events/meditation-hall.jpg" preload="none" autoplay muted loop playsinline aria-label="דוקומנטרי ריטריט מואה - סול תרפי" data-lazy-video="assets/events/moa-documentary.mp4"></video>
-                    <div class="gallery-captioned__caption">ריטריט מואה - סול תרפי</div>
+                    <video poster="assets/events/hr-web/desert-vinyl-session-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="סשן תקליטים במדבר" data-lazy-video="assets/events/hr-web/desert-vinyl-session.mp4"></video>
+                    <div class="gallery-captioned__caption">סשן תקליטים במדבר</div>
                 </div>
             </div>
         </section>
@@ -1384,11 +1409,20 @@
 
             function initNodes() {
                 nodes = []; labels = []; labelsDiv.innerHTML = '';
-                var pad = CONFIG.boundaryPadding + 30;
-                var cols = 4, rows = 4;
+                var activeArtists = ARTISTS;
+                if (isMobile) {
+                    activeArtists = ARTISTS.slice(0, 8);
+                    CONFIG.boundaryPadding = 40;
+                    CONFIG.maxConnectionDist = 200;
+                } else {
+                    CONFIG.boundaryPadding = 100;
+                    CONFIG.maxConnectionDist = 320;
+                }
+                var pad = CONFIG.boundaryPadding + (isMobile ? 10 : 30);
+                var cols = isMobile ? 2 : 4, rows = isMobile ? 4 : 4;
                 var cellW = (canvasW - pad * 2) / cols;
                 var cellH = (canvasH - pad * 2) / rows;
-                for (var i = 0; i < ARTISTS.length; i++) {
+                for (var i = 0; i < activeArtists.length; i++) {
                     var col = i % cols, row = Math.floor(i / cols);
                     var cx = pad + cellW * col + cellW * 0.5;
                     var cy = pad + cellH * row + cellH * 0.5;
@@ -1404,7 +1438,7 @@
                     });
                     var span = document.createElement('span');
                     span.className = 'node-label';
-                    span.textContent = ARTISTS[i];
+                    span.textContent = activeArtists[i];
                     labelsDiv.appendChild(span);
                     labels.push(span);
                 }
@@ -1456,7 +1490,7 @@
             }
 
             function separateLabels() {
-                var labelH = 38, gap = 6, push = 0.5, bPad = CONFIG.boundaryPadding;
+                var labelH = isMobile ? 22 : 38, gap = isMobile ? 4 : 6, push = isMobile ? 1.2 : 0.5, bPad = CONFIG.boundaryPadding;
                 for (var i = 0; i < nodes.length; i++) {
                     var ni = nodes[i], wi = labels[i].offsetWidth || 100;
                     var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 16;
@@ -1560,12 +1594,19 @@
             }
             function onTouchEnd() { mouseX = -9999; mouseY = -9999; }
 
-            var resizeTimer;
+            var resizeTimer, wasMobile = isMobile;
             function onResize() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
+                    var prevMobile = wasMobile;
                     var oldW = canvasW, oldH = canvasH;
                     resizeCanvas();
+                    wasMobile = isMobile;
+                    if (prevMobile !== isMobile) {
+                        initNodes(); calcConnections();
+                        if (isReducedMotion) draw();
+                        return;
+                    }
                     if (oldW > 0 && oldH > 0) {
                         var scaleX = canvasW / oldW, scaleY = canvasH / oldH;
                         for (var i = 0; i < nodes.length; i++) {
