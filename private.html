@@ -376,8 +376,8 @@
             opacity: 0.6;
         }
         .research-stats strong {
-            color: var(--color-washi);
-            font-weight: 500;
+            color: var(--color-green-dark);
+            font-weight: 600;
         }
 
         /* ============================================
@@ -521,8 +521,13 @@
         .gallery-captioned__item--wide {
             grid-column: span 2;
         }
+        .gallery-captioned__item--full {
+            grid-column: 1 / -1;
+            aspect-ratio: 21 / 9;
+        }
         @media (max-width: 640px) {
             .gallery-captioned__item--wide { grid-column: span 2; }
+            .gallery-captioned__item--full { aspect-ratio: 16 / 9; }
         }
 
         /* ============================================
@@ -1128,17 +1133,11 @@
                     <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך" loading="lazy" width="1920" height="1080"></picture>
                     <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
                 </div>
-                <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="מדיטציית סאונד במוזיאון תל אביב" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">סאונד מהפנט בין עבודות אמנות</div>
-                </div>
-                <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/outdoor-night.webp" type="image/webp"><img src="assets/events/outdoor-night.jpg" alt="אירוע סול תרפי בחוץ בלילה" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">מרחבים ירוקים על גדות הירדן</div>
-                </div>
-                <div class="gallery-captioned__item fade-in">
-                    <picture><source srcset="assets/events/meditation-hall.webp" type="image/webp"><img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים" loading="lazy" width="1920" height="1280"></picture>
-                    <div class="gallery-captioned__caption">שקט מוחלט, סאונד מוחלט</div>
+                <div class="gallery-captioned__item gallery-captioned__item--full fade-in">
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/events/meditation-hall.jpg" aria-label="וידאו ריטריט סול תרפי">
+                        <source src="assets/events/pastoral-retreat-bg-compressed.mp4" type="video/mp4">
+                    </video>
+                    <div class="gallery-captioned__caption">ריטריט סול תרפי - צלילה לשקט</div>
                 </div>
             </div>
         </section>
