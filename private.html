@@ -347,8 +347,8 @@
             opacity: 0.8;
         }
         .section-text--washi .section-text__body {
-            color: var(--color-green-dark);
-            opacity: 0.7;
+            color: var(--color-dark);
+            opacity: 0.85;
         }
         .section-text__body p + p {
             margin-top: 1.2rem;
@@ -376,8 +376,8 @@
             opacity: 0.6;
         }
         .research-stats strong {
-            color: var(--color-washi);
-            font-weight: 500;
+            color: var(--color-dark);
+            font-weight: 600;
         }
 
         /* ============================================
@@ -554,6 +554,10 @@
                 padding: 0.45rem 0.8rem 0.55rem;
                 font-size: 0.75rem;
                 line-height: 1.35;
+            }
+            .gallery-captioned__item.fade-in {
+                opacity: 1;
+                transform: none;
             }
         }
 
@@ -759,12 +763,12 @@
             opacity: 0.5;
         }
         @media (max-width: 768px) {
-            .plexus-container { height: 420px; }
-            .node-label { font-size: 15px; letter-spacing: 0.01em; }
+            .plexus-container { height: 600px; }
+            .node-label { font-size: 12px; letter-spacing: 0; }
         }
         @media (max-width: 480px) {
-            .plexus-container { height: 360px; }
-            .node-label { font-size: 13px; }
+            .plexus-container { height: 560px; }
+            .node-label { font-size: 11px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .node-label { transition: none; }
@@ -869,7 +873,7 @@
         .contact-private__title {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: var(--type-manifesto);
+            font-size: clamp(1.3rem, 1rem + 2vw, 2.2rem);
             line-height: 1.2;
             margin-bottom: var(--space-s);
         }
@@ -1214,11 +1218,6 @@
              ARTIST LINEUP
         ======================================== -->
         <section class="lineup-section fade-in" aria-label="ליינאפ אמנים">
-            <div class="lineup__intro">
-                <p class="lineup__label">Lineup</p>
-                <p class="lineup__intro-text">אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים - אנשים שהקדישו את חייהם לחקר התדר והצליל.</p>
-            </div>
-
             <div class="plexus-header"><h3>רשת האמנים שלנו</h3></div>
             <div class="plexus-container" id="plexusContainer">
                 <canvas class="plexus-canvas" id="plexusCanvas"></canvas>
@@ -1411,23 +1410,27 @@
                 nodes = []; labels = []; labelsDiv.innerHTML = '';
                 var activeArtists = ARTISTS;
                 if (isMobile) {
-                    activeArtists = ARTISTS.slice(0, 8);
-                    CONFIG.boundaryPadding = 40;
-                    CONFIG.maxConnectionDist = 200;
+                    CONFIG.boundaryPadding = 20;
+                    CONFIG.maxConnectionDist = 140;
+                    CONFIG.speedMin = 0.03;
+                    CONFIG.speedMax = 0.07;
                 } else {
                     CONFIG.boundaryPadding = 100;
                     CONFIG.maxConnectionDist = 320;
+                    CONFIG.speedMin = 0.08;
+                    CONFIG.speedMax = 0.18;
                 }
-                var pad = CONFIG.boundaryPadding + (isMobile ? 10 : 30);
-                var cols = isMobile ? 2 : 4, rows = isMobile ? 4 : 4;
+                var pad = CONFIG.boundaryPadding + (isMobile ? 5 : 30);
+                var cols = isMobile ? 2 : 4, rows = isMobile ? 8 : 4;
                 var cellW = (canvasW - pad * 2) / cols;
                 var cellH = (canvasH - pad * 2) / rows;
                 for (var i = 0; i < activeArtists.length; i++) {
                     var col = i % cols, row = Math.floor(i / cols);
                     var cx = pad + cellW * col + cellW * 0.5;
                     var cy = pad + cellH * row + cellH * 0.5;
-                    var jitterX = (Math.random() - 0.5) * cellW * 0.6;
-                    var jitterY = (Math.random() - 0.5) * cellH * 0.6;
+                    var jitterMul = isMobile ? 0.25 : 0.6;
+                    var jitterX = (Math.random() - 0.5) * cellW * jitterMul;
+                    var jitterY = (Math.random() - 0.5) * cellH * jitterMul;
                     var speed = CONFIG.speedMin + Math.random() * (CONFIG.speedMax - CONFIG.speedMin);
                     var angle = Math.random() * Math.PI * 2;
                     nodes.push({
@@ -1464,8 +1467,9 @@
                 for (var i = 0; i < nodes.length; i++) {
                     var n = nodes[i];
                     var drift = computeDrift(n.drift, time);
-                    n.vx = n.baseVx + drift.x * 0.08;
-                    n.vy = n.baseVy + drift.y * 0.08;
+                    var driftMul = isMobile ? 0.025 : 0.08;
+                    n.vx = n.baseVx + drift.x * driftMul;
+                    n.vy = n.baseVy + drift.y * driftMul;
                     var dmx = mouseX - n.x, dmy = mouseY - n.y;
                     var mouseDist = Math.sqrt(dmx * dmx + dmy * dmy);
                     if (mouseDist < CONFIG.attractionRadius && mouseDist > 1) {
@@ -1490,29 +1494,32 @@
             }
 
             function separateLabels() {
-                var labelH = isMobile ? 22 : 38, gap = isMobile ? 4 : 6, push = isMobile ? 1.2 : 0.5, bPad = CONFIG.boundaryPadding;
-                for (var i = 0; i < nodes.length; i++) {
-                    var ni = nodes[i], wi = labels[i].offsetWidth || 100;
-                    var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 16;
-                    var ix2 = ni.x - CONFIG.textOffsetX, iy2 = iy1 + labelH;
-                    for (var j = i + 1; j < nodes.length; j++) {
-                        var nj = nodes[j], wj = labels[j].offsetWidth || 100;
-                        var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 16;
-                        var jx2 = nj.x - CONFIG.textOffsetX, jy2 = jy1 + labelH;
-                        if (ix1 < jx2 + gap && ix2 + gap > jx1 && iy1 < jy2 + gap && iy2 + gap > jy1) {
-                            var dy = ni.y - nj.y;
-                            if (Math.abs(dy) < 1) dy = (i % 2 === 0) ? 1 : -1;
-                            var sign = dy > 0 ? 1 : -1;
-                            ni.y += sign * push; nj.y -= sign * push;
-                            var dx = ni.x - nj.x;
-                            if (Math.abs(dx) < Math.max(wi, wj) * 0.3) {
-                                var signX = dx > 0 ? 1 : -1;
-                                ni.x += signX * push * 0.3; nj.x -= signX * push * 0.3;
+                var labelH = isMobile ? 16 : 38, gap = isMobile ? 3 : 6, push = isMobile ? 2.5 : 0.5, bPad = CONFIG.boundaryPadding;
+                var passes = isMobile ? 3 : 1;
+                for (var p = 0; p < passes; p++) {
+                    for (var i = 0; i < nodes.length; i++) {
+                        var ni = nodes[i], wi = labels[i].offsetWidth || (isMobile ? 70 : 100);
+                        var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 10;
+                        var ix2 = ni.x - CONFIG.textOffsetX, iy2 = iy1 + labelH;
+                        for (var j = i + 1; j < nodes.length; j++) {
+                            var nj = nodes[j], wj = labels[j].offsetWidth || (isMobile ? 70 : 100);
+                            var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 10;
+                            var jx2 = nj.x - CONFIG.textOffsetX, jy2 = jy1 + labelH;
+                            if (ix1 < jx2 + gap && ix2 + gap > jx1 && iy1 < jy2 + gap && iy2 + gap > jy1) {
+                                var dy = ni.y - nj.y;
+                                if (Math.abs(dy) < 1) dy = (i % 2 === 0) ? 1 : -1;
+                                var sign = dy > 0 ? 1 : -1;
+                                ni.y += sign * push; nj.y -= sign * push;
+                                var dx = ni.x - nj.x;
+                                if (Math.abs(dx) < Math.max(wi, wj) * 0.4) {
+                                    var signX = dx > 0 ? 1 : -1;
+                                    ni.x += signX * push * 0.5; nj.x -= signX * push * 0.5;
+                                }
                             }
                         }
+                        ni.x = Math.max(bPad, Math.min(canvasW - bPad, ni.x));
+                        ni.y = Math.max(bPad, Math.min(canvasH - bPad, ni.y));
                     }
-                    ni.x = Math.max(bPad, Math.min(canvasW - bPad, ni.x));
-                    ni.y = Math.max(bPad, Math.min(canvasH - bPad, ni.y));
                 }
             }
 
