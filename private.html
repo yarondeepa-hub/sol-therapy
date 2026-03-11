@@ -376,8 +376,8 @@
             opacity: 0.6;
         }
         .research-stats strong {
-            color: var(--color-green-dark);
-            font-weight: 600;
+            color: var(--color-washi);
+            font-weight: 500;
         }
 
         /* ============================================
@@ -521,13 +521,19 @@
         .gallery-captioned__item--wide {
             grid-column: span 2;
         }
-        .gallery-captioned__item--full {
+        .gallery-captioned__item--fullvideo {
             grid-column: 1 / -1;
             aspect-ratio: 21 / 9;
         }
+        .gallery-captioned__item--fullvideo video {
+            filter: saturate(0.55) contrast(1.1) brightness(0.8);
+        }
+        .gallery-captioned__item--fullvideo:hover video {
+            filter: saturate(0.75) contrast(1.1) brightness(0.88);
+        }
         @media (max-width: 640px) {
             .gallery-captioned__item--wide { grid-column: span 2; }
-            .gallery-captioned__item--full { aspect-ratio: 16 / 9; }
+            .gallery-captioned__item--fullvideo { aspect-ratio: 16 / 9; }
         }
 
         /* ============================================
@@ -614,7 +620,7 @@
         }
 
         /* ============================================
-           ARTIST CONSTELLATION - Star Map Layout
+           ARTIST LINEUP - Plexus Network Animation
         ============================================ */
         .lineup-section {
             background: var(--color-dark-deep);
@@ -623,83 +629,125 @@
             overflow: hidden;
             position: relative;
         }
+        .lineup-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-green), transparent);
+            opacity: 0.3;
+        }
+        .lineup__intro {
+            max-width: 640px;
+            margin: 0 auto clamp(2rem, 3.5vw, 3rem);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .lineup-section.lineup--active .lineup__intro {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .lineup__label {
             font-family: var(--font-english);
             font-weight: 300;
             font-size: 11px;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: #949495;
-            margin-bottom: 0.8rem;
+            color: var(--color-green);
+            opacity: 0.6;
+            margin-bottom: 1.5rem;
         }
-        .lineup__label::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 0.5px;
-            background: rgba(88, 132, 117, 0.3);
-            margin: 0.8rem auto 0;
+        .lineup__intro-text {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-body);
+            line-height: 1.8;
+            opacity: 0.6;
+            max-width: 540px;
+            margin: 0 auto;
         }
-        .star-field {
+        .plexus-header {
+            text-align: center;
+            margin-bottom: 24px;
+            opacity: 0;
+            transition: opacity 1s ease 0.4s;
+        }
+        .lineup-section.lineup--active .plexus-header {
+            opacity: 1;
+        }
+        .plexus-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: rgba(242, 234, 211, 0.4);
+        }
+        .plexus-container {
             position: relative;
             width: 100%;
-            height: 85vh;
-            min-height: 550px;
-            max-height: 700px;
+            height: 600px;
+            background: radial-gradient(ellipse at 50% 50%, #1a1917 0%, var(--color-dark-deep) 70%);
+            border-radius: 2px;
+            overflow: hidden;
         }
-        .star-field canvas {
+        .plexus-canvas {
             position: absolute;
             top: 0; left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
+        }
+        .plexus-labels {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
-            z-index: 1;
         }
-        .star {
+        .node-label {
             position: absolute;
+            top: 0; left: 0;
             font-family: var(--font-display);
-            font-weight: 400;
-            font-size: 1.55rem;
-            letter-spacing: 0.05em;
-            color: var(--color-washi);
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: rgba(242, 234, 211, 0.55);
             white-space: nowrap;
-            user-select: none;
-            cursor: default;
-            z-index: 2;
+            pointer-events: none;
+            transition: color 600ms ease-in-out, text-shadow 600ms ease-in-out;
             will-change: transform;
-            transition: text-shadow 0.5s ease;
+            user-select: none;
+            -webkit-user-select: none;
         }
-        .star:hover {
-            text-shadow: 0 0 20px rgba(196, 149, 106, 0.25);
-        }
-        .star::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -12px;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--color-green);
-            opacity: 0.35;
-            transform: translateY(-50%);
+        .node-label.hovered {
+            color: rgba(242, 234, 211, 0.95);
+            text-shadow: 0 0 12px rgba(184, 149, 107, 0.3);
         }
         .lineup-footnote {
             font-family: var(--font-body);
             font-weight: 300;
             font-style: italic;
-            font-size: 0.8rem;
+            font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
             color: var(--color-beni);
-            opacity: 0.25;
-            margin-top: 1rem;
+            opacity: 0;
+            margin-top: clamp(2rem, 4vw, 3.5rem);
+            transition: opacity 0.8s ease 1s;
+        }
+        .lineup-section.lineup--active .lineup-footnote {
+            opacity: 0.5;
         }
         @media (max-width: 768px) {
-            .star-field { height: 75vh; min-height: 500px; }
-            .star { font-size: 1.1rem; }
+            .plexus-container { height: 500px; }
+            .node-label { font-size: 24px; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .star {
-                opacity: 0.82 !important;
+            .node-label { transition: none; }
+            .lineup__intro,
+            .plexus-header,
+            .lineup-footnote {
+                opacity: 1 !important;
+                transform: none !important;
                 transition: none !important;
             }
         }
@@ -1110,7 +1158,7 @@
                 <h2 class="gallery-captioned__title">מיקומים נבחרים</h2>
             </div>
             <div class="gallery-captioned__grid">
-                <div class="gallery-captioned__item fade-in">
+                <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
                     <img src="assets/events/hr-web/sol-amazon-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב" loading="lazy">
                     <div class="gallery-captioned__caption">סול תרפי עבור הנהלת אמזון במוזיאון תל אביב</div>
                 </div>
@@ -1119,57 +1167,40 @@
                     <div class="gallery-captioned__caption">סול תרפי במרכז סוזן דלל</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy">
-                    <div class="gallery-captioned__caption">סול תרפי בספרייה הלאומית ירושלים</div>
+                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספריה הלאומית ירושלים" loading="lazy">
+                    <div class="gallery-captioned__caption">סול תרפי בספריה הלאומית ירושלים</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
                     <img src="assets/events/hr-web/sol-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy">
                     <div class="gallery-captioned__caption">אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-multi-sensory.jpg" alt="חוויה רב חושית סול תרפי" loading="lazy">
-                    <div class="gallery-captioned__caption">חוויה רב חושית סול תרפי</div>
+                    <picture><source srcset="assets/events/dark-performance.webp" type="image/webp"><img src="assets/events/dark-performance.jpg" alt="מופע מדיטציית סאונד באולם חשוך" loading="lazy" width="1920" height="1080"></picture>
+                    <div class="gallery-captioned__caption">מדיטציה בלב מתחם התרבות</div>
                 </div>
-                <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-desert-movement.jpg" alt="מדיטציה בתנועה יחד עם מואה במדבר" loading="lazy">
-                    <div class="gallery-captioned__caption">מדיטציה בתנועה יחד עם מואה במדבר</div>
-                </div>
-                <div class="gallery-captioned__item gallery-captioned__item--full fade-in">
-                    <video autoplay muted loop playsinline preload="none" poster="assets/events/gallery-wide-bottom-poster.jpg" aria-label="וידאו פנורמי מריטריט מדיטציית סאונד">
-                        <source src="assets/events/gallery-wide-bottom.mp4" type="video/mp4">
-                    </video>
+                <div class="gallery-captioned__item gallery-captioned__item--fullvideo fade-in">
+                    <video poster="assets/events/meditation-hall.jpg" preload="none" autoplay muted loop playsinline aria-label="דוקומנטרי ריטריט מואה - סול תרפי" data-lazy-video="assets/events/moa-documentary.mp4"></video>
+                    <div class="gallery-captioned__caption">ריטריט מואה - סול תרפי</div>
                 </div>
             </div>
         </section>
 
         <!-- ========================================
-             ARTIST CONSTELLATION
+             ARTIST LINEUP
         ======================================== -->
-        <section class="lineup-section" aria-label="קונסטלציית אמנים">
-            <p class="lineup__label">Artists</p>
-
-            <div class="star-field" id="constellation-field">
-                <!-- Canvas constellation lines -->
-                <canvas id="constellation-canvas"></canvas>
-
-                <!-- All 16 artists - equal size, Hebrew only -->
-                <div class="star" style="right: 5%; top: 5%;">אסף אמדורסקי</div>
-                <div class="star" style="right: 55%; top: 3%;">שלומי שבן</div>
-                <div class="star" style="right: 28%; top: 14%;">התזמורת הקאמרית</div>
-                <div class="star" style="right: 68%; top: 15%;">רד אקסס</div>
-                <div class="star" style="right: 10%; top: 26%;">עמרי סמדר</div>
-                <div class="star" style="right: 80%; top: 8%;">יונתן דסקל</div>
-                <div class="star" style="right: 42%; top: 28%;">אסטרל פרוג'קשן</div>
-                <div class="star" style="right: 75%; top: 32%;">עטר מיינר</div>
-                <div class="star" style="right: 20%; top: 40%;">יחזקאל רז</div>
-                <div class="star" style="right: 60%; top: 44%;">רן סלוין</div>
-                <div class="star" style="right: 4%; top: 50%;">אנה הלטה</div>
-                <div class="star" style="right: 85%; top: 50%;">נעה ארגוב</div>
-                <div class="star" style="right: 35%; top: 56%;">יותם אבני</div>
-                <div class="star" style="right: 72%; top: 62%;">יוסי פיין</div>
-                <div class="star" style="right: 15%; top: 65%;">טל פוסמן</div>
-                <div class="star" style="right: 50%; top: 70%;">דור ציפור</div>
+        <section class="lineup-section fade-in" aria-label="ליינאפ אמנים">
+            <div class="lineup__intro">
+                <p class="lineup__label">Lineup</p>
+                <p class="lineup__intro-text">אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים - אנשים שהקדישו את חייהם לחקר התדר והצליל.</p>
             </div>
+
+            <div class="plexus-header"><h3>רשת האמנים שלנו</h3></div>
+            <div class="plexus-container" id="plexusContainer">
+                <canvas class="plexus-canvas" id="plexusCanvas"></canvas>
+                <div class="plexus-labels" id="plexusLabels"></div>
+            </div>
+
+            <p class="lineup-footnote">...ועוד חוקרים, מדעני מוח, נזירים בודהיסטים ומובילי תנועה</p>
         </section>
 
         <!-- ========================================
@@ -1178,8 +1209,9 @@
         <section class="contact-private" id="contact" aria-label="יצירת קשר">
             <div class="fade-in">
                 <p class="contact-private__kicker">Contact</p>
-                <h2 class="contact-private__title">מתאימים את התדר לארגון שלכם</h2>
-                <p class="contact-private__about">בין אם מדובר בסשן ממוקד במשרדי החברה, ובין אם בריטריט עומק באחד מהלוקיישנים הייחודיים שלנו ברחבי הארץ ובחו"ל - בואו נדבר. נשמח לבחון יחד את האופציות ולבנות תוכנית המותאמת אישית לצרכי הצוות שלכם.</p>
+                <h2 class="contact-private__title">צרו איתנו קשר</h2>
+                <p class="contact-private__about">סול תרפי מפיקה אירועי מדיטציית סאונד לארגונים מאז 2022 - במוזיאון תל אביב, מרכז סוזן דלל, הספריה הלאומית ומלון פסטורל. כל מפגש משלב ידע של 2,500 שנה בחקר התודעה עם ממצאי מחקר עדכניים, בהנחיית מדעני מוח ומיטב המוזיקאים בישראל.</p>
+                <p class="contact-private__cta-line">לכל ארגון - תוכנית מותאמת</p>
             </div>
 
             <form class="contact-form fade-in" action="https://formspree.io/f/placeholder" method="POST">
@@ -1270,129 +1302,334 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Artist constellation - floating names with dynamic connection lines
+        // Artist lineup - Plexus Network Animation
         (function() {
-            var canvas = document.getElementById('constellation-canvas');
-            var ctx = canvas.getContext('2d');
-            var field = document.getElementById('constellation-field');
-            var starEls = field.querySelectorAll('.star');
-            if (!starEls.length || !canvas || !field) return;
-
-            var connections = [
-                [0, 2], [1, 2], [2, 6], [3, 7], [0, 4],
-                [5, 3], [6, 8], [7, 11], [4, 8], [8, 12],
-                [9, 13], [10, 14], [12, 15], [6, 9], [11, 13]
+            var ARTISTS = [
+                '\u05D0\u05E1\u05E3 \u05D0\u05DE\u05D3\u05D5\u05E8\u05E1\u05E7\u05D9', '\u05E9\u05DC\u05D5\u05DE\u05D9 \u05E9\u05D1\u05DF', '\u05D4\u05EA\u05D6\u05DE\u05D5\u05E8\u05EA \u05D4\u05E7\u05D0\u05DE\u05E8\u05D9\u05EA', '\u05E8\u05D3 \u05D0\u05E7\u05E1\u05E1',
+                '\u05E2\u05DE\u05E8\u05D9 \u05E1\u05DE\u05D3\u05E8', '\u05D9\u05D5\u05E0\u05EA\u05DF \u05D3\u05E1\u05E7\u05DC', '\u05D0\u05E1\u05D8\u05E8\u05DC \u05E4\u05E8\u05D5\u05D2\'\u05E7\u05E9\u05DF', '\u05E2\u05D8\u05E8 \u05DE\u05D9\u05D9\u05E0\u05E8',
+                '\u05D9\u05D7\u05D6\u05E7\u05DC \u05E8\u05D6', '\u05E8\u05DF \u05E1\u05DC\u05D5\u05D9\u05DF', '\u05D0\u05E0\u05D4 \u05D4\u05DC\u05D8\u05D4', '\u05E0\u05E2\u05D4 \u05D0\u05E8\u05D2\u05D5\u05D1',
+                '\u05D9\u05D5\u05EA\u05DD \u05D0\u05D1\u05E0\u05D9', '\u05D9\u05D5\u05E1\u05D9 \u05E4\u05D9\u05D9\u05DF', '\u05D8\u05DC \u05E4\u05D5\u05E1\u05DE\u05DF', '\u05D3\u05D5\u05E8 \u05E6\u05D9\u05E4\u05D5\u05E8'
             ];
+            var CONFIG = {
+                nodeRadius: 3,
+                nodeFill: 'rgba(184, 149, 107, 0.8)',
+                nodeGlowBlur: 10,
+                nodeGlowColor: 'rgba(184, 149, 107, 0.25)',
+                maxConnectionDist: 320,
+                lineWidth: 1,
+                lineColor: [184, 149, 107],
+                lineMaxOpacity: 0.25,
+                speedMin: 0.08,
+                speedMax: 0.18,
+                boundaryPadding: 100,
+                bounceMultiplier: 0.5,
+                attractionRadius: 120,
+                attractionForce: 0.015,
+                hoverRadius: 60,
+                textOffsetX: 8,
+                connectionRecalcInterval: 2
+            };
 
-            var lineColor = { r: 88, g: 132, b: 117 };
-
-            // Each star gets a drift profile - two sine waves per axis for organic motion
-            var drifts = [];
-            for (var i = 0; i < starEls.length; i++) {
-                drifts.push({
-                    ax: 8 + Math.random() * 12,
-                    ay: 6 + Math.random() * 10,
-                    fx: 0.15 + Math.random() * 0.2,
-                    fy: 0.12 + Math.random() * 0.18,
-                    px: Math.random() * Math.PI * 2,
-                    py: Math.random() * Math.PI * 2,
-                    ax2: 3 + Math.random() * 5,
-                    ay2: 2 + Math.random() * 4,
-                    fx2: 0.08 + Math.random() * 0.12,
-                    fy2: 0.06 + Math.random() * 0.1,
-                    px2: Math.random() * Math.PI * 2,
-                    py2: Math.random() * Math.PI * 2
-                });
+            function createDriftParams() {
+                var layers = [];
+                for (var i = 0; i < 4; i++) {
+                    layers.push({
+                        freqX: 0.0003 + Math.random() * 0.0008,
+                        freqY: 0.0003 + Math.random() * 0.0008,
+                        ampX: 0.3 + Math.random() * 0.5,
+                        ampY: 0.3 + Math.random() * 0.5,
+                        phaseX: Math.random() * Math.PI * 2,
+                        phaseY: Math.random() * Math.PI * 2
+                    });
+                }
+                return layers;
+            }
+            function computeDrift(layers, time) {
+                var dx = 0, dy = 0;
+                for (var i = 0; i < layers.length; i++) {
+                    var l = layers[i];
+                    dx += Math.sin(time * l.freqX + l.phaseX) * l.ampX;
+                    dy += Math.sin(time * l.freqY + l.phaseY) * l.ampY;
+                }
+                return { x: dx, y: dy };
             }
 
-            function resize() {
-                var rect = field.getBoundingClientRect();
-                var dpr = window.devicePixelRatio || 1;
-                canvas.width = rect.width * dpr;
-                canvas.height = rect.height * dpr;
-                canvas.style.width = rect.width + 'px';
-                canvas.style.height = rect.height + 'px';
+            var container = document.getElementById('plexusContainer');
+            if (!container) return;
+            var canvas = document.getElementById('plexusCanvas');
+            var labelsDiv = document.getElementById('plexusLabels');
+            var ctx = canvas.getContext('2d');
+            var nodes = [], labels = [];
+            var mouseX = -9999, mouseY = -9999;
+            var hoveredIndex = -1, frameCount = 0, connections = [];
+            var isVisible = false, isReducedMotion = false;
+            var canvasW = 0, canvasH = 0, dpr = 1, animId = null;
+            var tapHighlightIndex = -1, tapHighlightEnd = 0, isMobile = false, startTime = 0;
+            var plexusStarted = false;
+
+            if (window.matchMedia) {
+                var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+                isReducedMotion = mq.matches;
+                mq.addEventListener('change', function(e) { isReducedMotion = e.matches; });
+            }
+            function checkMobile() { isMobile = window.innerWidth <= 768; }
+            checkMobile();
+
+            function resizeCanvas() {
+                checkMobile();
+                dpr = window.devicePixelRatio || 1;
+                var rect = container.getBoundingClientRect();
+                canvasW = rect.width; canvasH = rect.height;
+                canvas.width = canvasW * dpr; canvas.height = canvasH * dpr;
+                canvas.style.width = canvasW + 'px'; canvas.style.height = canvasH + 'px';
                 ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             }
 
-            function getStarCenter(el) {
-                var fieldRect = field.getBoundingClientRect();
-                var sr = el.getBoundingClientRect();
-                return {
-                    x: sr.left + sr.width / 2 - fieldRect.left,
-                    y: sr.top + sr.height / 2 - fieldRect.top
-                };
-            }
-
-            var time = 0;
-            var running = false;
-
-            function animate() {
-                if (!running) return;
-                time += 0.008;
-
-                var w = canvas.width / (window.devicePixelRatio || 1);
-                var h = canvas.height / (window.devicePixelRatio || 1);
-                ctx.clearRect(0, 0, w, h);
-
-                // Move each star name
-                for (var i = 0; i < starEls.length; i++) {
-                    var d = drifts[i];
-                    var dx = Math.sin(time * d.fx + d.px) * d.ax
-                           + Math.sin(time * d.fx2 + d.px2) * d.ax2;
-                    var dy = Math.cos(time * d.fy + d.py) * d.ay
-                           + Math.cos(time * d.fy2 + d.py2) * d.ay2;
-
-                    starEls[i].style.transform = 'translate(' + dx.toFixed(1) + 'px, ' + dy.toFixed(1) + 'px)';
-
-                    // Breathing opacity
-                    var breath = 0.78 + Math.sin(time * 0.4 + i * 0.6) * 0.12;
-                    starEls[i].style.opacity = breath.toFixed(3);
-                }
-
-                // Draw connection lines
-                connections.forEach(function(pair) {
-                    var a = getStarCenter(starEls[pair[0]]);
-                    var b = getStarCenter(starEls[pair[1]]);
-
-                    var lineBreath = 0.08 + Math.sin(time * 0.5 + pair[0] * 0.3) * 0.03;
-
-                    ctx.beginPath();
-                    ctx.moveTo(a.x, a.y);
-                    ctx.lineTo(b.x, b.y);
-                    ctx.strokeStyle = 'rgba(' + lineColor.r + ',' + lineColor.g + ',' + lineColor.b + ',' + lineBreath.toFixed(3) + ')';
-                    ctx.lineWidth = 0.6;
-                    ctx.stroke();
-
-                    // Small dot at each endpoint
-                    [a, b].forEach(function(pt) {
-                        ctx.beginPath();
-                        ctx.arc(pt.x, pt.y, 1.5, 0, Math.PI * 2);
-                        ctx.fillStyle = 'rgba(' + lineColor.r + ',' + lineColor.g + ',' + lineColor.b + ',' + (lineBreath * 2.5).toFixed(3) + ')';
-                        ctx.fill();
+            function initNodes() {
+                nodes = []; labels = []; labelsDiv.innerHTML = '';
+                var pad = CONFIG.boundaryPadding + 30;
+                var cols = 4, rows = 4;
+                var cellW = (canvasW - pad * 2) / cols;
+                var cellH = (canvasH - pad * 2) / rows;
+                for (var i = 0; i < ARTISTS.length; i++) {
+                    var col = i % cols, row = Math.floor(i / cols);
+                    var cx = pad + cellW * col + cellW * 0.5;
+                    var cy = pad + cellH * row + cellH * 0.5;
+                    var jitterX = (Math.random() - 0.5) * cellW * 0.6;
+                    var jitterY = (Math.random() - 0.5) * cellH * 0.6;
+                    var speed = CONFIG.speedMin + Math.random() * (CONFIG.speedMax - CONFIG.speedMin);
+                    var angle = Math.random() * Math.PI * 2;
+                    nodes.push({
+                        x: cx + jitterX, y: cy + jitterY,
+                        baseVx: Math.cos(angle) * speed, baseVy: Math.sin(angle) * speed,
+                        vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+                        drift: createDriftParams(), speed: speed
                     });
-                });
-
-                requestAnimationFrame(animate);
+                    var span = document.createElement('span');
+                    span.className = 'node-label';
+                    span.textContent = ARTISTS[i];
+                    labelsDiv.appendChild(span);
+                    labels.push(span);
+                }
             }
 
-            // Only animate when section is visible (performance)
-            var constellationObserver = new IntersectionObserver(function(entries) {
+            function calcConnections() {
+                connections = [];
+                var maxDist = CONFIG.maxConnectionDist, maxDistSq = maxDist * maxDist;
+                for (var i = 0; i < nodes.length; i++) {
+                    for (var j = i + 1; j < nodes.length; j++) {
+                        var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+                        var distSq = dx * dx + dy * dy;
+                        if (distSq < maxDistSq) {
+                            var dist = Math.sqrt(distSq);
+                            connections.push({ a: i, b: j, dist: dist, opacity: CONFIG.lineMaxOpacity * (1 - dist / maxDist) });
+                        }
+                    }
+                }
+            }
+
+            function updateNodes(time) {
+                var pad = CONFIG.boundaryPadding;
+                for (var i = 0; i < nodes.length; i++) {
+                    var n = nodes[i];
+                    var drift = computeDrift(n.drift, time);
+                    n.vx = n.baseVx + drift.x * 0.08;
+                    n.vy = n.baseVy + drift.y * 0.08;
+                    var dmx = mouseX - n.x, dmy = mouseY - n.y;
+                    var mouseDist = Math.sqrt(dmx * dmx + dmy * dmy);
+                    if (mouseDist < CONFIG.attractionRadius && mouseDist > 1) {
+                        var force = CONFIG.attractionForce * (1 - mouseDist / CONFIG.attractionRadius);
+                        n.vx += (dmx / mouseDist) * force;
+                        n.vy += (dmy / mouseDist) * force;
+                    }
+                    var vel = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+                    var maxVel = CONFIG.speedMax * 1.5;
+                    if (vel > maxVel) { n.vx = (n.vx / vel) * maxVel; n.vy = (n.vy / vel) * maxVel; }
+                    n.x += n.vx; n.y += n.vy;
+                    if (n.x < pad) { n.x = pad; n.vx = Math.abs(n.vx) * CONFIG.bounceMultiplier; n.baseVx = Math.abs(n.baseVx) * CONFIG.bounceMultiplier; }
+                    else if (n.x > canvasW - pad) { n.x = canvasW - pad; n.vx = -Math.abs(n.vx) * CONFIG.bounceMultiplier; n.baseVx = -Math.abs(n.baseVx) * CONFIG.bounceMultiplier; }
+                    if (n.y < pad) { n.y = pad; n.vy = Math.abs(n.vy) * CONFIG.bounceMultiplier; n.baseVy = Math.abs(n.baseVy) * CONFIG.bounceMultiplier; }
+                    else if (n.y > canvasH - pad) { n.y = canvasH - pad; n.vy = -Math.abs(n.vy) * CONFIG.bounceMultiplier; n.baseVy = -Math.abs(n.baseVy) * CONFIG.bounceMultiplier; }
+                    if (frameCount % 300 === 0) {
+                        var newAngle = Math.atan2(n.baseVy, n.baseVx) + (Math.random() - 0.5) * 0.3;
+                        n.baseVx = Math.cos(newAngle) * n.speed;
+                        n.baseVy = Math.sin(newAngle) * n.speed;
+                    }
+                }
+            }
+
+            function separateLabels() {
+                var labelH = 38, gap = 6, push = 0.5, bPad = CONFIG.boundaryPadding;
+                for (var i = 0; i < nodes.length; i++) {
+                    var ni = nodes[i], wi = labels[i].offsetWidth || 100;
+                    var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 16;
+                    var ix2 = ni.x - CONFIG.textOffsetX, iy2 = iy1 + labelH;
+                    for (var j = i + 1; j < nodes.length; j++) {
+                        var nj = nodes[j], wj = labels[j].offsetWidth || 100;
+                        var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 16;
+                        var jx2 = nj.x - CONFIG.textOffsetX, jy2 = jy1 + labelH;
+                        if (ix1 < jx2 + gap && ix2 + gap > jx1 && iy1 < jy2 + gap && iy2 + gap > jy1) {
+                            var dy = ni.y - nj.y;
+                            if (Math.abs(dy) < 1) dy = (i % 2 === 0) ? 1 : -1;
+                            var sign = dy > 0 ? 1 : -1;
+                            ni.y += sign * push; nj.y -= sign * push;
+                            var dx = ni.x - nj.x;
+                            if (Math.abs(dx) < Math.max(wi, wj) * 0.3) {
+                                var signX = dx > 0 ? 1 : -1;
+                                ni.x += signX * push * 0.3; nj.x -= signX * push * 0.3;
+                            }
+                        }
+                    }
+                    ni.x = Math.max(bPad, Math.min(canvasW - bPad, ni.x));
+                    ni.y = Math.max(bPad, Math.min(canvasH - bPad, ni.y));
+                }
+            }
+
+            function updateHover() {
+                hoveredIndex = -1;
+                var closestDist = CONFIG.hoverRadius;
+                for (var i = 0; i < nodes.length; i++) {
+                    var dx = mouseX - nodes[i].x, dy = mouseY - nodes[i].y;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < closestDist) { closestDist = dist; hoveredIndex = i; }
+                }
+                var now = performance.now();
+                if (tapHighlightIndex >= 0 && now < tapHighlightEnd) { hoveredIndex = tapHighlightIndex; } else { tapHighlightIndex = -1; }
+                for (var j = 0; j < labels.length; j++) {
+                    if (j === hoveredIndex) { if (!labels[j].classList.contains('hovered')) labels[j].classList.add('hovered'); }
+                    else { if (labels[j].classList.contains('hovered')) labels[j].classList.remove('hovered'); }
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvasW, canvasH);
+                var lc = CONFIG.lineColor;
+                ctx.lineWidth = CONFIG.lineWidth; ctx.lineCap = 'round';
+                for (var c = 0; c < connections.length; c++) {
+                    var conn = connections[c], a = nodes[conn.a], b = nodes[conn.b];
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(' + lc[0] + ',' + lc[1] + ',' + lc[2] + ',' + conn.opacity.toFixed(4) + ')';
+                    ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+                }
+                ctx.shadowBlur = CONFIG.nodeGlowBlur; ctx.shadowColor = CONFIG.nodeGlowColor;
+                ctx.fillStyle = CONFIG.nodeFill;
+                for (var i = 0; i < nodes.length; i++) {
+                    ctx.beginPath(); ctx.arc(nodes[i].x, nodes[i].y, CONFIG.nodeRadius, 0, Math.PI * 2); ctx.fill();
+                }
+                ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
+                for (var j = 0; j < nodes.length; j++) {
+                    var n = nodes[j];
+                    var lw = labels[j].offsetWidth || 80;
+                    var lx = n.x - lw - CONFIG.textOffsetX;
+                    if (lx < 4) lx = 4;
+                    if (lx + lw > canvasW - 4) lx = canvasW - lw - 4;
+                    var ly = n.y - 12;
+                    if (ly < 2) ly = 2;
+                    if (ly + 24 > canvasH - 2) ly = canvasH - 26;
+                    labels[j].style.transform = 'translate(' + lx.toFixed(1) + 'px, ' + ly.toFixed(1) + 'px)';
+                }
+            }
+
+            function animate(timestamp) {
+                if (!isVisible) { animId = requestAnimationFrame(animate); return; }
+                if (isReducedMotion) { calcConnections(); draw(); return; }
+                if (!startTime) startTime = timestamp;
+                var elapsed = timestamp - startTime;
+                frameCount++;
+                updateNodes(elapsed);
+                separateLabels();
+                if (frameCount % CONFIG.connectionRecalcInterval === 0) calcConnections();
+                updateHover(); draw();
+                animId = requestAnimationFrame(animate);
+            }
+
+            function onMouseMove(e) { var rect = container.getBoundingClientRect(); mouseX = e.clientX - rect.left; mouseY = e.clientY - rect.top; }
+            function onMouseLeave() { mouseX = -9999; mouseY = -9999; }
+            function onTouchStart(e) {
+                if (e.touches.length > 0) {
+                    var rect = container.getBoundingClientRect();
+                    mouseX = e.touches[0].clientX - rect.left; mouseY = e.touches[0].clientY - rect.top;
+                    var closestDist = CONFIG.hoverRadius, closestIdx = -1;
+                    for (var i = 0; i < nodes.length; i++) {
+                        var dx = mouseX - nodes[i].x, dy = mouseY - nodes[i].y;
+                        var dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < closestDist) { closestDist = dist; closestIdx = i; }
+                    }
+                    if (closestIdx >= 0) { tapHighlightIndex = closestIdx; tapHighlightEnd = performance.now() + 3000; }
+                }
+            }
+            function onTouchMove(e) {
+                if (e.touches.length > 0) { var rect = container.getBoundingClientRect(); mouseX = e.touches[0].clientX - rect.left; mouseY = e.touches[0].clientY - rect.top; }
+            }
+            function onTouchEnd() { mouseX = -9999; mouseY = -9999; }
+
+            var resizeTimer;
+            function onResize() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    var oldW = canvasW, oldH = canvasH;
+                    resizeCanvas();
+                    if (oldW > 0 && oldH > 0) {
+                        var scaleX = canvasW / oldW, scaleY = canvasH / oldH;
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].x *= scaleX; nodes[i].y *= scaleY;
+                            nodes[i].x = Math.max(CONFIG.boundaryPadding, Math.min(canvasW - CONFIG.boundaryPadding, nodes[i].x));
+                            nodes[i].y = Math.max(CONFIG.boundaryPadding, Math.min(canvasH - CONFIG.boundaryPadding, nodes[i].y));
+                        }
+                    }
+                    calcConnections();
+                    if (isReducedMotion) draw();
+                }, 150);
+            }
+
+            function startPlexus() {
+                if (plexusStarted) return;
+                plexusStarted = true;
+                resizeCanvas(); initNodes(); calcConnections();
+                container.addEventListener('mousemove', onMouseMove);
+                container.addEventListener('mouseleave', onMouseLeave);
+                container.addEventListener('touchstart', onTouchStart, { passive: true });
+                container.addEventListener('touchmove', onTouchMove, { passive: true });
+                container.addEventListener('touchend', onTouchEnd);
+                window.addEventListener('resize', onResize);
+                if (isReducedMotion) { draw(); } else { animId = requestAnimationFrame(animate); }
+            }
+
+            // Scroll-triggered: activate section + start plexus on visibility
+            var lineupSection = document.querySelector('.lineup-section');
+            if (lineupSection) {
+                var plexusObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('lineup--active');
+                            isVisible = true;
+                            startPlexus();
+                        } else {
+                            isVisible = false;
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                plexusObserver.observe(lineupSection);
+            }
+        })();
+
+        // Lazy-load video when scrolled into view
+        var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+        if (lazyVideos.length && 'IntersectionObserver' in window) {
+            var videoObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
-                    if (entry.isIntersecting && !running) {
-                        running = true;
-                        resize();
-                        animate();
-                    } else if (!entry.isIntersecting) {
-                        running = false;
+                    if (entry.isIntersecting) {
+                        var video = entry.target;
+                        video.src = video.getAttribute('data-lazy-video');
+                        video.removeAttribute('data-lazy-video');
+                        video.load();
+                        video.play().catch(function() {});
+                        videoObserver.unobserve(video);
                     }
                 });
-            }, { threshold: 0.05 });
-            constellationObserver.observe(field);
-
-            resize();
-            window.addEventListener('resize', resize);
-        })();
+            }, { rootMargin: '200px' });
+            lazyVideos.forEach(function(video) { videoObserver.observe(video); });
+        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
