@@ -565,7 +565,7 @@
                 flex-shrink: 0;
             }
             .gallery-captioned__item video {
-                aspect-ratio: auto;
+                aspect-ratio: 4 / 3;
             }
             .gallery-captioned__caption {
                 position: static;
@@ -786,11 +786,11 @@
         }
         @media (max-width: 768px) {
             .plexus-container { height: 620px; }
-            .node-label { font-size: 15px; letter-spacing: 0.01em; }
+            .node-label { font-size: 17px; letter-spacing: 0.01em; }
         }
         @media (max-width: 480px) {
             .plexus-container { height: 580px; }
-            .node-label { font-size: 14px; }
+            .node-label { font-size: 16px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .node-label { transition: none; }
@@ -1154,13 +1154,13 @@
                     <img class="event-card__icon" src="assets/events/icons/icon-workshop.png" alt="" loading="lazy" width="64" height="64">
                     <p class="event-card__number">01</p>
                     <h3 class="event-card__title">סדנאות במשרד</h3>
-                    <p class="event-card__desc">אנו מגיעים אליכם עם סט-אפ סאונד מקצועי ומזרוני שכיבה - והמשרד הופך למרחב מדיטציה. סשנים של 60 עד 90 דקות, מותאמים למספר המשתתפים ולמטרות הארגון. מוזיקאי מוביל מנחה מדיטציית סאונד בשכיבה - תהליך שמאפשר לצוותים לרדת מההילוך הגבוה ולחזור לעבודה עם בהירות מחודשת.</p>
+                    <p class="event-card__desc">אנו מגיעים אליכם עם סט-אפ סאונד מקצועי, מזרוני שכיבה ומדריך מדיטציה מנוסה - החלל המיועד במשרד הופך למרחב מדיטציה. סשנים של 60 עד 90 דקות, מותאמים למספר המשתתפים ולמטרות הארגון. מוזיקאי מוביל מנחה מדיטציית סאונד בשכיבה - תהליך שמאפשר לצוותים לרדת מההילוך הגבוה ולחזור לעבודה עם בהירות מחודשת.</p>
                 </div>
                 <div class="event-card fade-in">
                     <img class="event-card__icon" src="assets/events/icons/icon-outdoor.png" alt="" loading="lazy" width="64" height="64">
                     <p class="event-card__number">02</p>
                     <h3 class="event-card__title">אירוע חוץ</h3>
-                    <p class="event-card__desc">גיבוש צוות שלא נשמע כמו גיבוש צוות. אנו מתאימים מיקומים מיוחדים בטבע - מחופי הכנרת ועד מדבר הנגב - ויוצרים בהם חלל של מדיטציית סאונד עמוקה, מוקף בנוף פתוח. חוויה שנשארת עם המשתתפים הרבה אחרי שחזרו למשרד.</p>
+                    <p class="event-card__desc">אנחנו מתאימים מיקומים מיוחדים במוסדות תרבות מובילים או בטבע - מחופי הכנרת ועד מדבר הנגב - ובונים תוכניה מלאה מדיטציית סאונד עמוקה לצד הרצאות וסדנאות ממיטב אנשי הרוח בישראל חוקרים ומדענים מובילים. חוויה הולסטית שנשארת עם המשתתפים הרבה אחרי שחזרו למשרד.</p>
                 </div>
                 <div class="event-card fade-in">
                     <img class="event-card__icon" src="assets/events/icons/icon-dayretreat.png" alt="" loading="lazy" width="64" height="64">
@@ -1355,7 +1355,7 @@
                 '\u05D0\u05E1\u05E3 \u05D0\u05DE\u05D3\u05D5\u05E8\u05E1\u05E7\u05D9', '\u05E9\u05DC\u05D5\u05DE\u05D9 \u05E9\u05D1\u05DF', '\u05D4\u05EA\u05D6\u05DE\u05D5\u05E8\u05EA \u05D4\u05E7\u05D0\u05DE\u05E8\u05D9\u05EA', '\u05E8\u05D3 \u05D0\u05E7\u05E1\u05E1',
                 '\u05E2\u05DE\u05E8\u05D9 \u05E1\u05DE\u05D3\u05E8', '\u05D9\u05D5\u05E0\u05EA\u05DF \u05D3\u05E1\u05E7\u05DC', '\u05D0\u05E1\u05D8\u05E8\u05DC \u05E4\u05E8\u05D5\u05D2\'\u05E7\u05E9\u05DF', '\u05E2\u05D8\u05E8 \u05DE\u05D9\u05D9\u05E0\u05E8',
                 '\u05D9\u05D7\u05D6\u05E7\u05DC \u05E8\u05D6', '\u05E8\u05DF \u05E1\u05DC\u05D5\u05D9\u05DF', '\u05D0\u05E0\u05D4 \u05D4\u05DC\u05D8\u05D4', '\u05E0\u05E2\u05D4 \u05D0\u05E8\u05D2\u05D5\u05D1',
-                '\u05D9\u05D5\u05EA\u05DD \u05D0\u05D1\u05E0\u05D9', '\u05D9\u05D5\u05E1\u05D9 \u05E4\u05D9\u05D9\u05DF', '\u05D8\u05DC \u05E4\u05D5\u05E1\u05DE\u05DF', '\u05D3\u05D5\u05E8 \u05E6\u05D9\u05E4\u05D5\u05E8'
+                '\u05D9\u05D5\u05EA\u05DD \u05D0\u05D1\u05E0\u05D9', '\u05D9\u05D5\u05E1\u05D9 \u05E4\u05D9\u05D9\u05DF', '\u05D8\u05DC \u05E4\u05D5\u05E1\u05DE\u05DF', '\u05D3\u05D5\u05E8 \u05E6\u05D9\u05E4\u05D5\u05E8\u05D9'
             ];
             var CONFIG = {
                 nodeRadius: 3,
