@@ -1718,106 +1718,7 @@
             }
         }
 
-        /* ============================================
-           ARTISTS CONSTELLATION
-        ============================================ */
-        .artists-constellation {
-            background: var(--color-dark-deep);
-            padding: var(--space-l) var(--gutter);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .artists-constellation .lineup__label {
-            text-align: center;
-            font-family: var(--font-english);
-            font-weight: 300;
-            font-size: 11px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: #949495;
-            margin-bottom: 0.8rem;
-        }
-
-        .artists-constellation .lineup__label::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 0.5px;
-            background: rgba(88, 132, 117, 0.3);
-            margin: 0.8rem auto 0;
-        }
-
-        .star-field {
-            position: relative;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            height: clamp(450px, 70vh, 650px);
-        }
-
-        .star-field svg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .star-field svg line {
-            stroke: rgba(88, 132, 117, 0.12);
-            stroke-width: 0.5;
-        }
-
-        .star-name {
-            position: absolute;
-            font-family: var(--font-display);
-            font-weight: 400;
-            font-size: 1.55rem;
-            letter-spacing: 0.05em;
-            color: var(--color-washi);
-            white-space: nowrap;
-            user-select: none;
-            cursor: default;
-            z-index: 2;
-            transition: text-shadow 0.5s ease, opacity 0.4s ease;
-        }
-
-        .star-name:hover {
-            text-shadow: 0 0 20px rgba(196, 149, 106, 0.25);
-        }
-
-        .star-name::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -12px;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--color-green);
-            opacity: 0.35;
-            transform: translateY(-50%);
-        }
-
-        .constellation-footnote {
-            text-align: center;
-            font-weight: 300;
-            font-style: italic;
-            font-size: 0.8rem;
-            color: var(--color-beni);
-            opacity: 0.25;
-            margin-top: 1rem;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            .star-name { font-size: 1.05rem; }
-            .star-field { height: clamp(380px, 65vh, 500px); }
-        }
+        /* ARTISTS ROLL - removed, pending redesign */
 
         /* ============================================
            PARTNERS SECTION
@@ -2468,35 +2369,7 @@
             </div>
         </section>
 
-        <!-- ========================================
-             ARTISTS CONSTELLATION
-        ======================================== -->
-        <section class="artists-constellation dissolve-from-dark" id="artists" aria-label="אמנים">
-            <p class="lineup__label fade-in">Artists</p>
-
-            <div class="star-field fade-in" id="starField">
-                <svg id="constellationLines"></svg>
-
-                <div class="star-name" style="right: 5%; top: 5%;">אסף אמדורסקי</div>
-                <div class="star-name" style="right: 55%; top: 3%;">שלומי שבן</div>
-                <div class="star-name" style="right: 28%; top: 14%;">התזמורת הקאמרית</div>
-                <div class="star-name" style="right: 68%; top: 15%;">רד אקסס</div>
-                <div class="star-name" style="right: 10%; top: 26%;">עמרי סמדר</div>
-                <div class="star-name" style="right: 80%; top: 8%;">יונתן דסקל</div>
-                <div class="star-name" style="right: 42%; top: 28%;">אסטרל פרוג'קשן</div>
-                <div class="star-name" style="right: 75%; top: 32%;">עטר מיינר</div>
-                <div class="star-name" style="right: 20%; top: 40%;">יחזקאל רז</div>
-                <div class="star-name" style="right: 60%; top: 44%;">רן סלוין</div>
-                <div class="star-name" style="right: 4%; top: 50%;">אנה הלטה</div>
-                <div class="star-name" style="right: 85%; top: 50%;">נעה ארגוב</div>
-                <div class="star-name" style="right: 35%; top: 56%;">יותם אבני</div>
-                <div class="star-name" style="right: 72%; top: 62%;">יוסי פיין</div>
-                <div class="star-name" style="right: 15%; top: 65%;">טל פוסמן</div>
-                <div class="star-name" style="right: 50%; top: 70%;">דור ציפור</div>
-            </div>
-
-            <p class="constellation-footnote fade-in">...ועוד חוקרים, מדעני מוח, נזירים בודהיסטים ומובילי תנועה</p>
-        </section>
+        <!-- ARTISTS ROLL - removed, pending redesign -->
 
         <!-- ========================================
              PARTNERS
@@ -3029,50 +2902,7 @@
                 }
             }
 
-        // ========================================
-        // ARTISTS CONSTELLATION
-        // ========================================
-        (function() {
-            var field = document.getElementById('starField');
-            if (!field) return;
-            var stars = field.querySelectorAll('.star-name');
-            var svg = document.getElementById('constellationLines');
-
-            var connections = [
-                [0, 2], [1, 2], [2, 6], [3, 7], [0, 4],
-                [5, 3], [6, 8], [7, 11], [4, 8], [8, 12],
-                [9, 13], [10, 14], [12, 15], [6, 9], [11, 13]
-            ];
-
-            function drawLines() {
-                svg.innerHTML = '';
-                var fr = field.getBoundingClientRect();
-                connections.forEach(function(p) {
-                    var a = stars[p[0]], b = stars[p[1]];
-                    if (!a || !b) return;
-                    var ar = a.getBoundingClientRect(), br = b.getBoundingClientRect();
-                    var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                    line.setAttribute('x1', ar.left + ar.width/2 - fr.left);
-                    line.setAttribute('y1', ar.top + ar.height/2 - fr.top);
-                    line.setAttribute('x2', br.left + br.width/2 - fr.left);
-                    line.setAttribute('y2', br.top + br.height/2 - fr.top);
-                    svg.appendChild(line);
-                });
-            }
-
-            drawLines();
-            window.addEventListener('resize', drawLines);
-
-            var t = 0;
-            function breathe() {
-                t += 0.003;
-                stars.forEach(function(s, i) {
-                    s.style.opacity = (0.82 + Math.sin(t * 0.3 + i * 0.5) * 0.08).toFixed(3);
-                });
-                requestAnimationFrame(breathe);
-            }
-            breathe();
-        })();
+        // ARTISTS ROLL - removed, pending redesign
 
         // ========================================
         // BLOG FEED ANIMATIONS
