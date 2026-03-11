@@ -763,12 +763,12 @@
             opacity: 0.5;
         }
         @media (max-width: 768px) {
-            .plexus-container { height: 600px; }
-            .node-label { font-size: 12px; letter-spacing: 0; }
+            .plexus-container { height: 620px; }
+            .node-label { font-size: 13px; letter-spacing: 0.01em; }
         }
         @media (max-width: 480px) {
-            .plexus-container { height: 560px; }
-            .node-label { font-size: 11px; }
+            .plexus-container { height: 580px; }
+            .node-label { font-size: 12px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .node-label { transition: none; }
@@ -1410,25 +1410,25 @@
                 nodes = []; labels = []; labelsDiv.innerHTML = '';
                 var activeArtists = ARTISTS;
                 if (isMobile) {
-                    CONFIG.boundaryPadding = 20;
-                    CONFIG.maxConnectionDist = 140;
-                    CONFIG.speedMin = 0.03;
-                    CONFIG.speedMax = 0.07;
+                    CONFIG.boundaryPadding = 30;
+                    CONFIG.maxConnectionDist = 120;
+                    CONFIG.speedMin = 0.05;
+                    CONFIG.speedMax = 0.11;
                 } else {
                     CONFIG.boundaryPadding = 100;
                     CONFIG.maxConnectionDist = 320;
                     CONFIG.speedMin = 0.08;
                     CONFIG.speedMax = 0.18;
                 }
-                var pad = CONFIG.boundaryPadding + (isMobile ? 5 : 30);
-                var cols = isMobile ? 2 : 4, rows = isMobile ? 8 : 4;
+                var pad = CONFIG.boundaryPadding + (isMobile ? 8 : 30);
+                var cols = 4, rows = 4;
                 var cellW = (canvasW - pad * 2) / cols;
                 var cellH = (canvasH - pad * 2) / rows;
                 for (var i = 0; i < activeArtists.length; i++) {
                     var col = i % cols, row = Math.floor(i / cols);
                     var cx = pad + cellW * col + cellW * 0.5;
                     var cy = pad + cellH * row + cellH * 0.5;
-                    var jitterMul = isMobile ? 0.25 : 0.6;
+                    var jitterMul = isMobile ? 0.4 : 0.6;
                     var jitterX = (Math.random() - 0.5) * cellW * jitterMul;
                     var jitterY = (Math.random() - 0.5) * cellH * jitterMul;
                     var speed = CONFIG.speedMin + Math.random() * (CONFIG.speedMax - CONFIG.speedMin);
@@ -1467,7 +1467,7 @@
                 for (var i = 0; i < nodes.length; i++) {
                     var n = nodes[i];
                     var drift = computeDrift(n.drift, time);
-                    var driftMul = isMobile ? 0.025 : 0.08;
+                    var driftMul = isMobile ? 0.04 : 0.08;
                     n.vx = n.baseVx + drift.x * driftMul;
                     n.vy = n.baseVy + drift.y * driftMul;
                     var dmx = mouseX - n.x, dmy = mouseY - n.y;
@@ -1494,16 +1494,16 @@
             }
 
             function separateLabels() {
-                var labelH = isMobile ? 16 : 38, gap = isMobile ? 3 : 6, push = isMobile ? 2.5 : 0.5, bPad = CONFIG.boundaryPadding;
+                var labelH = isMobile ? 20 : 38, gap = isMobile ? 4 : 6, push = isMobile ? 1.8 : 0.5, bPad = CONFIG.boundaryPadding;
                 var passes = isMobile ? 3 : 1;
                 for (var p = 0; p < passes; p++) {
                     for (var i = 0; i < nodes.length; i++) {
-                        var ni = nodes[i], wi = labels[i].offsetWidth || (isMobile ? 70 : 100);
-                        var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 10;
+                        var ni = nodes[i], wi = labels[i].offsetWidth || 100;
+                        var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 14;
                         var ix2 = ni.x - CONFIG.textOffsetX, iy2 = iy1 + labelH;
                         for (var j = i + 1; j < nodes.length; j++) {
-                            var nj = nodes[j], wj = labels[j].offsetWidth || (isMobile ? 70 : 100);
-                            var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 10;
+                            var nj = nodes[j], wj = labels[j].offsetWidth || 100;
+                            var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 14;
                             var jx2 = nj.x - CONFIG.textOffsetX, jy2 = jy1 + labelH;
                             if (ix1 < jx2 + gap && ix2 + gap > jx1 && iy1 < jy2 + gap && iy2 + gap > jy1) {
                                 var dy = ni.y - nj.y;
@@ -1511,9 +1511,9 @@
                                 var sign = dy > 0 ? 1 : -1;
                                 ni.y += sign * push; nj.y -= sign * push;
                                 var dx = ni.x - nj.x;
-                                if (Math.abs(dx) < Math.max(wi, wj) * 0.4) {
+                                if (Math.abs(dx) < Math.max(wi, wj) * 0.3) {
                                     var signX = dx > 0 ? 1 : -1;
-                                    ni.x += signX * push * 0.5; nj.x -= signX * push * 0.5;
+                                    ni.x += signX * push * 0.4; nj.x -= signX * push * 0.4;
                                 }
                             }
                         }
