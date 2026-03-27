@@ -248,7 +248,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: saturate(0.5) contrast(1.05) brightness(0.50);
+            filter: saturate(0.85) contrast(1.05) brightness(0.62);
         }
         .hero-private__content {
             position: relative;
@@ -1093,7 +1093,7 @@
         <!-- ========================================
              HERO
         ======================================== -->
-        <section class="hero-private" aria-label="סול תרפי לארגונים">
+        <section class="hero-private" aria-label="סול תרפי לארגונים וחברות">
             <div class="hero-private__bg">
                 <picture>
                     <source srcset="assets/events/museum-wide.webp" type="image/webp">
@@ -1102,8 +1102,19 @@
             </div>
             <div class="hero-private__content fade-in">
                 <p class="hero-private__kicker">Corporate Programs</p>
-                <h1 class="hero-private__title">סול תרפי לארגונים</h1>
+                <h1 class="hero-private__title">סול תרפי לארגונים וחברות</h1>
                 <p class="hero-private__subtitle">חוויות מדיטציית סאונד יוצאות דופן בהנחיית בכירי המוזיקאים בישראל. המפגשים שלנו מחברים בין חוכמה של 2,500 שנה בחקר התודעה, לבין המדע העדכני ביותר ממעבדות המוח המובילות בעולם. אנו מעצבים מרחבי שקט עבור ארגונים שלא מתפשרים על רווחת העובדים שלהם, ומבינים שחוסן אמיתי דורש הרבה יותר מעוד הפסקה בלוח הזמנים.</p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             ARTIST LINEUP
+        ======================================== -->
+        <section class="lineup-section fade-in" aria-label="ליינאפ אמנים">
+            <div class="plexus-header"><h3>רשת האמנים שלנו</h3></div>
+            <div class="plexus-container" id="plexusContainer">
+                <canvas class="plexus-canvas" id="plexusCanvas"></canvas>
+                <div class="plexus-labels" id="plexusLabels"></div>
             </div>
         </section>
 
@@ -1247,17 +1258,6 @@
                     <video poster="assets/events/meditation-hall.jpg" preload="none" autoplay muted loop playsinline aria-label="דוקומנטרי ריטריט מואה - סול תרפי" data-lazy-video="assets/events/moa-documentary.mp4"></video>
                     <div class="gallery-captioned__caption">ריטריט מואה - סול תרפי</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             ARTIST LINEUP
-        ======================================== -->
-        <section class="lineup-section fade-in" aria-label="ליינאפ אמנים">
-            <div class="plexus-header"><h3>רשת האמנים שלנו</h3></div>
-            <div class="plexus-container" id="plexusContainer">
-                <canvas class="plexus-canvas" id="plexusCanvas"></canvas>
-                <div class="plexus-labels" id="plexusLabels"></div>
             </div>
         </section>
 
