@@ -122,10 +122,10 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "מה זה סאונד הילינג ואיך זה מתאים לסביבה ארגונית?",
+                "name": "מה זה מדיטציית סאונד / סאונד הילינג? ואיך זה מתאים לסביבה ארגונית?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "סאונד הילינג הוא שימוש בצלילים מרפאים ומוזיקה ככלי להרחבת תודעה וצלילה למצבים מדיטטיביים עמוקים. מחקרים מראים שגירויים שמיעתיים מפעילים מערכות נוירוכימיות שלמות במוח ומשפיעים על אזורים שקשורים לוויסות רגשי ולהפחתת מתח. בסביבה ארגונית, סשן מדיטציית סאונד מאפשר לעובדים חוויית הרפיה עמוקה בזמן קצר, בלי צורך בניסיון קודם."
+                    "text": "מדיטציית סאונד משתמשת במוזיקה ככלי להרחבת תודעה וצלילה למצבים מדיטטיביים עמוקים - המוזיקה מורכבת ומנוגנת מידי אמנים ומוזיקאים מהשורה הראשונה בארץ ובעולם. מחקרים מראים שגירויים שמיעתיים מפעילים מערכות נוירוכימיות שלמות במוח - דופמין, קורטיזול, אוקסיטוצין - ומשפיעים על אזורים שקשורים לוויסות רגשי ולהפחתת מתח. בסביבה ארגונית, סשן מדיטציית סאונד מאפשר לעובדים חוויית הרפיה עמוקה בזמן קצר, בלי צורך בניסיון קודם - בשונה ממדיטציה רגילה שמצריכה תהליך הדרכה ארוך והדרגתי של חודשים."
                 }
             },
             {
@@ -1530,6 +1530,71 @@
         </section>
 
         <!-- ========================================
+             CONTACT
+        ======================================== -->
+        <section class="contact-private" id="contact" aria-label="יצירת קשר">
+            <div class="fade-in">
+                <p class="contact-private__kicker">Contact</p>
+                <h2 class="contact-private__title">מתאימים את התדר לארגון שלכם</h2>
+                <p class="contact-private__about">בין אם מדובר בסשן ממוקד במשרדי החברה, ובין אם בריטריט עומק באחד מהלוקיישנים הייחודיים שלנו ברחבי הארץ ובחו"ל - בואו נדבר. נשמח לבחון יחד את האופציות ולבנות תוכנית המותאמת אישית לצרכי הצוות שלכם.</p>
+            </div>
+
+            <form class="contact-form fade-in" id="corporateForm" onsubmit="return handleCorporateForm(event)">
+                <div class="contact-form__row">
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="name">שם מלא</label>
+                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="שם מלא" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="org">ארגון</label>
+                        <input type="text" id="org" name="organization" class="contact-form__input" placeholder="שם הארגון" required>
+                    </div>
+                </div>
+                <div class="contact-form__row">
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="email">אימייל</label>
+                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="your@email.com" dir="ltr" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="050-0000000" dir="ltr">
+                    </div>
+                </div>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="message">ספרו לנו בקצרה</label>
+                    <textarea id="message" name="message" class="contact-form__textarea" placeholder="מה אתם מחפשים - סוג האירוע, מספר משתתפים, מסגרת זמן" rows="4"></textarea>
+                </div>
+                <button type="submit" class="contact-form__submit">שלחו פנייה</button>
+            </form>
+            <script>
+            function handleCorporateForm(e) {
+                e.preventDefault();
+                var f = document.getElementById('corporateForm');
+                var name = f.querySelector('#name').value;
+                var org = f.querySelector('#org').value;
+                var email = f.querySelector('#email').value;
+                var phone = f.querySelector('#phone').value;
+                var msg = f.querySelector('#message').value;
+                var subject = encodeURIComponent('פנייה מהאתר - ' + org);
+                var body = encodeURIComponent('שם: ' + name + '\nארגון: ' + org + '\nאימייל: ' + email + '\nטלפון: ' + phone + '\n\n' + msg);
+                window.location.href = 'mailto:the.sol.therapy@gmail.com?subject=' + subject + '&body=' + body;
+                return false;
+            }
+            </script>
+
+            <div class="contact-private__direct fade-in">
+                <a href="mailto:the.sol.therapy@gmail.com" class="contact-private__btn" aria-label="שלחו אימייל">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    אימייל
+                </a>
+                <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" class="contact-private__btn" aria-label="וואצאפ">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/></svg>
+                    וואצאפ
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================
              FAQ
         ======================================== -->
         <section class="faq-section" id="faq" aria-label="שאלות נפוצות">
@@ -1539,9 +1604,9 @@
 
                 <div class="faq-list">
                     <details class="faq-item">
-                        <summary class="faq-item__q">מה זה סאונד הילינג ואיך זה מתאים לסביבה ארגונית?</summary>
+                        <summary class="faq-item__q">מה זה מדיטציית סאונד / סאונד הילינג? ואיך זה מתאים לסביבה ארגונית?</summary>
                         <div class="faq-item__a">
-                            <p>סאונד הילינג הוא שימוש בצלילים מרפאים ומוזיקה ככלי להרחבת תודעה וצלילה למצבים מדיטטיביים עמוקים. מחקרים מראים שגירויים שמיעתיים מפעילים מערכות נוירוכימיות שלמות במוח - דופמין, קורטיזול, אוקסיטוצין - ומשפיעים על אזורים שקשורים לוויסות רגשי ולהפחתת מתח. בסביבה ארגונית, סשן מדיטציית סאונד מאפשר לעובדים חוויית הרפיה עמוקה בזמן קצר, בלי צורך בניסיון קודם.</p>
+                            <p>מדיטציית סאונד משתמשת במוזיקה ככלי להרחבת תודעה וצלילה למצבים מדיטטיביים עמוקים - המוזיקה מורכבת ומנוגנת מידי אמנים ומוזיקאים מהשורה הראשונה בארץ ובעולם - אנשים שהקדישו את חייהם הבוגרים לחקר מוזיקה והשפעתה על קהלים רחבים. מחקרים מראים שגירויים שמיעתיים מפעילים מערכות נוירוכימיות שלמות במוח - דופמין, קורטיזול, אוקסיטוצין - ומשפיעים על אזורים שקשורים לוויסות רגשי ולהפחתת מתח. בסביבה ארגונית, סשן מדיטציית סאונד מאפשר לעובדים חוויית הרפיה עמוקה בזמן קצר, בלי צורך בניסיון קודם - בשונה ממדיטציה רגילה שמצריכה תהליך הדרכה ארוך והדרגתי של חודשים.</p>
                         </div>
                     </details>
 
@@ -1615,71 +1680,6 @@
                         </div>
                     </details>
                 </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             CONTACT
-        ======================================== -->
-        <section class="contact-private" id="contact" aria-label="יצירת קשר">
-            <div class="fade-in">
-                <p class="contact-private__kicker">Contact</p>
-                <h2 class="contact-private__title">מתאימים את התדר לארגון שלכם</h2>
-                <p class="contact-private__about">בין אם מדובר בסשן ממוקד במשרדי החברה, ובין אם בריטריט עומק באחד מהלוקיישנים הייחודיים שלנו ברחבי הארץ ובחו"ל - בואו נדבר. נשמח לבחון יחד את האופציות ולבנות תוכנית המותאמת אישית לצרכי הצוות שלכם.</p>
-            </div>
-
-            <form class="contact-form fade-in" id="corporateForm" onsubmit="return handleCorporateForm(event)">
-                <div class="contact-form__row">
-                    <div class="contact-form__group">
-                        <label class="contact-form__label" for="name">שם מלא</label>
-                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="שם מלא" required>
-                    </div>
-                    <div class="contact-form__group">
-                        <label class="contact-form__label" for="org">ארגון</label>
-                        <input type="text" id="org" name="organization" class="contact-form__input" placeholder="שם הארגון" required>
-                    </div>
-                </div>
-                <div class="contact-form__row">
-                    <div class="contact-form__group">
-                        <label class="contact-form__label" for="email">אימייל</label>
-                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="your@email.com" dir="ltr" required>
-                    </div>
-                    <div class="contact-form__group">
-                        <label class="contact-form__label" for="phone">טלפון</label>
-                        <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="050-0000000" dir="ltr">
-                    </div>
-                </div>
-                <div class="contact-form__group">
-                    <label class="contact-form__label" for="message">ספרו לנו בקצרה</label>
-                    <textarea id="message" name="message" class="contact-form__textarea" placeholder="מה אתם מחפשים - סוג האירוע, מספר משתתפים, מסגרת זמן" rows="4"></textarea>
-                </div>
-                <button type="submit" class="contact-form__submit">שלחו פנייה</button>
-            </form>
-            <script>
-            function handleCorporateForm(e) {
-                e.preventDefault();
-                var f = document.getElementById('corporateForm');
-                var name = f.querySelector('#name').value;
-                var org = f.querySelector('#org').value;
-                var email = f.querySelector('#email').value;
-                var phone = f.querySelector('#phone').value;
-                var msg = f.querySelector('#message').value;
-                var subject = encodeURIComponent('פנייה מהאתר - ' + org);
-                var body = encodeURIComponent('שם: ' + name + '\nארגון: ' + org + '\nאימייל: ' + email + '\nטלפון: ' + phone + '\n\n' + msg);
-                window.location.href = 'mailto:the.sol.therapy@gmail.com?subject=' + subject + '&body=' + body;
-                return false;
-            }
-            </script>
-
-            <div class="contact-private__direct fade-in">
-                <a href="mailto:the.sol.therapy@gmail.com" class="contact-private__btn" aria-label="שלחו אימייל">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    אימייל
-                </a>
-                <a href="https://chat.whatsapp.com/HVsWcoo8ejo3FgOylBMjak" target="_blank" rel="noopener" class="contact-private__btn" aria-label="וואצאפ">
-                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm.004 18c-1.61 0-3.19-.44-4.56-1.27l-.33-.19-3.4 1.01.89-3.26-.22-.35A7.963 7.963 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-7.996 8z"/></svg>
-                    וואצאפ
-                </a>
             </div>
         </section>
 
