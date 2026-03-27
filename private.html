@@ -1426,7 +1426,7 @@
                 <p class="contact-private__about">בין אם מדובר בסשן ממוקד במשרדי החברה, ובין אם בריטריט עומק באחד מהלוקיישנים הייחודיים שלנו ברחבי הארץ ובחו"ל - בואו נדבר. נשמח לבחון יחד את האופציות ולבנות תוכנית המותאמת אישית לצרכי הצוות שלכם.</p>
             </div>
 
-            <form class="contact-form fade-in" action="https://formspree.io/f/TODO_REPLACE_WITH_REAL_ID" method="POST">
+            <form class="contact-form fade-in" id="corporateForm" onsubmit="return handleCorporateForm(event)">
                 <div class="contact-form__row">
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="name">שם מלא</label>
@@ -1453,6 +1453,21 @@
                 </div>
                 <button type="submit" class="contact-form__submit">שלחו פנייה</button>
             </form>
+            <script>
+            function handleCorporateForm(e) {
+                e.preventDefault();
+                var f = document.getElementById('corporateForm');
+                var name = f.querySelector('#name').value;
+                var org = f.querySelector('#org').value;
+                var email = f.querySelector('#email').value;
+                var phone = f.querySelector('#phone').value;
+                var msg = f.querySelector('#message').value;
+                var subject = encodeURIComponent('פנייה מהאתר - ' + org);
+                var body = encodeURIComponent('שם: ' + name + '\nארגון: ' + org + '\nאימייל: ' + email + '\nטלפון: ' + phone + '\n\n' + msg);
+                window.location.href = 'mailto:the.sol.therapy@gmail.com?subject=' + subject + '&body=' + body;
+                return false;
+            }
+            </script>
 
             <div class="contact-private__direct fade-in">
                 <a href="mailto:the.sol.therapy@gmail.com" class="contact-private__btn" aria-label="שלחו אימייל">
