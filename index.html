@@ -1738,6 +1738,16 @@
             transition: transform 0.3s var(--ease-out);
         }
 
+        .blog-feed__more-sep {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--color-green-dark);
+            opacity: 0.25;
+            vertical-align: middle;
+            margin: 0 1.2em;
+        }
         .blog-feed__more-link:hover .blog-feed__more-arrow {
             transform: translateX(-4px);
         }
@@ -2262,6 +2272,7 @@
             <div class="nav__brand"><img src="assets/sol-therapy-logo-300.png" alt="Sol Therapy" class="nav__brand-logo"></div>
             <ul class="nav__links">
                 <li><a href="#events">אירועים</a></li>
+                <li><a href="archive.html">הקלטות</a></li>
                 <li><a href="/private">לארגונים</a></li>
                 <li><a href="#contact">קשר</a></li>
             </ul>
@@ -2277,6 +2288,7 @@
             </svg>
         </button>
         <a href="#events" class="menu-link">אירועים</a>
+        <a href="archive.html" class="menu-link">הקלטות</a>
         <a href="/private" class="menu-link">לארגונים</a>
         <a href="#contact" class="menu-link">קשר</a>
         <a href="https://www.kfarblum-hotel.co.il/Event?id=1257&order=5057&s=5057&hotel=10088_1&in=2026-04-09&out=2026-04-11&rooms=1&ad1=2&ch1=0&inf1=0" class="mobile-menu__cta" target="_blank" rel="noopener">לפרטים והרשמה</a>
@@ -2430,6 +2442,11 @@
                 <div class="blog-feed__more">
                     <a href="blog.html" class="blog-feed__more-link">
                         כל המאמרים
+                        <span class="blog-feed__more-arrow" aria-hidden="true">&larr;</span>
+                    </a>
+                    <span class="blog-feed__more-sep" aria-hidden="true"></span>
+                    <a href="archive.html" class="blog-feed__more-link">
+                        הקלטות חיות
                         <span class="blog-feed__more-arrow" aria-hidden="true">&larr;</span>
                     </a>
                 </div>
