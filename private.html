@@ -543,12 +543,13 @@
         ============================================ */
         .events-grid {
             padding: var(--space-m) var(--gutter) var(--space-s);
-            max-width: 1100px;
-            margin: 0 auto;
         }
         .events-grid__header {
             text-align: center;
             margin-bottom: var(--space-m);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .events-grid__kicker {
             font-family: var(--font-english);
@@ -570,6 +571,8 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: clamp(1.5rem, 3vw, 3rem);
+            max-width: 1100px;
+            margin: 0 auto;
         }
         @media (max-width: 640px) {
             .events-grid__items { grid-template-columns: 1fr; }
@@ -617,7 +620,8 @@
            GALLERY WITH CAPTIONS
         ============================================ */
         .gallery-captioned {
-            padding: var(--space-s) 0;
+            padding: var(--space-s) 0 calc(var(--space-s) + 10vh);
+            position: relative;
         }
         .gallery-captioned__header {
             text-align: center;
@@ -750,10 +754,21 @@
         .press-quotes {
             padding: var(--space-m) var(--gutter) var(--space-s);
             text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
             position: relative;
         }
+        .press-quotes__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        /* Press quotes on washi */
+        .press-quotes--washi { background: var(--color-washi); }
+        .press-quotes--washi .press-quotes__title { color: var(--color-green-dark); }
+        .press-quotes--washi .press-quotes__text { color: var(--color-green-dark); opacity: 0.85; }
+        .press-quotes--washi .press-quotes__author { color: var(--color-green-dark); }
+        .press-quotes--washi .press-quotes__pub { color: var(--color-beni); }
+        .press-quotes--washi .press-quotes__item::before { background: linear-gradient(to bottom, var(--color-green), transparent); opacity: 0.2; }
+        .press-quotes--washi .press-quotes__source { border-top-color: rgba(59,81,75,0.15); }
+        .press-quotes--washi .press-quotes__grid::before { background: rgba(59,81,75,0.12); }
         .press-quotes__kicker {
             font-family: var(--font-english);
             font-weight: 300;
@@ -809,22 +824,19 @@
             grid-column: 3;
         }
         .press-quotes__item::before {
-            content: '\201D';
+            content: '';
             position: absolute;
-            top: -0.2em;
-            right: clamp(1rem, 2vw, 1.5rem);
-            font-family: var(--font-hadassah);
-            font-weight: 300;
-            font-size: clamp(5rem, 8vw, 8rem);
-            line-height: 1;
-            color: var(--color-green);
-            opacity: 0.12;
+            top: clamp(1.5rem, 3vw, 2.5rem);
+            right: 0;
+            width: 2px;
+            height: 40%;
+            background: linear-gradient(to bottom, var(--color-green), transparent);
+            opacity: 0.25;
             pointer-events: none;
         }
         .press-quotes__item:first-child::before {
-            font-size: clamp(6rem, 10vw, 10rem);
-            opacity: 0.15;
-            top: -0.3em;
+            height: 50%;
+            opacity: 0.3;
         }
         .press-quotes__text {
             font-family: var(--font-hadassah);
@@ -834,7 +846,7 @@
             color: var(--color-washi);
             opacity: 0.88;
             margin-bottom: 1.8rem;
-            padding-top: clamp(2rem, 4vw, 3rem);
+            padding-top: 0;
         }
         .press-quotes__item:first-child .press-quotes__text {
             font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.25rem);
@@ -901,7 +913,7 @@
                 grid-row: 3;
             }
             .press-quotes__item:first-child::before {
-                font-size: 5rem;
+                height: 40%;
             }
         }
 
@@ -1214,9 +1226,12 @@
         ============================================ */
         .contact-private {
             padding: var(--space-m) var(--gutter) var(--space-m);
-            max-width: 780px;
-            margin: 0 auto;
             text-align: center;
+        }
+        .contact-private > * {
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .contact-private__kicker {
             font-family: var(--font-english);
@@ -1427,6 +1442,173 @@
         }
 
         /* ============================================
+           DISSOLVE TRANSITIONS
+        ============================================ */
+        .dissolve-from-dark {
+            position: relative;
+            z-index: 2;
+            margin-top: -8vh;
+            border-radius: clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0 0;
+            overflow: hidden;
+        }
+        .dissolve-from-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8vh;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.35) 0%, rgba(26,26,26,0.12) 45%, transparent 100%);
+            pointer-events: none;
+            z-index: 3;
+            border-radius: clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0 0;
+        }
+        .dissolve-from-light {
+            position: relative;
+            z-index: 2;
+            margin-top: -8vh;
+        }
+        .dissolve-from-light::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12vh;
+            background: linear-gradient(to bottom, var(--color-washi) 0%, rgba(242,234,211,0.6) 30%, rgba(242,234,211,0) 100%);
+            pointer-events: none;
+            z-index: 3;
+        }
+        .partners.dissolve-from-dark {
+            margin-top: -12vh;
+            border-radius: clamp(16px, 4vw, 48px) clamp(16px, 4vw, 48px) 0 0;
+        }
+        .partners.dissolve-from-dark::before {
+            height: 10vh;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.1) 50%, transparent 100%);
+            border-radius: clamp(16px, 4vw, 48px) clamp(16px, 4vw, 48px) 0 0;
+        }
+        .gallery-captioned::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            background: linear-gradient(to top, var(--color-dark) 0%, rgba(26,26,26,0.7) 40%, transparent 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .contact-private.dissolve-from-dark {
+            margin-top: -10vh;
+            border-radius: clamp(12px, 3vw, 32px) clamp(12px, 3vw, 32px) 0 0;
+        }
+        #contact, #faq { scroll-margin-top: 8vh; }
+
+        /* Events Grid on Washi */
+        .events-grid--washi { background: var(--color-washi); color: var(--color-green-dark); }
+        .events-grid--washi .events-grid__kicker { color: var(--color-beni); }
+        .events-grid--washi .events-grid__title { color: var(--color-green-dark); }
+        .events-grid--washi .event-card {
+            border-color: rgba(59,81,75,0.12);
+            background: rgba(255,255,255,0.35);
+        }
+        .events-grid--washi .event-card:hover {
+            border-color: rgba(88,132,117,0.35);
+            background: rgba(255,255,255,0.5);
+        }
+        .events-grid--washi .event-card__number { color: var(--color-beni); opacity: 0.6; }
+        .events-grid--washi .event-card__title { color: var(--color-green-dark); }
+        .events-grid--washi .event-card__desc { color: var(--color-green-dark); opacity: 0.6; }
+        .events-grid--washi .event-card__icon { filter: brightness(0.3) sepia(1) hue-rotate(120deg) saturate(0.4); }
+
+        /* Contact on Washi */
+        .contact-private--washi { background: var(--color-washi); color: var(--color-green-dark); }
+        .contact-private--washi .contact-private__kicker { color: var(--color-beni); }
+        .contact-private--washi .contact-private__title { color: var(--color-green-dark); }
+        .contact-private--washi .contact-private__about { color: var(--color-green-dark); opacity: 0.65; }
+        .contact-private--washi .contact-private__cta-line { color: var(--color-green-dark); }
+        .contact-private--washi .contact-form__label { color: var(--color-green-dark); opacity: 0.6; }
+        .contact-private--washi .contact-form__input,
+        .contact-private--washi .contact-form__textarea {
+            background: rgba(59,81,75,0.06);
+            border: 1px solid rgba(59,81,75,0.15);
+            color: var(--color-green-dark);
+        }
+        .contact-private--washi .contact-form__input:focus,
+        .contact-private--washi .contact-form__textarea:focus { border-color: var(--color-green); }
+        .contact-private--washi .contact-form__input::placeholder,
+        .contact-private--washi .contact-form__textarea::placeholder { color: rgba(59,81,75,0.3); }
+        .contact-private--washi .contact-form__submit { background: var(--color-green); color: var(--color-washi); }
+        .contact-private--washi .contact-form__submit:hover { background: var(--color-green-dark); }
+        .contact-private--washi .contact-private__btn {
+            color: var(--color-green-dark);
+            border-color: var(--color-green);
+        }
+        .contact-private--washi .contact-private__btn:hover {
+            background: var(--color-green);
+            color: var(--color-washi);
+        }
+        .contact-private--washi .contact-private__btn svg { fill: var(--color-green-dark); }
+        .contact-private--washi .contact-private__btn:hover svg { fill: var(--color-washi); }
+
+        /* Content above dissolve gradients */
+        .dissolve-from-dark > *,
+        .dissolve-from-light > * {
+            position: relative;
+            z-index: 4;
+        }
+        /* Extra padding so content clears gradient zones */
+        .events-grid.dissolve-from-light {
+            padding-top: calc(var(--space-m) + 5vh);
+        }
+        .blog-teaser.dissolve-from-light {
+            padding-top: calc(var(--space-s) + 8vh);
+        }
+        .partners.dissolve-from-dark {
+            padding-top: calc(var(--space-m) + 6vh);
+        }
+        .contact-private.dissolve-from-dark {
+            padding-top: calc(var(--space-m) + 4vh);
+        }
+        .section-text--washi.dissolve-from-dark {
+            padding-top: calc(var(--space-m) + 3vh);
+        }
+        .press-quotes.dissolve-from-dark {
+            padding-top: calc(var(--space-m) + 4vh);
+        }
+        .faq-section.dissolve-from-light {
+            padding-top: calc(var(--space-l) + 5vh);
+        }
+
+        /* Dissolve mobile */
+        @media (max-width: 768px) {
+            .dissolve-from-dark, .dissolve-from-light { margin-top: -5vh; }
+            .dissolve-from-dark {
+                border-radius: clamp(6px,1.5vw,16px) clamp(6px,1.5vw,16px) 0 0;
+            }
+            .dissolve-from-dark::before {
+                border-radius: clamp(6px,1.5vw,16px) clamp(6px,1.5vw,16px) 0 0;
+                height: 5vh;
+            }
+            .dissolve-from-light::before { height: 8vh; }
+            .partners.dissolve-from-dark {
+                margin-top: -10vh;
+                border-radius: clamp(10px,3vw,28px) clamp(10px,3vw,28px) 0 0;
+            }
+            .partners.dissolve-from-dark::before {
+                height: 7vh;
+                border-radius: clamp(10px,3vw,28px) clamp(10px,3vw,28px) 0 0;
+            }
+            .gallery-captioned::after { height: 10vh; }
+            .contact-private.dissolve-from-dark {
+                margin-top: -7vh;
+                border-radius: clamp(8px,2vw,20px) clamp(8px,2vw,20px) 0 0;
+            }
+            #contact, #faq { scroll-margin-top: 5vh; }
+        }
+
+        /* ============================================
            FOOTER
         ============================================ */
         .closing {
@@ -1528,7 +1710,7 @@
         <!-- ========================================
              SCIENCE & PRODUCTIVITY
         ======================================== -->
-        <section class="section-text section-text--washi fade-in" aria-label="מדע ופרודוקטיביות">
+        <section class="section-text section-text--washi dissolve-from-dark fade-in" aria-label="מדע ופרודוקטיביות">
             <div class="section-text__inner">
                 <p class="section-text__kicker">Research</p>
                 <h2 class="section-text__title">מדע, לא מגמה</h2>
@@ -1549,7 +1731,7 @@
         <!-- ========================================
              VIDEO FEATURE
         ======================================== -->
-        <section class="video-feature" aria-label="סרטון סול תרפי">
+        <section class="video-feature dissolve-from-light" aria-label="סרטון סול תרפי">
             <div class="video-feature__wrapper fade-in">
                 <iframe src="https://www.youtube.com/embed/nFvMRCdHvWM?start=45&rel=0" title="Sol Therapy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
@@ -1558,7 +1740,7 @@
         <!-- ========================================
              PARTNERS
         ======================================== -->
-        <section class="partners fade-in" aria-label="Partners">
+        <section class="partners dissolve-from-dark fade-in" aria-label="Partners">
             <p class="partners__label">Partners</p>
             <div class="partners__grid">
                 <div class="partners__item partners__item--amazon">
@@ -1583,45 +1765,9 @@
         </section>
 
         <!-- ========================================
-             PRESS QUOTES
-        ======================================== -->
-        <section class="press-quotes fade-in" aria-label="כתבו עלינו">
-            <p class="press-quotes__kicker">Press</p>
-            <h2 class="press-quotes__title">כתבו עלינו</h2>
-            <div class="press-quotes__grid">
-                <blockquote class="press-quotes__item fade-in">
-                    <p class="press-quotes__text">קווי המתאר ואת המרקם התנועתי של הצלילים שראיתי בעיני רוחי בחצי השעה הראשונה של הסשן, לפני שפקחתי את העיניים הממשיות. זאת לא חוויה שכיחה, לראות צלילים. ברגעים מסוימים בסשן הרגשתי שאני אפילו מתקרב אליהם, כמעט נוגע בהם.</p>
-                    <footer class="press-quotes__source">
-                        <span class="press-quotes__author">בן שלב</span>
-                        <span class="press-quotes__pub">הארץ</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="press-quotes__item fade-in">
-                    <p class="press-quotes__text">מיזם ישראלי ייחודי שמשלב מוזיקה אלקטרונית עם מדיטציה מודרכת, ומציע חוויה שונה לגמרי ממה שאנחנו מכירים בפסטיבלים או במועדונים.</p>
-                    <footer class="press-quotes__source">
-                        <span class="press-quotes__author">טל מזרחי</span>
-                        <span class="press-quotes__pub">ישראל היום</span>
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
-
-        <!-- ========================================
-             BLOG TEASER
-        ======================================== -->
-        <section class="blog-teaser fade-in" aria-label="בלוג">
-            <a href="blog-meditation-workplace.html" class="blog-teaser__link">
-                <p class="blog-teaser__kicker">Sol Therapy Blog</p>
-                <h2 class="blog-teaser__title">מ'וולנס' לעזרה ראשונה: המספרים מאחורי מהפכת השקט בארגונים מובילים</h2>
-                <p class="blog-teaser__excerpt">מחקרים ונתונים מ-Aetna, Google ו-Intel - ומה הם אומרים למנהלי HR בישראל ב-2026</p>
-                <span class="blog-teaser__cta">להמשך קריאה</span>
-            </a>
-        </section>
-
-        <!-- ========================================
              EVENT TYPES
         ======================================== -->
-        <section class="events-grid" aria-label="סוגי אירועים">
+        <section class="events-grid dissolve-from-light" aria-label="סוגי אירועים">
             <div class="events-grid__header fade-in">
                 <p class="events-grid__kicker">Programs</p>
                 <h2 class="events-grid__title">סוגי אירועים</h2>
@@ -1652,6 +1798,42 @@
                     <p class="event-card__desc">חוויית הדגל של סול תרפי - סוף שבוע שלם בשיתוף מלונות ומרחבי תרבות מובילים. מוזיקאים מהשורה הראשונה, מדעני מוח ותודעה, מורי זן בכירים ומובילי יוגה ותנועה - יחד יוצרים מעטפת שלמה של מדיטציה, למידה, תנועה והרפיה עמוקה. תוכנית מותאמת לארגון, במרחב שמאפשר ניתוק אמיתי וחזרה עם כלים מעשיים.</p>
                 </div>
             </div>
+        </section>
+
+        <!-- ========================================
+             PRESS QUOTES
+        ======================================== -->
+        <section class="press-quotes press-quotes--washi dissolve-from-dark fade-in" aria-label="כתבו עלינו">
+            <p class="press-quotes__kicker">Press</p>
+            <h2 class="press-quotes__title">כתבו עלינו</h2>
+            <div class="press-quotes__grid">
+                <blockquote class="press-quotes__item fade-in">
+                    <p class="press-quotes__text">קווי המתאר ואת המרקם התנועתי של הצלילים שראיתי בעיני רוחי בחצי השעה הראשונה של הסשן, לפני שפקחתי את העיניים הממשיות. זאת לא חוויה שכיחה, לראות צלילים. ברגעים מסוימים בסשן הרגשתי שאני אפילו מתקרב אליהם, כמעט נוגע בהם.</p>
+                    <footer class="press-quotes__source">
+                        <span class="press-quotes__author">בן שלב</span>
+                        <span class="press-quotes__pub">הארץ</span>
+                    </footer>
+                </blockquote>
+                <blockquote class="press-quotes__item fade-in">
+                    <p class="press-quotes__text">מיזם ישראלי ייחודי שמשלב מוזיקה אלקטרונית עם מדיטציה מודרכת, ומציע חוויה שונה לגמרי ממה שאנחנו מכירים בפסטיבלים או במועדונים.</p>
+                    <footer class="press-quotes__source">
+                        <span class="press-quotes__author">טל מזרחי</span>
+                        <span class="press-quotes__pub">ישראל היום</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- ========================================
+             BLOG TEASER
+        ======================================== -->
+        <section class="blog-teaser dissolve-from-light fade-in" aria-label="בלוג">
+            <a href="blog-meditation-workplace.html" class="blog-teaser__link">
+                <p class="blog-teaser__kicker">Sol Therapy Blog</p>
+                <h2 class="blog-teaser__title">מ'וולנס' לעזרה ראשונה: המספרים מאחורי מהפכת השקט בארגונים מובילים</h2>
+                <p class="blog-teaser__excerpt">מחקרים ונתונים מ-Aetna, Google ו-Intel - ומה הם אומרים למנהלי HR בישראל ב-2026</p>
+                <span class="blog-teaser__cta">להמשך קריאה</span>
+            </a>
         </section>
 
         <!-- ========================================
@@ -1701,7 +1883,7 @@
         <!-- ========================================
              CONTACT
         ======================================== -->
-        <section class="contact-private" id="contact" aria-label="יצירת קשר">
+        <section class="contact-private contact-private--washi dissolve-from-dark" id="contact" aria-label="יצירת קשר">
             <div class="fade-in">
                 <p class="contact-private__kicker">Contact</p>
                 <h2 class="contact-private__title">מתאימים את התדר לארגון שלכם</h2>
@@ -1766,7 +1948,7 @@
         <!-- ========================================
              FAQ
         ======================================== -->
-        <section class="faq-section" id="faq" aria-label="שאלות נפוצות">
+        <section class="faq-section dissolve-from-light" id="faq" aria-label="שאלות נפוצות">
             <div class="faq-section__inner fade-in">
                 <p class="faq-section__kicker">FAQ</p>
                 <h2 class="faq-section__title">שאלות נפוצות</h2>
