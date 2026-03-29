@@ -692,6 +692,9 @@
             grid-column: span 2;
             aspect-ratio: 8 / 3;
         }
+        .gallery-captioned__poster-fallback {
+            display: none;
+        }
         .gallery-captioned__item--fullvideo {
             grid-column: 1 / -1;
             aspect-ratio: 21 / 9;
@@ -703,7 +706,7 @@
             filter: saturate(0.75) contrast(1.1) brightness(0.88);
         }
         @media (max-width: 640px) {
-            .gallery-captioned__item--wide { grid-column: span 2; }
+            .gallery-captioned__item--wide { grid-column: span 1; }
             .gallery-captioned__item--fullvideo {
                 aspect-ratio: 16 / 9;
                 display: block;
@@ -1194,6 +1197,7 @@
             display: block;
             height: 100%;
             width: auto;
+            max-width: 100%;
             object-fit: contain;
             mix-blend-mode: multiply;
         }
@@ -1219,7 +1223,7 @@
             .partners__item--amazon { height: 38px; }
             .partners__item--municipality { height: 72px; }
             .partners__item--museum { height: 54px; }
-            .partners__item--suzanne { height: 48px; }
+            .partners__item--suzanne { height: 40px; max-width: 100%; }
             .partners__item--library { height: 44px; }
             .partners__item--digitel { height: 46px; }
         }
@@ -1576,7 +1580,7 @@
         }
         .section-text--washi.dissolve-from-dark {
             padding-top: calc(var(--space-m) + 3vh);
-            padding-bottom: calc(var(--space-m) + 10vh);
+            padding-bottom: calc(var(--space-m) + 14vh);
         }
         .press-quotes.dissolve-from-dark {
             padding-top: calc(var(--space-m) + 4vh);
