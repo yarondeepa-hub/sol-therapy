@@ -746,6 +746,9 @@
                 transform: none;
                 transition: none;
             }
+            /* Mobile: show poster image, hide video */
+            .gallery-captioned__video-desktop { display: none; }
+            .gallery-captioned__poster-fallback { display: block; }
         }
 
         /* ============================================
@@ -1577,6 +1580,7 @@
         }
         .press-quotes.dissolve-from-dark {
             padding-top: calc(var(--space-m) + 4vh);
+            padding-bottom: calc(var(--space-s) + 10vh);
         }
         .faq-section.dissolve-from-light {
             padding-top: calc(var(--space-l) + 5vh);
@@ -1871,7 +1875,8 @@
                     <div class="gallery-captioned__caption">ריטריט מואה במדבר</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <video poster="assets/events/hr-web/desert-vinyl-session-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="סשן תקליטים במדבר" data-lazy-video="assets/events/hr-web/desert-vinyl-session.mp4"></video>
+                    <img class="gallery-captioned__poster-fallback" src="assets/events/hr-web/desert-vinyl-session-poster.jpg" alt="סשן תקליטים במדבר" loading="lazy">
+                    <video class="gallery-captioned__video-desktop" poster="assets/events/hr-web/desert-vinyl-session-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="סשן תקליטים במדבר" data-lazy-video="assets/events/hr-web/desert-vinyl-session.mp4"></video>
                     <div class="gallery-captioned__caption">סשן תקליטים במדבר</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--fullvideo fade-in">
