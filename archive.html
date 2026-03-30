@@ -504,11 +504,22 @@
         .archive-footer__links {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 0.75rem;
             font-family: var(--font-english);
             font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+        }
+        @media (max-width: 480px) {
+            .archive-footer__links {
+                gap: 0.4rem 0.6rem;
+                font-size: 0.65rem;
+            }
+            .archive-footer {
+                padding-bottom: 2rem;
+            }
         }
         .archive-footer__link {
             color: var(--color-muted);
@@ -533,12 +544,6 @@
         <p class="archive__kicker">Live Sessions Archive</p>
         <h1 class="archive__title">הקלטות מסשנים</h1>
         <p class="archive__subtitle">הקלטות מדיטציית סאונד חיות מאירועי סול תרפי. כל סשן הוא מסע מוזיקלי ייחודי שנוצר במיוחד עבור מדיטציה בשכיבה.</p>
-
-        <button class="share-btn share-btn--page" data-url="https://sol-therapy.com/archive.html" data-title="הקלטות מסשנים מדיטטיביים - סול תרפי" aria-label="שיתוף העמוד">
-            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-            <span class="share-btn--page__label">שיתוף</span>
-            <span class="share-btn__toast"></span>
-        </button>
 
         <div class="listen-guide">
             <summary>הנחיות להאזנה</summary>
@@ -734,6 +739,12 @@
                 <p class="archive-newsletter__note">ללא ספאם. תוכן שאכפת לנו ממנו בלבד.</p>
             </div>
         </section>
+
+        <button class="share-btn share-btn--page" data-url="https://sol-therapy.com/archive.html" data-title="הקלטות מסשנים מדיטטיביים - סול תרפי" aria-label="שיתוף העמוד">
+            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            <span class="share-btn--page__label">שיתוף העמוד</span>
+            <span class="share-btn__toast"></span>
+        </button>
 
         <footer class="archive-footer">
             <div class="archive-footer__links">
