@@ -348,6 +348,41 @@
         }
         .share-btn__toast--visible { opacity: 1; }
 
+        /* Page-level share button */
+        .share-btn--page {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(242, 234, 211, 0.15);
+            border-radius: 8px;
+            background: none;
+            color: var(--color-washi);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s ease, border-color 0.3s ease;
+        }
+        .share-btn--page:hover {
+            opacity: 0.8;
+            border-color: rgba(242, 234, 211, 0.3);
+        }
+        .share-btn--page svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .share-btn--page__label {
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            font-weight: 300;
+        }
+
         /* Embed player */
         .session-card__player {
             margin-top: 0.75rem;
@@ -499,6 +534,11 @@
         <h1 class="archive__title">הקלטות מסשנים</h1>
         <p class="archive__subtitle">הקלטות מדיטציית סאונד חיות מאירועי סול תרפי. כל סשן הוא מסע מוזיקלי ייחודי שנוצר במיוחד עבור מדיטציה בשכיבה.</p>
 
+        <button class="share-btn share-btn--page" data-url="https://sol-therapy.com/archive.html" data-title="הקלטות מסשנים מדיטטיביים - סול תרפי" aria-label="שיתוף העמוד">
+            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            <span class="share-btn--page__label">שיתוף</span>
+            <span class="share-btn__toast"></span>
+        </button>
 
         <div class="listen-guide">
             <summary>הנחיות להאזנה</summary>
