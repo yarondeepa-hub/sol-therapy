@@ -246,7 +246,7 @@
             text-transform: uppercase;
             color: var(--color-green);
             opacity: 0.7;
-            cursor: pointer;
+            
             list-style: none;
             display: flex;
             align-items: center;
@@ -275,6 +275,27 @@
             margin-bottom: 0;
         }
 
+        /* Further Reading */
+        .further-reading {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.55;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        .further-reading a {
+            color: var(--color-green);
+            opacity: 0.7;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .further-reading a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
         /* Share button */
         .session-page__share-row {
             display: flex;
@@ -287,7 +308,7 @@
             align-items: center;
             background: none;
             border: none;
-            cursor: pointer;
+            
             padding: 0;
             color: var(--color-green);
             opacity: 0.5;
@@ -377,13 +398,15 @@
 
 
 
-        <details class="listen-guide">
+        <div class="listen-guide">
             <summary>הנחיות להאזנה</summary>
             <div class="listen-guide__text">
                 <p>הנחיות למדיטציית סאונד - מפנים שעה פנויה ביום ומארגנים מקום נוח לשכיבה בסמוך למערכת סאונד או עם אוזניות איכותיות, ומעבירים את הטלפון למצב שקט. מסכימים עם עצמנו על כניסה למצב ניסויי שבו אנו נותנים מקום לכל מה שיצוף. נכנסים להאזנה במצב שכיבה, כאשר יש הנחיה אחת: בכל פעם שהתודעה נודדת למקומות אחרים (תכנון, דאגה, זיכרון, רגש), אנו חוזרים בעדינות להתרכז במוזיקה ובסאונד.</p>
                 <p>שימו לב שמוזיקה מטבעה עשויה לעורר זיכרונות, רגשות וניתוק מזמן ומקום; כל אלו הן תופעות צפויות ומקובלות. בכל פעם שהדברים צפים, אנו מתבוננים בהם ואז חוזרים בעדינות להתרכז בסאונד.</p>
             </div>
-        </details>
+        </div>
+
+        <p class="further-reading">לקריאה נוספת על <a href="blog-sound-meditation.html">המדע מאחורי מדיטציות סאונד</a> ו<a href="blog-collective-sync.html">מה קורה כשחדר שלם מקשיב יחד?</a></p>
 
         <h2 class="session-page__section-title">על הסשן</h2>
         <p class="session-page__event">הופיעו באירוע בין התדרים, מרכז סוזן דלל</p>
