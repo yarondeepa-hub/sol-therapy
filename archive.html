@@ -378,6 +378,84 @@
         }
 
         /* Footer */
+        /* Newsletter */
+        .archive-newsletter {
+            margin-top: var(--space-m);
+            padding: var(--space-m) 0;
+            border-top: 1px solid rgba(242, 234, 211, 0.08);
+            text-align: center;
+        }
+        .archive-newsletter__inner {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .archive-newsletter__title {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+            line-height: 1.4;
+            color: var(--color-washi);
+            margin-bottom: 1.5rem;
+        }
+        .archive-newsletter__form {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            max-width: 420px;
+            margin: 0 auto;
+            background: rgba(242, 234, 211, 0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(242, 234, 211, 0.12);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .archive-newsletter__form:focus-within {
+            border-color: var(--color-green);
+        }
+        .archive-newsletter__input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--color-washi);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.9rem 0 0.9rem 1.2rem;
+            outline: none;
+            direction: ltr;
+            unicode-bidi: isolate;
+            min-height: 48px;
+        }
+        .archive-newsletter__input::placeholder {
+            color: rgba(242, 234, 211, 0.25);
+            direction: ltr;
+            font-style: italic;
+        }
+        .archive-newsletter__btn {
+            background: var(--color-green);
+            border: none;
+            border-radius: 0 11px 11px 0;
+            color: var(--color-washi);
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.9rem 1.8rem;
+            cursor: pointer;
+            white-space: nowrap;
+            min-height: 48px;
+            transition: background 0.3s ease;
+        }
+        .archive-newsletter__btn:hover {
+            background: var(--color-green-light);
+        }
+        .archive-newsletter__note {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: var(--type-micro);
+            color: var(--color-washi);
+            opacity: 0.3;
+            margin-top: 0.8rem;
+        }
+
         .archive-footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -607,6 +685,19 @@
             </div>
 
         </div>
+
+        <!-- Newsletter -->
+        <section class="archive-newsletter" aria-label="הרשמה לעדכונים">
+            <div class="archive-newsletter__inner">
+                <h2 class="archive-newsletter__title">הירשמו לעדכונים על הקלטות חדשות ואירועים קרובים</h2>
+                <form class="archive-newsletter__form" action="https://gmail.us10.list-manage.com/subscribe/post?u=e433f6c1a2c9ad09b483d8689&amp;id=e04026e07a&amp;f_id=003507e3f0" method="post" aria-label="הרשמה לעדכונים" target="_blank">
+                    <input type="email" name="EMAIL" class="archive-newsletter__input" placeholder="your@email.com" aria-label="כתובת אימייל" required>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_e433f6c1a2c9ad09b483d8689_e04026e07a" tabindex="-1" value=""></div>
+                    <button type="submit" class="archive-newsletter__btn">הרשמה</button>
+                </form>
+                <p class="archive-newsletter__note">ללא ספאם. תוכן שאכפת לנו ממנו בלבד.</p>
+            </div>
+        </section>
 
         <footer class="archive-footer">
             <div class="archive-footer__links">
