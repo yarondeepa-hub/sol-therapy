@@ -282,7 +282,10 @@
 
         <h2 class="session-page__section-title">על הסשן</h2>
         <p class="session-page__event">הופיעה באירוע בין התדרים, מרכז סוזן דלל, ספריה הלאומית</p>
+        <div class="session-page__share-row">
         <a href="https://www.instagram.com/noargova/" target="_blank" rel="noopener" class="session-page__artist-link">Instagram</a>
+            <button class="share-btn" data-url="https://sol-therapy.com/session-noa-argov.html" data-title="נועה ארגוב - סט מדיטטיבי חי - סול תרפי" aria-label="שיתוף"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg><span class="share-btn__toast"></span></button>
+        </div>
         <div class="session-page__meta">
             <span>1:32:36</span>
             <span>Live Meditative Set</span>
@@ -307,5 +310,25 @@
             <span class="archive-footer__copy">Sol Therapy 2026</span>
         </footer>
     </main>
+    <script>
+    document.querySelectorAll('.share-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var url = this.getAttribute('data-url');
+            var title = this.getAttribute('data-title');
+            var toast = this.querySelector('.share-btn__toast');
+            if (navigator.share) {
+                navigator.share({ title: title, url: url }).catch(function() {});
+            } else {
+                navigator.clipboard.writeText(url).then(function() {
+                    toast.textContent = 'הקישור הועתק';
+                    toast.classList.add('share-btn__toast--visible');
+                    setTimeout(function() { toast.classList.remove('share-btn__toast--visible'); }, 2000);
+                });
+            }
+        });
+    });
+    </script>
 </body>
 </html>
