@@ -232,6 +232,49 @@
         .session-page__artist-link:hover { opacity: 1; }
 
 
+        /* Listen Guide */
+        .listen-guide {
+            border-top: 1px solid rgba(88, 132, 117, 0.25);
+            margin-bottom: 2.5rem;
+            padding-top: 1rem;
+        }
+        .listen-guide summary {
+            font-family: var(--font-english);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-green);
+            opacity: 0.7;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-guide summary::-webkit-details-marker { display: none; }
+        .listen-guide summary::before {
+            content: '\25B8';
+            font-size: 0.6rem;
+            transition: transform 0.2s ease;
+        }
+        .listen-guide[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .listen-guide__text {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.8;
+            opacity: 0.6;
+        }
+        .listen-guide__text p {
+            margin-bottom: 0.75rem;
+        }
+        .listen-guide__text p:last-child {
+            margin-bottom: 0;
+        }
+
         /* Share button */
         .session-page__share-row {
             display: flex;
@@ -332,6 +375,15 @@
             <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2292758954&color=%23588475&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" loading="lazy"></iframe>
         </div>
 
+
+
+        <details class="listen-guide">
+            <summary>הנחיות להאזנה</summary>
+            <div class="listen-guide__text">
+                <p>הנחיות למדיטציית סאונד - מפנים שעה פנויה ביום ומארגנים מקום נוח לשכיבה בסמוך למערכת סאונד או עם אוזניות איכותיות, ומעבירים את הטלפון למצב שקט. מסכימים עם עצמנו על כניסה למצב ניסויי שבו אנו נותנים מקום לכל מה שיצוף. נכנסים להאזנה במצב שכיבה, כאשר יש הנחיה אחת: בכל פעם שהתודעה נודדת למקומות אחרים (תכנון, דאגה, זיכרון, רגש), אנו חוזרים בעדינות להתרכז במוזיקה ובסאונד.</p>
+                <p>שימו לב שמוזיקה מטבעה עשויה לעורר זיכרונות, רגשות וניתוק מזמן ומקום; כל אלו הן תופעות צפויות ומקובלות. בכל פעם שהדברים צפים, אנו מתבוננים בהם ואז חוזרים בעדינות להתרכז בסאונד.</p>
+            </div>
+        </details>
 
         <h2 class="session-page__section-title">על הסשן</h2>
         <p class="session-page__event">הופיעו באירוע בין התדרים, מרכז סוזן דלל</p>
