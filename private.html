@@ -728,6 +728,13 @@
         }
         @media (max-width: 640px) {
             .gallery-captioned__item--wide { grid-column: span 1; }
+            .gallery-captioned__item {
+                display: flex;
+                flex-direction: column;
+                aspect-ratio: auto;
+                overflow: visible;
+                position: relative;
+            }
             .gallery-captioned__item--fullvideo {
                 aspect-ratio: 16 / 9;
                 display: block;
@@ -736,13 +743,6 @@
             .gallery-captioned__item--fullvideo .gallery-captioned__caption {
                 position: absolute;
                 background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
-            }
-            .gallery-captioned__item {
-                display: flex;
-                flex-direction: column;
-                aspect-ratio: auto;
-                overflow: visible;
-                position: relative;
             }
             .gallery-captioned__item img,
             .gallery-captioned__item video {
@@ -770,9 +770,9 @@
                 transform: none;
                 transition: none;
             }
-            /* Mobile: show poster image, hide video */
-            .gallery-captioned__video-desktop { display: none; }
-            .gallery-captioned__poster-fallback { display: block; }
+            /* Mobile: show poster image, hide video (must match specificity of .gallery-captioned__item video) */
+            .gallery-captioned__item .gallery-captioned__video-desktop { display: none; }
+            .gallery-captioned__item .gallery-captioned__poster-fallback { display: block; }
         }
 
         /* ============================================
@@ -1394,6 +1394,13 @@
             width: 18px;
             height: 18px;
             fill: currentColor;
+        }
+        @media (max-width: 640px) {
+            .contact-private__direct {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
         }
 
         /* ============================================
@@ -2091,7 +2098,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="closing__nav-links" style="display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-top:1.5rem;font-family:var(--font-english);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">
+                <div class="closing__nav-links" style="display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-top:1.5rem;font-family:var(--font-english);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;flex-wrap:wrap;">
                         <a href="/" style="color:var(--color-muted);text-decoration:none;">home</a>
                         <span style="color:var(--color-muted);opacity:0.3;">-</span>
                         <a href="/blog.html" style="color:var(--color-muted);text-decoration:none;">blog</a>
