@@ -61,10 +61,6 @@
     }
     </script>
 
-    <!-- Structured Data: Organization -->
-    }
-    </script>
-
     <!-- Structured Data: WebSite -->
     <script type="application/ld+json">
     {
@@ -810,11 +806,6 @@
             margin-top: -10vh;
         }
 
-        /* Mosaic: contain washi gradient within padding area */
-        .mosaic.dissolve-from-light::before {
-            height: min(12vh, var(--space-l));
-        }
-
         /* Mosaic bottom fade: photos dissolve into darkness before partners */
         .mosaic::after {
             content: '';
@@ -1410,8 +1401,20 @@
         ============================================ */
         .mosaic {
             background: var(--color-dark);
-            padding: var(--space-l) var(--gutter) calc(var(--space-l) + 12vh);
+            padding: var(--space-s) var(--gutter) calc(var(--space-l) + 12vh);
             position: relative;
+        }
+
+        .mosaic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, #0d0d0d, var(--color-dark));
+            pointer-events: none;
+            z-index: 2;
         }
 
         .mosaic__grid {
@@ -1771,13 +1774,174 @@
             }
         }
 
-        /* ARTISTS ROLL - removed, pending redesign */
+        /* ============================================
+           ARCHIVE SHOWCASE SECTION
+        ============================================ */
+        .archive-showcase {
+            position: relative;
+            background: var(--color-dark);
+            padding: calc(var(--space-l) + 4vh) 0 calc(var(--space-m) + 2vh);
+            overflow: hidden;
+        }
+        .archive-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: min(12vh, 120px);
+            background: linear-gradient(to bottom, var(--color-washi), var(--color-dark));
+            pointer-events: none;
+        }
+        .archive-showcase::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at center, rgba(88, 132, 117, 0.07) 0%, transparent 70%),
+                linear-gradient(to bottom, transparent 70%, #0d0d0d 100%);
+            pointer-events: none;
+        }
+        .archive-showcase__inner {
+            max-width: 1100px;
+            margin-inline: auto;
+            padding: 0 var(--gutter);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .archive-showcase__title {
+            font-family: var(--font-display);
+            font-size: var(--type-manifesto);
+            font-weight: 600;
+            color: var(--color-washi);
+            line-height: 1.2;
+            margin-bottom: var(--space-xs);
+        }
+        .archive-showcase__subtitle {
+            font-family: var(--font-body);
+            font-size: var(--type-body);
+            font-weight: 300;
+            color: var(--color-muted);
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto var(--space-m);
+        }
+        .archive-showcase__artists {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.5rem, 3.5vw, 3rem);
+            flex-wrap: nowrap;
+            margin-bottom: var(--space-m);
+        }
+        .archive-showcase__artist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .archive-showcase__avatar {
+            width: clamp(80px, 10vw, 140px);
+            height: clamp(80px, 10vw, 140px);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(88, 132, 117, 0.5);
+            transition: border-color 0.4s var(--ease-out), transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+        }
+        .archive-showcase__artist:hover .archive-showcase__avatar {
+            border-color: var(--color-green);
+            transform: scale(1.08);
+            box-shadow: 0 0 24px rgba(88, 132, 117, 0.3);
+        }
+        .archive-showcase__avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) brightness(0.85);
+            transition: filter 0.4s var(--ease-out);
+        }
+        .archive-showcase__artist:hover .archive-showcase__avatar img {
+            filter: grayscale(0%) saturate(0.85) brightness(0.95);
+        }
+        .archive-showcase__name {
+            font-family: var(--font-body);
+            font-size: var(--type-small);
+            font-weight: 300;
+            color: var(--color-washi);
+            opacity: 0.85;
+            white-space: nowrap;
+            transition: opacity 0.3s var(--ease-out);
+        }
+        .archive-showcase__name--en {
+            font-family: var(--font-english);
+        }
+        .archive-showcase__artist:hover .archive-showcase__name {
+            opacity: 1;
+        }
+        .archive-showcase__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            font-family: var(--font-body);
+            font-size: var(--type-body);
+            font-weight: 400;
+            color: var(--color-dark);
+            background: var(--color-green);
+            padding: 0.75em 2em;
+            border-radius: 2px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+        }
+        .archive-showcase__cta:hover {
+            background: var(--color-green-light);
+            transform: translateY(-1px);
+        }
+        .archive-showcase__cta-arrow {
+            display: inline-block;
+            transition: transform 0.3s var(--ease-out);
+        }
+        .archive-showcase__cta:hover .archive-showcase__cta-arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Mobile: 2-row grid instead of horizontal scroll */
+        @media (max-width: 768px) {
+            .archive-showcase__artists {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem 1rem;
+                justify-items: center;
+            }
+            .archive-showcase__artists .archive-showcase__artist:nth-child(4),
+            .archive-showcase__artists .archive-showcase__artist:nth-child(5) {
+                grid-column: auto;
+            }
+            .archive-showcase__avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .archive-showcase__avatar,
+            .archive-showcase__avatar img,
+            .archive-showcase__cta,
+            .archive-showcase__cta-arrow {
+                transition: none;
+            }
+        }
 
         /* ============================================
            VIDEO FEATURE SECTION
         ============================================ */
         .video-feature {
-            background: #111;
+            background: var(--color-dark);
             padding: var(--space-s) var(--gutter) var(--space-l);
             margin-top: -10vh;
             position: relative;
@@ -2386,10 +2550,56 @@
         </section>
 
         <!-- ========================================
+             ARCHIVE SHOWCASE
+        ======================================== -->
+        <section class="archive-showcase" aria-label="ארכיון הקלטות חיות">
+            <div class="archive-showcase__inner">
+                <h2 class="archive-showcase__title">הקלטות מסשנים מדיטטיביים</h2>
+                <p class="archive-showcase__subtitle">ארכיון מדיטציות סאונד מאירועי סול תרפי - צלילה למצבים מדיטטיביים</p>
+                <div class="archive-showcase__artists">
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/assaf-amdursky.jpg" alt="אסף אמדורסקי" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name">אסף אמדורסקי</span>
+                    </a>
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/red-axes.jpg" alt="Red Axes" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name archive-showcase__name--en">Red Axes</span>
+                    </a>
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/atar-mayner.jpg" alt="עטר מיינר" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name">עטר מיינר</span>
+                    </a>
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/yehezkel-raz.jpg" alt="יחזקאל רז" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name">יחזקאל רז</span>
+                    </a>
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/yotam-avni.jpg" alt="יותם אבני" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name">יותם אבני</span>
+                    </a>
+                </div>
+                <a href="archive.html" class="archive-showcase__cta">
+                    כל ההקלטות
+                    <span class="archive-showcase__cta-arrow" aria-hidden="true">&larr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================
              PAST EVENTS CONDENSED
         ======================================== -->
 
-        <section class="mosaic dissolve-from-light" aria-label="גלריית אירועים">
+        <section class="mosaic" aria-label="גלריית אירועים">
             <div class="mosaic__grid">
                 <div class="mosaic__item mosaic__item--a" data-mosaic>
                     <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="קהל שוכב על הרצפה במדיטציית סאונד במוזיאון תל אביב" loading="lazy" width="1920" height="1280"></picture>
@@ -2437,7 +2647,7 @@
         ======================================== -->
         <section class="video-feature" aria-label="סרטון סול תרפי">
             <div class="video-feature__wrapper fade-in">
-                <iframe src="https://www.youtube.com/embed/nFvMRCdHvWM?start=45&rel=0" title="Sol Therapy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/nFvMRCdHvWM?start=45&rel=0&modestbranding=1&playsinline=1" title="Sol Therapy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
         </section>
 
