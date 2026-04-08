@@ -186,13 +186,7 @@
             font-weight: 900;
             font-display: swap;
         }
-        @font-face {
-            font-family: 'HaimG';
-            src: url('fonts/HaimG_Regular.woff2') format('woff2'),
-                 url('fonts/HaimG_Regular.otf') format('opentype');
-            font-weight: 400;
-            font-display: swap;
-        }
+        /* HaimG font-face removed - was declared but never used */
 
         /* ============================================
            DESIGN TOKENS
@@ -373,6 +367,7 @@
         .nav {
             position: fixed;
             top: 0;
+            padding-top: env(safe-area-inset-top, 0px);
             right: 0;
             left: 0;
             z-index: 9998;
@@ -420,7 +415,8 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            width: 24px;
+            min-width: 44px;
+            width: 44px;
             height: 48px;
             align-items: center;
             justify-content: center;
@@ -965,7 +961,9 @@
             color: var(--color-washi);
             line-height: 1.05;
             margin-bottom: 0.75rem;
-            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            overflow-wrap: break-word;
         }
 
         .event__details {
@@ -1310,10 +1308,10 @@
                 right: -10%;
             }
             .sumi-bg--bamboo img {
-                opacity: 0.18;
+                opacity: 0.30;
             }
             .sumi-bg--waves img {
-                opacity: 0.20;
+                opacity: 0.30;
             }
             .sumi-divider {
                 margin-top: -3vh;
@@ -1418,9 +1416,9 @@
         }
 
         .mosaic__title {
-            font-family: var(--font-masada);
+            font-family: 'Masada', serif;
             font-weight: 400;
-            font-size: var(--type-h3);
+            font-size: clamp(1.6rem, 1.2rem + 2.5vw, 3.5rem);
             color: var(--color-washi);
             text-align: center;
             margin-bottom: var(--space-s);
@@ -1623,7 +1621,7 @@
         }
 
         .blog-card__image {
-            aspect-ratio: 4 / 5;
+            aspect-ratio: 3 / 4;
             overflow: hidden;
             position: relative;
             background: var(--color-washi-warm);
@@ -1705,6 +1703,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4em;
+            min-height: 44px;
+            padding: 0.5rem 0.75rem;
             transition: color 0.3s var(--ease-out);
         }
 
@@ -2083,7 +2083,7 @@
             .partners__item--amazon img { max-width: 85px; max-height: 34px; }
         }
 
-        @media (max-width: 375px) {
+        @media (max-width: 380px) {
             .partners__grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.8rem 1.2rem;
@@ -2176,7 +2176,7 @@
             min-height: 56px;
         }
         .newsletter-cta__input::placeholder {
-            color: rgba(59, 81, 75, 0.25);
+            color: rgba(59, 81, 75, 0.5);
             direction: ltr;
             font-style: italic;
         }
@@ -2461,7 +2461,7 @@
         <a href="archive.html" class="menu-link">הקלטות</a>
         <a href="/private" class="menu-link">לארגונים</a>
         <a href="#contact" class="menu-link">קשר</a>
-        <a href="https://www.kfarblum-hotel.co.il/Event?id=1257&order=5057&s=5057&hotel=10088_1&in=2026-04-09&out=2026-04-11&rooms=1&ad1=2&ch1=0&inf1=0" class="mobile-menu__cta" target="_blank" rel="noopener">לפרטים והרשמה</a>
+        <a href="archive.html" class="mobile-menu__cta">לארכיון ההקלטות</a>
     </div>
 
     <main id="main-content">
@@ -2780,10 +2780,10 @@
     <!-- Floating CTA removed per Yaron's request (22.02.2026) -->
 
     <!-- GSAP 3.13 + Full Plugin Suite -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
     <script>
     (function() {
