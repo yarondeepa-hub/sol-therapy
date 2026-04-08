@@ -861,19 +861,22 @@
                 margin-top: -7vh;
             }
             .mosaic {
-                padding-bottom: calc(var(--space-m) + 8vh);
+                padding-bottom: var(--space-m);
             }
             .mosaic::after {
-                height: 12vh;
+                height: 6vh;
             }
             .partners.dissolve-from-dark {
-                margin-top: -6vh;
+                margin-top: -2vh;
                 border-radius: clamp(10px, 3vw, 28px) clamp(10px, 3vw, 28px) 0 0;
                 overflow: visible;
             }
             .partners.dissolve-from-dark::before {
-                height: 3vh;
-                border-radius: clamp(10px, 3vw, 28px) clamp(10px, 3vw, 28px) 0 0;
+                height: 0;
+                display: none;
+            }
+            .partners {
+                padding-top: var(--space-m);
             }
             #events, #blog, #contact {
                 scroll-margin-top: 5vh;
@@ -1980,8 +1983,8 @@
         }
         @media (max-width: 600px) {
             .video-feature {
-                padding: var(--space-m) var(--gutter);
-                margin-top: -8vh;
+                padding: var(--space-s) var(--gutter);
+                margin-top: 0;
             }
         }
 
