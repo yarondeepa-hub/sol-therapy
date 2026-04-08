@@ -63,6 +63,8 @@
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        img, iframe, video, svg, canvas, object, embed { max-width: 100%; }
+        p, h1, h2, h3, h4, h5, h6, li, div, span, a, details, summary, section, form, input, button { overflow-wrap: break-word; word-wrap: break-word; }
 
         :root {
             --color-dark: #1a1a1a;
@@ -78,6 +80,7 @@
 
         html {
             overflow-x: hidden;
+            width: 100%;
         }
 
         body {
@@ -88,6 +91,7 @@
             -webkit-font-smoothing: antialiased;
             min-height: 100vh;
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* Washi texture */
@@ -106,6 +110,8 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 4rem 1.5rem 6rem;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .archive__back {
@@ -169,6 +175,7 @@
             border-top: 1px solid rgba(88, 132, 117, 0.25);
             margin-bottom: 2.5rem;
             padding-top: 1rem;
+            overflow: hidden;
         }
         .listen-guide summary {
             font-family: var(--font-english);
@@ -238,7 +245,7 @@
 
         .session-card {
             display: grid;
-            grid-template-columns: 100px 1fr;
+            grid-template-columns: 100px minmax(0, 1fr);
             gap: 1.5rem;
             padding: 1.5rem 0;
             border-bottom: 1px solid rgba(242, 234, 211, 0.06);
@@ -246,6 +253,7 @@
             color: inherit;
             transition: background 0.3s ease;
             align-items: start;
+            overflow: hidden;
         }
         .session-card:first-child {
             border-top: 1px solid rgba(242, 234, 211, 0.06);
@@ -274,6 +282,8 @@
             flex-direction: column;
             gap: 0.4rem;
             padding-top: 0.25rem;
+            overflow: hidden;
+            min-width: 0;
         }
 
         .session-card__artist {
@@ -300,6 +310,8 @@
             font-weight: 400;
             color: var(--color-muted);
             opacity: 0.6;
+            flex-wrap: wrap;
+            overflow: hidden;
         }
         .session-card__meta span { white-space: nowrap; }
 
@@ -414,7 +426,7 @@
         /* Mobile */
         @media (max-width: 600px) {
             .session-card {
-                grid-template-columns: 72px 1fr;
+                grid-template-columns: 72px minmax(0, 1fr);
                 gap: 1rem;
                 padding: 1.25rem 0;
             }
@@ -452,12 +464,14 @@
             align-items: stretch;
             gap: 0;
             max-width: 420px;
+            width: 100%;
             margin: 0 auto;
             background: rgba(242, 234, 211, 0.06);
             border-radius: 12px;
             border: 1px solid rgba(242, 234, 211, 0.12);
             overflow: hidden;
             transition: border-color 0.3s ease;
+            position: relative;
         }
         .archive-newsletter__form:focus-within {
             border-color: var(--color-green);
@@ -748,7 +762,7 @@
                 <h2 class="archive-newsletter__title">הירשמו לעדכונים על הקלטות חדשות ואירועים קרובים</h2>
                 <form class="archive-newsletter__form" action="https://gmail.us10.list-manage.com/subscribe/post?u=e433f6c1a2c9ad09b483d8689&amp;id=e04026e07a&amp;f_id=003507e3f0" method="post" aria-label="הרשמה לעדכונים" target="_blank">
                     <input type="email" name="EMAIL" class="archive-newsletter__input" placeholder="your@email.com" aria-label="כתובת אימייל" required>
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_e433f6c1a2c9ad09b483d8689_e04026e07a" tabindex="-1" value=""></div>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px; overflow: hidden; width: 0; height: 0;"><input type="text" name="b_e433f6c1a2c9ad09b483d8689_e04026e07a" tabindex="-1" value=""></div>
                     <button type="submit" class="archive-newsletter__btn">הרשמה</button>
                 </form>
                 <p class="archive-newsletter__note">ללא ספאם. תוכן שאכפת לנו ממנו בלבד.</p>
