@@ -76,6 +76,10 @@
             --font-english: 'Inter', sans-serif;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: var(--font-body);
             font-weight: 300;
@@ -83,6 +87,7 @@
             color: var(--color-washi);
             -webkit-font-smoothing: antialiased;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Washi texture */
@@ -277,6 +282,14 @@
             font-weight: 500;
             line-height: 1.3;
         }
+        .session-card__artist a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+        .session-card__artist a:hover {
+            color: var(--color-green);
+        }
 
         .session-card__meta {
             display: flex;
@@ -393,6 +406,7 @@
         .session-card__player iframe {
             display: block;
             width: 100%;
+            max-width: 100%;
             height: 120px;
             border: none;
         }
@@ -546,13 +560,13 @@
         <h1 class="archive__title">הקלטות מסשנים</h1>
         <p class="archive__subtitle">הקלטות מדיטציית סאונד חיות מאירועי סול תרפי. כל סשן הוא מסע מוזיקלי ייחודי שנוצר במיוחד עבור מדיטציה בשכיבה.</p>
 
-        <div class="listen-guide">
+        <details class="listen-guide">
             <summary>הנחיות להאזנה</summary>
             <div class="listen-guide__text">
                 <p>הנחיות למדיטציית סאונד - מפנים שעה פנויה ביום ומארגנים מקום נוח לשכיבה בסמוך למערכת סאונד או עם אוזניות איכותיות, ומעבירים את הטלפון למצב שקט. מסכימים עם עצמנו על כניסה למצב ניסויי שבו אנו נותנים מקום לכל מה שיצוף. נכנסים להאזנה במצב שכיבה, כאשר יש הנחיה אחת: בכל פעם שהתודעה נודדת למקומות אחרים (תכנון, דאגה, זיכרון, רגש), אנו חוזרים בעדינות להתרכז במוזיקה ובסאונד.</p>
                 <p>שימו לב שמוזיקה מטבעה עשויה לעורר זיכרונות, רגשות וניתוק מזמן ומקום; כל אלו הן תופעות צפויות ומקובלות. בכל פעם שהדברים צפים, אנו מתבוננים בהם ואז חוזרים בעדינות להתרכז בסאונד.</p>
             </div>
-        </div>
+        </details>
 
         <p class="further-reading">לקריאה נוספת על <a href="blog-sound-meditation.html">המדע מאחורי מדיטציות סאונד</a> ו<a href="blog-collective-sync.html">מה קורה כשחדר שלם מקשיב יחד?</a></p>
 
@@ -563,7 +577,7 @@
                     <img src="assets/artists/assaf-amdursky.jpg" alt="אסף אמדורסקי" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">אסף אמדורסקי</h2>
+                    <h2 class="session-card__artist"><a href="session-assaf-amdursky.html">אסף אמדורסקי</a></h2>
                     <div class="session-card__meta">
                         <span>51:03</span>
                         <span>Live Meditative Set</span>
@@ -584,7 +598,7 @@
                     <img src="assets/artists/red-axes.jpg" alt="Red Axes" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">Red Axes</h2>
+                    <h2 class="session-card__artist"><a href="session-red-axes.html">Red Axes</a></h2>
                     <div class="session-card__meta">
                         <span>55:01</span>
                         <span>Live Meditative Set</span>
@@ -605,7 +619,7 @@
                     <img src="assets/artists/atar-mayner.jpg" alt="עטר מיינר" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">עטר מיינר</h2>
+                    <h2 class="session-card__artist"><a href="session-atar-mayner.html">עטר מיינר</a></h2>
                     <div class="session-card__meta">
                         <span>38:31</span>
                         <span>Live Meditative Set</span>
@@ -626,7 +640,7 @@
                     <img src="assets/artists/yehezkel-raz.jpg" alt="יחזקאל רז" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">יחזקאל רז</h2>
+                    <h2 class="session-card__artist"><a href="session-yehezkel-raz.html">יחזקאל רז</a></h2>
                     <div class="session-card__meta">
                         <span>1:26:46</span>
                         <span>Live Meditative Set</span>
@@ -647,7 +661,7 @@
                     <img src="assets/artists/yotam-avni.jpg" alt="יותם אבני" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">יותם אבני</h2>
+                    <h2 class="session-card__artist"><a href="session-yotam-avni.html">יותם אבני</a></h2>
                     <div class="session-card__meta">
                         <span>51:42</span>
                         <span>Live Meditative Set</span>
@@ -668,7 +682,7 @@
                     <img src="assets/artists/noa-argov.jpg" alt="נועה ארגוב" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">נועה ארגוב</h2>
+                    <h2 class="session-card__artist"><a href="session-noa-argov.html">נועה ארגוב</a></h2>
                     <div class="session-card__meta">
                         <span>1:32:36</span>
                         <span>Live Meditative Set</span>
@@ -689,7 +703,7 @@
                     <img src="assets/artists/shira-kela.jpg" alt="שירה קלע" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">שירה קלע</h2>
+                    <h2 class="session-card__artist"><a href="session-shira-kela.html">שירה קלע</a></h2>
                     <div class="session-card__meta">
                         <span>50:10</span>
                         <span>Live Meditative Set</span>
@@ -710,7 +724,7 @@
                     <img src="assets/artists/dor-zipori.jpg" alt="דור ציפורי" loading="lazy">
                 </div>
                 <div class="session-card__body">
-                    <h2 class="session-card__artist">דור ציפורי</h2>
+                    <h2 class="session-card__artist"><a href="session-dor-zipori.html">דור ציפורי</a></h2>
                     <div class="session-card__meta">
                         <span>55:22</span>
                         <span>Live Meditative Set</span>
