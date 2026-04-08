@@ -1417,6 +1417,17 @@
             z-index: 2;
         }
 
+        .mosaic__title {
+            font-family: var(--font-masada);
+            font-weight: 400;
+            font-size: var(--type-h3);
+            color: var(--color-washi);
+            text-align: center;
+            margin-bottom: var(--space-s);
+            position: relative;
+            z-index: 3;
+        }
+
         .mosaic__grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1918,10 +1929,7 @@
                 gap: 1.2rem 1rem;
                 justify-items: center;
             }
-            .archive-showcase__artists .archive-showcase__artist:nth-child(4),
-            .archive-showcase__artists .archive-showcase__artist:nth-child(5) {
-                grid-column: auto;
-            }
+            /* 6 artists = 2 rows of 3, fully symmetric */
             .archive-showcase__avatar {
                 width: 80px;
                 height: 80px;
@@ -2035,6 +2043,7 @@
         @media (max-width: 640px) {
             .partners {
                 padding: var(--space-s) var(--gutter) var(--space-m);
+                overflow: visible;
             }
             .partners__label {
                 margin-bottom: var(--space-s);
@@ -2042,19 +2051,48 @@
             .partners__grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2.5rem 1.5rem;
+                gap: 2rem 1rem;
                 justify-items: center;
                 align-items: center;
-                max-width: 380px;
+                max-width: 100%;
                 margin: 0 auto;
+                padding: 0 0.5rem;
+                overflow: visible;
             }
-            .partners__item { height: 44px; }
-            .partners__item--municipality { height: 72px; }
-            .partners__item--museum { height: 54px; }
-            .partners__item--suzanne { height: 48px; }
-            .partners__item--library { height: 44px; }
-            .partners__item--digitel { height: 46px; }
-            .partners__item--amazon { height: 38px; }
+            .partners__item {
+                height: 38px;
+                max-width: 100%;
+                overflow: visible;
+            }
+            .partners__item img {
+                max-width: 90px;
+                height: auto;
+                object-fit: contain;
+            }
+            .partners__item--municipality { height: auto; }
+            .partners__item--municipality img { max-width: 110px; max-height: 60px; }
+            .partners__item--museum { height: auto; }
+            .partners__item--museum img { max-width: 100px; max-height: 48px; }
+            .partners__item--suzanne { height: auto; }
+            .partners__item--suzanne img { max-width: 95px; max-height: 42px; }
+            .partners__item--library { height: auto; }
+            .partners__item--library img { max-width: 90px; max-height: 38px; }
+            .partners__item--digitel { height: auto; }
+            .partners__item--digitel img { max-width: 95px; max-height: 40px; }
+            .partners__item--amazon { height: auto; }
+            .partners__item--amazon img { max-width: 85px; max-height: 34px; }
+        }
+
+        @media (max-width: 375px) {
+            .partners__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.8rem 1.2rem;
+                padding: 0 1rem;
+            }
+            .partners__item img {
+                max-width: 80px;
+            }
+            .partners__item--municipality img { max-width: 100px; max-height: 55px; }
         }
 
         /* ============================================
@@ -2587,6 +2625,12 @@
                         </div>
                         <span class="archive-showcase__name">יותם אבני</span>
                     </a>
+                    <a href="archive.html" class="archive-showcase__artist">
+                        <div class="archive-showcase__avatar">
+                            <img src="assets/artists/noa-argov.jpg" alt="נועה ארגוב" loading="lazy" width="200" height="200">
+                        </div>
+                        <span class="archive-showcase__name">נועה ארגוב</span>
+                    </a>
                 </div>
                 <a href="archive.html" class="archive-showcase__cta">
                     כל ההקלטות
@@ -2600,6 +2644,7 @@
         ======================================== -->
 
         <section class="mosaic" aria-label="גלריית אירועים">
+            <h2 class="mosaic__title">אירועים קודמים</h2>
             <div class="mosaic__grid">
                 <div class="mosaic__item mosaic__item--a" data-mosaic>
                     <picture><source srcset="assets/events/museum-meditation.webp" type="image/webp"><img src="assets/events/museum-meditation.jpg" alt="קהל שוכב על הרצפה במדיטציית סאונד במוזיאון תל אביב" loading="lazy" width="1920" height="1280"></picture>
