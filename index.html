@@ -3076,6 +3076,7 @@
         // GSAP 3.13 + SplitText + ScrollTrigger
         // ========================================
         if (!prefersReducedMotion && typeof SplitText !== 'undefined') {
+          document.fonts.ready.then(function() {
             gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
             // Custom easing curves
@@ -3313,6 +3314,7 @@
             }
         }
 
+          }); // end document.fonts.ready
         } // end animation engine
 
         // ========================================
