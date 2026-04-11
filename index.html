@@ -2837,9 +2837,9 @@
 
         /* Mobile adjustments */
         @media (max-width: 768px) {
-            /* 8. Reduce section padding */
+            /* 8. Section padding - reduced top, generous bottom for dissolve clearance */
             .events-listing {
-                padding: var(--space-s) 0;
+                padding: var(--space-s) 0 var(--space-l) 0;
             }
             /* 9. Slightly smaller title */
             .events-listing__title {
@@ -2883,11 +2883,15 @@
                 justify-content: flex-start;
             }
             /* 6. Compact row: stack as mini card */
+            .events-compact-list {
+                padding: 0 var(--gutter);
+                margin-bottom: 1rem;
+            }
             .events-compact-row {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.15rem;
-                padding: 0.75rem 0;
+                gap: 0.2rem;
+                padding: 0.85rem 0;
             }
             .events-compact-row__date {
                 font-size: 0.65rem;
