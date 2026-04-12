@@ -292,6 +292,67 @@
             background: var(--color-beni-light);
         }
 
+        /* FAQ */
+        .faq-section--inline {
+            padding: 2.5rem 0 0;
+            margin-bottom: 0;
+        }
+        .faq-section__kicker {
+            font-family: var(--font-english);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+            margin-bottom: 0.5rem;
+        }
+        .faq-section__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-washi);
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(242, 234, 211, 0.1);
+        }
+        .faq-item__q {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 400;
+            padding: 1rem 0;
+            cursor: pointer;
+            color: var(--color-washi);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item__q::-webkit-details-marker { display: none; }
+        .faq-item__q::after {
+            content: '+';
+            font-family: var(--font-english);
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            transition: transform 0.4s ease;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        .faq-item[open] .faq-item__q::after {
+            transform: rotate(45deg);
+        }
+        .faq-item__a {
+            padding: 0 0 1rem 0;
+            color: var(--color-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
         .archive-footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -394,6 +455,41 @@
 
             <p><strong>מה הולך לקרות?</strong><br>
             עמיחי יתארח לסשן מוזיקלי-מדיטטיבי ארוך, הזדמנות נדירה להחשף לזרמים התת-קרקעיים המניעים את יצירותיו ולצלול לעומק צלילים ותדרים מרפאים. במפגש נקיים מדיטציה חצי מודרכת בשכיבה במשך 50 דקות. אנו מדייקים את הסטנדינג בחלל עם סאונד מוקפד.</p>
+        </div>
+
+        <div class="faq-section--inline">
+            <p class="faq-section__kicker">FAQ</p>
+            <h2 class="faq-section__title">שאלות נפוצות</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-item__q">צריך ניסיון קודם?</summary>
+                    <div class="faq-item__a">לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">מה צריך להביא?</summary>
+                    <div class="faq-item__a">בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף האירוע.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">זו הופעה או מדיטציה?</summary>
+                    <div class="faq-item__a">זו מדיטציה עמוקה - חוויה חיה של סאונד, קשב ונוכחות. לא הופעה על במה ולא שיעור מדיטציה רגיל.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">אפשר להגיע לבד?</summary>
+                    <div class="faq-item__a">כן. הרבה מגיעים לבד.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">כמה זמן נמשך הסשן?</summary>
+                    <div class="faq-item__a">בין שעה לשעה וחצי, תלוי באירוע. הזמן המדויק מופיע בדף האירוע.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">צריך לשכב? מה אם יש לי מגבלה פיזית?</summary>
+                    <div class="faq-item__a">רוב האנשים שוכבים, אבל אפשר גם לשבת. המרחב מאפשר כל עמדה שנוחה לך.</div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__q">אפשר לאחר?</summary>
+                    <div class="faq-item__a">חשוב להגיע בזמן - הכניסה אחרי שהסשן התחיל מפריעה לשקט שנוצר. אם אתם יודעים מראש שתאחרו, כדאי לפנות אלינו.</div>
+                </details>
+            </div>
         </div>
 
         <div class="event-page__cta-wrap">

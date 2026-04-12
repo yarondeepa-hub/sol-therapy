@@ -138,6 +138,72 @@
     }
     </script>
 
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "צריך ניסיון קודם?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה צריך להביא?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף האירוע."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "זו הופעה או מדיטציה?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "זו מדיטציה עמוקה - חוויה חיה של סאונד, קשב ונוכחות. לא הופעה על במה ולא שיעור מדיטציה רגיל."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "אפשר להגיע לבד?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "כן. הרבה מגיעים לבד."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "כמה זמן נמשך הסשן?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "בין שעה לשעה וחצי, תלוי באירוע. הזמן המדויק מופיע בדף האירוע."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "צריך לשכב? מה אם יש לי מגבלה פיזית?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "רוב האנשים שוכבים, אבל אפשר גם לשבת. המרחב מאפשר כל עמדה שנוחה לך."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "אפשר לאחר?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "חשוב להגיע בזמן - הכניסה אחרי שהסשן התחיל מפריעה לשקט שנוצר. אם אתם יודעים מראש שתאחרו, כדאי לפנות אלינו."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Structured Data: BreadcrumbList -->
     <script type="application/ld+json">
     {
@@ -2920,6 +2986,74 @@
             }
         }
 
+        /* ============================================
+           FAQ
+        ============================================ */
+        .faq-section {
+            padding: var(--space-l) var(--gutter);
+            background: var(--color-dark);
+        }
+        .faq-section__inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-section__kicker {
+            font-family: var(--font-english);
+            font-size: var(--type-small);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+            margin-bottom: 0.5rem;
+        }
+        .faq-section__title {
+            font-family: var(--font-display);
+            font-size: var(--type-sub);
+            font-weight: 600;
+            margin-bottom: var(--space-m);
+            color: var(--color-washi);
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(242, 234, 211, 0.1);
+        }
+        .faq-item__q {
+            font-family: var(--font-body);
+            font-size: var(--type-body);
+            font-weight: 400;
+            padding: 1.2rem 0;
+            cursor: pointer;
+            color: var(--color-washi);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item__q::-webkit-details-marker { display: none; }
+        .faq-item__q::after {
+            content: '+';
+            font-family: var(--font-english);
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            transition: transform var(--duration-normal) var(--ease-out);
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        .faq-item[open] .faq-item__q::after {
+            transform: rotate(45deg);
+        }
+        .faq-item__a {
+            padding: 0 0 1.2rem 0;
+            color: var(--color-muted);
+            font-size: var(--type-body);
+            line-height: 1.7;
+        }
+
     </style>
 </head>
 <body>
@@ -3269,6 +3403,48 @@
                 </div>
                 <div class="partners__item partners__item--amazon">
                     <img src="assets/partners/amazon-logo.png" alt="Amazon Israel" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             FAQ
+        ======================================== -->
+
+        <section class="faq-section" id="faq" aria-label="שאלות נפוצות">
+            <div class="faq-section__inner fade-in">
+                <p class="faq-section__kicker">FAQ</p>
+                <h2 class="faq-section__title">שאלות נפוצות</h2>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-item__q">צריך ניסיון קודם?</summary>
+                        <div class="faq-item__a">לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">מה צריך להביא?</summary>
+                        <div class="faq-item__a">בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף האירוע.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">זו הופעה או מדיטציה?</summary>
+                        <div class="faq-item__a">זו מדיטציה עמוקה - חוויה חיה של סאונד, קשב ונוכחות. לא הופעה על במה ולא שיעור מדיטציה רגיל.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">אפשר להגיע לבד?</summary>
+                        <div class="faq-item__a">כן. הרבה מגיעים לבד.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">כמה זמן נמשך הסשן?</summary>
+                        <div class="faq-item__a">בין שעה לשעה וחצי, תלוי באירוע. הזמן המדויק מופיע בדף האירוע.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">צריך לשכב? מה אם יש לי מגבלה פיזית?</summary>
+                        <div class="faq-item__a">רוב האנשים שוכבים, אבל אפשר גם לשבת. המרחב מאפשר כל עמדה שנוחה לך.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__q">אפשר לאחר?</summary>
+                        <div class="faq-item__a">חשוב להגיע בזמן - הכניסה אחרי שהסשן התחיל מפריעה לשקט שנוצר. אם אתם יודעים מראש שתאחרו, כדאי לפנות אלינו.</div>
+                    </details>
                 </div>
             </div>
         </section>
