@@ -419,10 +419,12 @@
         .cloud-ticket__bio p{margin:0;padding:.1rem .25rem 1.3rem;font-size:.85rem;line-height:1.8;color:var(--color-muted)}
         @media (max-width:600px){
           .cloud-logo__seal{height:152px}
-          .cloud-ticket__head{flex-wrap:wrap;gap:.5rem .8rem;padding:.9rem .15rem}
-          .cloud-ticket__name{flex:1 1 auto;font-size:1rem}
-          .cloud-ticket__toggle{order:5}
-          .cloud-ticket__btn{order:6;margin-inline-start:auto;padding:.5rem 1.25rem}
+          .cloud-ticket__head{flex-wrap:nowrap;gap:.4rem .5rem;padding:.9rem .1rem}
+          .cloud-ticket__date{min-width:44px;font-size:1.15rem}
+          .cloud-ticket__name{flex:1 1 auto;min-width:0;font-size:1rem}
+          .cloud-ticket__name small{margin-inline-start:.35rem}
+          .cloud-ticket__toggle{order:5;flex-shrink:0;padding:.4rem .1rem}
+          .cloud-ticket__btn{order:6;margin-inline-start:auto;padding:.5rem 1rem;flex-shrink:0}
         }
     </style>
 </head>
