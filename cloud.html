@@ -84,6 +84,7 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+            {"@type": "Question", "name": "מה זה סול תרפי?", "acceptedAnswer": {"@type": "Answer", "text": "מיזם סול תרפי נשען על פרקטיקת הסאונד הילינג (Sound Healing) - שימוש בצלילים ומוזיקה ככלי להרחבת תודעה וצלילה למצבים מדיטטיביים עמוקים. באירועי סול תרפי אנו מזמינים אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים להוביל מפגשים של מדיטציית סאונד בשכיבה, עם הנחיה הנשענת על עקרונות הזן-בודהיזם. הפעילות נשענת על בסיס רוחני ומדעי, ומלווה על ידי נזירים בודהיסטים ולצד מדענים וחוקרי מוח מהמובילים בעולם."}},
             {"@type": "Question", "name": "צריך ניסיון קודם?", "acceptedAnswer": {"@type": "Answer", "text": "לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה."}},
             {"@type": "Question", "name": "מה צריך להביא?", "acceptedAnswer": {"@type": "Answer", "text": "בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף הכרטיסים של האירוע."}},
             {"@type": "Question", "name": "זו הופעה או מדיטציה?", "acceptedAnswer": {"@type": "Answer", "text": "זו מדיטציה עמוקה - חוויה חיה של סאונד, קשב ונוכחות. לא הופעה על במה ולא שיעור מדיטציה רגיל."}},
@@ -474,6 +475,7 @@
               "title   media"
               "desc    media"
               "tickets tickets"
+              "video   video"
               "faq     faq"
               "footer  footer";
             align-items:start;
@@ -485,6 +487,7 @@
           .event-page__description{grid-area:desc;align-self:start}
           .event-page__hero{grid-area:media;width:100%;max-width:480px;margin:0;align-self:start;justify-self:center}
           .cloud-tickets{grid-area:tickets;width:100%;max-width:780px;margin:3.5rem auto 0}
+          .cloud-video{grid-area:video;width:100%;max-width:780px;margin:3.5rem auto 0}
           .cloud-faq{grid-area:faq;width:100%;max-width:780px;margin-inline:auto}
           .archive-footer{grid-area:footer}
         }
@@ -532,9 +535,16 @@
             <div class="cloud-ticket"><div class="cloud-ticket__head"><span class="cloud-ticket__date">30.7</span><span class="cloud-ticket__name">שי בן צור <small>לייב</small></span><button type="button" class="cloud-ticket__toggle" aria-expanded="false">על האמן<span class="chev" aria-hidden="true">&#9662;</span></button><a class="cloud-ticket__btn" href="https://www.eventer.co.il/v6tff" target="_blank" rel="noopener">כרטיסים</a></div><div class="cloud-ticket__bio"><div class="cloud-ticket__bio-in"><img class="cloud-ticket__photo" src="assets/cloud/artists/shye-ben-tzur.jpg" alt="שי בן צור" loading="lazy" width="104" height="104"><p>נארח את שי בן צור, מוזיקאי, מלחין ומפיק בינלאומי יוצא דופן, היוצר גשר מוזיקלי ורוחני נדיר בין המוזיקה הסופית המסורתית (קוואלי), שירה מקודשת בעברית ומסורות קלאסיות מהודו. בן צור, שחי ופעל בהודו לאורך שנים, זכה לשבחים מקיר לקיר ולהכרה עולמית, בין היתר בזכות אלבומו המופתי "Junun" (ג'ונון) – שיתוף פעולה חוצה גבולות עם גיטריסט להקת רדיוהד ג'וני גרינווד והרכב "הרג'סטאן אקספרס". המוזיקה של בן צור היא מסע מהפנט אל עמקי הנפש, השוזר מלודיות עשירות, מקצבים מהפנטים ותדרים של אהבה וחיבור רוחני. במפגש הלייב במרחב "קלאוד", יפשט בן צור את המרחקים התרבותיים והמוזיקליים ויבנה סשן המותאם במיוחד להרפיה עמוקה, שבו השוכבים בחלל יוכלו להתמסר לצלילים האורגניים, למצוא מרחב נשימה נקי ולצלול אל חוויית הקשבה טוטאלית ומרוממת רוח.</p></div></div></div>
         </div>
 
+        <section class="cloud-video" aria-label="וידאו" style="width:100%;max-width:780px;margin:3.5rem auto 0">
+            <div style="position:relative;aspect-ratio:16/9;width:100%;border-radius:8px;overflow:hidden;background:#000">
+                <iframe src="https://www.youtube.com/embed/3fAD0jWxE48" title="סול תרפי - מדיטציות סאונד" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
         <section class="cloud-faq" aria-label="שאלות נפוצות">
             <p class="cloud-faq__kicker">FAQ</p>
             <h2 class="cloud-faq__title">שאלות נפוצות</h2>
+            <details class="cloud-faq__item"><summary class="cloud-faq__q">מה זה סול תרפי?</summary><div class="cloud-faq__a">מיזם "סול תרפי" נשען על פרקטיקת הסאונד הילינג (Sound Healing) - שימוש בצלילים ומוזיקה ככלי להרחבת תודעה, וצלילה למצבים מדיטטיביים עמוקים. במשך אלפי שנים רתמו בני האדם את הטכנולוגיה המתקדמת ביותר ברשותם כדי לייצר כלים, פעימות ופרקטיקות שמעמיקות את החיבור בין נפש, תודעה ומוזיקה.<br><br>במסגרת אירועי סול תרפי אנו מזמינים אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים - אנשים שהקדישו את חייהם לחקר התדר והצליל - להוביל מפגשים של מדיטציית סאונד בשכיבה, עם הנחיה מוקפדת הנשענת על עקרונות הזן-בודהיזם. אלו מסעות טרנספורמטיביים אל תוך התודעה, לעיתים בעלי אופי רוחני, הנערכים באמצעות מוזיקה המתעלה מעל גבולות של שפה ותרבות - ומאפשרת חיבור ישיר אל הגוף והנפש.<br><br>מסגרת הפעילות שלנו נשענת על בסיס רוחני ומדעי עמוק, ומלווה על ידי נזירים בודהיסטים המחזיקים בידע בן 2,500 שנה על התודעה האנושית - לצד מדענים וחוקרי מוח מהמובילים בעולם, הלוקחים חלק באירועים ובריטריטים שלנו. תוכלו למצוא המון מידע נוסף ב<a href="/" style="color:#209CB4">אתר הבית שלנו</a>.</div></details>
             <details class="cloud-faq__item"><summary class="cloud-faq__q">צריך ניסיון קודם?</summary><div class="cloud-faq__a">לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה.</div></details>
             <details class="cloud-faq__item"><summary class="cloud-faq__q">מה צריך להביא?</summary><div class="cloud-faq__a">בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף הכרטיסים של האירוע.</div></details>
             <details class="cloud-faq__item"><summary class="cloud-faq__q">זו הופעה או מדיטציה?</summary><div class="cloud-faq__a">זו מדיטציה עמוקה - חוויה חיה של סאונד, קשב ונוכחות. לא הופעה על במה ולא שיעור מדיטציה רגיל.</div></details>
