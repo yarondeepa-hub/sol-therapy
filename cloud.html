@@ -449,12 +449,14 @@
               "logo    media"
               "title   media"
               "desc    media"
+              "share   share"
               "tickets tickets"
               "video   video"
               "faq     faq"
               "footer  footer";
             align-items:start;
           }
+          .cloud-pageshare{grid-area:share;margin-top:2.6rem}
           .event-page__back{grid-area:back}
           .cloud-logo{grid-area:logo;text-align:right;margin:0 0 1.25rem}
           .cloud-logo__seal{margin:0}
@@ -480,6 +482,11 @@
 .cloud-share-pop a:hover .shic,.cloud-share-pop button:hover .shic,.cloud-share-pop a:focus-visible .shic,.cloud-share-pop button:focus-visible .shic{background:#209CB4;border-color:#209CB4;color:#fff;transform:scale(1.07)}
 .cloud-share-pop .shic svg{display:block}
 @media (max-width:640px){.cloud-ticket__share-label{display:none}.cloud-ticket__share{padding:.4rem .15rem}}
+/* ===== Page-level share (prominent, under hero) ===== */
+.cloud-pageshare{display:flex;justify-content:center;margin:1.9rem auto .2rem}
+.cloud-pageshare__btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-body);font-weight:600;font-size:.95rem;letter-spacing:.01em;color:#209CB4;background:rgba(32,156,180,.08);border:1.5px solid rgba(32,156,180,.55);border-radius:999px;padding:.68rem 1.85rem;min-height:46px;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;-webkit-tap-highlight-color:transparent}
+.cloud-pageshare__btn:hover,.cloud-pageshare__btn:focus-visible{background:#209CB4;color:#1a1a1a;border-color:#209CB4;transform:translateY(-1px)}
+.cloud-pageshare__btn svg{display:block}
 /* ===== Conversion layer: visible time, reassurance chips, sticky CTA ===== */
 .cloud-ticket__date{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.04}
 .cloud-ticket__dow{font-family:var(--font-body);font-size:.62rem;font-weight:400;letter-spacing:.02em;color:var(--color-muted);opacity:.82;margin-bottom:.13rem}
@@ -588,6 +595,13 @@
             </picture>
         </div>
 
+        <div class="cloud-pageshare">
+            <button type="button" class="cloud-pageshare__btn" aria-label="שיתוף הדף">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg>
+                שתפו את המרחב
+            </button>
+        </div>
+
         <div class="event-page__description">
                 <p>סול ת'רפי מציגים את הפופ אפ "קלאוד ספייס", מרחב נשימה אורבני חדש ויחיד במינו בארץ, בקרית המלאכה, תל אביב, שיעבוד בחודשים יולי, אוגוסט וספטמבר. בתוך החיים הסוענים שבהם אנו חיים, הבנו את הצורך במרחב שונה, מיוחד, נקי, רגוע ומרחף.</p>
                 <p>החיים היום יומיים תחת יוקר המחיה, המצב הביטחוני הרעוע, רעש עירוני בלתי פוסק ועוד שלל משתנים, גורמים לרמות סטרס גבוהות שאנו סוחבים בגוף ובנפש בקצב הולך וגובר בשנים האחרונות.</p>
@@ -687,6 +701,17 @@
     var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
     openPop(btn,url,text);
+  });
+  // --- Page-level share (prominent button under hero) ---
+  document.addEventListener('click',function(e){
+    var b=e.target&&e.target.closest&&e.target.closest('.cloud-pageshare__btn'); if(!b) return;
+    e.stopPropagation();
+    var url=BASE+'/cloud';
+    var text='CLOUD SPACE - מרחב נשימה אורבני מבית סול ת\'רפי | מדיטציות סאונד עמוקות, יולי 2026';
+    if(typeof window.gtag==='function'){ try{ window.gtag('event','page_share_click',{}); }catch(_){} }
+    var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
+    openPop(b,url,text);
   });
 
   // --- Conversion measurement: outbound ticket clicks ---
@@ -799,7 +824,7 @@ ART.forEach(function(a){
   }
   detail.querySelector('.lp-detail__x').addEventListener('click',closeDetail);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetail();});
-  var rt; window.addEventListener('resize',function(){ if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(); openDetail(sg); },160); });
+  var rt, lastW=window.innerWidth; window.addEventListener('resize',function(){ if(window.innerWidth===lastW)return; lastW=window.innerWidth; if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(); openDetail(sg); },160); });
   function trig(el){ var card=el.closest('.lp-card'); if(card) openDetail(card.getAttribute('data-slug')); }
   document.querySelectorAll('.lp-card__more').forEach(function(b){b.addEventListener('click',function(){trig(b);});});
   document.querySelectorAll('.lp-card__name').forEach(function(n){n.style.cursor='pointer';n.addEventListener('click',function(){trig(n);});});
