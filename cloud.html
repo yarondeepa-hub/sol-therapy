@@ -425,6 +425,10 @@
         .cloud-faq__q::after{content:'\25BE';font-size:.7em;color:var(--color-green);flex-shrink:0;transition:transform .3s ease}
         .cloud-faq__item[open] .cloud-faq__q::after{transform:rotate(180deg)}
         .cloud-faq__a{padding:0 .25rem 1.3rem;font-size:.9rem;line-height:1.85;color:var(--color-muted)}
+        .cloud-session{margin-top:3.6rem;text-align:center}
+        .cloud-session__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);margin:0}
+        .cloud-session__title::after{content:'';display:block;width:42px;height:2px;background:#209CB4;border-radius:2px;opacity:.85;margin:.95rem auto 0}
+        .cloud-session__text{font-size:.95rem;line-height:1.95;color:var(--color-muted);max-width:600px;margin:1.4rem auto 0}
         @media (max-width:600px){
           .cloud-logo__seal{height:152px}
           .cloud-ticket__head{flex-wrap:nowrap;gap:.4rem .5rem;padding:.9rem .1rem}
@@ -451,6 +455,7 @@
               "desc    media"
               "share   share"
               "tickets tickets"
+              "session session"
               "video   video"
               "faq     faq"
               "footer  footer";
@@ -464,6 +469,7 @@
           .event-page__description{grid-area:desc;align-self:start}
           .event-page__hero{grid-area:media;width:100%;max-width:480px;margin:0;align-self:start;justify-self:center}
           .cloud-tickets{grid-area:tickets;width:100%;max-width:780px;margin:3.5rem auto 0}
+          .cloud-session{grid-area:session;width:100%;max-width:780px;margin:3.6rem auto 0}
           .cloud-video{grid-area:video;width:100%;max-width:780px;margin:3.5rem auto 0}
           .cloud-faq{grid-area:faq;width:100%;max-width:780px;margin-inline:auto}
           .archive-footer{grid-area:footer}
@@ -618,6 +624,11 @@
             <p class="cloud-tickets__label">מדיטציות סאונד עמוקות<span class="yr">יולי 2026</span></p>
             <div class="lp-grid" id="lineupGrid"></div>
         </div>
+
+        <section class="cloud-session" aria-label="מה מחכה לכם בסשן">
+            <h2 class="cloud-session__title">מה מחכה לכם בסשן?</h2>
+            <p class="cloud-session__text">במפגש נקיים מדיטציית שכיבה חצי מודרכת במשך 60 דקות. אנו מדייקים את הסט והסטטינג בחלל עם סאונד מוקפד ומזרנים נוחים - אין צורך להביא ציוד כלשהו ואין צורך בניסיון קודם במדיטציה. כמו כן, במפגש תתקיים שיחה פתוחה עם האמן והזדמנות לשאול שאלות.</p>
+        </section>
 
         <section class="cloud-video" aria-label="וידאו" style="width:100%;max-width:780px;margin:3.5rem auto 0">
             <div style="position:relative;aspect-ratio:16/9;width:100%;border-radius:8px;overflow:hidden;background:#000">
