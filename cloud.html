@@ -394,7 +394,8 @@
         .cloud-logo__seal{display:block;width:auto;height:190px;margin:0 auto;opacity:.97}
         .cloud-logo__wm{font-family:'SimplerPro',var(--font-english);font-weight:900;font-size:clamp(2.4rem,1.8rem + 3vw,3.6rem);text-transform:lowercase;letter-spacing:-.01em;color:var(--color-washi);line-height:.9}
         .cloud-tickets{margin-top:.5rem}
-        .cloud-tickets__label{font-family:var(--font-english);font-size:.7rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--color-muted);text-align:center;margin-bottom:1.25rem}
+        .cloud-tickets__label{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,1.15rem + 2vw,2.4rem);letter-spacing:normal;text-transform:none;color:var(--color-washi);text-align:center;margin-bottom:2.2rem;line-height:1.2}
+.cloud-tickets__label .yr{display:block;font-family:var(--font-body);font-weight:400;font-size:.92rem;letter-spacing:.05em;color:#209CB4;margin-top:.55rem}
         .cloud-ticket{border-bottom:1px solid rgba(242,234,211,.1)}
         .cloud-ticket:first-of-type{border-top:1px solid rgba(242,234,211,.1)}
         .cloud-ticket__head{display:flex;align-items:center;gap:1rem;padding:1rem .25rem}
@@ -511,6 +512,9 @@
 .lp-card__when .w-time{font-family:var(--font-english);font-weight:400;font-size:.8rem;color:var(--color-muted);letter-spacing:.04em}
 .lp-card__btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:#1a1a1a;background:#209CB4;border-radius:999px;padding:.5rem 1.7rem;min-height:40px;text-decoration:none;transition:background .25s ease}
 .lp-card__btn:hover{background:#17859B}
+.lp-card__share{background:none;border:none;cursor:pointer;color:var(--color-muted);display:inline-flex;align-items:center;justify-content:center;padding:.25rem;line-height:0;transition:color .2s ease;-webkit-tap-highlight-color:transparent}
+.lp-card__share:hover{color:#209CB4}
+.lp-card__share svg{display:block}
 @media(max-width:980px){.lp-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem 1.1rem}}
 @media(max-width:760px){.lp-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){
@@ -524,7 +528,7 @@
   .lp-card__when .w-dow{font-size:.88rem}
   .lp-card__when .w-num{font-size:1.15rem}
   .lp-card__when .w-time{font-size:.78rem}
-  .lp-card__actions{margin-top:.75rem;padding-top:0;gap:.9rem}
+  .lp-card__actions{margin-top:.75rem;padding-top:0;gap:.55rem}
   .lp-card__btn{padding:.45rem 1.5rem;font-size:.82rem}
   .lp-card__more{padding:.5rem .1rem}
 }
@@ -533,7 +537,7 @@
 <style>
 /* card actions + "על האמן" link */
 .lp-card__actions{display:flex;align-items:center;gap:1rem;margin-top:auto;padding-top:.85rem}
-.lp-card__more{background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--color-muted);padding:.3rem 0;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(148,148,149,.5);transition:color .2s ease,text-decoration-color .2s ease;-webkit-tap-highlight-color:transparent}
+.lp-card__more{background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--color-muted);padding:.3rem 0;white-space:nowrap;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(148,148,149,.5);transition:color .2s ease,text-decoration-color .2s ease;-webkit-tap-highlight-color:transparent}
 .lp-card__more:hover{color:var(--color-washi);text-decoration-color:var(--color-washi)}
 /* inline detail dropdown (artist bio) */
 .lp-detail{grid-column:1/-1;max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.22,.61,.36,1)}
@@ -592,7 +596,7 @@
         </div>
 
         <div class="cloud-tickets" id="tickets">
-            <p class="cloud-tickets__label">לרכישת כרטיסים - יולי 2026</p>
+            <p class="cloud-tickets__label">מדיטציות סאונד עמוקות<span class="yr">יולי 2026</span></p>
             <div class="lp-grid" id="lineupGrid"></div>
         </div>
 
@@ -673,16 +677,16 @@
     });
     setTimeout(function(){document.addEventListener('click',onDoc);},0);
   }
-  document.querySelectorAll('.cloud-ticket__share').forEach(function(btn){
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      var slug=btn.getAttribute('data-slug'), name=btn.getAttribute('data-name'), when=btn.getAttribute('data-when');
-      var url=BASE+'/share/'+slug+'.html';
-      var text='CLOUD SPACE - מדיטציית סאונד בהשתתפות '+name+' | '+when+' | 20:30';
-      var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
-      openPop(btn,url,text);
-    });
+  document.addEventListener('click',function(e){
+    var btn=e.target&&e.target.closest&&e.target.closest('.lp-card__share');
+    if(!btn) return;
+    e.stopPropagation();
+    var slug=btn.getAttribute('data-slug'), name=btn.getAttribute('data-name'), when=btn.getAttribute('data-when');
+    var url=BASE+'/share/'+slug+'.html';
+    var text='CLOUD SPACE - מדיטציית סאונד בהשתתפות '+name+' | '+when+' | 20:30';
+    var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
+    openPop(btn,url,text);
   });
 
   // --- Conversion measurement: outbound ticket clicks ---
@@ -751,6 +755,7 @@ ART.forEach(function(a){
       '<div class="lp-card__actions">'+
         '<a class="lp-card__btn" href="'+a.url+'" target="_blank" rel="noopener" aria-label="כרטיסים: '+a.name+'">כרטיסים</a>'+
         '<button type="button" class="lp-card__more" aria-label="על האמן: '+a.name+'">על האמן<span class="chev" aria-hidden="true">▾</span></button>'+
+        '<button type="button" class="lp-card__share" data-slug="'+a.slug+'" data-name="'+a.name+'" data-when="'+a.dow+' '+a.date+'" aria-label="שיתוף: '+a.name+'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button>'+
       '</div>'+
     '</div>';
   c.setAttribute('data-slug', a.slug);
