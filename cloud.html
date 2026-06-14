@@ -639,13 +639,19 @@
         </section>
 
         <section class="cloud-video" aria-label="וידאו" style="width:100%;max-width:780px;margin:3.5rem auto 0">
-            <div style="position:relative;aspect-ratio:16/9;width:100%;border-radius:8px;overflow:hidden;background:#000">
-                <iframe src="https://www.youtube.com/embed/3fAD0jWxE48" title="סול תרפי - מדיטציות סאונד" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="yt-facade" data-ytid="3fAD0jWxE48" role="button" tabindex="0" aria-label="נגן וידאו - סול תרפי" style="position:relative;aspect-ratio:16/9;width:100%;border-radius:8px;overflow:hidden;background:#000;cursor:pointer">
+                <picture>
+                    <source srcset="assets/cloud/video-thumb.webp" type="image/webp">
+                    <img src="assets/cloud/video-thumb.jpg" alt="סול תרפי - מדיטציות סאונד" width="780" height="439" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                </picture>
+                <span class="yt-facade__play" aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                    <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#1898B7"/><path d="M27 14l18 10-18 10z" fill="#fff"/></svg>
+                </span>
             </div>
         </section>
 
         <section class="cloud-space" aria-label="הדמיית המרחב">
-            <span class="cloud-space__frame"><picture><source srcset="assets/cloud/space-illustration.webp" type="image/webp"><img class="cloud-space__img" src="assets/cloud/space-illustration.jpg" alt="הדמיית מרחב CLOUD - אולם מדיטציית סאונד עם מזרנים, צמחייה ומערכת סאונד מרכזית" width="1536" height="1024"></picture></span>
+            <span class="cloud-space__frame"><picture><source srcset="assets/cloud/space-illustration.webp" type="image/webp"><img class="cloud-space__img" src="assets/cloud/space-illustration.jpg" alt="הדמיית מרחב CLOUD - אולם מדיטציית סאונד עם מזרנים, צמחייה ומערכת סאונד מרכזית" width="1536" height="1024" loading="lazy" decoding="async"></picture></span>
             <p class="cloud-space__cap">הדמיית המרחב · קלאוד ספייס, המרץ 6</p>
         </section>
 
@@ -858,6 +864,26 @@ ART.forEach(function(a){
   document.querySelectorAll('.lp-card__more').forEach(function(b){b.addEventListener('click',function(){trig(b);});});
   document.querySelectorAll('.lp-card__name').forEach(function(n){n.style.cursor='pointer';n.addEventListener('click',function(){trig(n);});});
   document.querySelectorAll('.lp-card__media').forEach(function(m){m.style.cursor='pointer';m.addEventListener('click',function(){trig(m);});});
+})();
+</script>
+<script>
+/* lite-youtube facade: load the heavy player only on click (zero quality loss) */
+(function(){
+  function load(f){
+    var id=f.getAttribute('data-ytid'); if(!id) return;
+    var ifr=document.createElement('iframe');
+    ifr.src='https://www.youtube.com/embed/'+id+'?autoplay=1';
+    ifr.title='סול תרפי - מדיטציות סאונד';
+    ifr.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    ifr.setAttribute('allowfullscreen','');
+    ifr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+    ifr.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+    f.innerHTML=''; f.appendChild(ifr);
+  }
+  document.querySelectorAll('.yt-facade').forEach(function(f){
+    f.addEventListener('click',function(){load(f);});
+    f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(f); } });
+  });
 })();
 </script>
 </body>
