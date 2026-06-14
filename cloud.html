@@ -802,7 +802,6 @@ ART.forEach(function(a){
   c.innerHTML=
     '<div class="lp-card__media">'+
       '<picture><source srcset="assets/cloud/artists-bw/'+a.slug+'.webp" type="image/webp"><img src="assets/cloud/artists-bw/'+a.slug+'.jpg" alt="'+a.name+'" loading="lazy" width="760" height="950"></picture>'+
-      (a.live?'<span class="lp-live">live</span>':'')+
     '</div>'+
     '<div class="lp-card__body">'+
       '<h3 class="lp-card__name">'+a.name+'</h3>'+
@@ -845,7 +844,7 @@ ART.forEach(function(a){
     var a=ARTBY[slug];
     dImg.src='assets/cloud/artists-bw/'+slug+'.jpg'; dImg.alt=a.name;
     dName.textContent=a.name; dWhen.innerHTML=whenHTML(a); dBio.innerHTML=''; (BIO[slug]||[]).forEach(function(t){var pp=document.createElement('p'); pp.textContent=t; dBio.appendChild(pp);}); dBtn.href=a.url;
-    dLive.classList.toggle('on', !!a.live);
+    dLive.classList.toggle('on', false);
     g.insertBefore(detail, rowLast(card).nextSibling);
     card.classList.add('is-open'); openSlug=slug;
     detail.style.maxHeight='0px';
