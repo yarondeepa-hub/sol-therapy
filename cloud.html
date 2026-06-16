@@ -473,6 +473,7 @@
               "share   share"
               "tickets tickets"
               "session session"
+              "workshops workshops"
               "video   video"
               "space   space"
               "faq     faq"
@@ -662,6 +663,16 @@
         <section class="cloud-session" aria-label="מה מחכה לכם בסשן">
             <h2 class="cloud-session__title">מה מחכה לכם בסשן?</h2>
             <p class="cloud-session__text">במפגש נקיים מדיטציית שכיבה חצי מודרכת במשך 60 דקות.<br>אנו מדייקים את הסט והסטטינג בחלל עם סאונד מוקפד ומזרנים נוחים - אין צורך להביא ציוד כלשהו ואין צורך בניסיון קודם במדיטציה.<br>כמו כן, במפגש תתקיים שיחה פתוחה עם האמן והזדמנות לשאול שאלות.</p>
+        </section>
+
+
+        <style>.cloud-workshops{grid-area:workshops;width:100%;max-width:780px;margin:3.6rem auto 0}@media(min-width:561px){.lp-grid--workshops{grid-template-columns:repeat(2,minmax(0,240px));justify-content:center;gap:1.9rem 1.6rem}}</style>
+        <section class="cloud-workshops" aria-label="סדנאות">
+            <p class="cloud-tickets__label">סדנאות<span class="yr">יולי 2026</span></p>
+            <div class="lp-grid lp-grid--workshops" id="workshopsGrid">
+          <article class="lp-card" data-slug="rachel"><div class="lp-card__media"><picture><img src="assets/cloud/artists-bw/rachel.jpg" alt="רחלי סנדר ב-CLOUD SPACE" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">רחלי סנדר</h3><div class="lp-card__when"><span class="w-dow">מוצ״ש</span><span class="w-num" dir="ltr">11.7</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">19:45</span></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/6n6ff" target="_blank" rel="noopener" aria-label="כרטיסים: רחלי סנדר">כרטיסים</a><button type="button" class="lp-card__more" aria-label="פרטים: רחלי סנדר">פרטים<span class="chev" aria-hidden="true">▾</span></button><button type="button" class="lp-card__share" data-slug="rachel" data-name="רחלי סנדר" data-when="מוצ״ש 11.7" aria-label="שיתוף: רחלי סנדר"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div></div></article>
+          <article class="lp-card" data-slug="bonsai"><div class="lp-card__media"><picture><img src="assets/cloud/artists-bw/bonsai.jpg" alt="סדנת בונסאי ב-CLOUD SPACE" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">סדנת בונסאי</h3><div class="lp-card__when"><span class="w-dow">ראשון</span><span class="w-num" dir="ltr">12.7</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">19:00</span></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/3qgff" target="_blank" rel="noopener" aria-label="כרטיסים: סדנת בונסאי">כרטיסים</a><button type="button" class="lp-card__more" aria-label="פרטים: סדנת בונסאי">פרטים<span class="chev" aria-hidden="true">▾</span></button><button type="button" class="lp-card__share" data-slug="bonsai" data-name="סדנת בונסאי" data-when="ראשון 12.7" aria-label="שיתוף: סדנת בונסאי"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div></div></article>
+            </div>
         </section>
 
         <section class="cloud-video" aria-label="וידאו" style="width:100%;max-width:780px;margin:3.5rem auto 0">
@@ -910,6 +921,27 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     f.addEventListener('click',function(){load(f);});
     f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(f); } });
   });
+})();
+</script>
+
+<script>
+(function(){
+var wg=document.querySelector(".lp-grid--workshops"); if(!wg) return;
+var WS=[{slug:"rachel",dow:"מוצ״ש",date:"11.7",time:"19:45",name:"רחלי סנדר",url:"https://www.eventer.co.il/6n6ff"},{slug:"bonsai",dow:"ראשון",date:"12.7",time:"19:00",name:"סדנת בונסאי",url:"https://www.eventer.co.il/3qgff"}];
+var WSBY={};WS.forEach(function(a){WSBY[a.slug]=a;});
+var BIO={"rachel":["מסע מדיטטיבי המחבר אותנו אל ערוצים עמוקים של ריפוי עצמי. מסע מוזיקלי בן כשלוש שעות הנע בין הקטבים שבתוכנו - בין ריקוד חופשי ותנועה אקסטטית לישיבה שקטה, ביטוי קולי והרפיה עמוקה, מלווה בצלילים חיים.", "הכל בעיניים עצומות, בלי מצלמות ובלי דיבורים. מסע אישי שעוברים יחד. כל רובד - גוף, נפש ורוח - מקבל תשומת לב.", "שלוש שעות של שחרור, בריאות צרופה והרחבת התודעה."],"bonsai":["סדנת יצירה חווייתית בת כשעתיים, בהנחיית אמן הבונסאי שגיא ברון. נכיר את עקרונות אמנות הבונסאי, שגיא ידגים את טכניקת העיצוב, ולאחר מכן כל משתתף יעצב בעצמו עץ בונסאי וישתול אותו בכלי בונסאי ייעודי. את העץ המעוצב והשתול ייקח כל משתתף לביתו, להמשך טיפוח.", "שגיא ברון, אמן בונסאי ומומחה בתכנון והקמת גנים יפניים, בעל ניסיון של מעל 20 שנה בתחום. מייסד האקדמיה הישראלית לבונסאי, ומשמש כיו״ר איגוד הבונסאי הישראלי מיום הקמתו.", "כאוטודידקט, למד את התחום בכוחות עצמו במשך שנים רבות, ובשלב מאוחר יותר הרחיק עד יפן כדי להשתלם ולהעמיק את הידע. משנת 2009 ועד היום הוא ממשיך את התמחותו תחת הדרכתו של רב-האמן מרק נואלנדרס מבלגיה."]};
+var detail=document.createElement("div");detail.className="lp-detail";
+detail.innerHTML='<div class="lp-detail__inner"><button type="button" class="lp-detail__x" aria-label="סגירה">×</button><div class="lp-detail__media"><img alt=""></div><div class="lp-detail__text"><h3 class="lp-detail__name"></h3><div class="lp-detail__when"></div><div class="lp-detail__bio"></div><a class="lp-detail__btn" target="_blank" rel="noopener">כרטיסים</a></div></div>';
+var dImg=detail.querySelector("img"),dName=detail.querySelector(".lp-detail__name"),dWhen=detail.querySelector(".lp-detail__when"),dBio=detail.querySelector(".lp-detail__bio"),dBtn=detail.querySelector(".lp-detail__btn");
+var openSlug=null;
+function whenHTML(a){return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+a.time+'</span>';}
+function rowLast(card){var cards=Array.prototype.slice.call(wg.querySelectorAll(".lp-card"));var top=card.offsetTop,last=card;for(var i=0;i<cards.length;i++){if(Math.abs(cards[i].offsetTop-top)<6)last=cards[i];}return last;}
+function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr)pr.classList.remove("is-open");detail.style.maxHeight="0px";openSlug=null;}
+function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op)op.classList.remove("is-open");}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});dBtn.href=a.url;wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
+detail.querySelector(".lp-detail__x").addEventListener("click",closeDetail);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
+wg.querySelectorAll(".lp-card__more").forEach(function(b){b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
+var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
 })();
 </script>
 </body>
