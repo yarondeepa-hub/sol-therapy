@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLOUD - תצוגת אזל (דרוויש סבב א)</title>
+<style>html,body{margin:0;padding:0;height:100%;background:#1a1a1a}iframe{margin:0;padding:0;border:0;width:100%;height:100%;display:block}</style>
+</head>
+<body>
+<iframe id="f" src="cloud.html"></iframe>
+<script>
+// תצוגת "אזלו הכרטיסים" על כרטיס דרוויש סבב א בלבד - מוזרק מעל cloud.html המקורי בלי לשנות אותו.
+var f = document.getElementById('f');
+function applySoldout(){
+  try{
+    var d = f.contentDocument;
+    if(!d) return;
+    var card = d.querySelector('article.lp-card[data-slug="darwish"]');
+    if(!card) { setTimeout(applySoldout, 300); return; }
+    if(d.getElementById('so-style')) return;
+    var st = d.createElement('style'); st.id='so-style';
+    st.textContent =
+      '.so-ov{position:absolute;inset:0;z-index:6;background:rgba(8,50,61,.28);border-radius:inherit}'+
+      '.so-chip{position:absolute;top:11px;inset-inline-start:11px;z-index:7;display:inline-flex;align-items:center;'+
+      'background:#C0392B;color:#fff;border-radius:6px;padding:6px 13px;font-family:var(--font-body,sans-serif);'+
+      'font-weight:700;font-size:12.5px;letter-spacing:.01em;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.32)}'+
+      '@media(max-width:560px){.so-chip{top:7px;inset-inline-start:7px;font-size:10px;padding:4px 9px}}';
+    d.head.appendChild(st);
+    var media = card.querySelector('.lp-card__media');
+    var ls = media.querySelector('.lp-lastseats'); if(ls) ls.style.display='none';
+    var ov = d.createElement('div'); ov.className='so-ov'; media.appendChild(ov);
+    var chip = d.createElement('span'); chip.className='so-chip'; chip.textContent='אזלו הכרטיסים'; media.appendChild(chip);
+    var btn = card.querySelector('.lp-card__btn'); if(btn){ btn.style.background='#9aa3a1'; btn.style.pointerEvents='none'; }
+  }catch(e){ /* same-origin only */ }
+}
+f.addEventListener('load', applySoldout);
+</script>
+</body>
+</html>
