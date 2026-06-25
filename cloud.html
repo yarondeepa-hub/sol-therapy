@@ -488,6 +488,7 @@
               "space   space"
               "faq     faq"
               "contact contact"
+              "friends friends"
               "footer  footer";
             align-items:start;
           }
@@ -504,6 +505,7 @@
           .cloud-video{grid-area:video;width:100%;max-width:780px;margin:3.5rem auto 0}
           .cloud-faq{grid-area:faq;width:100%;max-width:780px;margin-inline:auto}
           .cloud-contact{grid-area:contact;width:100%;max-width:780px;margin:3.5rem auto 0}
+          .cloud-friends{grid-area:friends}
           .archive-footer{grid-area:footer}
         }
     </style>
@@ -741,6 +743,50 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     אינסטגרם
                 </a>
+            </div>
+        </section>
+
+        <style>
+        .cloud-friends{text-align:center;width:90%;max-width:780px;margin:3.6rem auto 0}
+        .cloud-friends__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);margin:0}
+        .cloud-friends__title::after{content:'';display:block;width:42px;height:2px;background:#209CB4;border-radius:2px;opacity:.85;margin:.95rem auto 0}
+        .cloud-friends__row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:2.5rem 3.5rem;margin-top:2.4rem}
+        .cf-item{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+        .cf-logo{display:flex;align-items:center;justify-content:center;height:64px;min-width:44px;text-decoration:none;border-radius:4px;-webkit-tap-highlight-color:transparent}
+        .cf-logo:focus-visible{outline:2px solid #209CB4;outline-offset:6px}
+        .cf-logo img{display:block;width:auto;max-width:100%;height:var(--cf-h,38px);object-fit:contain;filter:brightness(0) invert(1);opacity:.6;transition:opacity .3s ease,transform .3s ease}
+        .cf-item:hover .cf-logo img{opacity:1;transform:translateY(-2px)}
+        .cf-detail{margin-top:.1rem}
+        .cf-trigger{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-body);font-weight:400;font-size:.82rem;color:var(--color-muted);padding:.5rem .3rem;min-height:44px;transition:color .2s ease;-webkit-tap-highlight-color:transparent}
+        .cf-trigger::-webkit-details-marker{display:none}
+        .cf-trigger:hover{color:#209CB4}
+        .cf-trigger:focus-visible{outline:2px solid #209CB4;outline-offset:3px;border-radius:4px}
+        .cf-chev{font-size:.7em;color:#209CB4;transition:transform .3s ease}
+        .cf-detail[open] .cf-chev{transform:rotate(180deg)}
+        .cf-note{font-size:.85rem;line-height:1.7;color:var(--color-muted);max-width:40ch;margin:.4rem auto 0}
+        @media(max-width:560px){.cloud-friends__row{gap:1.9rem 2.2rem;margin-top:1.9rem}.cf-logo{height:54px}.cf-logo img{height:calc(var(--cf-h,38px) * .85)}}
+        </style>
+        <section class="cloud-friends" aria-label="חברים שעוזרים לנו להגשים חלומות">
+            <h2 class="cloud-friends__title">חברים שעוזרים לנו להגשים חלומות</h2>
+            <div class="cloud-friends__row">
+                <div class="cf-item">
+                    <a class="cf-logo" href="https://soos.audio/" target="_blank" rel="noopener" aria-label="SOOS - מעבר לאתר">
+                        <img src="assets/cloud/friends/white_crop.png" alt="SOOS" loading="lazy" style="--cf-h:32px">
+                    </a>
+                    <details class="cf-detail">
+                        <summary class="cf-trigger">פרטים<span class="cf-chev" aria-hidden="true">▾</span></summary>
+                        <p class="cf-note">סטודיו בוטיק לעיצוב סאונד, היוצר אובייקטים קוליים פיסוליים ונדירים, ואחראי על מערכת הסאונד בקלאוד ספייס.</p>
+                    </details>
+                </div>
+                <div class="cf-item">
+                    <a class="cf-logo" href="https://hamashtela.co.il/" target="_blank" rel="noopener" aria-label="המשתלה היפנית - מעבר לאתר">
+                        <img src="assets/cloud/friends/bonsai_crop.png" alt="המשתלה היפנית - BONSAI SHOP" loading="lazy" style="--cf-h:46px">
+                    </a>
+                    <details class="cf-detail">
+                        <summary class="cf-trigger">פרטים<span class="cf-chev" aria-hidden="true">▾</span></summary>
+                        <p class="cf-note">אמנות הבונסאי והגן היפני.</p>
+                    </details>
+                </div>
             </div>
         </section>
 
