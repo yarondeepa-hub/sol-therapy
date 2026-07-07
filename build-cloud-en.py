@@ -203,6 +203,19 @@ add('<a class="lp-detail__btn" target="_blank" rel="noopener">כרטיסים</a>
 # css comment
 add('/* card actions + "על האמן" link */','/* card actions + "about the artist" link */')
 
+# recorded sessions archive
+add('<section class="cloud-archive" aria-label="סשנים מוקלטים">','<section class="cloud-archive" aria-label="Recorded Sessions">')
+add('<h2 class="cloud-archive__title">סשנים מוקלטים</h2>','<h2 class="cloud-archive__title">Recorded Sessions</h2>')
+add('כל סשן בקלאוד מוקלט במלואו ועולה לערוץ היוטיוב שלנו','Every CLOUD session is recorded in full and uploaded to our YouTube channel')
+add("aria-label=\"נגן: אסטרל פרוג'קשן - הסשן המלא\"",'aria-label="Play: Astral Projection - the full session"')
+add('aria-label="נגן: יחזקאל רז - הסשן המלא"','aria-label="Play: Yehezkel Raz - the full session"')
+add(' - סשן מוקלט בקלאוד"',' - recorded session at CLOUD"')
+add('<span class="arc-card__label">הסשן המלא</span>','<span class="arc-card__label">Full session</span>')
+add('aria-label="לכל הסשנים בערוץ היוטיוב של סול תרפי"','aria-label="All sessions on the Sol Therapy YouTube channel"')
+add('\n                    לכל הסשנים בערוץ\n                </a>','\n                    All Sessions on the Channel\n                </a>')
+add('aria-label="ערוץ היוטיוב של סול תרפי"','aria-label="Sol Therapy on YouTube"')
+add('\n                    יוטיוב\n                </a>','\n                    YouTube\n                </a>')
+
 # ---------- 3. GLOBAL TOKENS (names, address, labels, days, buttons) ----------
 G=[]
 def g_(a,b): G.append((a,b))

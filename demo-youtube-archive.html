@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>דמו - סקשן הארכיון | CLOUD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Masada';src:url('fonts/Masada-Medium.woff2') format('woff2'),url('fonts/Masada-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Masada';src:url('fonts/Masada-Demi.woff2') format('woff2'),url('fonts/Masada-Demi.otf') format('opentype');font-weight:600;font-display:swap}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --color-dark:#1a1a1a;
+  --color-washi:#F2EAD3;
+  --color-green:#588475;
+  --color-green-dark:#3B514B;
+  --color-muted:#949495;
+  --tq:#209CB4;
+  --tq-dark:#17859B;
+  --font-display:'Masada',serif;
+  --font-body:'Heebo',sans-serif;
+  --font-english:'Inter',sans-serif;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--color-dark);color:var(--color-washi);font-family:var(--font-body);min-height:100vh}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E")}
+
+/* ---------- demo chrome (not part of the design) ---------- */
+.demo-bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;background:rgba(15,17,17,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(242,234,211,.12);padding:.6rem 1rem;font-size:.78rem;color:var(--color-muted)}
+.demo-bar strong{color:var(--color-washi);font-weight:600}
+.demo-toggle{display:inline-flex;border:1px solid rgba(242,234,211,.25);border-radius:999px;overflow:hidden}
+.demo-toggle button{background:none;border:none;color:var(--color-muted);font-family:var(--font-body);font-size:.78rem;padding:.35rem 1.1rem;cursor:pointer}
+.demo-toggle button.on{background:var(--tq);color:#1a1a1a;font-weight:600}
+.stage{position:relative;z-index:1;display:flex;justify-content:center;padding:2.2rem 1rem 4rem}
+.stage-inner{width:100%;max-width:1080px;transition:max-width .35s ease}
+/* phone frame simulation */
+.stage.as-mobile .stage-inner{max-width:392px;border:10px solid #0c0e0e;border-radius:34px;box-shadow:0 18px 60px rgba(0,0,0,.55);overflow:hidden;padding:1.6rem .9rem 2.4rem;background:var(--color-dark)}
+.demo-note{position:relative;z-index:1;text-align:center;font-size:.74rem;color:var(--color-muted);padding:0 1rem 2.5rem;line-height:1.9}
+
+/* ---------- THE SECTION (the actual design) ---------- */
+.cloud-archive{width:100%;margin:0 auto}
+.cloud-archive__kicker{font-family:var(--font-english);font-size:.65rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--color-green);text-align:center;margin-bottom:.5rem}
+.cloud-archive__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin-bottom:.55rem}
+.cloud-archive__sub{font-size:.88rem;font-weight:300;color:var(--color-muted);text-align:center;line-height:1.8;max-width:34ch;margin:0 auto 1.9rem}
+
+/* cards */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.9rem 1.2rem}
+.arc-card{display:flex;flex-direction:column;min-width:0}
+.arc-card__media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--color-green-dark);border-radius:6px;cursor:pointer;transition:transform .3s ease}
+.arc-card__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.arc-card__media:hover{transform:translateY(-3px)}
+.arc-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to top,rgba(10,20,23,.28),rgba(10,20,23,0) 45%);transition:background .25s ease}
+.arc-card__media:hover .arc-play{background:linear-gradient(to top,rgba(10,20,23,.38),rgba(10,20,23,.06))}
+.arc-play svg{filter:drop-shadow(0 3px 10px rgba(0,0,0,.35));transition:transform .25s ease}
+.arc-card__media:hover .arc-play svg{transform:scale(1.06)}
+.arc-card__body{padding:.7rem .05rem 0;text-align:right}
+.arc-card__name{font-family:var(--font-display);font-weight:600;font-size:1.12rem;line-height:1.25;color:var(--color-washi)}
+.arc-card__meta{display:flex;align-items:baseline;gap:.45rem;margin-top:.3rem}
+.arc-card__label{font-size:.78rem;font-weight:300;color:var(--color-muted)}
+.arc-card__date{font-family:var(--font-english);font-size:.78rem;font-weight:400;color:var(--color-muted);letter-spacing:.04em}
+/* coming-soon card */
+.arc-card--soon .arc-card__media{cursor:default}
+.arc-card--soon .arc-card__media img{filter:grayscale(1) brightness(.5);opacity:.75;object-position:center 22%}
+.arc-card--soon .arc-card__media:hover{transform:none}
+.arc-soonchip{position:absolute;top:.6rem;inset-inline-start:.6rem;font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.02em;color:var(--color-washi);background:rgba(26,26,26,.72);border:1px solid rgba(242,234,211,.3);border-radius:4px;padding:.24rem .6rem;backdrop-filter:blur(3px)}
+
+/* CTA */
+.cloud-archive__cta{display:flex;justify-content:center;margin-top:2.1rem}
+.arc-btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:var(--tq);background:none;border:1.5px solid var(--tq);border-radius:999px;padding:.55rem 1.9rem;min-height:42px;text-decoration:none;transition:background .25s ease,color .25s ease}
+.arc-btn:hover{background:var(--tq);color:#1a1a1a}
+.arc-btn svg{flex-shrink:0}
+
+/* dots (mobile) */
+.arc-dots{display:none;justify-content:center;gap:.45rem;margin-top:1rem}
+.arc-dots span{width:6px;height:6px;border-radius:50%;background:rgba(242,234,211,.22);transition:background .25s ease,transform .25s ease}
+.arc-dots span.on{background:var(--tq);transform:scale(1.2)}
+
+/* ---------- mobile layout: applies via viewport OR .as-mobile toggle ---------- */
+@media (max-width:700px){
+  .arc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.9rem;margin:0 -1rem;padding:0 1rem .35rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .arc-grid::-webkit-scrollbar{display:none}
+  .arc-card{flex:0 0 82%;scroll-snap-align:center}
+  .arc-dots{display:flex}
+  .cloud-archive__title{font-size:1.45rem}
+}
+.as-mobile .arc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.9rem;margin:0 -0.9rem;padding:0 .9rem .35rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.as-mobile .arc-grid::-webkit-scrollbar{display:none}
+.as-mobile .arc-card{flex:0 0 82%;scroll-snap-align:center}
+.as-mobile .arc-dots{display:flex}
+.as-mobile .cloud-archive__title{font-size:1.45rem}
+
+/* ---------- bonus previews ---------- */
+.demo-divider{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 1rem}
+.demo-divider hr{border:none;border-top:1px solid rgba(242,234,211,.12);margin:0 0 1rem}
+.demo-divider p{font-size:.74rem;color:var(--color-muted);text-align:center;margin-bottom:2rem}
+.bonus{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:2.4rem;padding:0 1rem 5rem}
+.bonus-block{width:100%;max-width:560px;text-align:center}
+.bonus-block h3{font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--color-green);letter-spacing:.06em;margin-bottom:1.1rem}
+/* continuation line under the promo video */
+.vid-after{display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.86rem;font-weight:300;color:var(--color-muted)}
+.vid-after a{display:inline-flex;align-items:center;gap:.4rem;color:var(--tq);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(32,156,180,.4);padding-bottom:.1rem;transition:border-color .2s ease}
+.vid-after a:hover{border-color:var(--tq)}
+/* contact row clone */
+.cloud-contact__btns{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem}
+.cloud-contact__btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:var(--color-washi);background:rgba(242,234,211,.04);border:1px solid rgba(242,234,211,.22);border-radius:999px;padding:.55rem 1.4rem;min-height:42px;text-decoration:none;transition:border-color .25s ease,color .25s ease}
+.cloud-contact__btn:hover{border-color:var(--tq);color:var(--tq)}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span><strong>דמו עיצובי</strong> - סקשן "הארכיון" לעמוד קלאוד · לא עמוד חי</span>
+  <span class="demo-toggle">
+    <button type="button" id="tg-desk" class="on">דסקטופ</button>
+    <button type="button" id="tg-mob">מובייל</button>
+  </span>
+</div>
+
+<div class="stage" id="stage">
+  <div class="stage-inner">
+
+    <!-- ============ THE SECTION ============ -->
+    <section class="cloud-archive" aria-label="סשנים מוקלטים">
+      <p class="cloud-archive__kicker">THE ARCHIVE</p>
+      <h2 class="cloud-archive__title">סשנים מוקלטים</h2>
+      <p class="cloud-archive__sub">כל סשן בקלאוד מוקלט במלואו בשלוש מצלמות ועולה לערוץ היוטיוב שלנו</p>
+
+      <div class="arc-grid" id="arcGrid">
+
+        <article class="arc-card">
+          <div class="arc-card__media yt-facade" data-ytid="3fAD0jWxE48" role="button" tabindex="0" aria-label="נגן: אסטרל פרוג'קשן">
+            <img src="../youtube-cloud-sessions/graphics-v3/thumb-astral-v3-duotone-small.jpg" alt="אסטרל פרוג'קשן - סשן מוקלט" width="320" height="180" loading="lazy">
+            <span class="arc-play" aria-hidden="true"><svg width="52" height="37" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#1898B7"/><path d="M27 14l18 10-18 10z" fill="#fff"/></svg></span>
+          </div>
+          <div class="arc-card__body">
+            <h3 class="arc-card__name">אסטרל פרוג'קשן</h3>
+            <div class="arc-card__meta"><span class="arc-card__label">הסשן המלא</span><span class="arc-card__date">1.7</span></div>
+          </div>
+        </article>
+
+        <article class="arc-card">
+          <div class="arc-card__media yt-facade" data-ytid="3fAD0jWxE48" role="button" tabindex="0" aria-label="נגן: יחזקאל רז">
+            <img src="../youtube-cloud-sessions/graphics-v3/thumb-raz-v3-duotone-small.jpg" alt="יחזקאל רז - סשן מוקלט" width="320" height="180" loading="lazy">
+            <span class="arc-play" aria-hidden="true"><svg width="52" height="37" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#1898B7"/><path d="M27 14l18 10-18 10z" fill="#fff"/></svg></span>
+          </div>
+          <div class="arc-card__body">
+            <h3 class="arc-card__name">יחזקאל רז</h3>
+            <div class="arc-card__meta"><span class="arc-card__label">הסשן המלא</span><span class="arc-card__date">2.7</span></div>
+          </div>
+        </article>
+
+        <article class="arc-card arc-card--soon">
+          <div class="arc-card__media">
+            <img src="assets/cloud/artists-bw/darwish.jpg" alt="דרוויש - ההקלטה בדרך" width="320" height="180" loading="lazy">
+            <span class="arc-soonchip">ההקלטה בדרך</span>
+          </div>
+          <div class="arc-card__body">
+            <h3 class="arc-card__name">דרוויש</h3>
+            <div class="arc-card__meta"><span class="arc-card__label">הסשן המלא</span><span class="arc-card__date">7.7</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="arc-dots" id="arcDots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+
+      <div class="cloud-archive__cta">
+        <a class="arc-btn" href="https://www.youtube.com/channel/UCkragypDWLvf-kFo8K54V0A" target="_blank" rel="noopener" aria-label="לכל הסשנים בערוץ היוטיוב">
+          <svg width="20" height="14" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="currentColor"/><path d="M27 14l18 10-18 10z" fill="#1a1a1a"/></svg>
+          לכל הסשנים בערוץ
+        </a>
+      </div>
+    </section>
+    <!-- ============ /THE SECTION ============ -->
+
+  </div>
+</div>
+
+<div class="demo-divider"><hr><p>בונוס - שני עוגני הקישור לערוץ, בשפת העמוד הקיימת</p></div>
+
+<div class="bonus">
+  <div class="bonus-block">
+    <h3>1 · שורת המשך מתחת לסרטון התדמית הקיים</h3>
+    <p class="vid-after">הסשנים המלאים מחכים בערוץ
+      <a href="https://www.youtube.com/channel/UCkragypDWLvf-kFo8K54V0A" target="_blank" rel="noopener">
+        <svg width="16" height="11" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="currentColor"/><path d="M27 14l18 10-18 10z" fill="#1a1a1a"/></svg>
+        יוטיוב סול תרפי</a>
+    </p>
+  </div>
+  <div class="bonus-block">
+    <h3>2 · כפתור רביעי בשורת "יש לכם שאלות?"</h3>
+    <div class="cloud-contact__btns">
+      <a class="cloud-contact__btn" href="#" onclick="return false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.51-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.86 1.21 3.06.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.39 9.39 0 01-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 012.76 6.67c0 5.19-4.23 9.42-9.42 9.42z"/></svg>
+        וואטסאפ
+      </a>
+      <a class="cloud-contact__btn" href="#" onclick="return false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        מייל
+      </a>
+      <a class="cloud-contact__btn" href="#" onclick="return false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        אינסטגרם
+      </a>
+      <a class="cloud-contact__btn" href="https://www.youtube.com/channel/UCkragypDWLvf-kFo8K54V0A" target="_blank" rel="noopener" aria-label="ערוץ היוטיוב של סול תרפי">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.2" y="5" width="19.6" height="14" rx="4"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg>
+        יוטיוב
+      </a>
+    </div>
+  </div>
+</div>
+
+<p class="demo-note">הערת דמו: לחיצה על קלף טוענת נגן לדוגמה (סרטון התדמית) - בעמוד החי ייטען הסשן המוקלט עצמו.<br>קלף "ההקלטה בדרך" מדגים איך אירוע שהתקיים וההקלטה שלו בעריכה נראה עד להעלאה.</p>
+
+<script>
+/* toggle desktop/mobile */
+(function(){
+  var stage=document.getElementById('stage'),d=document.getElementById('tg-desk'),m=document.getElementById('tg-mob');
+  d.addEventListener('click',function(){stage.classList.remove('as-mobile');d.classList.add('on');m.classList.remove('on');});
+  m.addEventListener('click',function(){stage.classList.add('as-mobile');m.classList.add('on');d.classList.remove('on');});
+})();
+/* lite facade - player loads only on click */
+(function(){
+  function load(f){
+    var id=f.getAttribute('data-ytid'); if(!id) return;
+    var ifr=document.createElement('iframe');
+    ifr.src='https://www.youtube.com/embed/'+id+'?autoplay=1';
+    ifr.title='CLOUD - סשן מוקלט';
+    ifr.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    ifr.setAttribute('allowfullscreen','');
+    ifr.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+    f.innerHTML=''; f.appendChild(ifr);
+  }
+  document.querySelectorAll('.yt-facade').forEach(function(f){
+    f.addEventListener('click',function(){load(f);});
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();load(f);}});
+  });
+})();
+/* mobile dots */
+(function(){
+  var grid=document.getElementById('arcGrid'),dots=document.getElementById('arcDots').children;
+  grid.addEventListener('scroll',function(){
+    var cards=grid.querySelectorAll('.arc-card'); if(!cards.length) return;
+    var mid=grid.scrollLeft+grid.clientWidth/2, best=0,bd=1e9;
+    cards.forEach(function(c,i){var cc=c.offsetLeft+c.offsetWidth/2,dd=Math.abs(cc-(grid.scrollLeft+grid.clientWidth/2));if(dd<bd){bd=dd;best=i;}});
+    for(var i=0;i<dots.length;i++)dots[i].classList.toggle('on',i===best);
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
