@@ -253,6 +253,33 @@
         .cloud-space__img{width:100%;height:auto;display:block}
         .cloud-space__cap{font-family:var(--font-body);font-size:.8rem;letter-spacing:.04em;color:var(--color-muted);opacity:.85;margin:.9rem 0 0}
         .cloud-space__cap::before{content:'';display:block;width:42px;height:2px;background:#209CB4;border-radius:2px;opacity:.85;margin:0 auto .8rem}
+        /* --- Cloud mosaic gallery (replaces static space illustration) --- */
+        .cloud-mosaic{grid-area:space;width:92%;max-width:1080px;margin:3.4rem auto 0}
+        .cloud-mosaic__grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,clamp(118px,15vw,188px));gap:clamp(4px,.6vw,8px)}
+        .cm__item--a{grid-column:1/3;grid-row:1/3}
+        .cm__item--b{grid-column:3/4;grid-row:1/3}
+        .cm__item--c{grid-column:4/5;grid-row:1/3}
+        .cm__item--d{grid-column:1/3;grid-row:3/5}
+        .cm__item--f{grid-column:3/5;grid-row:3/4}
+        .cm__item--e{grid-column:3/5;grid-row:4/5}
+        .cm__item--g{grid-column:1/5;grid-row:5/6}
+        .cm__item--d img{object-position:center 52%}
+        .cm__item--e img{object-position:center 42%}
+        .cm__item{position:relative;overflow:hidden;border-radius:3px;opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+        .cm__item.is-in{opacity:1;transform:none}
+        .cm__item img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.62) contrast(1.04) brightness(.9);transition:filter .8s ease,transform .8s ease}
+        .cm__item:hover img{filter:saturate(.92) contrast(1.05) brightness(.98);transform:scale(1.04)}
+        @keyframes cmDriftA{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-1.5px)}}
+        @keyframes cmDriftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-1.5px,2px)}}
+        @keyframes cmDriftC{0%,100%{transform:translate(0,0)}50%{transform:translate(1px,1.5px)}}
+        .cm__item.is-in.drift-a img{animation:cmDriftA 6s ease-in-out infinite}
+        .cm__item.is-in.drift-b img{animation:cmDriftB 7.5s ease-in-out infinite}
+        .cm__item.is-in.drift-c img{animation:cmDriftC 9s ease-in-out infinite}
+        .cm__item--paused img{animation-play-state:paused}
+        @media(prefers-reduced-motion:reduce){.cm__item.is-in.drift-a img,.cm__item.is-in.drift-b img,.cm__item.is-in.drift-c img{animation:none}.cm__item{transition:opacity .4s ease}}
+        .cloud-mosaic__cap{font-family:var(--font-body);font-size:.8rem;letter-spacing:.04em;color:var(--color-muted);opacity:.85;text-align:center;margin:1.15rem 0 0}
+        .cloud-mosaic__cap::before{content:'';display:block;width:42px;height:2px;background:#209CB4;border-radius:2px;opacity:.85;margin:0 auto .8rem}
+        @media(max-width:640px){.cloud-mosaic__grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;grid-auto-rows:clamp(120px,32vw,175px);gap:4px}.cm__item--a,.cm__item--b,.cm__item--c,.cm__item--d,.cm__item--e,.cm__item--f,.cm__item--g{grid-column:auto;grid-row:auto}.cm__item--a{grid-column:1/3}.cm__item--b{grid-row:span 2}.cm__item--d{grid-column:1/3}.cm__item--g{grid-column:1/3}}
 
         .event-page__note {
             background: rgba(242, 234, 211, 0.04);
@@ -791,9 +818,17 @@
             </div>
         </section>
 
-        <section class="cloud-space" aria-label="הדמיית המרחב">
-            <span class="cloud-space__frame"><picture><source srcset="assets/cloud/space-illustration.webp" type="image/webp"><img class="cloud-space__img" src="assets/cloud/space-illustration.jpg" alt="הדמיית מרחב CLOUD - אולם מדיטציית סאונד עם מזרנים, צמחייה ומערכת סאונד מרכזית" width="1536" height="1024" loading="lazy" decoding="async"></picture></span>
-            <p class="cloud-space__cap">הדמיית המרחב · קלאוד ספייס, המרץ 6</p>
+        <section class="cloud-mosaic" aria-label="גלריית המרחב">
+            <div class="cloud-mosaic__grid">
+                <figure class="cm__item cm__item--a" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-a.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-a.jpg" alt="אולם קלאוד ספייס באור יום עם מזרנים בשורות מול חלונות גדולים" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--b" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-b.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-b.jpg" alt="פינת מדיטציה עם צמחייה, רמקול ומזרנים באור יום" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--c" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-c.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-c.jpg" alt="מבט לאורך האולם עם וילונות, מערכת סאונד ומזרנים" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--d" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-d.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-d.jpg" alt="טראסה עם ספה, עצי בונסאי ונוף העיר" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--e" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-e.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-e.jpg" alt="פרט קרוב של צמחייה ורמקולים במרחב" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--f" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-f.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-f.jpg" alt="האולם בתאורת ערב חמה לפני מדיטציית סאונד" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--g" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-g.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-g.jpg" alt="אולם מלא במשתתפים שוכבים בתאורה אדומה במופע ערב" loading="lazy" decoding="async" width="1920" height="1440"></picture></figure>
+            </div>
+            <p class="cloud-mosaic__cap">רגעים מהמרחב · קלאוד ספייס, המרץ 6</p>
         </section>
 
 
@@ -1131,6 +1166,20 @@ detail.querySelector(".lp-detail__x").addEventListener("click",closeDetail);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
 wg.querySelectorAll(".lp-card__more").forEach(function(b){b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
 var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
+})();
+</script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.cloud-mosaic [data-cm]'));
+  if(!items.length)return;
+  var drifts=['drift-a','drift-b','drift-c'];
+  items.forEach(function(it,i){it.style.transitionDelay=(i*0.09).toFixed(2)+'s';it.classList.add(drifts[i%3]);});
+  if('IntersectionObserver' in window){
+    var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');rev.unobserve(e.target);}});},{threshold:0.12});
+    items.forEach(function(it){rev.observe(it);});
+    var pause=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('cm__item--paused',!e.isIntersecting);});},{threshold:0.02});
+    items.forEach(function(it){pause.observe(it);});
+  }else{items.forEach(function(it){it.classList.add('is-in');});}
 })();
 </script>
 </body>
