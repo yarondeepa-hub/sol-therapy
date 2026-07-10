@@ -1807,7 +1807,9 @@
             <div class="hero-private__content fade-in">
                 <p class="hero-private__kicker">Corporate Programs</p>
                 <h1 class="hero-private__title">קלאוד ספייס לארגונים וחברות</h1>
+                <p class="hero-private__subtitle">יום חוויתי המבוסס על עולם המדיטציה ומשלב פעילויות כמו מדיטציות סאונד, סדנאות ציורי זן, יצירת בונזאים, הרצאות, אוכל צמחוני ומיצים טבעיים.</p>
                 <p class="hero-private__subtitle">חוויות מדיטציית סאונד יוצאות דופן בהנחיית בכירי המוזיקאים בישראל. בין אם אתם מנהלי רווחה, אחראי מיתוג מעסיק או חלק מהפיתוח הארגוני, מפגש כזה נותן לצוות דרך אמיתית לרדת מהעומס ולחזור עם ראש צלול. הוא מחזק שייכות ותחושת ערך אצל העובדים, מבדל את הארגון כמקום שרואה את האנשים שבו, ומשאיר חותם שנשאר הרבה אחרי שהמפגש נגמר. המפגשים שלנו מחברים בין חוכמה של 2,500 שנה בחקר התודעה, לבין המדע העדכני ביותר ממעבדות המוח המובילות בעולם. אנו מעצבים מרחבי שקט עבור ארגונים שלא מתפשרים על רווחת העובדים שלהם, ומבינים שחוסן אמיתי דורש הרבה יותר מעוד הפסקה בלוח הזמנים.</p>
+                <a href="#contact" class="hero-private__cta" aria-label="יצירת קשר">יצירת קשר</a>
             </div>
         </section>
 
@@ -1819,6 +1821,23 @@
             <div class="plexus-container" id="plexusContainer">
                 <canvas class="plexus-canvas" id="plexusCanvas"></canvas>
                 <div class="plexus-labels" id="plexusLabels"></div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PLACE PHOTOS CARD (מתחת לרשת האמנים)
+        ======================================== -->
+        <style>
+        .place-card { padding: 0 var(--space-m) var(--space-xl); background: var(--color-dark); }
+        .place-card__inner { max-width: 920px; margin: 0 auto; }
+        .place-card__inner img { width: 100%; height: auto; display: block; border-radius: 4px; }
+        </style>
+        <section class="place-card fade-in" aria-label="תמונות מהמרחב">
+            <div class="place-card__inner">
+                <picture>
+                    <source srcset="assets/cloud/cloud-space-gallery-card.webp" type="image/webp">
+                    <img src="assets/cloud/cloud-space-gallery-card.jpg" alt="קלאוד ספייס - מבט מהמרחב בקריית המלאכה, תל אביב" loading="lazy" width="1200" height="900">
+                </picture>
             </div>
         </section>
 
@@ -1887,8 +1906,8 @@
             <div class="cloud-space-feature__inner">
                 <p class="cloud-space-feature__kicker">CLOUD Space</p>
                 <h2 class="cloud-space-feature__title">אירועים בקלאוד ספייס</h2>
-                <p class="cloud-space-feature__body">סול תרפי מציגים את הפופ-אפ "קלאוד ספייס" - מרחב נשימה אורבני חדש ויחיד במינו בארץ, בקריית המלאכה שבתל אביב, שיפעל בחודשים יולי, אוגוסט וספטמבר. בתוך החיים הסואנים שבהם אנו חיים, הבנו את הצורך במרחב שונה, מיוחד, מאזן ומרגיע.</p>
-                <p class="cloud-space-feature__meta">מרחב פעיל בקריית המלאכה, יולי עד ספטמבר. אפשר לשלב אירוע ארגוני בתוך הפופ-אפ, או להזמין הפקה נפרדת בהתאמה לצוות שלכם.</p>
+                <p class="cloud-space-feature__body">סול תרפי מציגים את "קלאוד ספייס" - מרחב נשימה אורבני חדש ויחיד במינו בארץ, בקריית המלאכה שבתל אביב, שיפעל בחודשים יולי, אוגוסט וספטמבר. בתוך החיים הסואנים שבהם אנו חיים, הבנו את הצורך במרחב שונה, מיוחד, מאזן ומרגיע.</p>
+                <p class="cloud-space-feature__meta">מרחב פעיל בקריית המלאכה, יולי עד ספטמבר. אפשר לשלב אירוע ארגוני במרחב עצמו, או להזמין הפקה נפרדת בהתאמה לצוות שלכם.</p>
                 <a class="cloud-space-feature__cta" href="/cloud" aria-label="קראו עוד על קלאוד ספייס">קראו עוד על קלאוד ספייס</a>
             </div>
         </section>
@@ -2248,8 +2267,8 @@
             var ARTISTS = [
                 '\u05D0\u05E1\u05E3 \u05D0\u05DE\u05D3\u05D5\u05E8\u05E1\u05E7\u05D9', '\u05E9\u05DC\u05D5\u05DE\u05D9 \u05E9\u05D1\u05DF', '\u05D4\u05EA\u05D6\u05DE\u05D5\u05E8\u05EA \u05D4\u05E7\u05D0\u05DE\u05E8\u05D9\u05EA', '\u05E8\u05D3 \u05D0\u05E7\u05E1\u05E1',
                 '\u05E2\u05DE\u05E8\u05D9 \u05E1\u05DE\u05D3\u05E8', '\u05D9\u05D5\u05E0\u05EA\u05DF \u05D3\u05E1\u05E7\u05DC', '\u05D0\u05E1\u05D8\u05E8\u05DC \u05E4\u05E8\u05D5\u05D2\'\u05E7\u05E9\u05DF', '\u05E2\u05D8\u05E8 \u05DE\u05D9\u05D9\u05E0\u05E8',
-                '\u05D9\u05D7\u05D6\u05E7\u05DC \u05E8\u05D6', '\u05E8\u05DF \u05E1\u05DC\u05D5\u05D9\u05DF', '\u05D0\u05E0\u05D4 \u05D4\u05DC\u05D8\u05D4', '\u05E0\u05E2\u05D4 \u05D0\u05E8\u05D2\u05D5\u05D1',
-                '\u05D9\u05D5\u05EA\u05DD \u05D0\u05D1\u05E0\u05D9', '\u05D9\u05D5\u05E1\u05D9 \u05E4\u05D9\u05D9\u05DF', '\u05D8\u05DC \u05E4\u05D5\u05E1\u05DE\u05DF', '\u05D3\u05D5\u05E8 \u05E6\u05D9\u05E4\u05D5\u05E8\u05D9'
+                '\u05D9\u05D7\u05D6\u05E7\u05D0\u05DC \u05E8\u05D6', '\u05E8\u05DF \u05E1\u05DC\u05D5\u05D9\u05DF', '\u05D0\u05E0\u05D4 \u05D4\u05DC\u05D8\u05D4', '\u05E0\u05E2\u05D4 \u05D0\u05E8\u05D2\u05D5\u05D1',
+                '\u05D9\u05D5\u05EA\u05DD \u05D0\u05D1\u05E0\u05D9', '\u05D9\u05D5\u05E1\u05D9 \u05E4\u05D9\u05D9\u05DF', '\u05D8\u05DC \u05E4\u05D5\u05E1\u05DE\u05DF', '\u05D3\u05E8\u05D5\u05D5\u05D9\u05E9'
             ];
             var CONFIG = {
                 nodeRadius: 3,
