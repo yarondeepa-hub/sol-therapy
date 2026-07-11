@@ -815,11 +815,16 @@
         }
         .press-quotes__grid {
             display: grid;
-            grid-template-columns: 1.15fr 1px 0.85fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 0;
             text-align: right;
             align-items: start;
         }
+        .press-quotes__item { padding-inline: var(--space-m); }
+        .press-quotes__item:first-child { padding-inline-start: 0; }
+        .press-quotes__item:last-child { padding-inline-end: 0; }
+        .press-quotes__item + .press-quotes__item { border-inline-start: 1px solid rgba(59,81,75,0.15); }
+        .press-quotes__grid::before { display: none !important; }
         .press-quotes__grid::before {
             content: '';
             grid-column: 2;
@@ -912,35 +917,17 @@
             opacity: 0.2;
             margin: var(--space-s) auto 0;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 900px) {
             .press-quotes__grid {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
-            .press-quotes__grid::before {
-                grid-column: 1;
-                grid-row: 2;
-                width: 60%;
-                height: 1px;
-                justify-self: center;
-                margin: var(--space-s) 0;
-                background: linear-gradient(
-                    90deg,
-                    transparent 0%,
-                    rgba(88, 132, 117, 0.3) 50%,
-                    transparent 100%
-                );
-            }
-            .press-quotes__item:first-child {
-                grid-column: 1;
-                grid-row: 1;
-            }
-            .press-quotes__item:last-child {
-                grid-column: 1;
-                grid-row: 3;
-            }
-            .press-quotes__item:first-child::before {
-                height: 40%;
+            .press-quotes__item { padding-inline: 0; }
+            .press-quotes__item + .press-quotes__item {
+                border-inline-start: none;
+                border-block-start: 1px solid rgba(59,81,75,0.15);
+                padding-block-start: var(--space-m);
+                margin-block-start: var(--space-s);
             }
         }
 
@@ -1967,6 +1954,13 @@
                     <footer class="press-quotes__source">
                         <span class="press-quotes__author">טל מזרחי</span>
                         <span class="press-quotes__pub">ישראל היום</span>
+                    </footer>
+                </blockquote>
+                <blockquote class="press-quotes__item fade-in">
+                    <p class="press-quotes__text">״קלאוד ספייס מציע אסקפיזם טהור למדינה בפוסט-טראומה, בצורה שעוקפת את הסטרס דרך הצלילים.״</p>
+                    <footer class="press-quotes__source">
+                        <span class="press-quotes__author">אבי כלילי</span>
+                        <span class="press-quotes__pub">מעריב</span>
                     </footer>
                 </blockquote>
             </div>
