@@ -522,6 +522,7 @@
               "title   media"
               "desc    media"
               "share   share"
+              "cardstrip cardstrip"
               "tickets tickets"
               "session session"
               "workshops workshops"
@@ -746,6 +747,25 @@
                 <span>להעביר הלאה</span>
             </button>
             <span class="cloud-pageshare__rule" aria-hidden="true"></span>
+        </div>
+
+        <style>
+        /* ===== punch-card strip (washi hairline, restrained) ===== */
+        .cloud-cardstrip{display:flex;justify-content:center;margin:2.3rem auto 0;width:100%}
+        .cloud-cardstrip__link{display:inline-flex;align-items:center;gap:.7rem;max-width:100%;font-family:var(--font-body);font-weight:400;font-size:.95rem;letter-spacing:.02em;line-height:1.5;color:var(--color-washi);text-decoration:none;border:1px solid rgba(242,234,211,.22);border-radius:8px;background:rgba(242,234,211,.04);padding:.75rem 1.5rem;min-height:48px;transition:border-color .25s ease,background .25s ease;-webkit-tap-highlight-color:transparent}
+        .cloud-cardstrip__link:hover,.cloud-cardstrip__link:focus-visible{border-color:rgba(32,156,180,.65);background:rgba(32,156,180,.07)}
+        .cloud-cardstrip__dot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:#C0392B;animation:ls-dot 2.6s ease-in-out infinite}
+        .cloud-cardstrip__new{color:#C0392B;font-weight:600}
+        .cloud-cardstrip__more{color:#209CB4;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(32,156,180,.5)}
+        @media(prefers-reduced-motion:reduce){.cloud-cardstrip__dot{animation:none}}
+        @media(max-width:560px){.cloud-cardstrip__link{font-size:.88rem;padding:.7rem 1.1rem;gap:.55rem}}
+        @media(min-width:980px){.cloud-cardstrip{grid-area:cardstrip;margin-top:2.5rem}}
+        </style>
+        <div class="cloud-cardstrip">
+            <a class="cloud-cardstrip__link" href="/cloud-card">
+                <span class="cloud-cardstrip__dot" aria-hidden="true"></span>
+                <span><span class="cloud-cardstrip__new">חדש!</span> יש לנו כרטיסיה - <span class="cloud-cardstrip__more">לחצו לפרטים נוספים</span></span>
+            </a>
         </div>
 
         <div class="cloud-tickets" id="tickets">
