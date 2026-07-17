@@ -17,6 +17,52 @@
         ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadGtag, {once:true, passive:true}); });
       })();
     </script>
+    <!-- Meta Pixel 902345231064039 - deferred like gtag above; events queue in the fbq stub so nothing is lost. -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+      fbq('init', '902345231064039');
+      fbq('track', 'PageView');
+      fbq('track', 'ViewContent', {content_name: 'itay-tzur', content_category: 'cloud_session'});
+      (function(){
+        function loadFbq(){ if(window.__fbqLoaded) return; window.__fbqLoaded=1;
+          var s=document.createElement('script'); s.async=true;
+          s.src='https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(s); }
+        if(document.readyState==='complete'){ setTimeout(loadFbq,1); }
+        else { window.addEventListener('load', function(){ ('requestIdleCallback' in window) ? requestIdleCallback(loadFbq,{timeout:3000}) : setTimeout(loadFbq,1500); }); }
+        ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadFbq, {once:true, passive:true}); });
+      })();
+    </script>
+    <!-- Outbound Eventer tagging: utm + saved fbclid on live clicks only (JSON-LD untouched). Fails open. -->
+    <script>
+      (function(){
+        try{
+          var KEY='solAttr', attr={};
+          try{ attr=JSON.parse(sessionStorage.getItem(KEY)||'{}'); }catch(_){ attr={}; }
+          try{
+            var qs=new URLSearchParams(location.search), changed=false;
+            qs.forEach(function(v,k){ if(k==='fbclid'||k.indexOf('utm_')===0){ attr[k]=v; changed=true; } });
+            if(changed) sessionStorage.setItem(KEY,JSON.stringify(attr));
+          }catch(_){}
+          document.addEventListener('click',function(e){
+            try{
+              if(!e.target||!e.target.closest) return;
+              var a=e.target.closest('a[href*="eventer.co.il"]'); if(!a) return;
+              var u=new URL(a.href,location.href);
+              var set=function(k,v){ if(v&&!u.searchParams.has(k)) u.searchParams.set(k,v); };
+              set('utm_source','sol-website');
+              set('utm_medium','referral');
+              set('utm_campaign','cloud-2026');
+              var card=a.closest('[data-slug]');
+              var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
+              set('utm_content',slug);
+              set('fbclid',attr.fbclid);
+              a.href=u.toString();
+            }catch(_){}
+          },true);
+        }catch(_){}
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>איתי צור בקלאוד ספייס - מדיטציית סאונד תל אביב | סול תרפי</title>
@@ -407,6 +453,19 @@ body[data-state="live"] .sp-sticky{display:block}
     },{passive:true});
     paint();
   })();
+})();
+</script>
+<script>
+(function(){
+  var SLUG='itay-tzur';
+  document.addEventListener('click',function(e){
+    try{
+      if(!e.target||!e.target.closest) return;
+      var a=e.target.closest('a.sp-cta[href], .sp-sticky a[href]'); if(!a||!a.href) return;
+      if(typeof window.fbq==='function'){ try{ fbq('trackCustom','TicketClick',{content_name:SLUG}); }catch(_){} }
+      if(typeof window.gtag==='function'){ try{ gtag('event','ticket_click_artist',{artist_name:SLUG,link:a.href}); }catch(_){} }
+    }catch(_){}
+  },true);
 })();
 </script>
 </body>
