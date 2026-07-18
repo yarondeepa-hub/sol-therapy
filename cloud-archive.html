@@ -689,6 +689,21 @@
         ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadGtag, {once:true, passive:true}); });
       })();
     </script>
+    <!-- Meta Pixel 902345231064039 - deferred like gtag above; events queue in the fbq stub so nothing is lost. -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+      fbq('init', '902345231064039');
+      fbq('track', 'PageView');
+      (function(){
+        function loadFbq(){ if(window.__fbqLoaded) return; window.__fbqLoaded=1;
+          var s=document.createElement('script'); s.async=true;
+          s.src='https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(s); }
+        if(document.readyState==='complete'){ setTimeout(loadFbq,1); }
+        else { window.addEventListener('load', function(){ ('requestIdleCallback' in window) ? requestIdleCallback(loadFbq,{timeout:3000}) : setTimeout(loadFbq,1500); }); }
+        ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadFbq, {once:true, passive:true}); });
+      })();
+    </script>
 </head>
 <body>
 <main class="archive-page">
