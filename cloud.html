@@ -727,7 +727,7 @@
 .cloud-archive__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin-bottom:.55rem}
 .cloud-archive__sub{font-family:var(--font-body);font-size:.88rem;font-weight:300;color:var(--color-muted);text-align:center;line-height:1.8;max-width:34ch;margin:0 auto 1.9rem}
 .arc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.9rem 1.2rem;max-width:820px;margin:0 auto}
-.arc-card{display:flex;flex-direction:column;min-width:0}
+.arc-card{display:flex;flex-direction:column;min-width:0}.arc-wrap{position:relative}.arc-grid.arc-strip{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(242,234,211,.25) transparent;max-width:none}.arc-strip .arc-card{flex:0 0 44%;min-width:280px;scroll-snap-align:start}@media(max-width:700px){.arc-strip .arc-card{flex-basis:84%}}.arc-nav{position:absolute;top:38%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(26,26,26,.78);border:1.5px solid rgba(242,234,211,.75);color:#F2EAD3;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}.arc-nav.--prev{right:-14px}.arc-nav.--next{left:-14px}.arc-nav:disabled{opacity:.25;cursor:default}@media(max-width:700px){.arc-nav.--prev{right:-6px}.arc-nav.--next{left:-6px}}.arc-strip-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.9rem}.arc-strip-dots .dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(242,234,211,.55);background:transparent;padding:0;cursor:pointer}.arc-strip-dots .dot.--on{background:#F2EAD3;border-color:#F2EAD3}#arcDots{display:none}
 .arc-card__media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--color-green-dark);border-radius:6px;cursor:pointer;transition:transform .3s ease}
 .arc-card__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .arc-card__media:hover{transform:translateY(-3px)}
@@ -872,7 +872,7 @@
             <p class="cloud-archive__kicker">THE ARCHIVE</p>
             <h2 class="cloud-archive__title">סשנים מוקלטים</h2>
             <p class="cloud-archive__sub">כל סשן בקלאוד מוקלט במלואו ועולה לערוץ היוטיוב שלנו</p>
-            <div class="arc-grid" id="arcGrid">
+            <div class="arc-wrap"><button class="arc-nav --prev" type="button" aria-label="הסשן הקודם"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><div class="arc-grid arc-strip" id="arcGrid">
                 <article class="arc-card">
                     <div class="arc-card__media yt-facade" data-ytid="xfFi4OcjgOc" role="button" tabindex="0" aria-label="נגן: אסטרל פרוג'קשן - הסשן המלא">
                         <img src="assets/cloud/archive-astral.jpg" alt="אסטרל פרוג'קשן - סשן מוקלט בקלאוד" width="1280" height="720" loading="lazy" decoding="async">
@@ -923,7 +923,8 @@
                         <div class="arc-card__meta"><span class="arc-card__label">הסשן המלא</span><span class="arc-card__date" dir="ltr">14.7</span></div>
                     </div>
                 </article>
-            </div>
+            </div><button class="arc-nav --next" type="button" aria-label="הסשן הבא"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button></div>
+            <div class="arc-strip-dots" aria-hidden="true"></div>
             <div class="arc-dots" id="arcDots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
             <div class="cloud-archive__cta">
                 <a class="arc-btn" href="https://www.youtube.com/channel/UCkragypDWLvf-kFo8K54V0A" target="_blank" rel="noopener" aria-label="לכל הסשנים בערוץ היוטיוב של סול תרפי">
@@ -1348,6 +1349,46 @@ var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(wi
     });
   }
   if(document.readyState!=='loading') markPast(); else document.addEventListener('DOMContentLoaded', markPast);
+})();
+</script>
+<script>
+/* archive strip: arrows + dots (cloned from approved session-page slider) */
+(function(){
+  var row=document.querySelector('.arc-grid.arc-strip'); if(!row) return;
+  var cards=[].slice.call(row.querySelectorAll('.arc-card'));
+  var wrap=row.parentElement;
+  var prev=wrap.querySelector('.arc-nav.--prev'), next=wrap.querySelector('.arc-nav.--next');
+  var dots=document.querySelector('.arc-strip-dots');
+  if(cards.length<2){ if(prev)prev.remove(); if(next)next.remove(); if(dots)dots.remove(); return; }
+  var idx=0;
+  cards.forEach(function(_,i){
+    var d=document.createElement('button'); d.type='button'; d.className='dot'; d.tabIndex=-1;
+    d.addEventListener('click',function(){go(i);}); dots.appendChild(d);
+  });
+  function paint(){
+    [].forEach.call(dots.children,function(d,i){ d.classList.toggle('--on',i===idx); });
+    prev.disabled=(idx===0); next.disabled=(idx===cards.length-1);
+  }
+  function go(i){
+    idx=Math.max(0,Math.min(cards.length-1,i));
+    cards[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
+    paint();
+  }
+  prev.addEventListener('click',function(){go(idx-1);});
+  next.addEventListener('click',function(){go(idx+1);});
+  var st;
+  row.addEventListener('scroll',function(){
+    clearTimeout(st);
+    st=setTimeout(function(){
+      var rr=row.getBoundingClientRect(), best=0, bd=1e9;
+      cards.forEach(function(c,i){
+        var d=Math.abs(c.getBoundingClientRect().right-rr.right);
+        if(d<bd){bd=d;best=i;}
+      });
+      idx=best; paint();
+    },90);
+  },{passive:true});
+  paint();
 })();
 </script>
 </body>
