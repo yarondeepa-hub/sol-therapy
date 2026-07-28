@@ -113,7 +113,7 @@
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
-   "availability": "https://schema.org/SoldOut",
+   "availability": "https://schema.org/InStock",
    "url": "https://www.eventer.co.il/gdxff",
    "price": "135"
   }
@@ -164,7 +164,7 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .sp-hero::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(242,234,211,.14)}
 .sp-flag{position:absolute;top:11px;inset-inline-start:11px;display:none;align-items:center;gap:8px;background:rgba(239,231,210,.96);color:#08323d;border:1px solid #C0392B;border-radius:6px;padding:5px 12px;font-size:12.5px;font-weight:600;white-space:nowrap;z-index:3}
 .sp-flag::before{content:'';width:8px;height:8px;border-radius:50%;background:#C0392B;flex:0 0 auto}
-body[data-state="sold"] .sp-flag.--sold,body[data-state="live"] .sp-flag.--last{display:inline-flex}
+body[data-state="live"] .sp-flag.--sold,body[data-state="live"] .sp-flag.--last{display:inline-flex}
 .sp-specs{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.55rem 1.1rem;border-block:1px solid rgba(242,234,211,.16);padding:1rem .4rem;margin-bottom:2rem;font-size:1rem}
 .sp-specs .sep{color:rgba(242,234,211,.3)}
 .sp-specs .num{direction:ltr;unicode-bidi:isolate;font-weight:400}
@@ -177,7 +177,7 @@ body[data-state="done"] .sp-specs .price,body[data-state="done"] .sp-specs .sep-
 .sp-cta.--sold{background:transparent;border:1px solid rgba(242,234,211,.35);color:var(--color-muted);pointer-events:none}
 .sp-cta.--done{background:transparent;border:1px solid rgba(242,234,211,.22);color:var(--color-muted);pointer-events:none}
 .sp-state-note{text-align:center;color:var(--color-muted);font-size:.95rem;margin-top:.9rem;display:none}
-body[data-state="sold"] #note-sold{display:block}
+body[data-state="live"] #note-sold{display:block}
 body[data-state="done"] #note-done{display:block}
 .sp-share{display:flex;align-items:center;justify-content:center;gap:1.3rem;margin:2.5rem 0 3rem}
 .sp-share .rule{height:1px;flex:1 1 0;max-width:150px;background:linear-gradient(to left,rgba(242,234,211,0),rgba(242,234,211,.28))}
@@ -264,7 +264,7 @@ body[data-state="live"] .sp-sticky{display:block}
 @media(max-width:640px){.sp-clips-btn{width:38px;height:38px}.sp-clips-btn.--prev{inset-inline-start:-6px}.sp-clips-btn.--next{inset-inline-end:-6px}}
     </style>
 </head>
-<body data-state="sold" data-event-date="2026-08-13">
+<body data-state="live" data-event-date="2026-08-13">
 
 <main class="page">
 
@@ -299,7 +299,7 @@ body[data-state="live"] .sp-sticky{display:block}
     <p>הסשן מתקיים בקלאוד ספייס - מרחב נשימה אורבני מבית סול תרפי, בשוקן 27 בקרית המלאכה בתל אביב. פופ-אפ מוקפד שנולד כתשובה לרעש ולסטרס של העיר, ומציע בדיוק את ההפך: שעה של שקט, הרפיה ונוכחות.</p>
   </section>
 
-  <a class="sp-cta --sold" id="cta" role="link" aria-disabled="true">אזל</a>
+  <a class="sp-cta --sold" id="cta" role="link" aria-disabled="true">כרטיסים</a>
   <p class="sp-state-note" id="note-sold">הכרטיסים לסשן הזה אזלו. הליינאפ ממשיך - סשנים נוספים מתקיימים כל שבוע.</p>
   <p class="sp-state-note" id="note-done">הסשן התקיים. הליינאפ ממשיך - הסשנים הבאים בקלאוד למטה.</p>
 
