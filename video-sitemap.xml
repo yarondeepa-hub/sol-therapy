@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://sol-therapy.com/cloud</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/video-thumb.jpg</video:thumbnail_loc>
+      <video:title>קלאוד ספייס - מדיטציית סאונד עם מוזיקה אלקטרונית חיה</video:title>
+      <video:description>סרטון מתוך מדיטציות הסאונד של קלאוד ספייס, מרחב הנשימה האורבני של סול ת'רפי בשוקן 27, תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/3fAD0jWxE48</video:player_loc>
+      <video:duration>120</video:duration>
+      <video:publication_date>2026-06-20</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-haleta.jpg</video:thumbnail_loc>
+      <video:title>אנה הלטה - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/rK9ENA6ysp8</video:player_loc>
+      <video:duration>3317</video:duration>
+      <video:publication_date>2026-07-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-daskal.jpg</video:thumbnail_loc>
+      <video:title>יונתן דסקל - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/x1XkeHzo6rI</video:player_loc>
+      <video:duration>3614</video:duration>
+      <video:publication_date>2026-07-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-fine.jpg</video:thumbnail_loc>
+      <video:title>יוסי פיין - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/qLhLaRFsdrY</video:player_loc>
+      <video:duration>3714</video:duration>
+      <video:publication_date>2026-07-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-amdursky.jpg</video:thumbnail_loc>
+      <video:title>אסף אמדורסקי - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/N5B7Ctv7mK0</video:player_loc>
+      <video:duration>3660</video:duration>
+      <video:publication_date>2026-07-22</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-smadar.jpg</video:thumbnail_loc>
+      <video:title>עמרי סמדר - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/Taf2kRNpsF0</video:player_loc>
+      <video:duration>3660</video:duration>
+      <video:publication_date>2026-07-20</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-shuzin.jpg</video:thumbnail_loc>
+      <video:title>שוזין - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/ea9TAEzUtOo</video:player_loc>
+      <video:duration>3480</video:duration>
+      <video:publication_date>2026-07-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-kimel.jpg</video:thumbnail_loc>
+      <video:title>קארין קימל - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/QMFm8I7qubc</video:player_loc>
+      <video:duration>3540</video:duration>
+      <video:publication_date>2026-07-10</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-zisling.jpg</video:thumbnail_loc>
+      <video:title>ספי ציזלינג - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/E1m6Nfq_VFU</video:player_loc>
+      <video:duration>3780</video:duration>
+      <video:publication_date>2026-07-09</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-raz.jpg</video:thumbnail_loc>
+      <video:title>יחזקאל רז - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/RCZa_Gbs46M</video:player_loc>
+      <video:duration>4080</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-astral.jpg</video:thumbnail_loc>
+      <video:title>אסטרל פרוג'קשן - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/xfFi4OcjgOc</video:player_loc>
+      <video:duration>3600</video:duration>
+      <video:publication_date>2026-07-03</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+</urlset>

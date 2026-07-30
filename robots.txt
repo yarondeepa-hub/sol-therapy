@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sol-therapy.com/sitemap.xml
+Sitemap: https://sol-therapy.com/video-sitemap.xml
