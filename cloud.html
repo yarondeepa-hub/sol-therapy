@@ -1178,7 +1178,13 @@
     e.stopPropagation();
     var slug=btn.getAttribute('data-slug'), name=btn.getAttribute('data-name'), when=btn.getAttribute('data-when');
     var url=BASE+'/share/'+slug+'.html';
-    var text='CLOUD SPACE - מדיטציית סאונד בהשתתפות '+name+' | '+when+' | 20:30';
+    // השעה נלקחת מהכרטיס עצמו (סבב מוקדם = 18:30), והתחילית רק למדיטציות - לסדנה יש lp-card__sub
+    var card=btn.closest('.lp-card');
+    var tEl=card&&card.querySelector('.w-time');
+    var tm=tEl?tEl.textContent.trim():'20:30';
+    var isWorkshop=!!(card&&card.querySelector('.lp-card__sub'));
+    var text=isWorkshop ? ('CLOUD SPACE - '+name+' | '+when+' | '+tm)
+                        : ('CLOUD SPACE - מדיטציית סאונד בהשתתפות '+name+' | '+when+' | '+tm);
     var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
     openPop(btn,url,text);
