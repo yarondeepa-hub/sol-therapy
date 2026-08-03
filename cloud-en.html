@@ -293,6 +293,33 @@
             opacity: 1;
         }
 
+        /* --- Cloud mosaic gallery (replaces static space illustration) --- */
+        .cloud-mosaic{grid-area:space;width:92%;max-width:1080px;margin:3.4rem auto 0}
+        .cloud-mosaic__grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,clamp(118px,15vw,188px));gap:clamp(4px,.6vw,8px)}
+        .cm__item--a{grid-column:1/3;grid-row:1/3}
+        .cm__item--b{grid-column:3/4;grid-row:1/3}
+        .cm__item--c{grid-column:4/5;grid-row:1/3}
+        .cm__item--d{grid-column:1/3;grid-row:3/5}
+        .cm__item--f{grid-column:3/5;grid-row:3/4}
+        .cm__item--e{grid-column:3/5;grid-row:4/5}
+        .cm__item--g{grid-column:1/5;grid-row:5/7}
+        .cm__item--d img{object-position:center 52%}
+        .cm__item--e img{object-position:center 42%}
+        .cm__item{position:relative;overflow:hidden;border-radius:3px;opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+        .cm__item.is-in{opacity:1;transform:none}
+        .cm__item img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.62) contrast(1.04) brightness(.9);transition:filter .8s ease,transform .8s ease}
+        .cm__item:hover img{filter:saturate(.92) contrast(1.05) brightness(.98);transform:scale(1.04)}
+        @keyframes cmDriftA{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-1.5px)}}
+        @keyframes cmDriftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-1.5px,2px)}}
+        @keyframes cmDriftC{0%,100%{transform:translate(0,0)}50%{transform:translate(1px,1.5px)}}
+        .cm__item.is-in.drift-a img{animation:cmDriftA 6s ease-in-out infinite}
+        .cm__item.is-in.drift-b img{animation:cmDriftB 7.5s ease-in-out infinite}
+        .cm__item.is-in.drift-c img{animation:cmDriftC 9s ease-in-out infinite}
+        .cm__item--paused img{animation-play-state:paused}
+        @media(prefers-reduced-motion:reduce){.cm__item.is-in.drift-a img,.cm__item.is-in.drift-b img,.cm__item.is-in.drift-c img{animation:none}.cm__item{transition:opacity .4s ease}}
+        .cloud-mosaic__cap{font-family:var(--font-body);font-size:.8rem;letter-spacing:.04em;color:var(--color-muted);opacity:.85;text-align:center;margin:1.15rem 0 0}
+        .cloud-mosaic__cap::before{content:'';display:block;width:42px;height:2px;background:#209CB4;border-radius:2px;opacity:.85;margin:0 auto .8rem}
+        @media(max-width:640px){.cloud-mosaic__grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;grid-auto-rows:clamp(120px,32vw,175px);gap:4px}.cm__item--a,.cm__item--b,.cm__item--c,.cm__item--d,.cm__item--e,.cm__item--f,.cm__item--g{grid-column:auto;grid-row:auto}.cm__item--a{grid-column:1/3}.cm__item--d{grid-column:1/3}.cm__item--g{grid-column:1/3;grid-row:span 2}}
         .cloud-space{margin:3.4rem auto 0;width:90%;max-width:780px;text-align:center}
         .cloud-space__frame{display:block;width:100%;border:1px solid rgba(242,234,211,.16);border-radius:3px;overflow:hidden;background:#0f1413}
         .cloud-space__img{width:100%;height:auto;display:block}
@@ -695,7 +722,7 @@
 .cloud-archive__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin-bottom:.55rem}
 .cloud-archive__sub{font-family:var(--font-body);font-size:.88rem;font-weight:300;color:var(--color-muted);text-align:center;line-height:1.8;max-width:34ch;margin:0 auto 1.9rem}
 .arc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.9rem 1.2rem;max-width:820px;margin:0 auto}
-.arc-card{display:flex;flex-direction:column;min-width:0}
+.arc-card{display:flex;flex-direction:column;min-width:0}.arc-wrap{position:relative}.arc-grid.arc-strip{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(242,234,211,.25) transparent;max-width:none}.arc-strip .arc-card{flex:0 0 44%;min-width:280px;scroll-snap-align:start}@media(max-width:700px){.arc-strip .arc-card{flex-basis:84%}}.arc-nav{position:absolute;top:38%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(26,26,26,.78);border:1.5px solid rgba(242,234,211,.75);color:#F2EAD3;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}.arc-nav.--prev{left:-14px}.arc-nav.--next{right:-14px}.arc-nav:disabled{opacity:.25;cursor:default}@media(max-width:700px){.arc-nav.--prev{left:-6px}.arc-nav.--next{right:-6px}}.arc-strip-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.9rem}.arc-strip-dots .dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(242,234,211,.55);background:transparent;padding:0;cursor:pointer}.arc-strip-dots .dot.--on{background:#F2EAD3;border-color:#F2EAD3}#arcDots{display:none}
 .arc-card__media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--color-green-dark);border-radius:6px;cursor:pointer;transition:transform .3s ease}
 .arc-card__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .arc-card__media:hover{transform:translateY(-3px)}
@@ -856,7 +883,7 @@
           <article class="lp-card" data-slug="ran-slavin"><div class="lp-card__media"><span class="lp-lastseats">LAST TICKETS</span><picture><source srcset="assets/cloud/artists-bw/ran-slavin.webp" type="image/webp"><img src="assets/cloud/artists-bw/ran-slavin.jpg" alt="Ran Slavin - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Ran Slavin</h3><div class="lp-card__when"><span class="w-dow">Thu</span><span class="w-num" dir="ltr">6.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="ran-slavin" data-name="Ran Slavin" data-when="Thu 6.8" aria-label="Share: Ran Slavin"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/cdxff" target="_blank" rel="noopener" aria-label="Tickets: Ran Slavin">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Ran Slavin"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
           <article class="lp-card" data-slug="noa-argov"><div class="lp-card__media"><picture><source srcset="assets/cloud/artists-bw/noa-argov.webp" type="image/webp"><img src="assets/cloud/artists-bw/noa-argov.jpg" alt="Noa Argov - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Noa Argov</h3><div class="lp-card__when"><span class="w-dow">Tue</span><span class="w-num" dir="ltr">11.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="noa-argov" data-name="Noa Argov" data-when="Tue 11.8" aria-label="Share: Noa Argov"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/bdxff" target="_blank" rel="noopener" aria-label="Tickets: Noa Argov">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Noa Argov"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
           <article class="lp-card" data-slug="asaf-talmudi"><div class="lp-card__media"><picture><source srcset="assets/cloud/artists-bw/asaf-talmudi.webp" type="image/webp"><img src="assets/cloud/artists-bw/asaf-talmudi.jpg" alt="Asaf Talmudi - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Asaf Talmudi</h3><div class="lp-card__when"><span class="w-dow">Wed</span><span class="w-num" dir="ltr">12.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="asaf-talmudi" data-name="Asaf Talmudi" data-when="Wed 12.8" aria-label="Share: Asaf Talmudi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/6dxff" target="_blank" rel="noopener" aria-label="Tickets: Asaf Talmudi">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Asaf Talmudi"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
-          <article class="lp-card" data-slug="raz"><div class="lp-card__media"><span class="lp-lastseats">LAST TICKETS</span><picture><source srcset="assets/cloud/artists-bw/raz.webp" type="image/webp"><img src="assets/cloud/artists-bw/raz.jpg" alt="Yehezkel Raz - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Yehezkel Raz</h3><div class="lp-card__when"><span class="w-dow">Thu</span><span class="w-num" dir="ltr">13.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="raz" data-name="Yehezkel Raz" data-when="Thu 13.8" aria-label="Share: Yehezkel Raz"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/gdxff" target="_blank" rel="noopener" aria-label="Tickets: Yehezkel Raz">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Yehezkel Raz"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
+          <article class="lp-card" data-slug="raz"><div class="lp-card__media"><span class="lp-soldout">SOLD OUT</span><picture><source srcset="assets/cloud/artists-bw/raz.webp" type="image/webp"><img src="assets/cloud/artists-bw/raz.jpg" alt="Yehezkel Raz - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Yehezkel Raz</h3><div class="lp-card__when"><span class="w-dow">Thu</span><span class="w-num" dir="ltr">13.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="raz" data-name="Yehezkel Raz" data-when="Thu 13.8" aria-label="Share: Yehezkel Raz"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn lp-card__btn--sold" href="https://www.eventer.co.il/gdxff" target="_blank" rel="noopener" aria-label="Sold out: Yehezkel Raz">SOLD OUT</a><button type="button" class="lp-card__more" aria-label="About the artist: Yehezkel Raz"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
           <article class="lp-card" data-slug="raz-b"><div class="lp-card__media"><span class="lp-newshow">EARLY ROUND</span><picture><source srcset="assets/cloud/artists-bw/raz.webp" type="image/webp"><img src="assets/cloud/artists-bw/raz.jpg" alt="Yehezkel Raz - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Yehezkel Raz</h3><div class="lp-card__when"><span class="w-dow">Thu</span><span class="w-num" dir="ltr">13.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">18:30</span><button type="button" class="lp-card__share" data-slug="raz-b" data-name="Yehezkel Raz" data-when="Thu 13.8" aria-label="Share: Yehezkel Raz"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/kcl2f" target="_blank" rel="noopener" aria-label="Tickets: Yehezkel Raz">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Yehezkel Raz"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
           <article class="lp-card" data-slug="itay-tzur"><div class="lp-card__media"><picture><source srcset="assets/cloud/artists-bw/itay-tzur.webp" type="image/webp"><img src="assets/cloud/artists-bw/itay-tzur.jpg" alt="Itay Tzur - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Itay Tzur</h3><div class="lp-card__when"><span class="w-dow">Tue</span><span class="w-num" dir="ltr">18.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="itay-tzur" data-name="Itay Tzur" data-when="Tue 18.8" aria-label="Share: Itay Tzur"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/hdxff" target="_blank" rel="noopener" aria-label="Tickets: Itay Tzur">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Itay Tzur"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
           <article class="lp-card" data-slug="echo"><div class="lp-card__media"><span class="lp-lastseats">LAST TICKETS</span><picture><source srcset="assets/cloud/artists-bw/echo.webp" type="image/webp"><img src="assets/cloud/artists-bw/echo.jpg" alt="Echo - sound meditation at CLOUD SPACE Tel Aviv" loading="lazy" width="760" height="950"></picture></div><div class="lp-card__body"><h3 class="lp-card__name">Echo</h3><div class="lp-card__when"><span class="w-dow">Wed</span><span class="w-num" dir="ltr">19.8</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">20:30</span><button type="button" class="lp-card__share" data-slug="echo" data-name="Echo" data-when="Wed 19.8" aria-label="Share: Echo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.7" cy="5.3" r="2.6"/><circle cx="5.7" cy="12.3" r="2.6"/><circle cx="17.3" cy="18.9" r="2.6"/><path d="M8.25 10.85 L15.1 6.55"/><path d="M8.35 13.7 L14.9 17.45"/></svg></button></div><div class="lp-card__actions"><a class="lp-card__btn" href="https://www.eventer.co.il/vdxff" target="_blank" rel="noopener" aria-label="Tickets: Echo">TICKETS</a><button type="button" class="lp-card__more" aria-label="About the artist: Echo"><span class="lp-more-lg">ABOUT THE ARTIST</span><span class="lp-more-sm">ABOUT</span><span class="chev" aria-hidden="true">▾</span></button></div></div></article>
@@ -908,7 +935,7 @@
             <p class="cloud-archive__kicker">THE ARCHIVE</p>
             <h2 class="cloud-archive__title">Recorded Sessions</h2>
             <p class="cloud-archive__sub">Every CLOUD session is recorded in full and uploaded to our YouTube channel</p>
-            <div class="arc-grid" id="arcGrid">
+            <div class="arc-wrap"><button class="arc-nav --prev" type="button" aria-label="Previous session"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="arc-grid arc-strip" id="arcGrid">
                 <article class="arc-card">
                     <div class="arc-card__media yt-facade" data-ytid="3rAWrQfLp8w" role="button" tabindex="0" aria-label="Play: Shye Ben Tzur - the full session">
                         <img src="assets/cloud/archive-bentzur.jpg" alt="Shye Ben Tzur - recorded session at CLOUD" width="1280" height="720" loading="lazy" decoding="async">
@@ -1020,6 +1047,8 @@
                     </div>
                 </article>
             </div>
+            <button class="arc-nav --next" type="button" aria-label="Next session"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+            <div class="arc-strip-dots" aria-hidden="true"></div>
             <div class="arc-dots" id="arcDots" aria-hidden="true"><span class="on"></span><span></span></div>
             <div class="cloud-archive__cta">
                 <a class="arc-btn" href="/cloud-sessions" aria-label="To the recorded session library" style="margin-inline-end:.7rem">Full Library</a>
@@ -1030,9 +1059,17 @@
             </div>
         </section>
 
-        <section class="cloud-space" aria-label="Space rendering">
-            <span class="cloud-space__frame"><picture><source srcset="assets/cloud/space-illustration.webp" type="image/webp"><img class="cloud-space__img" src="assets/cloud/space-illustration.jpg" alt="CLOUD space rendering - a sound meditation hall with mattresses, greenery and a central sound system" width="1536" height="1024" loading="lazy" decoding="async"></picture></span>
-            <p class="cloud-space__cap">Space rendering · CLOUD SPACE, Shoken 27</p>
+        <section class="cloud-mosaic" aria-label="Gallery of the space">
+            <div class="cloud-mosaic__grid">
+                <figure class="cm__item cm__item--a" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-a.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-a.jpg" alt="The CLOUD SPACE hall in daylight, mattresses in rows facing large windows" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--b" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-b.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-b.jpg" alt="A meditation corner with greenery, a speaker and mattresses in daylight" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--c" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-c.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-c.jpg" alt="A view down the hall with curtains, the sound system and mattresses" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--d" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-d.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-d.jpg" alt="The terrace with a sofa, bonsai trees and a view of the city" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--e" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-e.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-e.jpg" alt="A close detail of greenery and speakers in the space" loading="lazy" decoding="async" width="802" height="1200"></picture></figure>
+                <figure class="cm__item cm__item--f" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-f.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-f.jpg" alt="The hall in warm evening light before a sound meditation" loading="lazy" decoding="async" width="1500" height="1002"></picture></figure>
+                <figure class="cm__item cm__item--g" data-cm><picture><source srcset="assets/cloud/gallery/cloud-gallery-g.webp" type="image/webp"><img src="assets/cloud/gallery/cloud-gallery-g.jpg" alt="A full hall of participants lying down under red light during an evening session" loading="lazy" decoding="async" width="1920" height="1440"></picture></figure>
+            </div>
+            <p class="cloud-mosaic__cap">Moments from the space &middot; CLOUD SPACE, Shoken 27</p>
         </section>
 
 
@@ -1392,5 +1429,45 @@ wg.querySelectorAll(".lp-card__more").forEach(function(b){b.addEventListener("cl
 var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
 })();
 </script>
+
+    <script>
+    /* archive strip: arrows + dots (cloned from the Hebrew page, measured left-edge for LTR) */
+    (function(){
+      var row=document.querySelector('.arc-grid.arc-strip'); if(!row) return;
+      var cards=[].slice.call(row.querySelectorAll('.arc-card'));
+      var wrap=row.parentElement;
+      var prev=wrap.querySelector('.arc-nav.--prev'), next=wrap.querySelector('.arc-nav.--next');
+      var dots=document.querySelector('.arc-strip-dots');
+      if(cards.length<2){ if(prev)prev.remove(); if(next)next.remove(); if(dots)dots.remove(); return; }
+      var idx=0;
+      cards.forEach(function(_,i){ var d=document.createElement('button'); d.type='button'; d.className='dot'; d.tabIndex=-1; d.addEventListener('click',function(){go(i);}); dots.appendChild(d); });
+      function paint(){ [].forEach.call(dots.children,function(d,i){ d.classList.toggle('--on',i===idx); }); prev.disabled=(idx===0); next.disabled=(idx===cards.length-1); }
+      function go(i){ idx=Math.max(0,Math.min(cards.length-1,i)); cards[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}); paint(); }
+      prev.addEventListener('click',function(){go(idx-1);});
+      next.addEventListener('click',function(){go(idx+1);});
+      var st;
+      row.addEventListener('scroll',function(){ clearTimeout(st); st=setTimeout(function(){
+        var rr=row.getBoundingClientRect(), best=0, bd=1e9;
+        cards.forEach(function(c,i){ var d=Math.abs(c.getBoundingClientRect().left-rr.left); if(d<bd){bd=d;best=i;} });
+        idx=best; paint();
+      },90); },{passive:true});
+      paint();
+    })();
+    </script>
+
+    <script>
+    (function(){
+      var items=[].slice.call(document.querySelectorAll('.cloud-mosaic [data-cm]'));
+      if(!items.length)return;
+      var drifts=['drift-a','drift-b','drift-c'];
+      items.forEach(function(it,i){it.style.transitionDelay=(i*0.09).toFixed(2)+'s';it.classList.add(drifts[i%3]);});
+      if('IntersectionObserver' in window){
+        var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');rev.unobserve(e.target);}});},{threshold:0.12});
+        items.forEach(function(it){rev.observe(it);});
+        var pause=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('cm__item--paused',!e.isIntersecting);});},{threshold:0.02});
+        items.forEach(function(it){pause.observe(it);});
+      }else{items.forEach(function(it){it.classList.add('is-in');});}
+    })();
+    </script>
 </body>
 </html>
