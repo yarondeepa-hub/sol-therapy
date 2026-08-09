@@ -127,8 +127,8 @@
    "@type": "Offer",
    "priceCurrency": "ILS",
    "availability": "https://schema.org/InStock",
-   "url": "https://www.eventer.co.il/qtn2f",
-   "price": "50"
+   "url": "https://sol-therapy.com/share/deepdive-02-en.html",
+   "price": "0"
   },
   "endDate": "2026-08-15T06:00:00+03:00"
  },
@@ -284,6 +284,16 @@ body{direction:ltr;text-align:left}
 .sp-specs{justify-content:center}
 .sp-back svg{transform:scaleX(-1)}
 .sp-sticky .who,.sp-sticky .act{direction:ltr}
+
+/* RSVP form */
+.sp-rsvp{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
+.sp-rsvp input{width:100%;background:rgba(242,234,211,.06);border:1px solid rgba(242,234,211,.22);border-radius:10px;color:var(--color-washi);font-family:inherit;font-size:1rem;padding:.85rem 1rem;outline:none;transition:border-color .2s ease}
+.sp-rsvp input:focus{border-color:var(--teal)}
+.sp-rsvp input::placeholder{color:rgba(242,234,211,.45)}
+.sp-rsvp .sp-cta{margin-top:.2rem;border:0;cursor:pointer;width:100%;max-width:none}
+.sp-rsvp-done{display:none;text-align:center;border:1px solid rgba(32,156,180,.5);border-radius:12px;padding:1.1rem 1rem;color:var(--color-washi);font-size:1.05rem;line-height:1.5}
+.sp-rsvp.sent{display:none}
+.sp-rsvp.sent + .sp-rsvp-done{display:block}
 </style>
 </head>
 <body data-state="live" data-event-date="2026-08-14">
@@ -304,7 +314,7 @@ body{direction:ltr;text-align:left}
     <span>Friday</span><span class="num">14.8</span>
     <span class="sep">·</span><span class="num">23:00</span>
     <span class="sep">·</span><span>CLOUD SPACE, Shocken 27</span>
-    <span class="sep sep-price">·</span><span class="price">50 ILS</span>
+    <span class="sep sep-price">·</span><span class="price">Free entry - RSVP required</span>
   </div>
 
   <div class="sp-bio">
@@ -320,7 +330,12 @@ body{direction:ltr;text-align:left}
     <p>The night starts at 23:00 and runs into the small hours, in the CLOUD SPACE loft - with a surround sound system and a seating and lying area built for long listening. Shocken 27, Kiryat Hamelacha, Tel Aviv.</p>
   </section>
 
-  <a class="sp-cta" id="cta" href="https://www.eventer.co.il/qtn2f" target="_blank" rel="noopener">Tickets - 50 ILS</a>
+  <form class="sp-rsvp" id="rsvp" autocomplete="on">
+    <input type="text" name="fullname" placeholder="Full name" required autocomplete="name">
+    <input type="email" name="email" placeholder="Email" required autocomplete="email">
+    <button type="submit" class="sp-cta" id="cta">SAVE YOUR SPOT - FREE ENTRY</button>
+  </form>
+  <div class="sp-rsvp-done">You are in. See you Friday 14.8 at CLOUD SPACE.<br>Doors 23:00, Shocken 27.</div>
   <p class="sp-state-note" id="note-sold" style="display:none">Tickets for this event are sold out. The lineup continues - more events run every week.</p>
   <p class="sp-state-note" id="note-done">This event has taken place. The lineup continues - the next CLOUD events are below.</p>
 
@@ -364,7 +379,7 @@ body{direction:ltr;text-align:left}
 </main>
 
 <div class="sp-sticky">
-  <a href="https://www.eventer.co.il/qtn2f" target="_blank" rel="noopener"><span class="who">DEEPDIVE 02 · <span dir="ltr">14.8</span></span><span class="act">Tickets</span></a>
+  <a href="#rsvp"><span class="who">DEEPDIVE 02 · <span dir="ltr">14.8</span></span><span class="act">RSVP - FREE</span></a>
 </div>
 <div class="sp-toast" id="toast"><span>Link copied</span></div>
 
@@ -468,6 +483,22 @@ body{direction:ltr;text-align:left}
       if(typeof window.gtag==='function'){ try{ gtag('event','ticket_click_artist',{artist_name:SLUG,link:a.href}); }catch(_){} }
     }catch(_){}
   },true);
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('rsvp'); if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var n=f.fullname.value.trim(), m=f.email.value.trim();
+    if(!n||!m) return;
+    var b=new URLSearchParams(); b.append('entry.169818131', n); b.append('entry.226003505', m);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSc2YCMjBqEfJVJfLhEwG2Yjjf9fCxmisrp3gzraaudpHBmYvw/formResponse', {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:b.toString()})
+      .catch(function(){});
+    f.classList.add('sent');
+    try{ if(typeof fbq==='function') fbq('trackCustom','RSVP',{content_name:'deepdive-02-en'}); }catch(_){ }
+    try{ if(typeof gtag==='function') gtag('event','rsvp',{event_label:'deepdive-02-en'}); }catch(_){ }
+  });
 })();
 </script>
 </body>

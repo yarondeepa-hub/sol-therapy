@@ -127,8 +127,8 @@
    "@type": "Offer",
    "priceCurrency": "ILS",
    "availability": "https://schema.org/InStock",
-   "url": "https://www.eventer.co.il/qtn2f",
-   "price": "50"
+   "url": "https://sol-therapy.com/share/deepdive-02.html",
+   "price": "0"
   },
   "endDate": "2026-08-15T06:00:00+03:00"
  },
@@ -276,7 +276,18 @@ body[data-state="live"] .sp-sticky{display:block}
 .sp-clips-dots .dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(242,234,211,.55);background:transparent;padding:0;cursor:pointer;transition:background .15s ease}
 .sp-clips-dots .dot.--on{background:#F2EAD3;border-color:#F2EAD3}
 @media(max-width:640px){.sp-clips-btn{width:38px;height:38px}.sp-clips-btn.--prev{inset-inline-start:-6px}.sp-clips-btn.--next{inset-inline-end:-6px}}
-    </style>
+    
+/* RSVP form */
+.sp-rsvp{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
+.sp-rsvp input{width:100%;background:rgba(242,234,211,.06);border:1px solid rgba(242,234,211,.22);border-radius:10px;color:var(--color-washi);font-family:inherit;font-size:1rem;padding:.85rem 1rem;outline:none;transition:border-color .2s ease}
+.sp-rsvp input:focus{border-color:var(--teal)}
+.sp-rsvp input::placeholder{color:rgba(242,234,211,.45)}
+.sp-rsvp .sp-cta{margin-top:.2rem;border:0;cursor:pointer;width:100%;max-width:none}
+.sp-rsvp-done{display:none;text-align:center;border:1px solid rgba(32,156,180,.5);border-radius:12px;padding:1.1rem 1rem;color:var(--color-washi);font-size:1.05rem;line-height:1.5}
+.sp-rsvp.sent{display:none}
+.sp-rsvp.sent + .sp-rsvp-done{display:block}
+.sp-rsvp-note{text-align:center;font-size:.82rem;color:var(--color-muted);margin:.1rem 0 0}
+</style>
 </head>
 <body data-state="live" data-event-date="2026-08-14">
 
@@ -296,7 +307,7 @@ body[data-state="live"] .sp-sticky{display:block}
     <span>שישי</span><span class="num">14.8</span>
     <span class="sep">·</span><span class="num">23:00</span>
     <span class="sep">·</span><span>קלאוד ספייס, שוקן 27</span>
-    <span class="sep sep-price">·</span><span class="price">50 ש"ח</span>
+    <span class="sep sep-price">·</span><span class="price">כניסה חופשית בהרשמה מראש</span>
   </div>
 
   <div class="sp-bio">
@@ -312,7 +323,12 @@ body[data-state="live"] .sp-sticky{display:block}
     <p>האירוע מתחיל ב-23:00 ונמשך אל תוך הלילה, בלופט של קלאוד ספייס - עם מערכת סאונד היקפית וסביבת ישיבה ושכיבה, לחוויית האזנה ארוכה. שוקן 27, קרית המלאכה, תל אביב.</p>
   </section>
 
-  <a class="sp-cta" id="cta" href="https://www.eventer.co.il/qtn2f" target="_blank" rel="noopener">לכרטיסים - 50 ש"ח</a>
+  <form class="sp-rsvp" id="rsvp" autocomplete="on">
+    <input type="text" name="fullname" placeholder="שם מלא" required autocomplete="name">
+    <input type="email" name="email" placeholder="אימייל" required autocomplete="email" dir="ltr" style="text-align:right">
+    <button type="submit" class="sp-cta" id="cta">שריינו מקום - כניסה חופשית</button>
+  </form>
+  <div class="sp-rsvp-done">נרשמת. נתראה בשישי 14.8 בקלאוד ספייס.<br>הכניסה מ-23:00, שוקן 27.</div>
   <p class="sp-state-note" id="note-sold" style="display:none">הכרטיסים לאירוע הזה אזלו. הליינאפ ממשיך - אירועים נוספים מתקיימים כל שבוע.</p>
   <p class="sp-state-note" id="note-done">האירוע התקיים. הליינאפ ממשיך - האירועים הבאים בקלאוד למטה.</p>
 
@@ -356,7 +372,7 @@ body[data-state="live"] .sp-sticky{display:block}
 </main>
 
 <div class="sp-sticky">
-  <a href="https://www.eventer.co.il/qtn2f" target="_blank" rel="noopener"><span class="who">DEEPDIVE 02 · <span dir="ltr">14.8</span></span><span class="act">לכרטיסים</span></a>
+  <a href="#rsvp"><span class="who">DEEPDIVE 02 · <span dir="ltr">14.8</span></span><span class="act">להרשמה - חינם</span></a>
 </div>
 <div class="sp-toast" id="toast"><span>הקישור הועתק</span></div>
 
@@ -460,6 +476,22 @@ body[data-state="live"] .sp-sticky{display:block}
       if(typeof window.gtag==='function'){ try{ gtag('event','ticket_click_artist',{artist_name:SLUG,link:a.href}); }catch(_){} }
     }catch(_){}
   },true);
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('rsvp'); if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var n=f.fullname.value.trim(), m=f.email.value.trim();
+    if(!n||!m) return;
+    var b=new URLSearchParams(); b.append('entry.169818131', n); b.append('entry.226003505', m);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSc2YCMjBqEfJVJfLhEwG2Yjjf9fCxmisrp3gzraaudpHBmYvw/formResponse', {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:b.toString()})
+      .catch(function(){});
+    f.classList.add('sent');
+    try{ if(typeof fbq==='function') fbq('trackCustom','RSVP',{content_name:'deepdive-02'}); }catch(_){ }
+    try{ if(typeof gtag==='function') gtag('event','rsvp',{event_label:'deepdive-02'}); }catch(_){ }
+  });
 })();
 </script>
 </body>
