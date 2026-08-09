@@ -18,6 +18,20 @@
   <url>
     <loc>https://sol-therapy.com/cloud-sessions</loc>
     <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-lava-dome.jpg</video:thumbnail_loc>
+      <video:title>לאבה דום - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/cyaHPa2LJvw</video:player_loc>
+      <video:duration>3637</video:duration>
+      <video:publication_date>2026-08-09</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-haleta.jpg</video:thumbnail_loc>
       <video:title>אנה הלטה - מדיטציית סאונד בקלאוד ספייס</video:title>
       <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
