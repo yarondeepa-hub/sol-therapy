@@ -209,6 +209,36 @@
             margin: 0 auto;
         }
 
+        /* ===== שכבת המתנה ===== */
+            .gift-pills{display:flex;gap:.5rem;justify-content:center;margin:1.15rem 0 0;flex-wrap:wrap}
+            .gift-pill{font-family:var(--font-body);font-size:.8rem;letter-spacing:.03em;color:var(--color-cloud);
+        border:1px solid rgba(32,156,180,.45);border-radius:999px;padding:.35rem .95rem;
+        background:rgba(32,156,180,.06);white-space:nowrap}
+            .gift-band{margin:3.2rem auto 0;border:1px solid rgba(32,156,180,.3);border-radius:10px;
+        background:rgba(32,156,180,.05);padding:2.4rem 2rem 2.2rem;max-width:60ch;text-align:center}
+            .gift-band__kicker{font-family:var(--font-body);font-size:.82rem;letter-spacing:.08em;
+        color:var(--color-cloud);margin-bottom:.75rem}
+            .gift-band__title{font-family:var(--font-display);font-size:1.8rem;font-weight:600;
+        line-height:1.2;margin:0 0 1rem}
+            .gift-band__text{font-size:.98rem;font-weight:300;line-height:1.9;color:var(--color-washi);
+        opacity:.8;margin:0 auto 1.7rem;max-width:42ch;text-wrap:balance}
+            .gift-steps{list-style:none;padding:0;margin:0 auto;max-width:42ch;text-align:start}
+            .gift-steps li{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.85rem;
+        font-size:.95rem;font-weight:300;line-height:1.75;color:var(--color-washi);opacity:.85}
+            .gift-steps li:last-child{margin-bottom:0}
+            .gift-steps span{flex:0 0 auto;width:23px;height:23px;border-radius:50%;
+        border:1px solid rgba(32,156,180,.55);color:var(--color-cloud);font-size:.73rem;
+        display:flex;align-items:center;justify-content:center;margin-top:.2rem}
+            .buy-gift-note{border-inline-start:2px solid rgba(32,156,180,.5);padding:.15rem 0 .15rem .95rem;
+        margin:0 auto 1.6rem;max-width:52ch;font-size:.94rem;font-weight:300;line-height:1.85;
+        color:var(--color-washi);opacity:.82;text-align:start}
+            .buy-gift-note b{font-weight:500;opacity:1}
+            @media(max-width:560px){
+        .gift-band{padding:1.8rem 1.2rem;margin-top:2.4rem}
+        .gift-band__title{font-size:1.5rem}
+        .gift-pill{font-size:.74rem;padding:.3rem .8rem}
+            }
+
         /* numbers block */
         .card-offers {
             display: grid;
@@ -482,7 +512,8 @@
         <header class="card-hero">
             <p class="card-hero__kicker">חדש בקלאוד</p>
             <h1 class="card-hero__title">כרטיסיית קלאוד</h1>
-            <p class="card-hero__sub">קונים פעם אחת, צוללים שוב ושוב. כרטיסייה לערבי המדיטציה של קלאוד ספייס</p>
+            <p class="card-hero__sub">קונים פעם אחת, צוללים שוב ושוב. וגם: מתנה מעולה לחבר או בן משפחה שצריך לנשום.<br>כרטיסייה לערבי המדיטציה של קלאוד ספייס - לעצמכם או במתנה.</p>
+            <div class="gift-pills"><span class="gift-pill">לשימוש עצמי</span><span class="gift-pill">מתנה</span><span class="gift-pill">ניתנת להעברה</span></div>
         </header>
 
         <div class="card-offers">
@@ -504,6 +535,16 @@
                 <span class="card-offer__per">125 לכניסה</span>
             </div>
         </div>
+        <div class="gift-band">
+            <div class="gift-band__kicker">גם מתנה</div>
+            <h2 class="gift-band__title">מתנה של שקט</h2>
+            <p class="gift-band__text">שלוש, חמש או עשר מדיטציות סאונד עמוקות, בערבים שהם בוחרים. אתם קונים, הם מחליטים מתי.</p>
+            <ul class="gift-steps">
+                <li><span>1</span><div>קונים כרטיסייה כאן בעמוד, כרגיל.</div></li>
+                <li><span>2</span><div>מקבלים קוד אישי, ומעבירים אותו למי שמקבל את המתנה.</div></li>
+                <li><span>3</span><div>הם בוחרים ערב מהליינאפ, מזינים את הקוד, ונכנסים.</div></li>
+            </ul>
+        </div>
 
         <section class="card-section" aria-label="איך זה עובד">
             <h2 class="card-section__title">איך זה עובד</h2>
@@ -520,6 +561,7 @@
 
         <section class="card-section" id="buy" aria-label="רכישת כרטיסייה">
             <h2 class="card-section__title">רכישת כרטיסייה</h2>
+            <p class="buy-gift-note"><b>קונים במתנה?</b> אפשר לרשום את הכרטיסייה על שם מי שמקבל אותה - הקוד יגיע ישירות אליו. או לקנות על שמכם ולהעביר לו את הקוד.</p>
             <div class="card-buy__frame">
                 <script>!function(t){t.addEventListener("message",function(a){a.data&&"eva"===a.data.event&&a.origin.match("^https:(\/\/|[^\.]+\.)eventer\.(co\.il|us)$")&&a.data.t&&t[a.data.t]&&t[a.data.t](...a.data.e)},!1)}(window);</script>
                 <script src="https://www.eventer.co.il/js/vendor/iframeResizer.min.js"></script>
@@ -532,6 +574,8 @@
         <section class="card-section" aria-label="שאלות קצרות">
             <h2 class="card-section__title">שאלות קצרות</h2>
             <div class="card-faq">
+                <details class="card-faq__item"><summary class="card-faq__q">אפשר לקנות במתנה?</summary><div class="card-faq__a">כן. אפשר לרשום את הכרטיסייה על שם מי שמקבל אותה, או לקנות על שמכם ולהעביר לו את הקוד. בשני המקרים הקוד עובד אותו דבר.</div></details>
+                <details class="card-faq__item"><summary class="card-faq__q">מה מקבל מי שקיבל את המתנה?</summary><div class="card-faq__a">קוד אישי, ואת ההסבר איך להזמין מקום. הוא בוחר ערב מהליינאפ, מזין את הקוד, והכניסה יורדת מהכרטיסייה.</div></details>
                 <details class="card-faq__item"><summary class="card-faq__q">עד מתי הכרטיסייה בתוקף?</summary><div class="card-faq__a">עד סוף ספטמבר.</div></details>
                 <details class="card-faq__item"><summary class="card-faq__q">לאילו אירועים?</summary><div class="card-faq__a">לערבי המדיטציה של קלאוד. סדנאות וריטריטים לא כלולים.</div></details>
                 <details class="card-faq__item"><summary class="card-faq__q">אפשר להגיע בזוג?</summary><div class="card-faq__a">כן. אפשר לנקב שתי כניסות באותו ערב, והכרטיסייה גם ניתנת להעברה.</div></details>
