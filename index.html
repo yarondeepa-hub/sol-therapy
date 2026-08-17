@@ -798,6 +798,16 @@
             align-items: center;
             text-align: center;
         }
+        /* האמן שמנגן יושב בסרטון בגובה 44 עד 57 אחוז מהמסך.
+           הבלוק מעוגן כך שהתחתית שלו נעצרת ב-41 אחוז, מעל הראש שלו,
+           והוא נח על הווילון השקט. העיגון הוא באחוזים ולכן הוא נכון
+           בכל גובה מסך, לא רק במסך אחד. */
+        .entry__content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 59%;
+        }
 
         .entry__title {
             filter: drop-shadow(0 1px 16px rgba(0, 0, 0, 0.55));
@@ -822,7 +832,7 @@
         }
         .entry__logo {
             display: block;
-            width: clamp(120px, 18vw, 220px);
+            width: clamp(132px, min(18vw, 20vh), 200px);
             height: auto;
             filter: brightness(0) invert(1) blur(12px);
             opacity: 0;
