@@ -826,7 +826,24 @@
         .cloud-cardstrip__new{color:#C0392B;font-weight:600}
         .cloud-cardstrip__more{color:#209CB4;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(32,156,180,.5)}
         @media(prefers-reduced-motion:reduce){.cloud-cardstrip__dot{animation:none}}
-        @media(max-width:560px){.cloud-cardstrip__link{font-size:.88rem;padding:.7rem 1.1rem;gap:.55rem}}
+        /* מובייל: הקופסה יורדת. במסך צר הכיתוב נשבר לשתי שורות, והמסגרת הופכת
+           אותו מפס שקט להתראת ממשק. במקום זה - טקסט ממורכז בשפה של שאר העמוד,
+           והנקודה נצמדת למילה "חדש" במקום לצוף על שפת הקופסה. */
+        @media(max-width:560px){
+          .cloud-cardstrip{margin-top:1.9rem;margin-bottom:2.1rem}
+          .cloud-cardstrip__link,
+          .cloud-cardstrip__link:hover,
+          .cloud-cardstrip__link:focus-visible{
+            display:block;border:0;background:none;border-radius:0;
+            padding:.5rem .4rem;max-width:94%;min-height:44px;
+            text-align:center;text-wrap:balance;hyphens:none;overflow-wrap:normal;
+            font-size:.9rem;line-height:1.72;letter-spacing:.015em}
+          .cloud-cardstrip__dot{display:inline-block;width:6px;height:6px;
+            vertical-align:.1em;margin-inline-end:.42em}
+          /* הקישור תמיד בשורה משלו - כך המשפט הראשון נשאר שלם
+             ואין לוכסן או מקף שנתלים בסוף שורה */
+          .cloud-cardstrip__more{display:block;margin-top:.15em}
+        }
         @media(min-width:980px){.cloud-cardstrip{grid-area:cardstrip;margin-top:2.5rem}}
         </style>
         <div class="cloud-cardstrip">

@@ -859,13 +859,25 @@
         .cloud-cardstrip__new{color:#C0392B;font-weight:600}
         .cloud-cardstrip__more{color:#209CB4;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(32,156,180,.5)}
         @media(prefers-reduced-motion:reduce){.cloud-cardstrip__dot{animation:none}}
-        @media(max-width:560px){.cloud-cardstrip__link{font-size:.88rem;padding:.7rem 1.1rem;gap:.55rem}}
+        @media(max-width:560px){
+          .cloud-cardstrip{margin-top:1.9rem;margin-bottom:2.1rem}
+          .cloud-cardstrip__link,
+          .cloud-cardstrip__link:hover,
+          .cloud-cardstrip__link:focus-visible{
+            display:block;border:0;background:none;border-radius:0;
+            padding:.5rem .4rem;max-width:94%;min-height:44px;
+            text-align:center;text-wrap:balance;hyphens:none;overflow-wrap:normal;
+            font-size:.9rem;line-height:1.72;letter-spacing:.015em}
+          .cloud-cardstrip__dot{display:inline-block;width:6px;height:6px;
+            vertical-align:.1em;margin-inline-end:.42em}
+          .cloud-cardstrip__more{display:block;margin-top:.15em}
+        }
         @media(min-width:980px){.cloud-cardstrip{grid-area:cardstrip;margin-top:2.5rem}}
         </style>
         <div class="cloud-cardstrip">
             <a class="cloud-cardstrip__link" href="/cloud-card-en">
                 <span class="cloud-cardstrip__dot" aria-hidden="true"></span>
-                <span><span class="cloud-cardstrip__new">New!</span> We have a multi-entry card / gift voucher - <span class="cloud-cardstrip__more">click for details</span></span>
+                <span><span class="cloud-cardstrip__new">New!</span> We have a <span style="white-space:nowrap">multi-entry</span> card / gift voucher - <span class="cloud-cardstrip__more">click for details</span></span>
             </a>
         </div>
 
