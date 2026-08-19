@@ -388,7 +388,7 @@ body[data-state="live"] .sp-sticky{display:block}
   var sb=document.getElementById('shareBtn');
   if(sb) sb.addEventListener('click',function(){
     var u=(window.__solShareUrl?window.__solShareUrl():location.href.split('#')[0]), t=document.title;
-    if(navigator.share){ navigator.share({title:t,url:u}).catch(function(){}); }
+    if(navigator.share){ navigator.share({url:u}).catch(function(){}); }
     else if(navigator.clipboard){ navigator.clipboard.writeText(u).then(function(){
       var el=document.getElementById('toast'); el.style.display='flex';
       setTimeout(function(){el.style.display='none';},1800);

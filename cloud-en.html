@@ -1261,7 +1261,7 @@
   function openPop(btn,url,text){
     closePop();
     pop=document.createElement('div'); pop.className='cloud-share-pop'; pop.setAttribute('dir','ltr');
-    var enc=encodeURIComponent(text+'\n'+url);
+    var enc=encodeURIComponent(url);
     var icWA='<span class="shic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></span>';
     var icFB='<span class="shic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.3v7h2.2z"/></svg></span>';
     var icIG='<span class="shic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>';
@@ -1294,7 +1294,7 @@
     var url=BASE+'/share/'+slug+'.html';
     var text='CLOUD SPACE - a sound meditation with '+name+' | '+when+' | 20:30';
     var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
+    if(isMobile&&navigator.share){ navigator.share({url:url}).catch(function(){}); return; }
     openPop(btn,url,text);
   });
   // --- Page-level share (prominent button under hero) ---
@@ -1305,7 +1305,7 @@
     var text='CLOUD SPACE - an urban breathing space by Sol Therapy | deep sound meditations, July 2026';
     if(typeof window.gtag==='function'){ try{ window.gtag('event','page_share_click',{}); }catch(_){} }
     var isMobile=(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if(isMobile&&navigator.share){ navigator.share({title:text,text:text,url:url}).catch(function(){}); return; }
+    if(isMobile&&navigator.share){ navigator.share({url:url}).catch(function(){}); return; }
     openPop(b,url,text);
   });
 
