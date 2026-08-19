@@ -174,7 +174,7 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .sp-title.ltr{direction:ltr;font-size:clamp(1.9rem,6vw,2.7rem)}
 .sp-line{text-align:center;color:var(--color-muted);font-size:1.02rem;font-weight:300;margin-bottom:2rem}
 .sp-hero{width:min(76%,420px);margin:0 auto 1.9rem;position:relative}
-.sp-hero img{display:block;width:100%;height:auto}
+.sp-hero img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.04)}
 .sp-hero::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(242,234,211,.14)}
 .sp-flag{position:absolute;top:11px;inset-inline-start:11px;display:none;align-items:center;gap:8px;background:rgba(239,231,210,.96);color:#08323d;border:1px solid #C0392B;border-radius:6px;padding:5px 12px;font-size:12.5px;font-weight:600;white-space:nowrap;z-index:3}
 .sp-flag::before{content:'';width:8px;height:8px;border-radius:50%;background:#C0392B;flex:0 0 auto}
@@ -295,6 +295,7 @@ body{direction:ltr;text-align:left}
 .sp-rsvp.sent{display:none}
 .sp-rsvp.sent + .sp-rsvp-done{display:block}
 </style>
+<script defer src="/assets/clean-url.js"></script>
 </head>
 <body data-state="live" data-event-date="2026-08-14">
 
@@ -403,7 +404,7 @@ body{direction:ltr;text-align:left}
   // share
   var sb=document.getElementById('shareBtn');
   if(sb) sb.addEventListener('click',function(){
-    var u=location.href.split('#')[0], t=document.title;
+    var u=(window.__solShareUrl?window.__solShareUrl():location.href.split('#')[0]), t=document.title;
     if(navigator.share){ navigator.share({title:t,url:u}).catch(function(){}); }
     else if(navigator.clipboard){ navigator.clipboard.writeText(u).then(function(){
       var el=document.getElementById('toast'); el.style.display='flex';
