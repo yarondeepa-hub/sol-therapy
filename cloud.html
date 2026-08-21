@@ -1106,6 +1106,20 @@
 
 
         <section class="cloud-faq" aria-label="שאלות נפוצות">
+            <div class="cloud-guide">
+                <p class="cloud-guide__kicker">Guide</p>
+                <h2 class="cloud-guide__heading">לוקחים את התרגול הביתה</h2>
+                <a href="/blog-meditation-daily-practice.html" class="cloud-guide__card">
+                    <div class="cloud-guide__body">
+                        <h3 class="cloud-guide__title">איך מכניסים תרגול מדיטציה לחיי היום יום</h3>
+                        <p class="cloud-guide__teaser">הצעד הבא אחרי הסשן הראשון: תוכנית תרגול מדורגת למתחילים, מסגרות לימוד וריטריטים בישראל, אפליקציות, פודקאסטים וספרים בעברית.</p>
+                        <span class="cloud-guide__cta">לקריאת המדריך המלא</span>
+                    </div>
+                    <figure class="cloud-guide__media">
+                        <img src="assets/blog-guide/hero-dawn-cushion.webp" alt="איור דיו: כרית מדיטציה מול חלון פתוח להרים" loading="lazy">
+                    </figure>
+                </a>
+            </div>
             <p class="cloud-faq__kicker">FAQ</p>
             <h2 class="cloud-faq__title">שאלות נפוצות</h2>
             <details class="cloud-faq__item"><summary class="cloud-faq__q">מה זה סול תרפי?</summary><div class="cloud-faq__a">מיזם "סול תרפי" נשען על פרקטיקת הסאונד הילינג (Sound Healing) - שימוש בצלילים ומוזיקה ככלי להרחבת תודעה, וצלילה למצבים מדיטטיביים עמוקים. במשך אלפי שנים רתמו בני האדם את הטכנולוגיה המתקדמת ביותר ברשותם כדי לייצר כלים, פעימות ופרקטיקות שמעמיקות את החיבור בין נפש, תודעה ומוזיקה.<br><br>במסגרת אירועי סול תרפי אנו מזמינים אמני סאונד, מוזיקאים, דיג'ייז ויוצרים אלקטרוניים מובילים - אנשים שהקדישו את חייהם לחקר התדר והצליל - להוביל מפגשים של מדיטציית סאונד בשכיבה, עם הנחיה מוקפדת הנשענת על עקרונות הזן-בודהיזם. אלו מסעות טרנספורמטיביים אל תוך התודעה, לעיתים בעלי אופי רוחני, הנערכים באמצעות מוזיקה המתעלה מעל גבולות של שפה ותרבות - ומאפשרת חיבור ישיר אל הגוף והנפש.<br><br>מסגרת הפעילות שלנו נשענת על בסיס רוחני ומדעי עמוק, ומלווה על ידי נזירים בודהיסטים המחזיקים בידע בן 2,500 שנה על התודעה האנושית - לצד מדענים וחוקרי מוח מהמובילים בעולם, הלוקחים חלק באירועים ובריטריטים שלנו. תוכלו למצוא המון מידע נוסף ב<a href="/" style="color:#209CB4">אתר הבית שלנו</a>.</div></details>
@@ -1168,7 +1182,30 @@
         .cf-detail[open] .cf-chev{transform:rotate(180deg)}
         .cf-note{font-size:.85rem;line-height:1.7;color:var(--color-muted);max-width:40ch;margin:.4rem auto 0}
         @media(max-width:560px){.cloud-friends__row{gap:1.9rem 2.2rem;margin-top:1.9rem}.cf-logo{height:54px}.cf-logo img{height:calc(var(--cf-h,38px) * .85)}}
-        </style>
+        
+        /* Guide feature - organic dark, inside FAQ section */
+        .cloud-guide{margin:0 0 3.2rem}
+        .cloud-guide__kicker{font-family:var(--font-english);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-green);text-align:center;margin-bottom:.5rem}
+        .cloud-guide__heading{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin:0 0 1.6rem}
+        .cloud-guide__card{display:grid;grid-template-columns:1.02fr .98fr;align-items:stretch;background:#211F1B;border:1px solid rgba(242,234,211,.16);border-radius:16px;overflow:hidden;text-decoration:none;transition:border-color .3s ease}
+        .cloud-guide__card:hover{border-color:rgba(242,234,211,.34)}
+        .cloud-guide__media::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,#211F1B 0%,rgba(33,31,27,.28) 30%,rgba(33,31,27,0) 62%)}
+        .cloud-guide__body{display:flex;flex-direction:column;gap:.75rem;text-align:right;padding:1.9rem 2.1rem}
+        .cloud-guide__title{font-family:var(--font-display);font-weight:600;font-size:1.3rem;line-height:1.35;color:var(--color-washi);margin:0}
+        .cloud-guide__teaser{font-family:var(--font-body);font-size:.9rem;line-height:1.75;color:var(--color-muted);margin:0}
+        .cloud-guide__cta{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:#1a1a1a;background:#209CB4;border-radius:999px;padding:.5rem 1.7rem;min-height:40px;margin-top:.25rem;transition:background .25s ease}
+        .cloud-guide__card:hover .cloud-guide__cta{background:#25AFC9}
+        .cloud-guide__media{position:relative;margin:0;min-height:240px}
+        .cloud-guide__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+        @media (max-width:720px){
+            .cloud-guide{margin-bottom:2.4rem}
+            .cloud-guide__card{grid-template-columns:1fr}
+            .cloud-guide__media{order:-1;min-height:185px}
+            .cloud-guide__media::after{background:linear-gradient(to bottom,rgba(33,31,27,0) 55%,#211F1B 100%)}
+            .cloud-guide__body{padding:1.4rem 1.4rem 1.7rem}
+            .cloud-guide__title{font-size:1.18rem}
+        }
+    </style>
         <section class="cloud-friends" aria-label="חברים שעוזרים לנו להגשים חלומות">
             <h2 class="cloud-friends__title">חברים שעוזרים לנו להגשים חלומות</h2>
             <div class="cloud-friends__row">
