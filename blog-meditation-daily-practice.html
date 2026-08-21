@@ -954,6 +954,10 @@
         .guide-ul li::before { content: ""; position: absolute; right: 0; top: 0.72em; width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.45; }
         .guide-sources { font-size: 0.8rem; opacity: 0.6; line-height: 1.8; margin-top: 2.5rem; }
         .guide-sources a { color: inherit; }
+    
+        /* Visible links in article body */
+        .article-body a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); transition: text-decoration-color 0.25s ease; }
+        .article-body a:hover { text-decoration-color: currentColor; }
     </style>
 <script defer src="/assets/clean-url.js"></script>
 </head>
