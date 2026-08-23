@@ -573,6 +573,7 @@
               "session session"
               "workshops workshops"
               "video   video"
+              "press   press"
               "archive archive"
               "space   space"
               "faq     faq"
@@ -593,6 +594,7 @@
           .cloud-tickets{grid-area:tickets;width:100%;max-width:780px;margin:3.5rem auto 0}
           .cloud-session{grid-area:session;width:100%;max-width:780px;margin:3.6rem auto 0}
           .cloud-video{grid-area:video;width:100%;max-width:780px;margin:3.5rem auto 0}
+          .cloud-press{grid-area:press;width:100%;max-width:1090px;margin:3.6rem auto 0}
           .cloud-faq{grid-area:faq;width:100%;max-width:780px;margin-inline:auto}
           .cloud-contact{grid-area:contact;width:100%;max-width:780px;margin:3.5rem auto 0}
           .cloud-friends{grid-area:friends}
@@ -921,6 +923,57 @@
                 <span class="yt-facade__play" aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
                     <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#1898B7"/><path d="M27 14l18 10-18 10z" fill="#fff"/></svg>
                 </span>
+            </div>
+        </section>
+
+        <style>
+        .cloud-press{margin:3.6rem auto 0}
+        .cloud-press__kicker{font-family:var(--font-english);font-size:.65rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--color-green);text-align:center;margin-bottom:.5rem}
+        .cloud-press__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin-bottom:2.4rem}
+        .cloud-press__strip{display:flex;justify-content:center;align-items:flex-start;gap:20px}
+        .cloud-press__card{display:block;width:200px;flex:0 0 auto;text-decoration:none;transition:transform .35s ease;-webkit-tap-highlight-color:transparent}
+        .cloud-press__strip .cloud-press__card:nth-child(1){transform:rotate(2deg) translateY(12px)}
+        .cloud-press__strip .cloud-press__card:nth-child(2){transform:rotate(1deg) translateY(4px)}
+        .cloud-press__strip .cloud-press__card:nth-child(4){transform:rotate(-1deg) translateY(4px)}
+        .cloud-press__strip .cloud-press__card:nth-child(5){transform:rotate(-2deg) translateY(12px)}
+        .cloud-press__card:hover{transform:rotate(0) translateY(-6px)}
+        .cloud-press__screen{display:block;border-radius:20px;overflow:hidden;border:1px solid rgba(242,234,211,.22);box-shadow:0 18px 44px rgba(0,0,0,.5);background:#211F1B;aspect-ratio:1/2}
+        .cloud-press__screen img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+        .cloud-press__card:hover .cloud-press__screen{border-color:rgba(242,234,211,.45)}
+        .cloud-press__cap{display:flex;justify-content:center;align-items:baseline;gap:.55rem;margin-top:.95rem}
+        .cloud-press__outlet{font-family:var(--font-body);font-weight:700;font-size:.82rem;color:var(--color-washi)}
+        .cloud-press__month{font-family:var(--font-body);font-size:.73rem;color:var(--color-muted)}
+        @media (max-width:900px){
+          .cloud-press__strip{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 1.2rem 1.4rem;gap:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+          .cloud-press__strip::-webkit-scrollbar{display:none}
+          .cloud-press__card{width:60vw;max-width:250px;scroll-snap-align:center}
+          .cloud-press__strip .cloud-press__card:nth-child(n){transform:none}
+        }
+        </style>
+        <section class="cloud-press" aria-label="כתבו עלינו">
+            <p class="cloud-press__kicker">In the Press</p>
+            <h2 class="cloud-press__title">כתבו עלינו</h2>
+            <div class="cloud-press__strip">
+                <a class="cloud-press__card" href="https://www.calcalist.co.il/style/article/h1oj6ifnfl" target="_blank" rel="noopener">
+                    <span class="cloud-press__screen"><img src="assets/cloud/press/press-calcalist.jpg" alt="כלכליסט: הקלאברים נרגעו - לעצום עיניים ולנשום בקלאוד ספייס" loading="lazy" decoding="async" width="720" height="1440"></span>
+                    <span class="cloud-press__cap"><span class="cloud-press__outlet">כלכליסט</span><span class="cloud-press__month">יולי 2026</span></span>
+                </a>
+                <a class="cloud-press__card" href="https://www.mako.co.il/news-entertainment/2026_q3/Article-de37fba84b900a1027.htm" target="_blank" rel="noopener">
+                    <span class="cloud-press__screen"><img src="assets/cloud/press/press-n12.jpg" alt="N12: אנשים אמרו שזו הפעם הראשונה מאז 7 באוקטובר שלא היו בחרדה" loading="lazy" decoding="async" width="720" height="1440"></span>
+                    <span class="cloud-press__cap"><span class="cloud-press__outlet">N12</span><span class="cloud-press__month">אוגוסט 2026</span></span>
+                </a>
+                <a class="cloud-press__card" href="https://www.maariv.co.il/culture/music/article-1342050" target="_blank" rel="noopener">
+                    <span class="cloud-press__screen"><img src="assets/cloud/press/press-maariv.jpg" alt="מעריב: קלאוד ספייס מוכיחים שלשכב במשך שעה בערב אקראי זה מה שכולנו צריכים" loading="lazy" decoding="async" width="720" height="1440"></span>
+                    <span class="cloud-press__cap"><span class="cloud-press__outlet">מעריב</span><span class="cloud-press__month">יולי 2026</span></span>
+                </a>
+                <a class="cloud-press__card" href="https://www.mako.co.il/music-news/Article-fc0ca92991f10a1026.htm" target="_blank" rel="noopener">
+                    <span class="cloud-press__screen"><img src="assets/cloud/press/press-mako.jpg" alt="מאקו: מסיבה? במקום לרקוד, שוכבים על מזרן. הכירו את קלאוד ספייס" loading="lazy" decoding="async" width="720" height="1440"></span>
+                    <span class="cloud-press__cap"><span class="cloud-press__outlet">מאקו</span><span class="cloud-press__month">אוגוסט 2026</span></span>
+                </a>
+                <a class="cloud-press__card" href="https://timeout.co.il/%D7%A7%D7%9C%D7%90%D7%95%D7%93-%D7%A1%D7%A4%D7%99%D7%99%D7%A1/" target="_blank" rel="noopener">
+                    <span class="cloud-press__screen"><img src="assets/cloud/press/press-timeout.jpg" alt="טיים אאוט: עכשיו אפשר לנשום - הדבר הכי רגוע שיצא מחיי הלילה בתל אביב" loading="lazy" decoding="async" width="720" height="1440"></span>
+                    <span class="cloud-press__cap"><span class="cloud-press__outlet">טיים אאוט</span><span class="cloud-press__month">יוני 2026</span></span>
+                </a>
             </div>
         </section>
 
