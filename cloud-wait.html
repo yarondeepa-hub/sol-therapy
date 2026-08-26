@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>רשימת המתנה | CLOUD SPACE</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap">
+<style>
+@font-face{font-family:'Masada';src:url('https://sol-therapy.com/fonts/Masada-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Masada';src:url('https://sol-therapy.com/fonts/Masada-Demi.woff2') format('woff2');font-weight:600;font-display:swap}
+:root{--dark:#1a1a1a;--washi:#F2EAD3;--turq:#209CB4;--soft:rgba(242,234,211,.85);--line:rgba(242,234,211,.16)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--dark);color:var(--washi);font-family:'Heebo',Arial,sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2.4rem 1.2rem 4rem}
+.wrap{width:100%;max-width:560px}
+.logo{display:block;margin:0 auto 2rem;width:84px}
+.kicker{font-size:.72rem;letter-spacing:.24em;color:var(--turq);text-align:center;margin-bottom:.9rem;font-weight:700}
+h1{font-family:'Masada','Heebo',serif;font-weight:500;font-size:1.75rem;text-align:center;line-height:1.35;margin-bottom:.4rem;color:var(--washi)}
+.when{text-align:center;color:rgba(242,234,211,.65);font-size:1.02rem;margin-bottom:1.6rem}
+.lead{text-align:center;font-size:1rem;line-height:1.9;margin-bottom:2rem;color:var(--soft)}
+.card{background:rgba(242,234,211,.05);border:1px solid var(--line);border-radius:10px;padding:1.7rem 1.5rem}
+.btn-main{display:inline-block;background:var(--turq);color:var(--dark);border-radius:999px;padding:.85rem 2.4rem;font-size:1.02rem;font-weight:700;text-decoration:none}
+label{display:block;font-size:.9rem;font-weight:400;margin-bottom:.35rem;color:rgba(242,234,211,.75)}
+input[type=text],input[type=email],select{width:100%;padding:.7rem .9rem;border:1px solid rgba(242,234,211,.3);border-radius:7px;background:rgba(242,234,211,.07);font-family:'Heebo',Arial,sans-serif;font-size:1rem;margin-bottom:1.1rem;color:var(--washi)}
+select option{background:#242424;color:var(--washi)}
+input:focus,select:focus{outline:2px solid var(--turq);outline-offset:1px}
+fieldset{border:0;margin:0 0 1.1rem}
+legend{font-size:.9rem;color:rgba(242,234,211,.75);margin-bottom:.45rem;padding:0}
+.radio{display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem;font-size:.97rem;color:var(--soft)}
+.radio input{width:1.1rem;height:1.1rem;accent-color:var(--turq);flex:none}
+button.submit{display:block;width:100%;background:var(--turq);color:var(--dark);border:0;border-radius:999px;padding:.95rem;font-family:'Heebo',Arial,sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:.4rem}
+button.submit:disabled{opacity:.55;cursor:wait}
+.msg{margin-top:1rem;font-size:.92rem;text-align:center;color:#E8A28F;min-height:1.3em}
+.done{display:none;text-align:center}
+#doneTitle:focus{outline:none}
+.done h2{font-family:'Masada','Heebo',serif;font-weight:500;font-size:1.4rem;margin-bottom:.7rem;color:var(--washi)}
+.done p{line-height:1.9;margin-bottom:1.4rem;color:var(--soft)}
+.alts{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.6rem}
+.alt{background:rgba(242,234,211,.05);border:1px solid var(--line);border-radius:9px;padding:1rem .8rem;text-decoration:none;color:var(--washi)}
+.alt b{display:block;font-family:'Masada','Heebo',serif;font-weight:500;font-size:1.05rem;margin-bottom:.25rem}
+.alt span{font-size:.85rem;color:rgba(242,234,211,.65)}
+.alt em{display:block;font-style:normal;font-size:.78rem;color:var(--turq);margin-top:.45rem;font-weight:700}
+.privacy{font-size:.78rem;color:rgba(242,234,211,.62);line-height:1.75;margin-top:1.2rem;border-top:1px dashed rgba(242,234,211,.25);padding-top:.9rem}
+.privacy a{color:var(--washi)}
+.footnote{text-align:center;font-size:.8rem;color:rgba(242,234,211,.62);margin-top:2rem;line-height:1.7}
+.footnote a{color:var(--washi)}
+.statecard{display:none;text-align:center}
+.statecard h2{font-family:'Masada','Heebo',serif;font-weight:500;font-size:1.35rem;margin-bottom:.8rem;color:var(--washi)}
+.statecard p{line-height:1.9;color:var(--soft)}
+.statecard .btn-main{margin-top:1.2rem}
+@media(max-width:480px){.alts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="https://sol-therapy.com/assets/cloud/cloud-logo-full.png" alt="CLOUD SPACE" onerror="this.style.display='none'">
+  <div class="kicker">רשימת המתנה</div>
+  <h1 id="evTitle">טוען...</h1>
+  <div class="when" id="evWhen"></div>
+  <p class="lead" id="lead" style="display:none"></p>
+
+  <div class="card" id="formCard" style="display:none">
+    <form id="waitForm" novalidate>
+      <label for="fname">שם פרטי</label>
+      <input type="text" id="fname" maxlength="60" autocomplete="given-name">
+      <label for="email">אימייל</label>
+      <input type="email" id="email" maxlength="254" required autocomplete="email" inputmode="email">
+      <label for="qty">כמה כרטיסים תרצו</label>
+      <select id="qty" required>
+        <option value="" selected>בחרו</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <fieldset id="roundChoice" style="display:none">
+        <legend>לאיזה סבב להמתין</legend>
+        <label class="radio"><input type="radio" name="rw" value="any"><span>כל סבב שיתפנה בו מקום</span></label>
+        <label class="radio"><input type="radio" name="rw" value="main"><span>רק הסבב של <span class="t-main"></span></span></label>
+        <label class="radio"><input type="radio" name="rw" value="early"><span>רק הסבב של <span class="t-early"></span></span></label>
+      </fieldset>
+      <label class="radio" style="margin:0 0 1rem"><input type="checkbox" id="mktOk"><span>אשמח להצטרף גם לעדכונים על אירועים נוספים של קלאוד</span></label>
+      <button type="submit" class="submit" id="submitBtn">הצטרפות לרשימת ההמתנה</button>
+      <div class="msg" id="msg" role="alert" aria-live="polite"></div>
+      <p class="privacy">מסירת הפרטים היא מרצון והם ישמשו אך ורק לעדכונים על הערב הזה. הרשימה נשמרת במערכת הדיוור שלנו ואינה רשימת תפוצה. אם סימנתם הצטרפות לעדכונים - נוסיף אתכם גם לרשימת התפוצה שלנו, ואפשר להסיר בכל עת. לבקשת עיון, תיקון או מחיקה: <a href="mailto:the.sol.therapy@gmail.com">the.sol.therapy@gmail.com</a></p>
+    </form>
+  </div>
+
+  <div class="done card" id="doneCard">
+    <h2 id="doneTitle" tabindex="-1">ההרשמה התקבלה</h2>
+    <p>אם יתפנה מקום - נעדכן אותך במייל, לפי סדר ההרשמה.<br>בינתיים, שני ערבים קרובים ברוחם לערב שביקשת:</p>
+    <div class="alts" id="alts"></div>
+    <p class="privacy" style="text-align:right">הסתדרת בינתיים? אפשר לבקש הסרה מרשימת ההמתנה במייל חוזר לכל עדכון, או בכתובת שלמעלה.</p>
+  </div>
+
+  <div class="statecard card" id="stateCard">
+    <h2 id="stateTitle"></h2>
+    <p id="stateText"></p>
+    <a class="btn-main" id="stateBtn" href="https://sol-therapy.com/cloud">לכל ערבי קלאוד ספייס</a>
+  </div>
+
+  <p class="footnote"><a href="https://sol-therapy.com/cloud">לכל ערבי קלאוד ספייס</a></p>
+
+  <form id="mcPost" method="post" target="mc_sink" action="https://gmail.us10.list-manage.com/subscribe/post?u=e433f6c1a2c9ad09b483d8689&amp;id=abcfeea2b0&amp;f_id=00cb04e3f0" style="display:none">
+    <input name="EMAIL"><input name="FNAME"><input name="WAITEVENT"><input name="WAITQTY"><input name="WAITWANT"><input name="WAITOK" value="no"><input name="ARTIST"><input name="b_e433f6c1a2c9ad09b483d8689_abcfeea2b0" tabindex="-1" value="">
+  </form>
+  <iframe name="mc_sink" title="" style="display:none" aria-hidden="true"></iframe>
+</div>
+
+<script>
+(function(){
+var slug=new URLSearchParams(location.search).get("e")||"";
+var DATA=null, EV=null, CANON=null, TWO=false;
+
+function state(title, text, btnText, btnHref){
+  document.getElementById("stateTitle").textContent=title;
+  document.getElementById("stateText").innerHTML=text;
+  var b=document.getElementById("stateBtn");
+  if(btnText){b.textContent=btnText; b.href=btnHref;}
+  document.getElementById("stateCard").style.display="block";
+}
+
+fetch("cloud-events.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+  DATA=d; EV=d.events[slug];
+
+  // קישור לא מוכר או אירוע שעבר - נכשל סגור
+  if(!EV || EV.state==="past"){
+    document.getElementById("evTitle").textContent="הקישור אינו פעיל";
+    state("הקישור הזה אינו פעיל","או שהערב כבר התקיים, או שהכתובת שגויה.<br>כל הערבים הפתוחים מחכים בתוכניה.");
+    return;
+  }
+
+  // יש סבב פתוח באותו ערב - אין רשימת המתנה, יש כרטיסים
+  if(EV.evening_open_slug){
+    var open=DATA.events[EV.evening_open_slug];
+    document.getElementById("evTitle").textContent="מדיטציית סאונד עם "+EV.name;
+    document.getElementById("evWhen").textContent=EV.dow+" "+EV.date;
+    var sameRound = EV.evening_open_slug===slug;
+    state("יש כרטיסים לערב הזה",
+      sameRound ? "הכרטיסים לסבב "+open.time+" עדיין זמינים - אפשר פשוט לרכוש."
+                : "הכרטיסים לסבב "+EV.time+" אזלו,<br>אבל הסבב של "+open.time+" באותו ערב פתוח עכשיו.",
+      "לרכישת כרטיסים - "+open.time, "https://www.eventer.co.il/"+open.eventer);
+    return;
+  }
+
+  // הערב אזל לחלוטין - רשימת המתנה
+  CANON = EV.main_slug || slug;                      // מפתח הערב = הסבב הראשי
+  TWO = !!EV.sib_slug;                                // שני סבבים באותו ערב
+  var main = DATA.events[CANON];
+  document.getElementById("evTitle").textContent="מדיטציית סאונד עם "+main.name+" - רשימת המתנה";
+  document.getElementById("evWhen").textContent=main.dow+" "+main.date+(TWO?" · שני הסבבים":" · "+main.time);
+  var lead=document.getElementById("lead");
+  if(TWO){
+    var early=DATA.events[main.round_slug];
+    lead.innerHTML="שני הסבבים של הערב הזה אזלו - "+early.time+" ו-"+main.time+"<br>השאירו פרטים ונעדכן לפי סדר ההרשמה אם יתפנה מקום.";
+    document.getElementById("roundChoice").style.display="block";
+    document.querySelector(".t-main").textContent=main.time;
+    document.querySelector(".t-early").textContent=early.time;
+  }else{
+    lead.innerHTML="הכרטיסים לערב הזה אזלו.<br>השאירו פרטים ונעדכן לפי סדר ההרשמה<br>אם יתפנה מקום או ייפתח סבב נוסף.";
+  }
+  lead.style.display="block";
+  document.getElementById("formCard").style.display="block";
+}).catch(function(){
+  document.getElementById("evTitle").textContent="משהו השתבש בטעינה";
+  state("משהו השתבש","נסו לרענן את העמוד, או גשו לתוכניה.");
+});
+
+document.getElementById("waitForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var msg=document.getElementById("msg");
+  var email=document.getElementById("email").value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent="נראה שכתובת האימייל לא שלמה - אפשר לבדוק אותה?";return;}
+  var qty=document.getElementById("qty").value;
+  if(!qty){msg.textContent="בחרו כמה כרטיסים תרצו.";return;}
+  var want="any";
+  if(TWO){
+    var sel=document.querySelector('input[name="rw"]:checked');
+    if(!sel){msg.textContent="בחרו לאיזה סבב להמתין.";return;}
+    want=sel.value;
+  }
+  var main=DATA.events[CANON];
+  var f=document.getElementById("mcPost");
+  f.elements.EMAIL.value=email;
+  f.elements.FNAME.value=document.getElementById("fname").value.trim();
+  f.elements.WAITEVENT.value=CANON;
+  f.elements.WAITQTY.value=qty;
+  f.elements.WAITWANT.value=want;
+  f.elements.WAITOK.value=document.getElementById("mktOk").checked?"yes":"no";
+  f.elements.ARTIST.value=main.name;
+  var btn=document.getElementById("submitBtn");
+  btn.disabled=true;btn.textContent="נרשמים...";
+  try{
+    var lg=new URLSearchParams();
+    lg.append("entry.1612917828",email);
+    lg.append("entry.609402540",f.elements.FNAME.value);
+    lg.append("entry.616414125",CANON);
+    lg.append("entry.974597114",qty);
+    lg.append("entry.918982251",want);
+    lg.append("entry.357425611",f.elements.WAITOK.value);
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSekqIW8GT3RF_EK1iW0EnRI0p3BKEY9eH_eMc_lFWBC7EC_Hw/formResponse",
+      {method:"POST",mode:"no-cors",body:lg}).catch(function(){});
+  }catch(err){}
+  f.submit();
+  setTimeout(function(){
+    document.getElementById("formCard").style.display="none";
+    var box=document.getElementById("alts");box.innerHTML="";
+    (main.alts||[]).forEach(function(s){
+      var a=DATA.events[s]; if(!a) return;
+      var el=document.createElement("a");
+      el.className="alt";el.href="https://www.eventer.co.il/"+a.eventer;el.target="_blank";el.rel="noopener";
+      el.innerHTML="<b>"+a.name+"</b><span>"+a.dow+" "+a.date+" · "+a.time+"</span><em>לכרטיסים</em>";
+      box.appendChild(el);
+    });
+    document.getElementById("doneCard").style.display="block";
+    var t=document.getElementById("doneTitle"); t.focus({preventScroll:true});
+    window.scrollTo({top:0,behavior:"smooth"});
+  },900);
+});
+})();
+</script>
+</body>
+</html>
