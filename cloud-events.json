@@ -1,23 +1,7 @@
 {
- "generated": "2026-08-26 19:06",
- "source_asof": "2026-08-26 18:44",
+ "generated": "2026-08-26 23:23",
+ "source_asof": "2026-08-26 23:08",
  "events": {
-  "noor": {
-   "name": "עופר דיקובסקי",
-   "date": "26.8",
-   "dow": "רביעי",
-   "time": "20:30",
-   "iso": "2026-08-26 20:30",
-   "state": "open",
-   "left": 2,
-   "eventer": "xdxff",
-   "evening_sold": false,
-   "evening_open_slug": "noor",
-   "alts": [
-    "amichai-matias",
-    "maya-dunietz"
-   ]
-  },
   "atar-miner-early": {
    "name": "עטר מיינר סבב מוקדם",
    "date": "27.8",
@@ -59,7 +43,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 102,
+   "left": 101,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -71,7 +55,7 @@
    "time": "20:30",
    "iso": "2026-09-01 20:30",
    "state": "open",
-   "left": 80,
+   "left": 74,
    "eventer": "1wr2f",
    "evening_sold": false,
    "evening_open_slug": "amichai-matias"
@@ -83,7 +67,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 67,
+   "left": 64,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -107,7 +91,7 @@
    "time": "20:30",
    "iso": "2026-09-08 20:30",
    "state": "open",
-   "left": 119,
+   "left": 117,
    "eventer": "mkr2f",
    "evening_sold": false,
    "evening_open_slug": "gil-rasta-bonstein"
@@ -124,20 +108,35 @@
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
   },
+  "shai-ben-tzur-early": {
+   "name": "שי בן צור סבב מוקדם",
+   "date": "10.9",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-09-10 18:30",
+   "state": "open",
+   "left": 119,
+   "eventer": "qc22f",
+   "main_slug": "shai-ben-tzur-sep",
+   "evening_sold": false,
+   "evening_open_slug": "shai-ben-tzur-early",
+   "sib_slug": "shai-ben-tzur-sep",
+   "sib_time": "20:30"
+  },
   "shai-ben-tzur-sep": {
    "name": "שי בן צור",
    "date": "10.9",
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-09-10 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 2,
    "eventer": "ls32f",
    "round_slug": "shai-ben-tzur-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "shai-ben-tzur-early",
+   "evening_open_slug": "shai-ben-tzur-sep",
    "sib_slug": "shai-ben-tzur-early",
    "sib_time": "18:30",
    "alts": [
@@ -212,7 +211,7 @@
    "time": "18:30",
    "iso": "2026-09-23 18:30",
    "state": "open",
-   "left": 59,
+   "left": 49,
    "eventer": "f042f",
    "main_slug": "mark-eliyahu",
    "evening_sold": false,
@@ -260,7 +259,7 @@
    "time": "18:30",
    "iso": "2026-09-29 18:30",
    "state": "open",
-   "left": 57,
+   "left": 53,
    "eventer": "j8f2f",
    "main_slug": "amdursky-sep",
    "evening_sold": false,
@@ -300,21 +299,6 @@
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
-  },
-  "shai-ben-tzur-early": {
-   "name": "שי בן צור סבב מוקדם",
-   "date": "10.9",
-   "dow": "חמישי",
-   "time": "18:30",
-   "iso": "2026-09-10 18:30",
-   "state": "open",
-   "left": 119,
-   "eventer": "qc22f",
-   "main_slug": "shai-ben-tzur-sep",
-   "evening_sold": false,
-   "evening_open_slug": "shai-ben-tzur-early",
-   "sib_slug": "shai-ben-tzur-sep",
-   "sib_time": "20:30"
   }
  }
 }
