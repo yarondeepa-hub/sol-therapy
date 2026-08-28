@@ -1,41 +1,7 @@
 {
- "generated": "2026-08-27 13:10",
- "source_asof": "2026-08-27 13:08",
+ "generated": "2026-08-28 07:54",
+ "source_asof": "2026-08-27 23:47",
  "events": {
-  "atar-miner-early": {
-   "name": "עטר מיינר סבב מוקדם",
-   "date": "27.8",
-   "dow": "חמישי",
-   "time": "18:30",
-   "iso": "2026-08-27 18:30",
-   "state": "sold",
-   "left": 0,
-   "eventer": "42q2f",
-   "main_slug": "atar-miner",
-   "evening_sold": true,
-   "sib_slug": "atar-miner",
-   "sib_time": "20:30"
-  },
-  "atar-miner": {
-   "name": "עטר מיינר",
-   "date": "27.8",
-   "dow": "חמישי",
-   "time": "20:30",
-   "iso": "2026-08-27 20:30",
-   "state": "sold",
-   "left": 0,
-   "eventer": "8dxff",
-   "round_slug": "atar-miner-early",
-   "round_state": "sold",
-   "round_time": "18:30",
-   "evening_sold": true,
-   "sib_slug": "atar-miner-early",
-   "sib_time": "18:30",
-   "alts": [
-    "amichai-matias",
-    "nitai-hershkovits"
-   ]
-  },
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
    "date": "31.8",
@@ -43,7 +9,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 100,
+   "left": 99,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -67,7 +33,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 62,
+   "left": 57,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -79,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 74,
+   "left": 71,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -115,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 113,
+   "left": 108,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -151,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 66,
+   "left": 64,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -163,7 +129,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 84,
+   "left": 82,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -211,7 +177,7 @@
    "time": "18:30",
    "iso": "2026-09-23 18:30",
    "state": "open",
-   "left": 40,
+   "left": 21,
    "eventer": "f042f",
    "main_slug": "mark-eliyahu",
    "evening_sold": false,
@@ -247,7 +213,7 @@
    "time": "20:30",
    "iso": "2026-09-24 20:30",
    "state": "open",
-   "left": 25,
+   "left": 21,
    "eventer": "fkr2f",
    "evening_sold": false,
    "evening_open_slug": "freedom-fighters"
@@ -259,7 +225,7 @@
    "time": "18:30",
    "iso": "2026-09-29 18:30",
    "state": "open",
-   "left": 43,
+   "left": 39,
    "eventer": "j8f2f",
    "main_slug": "amdursky-sep",
    "evening_sold": false,
