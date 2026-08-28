@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-28 07:54",
- "source_asof": "2026-08-27 23:47",
+ "generated": "2026-08-28 08:25",
+ "source_asof": "2026-08-28 08:04",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -21,7 +21,7 @@
    "time": "20:30",
    "iso": "2026-09-01 20:30",
    "state": "open",
-   "left": 72,
+   "left": 70,
    "eventer": "1wr2f",
    "evening_sold": false,
    "evening_open_slug": "amichai-matias"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 71,
+   "left": 69,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +69,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 101,
+   "left": 97,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -81,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 108,
+   "left": 105,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -177,7 +177,7 @@
    "time": "18:30",
    "iso": "2026-09-23 18:30",
    "state": "open",
-   "left": 21,
+   "left": 12,
    "eventer": "f042f",
    "main_slug": "mark-eliyahu",
    "evening_sold": false,
@@ -213,10 +213,15 @@
    "time": "20:30",
    "iso": "2026-09-24 20:30",
    "state": "open",
-   "left": 21,
+   "left": 15,
    "eventer": "fkr2f",
+   "round_slug": "freedom-fighters-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "freedom-fighters"
+   "evening_open_slug": "freedom-fighters",
+   "sib_slug": "freedom-fighters-early",
+   "sib_time": "18:30"
   },
   "amdursky-early": {
    "name": "אסף אמדורסקי סבב מוקדם",
@@ -225,7 +230,7 @@
    "time": "18:30",
    "iso": "2026-09-29 18:30",
    "state": "open",
-   "left": 39,
+   "left": 37,
    "eventer": "j8f2f",
    "main_slug": "amdursky-sep",
    "evening_sold": false,
@@ -265,6 +270,21 @@
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
+  },
+  "freedom-fighters-early": {
+   "name": "פרידום פייטרס סבב מוקדם",
+   "date": "24.9",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-09-24 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "tb22f",
+   "main_slug": "freedom-fighters",
+   "evening_sold": false,
+   "evening_open_slug": "freedom-fighters-early",
+   "sib_slug": "freedom-fighters",
+   "sib_time": "20:30"
   }
  }
 }
