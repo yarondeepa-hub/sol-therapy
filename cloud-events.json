@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-28 19:35",
- "source_asof": "2026-08-28 19:31",
+ "generated": "2026-08-29 07:45",
+ "source_asof": "2026-08-29 07:44",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -33,7 +33,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 57,
+   "left": 54,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 66,
+   "left": 64,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -57,7 +57,7 @@
    "time": "20:30",
    "iso": "2026-09-08 20:30",
    "state": "open",
-   "left": 110,
+   "left": 108,
    "eventer": "mkr2f",
    "evening_sold": false,
    "evening_open_slug": "gil-rasta-bonstein"
@@ -81,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 97,
+   "left": 93,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -117,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 63,
+   "left": 56,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -141,7 +141,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 109,
+   "left": 107,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -211,7 +211,7 @@
    "time": "20:30",
    "iso": "2026-09-24 20:30",
    "state": "open",
-   "left": 13,
+   "left": 10,
    "eventer": "fkr2f",
    "round_slug": "freedom-fighters-early",
    "round_state": "open",
@@ -227,12 +227,11 @@
    "dow": "שלישי",
    "time": "18:30",
    "iso": "2026-09-29 18:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "j8f2f",
    "main_slug": "amdursky-sep",
-   "evening_sold": false,
-   "evening_open_slug": "amdursky-early",
+   "evening_sold": true,
    "sib_slug": "amdursky-sep",
    "sib_time": "20:30"
   },
@@ -246,10 +245,9 @@
    "left": 0,
    "eventer": "x772f",
    "round_slug": "amdursky-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "amdursky-early",
+   "evening_sold": true,
    "sib_slug": "amdursky-early",
    "sib_time": "18:30",
    "alts": [
@@ -264,7 +262,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 111,
+   "left": 109,
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
