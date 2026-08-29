@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-29 07:45",
- "source_asof": "2026-08-29 07:44",
+ "generated": "2026-08-29 20:59",
+ "source_asof": "2026-08-29 20:58",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -9,7 +9,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 97,
+   "left": 96,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -21,7 +21,7 @@
    "time": "20:30",
    "iso": "2026-09-01 20:30",
    "state": "open",
-   "left": 70,
+   "left": 67,
    "eventer": "1wr2f",
    "evening_sold": false,
    "evening_open_slug": "amichai-matias"
@@ -33,7 +33,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 54,
+   "left": 48,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 64,
+   "left": 55,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +69,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 97,
+   "left": 95,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -81,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 93,
+   "left": 91,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -117,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 56,
+   "left": 49,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -129,7 +129,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 80,
+   "left": 79,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -141,7 +141,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 107,
+   "left": 105,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -153,7 +153,7 @@
    "time": "17:00",
    "iso": "2026-09-19 17:00",
    "state": "open",
-   "left": 490,
+   "left": 484,
    "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
@@ -211,7 +211,7 @@
    "time": "20:30",
    "iso": "2026-09-24 20:30",
    "state": "open",
-   "left": 10,
+   "left": 1,
    "eventer": "fkr2f",
    "round_slug": "freedom-fighters-early",
    "round_state": "open",
