@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-30 07:52",
- "source_asof": "2026-08-30 07:46",
+ "generated": "2026-08-30 18:27",
+ "source_asof": "2026-08-30 17:35",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -9,7 +9,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 95,
+   "left": 92,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -21,7 +21,7 @@
    "time": "20:30",
    "iso": "2026-09-01 20:30",
    "state": "open",
-   "left": 67,
+   "left": 62,
    "eventer": "1wr2f",
    "evening_sold": false,
    "evening_open_slug": "amichai-matias"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 50,
+   "left": 47,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +69,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 93,
+   "left": 94,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -81,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 86,
+   "left": 80,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -95,14 +95,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-09-10 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 1,
    "eventer": "ls32f",
    "round_slug": "shai-ben-tzur-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "shai-ben-tzur-early",
+   "evening_open_slug": "shai-ben-tzur-sep",
    "sib_slug": "shai-ben-tzur-early",
    "sib_time": "18:30",
    "alts": [
@@ -117,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 48,
+   "left": 33,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -129,7 +129,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 79,
+   "left": 77,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -141,7 +141,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 105,
+   "left": 101,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -153,7 +153,7 @@
    "time": "17:00",
    "iso": "2026-09-19 17:00",
    "state": "open",
-   "left": 484,
+   "left": 478,
    "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
@@ -203,6 +203,21 @@
     "nitai-hershkovits",
     "bliss"
    ]
+  },
+  "freedom-fighters-early": {
+   "name": "פרידום פייטרס סבב מוקדם",
+   "date": "24.9",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-09-24 18:30",
+   "state": "open",
+   "left": 119,
+   "eventer": "tb22f",
+   "main_slug": "freedom-fighters",
+   "evening_sold": false,
+   "evening_open_slug": "freedom-fighters-early",
+   "sib_slug": "freedom-fighters",
+   "sib_time": "20:30"
   },
   "freedom-fighters": {
    "name": "פרידום פייטרס",
@@ -255,6 +270,18 @@
     "radio-trip"
    ]
   },
+  "ziv-sep30": {
+   "name": "זיו (Ziv)",
+   "date": "30.9",
+   "dow": "רביעי",
+   "time": "20:30",
+   "iso": "2026-09-30 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "",
+   "evening_sold": false,
+   "evening_open_slug": "ziv-sep30"
+  },
   "radio-trip": {
    "name": "רדיו טריפ",
    "date": "30.9",
@@ -262,25 +289,10 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 109,
+   "left": 108,
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
-  },
-  "freedom-fighters-early": {
-   "name": "פרידום פייטרס סבב מוקדם",
-   "date": "24.9",
-   "dow": "חמישי",
-   "time": "18:30",
-   "iso": "2026-09-24 18:30",
-   "state": "open",
-   "left": 123,
-   "eventer": "tb22f",
-   "main_slug": "freedom-fighters",
-   "evening_sold": false,
-   "evening_open_slug": "freedom-fighters-early",
-   "sib_slug": "freedom-fighters",
-   "sib_time": "20:30"
   }
  }
 }
