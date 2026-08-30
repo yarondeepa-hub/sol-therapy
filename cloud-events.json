@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-29 20:59",
- "source_asof": "2026-08-29 20:58",
+ "generated": "2026-08-30 07:52",
+ "source_asof": "2026-08-30 07:46",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -9,7 +9,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 96,
+   "left": 95,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 55,
+   "left": 50,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +69,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 95,
+   "left": 93,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -81,7 +81,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 91,
+   "left": 86,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -117,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 49,
+   "left": 48,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -165,7 +165,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 92,
+   "left": 91,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
