@@ -121,6 +121,11 @@ function state(title, text, btnText, btnHref){
   document.getElementById("stateCard").style.display="block";
 }
 
+// הקפאת הרשימה - הוראת ירון 31.8.2026 ("אולי נשתמש בהמשך, כרגע להקפיא"). להחזרה: מחק את הבלוק הזה.
+document.getElementById("evTitle").textContent="רשימת ההמתנה מוקפאת";
+state("רשימת ההמתנה סגורה כרגע","ההרשמה לרשימת ההמתנה אינה פעילה כעת.<br>כל הערבים הפתוחים מחכים בתוכניה.");
+if(true){return;}
+
 fetch("cloud-events.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
   DATA=d; EV=d.events[slug];
 
