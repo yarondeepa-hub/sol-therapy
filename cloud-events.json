@@ -1,6 +1,6 @@
 {
- "generated": "2026-08-30 18:27",
- "source_asof": "2026-08-30 17:35",
+ "generated": "2026-08-31 07:26",
+ "source_asof": "2026-08-31 07:20",
  "events": {
   "nissim-amon-retreat": {
    "name": "ניסים אמון - ריטריט",
@@ -9,7 +9,7 @@
    "time": "09:45",
    "iso": "2026-08-31 09:45",
    "state": "open",
-   "left": 92,
+   "left": 90,
    "eventer": "11zff",
    "evening_sold": false,
    "evening_open_slug": "nissim-amon-retreat"
@@ -33,7 +33,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 48,
+   "left": 46,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -45,7 +45,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 47,
+   "left": 43,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +69,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 94,
+   "left": 92,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -95,14 +95,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-09-10 20:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "ls32f",
    "round_slug": "shai-ben-tzur-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "shai-ben-tzur-sep",
+   "evening_open_slug": "shai-ben-tzur-early",
    "sib_slug": "shai-ben-tzur-early",
    "sib_time": "18:30",
    "alts": [
@@ -117,7 +117,7 @@
    "time": "20:30",
    "iso": "2026-09-15 20:30",
    "state": "open",
-   "left": 33,
+   "left": 29,
    "eventer": "98f2f",
    "evening_sold": false,
    "evening_open_slug": "raz-sep"
@@ -153,7 +153,7 @@
    "time": "17:00",
    "iso": "2026-09-19 17:00",
    "state": "open",
-   "left": 478,
+   "left": 465,
    "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
@@ -165,7 +165,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 91,
+   "left": 89,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
@@ -211,7 +211,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 119,
+   "left": 118,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -289,7 +289,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 108,
+   "left": 106,
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
