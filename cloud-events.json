@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-01 23:12",
- "source_asof": "2026-09-01 23:02",
+ "generated": "2026-09-02 16:29",
+ "source_asof": "2026-09-02 16:25",
  "events": {
   "amichai-matias": {
    "name": "עמיחי מטיאס",
@@ -8,11 +8,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-09-01 20:30",
-   "state": "open",
+   "state": "past",
    "left": 44,
    "eventer": "1wr2f",
-   "evening_sold": false,
-   "evening_open_slug": "amichai-matias"
+   "evening_sold": false
   },
   "nitai-hershkovits": {
    "name": "ניתאי הרשקוביץ",
@@ -21,7 +20,7 @@
    "time": "20:30",
    "iso": "2026-09-02 20:30",
    "state": "open",
-   "left": 27,
+   "left": 21,
    "eventer": "kwr2f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits"
@@ -33,7 +32,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 39,
+   "left": 36,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -69,7 +68,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 67,
+   "left": 63,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -83,14 +82,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-09-10 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 5,
    "eventer": "ls32f",
    "round_slug": "shai-ben-tzur-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "shai-ben-tzur-early",
+   "evening_open_slug": "shai-ben-tzur-sep",
    "sib_slug": "shai-ben-tzur-early",
    "sib_time": "18:30",
    "alts": [
@@ -134,7 +133,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 97,
+   "left": 94,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -146,7 +145,7 @@
    "time": "17:00",
    "iso": "2026-09-19 17:00",
    "state": "open",
-   "left": 464,
+   "left": 462,
    "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
@@ -158,7 +157,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 87,
+   "left": 77,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
@@ -204,7 +203,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 117,
+   "left": 114,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -293,7 +292,7 @@
    "time": "18:30",
    "iso": "2026-09-15 18:30",
    "state": "open",
-   "left": 121,
+   "left": 119,
    "eventer": "zkc2f",
    "main_slug": "raz-sep",
    "evening_sold": false,
