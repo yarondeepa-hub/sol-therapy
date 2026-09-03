@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-02 16:55",
- "source_asof": "2026-09-02 16:52",
+ "generated": "2026-09-03 15:24",
+ "source_asof": "2026-09-03 15:01",
  "events": {
   "amichai-matias": {
    "name": "עמיחי מטיאס",
@@ -19,11 +19,10 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-02 20:30",
-   "state": "open",
+   "state": "past",
    "left": 21,
    "eventer": "kwr2f",
-   "evening_sold": false,
-   "evening_open_slug": "nitai-hershkovits"
+   "evening_sold": false
   },
   "maya-dunietz": {
    "name": "מאיה דוניץ",
@@ -32,7 +31,7 @@
    "time": "20:30",
    "iso": "2026-09-03 20:30",
    "state": "open",
-   "left": 36,
+   "left": 28,
    "eventer": "0kr2f",
    "evening_sold": false,
    "evening_open_slug": "maya-dunietz"
@@ -44,7 +43,7 @@
    "time": "20:30",
    "iso": "2026-09-08 20:30",
    "state": "open",
-   "left": 106,
+   "left": 104,
    "eventer": "mkr2f",
    "evening_sold": false,
    "evening_open_slug": "gil-rasta-bonstein"
@@ -56,7 +55,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 86,
+   "left": 84,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -68,7 +67,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 63,
+   "left": 61,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -83,7 +82,7 @@
    "time": "20:30",
    "iso": "2026-09-10 20:30",
    "state": "open",
-   "left": 5,
+   "left": 3,
    "eventer": "ls32f",
    "round_slug": "shai-ben-tzur-early",
    "round_state": "open",
@@ -120,7 +119,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 70,
+   "left": 66,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -144,7 +143,7 @@
    "time": "17:00",
    "iso": "2026-09-19 17:00",
    "state": "open",
-   "left": 462,
+   "left": 454,
    "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
@@ -156,7 +155,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 77,
+   "left": 68,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
@@ -191,7 +190,6 @@
    "sib_slug": "mark-eliyahu-early",
    "sib_time": "18:30",
    "alts": [
-    "nitai-hershkovits",
     "bliss"
    ]
   },
@@ -202,7 +200,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 114,
+   "left": 98,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -291,7 +289,7 @@
    "time": "18:30",
    "iso": "2026-09-15 18:30",
    "state": "open",
-   "left": 119,
+   "left": 108,
    "eventer": "zkc2f",
    "main_slug": "raz-sep",
    "evening_sold": false,
