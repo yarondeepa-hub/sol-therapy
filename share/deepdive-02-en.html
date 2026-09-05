@@ -126,7 +126,7 @@
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
-   "availability": "https://schema.org/InStock",
+   "availability": "https://schema.org/SoldOut",
    "url": "https://sol-therapy.com/share/deepdive-02-en.html",
    "price": "0"
   },
@@ -297,7 +297,7 @@ body{direction:ltr;text-align:left}
 </style>
 <script defer src="/assets/clean-url.js"></script>
 </head>
-<body data-state="live" data-event-date="2026-08-14">
+<body data-state="done" data-event-date="2026-08-14">
 
 <main class="page">
 
@@ -334,7 +334,7 @@ body{direction:ltr;text-align:left}
   <form class="sp-rsvp" id="rsvp" autocomplete="on">
     <input type="text" name="fullname" placeholder="Full name" required autocomplete="name">
     <input type="email" name="email" placeholder="Email" required autocomplete="email">
-    <button type="submit" class="sp-cta" id="cta">SAVE YOUR SPOT - FREE ENTRY</button>
+    <a class="sp-cta --done" id="cta" role="link" aria-disabled="true">Session ended</a>
   </form>
   <div class="sp-rsvp-done">You are in. See you Friday 14.8 at CLOUD SPACE.<br>Doors 23:00, Shocken 27.</div>
   <p class="sp-state-note" id="note-sold" style="display:none">Tickets for this event are sold out. The lineup continues - more events run every week.</p>

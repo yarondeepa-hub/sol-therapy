@@ -126,7 +126,7 @@
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
-   "availability": "https://schema.org/InStock",
+   "availability": "https://schema.org/SoldOut",
    "url": "https://sol-therapy.com/share/deepdive-02.html",
    "price": "0"
   },
@@ -290,7 +290,7 @@ body[data-state="live"] .sp-sticky{display:block}
 </style>
 <script defer src="/assets/clean-url.js"></script>
 </head>
-<body data-state="live" data-event-date="2026-08-14">
+<body data-state="done" data-event-date="2026-08-14">
 
 <main class="page">
 
@@ -327,7 +327,7 @@ body[data-state="live"] .sp-sticky{display:block}
   <form class="sp-rsvp" id="rsvp" autocomplete="on">
     <input type="text" name="fullname" placeholder="שם מלא" required autocomplete="name">
     <input type="email" name="email" placeholder="אימייל" required autocomplete="email" dir="ltr" style="text-align:right">
-    <button type="submit" class="sp-cta" id="cta">שריינו מקום - כניסה חופשית</button>
+    <a class="sp-cta --done" id="cta" role="link" aria-disabled="true">הסשן התקיים</a>
   </form>
   <div class="sp-rsvp-done">נרשמת. נתראה בשישי 14.8 בקלאוד ספייס.<br>הכניסה מ-23:00, שוקן 27.</div>
   <p class="sp-state-note" id="note-sold" style="display:none">הכרטיסים לאירוע הזה אזלו. הליינאפ ממשיך - אירועים נוספים מתקיימים כל שבוע.</p>
