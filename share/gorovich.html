@@ -50,12 +50,14 @@
               var a=e.target.closest('a[href*="eventer.co.il"]'); if(!a) return;
               var u=new URL(a.href,location.href);
               var set=function(k,v){ if(v&&!u.searchParams.has(k)) u.searchParams.set(k,v); };
-              set('utm_source','sol-website');
-              set('utm_medium','referral');
-              set('utm_campaign','cloud-2026');
+              set('utm_source',attr.utm_source);
+              set('utm_medium',attr.utm_medium);
+              set('utm_campaign',attr.utm_campaign);
+              set('utm_content',attr.utm_content);
+              set('utm_term',attr.utm_term);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('utm_content',slug);
+              set('ref',slug);
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
