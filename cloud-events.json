@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-08 16:39",
- "source_asof": "2026-09-08 16:33",
+ "generated": "2026-09-08 22:54",
+ "source_asof": "2026-09-08 22:38",
  "events": {
   "amichai-matias": {
    "name": "עמיחי מטיאס",
@@ -42,7 +42,7 @@
    "time": "20:30",
    "iso": "2026-09-08 20:30",
    "state": "open",
-   "left": 96,
+   "left": 93,
    "eventer": "mkr2f",
    "evening_sold": false,
    "evening_open_slug": "gil-rasta-bonstein"
@@ -116,7 +116,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 40,
+   "left": 37,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -128,7 +128,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 78,
+   "left": 76,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -152,7 +152,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 37,
+   "left": 35,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
@@ -197,7 +197,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 71,
+   "left": 69,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -286,7 +286,7 @@
    "time": "18:30",
    "iso": "2026-09-15 18:30",
    "state": "open",
-   "left": 75,
+   "left": 73,
    "eventer": "zkc2f",
    "main_slug": "raz-sep",
    "evening_sold": false,
