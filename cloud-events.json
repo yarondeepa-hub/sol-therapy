@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-09 08:45",
+ "generated": "2026-09-09 09:45",
  "source_asof": "2026-09-09 08:31",
  "events": {
   "amichai-matias": {
@@ -292,6 +292,223 @@
    "evening_open_slug": "raz-sep-early",
    "sib_slug": "raz-sep",
    "sib_time": "20:30"
+  },
+  "avishai-cohen-oct": {
+   "name": "אבישי כהן",
+   "date": "1.10",
+   "dow": "חמישי",
+   "time": "20:30",
+   "iso": "2026-10-01 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "30b2f",
+   "evening_sold": false,
+   "evening_open_slug": "avishai-cohen-oct"
+  },
+  "noa-argov-oct": {
+   "name": "נועה ארגוב",
+   "date": "2.10",
+   "dow": "שישי",
+   "time": "10:00",
+   "iso": "2026-10-02 10:00",
+   "state": "open",
+   "left": 125,
+   "eventer": "wlb2f",
+   "evening_sold": false,
+   "evening_open_slug": "noa-argov-oct"
+  },
+  "fine-oct": {
+   "name": "יוסי פיין",
+   "date": "5.10",
+   "dow": "שני",
+   "time": "20:30",
+   "iso": "2026-10-05 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "70b2f",
+   "evening_sold": false,
+   "evening_open_slug": "fine-oct"
+  },
+  "itay-tzur-oct": {
+   "name": "איתי צור",
+   "date": "6.10",
+   "dow": "שלישי",
+   "time": "20:30",
+   "iso": "2026-10-06 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "klb2f",
+   "evening_sold": false,
+   "evening_open_slug": "itay-tzur-oct"
+  },
+  "asaf-talmudi-oct": {
+   "name": "אסף תלמודי",
+   "date": "8.10",
+   "dow": "חמישי",
+   "time": "20:30",
+   "iso": "2026-10-08 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "xlb2f",
+   "evening_sold": false,
+   "evening_open_slug": "asaf-talmudi-oct"
+  },
+  "ran-slavin-oct": {
+   "name": "רן סלוין",
+   "date": "9.10",
+   "dow": "שישי",
+   "time": "10:00",
+   "iso": "2026-10-09 10:00",
+   "state": "open",
+   "left": 125,
+   "eventer": "8lb2f",
+   "evening_sold": false,
+   "evening_open_slug": "ran-slavin-oct"
+  },
+  "astral-oct": {
+   "name": "אסטרל פרוג'קשן",
+   "date": "12.10",
+   "dow": "שני",
+   "time": "20:30",
+   "iso": "2026-10-12 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "f0b2f",
+   "evening_sold": false,
+   "evening_open_slug": "astral-oct"
+  },
+  "rejoicer-oct": {
+   "name": "ריג'ויסר",
+   "date": "13.10",
+   "dow": "שלישי",
+   "time": "20:30",
+   "iso": "2026-10-13 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "a0b2f",
+   "evening_sold": false,
+   "evening_open_slug": "rejoicer-oct"
+  },
+  "gorovich-oct": {
+   "name": "גורוביץ",
+   "date": "14.10",
+   "dow": "רביעי",
+   "time": "20:30",
+   "iso": "2026-10-14 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "40b2f",
+   "evening_sold": false,
+   "evening_open_slug": "gorovich-oct"
+  },
+  "noa-argov-oct-16": {
+   "name": "נועה ארגוב",
+   "date": "16.10",
+   "dow": "שישי",
+   "time": "10:00",
+   "iso": "2026-10-16 10:00",
+   "state": "open",
+   "left": 125,
+   "eventer": "dlb2f",
+   "evening_sold": false,
+   "evening_open_slug": "noa-argov-oct-16"
+  },
+  "shira-kela-oct": {
+   "name": "שירה קלע",
+   "date": "19.10",
+   "dow": "שני",
+   "time": "20:30",
+   "iso": "2026-10-19 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "zlb2f",
+   "evening_sold": false,
+   "evening_open_slug": "shira-kela-oct"
+  },
+  "zisling-oct": {
+   "name": "ספי ציזלינג",
+   "date": "20.10",
+   "dow": "שלישי",
+   "time": "20:30",
+   "iso": "2026-10-20 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "0pb2f",
+   "evening_sold": false,
+   "evening_open_slug": "zisling-oct"
+  },
+  "haleta-oct": {
+   "name": "אנה הלטה",
+   "date": "21.10",
+   "dow": "רביעי",
+   "time": "20:30",
+   "iso": "2026-10-21 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "lpb2f",
+   "evening_sold": false,
+   "evening_open_slug": "haleta-oct"
+  },
+  "raz-oct": {
+   "name": "יחזקאל רז",
+   "date": "22.10",
+   "dow": "חמישי",
+   "time": "20:30",
+   "iso": "2026-10-22 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "ppb2f",
+   "evening_sold": false,
+   "evening_open_slug": "raz-oct"
+  },
+  "ran-slavin-oct-23": {
+   "name": "רן סלוין",
+   "date": "23.10",
+   "dow": "שישי",
+   "time": "10:00",
+   "iso": "2026-10-23 10:00",
+   "state": "open",
+   "left": 125,
+   "eventer": "mpb2f",
+   "evening_sold": false,
+   "evening_open_slug": "ran-slavin-oct-23"
+  },
+  "yotam-avni-oct": {
+   "name": "יותם אבני",
+   "date": "25.10",
+   "dow": "ראשון",
+   "time": "20:30",
+   "iso": "2026-10-25 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "qpb2f",
+   "evening_sold": false,
+   "evening_open_slug": "yotam-avni-oct"
+  },
+  "echo-oct": {
+   "name": "אקו",
+   "date": "28.10",
+   "dow": "רביעי",
+   "time": "20:30",
+   "iso": "2026-10-28 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "spb2f",
+   "evening_sold": false,
+   "evening_open_slug": "echo-oct"
+  },
+  "hadas-kleinman-oct": {
+   "name": "הדס קליינמן",
+   "date": "29.10",
+   "dow": "חמישי",
+   "time": "20:30",
+   "iso": "2026-10-29 20:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "npb2f",
+   "evening_sold": false,
+   "evening_open_slug": "hadas-kleinman-oct"
   }
- }
+ },
+ "october_note": "אירועי אוקטובר נוספו ידנית מ-october-events.json (טיוטות איוונטר, לא פורסמו). אחרי הפרסום: apply-eventer-links.py, ואז cloud-events-export.py מייצר מהסנאפשוט."
 }
