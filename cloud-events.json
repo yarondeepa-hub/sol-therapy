@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-08 22:54",
- "source_asof": "2026-09-08 22:38",
+ "generated": "2026-09-09 08:45",
+ "source_asof": "2026-09-09 08:31",
  "events": {
   "amichai-matias": {
    "name": "עמיחי מטיאס",
@@ -41,11 +41,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-09-08 20:30",
-   "state": "open",
+   "state": "past",
    "left": 93,
    "eventer": "mkr2f",
-   "evening_sold": false,
-   "evening_open_slug": "gil-rasta-bonstein"
+   "evening_sold": false
   },
   "yaron-trax": {
    "name": "ירון טראקס ושי פניני",
@@ -54,7 +53,7 @@
    "time": "20:30",
    "iso": "2026-09-09 20:30",
    "state": "open",
-   "left": 58,
+   "left": 57,
    "eventer": "qkr2f",
    "evening_sold": false,
    "evening_open_slug": "yaron-trax"
@@ -66,7 +65,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 46,
+   "left": 41,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -116,7 +115,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 37,
+   "left": 35,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
