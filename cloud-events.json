@@ -472,18 +472,6 @@
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct-23"
   },
-  "yotam-avni-oct": {
-   "name": "יותם אבני",
-   "date": "25.10",
-   "dow": "ראשון",
-   "time": "20:30",
-   "iso": "2026-10-25 20:30",
-   "state": "open",
-   "left": 125,
-   "eventer": "qpb2f",
-   "evening_sold": false,
-   "evening_open_slug": "yotam-avni-oct"
-  },
   "echo-oct": {
    "name": "אקו",
    "date": "28.10",
