@@ -279,18 +279,6 @@
     "radio-trip"
    ]
   },
-  "ziv-sep30": {
-   "name": "זיו (Ziv)",
-   "date": "30.9",
-   "dow": "רביעי",
-   "time": "20:30",
-   "iso": "2026-09-30 20:30",
-   "state": "open",
-   "left": 125,
-   "eventer": "",
-   "evening_sold": false,
-   "evening_open_slug": "ziv-sep30"
-  },
   "radio-trip": {
    "name": "רדיו טריפ",
    "date": "30.9",
