@@ -90,6 +90,21 @@
    "sib_time": "18:30",
    "alts": []
   },
+  "raz-sep-early": {
+   "name": "יחזקאל רז סבב מוקדם",
+   "date": "15.9",
+   "dow": "שלישי",
+   "time": "18:30",
+   "iso": "2026-09-15 18:30",
+   "state": "open",
+   "left": 56,
+   "eventer": "zkc2f",
+   "main_slug": "raz-sep",
+   "evening_sold": false,
+   "evening_open_slug": "raz-sep-early",
+   "sib_slug": "raz-sep",
+   "sib_time": "20:30"
+  },
   "raz-sep": {
    "name": "יחזקאל רז",
    "date": "15.9",
@@ -220,6 +235,17 @@
    "sib_slug": "freedom-fighters-early",
    "sib_time": "18:30"
   },
+  "brain-sister": {
+   "name": "המדריך לטרמפיסט במוזיקה הקלאסית",
+   "date": "27.9",
+   "dow": "ראשון",
+   "time": "19:30",
+   "iso": "2026-09-27 19:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "3vy2f",
+   "evening_sold": false
+  },
   "amdursky-early": {
    "name": "אסף אמדורסקי סבב מוקדם",
    "date": "29.9",
@@ -276,21 +302,6 @@
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
-  },
-  "raz-sep-early": {
-   "name": "יחזקאל רז סבב מוקדם",
-   "date": "15.9",
-   "dow": "שלישי",
-   "time": "18:30",
-   "iso": "2026-09-15 18:30",
-   "state": "open",
-   "left": 56,
-   "eventer": "zkc2f",
-   "main_slug": "raz-sep",
-   "evening_sold": false,
-   "evening_open_slug": "raz-sep-early",
-   "sib_slug": "raz-sep",
-   "sib_time": "20:30"
   },
   "avishai-cohen-oct": {
    "name": "אבישי כהן",
