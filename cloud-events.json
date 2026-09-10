@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-09 21:05",
- "source_asof": "2026-09-09 20:24",
+ "generated": "2026-09-10 08:55",
+ "source_asof": "2026-09-10 08:30",
  "events": {
   "amichai-matias": {
    "name": "עמיחי מטיאס",
@@ -52,11 +52,10 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-09 20:30",
-   "state": "open",
+   "state": "past",
    "left": 44,
    "eventer": "qkr2f",
-   "evening_sold": false,
-   "evening_open_slug": "yaron-trax"
+   "evening_sold": false
   },
   "shai-ben-tzur-early": {
    "name": "שי בן צור סבב מוקדם",
@@ -65,7 +64,7 @@
    "time": "18:30",
    "iso": "2026-09-10 18:30",
    "state": "open",
-   "left": 40,
+   "left": 38,
    "eventer": "qc22f",
    "main_slug": "shai-ben-tzur-sep",
    "evening_sold": false,
@@ -115,7 +114,7 @@
    "time": "20:30",
    "iso": "2026-09-16 20:30",
    "state": "open",
-   "left": 32,
+   "left": 31,
    "eventer": "nkr2f",
    "evening_sold": false,
    "evening_open_slug": "dori-sadovnik"
@@ -273,7 +272,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 103,
+   "left": 99,
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
@@ -300,7 +299,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 125,
+   "left": 110,
    "eventer": "30b2f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-oct"
@@ -312,7 +311,7 @@
    "time": "10:00",
    "iso": "2026-10-02 10:00",
    "state": "open",
-   "left": 125,
+   "left": 123,
    "eventer": "wlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct"
@@ -324,7 +323,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 125,
+   "left": 114,
    "eventer": "70b2f",
    "evening_sold": false,
    "evening_open_slug": "fine-oct"
@@ -372,7 +371,7 @@
    "time": "20:30",
    "iso": "2026-10-12 20:30",
    "state": "open",
-   "left": 125,
+   "left": 122,
    "eventer": "f0b2f",
    "evening_sold": false,
    "evening_open_slug": "astral-oct"
@@ -396,7 +395,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 125,
+   "left": 124,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -456,7 +455,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 125,
+   "left": 120,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -492,7 +491,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 125,
+   "left": 121,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -504,7 +503,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 125,
+   "left": 115,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
