@@ -2968,7 +2968,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     {slug:'daskal-b',  base:'daskal',  date:'28.7', time:'18:30', url:'https://www.eventer.co.il/jd8ff'},
     {slug:'avishai-cohen-b', base:'avishai-cohen', date:'20.8', time:'18:30', url:'https://www.eventer.co.il/tms2f'}
   ,{slug:'echo-b', base:'echo', date:'19.8', time:'18:30', url:'https://www.eventer.co.il/dq32f'},{slug:'amdursky-sep-b', base:'amdursky-sep', date:'29.9', time:'18:30', url:'https://www.eventer.co.il/j8f2f'},{slug:'mark-eliyahu-b', base:'mark-eliyahu', date:'23.9', time:'18:30', url:'https://www.eventer.co.il/f042f'},{slug:'shai-ben-tzur-sep-b', base:'shai-ben-tzur-sep', date:'10.9', time:'18:30', url:'https://www.eventer.co.il/qc22f'},{slug:'freedom-fighters-b', base:'freedom-fighters', date:'24.9', time:'18:30', url:'https://www.eventer.co.il/tb22f'}];
-  ROUNDB.forEach(function(r){ var b=ARTBY[r.base]; if(b){ ARTBY[r.slug]={dow:b.dow,date:r.date,time:r.time,live:b.live,name:b.name,line:b.line,slug:r.slug,url:r.url,img:r.base}; } });
+  ROUNDB.forEach(function(r){ var b=ARTBY[r.base]; if(b){ ARTBY[r.slug]={dow:b.dow,date:r.date,time:r.time,live:b.live,name:b.name,line:b.line,slug:r.slug,url:r.url,img:b.img||r.base}; } });
   // build one reusable full-width dropdown panel
   var detail=document.createElement('div'); detail.className='lp-detail';
   detail.innerHTML='<div class="lp-detail__inner">'+
