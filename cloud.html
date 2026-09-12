@@ -1234,8 +1234,8 @@
   "@type": "MusicEvent",
   "name": "אקו - מדיטציית סאונד ב-CLOUD SPACE",
   "description": "אקו בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-10-28T20:30:00+03:00",
-  "endDate": "2026-10-28T22:00:00+03:00",
+  "startDate": "2026-10-28T20:30:00+02:00",
+  "endDate": "2026-10-28T22:00:00+02:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -1273,8 +1273,8 @@
   "@type": "MusicEvent",
   "name": "הדס קליינמן - מדיטציית סאונד ב-CLOUD SPACE",
   "description": "הדס קליינמן בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-10-29T20:30:00+03:00",
-  "endDate": "2026-10-29T22:00:00+03:00",
+  "startDate": "2026-10-29T20:30:00+02:00",
+  "endDate": "2026-10-29T22:00:00+02:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -1847,7 +1847,7 @@
         }
         .archive-footer__copy {
             font-size: 0.7rem;
-            opacity: 0.25;
+            opacity: 0.55;
         }
 
         @media (min-width: 1024px) {
@@ -2087,13 +2087,14 @@
 .lp-detail__bio p+p{margin-top:.85rem}
 .lp-detail__btn{align-self:flex-start;margin-top:1.2rem;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:#1a1a1a;background:#209CB4;border-radius:999px;padding:.55rem 1.9rem;min-height:42px;text-decoration:none;transition:background .25s ease}
 .lp-detail__btn:hover{background:#17859B}
-.lp-detail__x{position:absolute;top:.6rem;left:.7rem;background:none;border:none;color:var(--color-muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .25rem;transition:color .2s ease}
+.lp-detail__x{position:absolute;z-index:3;top:.6rem;left:.7rem;background:none;border:none;color:var(--color-muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .25rem;transition:color .2s ease}
 .lp-detail__x:hover{color:var(--color-washi)}
 .lp-card__more .chev{display:inline-block;margin-inline-start:.28rem;font-size:.7em;transition:transform .3s ease}
 .lp-card.is-open .lp-card__name{color:#209CB4}
 .lp-card.is-open .lp-card__more .chev{transform:rotate(180deg)}
 @media(max-width:560px){
   .lp-detail__inner{flex-direction:column;gap:1.1rem;padding:1.3rem}
+  .lp-detail__x{top:.4rem;left:.4rem;width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(26,26,26,.62);color:var(--color-washi)}
   .lp-detail__media{flex:0 0 200px;width:100%;align-self:auto;min-height:0;height:200px}
   .lp-detail__name{font-size:1.25rem}
 }
@@ -2894,7 +2895,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   ,{slug:'atar-miner-b', base:'atar-miner', date:'27.8', time:'18:30', url:'https://www.eventer.co.il/42q2f'},{slug:'avishai-cohen-b', base:'avishai-cohen', date:'20.8', time:'18:30', url:'https://www.eventer.co.il/tms2f'},{slug:'echo-b', base:'echo', date:'19.8', time:'18:30', url:'https://www.eventer.co.il/dq32f'},{slug:'amdursky-sep-b', base:'amdursky-sep', date:'29.9', time:'18:30', url:'https://www.eventer.co.il/j8f2f'},{slug:'mark-eliyahu-b', base:'mark-eliyahu', date:'23.9', time:'18:30', url:'https://www.eventer.co.il/f042f'},{slug:'freedom-fighters-b', base:'freedom-fighters', date:'24.9', time:'18:30', url:'https://www.eventer.co.il/tb22f'}];
   ROUNDB.forEach(function(r){ var b=ARTBY[r.base]; if(b){ ARTBY[r.slug]={dow:b.dow,date:r.date,time:r.time,live:b.live,name:b.name,line:b.line,slug:r.slug,url:r.url,img:b.img||r.base}; } });
   // build one reusable full-width dropdown panel
-  var detail=document.createElement('div'); detail.className='lp-detail';
+  var detail=document.createElement('div'); detail.className='lp-detail'; detail.id='lpDetail';
   detail.innerHTML='<div class="lp-detail__inner">'+
       '<button type="button" class="lp-detail__x" aria-label="סגירה">×</button>'+
       '<div class="lp-detail__media"><img alt=""><span class="lp-detail__live">live</span></div>'+
@@ -2908,13 +2909,16 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
       dName=detail.querySelector('.lp-detail__name'), dWhen=detail.querySelector('.lp-detail__when'),
       dBio=detail.querySelector('.lp-detail__bio'), dBtn=detail.querySelector('.lp-detail__btn');
   var openSlug=null;
+  function panelInert(on){ if(on){detail.setAttribute('inert','');detail.setAttribute('aria-hidden','true');}else{detail.removeAttribute('inert');detail.removeAttribute('aria-hidden');} Array.prototype.forEach.call(detail.querySelectorAll('button,a'),function(el){ if(on)el.setAttribute('tabindex','-1'); else el.removeAttribute('tabindex'); }); }
+  function setExpanded(card,on){ var m=card&&card.querySelector('.lp-card__more'); if(m)m.setAttribute('aria-expanded',on?'true':'false'); }
+  panelInert(true);
   function whenHTML(a){ return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+(a.time||'20:30')+'</span>'; }
   function rowLast(card){ var cards=Array.prototype.slice.call(g.querySelectorAll('.lp-card')); var top=card.offsetTop,last=card; for(var i=0;i<cards.length;i++){ if(Math.abs(cards[i].offsetTop-top)<6) last=cards[i]; } return last; }
-  function closeDetail(){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr)pr.classList.remove('is-open'); detail.style.maxHeight='0px'; openSlug=null; }
+  function closeDetail(){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr){pr.classList.remove('is-open'); setExpanded(pr,false);} detail.style.maxHeight='0px'; panelInert(true); openSlug=null; }
   function openDetail(slug){
     if(openSlug===slug){ closeDetail(); return; }
     var card=g.querySelector('.lp-card[data-slug="'+slug+'"]'); if(!card) return;
-    if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op)op.classList.remove('is-open'); }
+    if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op){op.classList.remove('is-open'); setExpanded(op,false);} }
     var a=ARTBY[slug];
     dImg.src='assets/cloud/artists-bw/'+(a.img||slug)+'.jpg'; dImg.alt=a.name;
     dName.textContent=a.name; dWhen.innerHTML=whenHTML(a); dBio.innerHTML=''; (BIO[slug]||[]).forEach(function(t){var pp=document.createElement('p'); pp.textContent=t; dBio.appendChild(pp);});
@@ -2927,7 +2931,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     else{ dBtn.href=a.url; dBtn.removeAttribute('aria-disabled'); dBtn.textContent='כרטיסים'; }
     dLive.classList.toggle('on', false);
     g.insertBefore(detail, rowLast(card).nextSibling);
-    card.classList.add('is-open'); openSlug=slug;
+    card.classList.add('is-open'); openSlug=slug; setExpanded(card,true); panelInert(false);
     detail.style.maxHeight='0px';
     requestAnimationFrame(function(){ detail.style.maxHeight=detail.scrollHeight+'px'; });
     setTimeout(function(){ if(openSlug===slug) detail.scrollIntoView({behavior:'smooth',block:'nearest'}); },140);
@@ -2936,7 +2940,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetail();});
   var rt, lastW=window.innerWidth; window.addEventListener('resize',function(){ if(window.innerWidth===lastW)return; lastW=window.innerWidth; if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(); openDetail(sg); },160); });
   function trig(el){ var card=el.closest('.lp-card'); if(card) openDetail(card.getAttribute('data-slug')); }
-  document.querySelectorAll('.lp-card__more').forEach(function(b){b.addEventListener('click',function(){trig(b);});});
+  document.querySelectorAll('.lp-card__more').forEach(function(b){ if(g.contains(b)){ b.setAttribute('aria-expanded','false'); b.setAttribute('aria-controls','lpDetail'); } b.addEventListener('click',function(){trig(b);});});
   document.querySelectorAll('.lp-card__name').forEach(function(n){n.style.cursor='pointer';n.addEventListener('click',function(){trig(n);});});
   document.querySelectorAll('.lp-card__media').forEach(function(m){m.style.cursor='pointer';m.addEventListener('click',function(){trig(m);});});
 })();
@@ -2980,17 +2984,20 @@ var wg=document.querySelector(".lp-grid--workshops"); if(!wg) return;
 var WS=[{slug:"fine-listening",dow:"שני",date:"10.8",time:"19:30",name:"תולדות ההיפ-הופ",url:"https://www.eventer.co.il/f2q2f"},{slug:"bonsai",dow:"ראשון",date:"23.8",time:"19:00",name:"סדנת בונסאי",url:"https://www.eventer.co.il/m4r2f"},{slug:"nissim-amon",dow:"שני",date:"31.8",time:"9:45",name:"ריטריט עם ניסים אמון",url:"https://www.eventer.co.il/11zff"},{slug:"rak-house",dow:"שבת",date:"19.9",time:"17:00",name:"רק האוס - מסיבת לופט",url:"https://www.eventer.co.il/8b72f"},{slug:"brain-sister",dow:"ראשון",date:"27.9",time:"19:30",name:"המדריך לטרמפיסט במוזיקה הקלאסית",url:"https://www.eventer.co.il/3vy2f"}];
 var WSBY={};WS.forEach(function(a){WSBY[a.slug]=a;});
 var BIO={"brain-sister":["במפגש הקרוב נארח את מיכל דוברובינסקי (הבריין סיסטר) ואורי שיניצקי, חוקרי מוח שיקחו אותנו לליל צלילה אל המוזיקה הקלאסית: הרצאה ומדיטציית סאונד עם צ'לו לייב.", "נשמע את הכינורות של ויוואלדי הופכים לרוח חורפית, נלך עם בטהובן לצד פלגי מים ונרגיש איך ראוול מצייר את הזריחה. היצירות שבחרנו מספרות סיפורים עוצמתיים של טבע וסערות, עולם רגשי בתוך הזמן.", "מיכל ואורי יציידו אותנו במפת אוצר לשפת המוזיקה הקלאסית: נעקוב אחר הצליל מהרגע שבו הוא מרעיד את עור התוף, ועד לרגע שבו המוח הופך אותו לסיפור שמעורר בנו רגשות. ברגע שלומדים לקרוא שפה חדשה, שומעים בה פתאום הרבה יותר."],"rak-house":["רגע לפני יום הדין (כיפור) - נפתח את הלופט שלנו למסיבת האוס אמיתית עם ליינאפ במשקל כבד לצד סאונד מוקפד, מרפסת השקיעה היפה ביותר בדרום תל אביב - וויב משוחרר, כיפי והרבה ספייס לרקוד ולשחרר משעות הצהריים עד חצות.","על העמדה: אנה הלטה, יותם אבני וירון דיפ'ה - אבני יסוד בסצנת המועדונים המקומית, המחזיקים כל אחד מעל 25 שנות ניסיון על העמדה, גיגים במועדונים החשובים בעולם והיכרות אינטימית עם האוס לסוגיו.","יחד איתם: קארין קימל - הדיג'יית המסקרנת ביותר מהדור הצעיר עם סלקשן חריף ומסקרן במיוחד."],"nissim-amon":["מורה זן ומייסד שיטת הטרילותרפיה. אחרי שנים של לימוד במנזרי זן בקוריאה וביפן, שם הוסמך כזן-מאסטר, ובמנזרים בתאילנד, בהודו ובנפאל - חזר לישראל והקדיש את חייו להבאת חוכמת המזרח למערב.","כיום הוא עומד בראש בית הספר לטרילותרפיה, מנחה הרצאות וסדנאות בארץ ובעולם, ופרסם ספרים, בהם \"חכמת המזרח\" ו\"סוד האושר הפנימי\".","המסע נע בין חמישה מימדים של זמן: עבר רחוק, עבר קרוב, כאן ועכשיו, עתיד קרוב ועתיד רחוק. בכל אחד מהם עוצרים במקום אחר, וחוזרים משם עם משהו אחר."],"fine-listening":["סדרת אירועים חדשה מבית קלאוד ספייס, שבה נארח דמויות מפתח בסצנת המוזיקה המקומית לערבי האזנה והרצאה סביב אלבומים אייקוניים ותנועות מוזיקליות חשובות - בלופט ייפרסו מקומות ישיבה ומזרונים, ויחד עם מערכת הסאונד ההיקפית שלנו נצלול יחד בתנאים אופטימליים לתוכן מוזיקלי עמוק.","יוסי פיין - מפיק-על ומחלוצי ההיפ-הופ הישראלי, שהפיק בין השאר את האלבומים הראשונים של שב״ק ס׳, הדג נחש ונייג'ל האדמו\"ר, יצלול לאוסף האישי הכולל חומרים נדירים, הקלטות מקור וקלאסיקות, כדי להשמיע ולספר לנו על התפתחות ההיפ-הופ בגוף ראשון, בתור מי שהיה שם באולפנים, ברחבות וברחובות כשהכול התחיל.","נצא למסע שמתחיל מ-Afrika Bambaataa, דרך Public Enemy ו-Beastie Boys, ופנינות והשפעות מפתיעות שנכנסו אל עולם ההיפ-הופ ומחוצה לו."],"rachel":["מסע מדיטטיבי המחבר אותנו אל ערוצים עמוקים של ריפוי עצמי. מסע מוזיקלי בן כשלוש שעות הנע בין הקטבים שבתוכנו - בין ריקוד חופשי ותנועה אקסטטית לישיבה שקטה, ביטוי קולי והרפיה עמוקה, מלווה בצלילים חיים.", "הכל בעיניים עצומות, בלי מצלמות ובלי דיבורים. מסע אישי שעוברים יחד. כל רובד - גוף, נפש ורוח - מקבל תשומת לב.", "שלוש שעות של שחרור, בריאות צרופה והרחבת התודעה."],"bonsai":["סדנת יצירה חווייתית בת כשעתיים, בהנחיית אמן הבונסאי שגיא ברון. נכיר את עקרונות אמנות הבונסאי, שגיא ידגים את טכניקת העיצוב, ולאחר מכן כל משתתף יעצב בעצמו עץ בונסאי וישתול אותו בכלי בונסאי ייעודי. את העץ המעוצב והשתול ייקח כל משתתף לביתו, להמשך טיפוח.", "שגיא ברון, אמן בונסאי ומומחה בתכנון והקמת גנים יפניים, בעל ניסיון של מעל 20 שנה בתחום. מייסד האקדמיה הישראלית לבונסאי, ומשמש כיו״ר איגוד הבונסאי הישראלי מיום הקמתו.", "כאוטודידקט, למד את התחום בכוחות עצמו במשך שנים רבות, ובשלב מאוחר יותר הרחיק עד יפן כדי להשתלם ולהעמיק את הידע. משנת 2009 ועד היום הוא ממשיך את התמחותו תחת הדרכתו של רב-האמן מרק נואלנדרס מבלגיה."],"darwish-ed":["דרוויש מגיע לסט אקסטטיק דאנס ארוך ועמוק.","מרחב של ריקוד חופשי, תנועה, מוזיקה וחיבור. כל אחד בקצב שלו, בדרך שלו וברגע שלו.","כבר שנים שדרוויש מוביל מרחבי ריקוד בארץ ובעולם, ומביא איתו מסע מוזיקלי שנע בין ביטים שבטיים, גרוב, מוזיקת עולם וצלילים אלקטרוניים.","מוזיקה שמחברת בין אנשים, פותחת את הלב ומזמינה אותנו להיות נוכחים יותר בגוף, בתנועה וברגע.","האירוע יתקיים ב־Cloud Space, מרחב הנשימה האורבני החדש של Sol Therapy בקריית המלאכה בתל אביב."]};
-var detail=document.createElement("div");detail.className="lp-detail";
+var detail=document.createElement("div");detail.className="lp-detail";detail.id="wsDetail";
 detail.innerHTML='<div class="lp-detail__inner"><button type="button" class="lp-detail__x" aria-label="סגירה">×</button><div class="lp-detail__media"><img alt=""></div><div class="lp-detail__text"><h3 class="lp-detail__name"></h3><div class="lp-detail__when"></div><div class="lp-detail__bio"></div><a class="lp-detail__btn" target="_blank" rel="noopener">כרטיסים</a></div></div>';
 var dImg=detail.querySelector("img"),dName=detail.querySelector(".lp-detail__name"),dWhen=detail.querySelector(".lp-detail__when"),dBio=detail.querySelector(".lp-detail__bio"),dBtn=detail.querySelector(".lp-detail__btn");
 var openSlug=null;
+function panelInert(on){if(on){detail.setAttribute("inert","");detail.setAttribute("aria-hidden","true");}else{detail.removeAttribute("inert");detail.removeAttribute("aria-hidden");}Array.prototype.forEach.call(detail.querySelectorAll("button,a"),function(el){if(on)el.setAttribute("tabindex","-1");else el.removeAttribute("tabindex");});}
+function setExpanded(card,on){var m=card&&card.querySelector(".lp-card__more");if(m)m.setAttribute("aria-expanded",on?"true":"false");}
+panelInert(true);
 function whenHTML(a){return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+a.time+'</span>';}
 function rowLast(card){var cards=Array.prototype.slice.call(wg.querySelectorAll(".lp-card"));var top=card.offsetTop,last=card;for(var i=0;i<cards.length;i++){if(Math.abs(cards[i].offsetTop-top)<6)last=cards[i];}return last;}
-function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr)pr.classList.remove("is-open");detail.style.maxHeight="0px";openSlug=null;}
-function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op)op.classList.remove("is-open");}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"האירוע הסתיים":"אזל";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="כרטיסים";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
+function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr){pr.classList.remove("is-open");setExpanded(pr,false);}detail.style.maxHeight="0px";panelInert(true);openSlug=null;}
+function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op){op.classList.remove("is-open");setExpanded(op,false);}}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"האירוע הסתיים":"אזל";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="כרטיסים";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;setExpanded(card,true);panelInert(false);detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
 detail.querySelector(".lp-detail__x").addEventListener("click",closeDetail);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
-wg.querySelectorAll(".lp-card__more").forEach(function(b){b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
+wg.querySelectorAll(".lp-card__more").forEach(function(b){b.setAttribute("aria-expanded","false");b.setAttribute("aria-controls","wsDetail");b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
 var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
 })();
 </script>

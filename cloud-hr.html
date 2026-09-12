@@ -447,7 +447,7 @@
             font-size: var(--type-micro);
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--color-green);
+            color: var(--color-green-light);
             opacity: 0.7;
             margin-bottom: 1.5rem;
         }
@@ -494,7 +494,7 @@
         .hero-private__cta-row .hero-private__cta { margin-top: 0; }
         .hero-private__cta--solid {
             background: var(--color-green);
-            color: var(--color-dark);
+            color: #000;
             font-weight: 500;
         }
         .hero-private__cta--solid:hover {
@@ -641,7 +641,7 @@
             font-weight: 300;
             font-size: var(--type-micro);
             letter-spacing: 0.15em;
-            color: var(--color-green);
+            color: var(--color-green-light);
             opacity: 0.5;
             margin-bottom: 1rem;
         }
@@ -1586,6 +1586,9 @@
         .contact-private--washi .contact-form__textarea::placeholder { color: rgba(59,81,75,0.3); }
         .contact-private--washi .contact-form__submit { background: var(--color-green); color: var(--color-washi); }
         .contact-private--washi .contact-form__submit:hover { background: var(--color-green-dark); }
+        .contact-form__note { margin-top: 1.4rem; font-size: var(--type-small); line-height: 1.6; color: var(--color-green-dark); }
+        .contact-form__alt { text-align: center; margin-top: var(--space-m); font-size: var(--type-small); color: var(--color-green-dark); }
+        .contact-form__alt a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
         .contact-private--washi .contact-private__btn {
             color: var(--color-green-dark);
             border-color: var(--color-green);
@@ -2117,7 +2120,8 @@
                     <label class="contact-form__label" for="message">ספרו לנו בקצרה</label>
                     <textarea id="message" name="message" class="contact-form__textarea" placeholder="מה אתם מחפשים - סוג האירוע, מספר משתתפים, מסגרת זמן" rows="4"></textarea>
                 </div>
-                <button type="submit" class="contact-form__submit">שלחו פנייה</button>
+                <p class="contact-form__note">הלחיצה על הכפתור פותחת מייל מוכן לשליחה בתוכנת הדואר שלכם, עם הפרטים שמילאתם. הפנייה יוצאת מהמייל שלכם.</p>
+                <button type="submit" class="contact-form__submit">פתיחת מייל מוכן לשליחה</button>
             </form>
             <script>
             function handleCorporateForm(e) {
@@ -2130,15 +2134,16 @@
                 var msg = f.querySelector('#message').value;
                 var subject = encodeURIComponent('פנייה מהאתר - ' + org);
                 var body = encodeURIComponent('שם: ' + name + '\nארגון: ' + org + '\nאימייל: ' + email + '\nטלפון: ' + phone + '\n\n' + msg);
-                // LinkedIn Conversion Tracking - Lead form submit
-                if (typeof window.lintrk === 'function') {
-                    window.lintrk('track', { conversion_id: 27475809 });
+                // קליק בלבד (לא המרה): הכפתור פותח מייל מוכן בתוכנת הדואר, השליחה בידי הפונה
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'contact_email_click', { method: 'mailto_form', page_path: window.location.pathname });
                 }
                 window.location.href = 'mailto:the.sol.therapy@gmail.com?subject=' + subject + '&body=' + body;
                 return false;
             }
             </script>
 
+            <p class="contact-form__alt fade-in">אפשר גם לכתוב לנו ישירות: <a href="mailto:the.sol.therapy@gmail.com" dir="ltr">the.sol.therapy@gmail.com</a></p>
             <div class="contact-private__direct fade-in">
                 <a href="mailto:the.sol.therapy@gmail.com" class="contact-private__btn" aria-label="שלחו אימייל" onclick="if(typeof window.lintrk==='function'){window.lintrk('track',{conversion_id:27475809})}">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>

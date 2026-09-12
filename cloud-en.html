@@ -1234,8 +1234,8 @@
   "@type": "MusicEvent",
   "name": "Echo - Sound Meditation at CLOUD SPACE",
   "description": "Echo at CLOUD SPACE, Shoken 27 Tel Aviv - deep sound meditation, lying down by Sol Therapy.",
-  "startDate": "2026-10-28T20:30:00+03:00",
-  "endDate": "2026-10-28T22:00:00+03:00",
+  "startDate": "2026-10-28T20:30:00+02:00",
+  "endDate": "2026-10-28T22:00:00+02:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -1273,8 +1273,8 @@
   "@type": "MusicEvent",
   "name": "Hadas Kleinman - Sound Meditation at CLOUD SPACE",
   "description": "Hadas Kleinman at CLOUD SPACE, Shoken 27 Tel Aviv - deep sound meditation, lying down by Sol Therapy.",
-  "startDate": "2026-10-29T20:30:00+03:00",
-  "endDate": "2026-10-29T22:00:00+03:00",
+  "startDate": "2026-10-29T20:30:00+02:00",
+  "endDate": "2026-10-29T22:00:00+02:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -1845,7 +1845,7 @@
         }
         .archive-footer__copy {
             font-size: 0.7rem;
-            opacity: 0.25;
+            opacity: 0.55;
         }
 
         @media (min-width: 1024px) {
@@ -1911,6 +1911,8 @@
         .cloud-contact__btn--wa:hover,.cloud-contact__btn--wa:focus-visible{background:#27b3cf}
         .cloud-contact__btn--mail{background:transparent;color:var(--color-washi);border-color:rgba(242,234,211,.28)}
         .cloud-contact__btn--mail:hover,.cloud-contact__btn--mail:focus-visible{border-color:#209CB4;color:#209CB4}.cloud-contact__btn--ig{background:transparent;color:var(--color-washi);border-color:rgba(242,234,211,.28)}.cloud-contact__btn--ig:hover,.cloud-contact__btn--ig:focus-visible{border-color:#209CB4;color:#209CB4}
+.cloud-contact__btn--yt{background:transparent;color:var(--color-washi);border-color:rgba(242,234,211,.28)}
+.cloud-contact__btn--yt:hover,.cloud-contact__btn--yt:focus-visible{border-color:#209CB4;color:#209CB4}
         .cloud-faq__kicker{font-family:var(--font-english);font-size:.65rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--color-green);text-align:center;margin-bottom:.5rem}
         .cloud-faq__title{font-family:var(--font-display);font-weight:500;font-size:1.6rem;color:var(--color-washi);text-align:center;margin-bottom:1.75rem}
         .cloud-faq__item{border-bottom:1px solid rgba(242,234,211,.1)}
@@ -2083,13 +2085,14 @@
 .lp-detail__bio p+p{margin-top:.85rem}
 .lp-detail__btn{align-self:flex-start;margin-top:1.2rem;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:#1a1a1a;background:#209CB4;border-radius:999px;padding:.55rem 1.9rem;min-height:42px;text-decoration:none;transition:background .25s ease}
 .lp-detail__btn:hover{background:#17859B}
-.lp-detail__x{position:absolute;top:.6rem;left:.7rem;background:none;border:none;color:var(--color-muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .25rem;transition:color .2s ease}
+.lp-detail__x{position:absolute;z-index:3;top:.6rem;left:.7rem;background:none;border:none;color:var(--color-muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .25rem;transition:color .2s ease}
 .lp-detail__x:hover{color:var(--color-washi)}
 .lp-card__more .chev{display:inline-block;margin-inline-start:.28rem;font-size:.7em;transition:transform .3s ease}
 .lp-card.is-open .lp-card__name{color:#209CB4}
 .lp-card.is-open .lp-card__more .chev{transform:rotate(180deg)}
 @media(max-width:560px){
   .lp-detail__inner{flex-direction:column;gap:1.1rem;padding:1.3rem}
+  .lp-detail__x{top:.4rem;left:.4rem;width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(26,26,26,.62);color:var(--color-washi)}
   .lp-detail__media{flex:0 0 200px;width:100%;align-self:auto;min-height:0;height:200px}
   .lp-detail__name{font-size:1.25rem}
 }
@@ -2157,8 +2160,8 @@
 /* button system v2: outlined teal, muted sold-out, quiet about-link */
 .lp-card__btn{font-family:var(--font-english);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:#209CB4;background:transparent;border:1px solid rgba(32,156,180,.55);border-radius:4px;padding:.5rem 1.15rem;min-height:38px;transition:background .25s ease,color .25s ease,border-color .25s ease;}
 .lp-card__btn:hover{background:#209CB4;border-color:#209CB4;color:#0f1413;}
-.lp-card__btn--sold{color:#C0392B;background:transparent;border:1px solid rgba(192,57,43,.6);letter-spacing:.06em;pointer-events:none;cursor:default;}
-.lp-card__btn--sold:hover{background:transparent;border-color:rgba(192,57,43,.6);color:#C0392B;}.lp-card__btn--wait{color:#209CB4;background:transparent;border:1px solid rgba(32,156,180,.4);letter-spacing:.06em;white-space:nowrap}.lp-card__btn--wait:hover{background:#209CB4;border-color:#209CB4;color:#0f1413}@media(max-width:560px){.lp-card__btn--wait{font-size:.68rem;padding:.4rem .7rem}}
+.lp-card__btn--sold{color:#E2574A;background:transparent;border:1px solid rgba(192,57,43,.6);letter-spacing:.06em;pointer-events:none;cursor:default;}
+.lp-card__btn--sold:hover{background:transparent;border-color:rgba(192,57,43,.6);color:#E2574A;}.lp-card__btn--wait{color:#209CB4;background:transparent;border:1px solid rgba(32,156,180,.4);letter-spacing:.06em;white-space:nowrap}.lp-card__btn--wait:hover{background:#209CB4;border-color:#209CB4;color:#0f1413}@media(max-width:560px){.lp-card__btn--wait{font-size:.68rem;padding:.4rem .7rem}}
 .lp-card__more{font-family:var(--font-english);font-weight:400;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-muted);text-decoration:none;white-space:nowrap;}
 .lp-card__more:hover{color:var(--color-washi);text-decoration:none;}
 .lp-card__more .chev{font-size:.62em;opacity:.8;}
@@ -2896,7 +2899,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   ,{slug:'echo-b', base:'echo', date:'19.8', time:'18:30', url:'https://www.eventer.co.il/dq32f'},{slug:'amdursky-sep-b', base:'amdursky-sep', date:'29.9', time:'18:30', url:'https://www.eventer.co.il/j8f2f'},{slug:'mark-eliyahu-b', base:'mark-eliyahu', date:'23.9', time:'18:30', url:'https://www.eventer.co.il/f042f'},{slug:'freedom-fighters-b', base:'freedom-fighters', date:'24.9', time:'18:30', url:'https://www.eventer.co.il/tb22f'}];
   ROUNDB.forEach(function(r){ var b=ARTBY[r.base]; if(b){ ARTBY[r.slug]={dow:b.dow,date:r.date,time:r.time,live:b.live,name:b.name,line:b.line,slug:r.slug,url:r.url,img:b.img||r.base}; } });
   // build one reusable full-width dropdown panel
-  var detail=document.createElement('div'); detail.className='lp-detail';
+  var detail=document.createElement('div'); detail.className='lp-detail'; detail.id='lpDetail';
   detail.innerHTML='<div class="lp-detail__inner">'+
       '<button type="button" class="lp-detail__x" aria-label="Close">×</button>'+
       '<div class="lp-detail__media"><img alt=""><span class="lp-detail__live">live</span></div>'+
@@ -2910,13 +2913,16 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
       dName=detail.querySelector('.lp-detail__name'), dWhen=detail.querySelector('.lp-detail__when'),
       dBio=detail.querySelector('.lp-detail__bio'), dBtn=detail.querySelector('.lp-detail__btn');
   var openSlug=null;
+  function panelInert(on){ if(on){detail.setAttribute('inert','');detail.setAttribute('aria-hidden','true');}else{detail.removeAttribute('inert');detail.removeAttribute('aria-hidden');} Array.prototype.forEach.call(detail.querySelectorAll('button,a'),function(el){ if(on)el.setAttribute('tabindex','-1'); else el.removeAttribute('tabindex'); }); }
+  function setExpanded(card,on){ var m=card&&card.querySelector('.lp-card__more'); if(m)m.setAttribute('aria-expanded',on?'true':'false'); }
+  panelInert(true);
   function whenHTML(a){ return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+(a.time||'20:30')+'</span>'; }
   function rowLast(card){ var cards=Array.prototype.slice.call(g.querySelectorAll('.lp-card')); var top=card.offsetTop,last=card; for(var i=0;i<cards.length;i++){ if(Math.abs(cards[i].offsetTop-top)<6) last=cards[i]; } return last; }
-  function closeDetail(){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr)pr.classList.remove('is-open'); detail.style.maxHeight='0px'; openSlug=null; }
+  function closeDetail(){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr){pr.classList.remove('is-open'); setExpanded(pr,false);} detail.style.maxHeight='0px'; panelInert(true); openSlug=null; }
   function openDetail(slug){
     if(openSlug===slug){ closeDetail(); return; }
     var card=g.querySelector('.lp-card[data-slug="'+slug+'"]'); if(!card) return;
-    if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op)op.classList.remove('is-open'); }
+    if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op){op.classList.remove('is-open'); setExpanded(op,false);} }
     var a=ARTBY[slug];
     dImg.src='assets/cloud/artists-bw/'+(a.img||slug)+'.jpg'; dImg.alt=a.name;
     dName.textContent=a.name; dWhen.innerHTML=whenHTML(a); dBio.innerHTML=''; (BIO[slug]||[]).forEach(function(t){var pp=document.createElement('p'); pp.textContent=t; dBio.appendChild(pp);});
@@ -2929,7 +2935,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     else{ dBtn.href=a.url; dBtn.removeAttribute('aria-disabled'); dBtn.textContent='TICKETS'; }
     dLive.classList.toggle('on', false);
     g.insertBefore(detail, rowLast(card).nextSibling);
-    card.classList.add('is-open'); openSlug=slug;
+    card.classList.add('is-open'); openSlug=slug; setExpanded(card,true); panelInert(false);
     detail.style.maxHeight='0px';
     requestAnimationFrame(function(){ detail.style.maxHeight=detail.scrollHeight+'px'; });
     setTimeout(function(){ if(openSlug===slug) detail.scrollIntoView({behavior:'smooth',block:'nearest'}); },140);
@@ -2938,7 +2944,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetail();});
   var rt, lastW=window.innerWidth; window.addEventListener('resize',function(){ if(window.innerWidth===lastW)return; lastW=window.innerWidth; if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(); openDetail(sg); },160); });
   function trig(el){ var card=el.closest('.lp-card'); if(card) openDetail(card.getAttribute('data-slug')); }
-  document.querySelectorAll('.lp-card__more').forEach(function(b){b.addEventListener('click',function(){trig(b);});});
+  document.querySelectorAll('.lp-card__more').forEach(function(b){ if(g.contains(b)){ b.setAttribute('aria-expanded','false'); b.setAttribute('aria-controls','lpDetail'); } b.addEventListener('click',function(){trig(b);});});
   document.querySelectorAll('.lp-card__name').forEach(function(n){n.style.cursor='pointer';n.addEventListener('click',function(){trig(n);});});
   document.querySelectorAll('.lp-card__media').forEach(function(m){m.style.cursor='pointer';m.addEventListener('click',function(){trig(m);});});
 })();
@@ -2982,17 +2988,20 @@ var wg=document.querySelector(".lp-grid--workshops"); if(!wg) return;
 var WS=[{slug:"fine-listening",dow:"Mon",date:"10.8",time:"19:30",name:"The History of Hip-Hop",url:"https://www.eventer.co.il/f2q2f"},{slug:"bonsai",dow:"Sun",date:"23.8",time:"19:00",name:"Bonsai Workshop",url:"https://www.eventer.co.il/m4r2f"},{slug:"nissim-amon",dow:"Mon",date:"31.8",time:"9:45",name:"Retreat with Nissim Amon",url:"https://www.eventer.co.il/11zff"},{slug:"rak-house",dow:"Sat",date:"19.9",time:"17:00",name:"Rak House - Loft Party",url:"https://www.eventer.co.il/8b72f"},{slug:"brain-sister",dow:"Sun",date:"27.9",time:"19:30",name:"The Hitchhiker's Guide to Classical Music",url:"https://www.eventer.co.il/3vy2f"}];
 var WSBY={};WS.forEach(function(a){WSBY[a.slug]=a;});
 var BIO={"brain-sister":["We host Michal Dobrovinsky (The Brain Sister) and Uri Shinitzky, two brain researchers who take us on a night dive into classical music: a lecture and a sound meditation with live cello.", "We will hear Vivaldi's violins turn into a winter wind, walk with Beethoven along streams of water and feel Ravel paint the sunrise. The works chosen tell powerful stories of nature and storms - an emotional world within time.", "Michal and Uri hand us a treasure map to the language of classical music: following the sound from the moment it strikes the eardrum to the moment the brain turns it into a story that moves us. Once you learn to read a new language, you suddenly hear much more in it."],"rak-house":["Just before Yom Kippur, we open our loft for a true house party: a heavyweight lineup, meticulous sound, and the most beautiful sunset balcony in south Tel Aviv - a free, joyful vibe with plenty of space to dance from the afternoon until midnight.","On the decks: Anna Haleta, Yotam Avni and Yaron Deepa - cornerstones of the local club scene, each with more than 25 years behind the decks, gigs at the world's leading clubs and an intimate knowledge of house in all its forms.","Joining them: Karin Kimel - the most intriguing DJ of the young generation, with an especially sharp selection."],"bonsai":["A hands-on, two-hour creative workshop led by bonsai artist Sagi Baron. We will explore the principles of bonsai, watch Sagi demonstrate shaping technique, and then each participant designs and pots their own bonsai tree in a dedicated bonsai vessel - and takes it home to keep growing.", "Sagi Baron is a bonsai artist and Japanese-garden designer with over twenty years of experience, founder of the Israeli Bonsai Academy and chairman of the Israeli Bonsai Association since its founding."],"nissim-amon":["A Zen teacher and the founder of the Trilotherapy method. After years of study in Zen monasteries in Korea and Japan, where he was ordained as a Zen master, and in monasteries in Thailand, India and Nepal, he returned to Israel and devoted his life to bringing the wisdom of the East to the West.","Today he heads the School of Trilotherapy, leads lectures and workshops in Israel and abroad, and has published books including The Wisdom of the East and The Secret of Inner Happiness.","The journey moves between five dimensions of time: distant past, recent past, here and now, near future and distant future. In each one you stop somewhere different, and come back with something different."],"fine-listening":["A new event series from Cloud Space, hosting key figures of the local music scene for evenings of listening and conversation around iconic albums and pivotal musical movements - the loft is laid out with seating and mattresses, and together with our surround sound system we dive into deep musical content in optimal conditions.","Yossi Fine - super-producer and pioneer of Israeli hip-hop, who produced the debut albums of Shabak Samech, Hadag Nahash and Nigel Haadmor, opens his personal collection of rare materials, original recordings and classics, telling the story of hip-hop first-hand - as someone who was there in the studios, on the dancefloors and in the streets when it all began.","A journey that starts with Afrika Bambaataa, moves through Public Enemy and Beastie Boys, and uncovers surprising gems and influences that flowed into and out of the world of hip-hop."],"darwish-ed":["Darwish comes for a long, deep ecstatic dance set.","A space of free dance, movement, music and connection. Everyone in their own rhythm, their own way, their own moment.","For years Darwish has led dance spaces in Israel and abroad, bringing with him a musical journey that moves between tribal beats, groove, world music and electronic sounds.","Music that connects people, opens the heart and invites us to be more present in the body, in movement and in the moment.","The event takes place at CLOUD SPACE, Sol Therapy's new urban breathing space in Kiryat HaMelacha, Tel Aviv."]};
-var detail=document.createElement("div");detail.className="lp-detail";
+var detail=document.createElement("div");detail.className="lp-detail";detail.id="wsDetail";
 detail.innerHTML='<div class="lp-detail__inner"><button type="button" class="lp-detail__x" aria-label="Close">×</button><div class="lp-detail__media"><img alt=""></div><div class="lp-detail__text"><h3 class="lp-detail__name"></h3><div class="lp-detail__when"></div><div class="lp-detail__bio"></div><a class="lp-detail__btn" target="_blank" rel="noopener">TICKETS</a></div></div>';
 var dImg=detail.querySelector("img"),dName=detail.querySelector(".lp-detail__name"),dWhen=detail.querySelector(".lp-detail__when"),dBio=detail.querySelector(".lp-detail__bio"),dBtn=detail.querySelector(".lp-detail__btn");
 var openSlug=null;
+function panelInert(on){if(on){detail.setAttribute("inert","");detail.setAttribute("aria-hidden","true");}else{detail.removeAttribute("inert");detail.removeAttribute("aria-hidden");}Array.prototype.forEach.call(detail.querySelectorAll("button,a"),function(el){if(on)el.setAttribute("tabindex","-1");else el.removeAttribute("tabindex");});}
+function setExpanded(card,on){var m=card&&card.querySelector(".lp-card__more");if(m)m.setAttribute("aria-expanded",on?"true":"false");}
+panelInert(true);
 function whenHTML(a){return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+a.time+'</span>';}
 function rowLast(card){var cards=Array.prototype.slice.call(wg.querySelectorAll(".lp-card"));var top=card.offsetTop,last=card;for(var i=0;i<cards.length;i++){if(Math.abs(cards[i].offsetTop-top)<6)last=cards[i];}return last;}
-function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr)pr.classList.remove("is-open");detail.style.maxHeight="0px";openSlug=null;}
-function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op)op.classList.remove("is-open");}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"EVENT ENDED":"SOLD OUT";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="TICKETS";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
+function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr){pr.classList.remove("is-open");setExpanded(pr,false);}detail.style.maxHeight="0px";panelInert(true);openSlug=null;}
+function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op){op.classList.remove("is-open");setExpanded(op,false);}}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"EVENT ENDED":"SOLD OUT";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="TICKETS";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;setExpanded(card,true);panelInert(false);detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
 detail.querySelector(".lp-detail__x").addEventListener("click",closeDetail);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
-wg.querySelectorAll(".lp-card__more").forEach(function(b){b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
+wg.querySelectorAll(".lp-card__more").forEach(function(b){b.setAttribute("aria-expanded","false");b.setAttribute("aria-controls","wsDetail");b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
 var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
 })();
 </script>
