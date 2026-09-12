@@ -128,10 +128,10 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-16 20:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "nkr2f",
-   "evening_sold": false,
+   "evening_sold": true,
    "evening_open_slug": "dori-sadovnik"
   },
   "yitzhak-ventura": {
