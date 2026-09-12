@@ -38,6 +38,9 @@
               set('utm_campaign',attr.utm_campaign);
               set('utm_content',attr.utm_content);
               set('utm_term',attr.utm_term);
+              var solPage=/(^|\/)share\//.test(location.pathname)?'share':(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'');
+              if(!solPage||solPage==='index') solPage='home'; else if(solPage==='cloud-card') solPage='card';
+              set('utm_content',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
               set('ref',slug);
