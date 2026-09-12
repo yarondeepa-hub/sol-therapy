@@ -2233,7 +2233,7 @@
         </div>
 
         <div class="event-page__description">
-                <p>Sol Therapy presents the CLOUD SPACE pop-up - a new urban breathing space, one of a kind in Israel, in Kiryat HaMelacha, Tel Aviv, open through July, August and September. Inside the noise of the lives we lead, we understood the need for a different space - a considered one, quieting and restorative.</p>
+                <p>Sol Therapy presents the CLOUD SPACE pop-up - a new urban breathing space, one of a kind in Israel, in Kiryat HaMelacha, Tel Aviv, open since July 2026. Inside the noise of the lives we lead, we understood the need for a different space - a considered one, quieting and restorative.</p>
                 <p>Daily life under the weight of the cost of living, an unsettled security situation, the ceaseless urban noise and countless other distractions leaves us carrying rising levels of stress in body and mind, faster than ever in recent years.</p>
                 <p>Out of that understanding, and after dozens of sound meditation workshops and retreats in changing spaces such as the Suzanne Dellal Centre, the Tel Aviv Museum of Art, the National Library in Jerusalem, MOA and more, we felt this was the right moment to open a carefully considered pop-up: a space for breath, release and movement.</p>
                 <p>Over the coming months we will host Israel's leading artists for deep sound meditation sessions that pair the healing power of music with the principles of Zen Buddhism, opening a space for deep release and a rare chance to meet the undercurrents in the work of beloved artists. <strong>Please note that places in the sessions are limited, and we recommend reserving in advance.</strong></p>
@@ -2918,10 +2918,12 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   panelInert(true);
   function whenHTML(a){ return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+(a.time||'20:30')+'</span>'; }
   function rowLast(card){ var cards=Array.prototype.slice.call(g.querySelectorAll('.lp-card')); var top=card.offsetTop,last=card; for(var i=0;i<cards.length;i++){ if(Math.abs(cards[i].offsetTop-top)<6) last=cards[i]; } return last; }
-  function closeDetail(){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr){pr.classList.remove('is-open'); setExpanded(pr,false);} detail.style.maxHeight='0px'; panelInert(true); openSlug=null; }
+  var openerBtn=null;
+  function closeDetail(restore){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr){pr.classList.remove('is-open'); setExpanded(pr,false);} detail.style.maxHeight='0px'; panelInert(true); openSlug=null; var ob=openerBtn; openerBtn=null; if(restore!==false&&ob&&document.contains(ob)) ob.focus(); }
   function openDetail(slug){
     if(openSlug===slug){ closeDetail(); return; }
     var card=g.querySelector('.lp-card[data-slug="'+slug+'"]'); if(!card) return;
+    openerBtn=card.querySelector('.lp-card__more')||null;
     if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op){op.classList.remove('is-open'); setExpanded(op,false);} }
     var a=ARTBY[slug];
     dImg.src='assets/cloud/artists-bw/'+(a.img||slug)+'.jpg'; dImg.alt=a.name;
@@ -2942,7 +2944,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   }
   detail.querySelector('.lp-detail__x').addEventListener('click',closeDetail);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetail();});
-  var rt, lastW=window.innerWidth; window.addEventListener('resize',function(){ if(window.innerWidth===lastW)return; lastW=window.innerWidth; if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(); openDetail(sg); },160); });
+  var rt, lastW=window.innerWidth; window.addEventListener('resize',function(){ if(window.innerWidth===lastW)return; lastW=window.innerWidth; if(!openSlug)return; clearTimeout(rt); rt=setTimeout(function(){ var sg=openSlug; closeDetail(false); openDetail(sg); },160); });
   function trig(el){ var card=el.closest('.lp-card'); if(card) openDetail(card.getAttribute('data-slug')); }
   document.querySelectorAll('.lp-card__more').forEach(function(b){ if(g.contains(b)){ b.setAttribute('aria-expanded','false'); b.setAttribute('aria-controls','lpDetail'); } b.addEventListener('click',function(){trig(b);});});
   document.querySelectorAll('.lp-card__name').forEach(function(n){n.style.cursor='pointer';n.addEventListener('click',function(){trig(n);});});
@@ -2997,12 +2999,13 @@ function setExpanded(card,on){var m=card&&card.querySelector(".lp-card__more");i
 panelInert(true);
 function whenHTML(a){return '<span class="w-dow">'+a.dow+'</span><span class="w-num" dir="ltr">'+a.date+'</span><span class="w-sep" aria-hidden="true">·</span><span class="w-time" dir="ltr">'+a.time+'</span>';}
 function rowLast(card){var cards=Array.prototype.slice.call(wg.querySelectorAll(".lp-card"));var top=card.offsetTop,last=card;for(var i=0;i<cards.length;i++){if(Math.abs(cards[i].offsetTop-top)<6)last=cards[i];}return last;}
-function closeDetail(){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr){pr.classList.remove("is-open");setExpanded(pr,false);}detail.style.maxHeight="0px";panelInert(true);openSlug=null;}
-function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op){op.classList.remove("is-open");setExpanded(op,false);}}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"EVENT ENDED":"SOLD OUT";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="TICKETS";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;setExpanded(card,true);panelInert(false);detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
+var openerBtn=null;
+function closeDetail(restore){if(!openSlug)return;var pr=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(pr){pr.classList.remove("is-open");setExpanded(pr,false);}detail.style.maxHeight="0px";panelInert(true);openSlug=null;var ob=openerBtn;openerBtn=null;if(restore!==false&&ob&&document.contains(ob))ob.focus();}
+function openDetail(slug){if(openSlug===slug){closeDetail();return;}var card=wg.querySelector('.lp-card[data-slug="'+slug+'"]');if(!card)return;openerBtn=card.querySelector(".lp-card__more")||null;if(openSlug){var op=wg.querySelector('.lp-card[data-slug="'+openSlug+'"]');if(op){op.classList.remove("is-open");setExpanded(op,false);}}var a=WSBY[slug];dImg.src="assets/cloud/artists-bw/"+slug+".jpg";dImg.alt=a.name;dName.textContent=a.name;dWhen.innerHTML=whenHTML(a);dBio.innerHTML="";(BIO[slug]||[]).forEach(function(t){var pp=document.createElement("p");pp.textContent=t;dBio.appendChild(pp);});var sBtn=card.querySelector(".lp-card__btn");var soldCard=!!(card.querySelector(".lp-soldout")||(sBtn&&sBtn.classList.contains("lp-card__btn--sold")));var endedCard=!!(sBtn&&sBtn.classList.contains("lp-card__btn--ended"));dBtn.classList.toggle("--sold",soldCard&&!endedCard);dBtn.classList.toggle("--ended",endedCard);if(soldCard||endedCard){dBtn.removeAttribute("href");dBtn.setAttribute("aria-disabled","true");dBtn.textContent=endedCard?"EVENT ENDED":"SOLD OUT";}else{dBtn.href=a.url;dBtn.removeAttribute("aria-disabled");dBtn.textContent="TICKETS";}wg.insertBefore(detail,rowLast(card).nextSibling);card.classList.add("is-open");openSlug=slug;setExpanded(card,true);panelInert(false);detail.style.maxHeight="0px";requestAnimationFrame(function(){detail.style.maxHeight=detail.scrollHeight+"px";});setTimeout(function(){if(openSlug===slug)detail.scrollIntoView({behavior:"smooth",block:"nearest"});},140);}
 detail.querySelector(".lp-detail__x").addEventListener("click",closeDetail);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
 wg.querySelectorAll(".lp-card__more").forEach(function(b){b.setAttribute("aria-expanded","false");b.setAttribute("aria-controls","wsDetail");b.addEventListener("click",function(){var card=b.closest(".lp-card");if(card)openDetail(card.getAttribute("data-slug"));});});
-var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail();openDetail(sg);},160);});
+var rt,lastW=window.innerWidth;window.addEventListener("resize",function(){if(window.innerWidth===lastW)return;lastW=window.innerWidth;if(!openSlug)return;clearTimeout(rt);rt=setTimeout(function(){var sg=openSlug;closeDetail(false);openDetail(sg);},160);});
 })();
 </script>
 
