@@ -229,8 +229,8 @@
    "dow": "ראשון",
    "time": "19:30",
    "iso": "2026-09-27 19:30",
-   "state": "open",
-   "left": 31,
+   "state": "sold",
+   "left": 0,
    "eventer": "3vy2f",
    "evening_sold": false
   },
