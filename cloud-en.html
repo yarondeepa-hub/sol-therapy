@@ -2869,7 +2869,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     var endedCard=!!(sBtn&&sBtn.classList.contains('lp-card__btn--ended'));
     dBtn.classList.toggle('--sold',soldCard&&!endedCard);
     dBtn.classList.toggle('--ended',endedCard);
-    if(soldCard||endedCard){ var alt=null; if(soldCard&&!endedCard&&typeof ROUNDB!=='undefined'){ var sib=null; ROUNDB.forEach(function(r){ if(r.base===slug) sib=r.slug; else if(r.slug===slug) sib=r.base; }); var sc=sib?g.querySelector('.lp-card[data-slug="'+sib+'"]'):null; if(sc){ var sb=sc.querySelector('.lp-card__btn'); var sSold=!!(sc.querySelector('.lp-soldout')||(sb&&(sb.classList.contains('lp-card__btn--sold')||sb.classList.contains('lp-card__btn--ended')))); if(!sSold&&ARTBY[sib]&&ARTBY[sib].url) alt=ARTBY[sib]; } } if(alt){ dBtn.classList.remove('--sold'); dBtn.href=alt.url; dBtn.removeAttribute('aria-disabled'); dBtn.textContent='TICKETS FOR THE '+(alt.time||'20:30')+' ROUND'; if(typeof track==='function') track('sold_alt_shown',{artist_name:a.name,from_session:(a.date||'')+' '+(a.time||'20:30'),to_session:(alt.date||'')+' '+(alt.time||'20:30')}); } else { dBtn.removeAttribute('href'); dBtn.setAttribute('aria-disabled','true'); dBtn.textContent=endedCard?'EVENT ENDED':'SOLD OUT'; } }
+    if(soldCard||endedCard){ dBtn.removeAttribute('href'); dBtn.setAttribute('aria-disabled','true'); dBtn.textContent=endedCard?'EVENT ENDED':'SOLD OUT'; }
     else{ dBtn.href=a.url; dBtn.removeAttribute('aria-disabled'); dBtn.textContent='TICKETS'; }
     dLive.classList.toggle('on', false);
     g.insertBefore(detail, rowLast(card).nextSibling);
