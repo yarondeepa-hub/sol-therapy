@@ -482,6 +482,17 @@
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
+  },
+  "brain-sister-oct": {
+   "name": "המדריך לטרמפיסט במוזיקה הקלאסית",
+   "date": "11.10",
+   "dow": "ראשון",
+   "time": "19:30",
+   "iso": "2026-10-11 19:30",
+   "state": "open",
+   "left": 115,
+   "eventer": "fa92f",
+   "evening_sold": false
   }
  }
 }
