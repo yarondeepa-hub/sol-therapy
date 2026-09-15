@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-15 16:39",
- "source_asof": "2026-09-15 15:01",
+ "generated": "2026-09-15 20:56",
+ "source_asof": "2026-09-15 19:31",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -180,7 +180,7 @@
    "iso": "2026-09-19 17:00",
    "state": "open",
    "left": 419,
-   "eventer": "8b72f",
+   "eventer": "בוטל 15.9 (ירון); הוסר מהאתר 13.9",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
   },
@@ -349,7 +349,7 @@
    "time": "18:30",
    "iso": "2026-09-15 18:30",
    "state": "open",
-   "left": 34,
+   "left": 29,
    "eventer": "zkc2f",
    "main_slug": "raz-sep",
    "evening_sold": false,
@@ -576,7 +576,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 100,
+   "left": 99,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -640,7 +640,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 91,
+   "left": 89,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
@@ -671,7 +671,7 @@
    "time": "19:30",
    "iso": "2026-10-11 19:30",
    "state": "open",
-   "left": 115,
+   "left": 80,
    "eventer": "fa92f",
    "evening_sold": false,
    "evening_open_slug": "brain-sister-oct"
