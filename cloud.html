@@ -57,10 +57,10 @@
               set('utm_term',attr.utm_term);
               var solPage=/(^|\/)share\//.test(location.pathname)?'share':(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'');
               if(!solPage||solPage==='index') solPage='home'; else if(solPage==='cloud-card') solPage='card';
-              set('utm_content',solPage);
+              set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug);
+              set('ref',slug); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
@@ -99,51 +99,13 @@
 
     <!-- Structured Data: Event -->
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "CLOUD SPACE - מרחב נשימה אורבני מבית סול תרפי", "description": "פופ אפ מדיטציית סאונד עמוקה מבית סול תרפי. מפגשי מדיטציה עם מיטב האמנים בישראל, יולי-דצמבר 2026.", "startDate": "2026-07-01", "endDate": "2026-12-31", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "CLOUD SPACE", "address": {"@type": "PostalAddress", "streetAddress": "שוקן 27, קרית המלאכה", "addressLocality": "Tel Aviv", "addressCountry": "IL"}}, "organizer": {"@type": "Organization", "name": "Sol Therapy", "url": "https://sol-therapy.com"}, "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg", "offers": {"@type": "Offer", "price": "135", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "url": "https://sol-therapy.com/cloud", "validFrom": "2026-06-01"}, "performer": [{"@type": "Person", "name": "אסטרל פרוג'קשן"}, {"@type": "Person", "name": "יחזקאל רז"}, {"@type": "Person", "name": "דרוויש"}, {"@type": "Person", "name": "ספי ציזלינג"}, {"@type": "Person", "name": "קארין קימל"}, {"@type": "Person", "name": "שוזין"}, {"@type": "Person", "name": "אייל תלמודי"}, {"@type": "Person", "name": "עמרי סמדר"}, {"@type": "Person", "name": "אסף אמדורסקי"}, {"@type": "Person", "name": "יוסי פיין"}, {"@type": "Person", "name": "יונתן דסקל"}, {"@type": "Person", "name": "אנה הלטה"}, {"@type": "Person", "name": "שי בן צור"}, {"@type": "Person", "name": "לאבה דום"}, {"@type": "Person", "name": "גורוביץ"}, {"@type": "Person", "name": "רן סלוין"}, {"@type": "Person", "name": "נועה ארגוב"}, {"@type": "Person", "name": "אסף תלמודי"}, {"@type": "Person", "name": "איתי צור"}, {"@type": "Person", "name": "אקו"}, {"@type": "Person", "name": "אבישי כהן"}, {"@type": "Person", "name": "יותם אבני"}, {"@type": "Person", "name": "עופר דיקובסקי"}, {"@type": "Person", "name": "עטר מיינר"}, {"@type": "Person", "name": "עמיחי מטיאס"}, {"@type": "Person", "name": "ניתאי הרשקוביץ"}, {"@type": "Person", "name": "מאיה דוניץ"}, {"@type": "Person", "name": "גיל (ראסטה) בונשטיין"}, {"@type": "Person", "name": "ירון טראקס ושי פניני"}, {"@type": "Person", "name": "קפיטן"}, {"@type": "Person", "name": "יצחק ונטורה"}, {"@type": "Person", "name": "בליס"}, {"@type": "Person", "name": "מארק אליהו"}, {"@type": "Person", "name": "פרידום פייטרס"}, {"@type": "Person", "name": "אסף אמדורסקי"}, {"@type": "Person", "name": "רדיו טריפ"}]}</script>
-<script type="application/ld+json">[
+<script type="application/ld+json">
+[
  {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  "name": "יחזקאל רז - מדיטציית סאונד ב-CLOUD SPACE",
-  "description": "יחזקאל רז בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-09-15T20:30:00+03:00",
-  "endDate": "2026-09-15T22:00:00+03:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-   "@type": "Place",
-   "name": "CLOUD SPACE",
-   "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "שוקן 27, קרית המלאכה",
-    "addressLocality": "תל אביב",
-    "addressCountry": "IL"
-   }
-  },
-  "performer": {
-   "@type": "Person",
-   "name": "יחזקאל רז"
-  },
-  "organizer": {
-   "@type": "Organization",
-   "name": "Sol Therapy",
-   "url": "https://sol-therapy.com"
-  },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
-  "url": "https://sol-therapy.com/share/raz-sep.html",
-  "offers": {
-   "@type": "Offer",
-   "priceCurrency": "ILS",
-   "price": "135",
-   "availability": "https://schema.org/SoldOut",
-   "url": "https://www.eventer.co.il/98f2f",
-   "validFrom": "2026-08-01"
-  }
- },
- {
-  "@context": "https://schema.org",
-  "@type": "MusicEvent",
-  "name": "יחזקאל רז - מדיטציית סאונד ב-CLOUD SPACE - סבב מוקדם 18:30",
-  "description": "יחזקאל רז בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
+  "name": "יחזקאל רז - מדיטציה לפסנתר ב-CLOUD SPACE - סבב מוקדם 18:30",
+  "description": "יחזקאל רז בקלאוד ספייס, שוקן 27 תל אביב - מדיטציה לפסנתר מבית סול תרפי.",
   "startDate": "2026-09-15T18:30:00+03:00",
   "endDate": "2026-09-15T20:00:00+03:00",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -167,7 +129,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-raz-sep.jpg",
   "url": "https://sol-therapy.com/share/raz-sep.html",
   "offers": {
    "@type": "Offer",
@@ -175,6 +137,45 @@
    "price": "135",
    "availability": "https://schema.org/LimitedAvailability",
    "url": "https://www.eventer.co.il/zkc2f",
+   "validFrom": "2026-08-01"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "יחזקאל רז - מדיטציה לפסנתר ב-CLOUD SPACE",
+  "description": "יחזקאל רז בקלאוד ספייס, שוקן 27 תל אביב - מדיטציה לפסנתר מבית סול תרפי.",
+  "startDate": "2026-09-15T20:30:00+03:00",
+  "endDate": "2026-09-15T22:00:00+03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+   "@type": "Place",
+   "name": "CLOUD SPACE",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "שוקן 27, קרית המלאכה",
+    "addressLocality": "תל אביב",
+    "addressCountry": "IL"
+   }
+  },
+  "performer": {
+   "@type": "Person",
+   "name": "יחזקאל רז"
+  },
+  "organizer": {
+   "@type": "Organization",
+   "name": "Sol Therapy",
+   "url": "https://sol-therapy.com"
+  },
+  "image": "https://sol-therapy.com/assets/cloud/share/og-raz-sep.jpg",
+  "url": "https://sol-therapy.com/share/raz-sep.html",
+  "offers": {
+   "@type": "Offer",
+   "priceCurrency": "ILS",
+   "price": "135",
+   "availability": "https://schema.org/SoldOut",
+   "url": "https://www.eventer.co.il/98f2f",
    "validFrom": "2026-08-01"
   }
  },
@@ -206,13 +207,13 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/dori-sadovnik.jpg",
   "url": "https://sol-therapy.com/share/dori-sadovnik.html",
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
    "price": "135",
-   "availability": "https://schema.org/LimitedAvailability",
+   "availability": "https://schema.org/SoldOut",
    "url": "https://www.eventer.co.il/nkr2f",
    "validFrom": "2026-08-01"
   }
@@ -245,7 +246,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-yitzhak-ventura.jpg",
   "url": "https://sol-therapy.com/share/yitzhak-ventura.html",
   "offers": {
    "@type": "Offer",
@@ -254,45 +255,6 @@
    "availability": "https://schema.org/InStock",
    "url": "https://www.eventer.co.il/tkr2f",
    "validFrom": "2026-08-01"
-  }
- },
- {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "המדריך לטרמפיסט במוזיקה הקלאסית ב-CLOUD SPACE",
-  "description": "המדריך לטרמפיסט במוזיקה הקלאסית בקלאוד ספייס, שוקן 27 תל אביב - הרצאה ומדיטציית סאונד עם צ'לו לייב מבית סול תרפי, עם מיכל דוברובינסקי (הבריין סיסטר) ואורי שיניצקי.",
-  "startDate": "2026-09-27T19:30:00+03:00",
-  "endDate": "2026-09-27T21:30:00+03:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-   "@type": "Place",
-   "name": "CLOUD SPACE",
-   "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "שוקן 27, קרית המלאכה",
-    "addressLocality": "תל אביב",
-    "addressCountry": "IL"
-   }
-  },
-  "performer": {
-   "@type": "PerformingGroup",
-   "name": "מיכל דוברובינסקי ואורי שיניצקי"
-  },
-  "organizer": {
-   "@type": "Organization",
-   "name": "Sol Therapy",
-   "url": "https://sol-therapy.com"
-  },
-  "image": "https://sol-therapy.com/assets/cloud/share/og-brain-sister.jpg",
-  "url": "https://sol-therapy.com/share/brain-sister.html",
-  "offers": {
-   "@type": "Offer",
-   "priceCurrency": "ILS",
-   "price": "135",
-   "availability": "https://schema.org/InStock",
-   "url": "https://www.eventer.co.il/3vy2f",
-   "validFrom": "2026-09-10"
   }
  },
  {
@@ -323,7 +285,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/bliss.jpg",
   "url": "https://sol-therapy.com/share/bliss.html",
   "offers": {
    "@type": "Offer",
@@ -331,45 +293,6 @@
    "price": "135",
    "availability": "https://schema.org/LimitedAvailability",
    "url": "https://www.eventer.co.il/3kr2f",
-   "validFrom": "2026-08-01"
-  }
- },
- {
-  "@context": "https://schema.org",
-  "@type": "MusicEvent",
-  "name": "מארק אליהו - מדיטציית סאונד ב-CLOUD SPACE",
-  "description": "מארק אליהו בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-09-23T20:30:00+03:00",
-  "endDate": "2026-09-23T22:00:00+03:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-   "@type": "Place",
-   "name": "CLOUD SPACE",
-   "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "שוקן 27, קרית המלאכה",
-    "addressLocality": "תל אביב",
-    "addressCountry": "IL"
-   }
-  },
-  "performer": {
-   "@type": "Person",
-   "name": "מארק אליהו"
-  },
-  "organizer": {
-   "@type": "Organization",
-   "name": "Sol Therapy",
-   "url": "https://sol-therapy.com"
-  },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
-  "url": "https://sol-therapy.com/share/mark-eliyahu.html",
-  "offers": {
-   "@type": "Offer",
-   "priceCurrency": "ILS",
-   "price": "135",
-   "availability": "https://schema.org/SoldOut",
-   "url": "https://www.eventer.co.il/7kr2f",
    "validFrom": "2026-08-01"
   }
  },
@@ -401,7 +324,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/mark-eliyahu.jpg",
   "url": "https://sol-therapy.com/share/mark-eliyahu.html",
   "offers": {
    "@type": "Offer",
@@ -415,10 +338,10 @@
  {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  "name": "פרידום פייטרס - מדיטציית סאונד ב-CLOUD SPACE",
-  "description": "פרידום פייטרס בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-09-24T20:30:00+03:00",
-  "endDate": "2026-09-24T22:00:00+03:00",
+  "name": "מארק אליהו - מדיטציית סאונד ב-CLOUD SPACE",
+  "description": "מארק אליהו בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
+  "startDate": "2026-09-23T20:30:00+03:00",
+  "endDate": "2026-09-23T22:00:00+03:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -433,21 +356,21 @@
   },
   "performer": {
    "@type": "Person",
-   "name": "פרידום פייטרס"
+   "name": "מארק אליהו"
   },
   "organizer": {
    "@type": "Organization",
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
-  "url": "https://sol-therapy.com/share/freedom-fighters.html",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/mark-eliyahu.jpg",
+  "url": "https://sol-therapy.com/share/mark-eliyahu.html",
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
    "price": "135",
    "availability": "https://schema.org/SoldOut",
-   "url": "https://www.eventer.co.il/fkr2f",
+   "url": "https://www.eventer.co.il/7kr2f",
    "validFrom": "2026-08-01"
   }
  },
@@ -479,13 +402,13 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/freedom-fighters.jpg",
   "url": "https://sol-therapy.com/share/freedom-fighters.html",
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
    "price": "135",
-   "availability": "https://schema.org/InStock",
+   "availability": "https://schema.org/LimitedAvailability",
    "url": "https://www.eventer.co.il/tb22f",
    "validFrom": "2026-08-01"
   }
@@ -493,10 +416,10 @@
  {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  "name": "אסף אמדורסקי - מדיטציית סאונד ב-CLOUD SPACE",
-  "description": "אסף אמדורסקי בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
-  "startDate": "2026-09-29T20:30:00+03:00",
-  "endDate": "2026-09-29T22:00:00+03:00",
+  "name": "פרידום פייטרס - מדיטציית סאונד ב-CLOUD SPACE",
+  "description": "פרידום פייטרס בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
+  "startDate": "2026-09-24T20:30:00+03:00",
+  "endDate": "2026-09-24T22:00:00+03:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -511,21 +434,60 @@
   },
   "performer": {
    "@type": "Person",
-   "name": "אסף אמדורסקי"
+   "name": "פרידום פייטרס"
   },
   "organizer": {
    "@type": "Organization",
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
-  "url": "https://sol-therapy.com/share/amdursky-sep.html",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/freedom-fighters.jpg",
+  "url": "https://sol-therapy.com/share/freedom-fighters.html",
   "offers": {
    "@type": "Offer",
    "priceCurrency": "ILS",
    "price": "135",
    "availability": "https://schema.org/SoldOut",
-   "url": "https://www.eventer.co.il/x772f",
+   "url": "https://www.eventer.co.il/fkr2f",
+   "validFrom": "2026-08-01"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "המדריך לטרמפיסט במוזיקה הקלאסית - הרצאה ומדיטציית סאונד ב-CLOUD SPACE",
+  "description": "הבריין סיסטר (המדריך לטרמפיסט) בקלאוד ספייס, שוקן 27 תל אביב - הרצאה ומדיטציית סאונד מבית סול תרפי.",
+  "startDate": "2026-09-27T19:30:00+03:00",
+  "endDate": "2026-09-27T21:00:00+03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+   "@type": "Place",
+   "name": "CLOUD SPACE",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "שוקן 27, קרית המלאכה",
+    "addressLocality": "תל אביב",
+    "addressCountry": "IL"
+   }
+  },
+  "performer": {
+   "@type": "Person",
+   "name": "הבריין סיסטר (המדריך לטרמפיסט)"
+  },
+  "organizer": {
+   "@type": "Organization",
+   "name": "Sol Therapy",
+   "url": "https://sol-therapy.com"
+  },
+  "image": "https://sol-therapy.com/assets/cloud/share/og-brain-sister.jpg",
+  "url": "https://sol-therapy.com/share/brain-sister.html",
+  "offers": {
+   "@type": "Offer",
+   "priceCurrency": "ILS",
+   "price": "135",
+   "availability": "https://schema.org/SoldOut",
+   "url": "https://www.eventer.co.il/3vy2f",
    "validFrom": "2026-08-01"
   }
  },
@@ -557,7 +519,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/amdursky.jpg",
   "url": "https://sol-therapy.com/share/amdursky-sep.html",
   "offers": {
    "@type": "Offer",
@@ -565,6 +527,45 @@
    "price": "135",
    "availability": "https://schema.org/SoldOut",
    "url": "https://www.eventer.co.il/j8f2f",
+   "validFrom": "2026-08-01"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "אסף אמדורסקי - מדיטציית סאונד ב-CLOUD SPACE",
+  "description": "אסף אמדורסקי בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
+  "startDate": "2026-09-29T20:30:00+03:00",
+  "endDate": "2026-09-29T22:00:00+03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+   "@type": "Place",
+   "name": "CLOUD SPACE",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "שוקן 27, קרית המלאכה",
+    "addressLocality": "תל אביב",
+    "addressCountry": "IL"
+   }
+  },
+  "performer": {
+   "@type": "Person",
+   "name": "אסף אמדורסקי"
+  },
+  "organizer": {
+   "@type": "Organization",
+   "name": "Sol Therapy",
+   "url": "https://sol-therapy.com"
+  },
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/amdursky.jpg",
+  "url": "https://sol-therapy.com/share/amdursky-sep.html",
+  "offers": {
+   "@type": "Offer",
+   "priceCurrency": "ILS",
+   "price": "135",
+   "availability": "https://schema.org/SoldOut",
+   "url": "https://www.eventer.co.il/x772f",
    "validFrom": "2026-08-01"
   }
  },
@@ -596,7 +597,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/artists-bw/radio-trip.jpg",
   "url": "https://sol-therapy.com/share/radio-trip.html",
   "offers": {
    "@type": "Offer",
@@ -635,7 +636,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-avishai-cohen-oct.jpg",
   "url": "https://sol-therapy.com/share/avishai-cohen-oct.html",
   "offers": {
    "@type": "Offer",
@@ -674,7 +675,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-noa-argov-oct.jpg",
   "url": "https://sol-therapy.com/share/noa-argov-oct.html",
   "offers": {
    "@type": "Offer",
@@ -713,7 +714,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-fine-oct.jpg",
   "url": "https://sol-therapy.com/share/fine-oct.html",
   "offers": {
    "@type": "Offer",
@@ -752,7 +753,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-itay-tzur-oct.jpg",
   "url": "https://sol-therapy.com/share/itay-tzur-oct.html",
   "offers": {
    "@type": "Offer",
@@ -766,8 +767,8 @@
  {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  "name": "אסף תלמודי - מדיטציית סאונד ב-CLOUD SPACE",
-  "description": "אסף תלמודי בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
+  "name": "אסף תלמודי - מדיטציה לפסנתר ב-CLOUD SPACE",
+  "description": "אסף תלמודי בקלאוד ספייס, שוקן 27 תל אביב - מדיטציה לפסנתר מבית סול תרפי.",
   "startDate": "2026-10-08T20:30:00+03:00",
   "endDate": "2026-10-08T22:00:00+03:00",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -791,7 +792,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-asaf-talmudi-oct.jpg",
   "url": "https://sol-therapy.com/share/asaf-talmudi-oct.html",
   "offers": {
    "@type": "Offer",
@@ -830,7 +831,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-ran-slavin-oct.jpg",
   "url": "https://sol-therapy.com/share/ran-slavin-oct.html",
   "offers": {
    "@type": "Offer",
@@ -869,7 +870,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-astral-oct.jpg",
   "url": "https://sol-therapy.com/share/astral-oct.html",
   "offers": {
    "@type": "Offer",
@@ -883,7 +884,7 @@
  {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  "name": "ריג'ויסר - מדיטציית סאונד ב-CLOUD SPACE",
+  "name": "ריג'ויסר - לייב - מדיטציית סאונד ב-CLOUD SPACE",
   "description": "ריג'ויסר בקלאוד ספייס, שוקן 27 תל אביב - מדיטציית סאונד עמוקה בשכיבה מבית סול תרפי.",
   "startDate": "2026-10-13T20:30:00+03:00",
   "endDate": "2026-10-13T22:00:00+03:00",
@@ -908,7 +909,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-rejoicer-oct.jpg",
   "url": "https://sol-therapy.com/share/rejoicer-oct.html",
   "offers": {
    "@type": "Offer",
@@ -947,7 +948,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-gorovich-oct.jpg",
   "url": "https://sol-therapy.com/share/gorovich-oct.html",
   "offers": {
    "@type": "Offer",
@@ -986,7 +987,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-noa-argov-oct-16.jpg",
   "url": "https://sol-therapy.com/share/noa-argov-oct-16.html",
   "offers": {
    "@type": "Offer",
@@ -1025,7 +1026,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-shira-kela-oct.jpg",
   "url": "https://sol-therapy.com/share/shira-kela-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1064,7 +1065,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-zisling-oct.jpg",
   "url": "https://sol-therapy.com/share/zisling-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1103,7 +1104,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-haleta-oct.jpg",
   "url": "https://sol-therapy.com/share/haleta-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1142,7 +1143,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-raz-oct.jpg",
   "url": "https://sol-therapy.com/share/raz-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1181,7 +1182,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-ran-slavin-oct-23.jpg",
   "url": "https://sol-therapy.com/share/ran-slavin-oct-23.html",
   "offers": {
    "@type": "Offer",
@@ -1220,7 +1221,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-echo-oct.jpg",
   "url": "https://sol-therapy.com/share/echo-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1259,7 +1260,7 @@
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/cloud-poster-oct-full.jpg",
+  "image": "https://sol-therapy.com/assets/cloud/share/og-hadas-kleinman-oct.jpg",
   "url": "https://sol-therapy.com/share/hadas-kleinman-oct.html",
   "offers": {
    "@type": "Offer",
@@ -1296,26 +1297,26 @@
    {
     "@type": "ListItem",
     "position": 4,
-    "name": "המדריך לטרמפיסט במוזיקה הקלאסית",
-    "url": "https://sol-therapy.com/share/brain-sister.html"
-   },
-   {
-    "@type": "ListItem",
-    "position": 5,
     "name": "בליס",
     "url": "https://sol-therapy.com/share/bliss.html"
    },
    {
     "@type": "ListItem",
-    "position": 6,
+    "position": 5,
     "name": "מארק אליהו",
     "url": "https://sol-therapy.com/share/mark-eliyahu.html"
    },
    {
     "@type": "ListItem",
-    "position": 7,
+    "position": 6,
     "name": "פרידום פייטרס",
     "url": "https://sol-therapy.com/share/freedom-fighters.html"
+   },
+   {
+    "@type": "ListItem",
+    "position": 7,
+    "name": "הבריין סיסטר (המדריך לטרמפיסט)",
+    "url": "https://sol-therapy.com/share/brain-sister.html"
    },
    {
     "@type": "ListItem",
@@ -1433,7 +1434,8 @@
    }
   ]
  }
-]</script>
+]
+</script>
 
     <!-- Structured Data: ItemList (upcoming session pages) -->
     

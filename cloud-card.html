@@ -58,10 +58,10 @@
               set('utm_term',attr.utm_term);
               var solPage=/(^|\/)share\//.test(location.pathname)?'share':(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'');
               if(!solPage||solPage==='index') solPage='home'; else if(solPage==='cloud-card') solPage='card';
-              set('utm_content',solPage);
+              set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug);
+              set('ref',slug); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}

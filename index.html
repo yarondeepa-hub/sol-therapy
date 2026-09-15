@@ -40,10 +40,10 @@
               set('utm_term',attr.utm_term);
               var solPage=/(^|\/)share\//.test(location.pathname)?'share':(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'');
               if(!solPage||solPage==='index') solPage='home'; else if(solPage==='cloud-card') solPage='card';
-              set('utm_content',solPage);
+              set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug);
+              set('ref',slug); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
@@ -170,7 +170,7 @@
         "description": "מדיטציית סאונד בהשתתפות עמיחי מטיאס. סטודיו אורה, מרכז סוזן דלל, נווה צדק.",
         "startDate": "2026-04-16T18:00:00+03:00",
         "endDate": "2026-04-16T21:00:00+03:00",
-        "eventStatus": "https://schema.org/EventCompleted",
+        "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
             "@type": "Place",
