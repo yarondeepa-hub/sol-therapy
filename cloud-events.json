@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-15 13:54",
- "source_asof": "2026-09-15 11:32",
+ "generated": "2026-09-15 16:39",
+ "source_asof": "2026-09-15 15:01",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -252,7 +252,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 16,
+   "left": 14,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -333,7 +333,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 88,
+   "left": 86,
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
@@ -349,7 +349,7 @@
    "time": "18:30",
    "iso": "2026-09-15 18:30",
    "state": "open",
-   "left": 35,
+   "left": 34,
    "eventer": "zkc2f",
    "main_slug": "raz-sep",
    "evening_sold": false,
@@ -368,7 +368,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 91,
+   "left": 93,
    "eventer": "30b2f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-oct"
@@ -624,7 +624,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 109,
+   "left": 111,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -640,7 +640,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 93,
+   "left": 91,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
@@ -663,8 +663,8 @@
   "brain-sister-oct": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "unlisted",
-   "unlisted_reason": "הוסר מהאתר 14.9 (סבב שני, טרם הוכרע)",
+   "visibility": "listed",
+   "unlisted_reason": "",
    "name": "הבריין סיסטר 2.0",
    "date": "11.10",
    "dow": "ראשון",
@@ -672,7 +672,7 @@
    "iso": "2026-10-11 19:30",
    "state": "open",
    "left": 115,
-   "eventer": "",
+   "eventer": "fa92f",
    "evening_sold": false,
    "evening_open_slug": "brain-sister-oct"
   }
