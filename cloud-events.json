@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15 20:56",
+ "generated": "2026-09-15 23:01",
  "source_asof": "2026-09-15 19:31",
  "events": {
   "amichai-matias": {
@@ -172,7 +172,7 @@
    "event_status": "scheduled",
    "sale_status": "open",
    "visibility": "unlisted",
-   "unlisted_reason": "הוסר מהאתר 13.9 (מסיבת מפיק חיצוני, ממשיך להימכר באיוונטר)",
+   "unlisted_reason": "בוטל 15.9 (ירון); הוסר מהאתר 13.9",
    "name": "רק האוס - מסיבת לופט",
    "date": "19.9",
    "dow": "שבת",
@@ -180,7 +180,7 @@
    "iso": "2026-09-19 17:00",
    "state": "open",
    "left": 419,
-   "eventer": "בוטל 15.9 (ירון); הוסר מהאתר 13.9",
+   "eventer": "8b72f",
    "evening_sold": false,
    "evening_open_slug": "rak-house"
   },
