@@ -43,7 +43,7 @@
               set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,page_path:location.pathname}); } }catch(_g){}
+              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}

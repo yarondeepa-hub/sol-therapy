@@ -60,7 +60,7 @@
               set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,page_path:location.pathname}); } }catch(_g){}
+              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
@@ -74,7 +74,8 @@
     <meta name="description" content="יום ראשון 11.10 בשעה 19:30, שוקן 27 תל אביב. נארח את מיכל דוברובינסקי (הבריין סיסטר) ואורי שיניצקי, חוקרי מוח, להרצאה ומדיטציית סאונד עם צ'לו לייב.">
     <link rel="preconnect" href="https://www.eventer.co.il">
     <link rel="dns-prefetch" href="https://www.eventer.co.il">
-    <link rel="canonical" href="https://sol-therapy.com/share/brain-sister-oct.html">
+    <meta name="robots" content="noindex">
+<link rel="canonical" href="https://sol-therapy.com/share/brain-sister-oct.html">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <meta property="og:type" content="website">

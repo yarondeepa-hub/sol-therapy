@@ -130,7 +130,7 @@ fetch("cloud-events.json?v="+Date.now(),{cache:"no-store"}).then(function(r){ret
   DATA=d; EV=d.events[slug];
 
   // קישור לא מוכר או אירוע שעבר - נכשל סגור
-  if(!EV || EV.state==="past"){
+  if(!EV || EV.state==="past" || EV.visibility==="unlisted"){
     document.getElementById("evTitle").textContent="הקישור אינו פעיל";
     state("הקישור הזה אינו פעיל","או שהערב כבר התקיים, או שהכתובת שגויה.<br>כל הערבים הפתוחים מחכים בתוכניה.");
     return;

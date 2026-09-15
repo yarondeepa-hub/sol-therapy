@@ -95,7 +95,7 @@ for slug,e in events.items():
             if "--last" not in sh["flag"][1] or not ("סבב" in sh["flag"][2] and "מוקדם" in sh["flag"][2]): errors.append(f"{slug}: הדגל '{sh['flag'][2]}' - צריך '--last' עם 'סבב מוקדם'")
             if "--sold" in cta_cls or ecode not in cta_attrs: errors.append(f"{slug}: ה-CTA '{cta_txt}' לא מקושר לסבב המוקדם ({ecode})")
             if ecode not in sh["sticky"]: errors.append(f"{slug}: ה-sticky מקושר ל-{sh['sticky']} ולא לסבב המוקדם ({ecode})")
-            if sh["avail"]!="InStock" or sh["ld_url"]!=ecode: errors.append(f"{slug}: סכמה {sh['avail']} / url {sh['ld_url']} - צריך InStock + {ecode}")
+            if "SoldOut" in sh["avail"] or sh["ld_url"]!=ecode: errors.append(f"{slug}: סכמה {sh['avail']} / url {sh['ld_url']} - צריך זמינות פתוחה (InStock/LimitedAvailability) + {ecode}")
             bc=cards.get(slug+"-b") or cards.get(e["round_slug"])
             if not bc: errors.append(f"{slug}: אין כרטיס סבב מוקדם ב-cloud.html")
             elif bc["soldout"] or "sold" in bc["btn_cls"] or bc["btn_txt"]=="אזל": errors.append(f"{slug}-b: כרטיס הסבב המוקדם מוצג כאזל בעוד הסבב פתוח")
@@ -184,6 +184,7 @@ for fname in ("cloud.html","cloud-en.html"):
             if x.get("@type") in ("Event","MusicEvent") and x.get("offers"): urls.add(x["offers"].get("url","")[-5:])
             if x.get("@type") in ("Event","MusicEvent") and x.get("startDate","")[:10] < _today and x.get("startDate","")!="2026-07-01": errors.append(f"{fname}: JSON-LD עם אירוע שעבר {x.get('name','')[:30]} ({x.get('startDate','')[:10]})")
     for slug,e in events.items():
+        if e.get("visibility")=="unlisted": continue
         if e.get("eventer") and e.get("iso","")[:10]>=_today and e["eventer"] not in urls: errors.append(f"{fname}: JSON-LD חסר אירוע {slug} ({e['eventer']}) - להריץ cloud-jsonld-build.py")
 
 # 8. תמונות הדרופדאון: לכל ערך img ב-ART וב-ROUNDB (בפועל: חילוץ מה-HTML), הקובץ assets/cloud/artists-bw/<img>.jpg קיים
@@ -324,6 +325,52 @@ for _f in sorted(set(_scan)):
             warns.append(f"{_f}: תאריך שעבר {_dd}.{_mm}.{_yy} ליד קישור הרשמה/רכישה - עמוד חי מקדם אירוע שחלף? (QA-04)")
 
 src="האתר החי" if live else "העותק המקומי"
+
+# 12. (15.9.2026, אחרי ביקורת יועץ) סכמת עמוד השיתוף מול הכרטיסים - לפי קוד איוונטר, לא לפי שם:
+#     לכל Offer בעמוד שיתוח עתידי: שעת האירוע = שעת הכרטיס שנושא את הקוד; זמינות = תווית הכרטיס; מחיר 135 (מסיבה 70).
+_cards_by_code={}
+_h=read("cloud.html") or ""
+for m in re.finditer(r'<article class="lp-card"[^>]*data-slug="([^"]+)"',_h):
+    b=_h[m.start():_h.find("</article>",m.start())]
+    code=(re.search(r'class="lp-card__btn[^"]*"[^>]*href="https://www.eventer.co.il/(\w+)"',b) or [None,""])[1]
+    t=(re.search(r'class="w-time"[^>]*>([^<]+)<',b) or [None,""])[1]
+    sold=("lp-soldout" in b) or ("lp-card__btn--sold" in b)
+    combo=re.search(r'class="lp-flagcombo[^"]*"[^>]*>(.*?)</span>',b,re.S)
+    last=("lp-lastseats" in b) or bool(combo and "אחרון" in combo.group(1))
+    if code: _cards_by_code[code]={"slug":m.group(1),"time":t.strip(),"av":"SoldOut" if sold else ("LimitedAvailability" if last else "InStock")}
+_share_dir=os.path.join(LOCAL,"share") if not live else None
+_share_files=sorted(os.listdir(_share_dir)) if _share_dir and os.path.isdir(_share_dir) else [f"{slug}.html" for slug in events]
+for fn in _share_files:
+    if not fn.endswith(".html") or fn.startswith("_"): continue
+    sh=read("share/"+fn) or ""
+    mb=re.search(r'<body data-state="(\w+)" data-event-date="([^"]+)"',sh)
+    if not mb or mb.group(2)<_today: continue
+    for blk in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>',sh,re.S):
+        try: d=json.loads(blk)
+        except Exception: errors.append(f"share/{fn}: JSON-LD לא תקין"); continue
+        items=d.get("@graph") if isinstance(d,dict) and "@graph" in d else (d if isinstance(d,list) else [d])
+        for x in items:
+            if not isinstance(x,dict) or x.get("@type") not in ("Event","MusicEvent"): continue
+            offs=x.get("offers") or []
+            offs=offs if isinstance(offs,list) else [offs]
+            for o in offs:
+                code=str(o.get("url",""))[-5:]; c=_cards_by_code.get(code)
+                if not c: warns.append(f"share/{fn}: קוד {code} בסכמה בלי כרטיס ב-cloud.html"); continue
+                st=str(x.get("startDate",""))[11:16]
+                if st and c["time"] and st!=c["time"]: errors.append(f"share/{fn}: ההצעה {code} תחת אירוע שמתחיל ב-{st} אבל הכרטיס ({c['slug']}) בשעה {c['time']}")
+                av=str(o.get("availability","")).split("/")[-1]
+                if av!=c["av"]: errors.append(f"share/{fn}: זמינות {av} להצעה {code} אבל הכרטיס ({c['slug']}) אומר {c['av']}")
+                price=str(o.get("price","")); exp="70" if "rak-house" in fn else "135"
+                if price and price!=exp: errors.append(f"share/{fn}: מחיר {price} להצעה {code} (צפוי {exp})")
+# 13. גיל מקור המלאי: סנאפשוט ישן מ-12 שעות = אזהרה (הבדיקה מצליבה מול מקור שהתיישן)
+try:
+    import datetime as _dt
+    _asof=json.load(open(SNAP)).get("asof","") if os.path.exists(SNAP) else ""
+    if _asof:
+        _age=(_dt.datetime.now()-_dt.datetime.strptime(_asof,"%Y-%m-%d %H:%M")).total_seconds()/3600
+        if _age>12: warns.append(f"סנאפשוט איוונטר בן {_age:.0f} שעות ({_asof}) - למשוך מחדש לפני שמסתמכים על ההצלבה")
+except Exception: pass
+
 print(f"בדיקת עקביות קלאוד ({src}): {len(events)} אירועים ב-json, {len(cards)} כרטיסים")
 for x in errors: print("  שגיאה:",x)
 for x in warns: print("  אזהרה:",x)
