@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10 15:23",
+ "generated": "2026-09-15 08:20",
  "source_asof": "2026-09-10 15:22",
  "events": {
   "amichai-matias": {
@@ -198,7 +198,7 @@
    "time": "18:30",
    "iso": "2026-09-24 18:30",
    "state": "open",
-   "left": 10,
+   "left": 20,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
    "evening_sold": false,
@@ -212,8 +212,8 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-09-24 20:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "fkr2f",
    "round_slug": "freedom-fighters-early",
    "round_state": "open",
