@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15 09:49",
+ "generated": "2026-09-15 10:18",
  "source_asof": "2026-09-15 08:07",
  "events": {
   "amichai-matias": {
@@ -107,25 +107,27 @@
    "evening_sold": false,
    "sib_slug": "shai-ben-tzur-early",
    "sib_time": "18:30",
-   "alts": []
+   "alts": [
+    "raz-sep"
+   ]
   },
   "raz-sep": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "name": "יחזקאל רז",
    "date": "15.9",
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-09-15 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 1,
    "eventer": "98f2f",
    "round_slug": "raz-sep-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "raz-sep-early",
+   "evening_open_slug": "raz-sep",
    "sib_slug": "raz-sep-early",
    "sib_time": "18:30"
   },
