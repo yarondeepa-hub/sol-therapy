@@ -226,7 +226,7 @@ for _f in ("cloud.html","cloud-en.html"):
     _pages[_f]=read(_f) or ""
 
 def _card_slugs(h):
-    return re.findall(r'<article class="lp-card"[^>]*data-slug="([a-z0-9-]+)"',h)
+    return re.findall(r'<article class="lp-card(?: [^"]*)?"[^>]*data-slug="([a-z0-9-]+)"',h)
 
 # 9. QA-01: סימולציית שיתוף - לכל כרטיס, הכתובת שהקוד בונה חייבת עמוד קיים.
 #    הקוד ממפה slug של סבב מוקדם (-b) לעמוד הבסיס; הבדיקה משכפלת את המיפוי ומוודאת שהקוד מכיל אותו.
@@ -252,7 +252,7 @@ for _f,_h in _pages.items():
     def _keys(_i): return set(re.findall(r'"([a-z0-9-]+)":\[',_h[_bios[_i]:_h.find("};",_bios[_i])])) if _i<len(_bios) else set()
     _k1,_k2=_keys(0),_keys(1)
     _wg=_h.find('id="workshopsGrid"')
-    for _m in re.finditer(r'<article class="lp-card"[^>]*data-slug="([a-z0-9-]+)"',_h):
+    for _m in re.finditer(r'<article class="lp-card(?: [^"]*)?"[^>]*data-slug="([a-z0-9-]+)"',_h):
         _slug=_m.group(1); _in_ws=_wg>=0 and _m.start()>_wg
         if _slug not in (_k2 if _in_ws else _k1):
             errors.append(f"{_f}: כרטיס {_slug} בלי ביו ב-BIO {'השני (סדנאות)' if _in_ws else 'הראשון (ליינאפ)'} - הדרופדאון ייפתח ריק (QA-11)")
@@ -271,7 +271,7 @@ for _f,_h in _pages.items():
         _mp=_h[_h.find("function markPast"):_h.find("function markPast")+2500]
         if "data-event-iso" not in _mp:
             errors.append(f"{_f}: markPast בלי data-event-iso - השוואה מול שנה נוכחית תחיה אירועי שנה שעברה ב-1 בינואר (QA-05)")
-    for _m in re.finditer(r'<article class="lp-card"([^>]*)>',_h):
+    for _m in re.finditer(r'<article class="lp-card(?: [^"]*)?"([^>]*)>',_h):
         if 'data-slug' in _m.group(1) and 'data-event-iso' not in _m.group(1):
             _sl=re.search(r'data-slug="([a-z0-9-]+)"',_m.group(1))
             errors.append(f"{_f}: כרטיס {_sl.group(1) if _sl else '?'} בלי data-event-iso (QA-05)")
@@ -330,7 +330,7 @@ src="האתר החי" if live else "העותק המקומי"
 #     לכל Offer בעמוד שיתוח עתידי: שעת האירוע = שעת הכרטיס שנושא את הקוד; זמינות = תווית הכרטיס; מחיר 135 (מסיבה 70).
 _cards_by_code={}
 _h=read("cloud.html") or ""
-for m in re.finditer(r'<article class="lp-card"[^>]*data-slug="([^"]+)"',_h):
+for m in re.finditer(r'<article class="lp-card(?: [^"]*)?"[^>]*data-slug="([^"]+)"',_h):
     b=_h[m.start():_h.find("</article>",m.start())]
     code=(re.search(r'class="lp-card__btn[^"]*"[^>]*href="https://www.eventer.co.il/(\w+)"',b) or [None,""])[1]
     t=(re.search(r'class="w-time"[^>]*>([^<]+)<',b) or [None,""])[1]
