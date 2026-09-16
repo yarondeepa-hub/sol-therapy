@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-16 08:49",
- "source_asof": "2026-09-16 08:42",
+ "generated": "2026-09-16 16:48",
+ "source_asof": "2026-09-16 15:49",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -162,7 +162,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 60,
+   "left": 59,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -194,7 +194,7 @@
    "time": "20:30",
    "iso": "2026-09-22 20:30",
    "state": "open",
-   "left": 21,
+   "left": 13,
    "eventer": "3kr2f",
    "evening_sold": false,
    "evening_open_slug": "bliss"
@@ -242,7 +242,7 @@
   },
   "freedom-fighters-early": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "פרידום פייטרס סבב מוקדם",
@@ -250,12 +250,11 @@
    "dow": "חמישי",
    "time": "18:30",
    "iso": "2026-09-24 18:30",
-   "state": "open",
-   "left": 10,
+   "state": "sold",
+   "left": 0,
    "eventer": "tb22f",
    "main_slug": "freedom-fighters",
-   "evening_sold": false,
-   "evening_open_slug": "freedom-fighters-early",
+   "evening_sold": true,
    "sib_slug": "freedom-fighters",
    "sib_time": "20:30"
   },
@@ -273,10 +272,9 @@
    "left": 0,
    "eventer": "fkr2f",
    "round_slug": "freedom-fighters-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "freedom-fighters-early",
+   "evening_sold": true,
    "sib_slug": "freedom-fighters-early",
    "sib_time": "18:30"
   },
@@ -366,7 +364,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 93,
+   "left": 87,
    "eventer": "30b2f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-oct"
@@ -398,7 +396,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 94,
+   "left": 88,
    "eventer": "70b2f",
    "evening_sold": false,
    "evening_open_slug": "fine-oct"
@@ -430,7 +428,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 122,
+   "left": 110,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -462,7 +460,7 @@
    "time": "20:30",
    "iso": "2026-10-12 20:30",
    "state": "open",
-   "left": 74,
+   "left": 70,
    "eventer": "f0b2f",
    "evening_sold": false,
    "evening_open_slug": "astral-oct"
@@ -558,7 +556,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 120,
+   "left": 119,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -574,7 +572,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 94,
+   "left": 90,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -638,7 +636,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 89,
+   "left": 87,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
