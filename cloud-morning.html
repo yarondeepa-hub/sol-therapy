@@ -70,7 +70,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#7A562A">
+    <meta name="theme-color" content="#A8783A">
     <title>בוקר שישי בקלאוד - מדיטציית סאונד עמוקה בשישי בבוקר | קלאוד ספייס</title>
     <meta name="description" content="מדיטציית סאונד עמוקה בשישי בבוקר בקלאוד ספייס, שוקן 27 תל אביב. ארבעה בקרים באוקטובר: נועה ארגוב 2.10 ו-16.10, רן סלוין 9.10 ו-23.10. דלתות 09:30, מדיטציה 10:00.">
     <link rel="preconnect" href="https://www.eventer.co.il">
@@ -108,12 +108,12 @@
 @font-face{font-family:'SimplerPro';src:url('assets/fonts/SimplerPro-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'SimplerPro';src:url('assets/fonts/SimplerPro-Black.woff2') format('woff2');font-weight:900;font-display:swap}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-/* אוקר #7A562A (הפוסטר #A8783A מעומק בדרגה אחת): קרם על אוקר 5.1:1 (נמדד בצילום עם הגרעין 4.8:1) - כל טקסט קטן על האוקר עובר 4.5. הכרטיסים כהים יותר (5.9:1). דבש עמוק #8A5219 על קרם 5.0:1. */
+/* אוקר #A8783A = גוון ההדמיה והפוסטר (ירון 17.9). קרם על אוקר 3.05:1 - עובר רק לטקסט גדול (24px רגיל / 19px מודגש ומעלה), לכן כל טקסט על האוקר גדול או מודגש, וטקסט קטן (שורת הפרטים, הפוטר) יושב על הקרם. מילוי כרטיס שקוף: גוון הקרם 10% של ההדמיה מוריד ל-2.68:1. דבש עמוק #8A5219 על קרם 5.0:1. */
 :root{
-  --ochre:#7A562A; --cream:#F1E3C4; --honey:#E1A96B; --honey-deep:#8A5219; --ink:#3A2A14; --ink-soft:#5A4222;
+  --ochre:#A8783A; --cream:#F1E3C4; --honey:#E1A96B; --honey-deep:#8A5219; --ink:#3A2A14; --ink-soft:#5A4222;
   --bg:var(--ochre); --fg:var(--cream);
   --btn-bg:var(--cream); --btn-fg:var(--ink);
-  --row-bg:rgba(58,42,20,.20); --row-line:rgba(241,227,196,.22);
+  --row-bg:transparent; --row-line:rgba(241,227,196,.26);
   --paper:var(--cream); --paper-fg:var(--ink); --paper-h:var(--honey-deep); --paper-line:rgba(138,82,25,.28);
   --font:'SimplerPro','Heebo',Arial,sans-serif;
 }
@@ -127,14 +127,14 @@ a{color:inherit}
 
 /* ---------- ראש ---------- */
 .top{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0 .4rem}
-.top .kicker{font-size:1.05rem;font-weight:700;letter-spacing:.01em;color:var(--fg)}
+.top .kicker{font-size:1.2rem;font-weight:700;letter-spacing:.01em;color:var(--fg)}
 .top .logolink{display:block;padding:.3rem .5rem;margin:-.3rem -.5rem}
 .top .logo{display:block;height:84px;width:auto}
 
 /* ---------- הירו ---------- */
 .hero{padding:.4rem 0 1.6rem;display:grid;grid-template-columns:1fr;gap:1.2rem;align-items:center}
 .hero h1{font-weight:900;font-size:clamp(2.4rem,10.4vw,4.6rem);line-height:1.08;letter-spacing:-.005em;color:var(--fg)}
-.hero .lines{margin-top:1rem;font-size:1.22rem;line-height:1.5;color:var(--fg)}
+.hero .lines{margin-top:1rem;font-size:1.5rem;line-height:1.35;color:var(--fg)}
 .hero .lines p{text-wrap:balance}
 .hero .lines p+p{margin-top:.15rem}
 .hero .when{margin-top:.75rem;font-size:1.6rem;font-weight:700;color:var(--fg)}
@@ -149,12 +149,11 @@ a{color:inherit}
 .row .ph{flex:0 0 72px;width:72px;height:72px;border-radius:6px;object-fit:cover;display:block}
 .row .txt{flex:1 1 auto;min-width:0}
 .row .d{font-size:1.4rem;font-weight:700;line-height:1.15}
-.row .a{font-size:1.15rem;margin-top:.1rem}
-.row .n{font-size:1rem;margin-top:.1rem}
+.row .a{font-size:1.25rem;font-weight:700;margin-top:.1rem}
+.row .n{font-size:1.2rem;font-weight:700;margin-top:.1rem}
 .row .btn{flex:0 0 auto;display:inline-block;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;font-weight:700;font-size:1.02rem;padding:.62rem 1.1rem;border-radius:999px;white-space:nowrap;text-align:center}
-.row .btn.--sold,.row .btn.--done{background:transparent;border:1px solid rgba(241,227,196,.45);color:var(--cream);font-weight:400;pointer-events:none}
+.row .btn.--sold,.row .btn.--done{background:transparent;border:1px solid rgba(241,227,196,.45);color:var(--cream);font-weight:700;font-size:1.2rem;pointer-events:none}
 .row[data-state="sold"] .ph,.row[data-state="done"] .ph{opacity:.7}
-.dates .spec{text-align:center;margin-top:1.1rem;font-size:1.02rem;color:var(--fg)}
 .dates .next-soon{display:none;text-align:center;font-size:1.2rem;font-weight:700;margin-top:.6rem}
 .dates.all-done .next-soon{display:block}
 
@@ -165,6 +164,7 @@ a{color:inherit}
 .paper h2{font-size:1.6rem;font-weight:700;color:var(--paper-h);margin-bottom:.8rem;text-wrap:balance}
 .paper p{font-size:1.12rem;line-height:1.8}
 .paper p+p{margin-top:.8em}
+.paper p.spec{text-align:center;font-size:1.02rem;line-height:1.6;max-width:640px;margin:0 auto 1.8rem}
 .artists{display:grid;grid-template-columns:1fr;gap:1.6rem}
 .artist{display:grid;grid-template-columns:104px 1fr;gap:.7rem .9rem;align-items:center}
 .artist .ph{width:104px;height:104px;object-fit:cover;border-radius:6px;display:block}
@@ -182,12 +182,15 @@ a{color:inherit}
 .cardline.know{margin-top:1.4rem}
 
 /* ---------- תחתית ---------- */
-.foot{position:relative;z-index:2;text-align:center;padding:2.2rem 1.25rem 7rem;background:var(--ochre);color:var(--cream)}
-.foot .logo{height:96px;width:auto;display:block;margin:0 auto 1rem}
+.foot{position:relative;z-index:2;text-align:center}
+.foot .info{background:var(--paper);color:var(--paper-fg);padding:0 1.25rem 2.4rem}
+.foot .info .in{max-width:640px;margin:0 auto;border-top:1px solid var(--paper-line);padding-top:2rem}
+.foot .band{background:var(--ochre);padding:2.2rem 1.25rem 7rem}
+.foot .logo{height:96px;width:auto;display:block;margin:0 auto}
 .foot .spec{font-size:1.05rem;font-weight:700}
 .foot .sub{font-size:.95rem;margin-top:.5rem;line-height:1.7}
 .foot .en{font-size:.75rem;letter-spacing:.22em;margin-top:.6rem}
-.foot a.all{display:inline-block;margin-top:.5rem;padding:.6rem .5rem;min-height:44px;color:var(--cream);font-size:1rem}
+.foot a.all{display:inline-block;margin-top:.5rem;padding:.6rem .5rem;min-height:44px;color:var(--paper-fg);font-size:1rem}
 
 /* ---------- סרגל דביק במובייל ---------- */
 .sticky{position:fixed;bottom:0;inset-inline:0;z-index:40;background:rgba(58,42,20,.90);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid rgba(241,227,196,.18);padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));display:none}
@@ -203,7 +206,7 @@ a{color:inherit}
   .hero{grid-template-columns:1.15fr .85fr;gap:2rem;padding:.6rem 0 2.4rem}
   .hero .sun{width:min(100%,440px)}
   .hero h1{font-size:3.7rem;white-space:nowrap}
-  .hero .lines{font-size:1.4rem}
+  .hero .lines{font-size:1.5rem}
   .hero .when{font-size:1.9rem}
   .dates{padding:1rem 0 3rem}
   .dates h2{font-size:2.1rem;margin-bottom:1.4rem}
@@ -221,7 +224,7 @@ a{color:inherit}
   .artist .ph{width:132px;height:132px}
   .artist p{grid-column:2}
   .faq{max-width:720px}
-  .foot{padding-bottom:3rem}
+  .foot .band{padding-bottom:3rem}
 }
 </style>
 <script defer src="/assets/clean-url.js"></script>
@@ -277,13 +280,14 @@ a{color:inherit}
       </article>
     </div>
     <p class="next-soon">הבקרים הבאים בקרוב</p>
-    <p class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></p>
   </section>
 
 </div>
 
 <div class="paper">
   <div class="wrap">
+
+    <p class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></p>
 
     <section id="what">
       <h2>פותחים את הסופ״ש נכון עם מדיטציית סאונד עמוקה בשישי בבוקר</h2>
@@ -326,11 +330,15 @@ a{color:inherit}
 </div>
 
 <footer class="foot">
-  <img class="logo" src="assets/cloud/morning/logo-cream.png" alt="cloud space" width="148" height="330" loading="lazy">
-  <div class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></div>
-  <div class="sub">מרחב נשימה אורבני מבית סול ת׳רפי · שוקן 27, קריית המלאכה, <span class="nw">תל אביב</span></div>
-  <div class="en">CLOUD SPACE · URBAN BREATHING SPACE</div>
-  <a class="all" href="/cloud">לליינאפ המלא של קלאוד</a>
+  <div class="info"><div class="in">
+    <div class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></div>
+    <div class="sub">מרחב נשימה אורבני מבית סול ת׳רפי · שוקן 27, קריית המלאכה, <span class="nw">תל אביב</span></div>
+    <div class="en">CLOUD SPACE · URBAN BREATHING SPACE</div>
+    <a class="all" href="/cloud">לליינאפ המלא של קלאוד</a>
+  </div></div>
+  <div class="band">
+    <img class="logo" src="assets/cloud/morning/logo-cream.png" alt="cloud space" width="148" height="330" loading="lazy">
+  </div>
 </footer>
 
 <div class="sticky">
