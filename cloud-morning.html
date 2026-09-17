@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C5VRCQ9M6V');
+      gtag('config', 'AW-1040664815');
+      (function(){
+        function loadGtag(){ if(window.__gtagLoaded) return; window.__gtagLoaded=1;
+          var s=document.createElement('script'); s.async=true;
+          s.src='https://www.googletagmanager.com/gtag/js?id=G-C5VRCQ9M6V';
+          document.head.appendChild(s); }
+        if(document.readyState==='complete'){ setTimeout(loadGtag,1); }
+        else { window.addEventListener('load', function(){ ('requestIdleCallback' in window) ? requestIdleCallback(loadGtag,{timeout:3000}) : setTimeout(loadGtag,1500); }); }
+        ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadGtag, {once:true, passive:true}); });
+      })();
+    </script>
+    <!-- Meta Pixel 902345231064039 - deferred like gtag above; events queue in the fbq stub so nothing is lost. -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+      fbq('init', '902345231064039');
+      fbq('track', 'PageView');
+      fbq('track', 'ViewContent', {content_name: 'cloud-morning', content_category: 'cloud_morning'});
+      (function(){
+        function loadFbq(){ if(window.__fbqLoaded) return; window.__fbqLoaded=1;
+          var s=document.createElement('script'); s.async=true;
+          s.src='https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(s); }
+        if(document.readyState==='complete'){ setTimeout(loadFbq,1); }
+        else { window.addEventListener('load', function(){ ('requestIdleCallback' in window) ? requestIdleCallback(loadFbq,{timeout:3000}) : setTimeout(loadFbq,1500); }); }
+        ['scroll','pointerdown','keydown','touchstart'].forEach(function(e){ window.addEventListener(e, loadFbq, {once:true, passive:true}); });
+      })();
+    </script>
+    <!-- Outbound Eventer tagging: utm + saved fbclid on live clicks only (JSON-LD untouched). Fails open. Same script as the share pages; click_location reads data-loc when present. -->
+    <script>
+      (function(){
+        try{
+          var KEY='solAttr', attr={};
+          try{ attr=JSON.parse(sessionStorage.getItem(KEY)||'{}'); }catch(_){ attr={}; }
+          try{
+            var qs=new URLSearchParams(location.search), changed=false;
+            qs.forEach(function(v,k){ if(k==='fbclid'||k.indexOf('utm_')===0){ attr[k]=v; changed=true; } });
+            if(changed) sessionStorage.setItem(KEY,JSON.stringify(attr));
+          }catch(_){}
+          document.addEventListener('click',function(e){
+            try{
+              if(!e.target||!e.target.closest) return;
+              var a=e.target.closest('a[href*="eventer.co.il"]'); if(!a) return;
+              var u=new URL(a.href,location.href);
+              var set=function(k,v){ if(v&&!u.searchParams.has(k)) u.searchParams.set(k,v); };
+              set('utm_source',attr.utm_source);
+              set('utm_medium',attr.utm_medium);
+              set('utm_campaign',attr.utm_campaign);
+              set('utm_content',attr.utm_content);
+              set('utm_term',attr.utm_term);
+              var solPage=/(^|\/)share\//.test(location.pathname)?'share':(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'');
+              if(!solPage||solPage==='index') solPage='home'; else if(solPage==='cloud-card') solPage='card';
+              set('utm_content',solPage); set('sol_page',solPage);
+              var card=a.closest('[data-slug]');
+              var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
+              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.getAttribute('data-loc')||(a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'); try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
+              set('fbclid',attr.fbclid);
+              a.href=u.toString();
+            }catch(_){}
+          },true);
+        }catch(_){}
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7A562A">
+    <title>בוקר שישי בקלאוד - מדיטציית סאונד עמוקה בשישי בבוקר | קלאוד ספייס</title>
+    <meta name="description" content="מדיטציית סאונד עמוקה בשישי בבוקר בקלאוד ספייס, שוקן 27 תל אביב. ארבעה בקרים באוקטובר: נועה ארגוב 2.10 ו-16.10, רן סלוין 9.10 ו-23.10. דלתות 09:30, מדיטציה 10:00.">
+    <link rel="preconnect" href="https://www.eventer.co.il">
+    <link rel="dns-prefetch" href="https://www.eventer.co.il">
+    <link rel="canonical" href="https://sol-therapy.com/cloud-morning">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="Sol Therapy">
+    <meta property="og:title" content="בוקר שישי בקלאוד - מדיטציית סאונד עמוקה בשישי בבוקר">
+    <meta property="og:description" content="מדיטציית סאונד עמוקה בשישי בבוקר בקלאוד ספייס, שוקן 27 תל אביב. ארבעה בקרים באוקטובר: נועה ארגוב 2.10 ו-16.10, רן סלוין 9.10 ו-23.10. דלתות 09:30, מדיטציה 10:00.">
+    <meta property="og:image" content="https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="מדיטציה על הבוקר. יופי של הרגל. בוקר שישי בקלאוד">
+    <meta property="og:url" content="https://sol-therapy.com/cloud-morning">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="בוקר שישי בקלאוד - מדיטציית סאונד עמוקה בשישי בבוקר">
+    <meta name="twitter:description" content="ארבעה בקרים באוקטובר בקלאוד ספייס, שוקן 27 תל אביב. נועה ארגוב 2.10 ו-16.10, רן סלוין 9.10 ו-23.10. דלתות 09:30, מדיטציה 10:00.">
+    <meta name="twitter:image" content="https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg">
+    <link rel="preload" href="assets/fonts/SimplerPro-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SimplerPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SimplerPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/cloud/morning/sun-cream-880.webp" as="image" type="image/webp">
+    <script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "MusicEvent", "name": "נועה ארגוב - מדיטציית בוקר בקלאוד ספייס", "startDate": "2026-10-02T10:00:00+03:00", "endDate": "2026-10-02T11:00:00+03:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "CLOUD SPACE", "address": {"@type": "PostalAddress", "streetAddress": "שוקן 27", "addressLocality": "תל אביב", "addressCountry": "IL"}}, "performer": {"@type": "Person", "name": "נועה ארגוב"}, "organizer": {"@type": "Organization", "name": "Sol Therapy", "url": "https://sol-therapy.com"}, "image": "https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventer.co.il/wlb2f", "validFrom": "2026-09-15"}, "description": "נועה ארגוב בקלאוד ספייס - מדיטציית סאונד עמוקה בשישי בבוקר. שישי 2.10, 10:00, שוקן 27, קריית המלאכה תל אביב."},
+ {"@context": "https://schema.org", "@type": "MusicEvent", "name": "רן סלוין - מדיטציית בוקר בקלאוד ספייס", "startDate": "2026-10-09T10:00:00+03:00", "endDate": "2026-10-09T11:00:00+03:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "CLOUD SPACE", "address": {"@type": "PostalAddress", "streetAddress": "שוקן 27", "addressLocality": "תל אביב", "addressCountry": "IL"}}, "performer": {"@type": "Person", "name": "רן סלוין"}, "organizer": {"@type": "Organization", "name": "Sol Therapy", "url": "https://sol-therapy.com"}, "image": "https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventer.co.il/8lb2f", "validFrom": "2026-09-15"}, "description": "רן סלוין בקלאוד ספייס - מדיטציית סאונד עמוקה בשישי בבוקר. שישי 9.10, 10:00, שוקן 27, קריית המלאכה תל אביב."},
+ {"@context": "https://schema.org", "@type": "MusicEvent", "name": "נועה ארגוב - מדיטציית בוקר בקלאוד ספייס | 16.10", "startDate": "2026-10-16T10:00:00+03:00", "endDate": "2026-10-16T11:00:00+03:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "CLOUD SPACE", "address": {"@type": "PostalAddress", "streetAddress": "שוקן 27", "addressLocality": "תל אביב", "addressCountry": "IL"}}, "performer": {"@type": "Person", "name": "נועה ארגוב"}, "organizer": {"@type": "Organization", "name": "Sol Therapy", "url": "https://sol-therapy.com"}, "image": "https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventer.co.il/dlb2f", "validFrom": "2026-09-15"}, "description": "נועה ארגוב בקלאוד ספייס - מדיטציית סאונד עמוקה בשישי בבוקר. שישי 16.10, 10:00, שוקן 27, קריית המלאכה תל אביב."},
+ {"@context": "https://schema.org", "@type": "MusicEvent", "name": "רן סלוין - מדיטציית בוקר בקלאוד ספייס | 23.10", "startDate": "2026-10-23T10:00:00+03:00", "endDate": "2026-10-23T11:00:00+03:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "CLOUD SPACE", "address": {"@type": "PostalAddress", "streetAddress": "שוקן 27", "addressLocality": "תל אביב", "addressCountry": "IL"}}, "performer": {"@type": "Person", "name": "רן סלוין"}, "organizer": {"@type": "Organization", "name": "Sol Therapy", "url": "https://sol-therapy.com"}, "image": "https://sol-therapy.com/assets/cloud/morning/og-cloud-morning.jpg", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventer.co.il/mpb2f", "validFrom": "2026-09-15"}, "description": "רן סלוין בקלאוד ספייס - מדיטציית סאונד עמוקה בשישי בבוקר. שישי 23.10, 10:00, שוקן 27, קריית המלאכה תל אביב."},
+ {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "סול תרפי", "item": "https://sol-therapy.com/"}, {"@type": "ListItem", "position": 2, "name": "CLOUD SPACE", "item": "https://sol-therapy.com/cloud"}, {"@type": "ListItem", "position": 3, "name": "בוקר שישי בקלאוד", "item": "https://sol-therapy.com/cloud-morning"}]}]
+</script>
+<style>
+@font-face{font-family:'SimplerPro';src:url('assets/fonts/SimplerPro-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'SimplerPro';src:url('assets/fonts/SimplerPro-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'SimplerPro';src:url('assets/fonts/SimplerPro-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+/* אוקר #7A562A (הפוסטר #A8783A מעומק בדרגה אחת): קרם על אוקר 5.1:1 (נמדד בצילום עם הגרעין 4.8:1) - כל טקסט קטן על האוקר עובר 4.5. הכרטיסים כהים יותר (5.9:1). דבש עמוק #8A5219 על קרם 5.0:1. */
+:root{
+  --ochre:#7A562A; --cream:#F1E3C4; --honey:#E1A96B; --honey-deep:#8A5219; --ink:#3A2A14; --ink-soft:#5A4222;
+  --bg:var(--ochre); --fg:var(--cream);
+  --btn-bg:var(--cream); --btn-fg:var(--ink);
+  --row-bg:rgba(58,42,20,.20); --row-line:rgba(241,227,196,.22);
+  --paper:var(--cream); --paper-fg:var(--ink); --paper-h:var(--honey-deep); --paper-line:rgba(138,82,25,.28);
+  --font:'SimplerPro','Heebo',Arial,sans-serif;
+}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-weight:400;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;line-height:1.5}
+body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E")}
+.num{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.nw{white-space:nowrap}
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 1.25rem}
+a{color:inherit}
+
+/* ---------- ראש ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0 .4rem}
+.top .kicker{font-size:1.05rem;font-weight:700;letter-spacing:.01em;color:var(--fg)}
+.top .logolink{display:block;padding:.3rem .5rem;margin:-.3rem -.5rem}
+.top .logo{display:block;height:84px;width:auto}
+
+/* ---------- הירו ---------- */
+.hero{padding:.4rem 0 1.6rem;display:grid;grid-template-columns:1fr;gap:1.2rem;align-items:center}
+.hero h1{font-weight:900;font-size:clamp(2.4rem,10.4vw,4.6rem);line-height:1.08;letter-spacing:-.005em;color:var(--fg)}
+.hero .lines{margin-top:1rem;font-size:1.22rem;line-height:1.5;color:var(--fg)}
+.hero .lines p{text-wrap:balance}
+.hero .lines p+p{margin-top:.15rem}
+.hero .when{margin-top:.75rem;font-size:1.6rem;font-weight:700;color:var(--fg)}
+.hero .sunwrap{display:flex;justify-content:center}
+.hero .sun{width:min(78%,360px);height:auto;display:block}
+
+/* ---------- ארבעת המועדים ---------- */
+.dates{padding:1.2rem 0 2.2rem}
+.dates h2{font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-align:center}
+.rows{display:grid;grid-template-columns:1fr;gap:.7rem}
+.row{display:flex;align-items:center;gap:.9rem;background:var(--row-bg);border:1px solid var(--row-line);border-radius:12px;padding:.7rem .8rem}
+.row .ph{flex:0 0 72px;width:72px;height:72px;border-radius:6px;object-fit:cover;display:block}
+.row .txt{flex:1 1 auto;min-width:0}
+.row .d{font-size:1.4rem;font-weight:700;line-height:1.15}
+.row .a{font-size:1.15rem;margin-top:.1rem}
+.row .n{font-size:1rem;margin-top:.1rem}
+.row .btn{flex:0 0 auto;display:inline-block;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;font-weight:700;font-size:1.02rem;padding:.62rem 1.1rem;border-radius:999px;white-space:nowrap;text-align:center}
+.row .btn.--sold,.row .btn.--done{background:transparent;border:1px solid rgba(241,227,196,.45);color:var(--cream);font-weight:400;pointer-events:none}
+.row[data-state="sold"] .ph,.row[data-state="done"] .ph{opacity:.7}
+.dates .spec{text-align:center;margin-top:1.1rem;font-size:1.02rem;color:var(--fg)}
+.dates .next-soon{display:none;text-align:center;font-size:1.2rem;font-weight:700;margin-top:.6rem}
+.dates.all-done .next-soon{display:block}
+
+/* ---------- לוח קרם (טקסט) ---------- */
+.paper{position:relative;z-index:2;background:var(--paper);color:var(--paper-fg);padding:2.2rem 0 1.2rem}
+.paper section{max-width:640px;margin:0 auto;padding:0 0 2rem}
+.paper section+section{border-top:1px solid var(--paper-line);padding-top:2rem}
+.paper h2{font-size:1.6rem;font-weight:700;color:var(--paper-h);margin-bottom:.8rem;text-wrap:balance}
+.paper p{font-size:1.12rem;line-height:1.8}
+.paper p+p{margin-top:.8em}
+.artists{display:grid;grid-template-columns:1fr;gap:1.6rem}
+.artist{display:grid;grid-template-columns:104px 1fr;gap:.7rem .9rem;align-items:center}
+.artist .ph{width:104px;height:104px;object-fit:cover;border-radius:6px;display:block}
+.artist .hd h3{font-size:1.3rem;font-weight:700;line-height:1.2}
+.artist .hd .when{font-size:1rem;color:var(--paper-h);font-weight:700;margin-top:.15rem}
+.artist p{grid-column:1/-1;font-size:1.02rem;line-height:1.75}
+.faq details{border-bottom:1px solid var(--paper-line)}
+.faq details:first-of-type{border-top:1px solid var(--paper-line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem .1rem;font-size:1.08rem;font-weight:700;-webkit-tap-highlight-color:transparent}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--paper-h);font-size:1.3rem;font-weight:400;flex-shrink:0}
+.faq details[open] summary::after{content:'-'}
+.faq .a{padding:0 .1rem 1rem;font-size:1.02rem;line-height:1.75}
+.cardline{display:block;width:max-content;max-width:92%;min-height:44px;margin:.4rem auto 0;padding:.6rem 0 .45rem;text-align:center;font-size:1.02rem;line-height:1.4;color:var(--paper-fg);text-decoration:none;border-bottom:1px solid rgba(138,82,25,.6)}
+.cardline.know{margin-top:1.4rem}
+
+/* ---------- תחתית ---------- */
+.foot{position:relative;z-index:2;text-align:center;padding:2.2rem 1.25rem 7rem;background:var(--ochre);color:var(--cream)}
+.foot .logo{height:96px;width:auto;display:block;margin:0 auto 1rem}
+.foot .spec{font-size:1.05rem;font-weight:700}
+.foot .sub{font-size:.95rem;margin-top:.5rem;line-height:1.7}
+.foot .en{font-size:.75rem;letter-spacing:.22em;margin-top:.6rem}
+.foot a.all{display:inline-block;margin-top:.5rem;padding:.6rem .5rem;min-height:44px;color:var(--cream);font-size:1rem}
+
+/* ---------- סרגל דביק במובייל ---------- */
+.sticky{position:fixed;bottom:0;inset-inline:0;z-index:40;background:rgba(58,42,20,.90);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid rgba(241,227,196,.18);padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));display:none}
+.sticky a{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--cream);color:var(--ink);text-decoration:none;border-radius:999px;padding:.8rem 1.3rem;font-size:1.02rem}
+.sticky .who{font-weight:400}.sticky .act{font-weight:700}
+@media(max-width:640px){.sticky{display:block}}
+
+/* ---------- דסקטופ ---------- */
+@media(min-width:900px){
+  .wrap{padding:0 2rem}
+  .top{padding:1.4rem 0 .2rem}
+  .top .logo{height:110px}
+  .hero{grid-template-columns:1.15fr .85fr;gap:2rem;padding:.6rem 0 2.4rem}
+  .hero .sun{width:min(100%,440px)}
+  .hero h1{font-size:3.7rem;white-space:nowrap}
+  .hero .lines{font-size:1.4rem}
+  .hero .when{font-size:1.9rem}
+  .dates{padding:1rem 0 3rem}
+  .dates h2{font-size:2.1rem;margin-bottom:1.4rem}
+  .rows{grid-template-columns:repeat(4,1fr);gap:1rem}
+  .row{flex-direction:column;align-items:stretch;text-align:center;padding:1rem 1rem 1.1rem;gap:.6rem}
+  .row .ph{width:100%;height:auto;aspect-ratio:1/1;flex:0 0 auto}
+  .row .d{font-size:1.5rem}
+  .row .btn{margin-top:.3rem}
+  .paper{padding:3rem 0 1.6rem}
+  .paper section{max-width:820px}
+  .paper h2{font-size:1.9rem}
+  .artists{gap:2.2rem}
+  .artist{grid-template-columns:132px 1fr;grid-template-rows:auto 1fr;align-items:start}
+  .artist picture{grid-row:1/3}
+  .artist .ph{width:132px;height:132px}
+  .artist p{grid-column:2}
+  .faq{max-width:720px}
+  .foot{padding-bottom:3rem}
+}
+</style>
+<script defer src="/assets/clean-url.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="kicker">מדיטציות סאונד עמוקות</div>
+    <a class="logolink" href="/cloud" aria-label="קלאוד ספייס"><img class="logo" src="assets/cloud/morning/logo-cream.png" alt="cloud space" width="148" height="330"></a>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <h1>מדיטציה על הבוקר.<br>יופי של הרגל.</h1>
+      <div class="lines">
+        <p>חדש בקלאוד ספייס</p>
+        <p>פותחים את הסופ״ש במדיטציית סאונד עמוקה</p>
+      </div>
+      <div class="when">שישי <span class="num">10:00</span></div>
+    </div>
+    <div class="sunwrap">
+      <picture>
+        <source type="image/webp" srcset="assets/cloud/morning/sun-cream-880.webp">
+        <img class="sun" src="assets/cloud/morning/sun-cream-880.jpg" alt="" width="880" height="880" decoding="async" fetchpriority="high">
+      </picture>
+    </div>
+  </section>
+
+  <section class="dates" id="dates">
+    <h2>ארבעה בקרים באוקטובר</h2>
+    <div class="rows">
+      <article class="row" data-slug="noa-argov-oct" data-event-iso="2026-10-02" data-state="open">
+        <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-noa-480.webp"><img class="ph" src="assets/cloud/morning/portrait-noa-480.jpg" alt="נועה ארגוב" width="480" height="480"></picture>
+        <div class="txt"><div class="d">שישי <span class="num">2.10</span></div><div class="a">נועה ארגוב</div><div class="n">חול המועד סוכות</div></div>
+        <a class="btn" href="https://www.eventer.co.il/wlb2f" data-loc="landing-card" target="_blank" rel="noopener" aria-label="כרטיסים: נועה ארגוב 2.10">כרטיסים</a>
+      </article>
+      <article class="row" data-slug="ran-slavin-oct" data-event-iso="2026-10-09" data-state="open">
+        <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-ran-480.webp"><img class="ph" src="assets/cloud/morning/portrait-ran-480.jpg" alt="רן סלוין" width="480" height="480"></picture>
+        <div class="txt"><div class="d">שישי <span class="num">9.10</span></div><div class="a">רן סלוין</div></div>
+        <a class="btn" href="https://www.eventer.co.il/8lb2f" data-loc="landing-card" target="_blank" rel="noopener" aria-label="כרטיסים: רן סלוין 9.10">כרטיסים</a>
+      </article>
+      <article class="row" data-slug="noa-argov-oct-16" data-event-iso="2026-10-16" data-state="open">
+        <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-noa-480.webp"><img class="ph" src="assets/cloud/morning/portrait-noa-480.jpg" alt="נועה ארגוב" width="480" height="480" loading="lazy"></picture>
+        <div class="txt"><div class="d">שישי <span class="num">16.10</span></div><div class="a">נועה ארגוב</div></div>
+        <a class="btn" href="https://www.eventer.co.il/dlb2f" data-loc="landing-card" target="_blank" rel="noopener" aria-label="כרטיסים: נועה ארגוב 16.10">כרטיסים</a>
+      </article>
+      <article class="row" data-slug="ran-slavin-oct-23" data-event-iso="2026-10-23" data-state="open">
+        <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-ran-480.webp"><img class="ph" src="assets/cloud/morning/portrait-ran-480.jpg" alt="רן סלוין" width="480" height="480" loading="lazy"></picture>
+        <div class="txt"><div class="d">שישי <span class="num">23.10</span></div><div class="a">רן סלוין</div></div>
+        <a class="btn" href="https://www.eventer.co.il/mpb2f" data-loc="landing-card" target="_blank" rel="noopener" aria-label="כרטיסים: רן סלוין 23.10">כרטיסים</a>
+      </article>
+    </div>
+    <p class="next-soon">הבקרים הבאים בקרוב</p>
+    <p class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></p>
+  </section>
+
+</div>
+
+<div class="paper">
+  <div class="wrap">
+
+    <section id="what">
+      <h2>פותחים את הסופ״ש נכון עם מדיטציית סאונד עמוקה בשישי בבוקר</h2>
+      <p>לאחר המדיטציה החלל יהפוך למרחב רגיעה עם מוזיקת רקע מוקפדת - מוזמנים להביא ספר טוב, כלי כתיבה וכל מה שעושה לכם טוב ונכון.</p>
+    </section>
+
+    <section id="artists">
+      <h2>האמנים</h2>
+      <div class="artists">
+        <div class="artist">
+          <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-noa-480.webp"><img class="ph" src="assets/cloud/morning/portrait-noa-480.jpg" alt="נועה ארגוב" width="480" height="480" loading="lazy"></picture>
+          <div class="hd">
+            <h3>נועה ארגוב</h3>
+            <div class="when">שישי <span class="num">2.10</span> ו-<span class="num">16.10</span></div>
+          </div>
+          <p>במפגש הקרוב נארח את נועה ארגוב, דיג׳יי, ובעברה שדרנית רדיו בגלגלצ ובהקצה, ואורחת קבועה במתחם התדר ובפסטיבלים מובילים. בתקלוטים שלה אפשר לשמוע מגוון רחב של השפעות: ממוזיקה ברזילאית, דרך ג׳אז, פ׳אנק וסול, ועד דיסקו, האוס ואלקטרוניקה. למרחב ה-CLOUD היא מביאה ראייה אוצרותית נדירה ורגישות חסרת פשרות לתדרים, ומזמינה את השוכבים בחלל למסע סאונד אקלקטי ומהפנט.</p>
+        </div>
+        <div class="artist">
+          <picture><source type="image/webp" srcset="assets/cloud/morning/portrait-ran-480.webp"><img class="ph" src="assets/cloud/morning/portrait-ran-480.jpg" alt="רן סלוין" width="480" height="480" loading="lazy"></picture>
+          <div class="hd">
+            <h3>רן סלוין</h3>
+            <div class="when">שישי <span class="num">9.10</span> ו-<span class="num">23.10</span></div>
+          </div>
+          <p>במפגש הקרוב נארח את רן סלוין, אמן רב תחומי מהמוערכים בישראל, שסאונד מהווה ציר מרכזי ביצירתו הקולנועית, הווידאו והמיצבים שלו. כמלחין ויוצר אלקטרוני, סלוין בורא עולמות צליל אטמוספריים ומהפנטים, המשלבים טקסטורות אלקטרוניות ונופי סאונד קונספטואליים. יצירותיו המוזיקליות, שזכו להכרה בינלאומית והוצגו בפסטיבלים וגלריות ברחבי העולם, חוקרות את הגבולות שבין מציאות לחלום, זיכרון ותת מודע. הוא מגיע לסדנה זו כדי להוביל מסע סוני ייחודי, המזמין להאזנה עמוקה ולהתמסרות למרחבים המדיטטיביים והנסתרים של הצליל האלקטרוני.</p>
+        </div>
+      </div>
+      <a class="cardline know" href="/cloud">לא מכירים אותנו? בואו לקרוא עלינו בעמוד הראשי</a>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2>שאלות נפוצות</h2>
+      <details open><summary>צריך ניסיון קודם?</summary><div class="a">לא. הסשנים מתאימים גם למי שזו ההתנסות הראשונה שלו וכוללים שיחת פתיחה עם הדרכה מלאה.</div></details>
+      <details><summary>מה צריך להביא?</summary><div class="a">בגדים נוחים ונכונות להגיע כמו שאתם. אם יש הנחיות מיוחדות, הן יופיעו בדף הכרטיסים של האירוע.</div></details>
+      <details><summary>אפשר להגיע לבד?</summary><div class="a">כן. הרבה מגיעים לבד.</div></details>
+      <details><summary>הכרטיסייה תקפה גם לבקרים?</summary><div class="a">כן. הכרטיסייה מכובדת בארבעת הבקרים.</div></details>
+      <a class="cardline" href="/cloud-card" data-card-line="1" onclick="try{if(window.gtag){gtag('event','card_line_click',{event_category:'cloud_card',page_path:location.pathname})}}catch(e){}">שימו לב - יש לנו כרטיסייה - מנקבים וחוסכים</a>
+    </section>
+
+  </div>
+</div>
+
+<footer class="foot">
+  <img class="logo" src="assets/cloud/morning/logo-cream.png" alt="cloud space" width="148" height="330" loading="lazy">
+  <div class="spec">דלתות <span class="num">09:30</span> · מדיטציה <span class="num">10:00</span> · שוקן 27, <span class="nw">תל אביב</span></div>
+  <div class="sub">מרחב נשימה אורבני מבית סול ת׳רפי · שוקן 27, קריית המלאכה, <span class="nw">תל אביב</span></div>
+  <div class="en">CLOUD SPACE · URBAN BREATHING SPACE</div>
+  <a class="all" href="/cloud">לליינאפ המלא של קלאוד</a>
+</footer>
+
+<div class="sticky">
+  <a href="https://www.eventer.co.il/wlb2f" data-slug="noa-argov-oct" data-loc="sticky" target="_blank" rel="noopener"><span class="who">הבוקר הקרוב · שישי <span class="num">2.10</span></span><span class="act">כרטיסים</span></a>
+</div>
+
+<script>
+(function(){
+  // מצב לפי תאריך בזמן אמת (כמו עמודי השיתוף): כרטיס מועד שתאריכו עבר מתהפך ל"הסשן התקיים" בלי קישור.
+  // הסרגל הדביק מצביע תמיד על המועד הפתוח הראשון; אם אין - הסרגל יורד. ארבעה שהתקיימו - "הבקרים הבאים בקרוב".
+  var now=new Date(), open=null, allDone=true;
+  var rows=[].slice.call(document.querySelectorAll('.row[data-event-iso]'));
+  rows.forEach(function(r){
+    var ed=new Date(r.getAttribute('data-event-iso')+'T23:59:59');
+    if(r.getAttribute('data-state')!=='done' && now>ed){
+      r.setAttribute('data-state','done');
+      var b=r.querySelector('.btn');
+      if(b){ var s=document.createElement('span'); s.className='btn --done'; s.setAttribute('role','link'); s.setAttribute('aria-disabled','true'); s.textContent='הסשן התקיים'; b.parentNode.replaceChild(s,b); }
+    }
+    var st=r.getAttribute('data-state');
+    if(st!=='done') allDone=false;
+    if(!open && st==='open' && r.querySelector('a.btn[href]')) open=r;
+  });
+  var sticky=document.querySelector('.sticky');
+  if(sticky){
+    if(!open){ sticky.parentNode.removeChild(sticky); }
+    else{
+      var a=sticky.querySelector('a'), b=open.querySelector('a.btn[href]'), d=open.querySelector('.d'), w=sticky.querySelector('.who');
+      if(a&&b){ a.href=b.getAttribute('href'); a.setAttribute('data-slug',open.getAttribute('data-slug')); }
+      if(d&&w){ w.innerHTML='הבוקר הקרוב · '+d.innerHTML; }
+    }
+  }
+  if(allDone && rows.length){ var ds=document.querySelector('.dates'); if(ds) ds.classList.add('all-done'); }
+})();
+</script>
+<script>
+(function(){
+  // פיקסל מטא: TicketClick עם content_name = הסלאג של המועד (מהכרטיס או מהסרגל). eventer_click ל-GA4 יוצא מהסקריפט היוצא בראש העמוד.
+  document.addEventListener('click',function(e){
+    try{
+      if(!e.target||!e.target.closest) return;
+      var a=e.target.closest('a[href*="eventer.co.il"]'); if(!a||!a.href) return;
+      var c=a.closest('[data-slug]'); var slug=(c&&c.getAttribute('data-slug'))||'cloud-morning';
+      if(typeof window.fbq==='function'){ try{ fbq('trackCustom','TicketClick',{content_name:slug}); }catch(_){} }
+      if(typeof window.gtag==='function'){ try{ gtag('event','ticket_click_artist',{artist_name:slug,link:a.href}); }catch(_){} }
+    }catch(_){}
+  },true);
+})();
+</script>
+</body>
+</html>
