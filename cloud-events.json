@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-16 16:48",
- "source_asof": "2026-09-16 15:49",
+ "generated": "2026-09-17 08:19",
+ "source_asof": "2026-09-17 08:07",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -137,8 +137,8 @@
    "sib_time": "18:30"
   },
   "dori-sadovnik": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "קפיטן (דורי סדובניק)",
@@ -146,10 +146,10 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-16 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "past",
+   "left": 2,
    "eventer": "nkr2f",
-   "evening_sold": true
+   "evening_sold": false
   },
   "yitzhak-ventura": {
    "event_status": "scheduled",
@@ -162,7 +162,7 @@
    "time": "20:30",
    "iso": "2026-09-17 20:30",
    "state": "open",
-   "left": 59,
+   "left": 57,
    "eventer": "tkr2f",
    "evening_sold": false,
    "evening_open_slug": "yitzhak-ventura"
@@ -364,7 +364,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 87,
+   "left": 85,
    "eventer": "30b2f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-oct"
@@ -396,7 +396,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 88,
+   "left": 89,
    "eventer": "70b2f",
    "evening_sold": false,
    "evening_open_slug": "fine-oct"
@@ -428,7 +428,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 110,
+   "left": 108,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -460,7 +460,7 @@
    "time": "20:30",
    "iso": "2026-10-12 20:30",
    "state": "open",
-   "left": 70,
+   "left": 68,
    "eventer": "f0b2f",
    "evening_sold": false,
    "evening_open_slug": "astral-oct"
@@ -476,7 +476,7 @@
    "time": "20:30",
    "iso": "2026-10-13 20:30",
    "state": "open",
-   "left": 124,
+   "left": 122,
    "eventer": "a0b2f",
    "evening_sold": false,
    "evening_open_slug": "rejoicer-oct"
@@ -492,7 +492,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 117,
+   "left": 115,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -508,7 +508,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 118,
+   "left": 116,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -540,7 +540,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 122,
+   "left": 120,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -572,7 +572,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 90,
+   "left": 86,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -636,7 +636,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 87,
+   "left": 84,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
