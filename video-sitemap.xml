@@ -16,6 +16,20 @@
     </video:video>
   </url>
   <url>
+    <loc>https://sol-therapy.com/cloud-session-echo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-echo.jpg</video:thumbnail_loc>
+      <video:title>אקו - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/XRVkaIAgvwc</video:player_loc>
+      <video:duration>3937</video:duration>
+      <video:publication_date>2026-08-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://sol-therapy.com/cloud-sessions</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-lava-dome.jpg</video:thumbnail_loc>
@@ -72,13 +86,13 @@
     </video:video>
   </url>
   <url>
-    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <loc>https://sol-therapy.com/cloud-session-assaf-amdursky</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-amdursky.jpg</video:thumbnail_loc>
       <video:title>אסף אמדורסקי - מדיטציית סאונד בקלאוד ספייס</video:title>
       <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
       <video:player_loc>https://www.youtube-nocookie.com/embed/N5B7Ctv7mK0</video:player_loc>
-      <video:duration>3660</video:duration>
+      <video:duration>3678</video:duration>
       <video:publication_date>2026-07-22</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
@@ -142,27 +156,27 @@
     </video:video>
   </url>
   <url>
-    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <loc>https://sol-therapy.com/cloud-session-yehezkel-raz</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-raz.jpg</video:thumbnail_loc>
       <video:title>יחזקאל רז - מדיטציית סאונד בקלאוד ספייס</video:title>
       <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
       <video:player_loc>https://www.youtube-nocookie.com/embed/RCZa_Gbs46M</video:player_loc>
-      <video:duration>4080</video:duration>
-      <video:publication_date>2026-07-05</video:publication_date>
+      <video:duration>4092</video:duration>
+      <video:publication_date>2026-07-03</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
       <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
     </video:video>
   </url>
   <url>
-    <loc>https://sol-therapy.com/cloud-sessions</loc>
+    <loc>https://sol-therapy.com/cloud-session-astral-projection</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-astral.jpg</video:thumbnail_loc>
       <video:title>אסטרל פרוג'קשן - מדיטציית סאונד בקלאוד ספייס</video:title>
       <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
       <video:player_loc>https://www.youtube-nocookie.com/embed/xfFi4OcjgOc</video:player_loc>
-      <video:duration>3600</video:duration>
+      <video:duration>3620</video:duration>
       <video:publication_date>2026-07-03</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
