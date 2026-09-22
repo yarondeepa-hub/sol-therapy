@@ -30,6 +30,20 @@
     </video:video>
   </url>
   <url>
+    <loc>https://sol-therapy.com/cloud-session-shye-ben-tzur</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-bentzur.jpg</video:thumbnail_loc>
+      <video:title>שי בן צור - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/3rAWrQfLp8w</video:player_loc>
+      <video:duration>3679</video:duration>
+      <video:publication_date>2026-08-02</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://sol-therapy.com/cloud-sessions</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-lava-dome.jpg</video:thumbnail_loc>

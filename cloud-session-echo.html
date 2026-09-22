@@ -368,14 +368,14 @@
         }
         .upcoming__book:hover { background: var(--color-turquoise); color: var(--color-dark); }
 
-        /* שלוש שורות למי שלא היה */
-        .first-time { margin-bottom: 2.75rem; }
+        /* שורת הקישור להסבר על סאונד הילינג */
         .first-time__more {
             font-family: var(--font-body);
             font-size: 0.85rem;
             font-weight: 300;
             color: var(--color-washi-dim);
             margin-top: 1rem;
+            margin-bottom: 2.75rem;
         }
         .first-time__more a {
             color: var(--color-turquoise);
@@ -383,27 +383,6 @@
             transition: color 0.3s ease;
         }
         .first-time__more a:hover { color: var(--color-washi); text-decoration: underline; }
-        .first-time ul { list-style: none; }
-        .first-time li {
-            font-size: 0.95rem;
-            font-weight: 300;
-            line-height: 1.75;
-            opacity: 0.62;
-            padding: 0.45rem 0 0.45rem 0;
-            position: relative;
-            padding-inline-start: 1.1rem;
-        }
-        .first-time li::before {
-            content: '';
-            position: absolute;
-            inset-inline-start: 0;
-            top: 1.15rem;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--color-turquoise);
-            opacity: 0.7;
-        }
 
         /* הקלטות קשורות */
         .related { margin-bottom: 1rem; }
@@ -615,15 +594,7 @@
             <p class="session-page__bio">מהזמרות, היוצרות והראפריות המשמעותיות במוזיקה הישראלית, ומקימת הלייבל מיצי. על הבמה היא חשמלית ושירתה עוצמתית, ובסשן הזה היא מניחה את המקצבים המהירים בצד: שכבות אטמוספריות איטיות, תדרים נמוכים וחמים ומרקמים ארוכים שעוטפים את החדר במקום למלא אותו.</p>
         </section>
 
-        <section class="first-time">
-            <h2 class="session-page__section-title">אם זה המפגש הראשון שלך</h2>
-            <ul>
-                <li>שוכבים על מזרן, עוצמים עיניים ומקשיבים שישים דקות. אין צורך להביא ציוד ואין צורך בניסיון קודם במדיטציה.</li>
-                <li>הרבה אנשים מגיעים לבד. מי שמעדיף לשבת יכול לשבת. המרחב מאפשר כל תנוחה נוחה.</li>
-                <li>בסוף המפגש יש שיחה פתוחה עם האמנית והזדמנות לשאול. הכול בקלאוד ספייס, שוקן 27, קומה 3, תל אביב.</li>
-            </ul>
-            <p class="first-time__more">לא בטוחים מה זה בכלל? <a href="/sound-healing">כתבנו הסבר מלא</a>.</p>
-        </section>
+        <p class="first-time__more">לא בטוחים מה זה בכלל? <a href="/sound-healing">כתבנו הסבר מלא</a>.</p>
 
         <section class="related">
             <h2 class="session-page__section-title">הקלטות קרובות באופי</h2>
