@@ -184,7 +184,7 @@
   },
   "bliss": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "בליס",
@@ -192,11 +192,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-09-22 20:30",
-   "state": "open",
-   "left": 7,
+   "state": "sold",
+   "left": 0,
    "eventer": "3kr2f",
-   "evening_sold": false,
-   "evening_open_slug": "bliss"
+   "evening_sold": true
   },
   "mark-eliyahu-early": {
    "event_status": "scheduled",
