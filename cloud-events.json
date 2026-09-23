@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-23 12:36",
- "source_asof": "2026-09-23 12:32",
+ "generated": "2026-09-23 13:18",
+ "source_asof": "2026-09-23 13:20",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -198,7 +198,7 @@
   },
   "mark-eliyahu-early": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "מארק אליהו סבב מוקדם",
@@ -206,11 +206,12 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-09-23 18:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 1,
    "eventer": "f042f",
    "main_slug": "mark-eliyahu",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "mark-eliyahu-early",
    "sib_slug": "mark-eliyahu",
    "sib_time": "20:30"
   },
@@ -228,9 +229,10 @@
    "left": 0,
    "eventer": "7kr2f",
    "round_slug": "mark-eliyahu-early",
-   "round_state": "sold",
+   "round_state": "open",
    "round_time": "18:30",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "mark-eliyahu-early",
    "sib_slug": "mark-eliyahu-early",
    "sib_time": "18:30",
    "alts": []
@@ -361,7 +363,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 11,
+   "left": 13,
    "eventer": "30b2f",
    "round_slug": "avishai-cohen-oct-early",
    "round_state": "open",
@@ -398,7 +400,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 51,
+   "left": 49,
    "eventer": "70b2f",
    "evening_sold": false,
    "evening_open_slug": "fine-oct"
@@ -446,7 +448,7 @@
    "time": "10:00",
    "iso": "2026-10-09 10:00",
    "state": "open",
-   "left": 117,
+   "left": 115,
    "eventer": "8lb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct"
