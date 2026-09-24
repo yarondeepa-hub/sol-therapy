@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-23 15:33",
- "source_asof": "2026-09-23 15:33",
+ "generated": "2026-09-24 09:26",
+ "source_asof": "2026-09-24 07:54",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -197,8 +197,8 @@
    "evening_sold": false
   },
   "mark-eliyahu-early": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "מארק אליהו סבב מוקדם",
@@ -206,18 +206,17 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-09-23 18:30",
-   "state": "open",
+   "state": "past",
    "left": 2,
    "eventer": "f042f",
    "main_slug": "mark-eliyahu",
    "evening_sold": false,
-   "evening_open_slug": "mark-eliyahu-early",
    "sib_slug": "mark-eliyahu",
    "sib_time": "20:30"
   },
   "mark-eliyahu": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "מארק אליהו",
@@ -225,14 +224,13 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-23 20:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "7kr2f",
    "round_slug": "mark-eliyahu-early",
-   "round_state": "open",
+   "round_state": "past",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "mark-eliyahu-early",
    "sib_slug": "mark-eliyahu-early",
    "sib_time": "18:30",
    "alts": []
@@ -361,7 +359,7 @@
    "time": "20:30",
    "iso": "2026-10-01 20:30",
    "state": "open",
-   "left": 13,
+   "left": 9,
    "eventer": "30b2f",
    "round_slug": "avishai-cohen-oct-early",
    "round_state": "open",
@@ -398,7 +396,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 47,
+   "left": 36,
    "eventer": "70b2f",
    "evening_sold": false,
    "evening_open_slug": "fine-oct"
@@ -414,7 +412,7 @@
    "time": "20:30",
    "iso": "2026-10-06 20:30",
    "state": "open",
-   "left": 107,
+   "left": 105,
    "eventer": "klb2f",
    "evening_sold": false,
    "evening_open_slug": "itay-tzur-oct"
@@ -462,10 +460,15 @@
    "time": "20:30",
    "iso": "2026-10-12 20:30",
    "state": "open",
-   "left": 22,
+   "left": 7,
    "eventer": "f0b2f",
+   "round_slug": "astral-oct-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "astral-oct"
+   "evening_open_slug": "astral-oct",
+   "sib_slug": "astral-oct-early",
+   "sib_time": "18:30"
   },
   "rejoicer-oct": {
    "event_status": "scheduled",
@@ -494,7 +497,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 96,
+   "left": 90,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -574,7 +577,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 65,
+   "left": 59,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -590,7 +593,7 @@
    "time": "10:00",
    "iso": "2026-10-23 10:00",
    "state": "open",
-   "left": 121,
+   "left": 118,
    "eventer": "mpb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct-23"
@@ -622,7 +625,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 96,
+   "left": 92,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -638,7 +641,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 72,
+   "left": 71,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
@@ -695,8 +698,8 @@
   "astral-oct-early": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "unlisted",
-   "unlisted_reason": "טיוטה 236f43 מ-23.9.2026 - טרם פורסמה; להסיר כשירון מפרסם את הסבב",
+   "visibility": "listed",
+   "unlisted_reason": "",
    "name": "astral-oct-early",
    "date": "12.10",
    "dow": "שני",
@@ -704,9 +707,12 @@
    "iso": "2026-10-12 18:30",
    "state": "open",
    "left": 125,
-   "eventer": "",
+   "eventer": "zcg2f",
+   "main_slug": "astral-oct",
    "evening_sold": false,
-   "evening_open_slug": "astral-oct-early"
+   "evening_open_slug": "astral-oct-early",
+   "sib_slug": "astral-oct",
+   "sib_time": "20:30"
   }
  }
 }
