@@ -100,7 +100,7 @@
     <meta name="twitter:image" content="https://sol-therapy.com/assets/cloud/card-og.jpg">
 
     <!-- Structured Data: Product (punch card) -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"כרטיסיית קלאוד","description":"כרטיסייה לערבי המדיטציה של קלאוד ספייס - קונים פעם אחת, צוללים שוב ושוב. עשר כניסות ב-950 ש\"ח, חמש כניסות ב-550 ש\"ח או שלוש כניסות ב-375 ש\"ח.","image":"https://sol-therapy.com/assets/cloud/card-og.jpg","url":"https://sol-therapy.com/cloud-card","brand":{"@type":"Organization","name":"Sol Therapy","url":"https://sol-therapy.com"},"offers":[{"@type":"Offer","name":"10 כניסות","price":"950","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"},{"@type":"Offer","name":"5 כניסות","price":"550","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"},{"@type":"Offer","name":"3 כניסות","price":"375","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"כרטיסיית קלאוד","description":"כרטיסייה לערבי המדיטציה של קלאוד ספייס - קונים פעם אחת, צוללים שוב ושוב. עשר כניסות ב-950 ש\"ח, חמש כניסות ב-550 ש\"ח או שלוש כניסות ב-375 ש\"ח. וגם שובר זוגי למתנה - שתי כניסות ב-270 ש\"ח.","image":"https://sol-therapy.com/assets/cloud/card-og.jpg","url":"https://sol-therapy.com/cloud-card","brand":{"@type":"Organization","name":"Sol Therapy","url":"https://sol-therapy.com"},"offers":[{"@type":"Offer","name":"10 כניסות","price":"950","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"},{"@type":"Offer","name":"5 כניסות","price":"550","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"},{"@type":"Offer","name":"3 כניסות","price":"375","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"},{"@type":"Offer","name":"שובר זוגי למתנה - 2 כניסות","price":"270","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://www.eventer.co.il/w0zff"}]}</script>
 
     <!-- Structured Data: BreadcrumbList -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"בית","item":"https://sol-therapy.com"},{"@type":"ListItem","position":2,"name":"CLOUD SPACE","item":"https://sol-therapy.com/cloud"},{"@type":"ListItem","position":3,"name":"כרטיסיית קלאוד","item":"https://sol-therapy.com/cloud-card"}]}</script>
@@ -239,6 +239,15 @@
         color:var(--color-washi);opacity:.82;text-align:start}
             .buy-gift-note b{font-weight:500;opacity:1}
     .buy-gift-note{border-inline-start-width:3px;font-size:1rem;opacity:.9}
+            .gift-voucher{max-width:42ch;margin:0 auto 1.9rem;padding:1.5rem 0 1.6rem;text-align:center}
+            .gift-voucher__kicker{font-family:var(--font-body);font-size:.78rem;letter-spacing:.08em;
+        color:var(--color-cloud);margin-bottom:.5rem}
+            .gift-voucher__title{font-family:var(--font-display);font-size:1.3rem;font-weight:600;
+        line-height:1.2;margin:0 0 .4rem;color:var(--color-washi)}
+            .gift-voucher__line{font-size:.95rem;font-weight:300;line-height:1.75;color:var(--color-washi);
+        opacity:.8;margin:0}
+            .gift-voucher__price{font-family:var(--font-body);font-weight:700;font-size:1.45rem;
+        line-height:1.2;color:var(--color-cloud);margin-top:.55rem}
             @media(max-width:560px){
         .gift-band{padding:1.8rem 1.2rem;margin-top:2.4rem}
         .gift-band__title{font-size:1.5rem}
@@ -548,10 +557,16 @@
             <div class="gift-band__kicker">גם מתנה</div>
             <h2 class="gift-band__title">מתנה של שקט</h2>
             <p class="gift-band__text">שלוש, חמש או עשר מדיטציות סאונד עמוקות, בערבים שהם בוחרים. אתם קונים, הם מחליטים מתי.</p>
+            <div class="gift-voucher">
+                <div class="gift-voucher__kicker">חדש</div>
+                <h3 class="gift-voucher__title">שובר זוגי</h3>
+                <p class="gift-voucher__line">ערב אחד לשניים, או שני ערבים לאחד</p>
+                <div class="gift-voucher__price">270 ש"ח</div>
+            </div>
             <ul class="gift-steps">
-            <li><span>1</span><div>קונים כרטיסייה כאן בעמוד.</div></li>
+            <li><span>1</span><div>קונים כרטיסייה או שובר זוגי כאן בעמוד.</div></li>
             <li><span>2</span><div>בפרטי ההזמנה ממלאים את הפרטים שלו - שם, טלפון ומייל.</div></li>
-            <li><span>3</span><div>הכרטיסייה מגיעה אליו, הוא בוחר ערב מהליינאפ ונכנס.</div></li>
+            <li><span>3</span><div>הכרטיסייה או השובר מגיעים אליו, הוא בוחר ערב מהליינאפ ונכנס.</div></li>
           </ul>
         </div>
 
