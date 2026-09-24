@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-24 09:26",
+ "generated": "2026-09-24 09:34",
  "source_asof": "2026-09-24 07:54",
  "events": {
   "amichai-matias": {
@@ -700,7 +700,7 @@
    "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
-   "name": "astral-oct-early",
+   "name": "אסטרל פרוג'קשן סבב מוקדם",
    "date": "12.10",
    "dow": "שני",
    "time": "18:30",
