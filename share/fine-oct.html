@@ -294,17 +294,17 @@ body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{displa
   <section class="sp-more" id="more">
     <h2>עוד בקלאוד</h2>
     <div class="sp-more-grid">
-      <a class="sp-mini" href="itay-tzur-oct.html" data-date="2026-10-06">
-        <span class="ph"><img src="../assets/cloud/artists-bw/itay-tzur-oct.jpg" alt="איתי צור" loading="lazy"></span>
-        <div class="nm">איתי צור</div><div class="wh">שלישי <span class="num">6.10</span></div>
+      <a class="sp-mini" href="radio-trip.html" data-date="2026-09-30">
+        <span class="ph"><img src="../assets/cloud/artists-bw/radio-trip.jpg" alt="רדיו טריפ" loading="lazy"></span>
+        <div class="nm">רדיו טריפ</div><div class="wh">רביעי <span class="num">30.9</span></div>
       </a>
-      <a class="sp-mini" href="asaf-talmudi-oct.html" data-date="2026-10-08">
-        <span class="ph"><img src="../assets/cloud/artists-bw/asaf-talmudi-oct.jpg" alt="אסף תלמודי" loading="lazy"></span>
-        <div class="nm">אסף תלמודי</div><div class="wh">חמישי <span class="num">8.10</span></div>
+      <a class="sp-mini" href="avishai-cohen-oct.html" data-date="2026-10-01">
+        <span class="ph"><img src="../assets/cloud/artists-bw/avishai-cohen-oct.jpg" alt="אבישי כהן" loading="lazy"></span>
+        <div class="nm">אבישי כהן</div><div class="wh">חמישי <span class="num">1.10</span></div>
       </a>
-      <a class="sp-mini" href="ran-slavin-oct.html" data-date="2026-10-09">
-        <span class="ph"><img src="../assets/cloud/artists-bw/ran-slavin-oct.jpg" alt="רן סלוין" loading="lazy"></span>
-        <div class="nm">רן סלוין</div><div class="wh">שישי <span class="num">9.10</span></div>
+      <a class="sp-mini" href="noa-argov-oct.html" data-date="2026-10-02">
+        <span class="ph"><img src="../assets/cloud/artists-bw/noa-argov-oct.jpg" alt="נועה ארגוב" loading="lazy"></span>
+        <div class="nm">נועה ארגוב</div><div class="wh">שישי <span class="num">2.10</span></div>
       </a>
     </div>
     <a class="sp-all" href="../cloud">לליינאפ המלא של קלאוד</a>
@@ -339,6 +339,15 @@ body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{displa
     if(now>d || kept>=3){ m.remove(); } else { kept++; }
   });
   if(!kept){ var g=document.querySelector('.sp-more-grid'); if(g) g.remove(); var h=document.querySelector('.sp-more h2'); if(h) h.remove(); }
+  // רענון בזמן אמת מול cloud-events.json - מסתיר גם כרטיס שאזל או עבר אחרי הפריסה האחרונה. הקריאה נכשלה = ה-HTML הסטטי נשאר
+  if(kept && window.fetch){ fetch('../cloud-events.json?v='+Date.now()).then(function(r){ return r.ok?r.json():null; }).then(function(j){
+    var ev=j&&j.events; if(!ev) return; var left=0;
+    document.querySelectorAll('.sp-mini').forEach(function(m){
+      var slug=(m.getAttribute('href')||'').split('/').pop().split('?')[0].replace(/\.html$/,''), e=ev[slug];
+      if(e && (e.state==='past' || (e.state==='sold' && !e.evening_open_slug))){ m.remove(); } else { left++; }
+    });
+    if(!left){ var g2=document.querySelector('.sp-more-grid'); if(g2) g2.remove(); var h2=document.querySelector('.sp-more h2'); if(h2) h2.remove(); }
+  }).catch(function(){}); }
   // שיתוף
   var sb=document.getElementById('shareBtn');
   if(sb) sb.addEventListener('click',function(){
