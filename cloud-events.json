@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-27 16:56",
- "source_asof": "2026-09-27 09:19",
+ "generated": "2026-09-28 00:28",
+ "source_asof": "2026-09-27 23:18",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -325,7 +325,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 72,
+   "left": 69,
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
@@ -380,7 +380,7 @@
    "time": "10:00",
    "iso": "2026-10-02 10:00",
    "state": "open",
-   "left": 109,
+   "left": 103,
    "eventer": "wlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct"
@@ -396,7 +396,7 @@
    "time": "20:30",
    "iso": "2026-10-05 20:30",
    "state": "open",
-   "left": 7,
+   "left": 1,
    "eventer": "70b2f",
    "round_slug": "fine-oct-early",
    "round_state": "open",
@@ -486,7 +486,7 @@
    "time": "20:30",
    "iso": "2026-10-13 20:30",
    "state": "open",
-   "left": 119,
+   "left": 110,
    "eventer": "a0b2f",
    "evening_sold": false,
    "evening_open_slug": "rejoicer-oct"
@@ -502,7 +502,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 63,
+   "left": 57,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -518,7 +518,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 100,
+   "left": 98,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -582,7 +582,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 55,
+   "left": 53,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -630,7 +630,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 90,
+   "left": 86,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -646,14 +646,14 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 43,
+   "left": 41,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
   },
   "brain-sister": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר (המדריך לטרמפיסט)",
@@ -661,10 +661,10 @@
    "dow": "ראשון",
    "time": "19:30",
    "iso": "2026-09-27 19:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "3vy2f",
-   "evening_sold": true
+   "evening_sold": false
   },
   "brain-sister-oct": {
    "event_status": "scheduled",
@@ -692,7 +692,7 @@
    "time": "18:30",
    "iso": "2026-10-01 18:30",
    "state": "open",
-   "left": 113,
+   "left": 101,
    "eventer": "zsg2f",
    "main_slug": "avishai-cohen-oct",
    "evening_sold": false,
@@ -711,7 +711,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 97,
+   "left": 90,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -724,7 +724,7 @@
    "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
-   "name": "fine-oct-early",
+   "name": "יוסי פיין סבב מוקדם",
    "date": "5.10",
    "dow": "שני",
    "time": "18:30",
