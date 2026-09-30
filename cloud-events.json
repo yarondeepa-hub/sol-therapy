@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-30 04:22",
- "source_asof": "2026-09-30 04:13",
+ "generated": "2026-09-30 17:41",
+ "source_asof": "2026-09-30 17:34",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -325,7 +325,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 66,
+   "left": 68,
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
@@ -387,7 +387,7 @@
   },
   "fine-oct": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יוסי פיין",
@@ -395,14 +395,14 @@
    "dow": "שני",
    "time": "20:30",
    "iso": "2026-10-05 20:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "70b2f",
    "round_slug": "fine-oct-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "fine-oct",
+   "evening_open_slug": "fine-oct-early",
    "sib_slug": "fine-oct-early",
    "sib_time": "18:30"
   },
@@ -433,7 +433,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 102,
+   "left": 100,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -502,7 +502,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 53,
+   "left": 46,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -534,7 +534,7 @@
    "time": "20:30",
    "iso": "2026-10-19 20:30",
    "state": "open",
-   "left": 125,
+   "left": 123,
    "eventer": "zlb2f",
    "evening_sold": false,
    "evening_open_slug": "shira-kela-oct"
@@ -582,7 +582,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 38,
+   "left": 34,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -598,7 +598,7 @@
    "time": "10:00",
    "iso": "2026-10-23 10:00",
    "state": "open",
-   "left": 118,
+   "left": 115,
    "eventer": "mpb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct-23"
@@ -646,7 +646,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 26,
+   "left": 24,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
@@ -692,7 +692,7 @@
    "time": "18:30",
    "iso": "2026-10-01 18:30",
    "state": "open",
-   "left": 71,
+   "left": 64,
    "eventer": "zsg2f",
    "main_slug": "avishai-cohen-oct",
    "evening_sold": false,
@@ -711,7 +711,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 78,
+   "left": 67,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -730,7 +730,7 @@
    "time": "18:30",
    "iso": "2026-10-05 18:30",
    "state": "open",
-   "left": 114,
+   "left": 110,
    "eventer": "c7h2f",
    "main_slug": "fine-oct",
    "evening_sold": false,
