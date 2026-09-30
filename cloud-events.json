@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-28 00:28",
- "source_asof": "2026-09-27 23:18",
+ "generated": "2026-09-30 04:22",
+ "source_asof": "2026-09-30 04:13",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -274,8 +274,8 @@
    "sib_time": "18:30"
   },
   "amdursky-early": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי סבב מוקדם",
@@ -283,17 +283,17 @@
    "dow": "שלישי",
    "time": "18:30",
    "iso": "2026-09-29 18:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "j8f2f",
    "main_slug": "amdursky-sep",
-   "evening_sold": true,
+   "evening_sold": false,
    "sib_slug": "amdursky-sep",
    "sib_time": "20:30"
   },
   "amdursky-sep": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי",
@@ -301,13 +301,13 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-09-29 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "past",
+   "left": 2,
    "eventer": "x772f",
    "round_slug": "amdursky-early",
-   "round_state": "sold",
+   "round_state": "past",
    "round_time": "18:30",
-   "evening_sold": true,
+   "evening_sold": false,
    "sib_slug": "amdursky-early",
    "sib_time": "18:30",
    "alts": [
@@ -325,7 +325,7 @@
    "time": "20:30",
    "iso": "2026-09-30 20:30",
    "state": "open",
-   "left": 69,
+   "left": 66,
    "eventer": "2kr2f",
    "evening_sold": false,
    "evening_open_slug": "radio-trip"
@@ -417,7 +417,7 @@
    "time": "20:30",
    "iso": "2026-10-06 20:30",
    "state": "open",
-   "left": 104,
+   "left": 94,
    "eventer": "klb2f",
    "evening_sold": false,
    "evening_open_slug": "itay-tzur-oct"
@@ -433,7 +433,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 103,
+   "left": 102,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -449,7 +449,7 @@
    "time": "10:00",
    "iso": "2026-10-09 10:00",
    "state": "open",
-   "left": 113,
+   "left": 111,
    "eventer": "8lb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct"
@@ -502,7 +502,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 57,
+   "left": 53,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -518,7 +518,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 98,
+   "left": 97,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -550,7 +550,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 120,
+   "left": 119,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -566,7 +566,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 117,
+   "left": 119,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -582,7 +582,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 53,
+   "left": 38,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -630,7 +630,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 86,
+   "left": 84,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -646,7 +646,7 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 41,
+   "left": 26,
    "eventer": "npb2f",
    "evening_sold": false,
    "evening_open_slug": "hadas-kleinman-oct"
@@ -692,7 +692,7 @@
    "time": "18:30",
    "iso": "2026-10-01 18:30",
    "state": "open",
-   "left": 101,
+   "left": 71,
    "eventer": "zsg2f",
    "main_slug": "avishai-cohen-oct",
    "evening_sold": false,
@@ -711,7 +711,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 90,
+   "left": 78,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -730,7 +730,7 @@
    "time": "18:30",
    "iso": "2026-10-05 18:30",
    "state": "open",
-   "left": 125,
+   "left": 114,
    "eventer": "c7h2f",
    "main_slug": "fine-oct",
    "evening_sold": false,
