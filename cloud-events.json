@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-01 16:45",
- "source_asof": "2026-10-01 16:43",
+ "generated": "2026-10-02 02:22",
+ "source_asof": "2026-10-02 02:17",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -346,8 +346,8 @@
    "sib_time": "20:30"
   },
   "avishai-cohen-oct": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אבישי כהן",
@@ -355,14 +355,13 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-10-01 20:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "30b2f",
    "round_slug": "avishai-cohen-oct-early",
-   "round_state": "open",
+   "round_state": "past",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "avishai-cohen-oct-early",
    "sib_slug": "avishai-cohen-oct-early",
    "sib_time": "18:30"
   },
@@ -430,7 +429,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 95,
+   "left": 94,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -499,7 +498,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 46,
+   "left": 40,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -547,7 +546,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 119,
+   "left": 117,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -579,7 +578,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 33,
+   "left": 32,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -627,7 +626,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 78,
+   "left": 76,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -684,8 +683,8 @@
    "evening_sold": true
   },
   "avishai-cohen-oct-early": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אבישי כהן סבב מוקדם",
@@ -693,12 +692,11 @@
    "dow": "חמישי",
    "time": "18:30",
    "iso": "2026-10-01 18:30",
-   "state": "open",
+   "state": "past",
    "left": 53,
    "eventer": "zsg2f",
    "main_slug": "avishai-cohen-oct",
    "evening_sold": false,
-   "evening_open_slug": "avishai-cohen-oct-early",
    "sib_slug": "avishai-cohen-oct",
    "sib_time": "20:30"
   },
@@ -713,7 +711,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 65,
+   "left": 61,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -732,7 +730,7 @@
    "time": "18:30",
    "iso": "2026-10-05 18:30",
    "state": "open",
-   "left": 101,
+   "left": 94,
    "eventer": "c7h2f",
    "main_slug": "fine-oct",
    "evening_sold": false,
