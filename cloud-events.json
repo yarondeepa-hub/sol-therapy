@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-01 09:04",
- "source_asof": "2026-09-30 17:34",
+ "generated": "2026-10-01 16:45",
+ "source_asof": "2026-10-01 16:43",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -377,7 +377,7 @@
    "time": "10:00",
    "iso": "2026-10-02 10:00",
    "state": "open",
-   "left": 103,
+   "left": 100,
    "eventer": "wlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct"
@@ -414,7 +414,7 @@
    "time": "20:30",
    "iso": "2026-10-06 20:30",
    "state": "open",
-   "left": 94,
+   "left": 91,
    "eventer": "klb2f",
    "evening_sold": false,
    "evening_open_slug": "itay-tzur-oct"
@@ -430,7 +430,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 100,
+   "left": 95,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -515,7 +515,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 97,
+   "left": 95,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -579,7 +579,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 34,
+   "left": 33,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -627,7 +627,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 84,
+   "left": 78,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -643,10 +643,15 @@
    "time": "20:30",
    "iso": "2026-10-29 20:30",
    "state": "open",
-   "left": 24,
+   "left": 17,
    "eventer": "npb2f",
+   "round_slug": "hadas-kleinman-oct-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "hadas-kleinman-oct"
+   "evening_open_slug": "hadas-kleinman-oct",
+   "sib_slug": "hadas-kleinman-oct-early",
+   "sib_time": "18:30"
   },
   "brain-sister": {
    "event_status": "past",
@@ -689,7 +694,7 @@
    "time": "18:30",
    "iso": "2026-10-01 18:30",
    "state": "open",
-   "left": 64,
+   "left": 53,
    "eventer": "zsg2f",
    "main_slug": "avishai-cohen-oct",
    "evening_sold": false,
@@ -708,7 +713,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 67,
+   "left": 65,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -727,12 +732,31 @@
    "time": "18:30",
    "iso": "2026-10-05 18:30",
    "state": "open",
-   "left": 110,
+   "left": 101,
    "eventer": "c7h2f",
    "main_slug": "fine-oct",
    "evening_sold": false,
    "evening_open_slug": "fine-oct-early",
    "sib_slug": "fine-oct",
+   "sib_time": "20:30"
+  },
+  "hadas-kleinman-oct-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "הדס קליינמן סבב מוקדם",
+   "date": "29.10",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-10-29 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "l8v2f",
+   "main_slug": "hadas-kleinman-oct",
+   "evening_sold": false,
+   "evening_open_slug": "hadas-kleinman-oct-early",
+   "sib_slug": "hadas-kleinman-oct",
    "sib_time": "20:30"
   }
  }
