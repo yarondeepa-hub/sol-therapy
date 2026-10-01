@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30 17:41",
+ "generated": "2026-10-01 09:04",
  "source_asof": "2026-09-30 17:34",
  "events": {
   "amichai-matias": {
@@ -310,13 +310,11 @@
    "evening_sold": false,
    "sib_slug": "amdursky-early",
    "sib_time": "18:30",
-   "alts": [
-    "radio-trip"
-   ]
+   "alts": []
   },
   "radio-trip": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "רדיו טריפ",
@@ -324,11 +322,10 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-09-30 20:30",
-   "state": "open",
+   "state": "past",
    "left": 68,
    "eventer": "2kr2f",
-   "evening_sold": false,
-   "evening_open_slug": "radio-trip"
+   "evening_sold": false
   },
   "raz-sep-early": {
    "event_status": "past",
