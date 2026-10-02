@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-02 02:22",
- "source_asof": "2026-10-02 02:17",
+ "generated": "2026-10-03 02:07",
+ "source_asof": "2026-10-03 02:02",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -366,8 +366,8 @@
    "sib_time": "18:30"
   },
   "noa-argov-oct": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "נועה ארגוב",
@@ -375,11 +375,10 @@
    "dow": "שישי",
    "time": "10:00",
    "iso": "2026-10-02 10:00",
-   "state": "open",
+   "state": "past",
    "left": 100,
    "eventer": "wlb2f",
-   "evening_sold": false,
-   "evening_open_slug": "noa-argov-oct"
+   "evening_sold": false
   },
   "fine-oct": {
    "event_status": "scheduled",
@@ -413,7 +412,7 @@
    "time": "20:30",
    "iso": "2026-10-06 20:30",
    "state": "open",
-   "left": 91,
+   "left": 87,
    "eventer": "klb2f",
    "evening_sold": false,
    "evening_open_slug": "itay-tzur-oct"
@@ -429,7 +428,7 @@
    "time": "20:30",
    "iso": "2026-10-08 20:30",
    "state": "open",
-   "left": 94,
+   "left": 88,
    "eventer": "xlb2f",
    "evening_sold": false,
    "evening_open_slug": "asaf-talmudi-oct"
@@ -482,7 +481,7 @@
    "time": "20:30",
    "iso": "2026-10-13 20:30",
    "state": "open",
-   "left": 110,
+   "left": 106,
    "eventer": "a0b2f",
    "evening_sold": false,
    "evening_open_slug": "rejoicer-oct"
@@ -498,7 +497,7 @@
    "time": "20:30",
    "iso": "2026-10-14 20:30",
    "state": "open",
-   "left": 40,
+   "left": 36,
    "eventer": "40b2f",
    "evening_sold": false,
    "evening_open_slug": "gorovich-oct"
@@ -514,7 +513,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 95,
+   "left": 93,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -546,7 +545,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 117,
+   "left": 114,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -578,7 +577,7 @@
    "time": "20:30",
    "iso": "2026-10-22 20:30",
    "state": "open",
-   "left": 32,
+   "left": 31,
    "eventer": "ppb2f",
    "evening_sold": false,
    "evening_open_slug": "raz-oct"
@@ -711,7 +710,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 61,
+   "left": 58,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
