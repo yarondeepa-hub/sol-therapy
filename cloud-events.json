@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04 14:07",
+ "generated": "2026-10-04 14:12",
  "source_asof": "2026-10-04 14:01",
  "events": {
   "amichai-matias": {
@@ -451,7 +451,7 @@
   },
   "astral-oct": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסטרל פרוג'קשן",
@@ -459,14 +459,14 @@
    "dow": "שני",
    "time": "20:30",
    "iso": "2026-10-12 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 2,
    "eventer": "f0b2f",
    "round_slug": "astral-oct-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "astral-oct-early",
+   "evening_open_slug": "astral-oct",
    "sib_slug": "astral-oct-early",
    "sib_time": "18:30"
   },
