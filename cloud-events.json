@@ -755,6 +755,22 @@
    "evening_open_slug": "hadas-kleinman-oct-early",
    "sib_slug": "hadas-kleinman-oct",
    "sib_time": "20:30"
+  },
+  "brain-sister-oct-26": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "הבריין סיסטר 2.0 (26.10)",
+   "date": "26.10",
+   "dow": "שני",
+   "time": "19:30",
+   "iso": "2026-10-26 19:30",
+   "state": "open",
+   "left": 115,
+   "eventer": "rn12f",
+   "evening_sold": false,
+   "evening_open_slug": "brain-sister-oct-26"
   }
  }
 }
