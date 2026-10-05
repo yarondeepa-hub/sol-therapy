@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-06 01:16",
+ "generated": "2026-10-06 01:23",
  "source_asof": "2026-10-06 01:11",
  "events": {
   "amichai-matias": {
@@ -804,7 +804,7 @@
   },
   "brain-sister-oct-26": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר 2.0 (26.10)",
@@ -812,11 +812,10 @@
    "dow": "שני",
    "time": "19:30",
    "iso": "2026-10-26 19:30",
-   "state": "open",
-   "left": 111,
+   "state": "sold",
+   "left": 0,
    "eventer": "rn12f",
-   "evening_sold": false,
-   "evening_open_slug": "brain-sister-oct-26"
+   "evening_sold": true
   }
  }
 }
