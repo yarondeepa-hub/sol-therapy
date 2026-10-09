@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-09 01:28",
- "source_asof": "2026-10-09 01:19",
+ "generated": "2026-10-09 14:50",
+ "source_asof": "2026-10-09 14:43",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -431,8 +431,8 @@
    "evening_sold": false
   },
   "ran-slavin-oct": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "רן סלוין",
@@ -440,11 +440,10 @@
    "dow": "שישי",
    "time": "10:00",
    "iso": "2026-10-09 10:00",
-   "state": "open",
+   "state": "past",
    "left": 104,
    "eventer": "8lb2f",
-   "evening_sold": false,
-   "evening_open_slug": "ran-slavin-oct"
+   "evening_sold": false
   },
   "astral-oct": {
    "event_status": "scheduled",
@@ -547,7 +546,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 100,
+   "left": 98,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -717,7 +716,7 @@
    "time": "18:30",
    "iso": "2026-10-12 18:30",
    "state": "open",
-   "left": 24,
+   "left": 20,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
    "evening_sold": false,
@@ -754,7 +753,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 120,
+   "left": 115,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
