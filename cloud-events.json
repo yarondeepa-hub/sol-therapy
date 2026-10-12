@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-09 14:50",
- "source_asof": "2026-10-09 14:43",
+ "generated": "2026-10-12 13:46",
+ "source_asof": "2026-10-12 13:42",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -459,10 +459,9 @@
    "left": 0,
    "eventer": "f0b2f",
    "round_slug": "astral-oct-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "astral-oct-early",
+   "evening_sold": true,
    "sib_slug": "astral-oct-early",
    "sib_time": "18:30"
   },
@@ -477,7 +476,7 @@
    "time": "20:30",
    "iso": "2026-10-13 20:30",
    "state": "open",
-   "left": 96,
+   "left": 79,
    "eventer": "a0b2f",
    "evening_sold": false,
    "evening_open_slug": "rejoicer-oct"
@@ -514,7 +513,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 77,
+   "left": 75,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -530,7 +529,7 @@
    "time": "20:30",
    "iso": "2026-10-19 20:30",
    "state": "open",
-   "left": 113,
+   "left": 109,
    "eventer": "zlb2f",
    "evening_sold": false,
    "evening_open_slug": "shira-kela-oct"
@@ -546,7 +545,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 98,
+   "left": 89,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -562,7 +561,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 109,
+   "left": 105,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -599,7 +598,7 @@
    "time": "10:00",
    "iso": "2026-10-23 10:00",
    "state": "open",
-   "left": 103,
+   "left": 100,
    "eventer": "mpb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct-23"
@@ -631,7 +630,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 63,
+   "left": 53,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -673,8 +672,8 @@
    "evening_sold": false
   },
   "brain-sister-oct": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר 2.0",
@@ -682,10 +681,10 @@
    "dow": "ראשון",
    "time": "19:30",
    "iso": "2026-10-11 19:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "fa92f",
-   "evening_sold": true
+   "evening_sold": false
   },
   "avishai-cohen-oct-early": {
    "event_status": "past",
@@ -707,7 +706,7 @@
   },
   "astral-oct-early": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסטרל פרוג'קשן סבב מוקדם",
@@ -715,12 +714,11 @@
    "dow": "שני",
    "time": "18:30",
    "iso": "2026-10-12 18:30",
-   "state": "open",
-   "left": 20,
+   "state": "sold",
+   "left": 0,
    "eventer": "zcg2f",
    "main_slug": "astral-oct",
-   "evening_sold": false,
-   "evening_open_slug": "astral-oct-early",
+   "evening_sold": true,
    "sib_slug": "astral-oct",
    "sib_time": "20:30"
   },
@@ -753,7 +751,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 115,
+   "left": 108,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
@@ -772,7 +770,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 117,
+   "left": 103,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -791,7 +789,7 @@
    "time": "18:30",
    "iso": "2026-10-14 18:30",
    "state": "open",
-   "left": 119,
+   "left": 104,
    "eventer": "rq12f",
    "main_slug": "gorovich-oct",
    "evening_sold": false,
