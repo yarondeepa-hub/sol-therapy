@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-13 01:49",
- "source_asof": "2026-10-13 01:45",
+ "generated": "2026-10-14 07:05",
+ "source_asof": "2026-10-13 12:46",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -466,8 +466,8 @@
    "sib_time": "18:30"
   },
   "rejoicer-oct": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "ריג'ויסר",
@@ -475,11 +475,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-10-13 20:30",
-   "state": "open",
-   "left": 78,
+   "state": "past",
+   "left": 75,
    "eventer": "a0b2f",
-   "evening_sold": false,
-   "evening_open_slug": "rejoicer-oct"
+   "evening_sold": false
   },
   "gorovich-oct": {
    "event_status": "scheduled",
@@ -529,7 +528,7 @@
    "time": "20:30",
    "iso": "2026-10-19 20:30",
    "state": "open",
-   "left": 109,
+   "left": 107,
    "eventer": "zlb2f",
    "evening_sold": false,
    "evening_open_slug": "shira-kela-oct"
@@ -630,7 +629,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 53,
+   "left": 54,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -789,7 +788,7 @@
    "time": "18:30",
    "iso": "2026-10-14 18:30",
    "state": "open",
-   "left": 104,
+   "left": 103,
    "eventer": "rq12f",
    "main_slug": "gorovich-oct",
    "evening_sold": false,
