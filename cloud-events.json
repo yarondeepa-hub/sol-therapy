@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-14 07:05",
- "source_asof": "2026-10-13 12:46",
+ "generated": "2026-10-15 07:31",
+ "source_asof": "2026-10-15 07:28",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -481,8 +481,8 @@
    "evening_sold": false
   },
   "gorovich-oct": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "גורוביץ",
@@ -490,14 +490,13 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-10-14 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "past",
+   "left": 2,
    "eventer": "40b2f",
    "round_slug": "gorovich-oct-early",
-   "round_state": "open",
+   "round_state": "past",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "gorovich-oct-early",
    "sib_slug": "gorovich-oct-early",
    "sib_time": "18:30"
   },
@@ -512,7 +511,7 @@
    "time": "10:00",
    "iso": "2026-10-16 10:00",
    "state": "open",
-   "left": 75,
+   "left": 72,
    "eventer": "dlb2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-oct-16"
@@ -544,7 +543,7 @@
    "time": "20:30",
    "iso": "2026-10-20 20:30",
    "state": "open",
-   "left": 87,
+   "left": 75,
    "eventer": "0pb2f",
    "evening_sold": false,
    "evening_open_slug": "zisling-oct"
@@ -560,7 +559,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 105,
+   "left": 98,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -629,7 +628,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 54,
+   "left": 53,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -750,7 +749,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 106,
+   "left": 95,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
@@ -769,7 +768,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 102,
+   "left": 90,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -778,8 +777,8 @@
    "sib_time": "20:30"
   },
   "gorovich-oct-early": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "גורוביץ סבב מוקדם",
@@ -787,12 +786,11 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-10-14 18:30",
-   "state": "open",
-   "left": 103,
+   "state": "past",
+   "left": 88,
    "eventer": "rq12f",
    "main_slug": "gorovich-oct",
    "evening_sold": false,
-   "evening_open_slug": "gorovich-oct-early",
    "sib_slug": "gorovich-oct",
    "sib_time": "20:30"
   },
