@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17 07:45",
+ "generated": "2026-10-17 09:29",
  "source_asof": "2026-10-17 07:22",
  "events": {
   "amichai-matias": {
@@ -970,7 +970,7 @@
   },
   "darwish-nov": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "דרוויש",
@@ -978,14 +978,14 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-11-18 20:30",
-   "state": "open",
-   "left": 4,
+   "state": "sold",
+   "left": 0,
    "eventer": "cgk2f",
    "round_slug": "darwish-nov-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "darwish-nov",
+   "evening_open_slug": "darwish-nov-early",
    "sib_slug": "darwish-nov-early",
    "sib_time": "18:30"
   },
