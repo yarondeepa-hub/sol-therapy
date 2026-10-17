@@ -4,6 +4,7 @@
      <div class="sp-next" id="sp-next" data-page="<slug>" data-artist="<בסיס האמן>" data-name="<שם>" hidden></div>
    (המיכל ושורת הסקריפט נכנסים דרך T-tools/scripts/share_next_inject.py).
    מצבים: 1 יש כרטיסים / 2 כרטיסים אחרונים / 3 המאוחר אזל והמוקדם פתוח / 4 הכל אזל -> לליינאפ המלא / 5 אין תאריך (רק בעמוד שהתקיים).
+   "כרטיסים אחרונים" נקבע לפי הסבב שמוצג בבלוק ולא לפי תגית העמוד הכללית (17.10.2026, ראו lastFlag).
    כל הנוסח יושב באובייקט T - אסור לשנות אותו בלי אישור ירון. עמוד שאינו בעברית - הבלוק נשאר מוסתר (אין נוסח אנגלי מאושר). */
 (function(){
   'use strict';
@@ -70,10 +71,20 @@
     return list;
   }
 
-  function lastFlag(main){
+  // "כרטיסים אחרונים" לפי הסבב שמוצג בבלוק (17.10.2026): קודם סימון הכפתורים של אותו סבב בעמוד השיתוף
+  // (קישור לקוד האיוונטר שלו עם "אחרונים" - מצב C של שני סבבים, ומצב B של מוקדם). הדגל הכללי --last נחשב רק
+  // בעמוד בלי בלוק סבבים (סבב יחיד), כי בעמוד של שני סבבים הוא אומר "שני סבבים" ולא מתאר אף סבב.
+  function lastFlag(main, code){
     return fetch('/share/' + main + '.html', { cache: 'no-store' }).then(function(r){ return r.ok ? r.text() : ''; })
-      // הדגל --last משמש גם ל"נפתח סבב מוקדם" - רק טקסט עם "אחרון/אחרונים" נחשב כרטיסים אחרונים
-      .then(function(h){ return /<body[^>]*data-state="live"/.test(h) && /class="sp-flag --last">[^<]*אחרו/.test(h); })
+      .then(function(h){
+        if (!/<body[^>]*data-state="live"/.test(h)) return false;
+        if (code) {
+          var re = new RegExp('<a [^>]*href="https://www\\.eventer\\.co\\.il/' + String(code).replace(/[^\w-]/g, '') + '[?"][^>]*>([\\s\\S]*?)</a>', 'g'), m;
+          while ((m = re.exec(h))) { if (/אחרו/.test(m[1])) return true; }
+        }
+        // הדגל --last משמש גם ל"נפתח סבב מוקדם" - רק טקסט עם "אחרון/אחרונים" נחשב כרטיסים אחרונים
+        return h.indexOf('class="sp-rounds"') < 0 && /class="sp-flag --last">[^<]*אחרו/.test(h);
+      })
       .catch(function(){ return false; });
   }
 
@@ -200,7 +211,7 @@
         if (pageState === 'done' && name) { render(null, false, name, true); liftMore(); }
         return;
       }
-      var p = (mine.mainOpen || mine.earlyOpen) ? lastFlag(mine.main) : Promise.resolve(false);
+      var p = (mine.mainOpen || mine.earlyOpen) ? lastFlag(mine.main, mine.mainOpen ? mine.m.eventer : mine.e.eventer) : Promise.resolve(false);
       return p.then(function(flag){
         render(mine, flag, name || cleanName(mine.m.name), notSelling);
         if (notSelling) liftMore();
