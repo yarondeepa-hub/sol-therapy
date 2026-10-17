@@ -27,6 +27,28 @@
             qs.forEach(function(v,k){ if(k==='fbclid'||k.indexOf('utm_')===0){ attr[k]=v; changed=true; } });
             if(changed) sessionStorage.setItem(KEY,JSON.stringify(attr));
           }catch(_){}
+          // sol_src = source/medium of the first entry to the site (landing UTM, else referrer, else direct).
+          // A custom param for our own reporting - NOT utm. utm_* is never added or changed here (5.9.2026 incident).
+          // sessionStorage = first entry of this visit (a real source replaces direct); localStorage = first non-direct entry, kept 30 days.
+          var solSrc='';
+          try{
+            var SK='solSrc', now=Date.now(), cur='', ss='', ls=null, rh='';
+            var sq=new URLSearchParams(location.search), us=(sq.get('utm_source')||'').trim(), um=(sq.get('utm_medium')||'').trim();
+            try{ rh=document.referrer?new URL(document.referrer).hostname.toLowerCase():''; }catch(_){ rh=''; }
+            var internal=!!rh&&(rh===location.hostname||/(^|\.)(sol-therapy\.com|eventer\.co\.il)$/.test(rh));
+            if(us){ cur=us+'/'+(um||'(not set)'); }
+            else if(rh&&!internal){
+              var se=rh.match(/(^|\.)(google|bing|yahoo|duckduckgo|yandex|baidu|ecosia)\./);
+              cur=se?se[2]+'/organic':rh.replace(/^(www|m|l|lm|mobile)\./,'')+'/referral';
+            }
+            else if(!rh){ cur='(direct)/(none)'; }
+            cur=cur.slice(0,100);
+            try{ ss=sessionStorage.getItem(SK)||''; }catch(_){}
+            if(cur&&(!ss||(ss==='(direct)/(none)'&&cur!==ss))){ ss=cur; try{ sessionStorage.setItem(SK,ss); }catch(_){} }
+            try{ ls=JSON.parse(localStorage.getItem(SK)||'null'); if(!ls||!ls.v||!(now-ls.t<2592e6)) ls=null; }catch(_){ ls=null; }
+            if(!ls&&cur&&cur!=='(direct)/(none)'){ ls={v:cur,t:now}; try{ localStorage.setItem(SK,JSON.stringify(ls)); }catch(_){} }
+            solSrc=(ss&&ss!=='(direct)/(none)')?ss:(ls?ls.v:(ss||'(direct)/(none)'));
+          }catch(_){}
           document.addEventListener('click',function(e){
             try{
               if(!e.target||!e.target.closest) return;
@@ -45,6 +67,7 @@
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
               set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
+              set('sol_src',solSrc);
               a.href=u.toString();
             }catch(_){}
           },true);
