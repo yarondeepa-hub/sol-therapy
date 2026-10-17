@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17 07:11",
- "source_asof": "2026-10-17 07:08",
+ "generated": "2026-10-17 07:23",
+ "source_asof": "2026-10-17 07:22",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -981,8 +981,13 @@
    "state": "open",
    "left": 4,
    "eventer": "cgk2f",
+   "round_slug": "darwish-nov-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "darwish-nov"
+   "evening_open_slug": "darwish-nov",
+   "sib_slug": "darwish-nov-early",
+   "sib_time": "18:30"
   },
   "shuzin-nov": {
    "event_status": "scheduled",
@@ -1079,6 +1084,25 @@
    "eventer": "3sx2f",
    "evening_sold": false,
    "evening_open_slug": "tomer-katz-nov"
+  },
+  "darwish-nov-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "darwish-nov-early",
+   "date": "18.11",
+   "dow": "רביעי",
+   "time": "18:30",
+   "iso": "2026-11-18 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "c2x2f",
+   "main_slug": "darwish-nov",
+   "evening_sold": false,
+   "evening_open_slug": "darwish-nov-early",
+   "sib_slug": "darwish-nov",
+   "sib_time": "20:30"
   }
  }
 }
