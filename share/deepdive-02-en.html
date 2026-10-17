@@ -60,7 +60,7 @@
               set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
+              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solDl=a.closest('[data-click-location]'); var solLoc=solDl?solDl.getAttribute('data-click-location'):a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
@@ -303,6 +303,7 @@ body{direction:ltr;text-align:left}
 .sp-rsvp.sent + .sp-rsvp-done{display:block}
 </style>
 <script defer src="/assets/clean-url.js"></script>
+<script defer src="/assets/share-next.js"></script>
 </head>
 <body data-state="done" data-event-date="2026-08-14">
 
@@ -346,6 +347,7 @@ body{direction:ltr;text-align:left}
   <div class="sp-rsvp-done">You are in. See you Friday 14.8 at CLOUD SPACE.<br>Doors 23:00, Shocken 27.</div>
   <p class="sp-state-note" id="note-sold" style="display:none">Tickets for this event are sold out. The lineup continues - more events run every week.</p>
   <p class="sp-state-note" id="note-done">This event has taken place. The lineup continues - the next CLOUD events are below.</p>
+  <div class="sp-next" id="sp-next" data-page="deepdive-02-en" data-artist="deepdive" data-name="DEEPDIVE 02" hidden></div>
 
   <div class="sp-share">
     <span class="rule"></span>

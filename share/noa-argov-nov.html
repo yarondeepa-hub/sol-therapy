@@ -60,7 +60,7 @@
               set('utm_content',solPage); set('sol_page',solPage);
               var card=a.closest('[data-slug]');
               var slug=(card&&card.getAttribute('data-slug'))||(location.pathname.split('/').pop()||'index').replace(/\.html?$/,'')||'index';
-              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solLoc=a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
+              set('ref',slug); var solCode=(u.pathname.replace(/\/+$/,'').split('/').pop()||''); var solDl=a.closest('[data-click-location]'); var solLoc=solDl?solDl.getAttribute('data-click-location'):a.closest('.sp-sticky')?'sticky':(a.closest('.sp-cta')||a.classList.contains('sp-cta'))?'share-cta':a.closest('.lp-detail')?'panel':a.closest('.lp-card')?'card':'other'; try{ if(typeof window.gtag==='function'){ window.gtag('event','eventer_click',{event_category:'cloud_outbound',source_page:solPage,event_slug:slug,event_code:solCode,artist:slug.replace(/-(b|early)$/,''),click_location:solLoc,page_path:location.pathname}); } }catch(_g){}
               set('fbclid',attr.fbclid);
               a.href=u.toString();
             }catch(_){}
@@ -216,6 +216,7 @@ body[data-state="live"] .sp-sticky{display:block}
 body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{display:none}
 </style>
 <script defer src="/assets/clean-url.js"></script>
+<script defer src="/assets/share-next.js"></script>
 </head>
 <body data-state="live" data-event-date="2026-11-03">
 
@@ -254,6 +255,7 @@ body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{displa
   <a class="sp-cardline" href="/cloud-card" data-card-line="1" onclick="try{if(window.gtag){gtag('event','card_line_click',{event_category:'cloud_card',page_path:location.pathname})}}catch(e){}">שימו לב - יש לנו כרטיסייה - מנקבים וחוסכים</a>
   <p class="sp-state-note" id="note-sold">הכרטיסים לסשן הזה אזלו. הליינאפ ממשיך - סשנים נוספים מתקיימים כל שבוע.</p>
   <p class="sp-state-note" id="note-done">הסשן התקיים. הליינאפ ממשיך - הסשנים הבאים בקלאוד למטה.</p>
+  <div class="sp-next" id="sp-next" data-page="noa-argov-nov" data-artist="noa-argov" data-name="נועה ארגוב" hidden></div>
 
   <div class="sp-share">
     <span class="rule"></span>
