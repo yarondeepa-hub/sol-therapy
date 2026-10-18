@@ -973,6 +973,19 @@
                 height: 40%;
             }
         }
+        /* Two quotes: a true two-column grid (no empty middle track) */
+        @media (min-width: 641px) {
+            .press-quotes__grid:has(> .press-quotes__item:nth-child(2):last-child) {
+                grid-template-columns: 1.15fr 0.85fr;
+            }
+            .press-quotes__grid:has(> .press-quotes__item:nth-child(2):last-child)::before {
+                display: none;
+            }
+            .press-quotes__grid:has(> .press-quotes__item:nth-child(2):last-child) > .press-quotes__item:last-child {
+                grid-column: 2;
+                border-inline-start: 1px solid rgba(59,81,75,0.12);
+            }
+        }
 
         /* ============================================
            BLOG TEASER
@@ -2005,7 +2018,7 @@
         <!-- ========================================
              PRESS QUOTES
         ======================================== -->
-        <section class="press-quotes press-quotes--washi dissolve-from-dark fade-in" aria-label="כתבו עלינו">
+        <section class="press-quotes press-quotes--washi dissolve-from-dark fade-in" aria-label="ציטוטים מהעיתונות">
             <div class="press-quotes__grid">
                 <blockquote class="press-quotes__item fade-in">
                     <p class="press-quotes__text">״קווי המתאר ואת המרקם התנועתי של הצלילים שראיתי בעיני רוחי בחצי השעה הראשונה של הסשן, לפני שפקחתי את העיניים הממשיות. זאת לא חוויה שכיחה, לראות צלילים. ברגעים מסוימים בסשן הרגשתי שאני אפילו מתקרב אליהם, כמעט נוגע בהם.״</p>
