@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17 09:29",
- "source_asof": "2026-10-17 07:22",
+ "generated": "2026-10-18 14:43",
+ "source_asof": "2026-10-18 14:21",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -526,7 +526,7 @@
    "time": "20:30",
    "iso": "2026-10-19 20:30",
    "state": "open",
-   "left": 103,
+   "left": 94,
    "eventer": "zlb2f",
    "evening_sold": false,
    "evening_open_slug": "shira-kela-oct"
@@ -558,14 +558,14 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 88,
+   "left": 86,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
   },
   "raz-oct": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יחזקאל רז",
@@ -573,14 +573,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-10-22 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 3,
    "eventer": "ppb2f",
    "round_slug": "raz-oct-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "raz-oct-early",
+   "evening_open_slug": "raz-oct",
    "sib_slug": "raz-oct-early",
    "sib_time": "18:30"
   },
@@ -595,7 +595,7 @@
    "time": "10:00",
    "iso": "2026-10-23 10:00",
    "state": "open",
-   "left": 92,
+   "left": 91,
    "eventer": "mpb2f",
    "evening_sold": false,
    "evening_open_slug": "ran-slavin-oct-23"
@@ -748,7 +748,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 86,
+   "left": 85,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
@@ -767,7 +767,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 71,
+   "left": 63,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -851,7 +851,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 104,
+   "left": 88,
    "eventer": "qsx2f",
    "evening_sold": false,
    "evening_open_slug": "avraham-tal-nov"
@@ -867,7 +867,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 108,
+   "left": 94,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -899,7 +899,7 @@
    "time": "20:30",
    "iso": "2026-11-10 20:30",
    "state": "open",
-   "left": 48,
+   "left": 13,
    "eventer": "zrx2f",
    "evening_sold": false,
    "evening_open_slug": "amdursky-nov"
@@ -915,7 +915,7 @@
    "time": "20:30",
    "iso": "2026-11-11 20:30",
    "state": "open",
-   "left": 125,
+   "left": 118,
    "eventer": "fgk2f",
    "evening_sold": false,
    "evening_open_slug": "talmudi-nov"
@@ -931,7 +931,7 @@
    "time": "20:30",
    "iso": "2026-11-12 20:30",
    "state": "open",
-   "left": 122,
+   "left": 120,
    "eventer": "wtx2f",
    "evening_sold": false,
    "evening_open_slug": "ra-mochiach-nov"
@@ -947,7 +947,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 120,
+   "left": 114,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -1000,7 +1000,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 123,
+   "left": 122,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1096,7 +1096,7 @@
    "time": "18:30",
    "iso": "2026-11-18 18:30",
    "state": "open",
-   "left": 125,
+   "left": 101,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
    "evening_sold": false,
