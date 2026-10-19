@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-19 07:02",
- "source_asof": "2026-10-19 06:59",
+ "generated": "2026-10-19 09:45",
+ "source_asof": "2026-10-19 09:41",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -748,7 +748,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 77,
+   "left": 75,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
@@ -851,7 +851,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 82,
+   "left": 75,
    "eventer": "qsx2f",
    "evening_sold": false,
    "evening_open_slug": "avraham-tal-nov"
@@ -867,7 +867,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 86,
+   "left": 83,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -901,8 +901,13 @@
    "state": "open",
    "left": 5,
    "eventer": "zrx2f",
+   "round_slug": "amdursky-nov-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "amdursky-nov"
+   "evening_open_slug": "amdursky-nov",
+   "sib_slug": "amdursky-nov-early",
+   "sib_time": "18:30"
   },
   "talmudi-nov": {
    "event_status": "scheduled",
@@ -915,7 +920,7 @@
    "time": "20:30",
    "iso": "2026-11-11 20:30",
    "state": "open",
-   "left": 116,
+   "left": 114,
    "eventer": "fgk2f",
    "evening_sold": false,
    "evening_open_slug": "talmudi-nov"
@@ -1102,6 +1107,25 @@
    "evening_sold": false,
    "evening_open_slug": "darwish-nov-early",
    "sib_slug": "darwish-nov",
+   "sib_time": "20:30"
+  },
+  "amdursky-nov-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "אסף אמדורסקי סבב מוקדם",
+   "date": "10.11",
+   "dow": "שלישי",
+   "time": "18:30",
+   "iso": "2026-11-10 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "kjx2f",
+   "main_slug": "amdursky-nov",
+   "evening_sold": false,
+   "evening_open_slug": "amdursky-nov-early",
+   "sib_slug": "amdursky-nov",
    "sib_time": "20:30"
   }
  }
