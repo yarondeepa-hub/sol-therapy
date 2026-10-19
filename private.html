@@ -1622,6 +1622,15 @@
         .contact-form__note { margin-top: 1.4rem; font-size: var(--type-small); line-height: 1.6; color: var(--color-green-dark); }
         .contact-form__alt { text-align: center; margin-top: var(--space-m); font-size: var(--type-small); color: var(--color-green-dark); }
         .contact-form__alt a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+        /* טופס פניות - נעילה בזמן שליחה, הודעת אישור והודעת שגיאה (18.10) */
+        .contact-form__submit[disabled] { opacity: 0.55; cursor: progress; }
+        .contact-form__status { max-width: 520px; margin: 1.4rem auto 0; text-align: center; line-height: 1.7; color: var(--color-green-dark); }
+        .contact-form__status p + p { margin-top: 0.6rem; }
+        .contact-form__status a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+        .contact-form__status--err { font-size: var(--type-small); }
+        .contact-form__status--ok { padding: 2.4rem 1.6rem; border: 1px solid var(--color-green); font-size: var(--type-body); }
+        .contact-form__status--ok:focus { outline: none; }
+        .contact-form__status-title { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; margin-bottom: 0.4rem; }
         .contact-private--washi .contact-private__btn {
             color: var(--color-green-dark);
             border-color: var(--color-green);
@@ -2106,52 +2115,113 @@
                 <p class="contact-private__about">בין אם מדובר בסשן ממוקד במשרדי החברה, ובין אם בריטריט עומק באחד מהלוקיישנים הייחודיים שלנו ברחבי הארץ ובחו"ל - בואו נדבר. נשמח לבחון יחד את האופציות ולבנות תוכנית המותאמת אישית לצרכי הצוות שלכם.</p>
             </div>
 
-            <form class="contact-form fade-in" id="corporateForm" onsubmit="return handleCorporateForm(event)">
+            <form class="contact-form fade-in" id="corporateForm" data-form-page="private">
                 <div class="contact-form__row">
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="name">שם מלא</label>
-                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="שם מלא" required>
+                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="שם מלא" autocomplete="name" required>
                     </div>
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="org">ארגון</label>
-                        <input type="text" id="org" name="organization" class="contact-form__input" placeholder="שם הארגון" required>
+                        <input type="text" id="org" name="organization" class="contact-form__input" placeholder="שם הארגון" autocomplete="organization">
                     </div>
                 </div>
                 <div class="contact-form__row">
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="email">אימייל</label>
-                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="your@email.com" dir="ltr" required>
+                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="your@email.com" dir="ltr" autocomplete="email" required>
                     </div>
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="phone">טלפון</label>
-                        <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="050-0000000" dir="ltr">
+                        <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="050-0000000" dir="ltr" autocomplete="tel">
                     </div>
                 </div>
                 <div class="contact-form__group">
                     <label class="contact-form__label" for="message">ספרו לנו בקצרה</label>
                     <textarea id="message" name="message" class="contact-form__textarea" placeholder="מה אתם מחפשים - סוג האירוע, מספר משתתפים, מסגרת זמן" rows="4"></textarea>
                 </div>
-                <p class="contact-form__note">הלחיצה על הכפתור פותחת מייל מוכן לשליחה בתוכנת הדואר שלכם, עם הפרטים שמילאתם. הפנייה יוצאת מהמייל שלכם.</p>
-                <button type="submit" class="contact-form__submit">פתיחת מייל מוכן לשליחה</button>
+                <p class="contact-form__note">מסירת הפרטים היא מרצון, והם ישמשו רק כדי לחזור אליכם בעניין הפנייה. לבקשת עיון, תיקון או מחיקה: <span dir="ltr">the.sol.therapy@gmail.com</span></p>
+                <button type="submit" class="contact-form__submit">שליחת פנייה</button>
             </form>
+            <div class="contact-form__status contact-form__status--err" id="corporateFormErr" role="alert" hidden>
+                <p>משהו השתבש והפנייה לא נשלחה. נסו שוב, או כתבו לנו ישירות - במייל <a href="mailto:the.sol.therapy@gmail.com" dir="ltr">the.sol.therapy@gmail.com</a> או <a href="https://wa.me/972547311200" target="_blank" rel="noopener">בוואטסאפ</a>.</p>
+            </div>
+            <div class="contact-form__status contact-form__status--ok" id="corporateFormOk" role="status" tabindex="-1" hidden>
+                <p class="contact-form__status-title">הפנייה התקבלה</p>
+                <p>מנהלת המשרד שלנו תחזור אליכם בהקדם.</p>
+            </div>
             <script>
-            function handleCorporateForm(e) {
-                e.preventDefault();
+            /* טופס פניות (18.10.2026): שליחה לטופס גוגל "CLOUD Business Leads" -> גיליון "CLOUD Business Leads Responses" בדרייב של ירון.
+               fetch no-cors כמו יומן רשימת ההמתנה; מזהי entry.N ציבוריים בהגדרה. חובה: שם + טלפון או אימייל (הודעות הדפדפן).
+               הצלחה = אירוע GA4 generate_lead עם form_page. */
+            (function () {
+                var ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSePfUFe-n1m_PHAXUqUobfaCz2HIpI6Z6_J3vd8nfEKWQqnpw/formResponse';
+                var SENDING = 'שולחים...';
                 var f = document.getElementById('corporateForm');
-                var name = f.querySelector('#name').value;
-                var org = f.querySelector('#org').value;
-                var email = f.querySelector('#email').value;
-                var phone = f.querySelector('#phone').value;
-                var msg = f.querySelector('#message').value;
-                var subject = encodeURIComponent('פנייה מהאתר - ' + org);
-                var body = encodeURIComponent('שם: ' + name + '\nארגון: ' + org + '\nאימייל: ' + email + '\nטלפון: ' + phone + '\n\n' + msg);
-                // קליק בלבד (לא המרה): הכפתור פותח מייל מוכן בתוכנת הדואר, השליחה בידי הפונה
-                if (typeof window.gtag === 'function') {
-                    window.gtag('event', 'contact_email_click', { method: 'mailto_form', page_path: window.location.pathname });
-                }
-                window.location.href = 'mailto:the.sol.therapy@gmail.com?subject=' + subject + '&body=' + body;
-                return false;
-            }
+                if (!f) return;
+                var page = f.getAttribute('data-form-page') || '';
+                var q = function (s) { return f.querySelector(s); };
+                var em = q('#email'), ph = q('#phone'), btn = q('.contact-form__submit'), btnText = btn.textContent;
+                var ok = document.getElementById('corporateFormOk'), err = document.getElementById('corporateFormErr');
+                // מקור תנועה - אותו היגיון של sol_src בעמודי קלאוד (UTM של הנחיתה, אחרת מפנה, אחרת ישיר), נקרא כאן לפני ש-clean-url מנקה את הכתובת
+                var src = '';
+                try {
+                    var sq = new URLSearchParams(location.search), us = (sq.get('utm_source') || '').trim(), um = (sq.get('utm_medium') || '').trim(), uc = (sq.get('utm_campaign') || '').trim();
+                    var rh = '', rp = '';
+                    try { if (document.referrer) { var ru = new URL(document.referrer); rh = ru.hostname.toLowerCase(); rp = ru.pathname; } } catch (_) {}
+                    var own = !!rh && (rh === location.hostname || /(^|\.)sol-therapy\.com$/.test(rh));
+                    var internal = own || /(^|\.)eventer\.co\.il$/.test(rh);
+                    var cur = '';
+                    if (us) cur = us + '/' + (um || '(not set)');
+                    else if (sq.get('gclid')) cur = 'google/cpc';
+                    else if (rh && !internal) { var se = rh.match(/(^|\.)(google|bing|yahoo|duckduckgo|yandex|baidu|ecosia)\./); cur = se ? se[2] + '/organic' : rh.replace(/^(www|m|l|lm|mobile)\./, '') + '/referral'; }
+                    else if (!rh) cur = '(direct)/(none)';
+                    var ss = ''; try { ss = sessionStorage.getItem('solSrc') || ''; } catch (_) {}
+                    var ls = null; try { ls = JSON.parse(localStorage.getItem('solSrc') || 'null'); if (!ls || !ls.v || !(Date.now() - ls.t < 2592e6)) ls = null; } catch (_) { ls = null; }
+                    var attr = {}; try { attr = JSON.parse(sessionStorage.getItem('solAttr') || '{}') || {}; } catch (_) {}
+                    var first = (ss && ss !== '(direct)/(none)') ? ss : (cur && cur !== '(direct)/(none)') ? cur : (ls ? ls.v : (ss || cur || '(direct)/(none)'));
+                    var camp = uc || attr.utm_campaign || '';
+                    src = (first + (camp ? ' | ' + camp : '') + (own && rp ? ' | from ' + rp : '')).slice(0, 200);
+                } catch (_) {}
+                function syncReq() { em.required = !(ph.value.trim() || em.value.trim()); }
+                em.addEventListener('input', syncReq); ph.addEventListener('input', syncReq); syncReq();
+                var busy = false;
+                f.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (busy) return;
+                    syncReq();
+                    if (!f.checkValidity()) { f.reportValidity(); return; }
+                    busy = true; btn.disabled = true; btn.setAttribute('aria-busy', 'true'); btn.textContent = SENDING; err.hidden = true;
+                    var d = new URLSearchParams();
+                    d.append('entry.1592437907', q('#name').value.trim());
+                    d.append('entry.1876354936', q('#org').value.trim());
+                    d.append('entry.1863786727', em.value.trim());
+                    d.append('entry.409176536', ph.value.trim());
+                    d.append('entry.1905470155', q('#message').value.trim());
+                    d.append('entry.411737463', page);
+                    d.append('entry.690810108', src);
+                    var settled = false, timer = null;
+                    var finish = function (good) {
+                        if (settled) return;
+                        settled = true; clearTimeout(timer);
+                        if (good) {
+                            f.style.display = 'none'; ok.hidden = false;
+                            try { ok.focus({ preventScroll: true }); } catch (_) {}
+                            try { ok.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (_) {}
+                            if (typeof window.gtag === 'function') {
+                                window.gtag('event', 'generate_lead', { form_page: page, page_path: window.location.pathname });
+                            }
+                        } else {
+                            busy = false; btn.disabled = false; btn.removeAttribute('aria-busy'); btn.textContent = btnText; err.hidden = false;
+                            try { err.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (_) {}
+                        }
+                    };
+                    timer = setTimeout(function () { finish(false); }, 15000);
+                    try {
+                        fetch(ACTION, { method: 'POST', mode: 'no-cors', body: d }).then(function () { finish(true); }, function () { finish(false); });
+                    } catch (_) { finish(false); }
+                });
+            })();
             </script>
 
             <p class="contact-form__alt fade-in">אפשר גם לכתוב לנו ישירות: <a href="mailto:the.sol.therapy@gmail.com" dir="ltr">the.sol.therapy@gmail.com</a></p>
