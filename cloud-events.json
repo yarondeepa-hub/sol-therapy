@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-20 12:23",
- "source_asof": "2026-10-20 11:41",
+ "generated": "2026-10-20 14:23",
+ "source_asof": "2026-10-20 14:18",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -557,7 +557,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 84,
+   "left": 75,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -766,7 +766,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 52,
+   "left": 53,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -866,7 +866,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 82,
+   "left": 81,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -889,7 +889,7 @@
   },
   "amdursky-nov": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי",
@@ -897,14 +897,14 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-11-10 20:30",
-   "state": "open",
-   "left": 4,
+   "state": "sold",
+   "left": 0,
    "eventer": "zrx2f",
    "round_slug": "amdursky-nov-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "amdursky-nov",
+   "evening_open_slug": "amdursky-nov-early",
    "sib_slug": "amdursky-nov-early",
    "sib_time": "18:30"
   },
