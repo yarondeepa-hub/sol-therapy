@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-20 14:23",
- "source_asof": "2026-10-20 14:18",
+ "generated": "2026-10-21 08:14",
+ "source_asof": "2026-10-21 08:06",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -531,8 +531,8 @@
    "evening_sold": false
   },
   "zisling-oct": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "ספי ציזלינג",
@@ -540,11 +540,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-10-20 20:30",
-   "state": "open",
-   "left": 66,
+   "state": "past",
+   "left": 64,
    "eventer": "0pb2f",
-   "evening_sold": false,
-   "evening_open_slug": "zisling-oct"
+   "evening_sold": false
   },
   "haleta-oct": {
    "event_status": "scheduled",
@@ -557,7 +556,7 @@
    "time": "20:30",
    "iso": "2026-10-21 20:30",
    "state": "open",
-   "left": 75,
+   "left": 72,
    "eventer": "lpb2f",
    "evening_sold": false,
    "evening_open_slug": "haleta-oct"
@@ -626,7 +625,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 32,
+   "left": 29,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -747,7 +746,7 @@
    "time": "18:30",
    "iso": "2026-10-22 18:30",
    "state": "open",
-   "left": 68,
+   "left": 65,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
@@ -766,7 +765,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 53,
+   "left": 52,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -850,7 +849,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 55,
+   "left": 51,
    "eventer": "qsx2f",
    "evening_sold": false,
    "evening_open_slug": "avraham-tal-nov"
@@ -866,7 +865,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 81,
+   "left": 77,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -1004,7 +1003,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 119,
+   "left": 117,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1100,7 +1099,7 @@
    "time": "18:30",
    "iso": "2026-11-18 18:30",
    "state": "open",
-   "left": 68,
+   "left": 59,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
    "evening_sold": false,
@@ -1119,7 +1118,7 @@
    "time": "18:30",
    "iso": "2026-11-10 18:30",
    "state": "open",
-   "left": 119,
+   "left": 116,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
