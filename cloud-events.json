@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-22 12:48",
- "source_asof": "2026-10-22 12:35",
+ "generated": "2026-10-23 09:51",
+ "source_asof": "2026-10-22 18:59",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -561,8 +561,8 @@
    "evening_sold": false
   },
   "raz-oct": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יחזקאל רז",
@@ -570,14 +570,13 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-10-22 20:30",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "ppb2f",
    "round_slug": "raz-oct-early",
-   "round_state": "open",
+   "round_state": "past",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "raz-oct-early",
    "sib_slug": "raz-oct-early",
    "sib_time": "18:30"
   },
@@ -624,7 +623,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 24,
+   "left": 22,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -735,8 +734,8 @@
    "sib_time": "20:30"
   },
   "raz-oct-early": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יחזקאל רז סבב מוקדם",
@@ -744,12 +743,11 @@
    "dow": "חמישי",
    "time": "18:30",
    "iso": "2026-10-22 18:30",
-   "state": "open",
-   "left": 62,
+   "state": "past",
+   "left": 54,
    "eventer": "zxv2f",
    "main_slug": "raz-oct",
    "evening_sold": false,
-   "evening_open_slug": "raz-oct-early",
    "sib_slug": "raz-oct",
    "sib_time": "20:30"
   },
@@ -764,7 +762,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 45,
+   "left": 41,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -848,7 +846,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 34,
+   "left": 25,
    "eventer": "qsx2f",
    "evening_sold": false,
    "evening_open_slug": "avraham-tal-nov"
@@ -864,7 +862,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 60,
+   "left": 58,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -880,7 +878,7 @@
    "time": "20:30",
    "iso": "2026-11-09 20:30",
    "state": "open",
-   "left": 116,
+   "left": 114,
    "eventer": "nsx2f",
    "evening_sold": false,
    "evening_open_slug": "ravid-kahalani-nov"
@@ -933,7 +931,7 @@
    "time": "20:30",
    "iso": "2026-11-10 20:30",
    "state": "open",
-   "left": 112,
+   "left": 109,
    "eventer": "wtx2f",
    "evening_sold": false,
    "evening_open_slug": "ra-mochiach-nov"
@@ -1034,7 +1032,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 125,
+   "left": 122,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1066,7 +1064,7 @@
    "time": "20:30",
    "iso": "2026-11-26 20:30",
    "state": "open",
-   "left": 118,
+   "left": 116,
    "eventer": "ktx2f",
    "evening_sold": false,
    "evening_open_slug": "yotam-avni-nov"
@@ -1098,7 +1096,7 @@
    "time": "18:30",
    "iso": "2026-11-18 18:30",
    "state": "open",
-   "left": 41,
+   "left": 39,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
    "evening_sold": false,
@@ -1117,7 +1115,7 @@
    "time": "18:30",
    "iso": "2026-11-12 18:30",
    "state": "open",
-   "left": 113,
+   "left": 112,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
@@ -1130,7 +1128,7 @@
    "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
-   "name": "יוסי פיין",
+   "name": "fine-nov",
    "date": "27.11",
    "dow": "שישי",
    "time": "10:00",
