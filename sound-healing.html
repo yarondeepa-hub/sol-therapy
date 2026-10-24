@@ -240,6 +240,45 @@
 }
   </script>
 
+  <!-- Structured Data: upcoming sessions (ItemList of share pages - no duplicate Event). Synced by T-tools/scripts/sound-healing-upcoming-sync.py and by assets/upcoming-sessions.js -->
+<!-- UPCOMING:LD:START (נכתב בסקריפט - לא לערוך ביד) -->
+  <script type="application/ld+json" id="upcoming-ld">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "מפגשים קרובים בקלאוד ספייס",
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": 4,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://sol-therapy.com/share/echo-oct.html",
+      "name": "אקו - רביעי 28.10, 20:30"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://sol-therapy.com/share/hadas-kleinman-oct.html",
+      "name": "הדס קליינמן - חמישי 29.10, 18:30"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://sol-therapy.com/share/ziv-nov.html",
+      "name": "זיו - שני 2.11, 20:30"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://sol-therapy.com/share/noa-argov-nov.html",
+      "name": "נועה ארגוב - שלישי 3.11, 20:30"
+    }
+  ]
+}
+  </script>
+<!-- UPCOMING:LD:END -->
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1708,8 +1747,36 @@
     @media (min-width: 48.01rem) and (max-width: 64rem) { .blog-feed__grid { grid-template-columns: repeat(3, 1fr); } }
     .section--dark .faq-section { padding-top: 0; }
     .cloud-press__lede { font-family: var(--font-body); font-size: var(--body-size); line-height: var(--body-lh); color: var(--color-washi); opacity: .82; text-align: center; max-width: var(--measure); margin: -1.4rem auto 2.4rem; padding: 0 1.2rem; }
+
+    /* 24.10.2026: "מה כלול במחיר" + "מפגשים קרובים בקלאוד ספייס" (assets/upcoming-sessions.js). ניגודיות מול רקע הוואשי: כל טקסט 4.5:1 לפחות (גייטקיפר 24.10) */
+    .article-body .text-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .upcoming { margin-top: calc(var(--space-l) * 1.1); }
+    .upc-list { list-style: none; margin: 1.1rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(59, 81, 75, 0.2); }
+    .upc-list[hidden], .upcoming__empty[hidden], .upcoming__all[hidden] { display: none; }
+    .upc { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "when price btn" "main price btn"; align-items: center; column-gap: 1.4rem; row-gap: 0.15rem; padding: 0.95rem 0; border-bottom: 1px solid rgba(59, 81, 75, 0.2); }
+    .upc__when { grid-area: when; align-self: end; font-weight: 400; font-size: 0.86em; color: var(--color-green-dark); white-space: nowrap; }
+    .upc__num { unicode-bidi: isolate; }
+    .upc__sep { opacity: 0.6; }
+    .upc__main { grid-area: main; align-self: start; min-width: 0; }
+    .upc__name { font-family: var(--font-display); font-weight: 700; font-size: 1.12em; line-height: 1.35; }
+    .upc__name a { color: inherit; text-decoration: none; }
+    .upc__name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .upc__tag { display: inline-block; font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.02em; color: var(--color-green-dark); border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; margin-inline-start: 0.2rem; vertical-align: 0.2em; white-space: nowrap; }
+    .upc__tag--last { color: #9E3F55; }
+    .upc__tag--morning { color: #8A5219; }
+    .upc__line { font-size: 0.9em; line-height: 1.45; opacity: 0.85; }
+    .upc__price { grid-area: price; font-weight: 400; font-size: 0.92em; white-space: nowrap; }
+    .upc__btn { grid-area: btn; display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0.4rem 1.35rem; border-radius: 999px; background: var(--color-green-dark); color: var(--color-washi); font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; text-decoration: none; white-space: nowrap; transition: background 0.25s ease; }
+    .upc__btn:hover { background: #4A665D; }
+    .upcoming__all { font-size: 0.95em; }
+    @media (max-width: 600px) {
+      .upc { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "when when" "main main" "price btn"; row-gap: 0.2rem; }
+      .upc__btn { margin-top: 0.45rem; }
+      .upc__price { margin-top: 0.45rem; }
+    }
   </style>
 <script defer src="/assets/clean-url.js"></script>
+<script defer src="/assets/upcoming-sessions.js"></script>
 </head>
 <body>
 
@@ -1797,7 +1864,7 @@
   </div>
 
   <!-- ========== SECTION 3: What a session looks like ========== -->
-  <section class="article-grid" id="session" style="padding-bottom: var(--space-l);">
+  <section class="article-grid" id="session" style="padding-bottom: var(--space-s);">
     <div class="article-body">
       <h2 class="reveal">איך נראה מפגש בפועל</h2>
       <p class="reveal"><strong>המקום.</strong> קלאוד ספייס, שוקן 27 בקריית המלאכה, תל אביב, קומה 3. חלל אחד, מזרנים ערוכים על הרצפה, אור נמוך, סאונד מוקפד. אין צורך להביא ציוד.</p>
@@ -1805,6 +1872,37 @@
       <p class="reveal"><strong>הסט.</strong> כשעה של מוזיקה חיה. שוכבים, עיניים עצומות. המוזיקה מתעלה מעל מחסומי שפה ותרבות ומאפשרת חיבור ישיר אל הגוף - בהדהוד הפיזי, במפגש של גוף, חלל וקהילה. </p>
       <p class="reveal"><strong>הסיום.</strong> חזרה איטית, כמה דקות של שקט, ובמפגשים רבים שיחה פתוחה עם האמן והזדמנות לשאול שאלות.</p>
       <p class="reveal">המפגשים בקלאוד מתקיימים בערבי חול ב-20:30 (לעיתים גם סבב מוקדם ב-18:30), ובימי שישי בבוקר ב-10:00. מספר המקומות מוגבל.</p>
+    </div>
+  </section>
+
+  <!-- Section divider -->
+  <div class="section-marker">
+    <div class="section-marker__line"></div>
+    <div class="section-marker__number">4</div>
+    <div class="section-marker__line"></div>
+  </div>
+
+  <!-- ========== SECTION 4: What the price includes + upcoming sessions (24.10.2026, COPY-sound-healing-v1 א4 שאלה 4 + א5) ========== -->
+  <section class="article-grid" id="price" style="padding-bottom: var(--space-l);">
+    <div class="article-body">
+      <h2 class="reveal">מה כלול במחיר</h2>
+      <p class="reveal">כרטיס לסשן עולה 135 ש"ח. המחיר כולל כשעה של מוזיקה חיה, פתיחה והנחיה, מזרון וסאונד מוקפד בחלל, כך שאין צורך להביא ציוד. במפגשים רבים יש בסוף גם שיחה פתוחה עם האמן. מי שרוצה לחזור ולהעמיק את התרגול יכול לרכוש <a class="text-link" href="/cloud-card">כרטיסייה</a>, ויש גם שובר זוגי למתנה.</p>
+
+      <!-- מפגשים קרובים: השורות מתעדכנות בדפדפן (assets/upcoming-sessions.js); הסטטיות - T-tools/scripts/sound-healing-upcoming-sync.py -->
+      <div class="upcoming" id="upcoming" data-max="4" data-btn="cloud">
+        <h2 class="reveal" id="upcoming-title">מפגשים קרובים בקלאוד ספייס</h2>
+        <p class="reveal">הסשנים הקרובים שעדיין אפשר לשריין בהם מקום, בשוקן 27 בקריית המלאכה, תל אביב.</p>
+        <ul class="upc-list" aria-labelledby="upcoming-title">
+<!-- UPCOMING:ROWS:START (נכתב בסקריפט - לא לערוך ביד) -->
+          <li class="upc" data-code="spb2f" data-slug="echo-oct" data-start="2026-10-28T20:30"><div class="upc__when"><span class="upc__dow">רביעי</span> <span class="upc__num" dir="ltr">28.10</span><span class="upc__sep" aria-hidden="true"> · </span><span class="upc__num" dir="ltr">20:30</span></div><div class="upc__main"><div class="upc__name"><a href="/cloud#lineupGrid">אקו</a> <span class="upc__tag upc__tag--last">כרטיסים אחרונים</span></div><div class="upc__line">קול חשוף ותדרים עמוקים</div></div><div class="upc__price">135 ש"ח</div><a class="upc__btn" href="/cloud#lineupGrid" aria-label="כרטיסים: אקו">כרטיסים</a></li>
+          <li class="upc" data-code="l8v2f" data-slug="hadas-kleinman-oct-b" data-start="2026-10-29T18:30"><div class="upc__when"><span class="upc__dow">חמישי</span> <span class="upc__num" dir="ltr">29.10</span><span class="upc__sep" aria-hidden="true"> · </span><span class="upc__num" dir="ltr">18:30</span></div><div class="upc__main"><div class="upc__name"><a href="/cloud#lineupGrid">הדס קליינמן</a> <span class="upc__tag">סבב מוקדם</span> <span class="upc__tag upc__tag--last">כרטיסים אחרונים</span></div><div class="upc__line">צ'לו חי, אלקטרוניקה רכה ושירה חרישית</div></div><div class="upc__price">135 ש"ח</div><a class="upc__btn" href="/cloud#lineupGrid" aria-label="כרטיסים: הדס קליינמן">כרטיסים</a></li>
+          <li class="upc" data-code="psx2f" data-slug="ziv-nov" data-start="2026-11-02T20:30"><div class="upc__when"><span class="upc__dow">שני</span> <span class="upc__num" dir="ltr">2.11</span><span class="upc__sep" aria-hidden="true"> · </span><span class="upc__num" dir="ltr">20:30</span></div><div class="upc__main"><div class="upc__name"><a href="/cloud#lineupGrid">זיו</a></div><div class="upc__line">אלקטרוניקה חלומית ושירה מלטפת</div></div><div class="upc__price">135 ש"ח</div><a class="upc__btn" href="/cloud#lineupGrid" aria-label="כרטיסים: זיו">כרטיסים</a></li>
+          <li class="upc" data-code="msx2f" data-slug="noa-argov-nov" data-start="2026-11-03T20:30"><div class="upc__when"><span class="upc__dow">שלישי</span> <span class="upc__num" dir="ltr">3.11</span><span class="upc__sep" aria-hidden="true"> · </span><span class="upc__num" dir="ltr">20:30</span></div><div class="upc__main"><div class="upc__name"><a href="/cloud#lineupGrid">נועה ארגוב</a></div><div class="upc__line">מסע סאונד אקלקטי</div></div><div class="upc__price">135 ש"ח</div><a class="upc__btn" href="/cloud#lineupGrid" aria-label="כרטיסים: נועה ארגוב">כרטיסים</a></li>
+<!-- UPCOMING:ROWS:END -->
+        </ul>
+        <p class="upcoming__empty" hidden>כרגע אין סשנים פתוחים להרשמה. הליינאפ המלא, כולל הסשנים שאזלו, נמצא ב<a class="text-link" href="/cloud#lineupGrid">עמוד קלאוד</a>.</p>
+        <p class="upcoming__all"><a class="text-link" href="/cloud#lineupGrid">לליינאפ המלא</a></p>
+      </div>
     </div>
   </section>
 
