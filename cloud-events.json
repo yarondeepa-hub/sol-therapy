@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-23 15:46",
- "source_asof": "2026-10-23 15:37",
+ "generated": "2026-10-24 08:21",
+ "source_asof": "2026-10-24 08:02",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -581,8 +581,8 @@
    "sib_time": "18:30"
   },
   "ran-slavin-oct-23": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "רן סלוין",
@@ -590,11 +590,10 @@
    "dow": "שישי",
    "time": "10:00",
    "iso": "2026-10-23 10:00",
-   "state": "open",
+   "state": "past",
    "left": 80,
    "eventer": "mpb2f",
-   "evening_sold": false,
-   "evening_open_slug": "ran-slavin-oct-23"
+   "evening_sold": false
   },
   "yotam-avni-oct": {
    "event_status": "scheduled",
@@ -762,7 +761,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 38,
+   "left": 31,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -846,7 +845,7 @@
    "time": "18:30",
    "iso": "2026-11-04 18:30",
    "state": "open",
-   "left": 125,
+   "left": 121,
    "eventer": "d8d2f",
    "main_slug": "avraham-tal-nov",
    "evening_sold": false,
@@ -865,7 +864,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 9,
+   "left": 4,
    "eventer": "qsx2f",
    "round_slug": "avraham-tal-nov-early",
    "round_state": "open",
@@ -886,7 +885,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 56,
+   "left": 52,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -909,7 +908,7 @@
   },
   "amdursky-nov": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי",
@@ -917,14 +916,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-11-12 20:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "zrx2f",
    "round_slug": "amdursky-nov-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "amdursky-nov",
+   "evening_open_slug": "amdursky-nov-early",
    "sib_slug": "amdursky-nov-early",
    "sib_time": "18:30"
   },
@@ -939,7 +938,7 @@
    "time": "20:30",
    "iso": "2026-11-11 20:30",
    "state": "open",
-   "left": 114,
+   "left": 112,
    "eventer": "fgk2f",
    "evening_sold": false,
    "evening_open_slug": "talmudi-nov"
@@ -971,7 +970,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 98,
+   "left": 95,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -1024,7 +1023,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 116,
+   "left": 114,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1072,7 +1071,7 @@
    "time": "20:30",
    "iso": "2026-11-25 20:30",
    "state": "open",
-   "left": 121,
+   "left": 120,
    "eventer": "rsx2f",
    "evening_sold": false,
    "evening_open_slug": "kashpitzky-nov"
@@ -1120,7 +1119,7 @@
    "time": "18:30",
    "iso": "2026-11-18 18:30",
    "state": "open",
-   "left": 35,
+   "left": 31,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
    "evening_sold": false,
@@ -1139,7 +1138,7 @@
    "time": "18:30",
    "iso": "2026-11-12 18:30",
    "state": "open",
-   "left": 112,
+   "left": 109,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
