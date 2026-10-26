@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25 18:48",
- "source_asof": "2026-10-25 18:31",
+ "generated": "2026-10-26 08:02",
+ "source_asof": "2026-10-26 07:35",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -596,8 +596,8 @@
    "evening_sold": false
   },
   "yotam-avni-oct": {
-   "event_status": "scheduled",
-   "sale_status": "closed",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "unlisted",
    "unlisted_reason": "נמכר כולו לדיגיתל 14.9 - סגור למכירה",
    "name": "יותם אבני (הערב נמכר לדיגיתל)",
@@ -605,11 +605,10 @@
    "dow": "ראשון",
    "time": "20:30",
    "iso": "2026-10-25 20:30",
-   "state": "open",
+   "state": "past",
    "left": 125,
    "eventer": "qpb2f",
-   "evening_sold": false,
-   "evening_open_slug": "yotam-avni-oct"
+   "evening_sold": false
   },
   "echo-oct": {
    "event_status": "scheduled",
@@ -622,14 +621,14 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 17,
+   "left": 15,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
   },
   "hadas-kleinman-oct": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הדס קליינמן",
@@ -637,14 +636,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-10-29 20:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "npb2f",
    "round_slug": "hadas-kleinman-oct-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "hadas-kleinman-oct",
+   "evening_open_slug": "hadas-kleinman-oct-early",
    "sib_slug": "hadas-kleinman-oct-early",
    "sib_time": "18:30"
   },
@@ -789,7 +788,7 @@
   },
   "brain-sister-oct-26": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר 2.0 (26.10)",
@@ -797,10 +796,11 @@
    "dow": "שני",
    "time": "19:30",
    "iso": "2026-10-26 19:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 8,
    "eventer": "rn12f",
-   "evening_sold": true
+   "evening_sold": false,
+   "evening_open_slug": "brain-sister-oct-26"
   },
   "ziv-nov": {
    "event_status": "scheduled",
@@ -813,7 +813,7 @@
    "time": "20:30",
    "iso": "2026-11-02 20:30",
    "state": "open",
-   "left": 120,
+   "left": 118,
    "eventer": "psx2f",
    "evening_sold": false,
    "evening_open_slug": "ziv-nov"
@@ -845,7 +845,7 @@
    "time": "18:30",
    "iso": "2026-11-04 18:30",
    "state": "open",
-   "left": 109,
+   "left": 107,
    "eventer": "d8d2f",
    "main_slug": "avraham-tal-nov",
    "evening_sold": false,
@@ -864,7 +864,7 @@
    "time": "20:30",
    "iso": "2026-11-04 20:30",
    "state": "open",
-   "left": 3,
+   "left": 2,
    "eventer": "qsx2f",
    "round_slug": "avraham-tal-nov-early",
    "round_state": "open",
@@ -885,7 +885,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 39,
+   "left": 32,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -917,7 +917,7 @@
    "time": "20:30",
    "iso": "2026-11-12 20:30",
    "state": "open",
-   "left": 15,
+   "left": 11,
    "eventer": "zrx2f",
    "round_slug": "amdursky-nov-early",
    "round_state": "open",
@@ -1119,7 +1119,7 @@
    "time": "18:30",
    "iso": "2026-11-18 18:30",
    "state": "open",
-   "left": 12,
+   "left": 1,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
    "evening_sold": false,
@@ -1157,14 +1157,14 @@
    "time": "10:00",
    "iso": "2026-11-27 10:00",
    "state": "open",
-   "left": 117,
+   "left": 110,
    "eventer": "pnd2f",
    "evening_sold": false,
    "evening_open_slug": "fine-nov"
   },
   "brain-sister-nov": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר 4.0 (14.11)",
@@ -1172,11 +1172,10 @@
    "dow": "שבת",
    "time": "19:30",
    "iso": "2026-11-14 19:30",
-   "state": "open",
-   "left": 113,
+   "state": "sold",
+   "left": 0,
    "eventer": "1bd2f",
-   "evening_sold": false,
-   "evening_open_slug": "brain-sister-nov"
+   "evening_sold": true
   }
  }
 }
