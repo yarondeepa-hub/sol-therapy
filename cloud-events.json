@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26 12:48",
+ "generated": "2026-10-26 13:51",
  "source_asof": "2026-10-26 12:25",
  "events": {
   "amichai-matias": {
@@ -1005,9 +1005,10 @@
    "left": 0,
    "eventer": "cgk2f",
    "round_slug": "darwish-nov-early",
-   "round_state": "sold",
+   "round_state": "open",
    "round_time": "18:30",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "darwish-nov-early",
    "sib_slug": "darwish-nov-early",
    "sib_time": "18:30"
   },
@@ -1109,7 +1110,7 @@
   },
   "darwish-nov-early": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "דרוויש סבב מוקדם",
@@ -1117,11 +1118,12 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-11-18 18:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 2,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "darwish-nov-early",
    "sib_slug": "darwish-nov",
    "sib_time": "20:30"
   },
