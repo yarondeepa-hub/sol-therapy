@@ -1842,6 +1842,7 @@
 .lp-detail__bio p+p{margin-top:.85rem}
 .lp-detail__btn{align-self:flex-start;margin-top:1.2rem;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:.85rem;color:#1a1a1a;background:#209CB4;border-radius:999px;padding:.55rem 1.9rem;min-height:42px;text-decoration:none;transition:background .25s ease}
 .lp-detail__btn:hover{background:#17859B}
+.lp-detail__artist{align-self:flex-start;margin-top:.9rem;font-family:var(--font-body);font-size:.85rem;color:var(--color-muted);text-decoration:underline;text-decoration-color:rgba(242,234,211,.35);text-underline-offset:3px;transition:color .2s ease}.lp-detail__artist:hover,.lp-detail__artist:focus-visible{color:var(--color-washi)}.lp-detail__artist[hidden]{display:none}
 .lp-detail__x{position:absolute;z-index:3;top:.6rem;left:.7rem;background:none;border:none;color:var(--color-muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .25rem;transition:color .2s ease}
 .lp-detail__x:hover{color:var(--color-washi)}
 .lp-card__more .chev{display:inline-block;margin-inline-start:.28rem;font-size:.7em;transition:transform .3s ease}
@@ -2428,6 +2429,8 @@
                 <span class="archive-footer__sep">-</span>
                 <a href="/archive.html" class="archive-footer__link">sessions</a>
                 <span class="archive-footer__sep">-</span>
+                <a href="/artists" class="archive-footer__link">artists</a>
+                <span class="archive-footer__sep">-</span>
                 <a href="/blog.html" class="archive-footer__link">blog</a>
                 <span class="archive-footer__sep">-</span>
                 <a href="/private" class="archive-footer__link">corporate</a>
@@ -2625,11 +2628,12 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
         '<h3 class="lp-detail__name"></h3>'+
         '<div class="lp-detail__when"></div>'+
         '<div class="lp-detail__bio"></div>'+
+        '<a class="lp-detail__artist" hidden>לעמוד האמן</a>'+
         '<a class="lp-detail__btn" target="_blank" rel="noopener">כרטיסים</a>'+
       '</div></div>';
   var dImg=detail.querySelector('img'), dLive=detail.querySelector('.lp-detail__live'),
       dName=detail.querySelector('.lp-detail__name'), dWhen=detail.querySelector('.lp-detail__when'),
-      dBio=detail.querySelector('.lp-detail__bio'), dBtn=detail.querySelector('.lp-detail__btn');
+      dBio=detail.querySelector('.lp-detail__bio'), dBtn=detail.querySelector('.lp-detail__btn'), dArt=detail.querySelector('.lp-detail__artist');
   var openSlug=null;
   function panelInert(on){ if(on){detail.setAttribute('inert','');detail.setAttribute('aria-hidden','true');}else{detail.removeAttribute('inert');detail.removeAttribute('aria-hidden');} Array.prototype.forEach.call(detail.querySelectorAll('button,a'),function(el){ if(on)el.setAttribute('tabindex','-1'); else el.removeAttribute('tabindex'); }); }
   function setExpanded(card,on){ var m=card&&card.querySelector('.lp-card__more'); if(m)m.setAttribute('aria-expanded',on?'true':'false'); }
@@ -2638,6 +2642,9 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
   function rowLast(card){ var cards=Array.prototype.slice.call(g.querySelectorAll('.lp-card')); var top=card.offsetTop,last=card; for(var i=0;i<cards.length;i++){ if(Math.abs(cards[i].offsetTop-top)<6) last=cards[i]; } return last; }
   var openerBtn=null;
   function closeDetail(restore){ if(!openSlug)return; var pr=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(pr){pr.classList.remove('is-open'); setExpanded(pr,false);} detail.style.maxHeight='0px'; panelInert(true); openSlug=null; var ob=openerBtn; openerBtn=null; if(restore!==false&&ob&&document.contains(ob)) ob.focus(); }
+  // קישור "לעמוד האמן" בפאנל (27.10.2026): תחילית slug -> /artists/<slug>. הנתונים נכתבים מ-artists-data.json ב-T-tools/scripts/artist-links-sync.py - לא לערוך ביד
+  var ARTPAGE=[["noa-argov", "/artists/noa-argov"], ["amdursky", "/artists/assaf-amdursky"], ["astral", "/artists/astral-projection"], ["shozin", "/artists/shuzin"], ["shuzin", "/artists/shuzin"], ["raz", "/artists/yehezkel-raz"]];
+  function artistPage(s){ s=String(s||''); for(var i=0;i<ARTPAGE.length;i++){ var p=ARTPAGE[i][0]; if(s===p||s.indexOf(p+'-')===0) return ARTPAGE[i][1]; } return ''; }
   function openDetail(slug){
     if(openSlug===slug){ closeDetail(); return; }
     var card=g.querySelector('.lp-card[data-slug="'+slug+'"]'); if(!card) return;
@@ -2645,7 +2652,7 @@ if(!g.querySelector('.lp-card')) ART.forEach(function(a){
     if(openSlug){ var op=g.querySelector('.lp-card[data-slug="'+openSlug+'"]'); if(op){op.classList.remove('is-open'); setExpanded(op,false);} }
     var a=ARTBY[slug];
     dImg.src='assets/cloud/artists-bw/'+(a.img||slug)+'.jpg'; dImg.alt=a.name;
-    dName.textContent=a.name; dWhen.innerHTML=whenHTML(a); dBio.innerHTML=''; (BIO[slug]||[]).forEach(function(t){var pp=document.createElement('p'); pp.textContent=t; dBio.appendChild(pp);});
+    dName.textContent=a.name; dWhen.innerHTML=whenHTML(a); dBio.innerHTML=''; (BIO[slug]||[]).forEach(function(t){var pp=document.createElement('p'); pp.textContent=t; dBio.appendChild(pp);}); var ap=artistPage(slug); if(ap){ dArt.setAttribute('href',ap); dArt.hidden=false; } else { dArt.removeAttribute('href'); dArt.hidden=true; }
     var sBtn=card.querySelector('.lp-card__btn');
     var soldCard=!!(card.querySelector('.lp-soldout')||(sBtn&&sBtn.classList.contains('lp-card__btn--sold')));
     var endedCard=!!(sBtn&&sBtn.classList.contains('lp-card__btn--ended'));

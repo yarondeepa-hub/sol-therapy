@@ -434,6 +434,7 @@
         }
     </style>
 <script defer src="/assets/clean-url.js"></script>
+<script defer src="/assets/session-upcoming.js"></script>
 </head>
 <body data-recording="session-yotam-avni">
     <main class="session-page">
@@ -465,33 +466,35 @@
 
         <p class="invite"><strong>רוצים לחוות את זה בחדר?</strong> <span>המפגשים הקרובים בקלאוד ספייס, תל אביב.</span></p>
 
-        <section class="upcoming">
+        <section class="upcoming" data-upcoming="session" data-artist="yotam-avni" data-artist-name="יותם אבני" data-max="3" data-note-own="יותם אבני חוזר לקלאוד ספייס {month}, והמפגש שלו ראשון ברשימה:" data-note-none="שלושה מפגשים קרובים בקלאוד ספייס:" data-own-badge="המפגש שלו">
             <h2 class="session-page__section-title">מפגשים קרובים</h2>
-            <p class="upcoming__note">שלושה מפגשים קרובים בקלאוד ספייס, ברוח ההקלטה הזאת:</p>
-            <div class="upcoming__item">
-                <span class="upcoming__when">שני <span dir="ltr">12.10</span> · <span dir="ltr">20:30</span></span>
+            <!-- UPCOMING:START (נבנה ב-T-tools/scripts/session-upcoming-sync.py מ-cloud-events.json ומגריד הליינאפ; מתעדכן גם בדפדפן ב-/assets/session-upcoming.js) -->
+            <p class="upcoming__note">יותם אבני חוזר לקלאוד ספייס בנובמבר, והמפגש שלו ראשון ברשימה:</p>
+            <div class="upcoming__item" data-code="ktx2f" data-start="2026-11-26T20:30" data-own="1">
+                <span class="upcoming__when">חמישי <span dir="ltr">26.11</span> · <span dir="ltr">20:30</span></span>
                 <div class="upcoming__body">
-                    <a class="upcoming__name" href="share/astral-oct.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="astral-oct">אסטרל פרוג'קשן</a>
-                    <p class="upcoming__sub">אלקטרוניקה פסיכדלית, מסע קוסמי</p>
+                    <a class="upcoming__name" href="share/yotam-avni-nov.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="yotam-avni-nov">יותם אבני</a> <span class="upcoming__own">המפגש שלו</span>
+                    <p class="upcoming__sub">טכנו היפנוטי ואלקטרוניקה עולמית</p>
                 </div>
-                <a class="upcoming__book" href="https://www.eventer.co.il/f0b2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="astral-oct">כרטיסים</a>
+                <a class="upcoming__book" href="https://www.eventer.co.il/ktx2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="yotam-avni-nov">כרטיסים</a>
             </div>
-            <div class="upcoming__item">
-                <span class="upcoming__when">רביעי <span dir="ltr">14.10</span> · <span dir="ltr">20:30</span></span>
+            <div class="upcoming__item" data-code="spb2f" data-start="2026-10-28T20:30">
+                <span class="upcoming__when">רביעי <span dir="ltr">28.10</span> · <span dir="ltr">20:30</span></span>
                 <div class="upcoming__body">
-                    <a class="upcoming__name" href="share/gorovich-oct.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="gorovich-oct">גורוביץ</a>
-                    <p class="upcoming__sub">פסיכודליה עמוקה והרמונית</p>
+                    <a class="upcoming__name" href="share/echo-oct.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="echo-oct">אקו</a>
+                    <p class="upcoming__sub">קול חשוף ותדרים עמוקים</p>
                 </div>
-                <a class="upcoming__book" href="https://www.eventer.co.il/40b2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="gorovich-oct">כרטיסים</a>
+                <a class="upcoming__book" href="https://www.eventer.co.il/spb2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="echo-oct">כרטיסים</a>
             </div>
-            <div class="upcoming__item">
-                <span class="upcoming__when">שלישי <span dir="ltr">20.10</span> · <span dir="ltr">20:30</span></span>
+            <div class="upcoming__item" data-code="npb2f" data-start="2026-10-29T20:30">
+                <span class="upcoming__when">חמישי <span dir="ltr">29.10</span> · <span dir="ltr">20:30</span></span>
                 <div class="upcoming__body">
-                    <a class="upcoming__name" href="share/zisling-oct.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="zisling-oct">ספי ציזלינג</a>
-                    <p class="upcoming__sub">חצוצרה וג'אז רוחני, חם ואנלוגי</p>
+                    <a class="upcoming__name" href="share/hadas-kleinman-oct.html" data-track="recording_to_event" data-placement="upcoming_list" data-event-slug="hadas-kleinman-oct">הדס קליינמן</a>
+                    <p class="upcoming__sub">צ'לו חי, אלקטרוניקה רכה ושירה חרישית</p>
                 </div>
-                <a class="upcoming__book" href="https://www.eventer.co.il/0pb2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="zisling-oct">כרטיסים</a>
+                <a class="upcoming__book" href="https://www.eventer.co.il/npb2f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="upcoming_list" data-event-slug="hadas-kleinman-oct">כרטיסים</a>
             </div>
+            <!-- UPCOMING:END -->
         </section>
 
         <p class="further-reading">לקריאה נוספת על <a href="blog-sound-meditation.html">המדע מאחורי מדיטציות סאונד</a> ו<a href="blog-collective-sync.html">מה קורה כשחדר שלם מקשיב יחד?</a></p>
