@@ -131,7 +131,17 @@
   },
   "performer": {
    "@type": "Person",
-   "name": "בליס"
+   "@id": "https://sol-therapy.com/artists/bliss#artist",
+   "name": "בליס",
+   "url": "https://sol-therapy.com/artists/bliss",
+   "sameAs": [
+    "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A0%D7%AA%D7%9F_%D7%9E%D7%A8%D7%A7%D7%95%D7%91",
+    "https://www.bliss-live.com/",
+    "https://open.spotify.com/artist/5kCxDwD2rjY6lKSGdAW7Lk",
+    "https://www.youtube.com/@BLiSSlive",
+    "https://www.instagram.com/bliss_music/",
+    "https://soundcloud.com/blisslive"
+   ]
   },
   "organizer": {
    "@type": "Organization",
@@ -149,7 +159,8 @@
    "validThrough": "2026-09-22T20:30:00+03:00"
   },
   "endDate": "2026-09-22T22:00:00+03:00",
-  "description": "בליס בקלאוד ספייס - מדיטציית סאונד עמוקה מבית סול תרפי. שלישי 22.9, 20:30, שוקן 27, קרית המלאכה תל אביב. כרטיסים באתר."
+  "description": "בליס בקלאוד ספייס - מדיטציית סאונד עמוקה מבית סול תרפי. שלישי 22.9, 20:30, שוקן 27, קרית המלאכה תל אביב. כרטיסים באתר.",
+  "url": "https://sol-therapy.com/share/bliss.html"
  },
  {
   "@context": "https://schema.org",
@@ -164,13 +175,19 @@
    {
     "@type": "ListItem",
     "position": 2,
-    "name": "CLOUD SPACE",
-    "item": "https://sol-therapy.com/cloud"
+    "name": "האמנים",
+    "item": "https://sol-therapy.com/artists"
    },
    {
     "@type": "ListItem",
     "position": 3,
     "name": "בליס",
+    "item": "https://sol-therapy.com/artists/bliss"
+   },
+   {
+    "@type": "ListItem",
+    "position": 4,
+    "name": "שלישי 22.9",
     "item": "https://sol-therapy.com/share/bliss.html"
    }
   ]
@@ -301,6 +318,7 @@ body[data-state="live"] .sp-sticky{display:block}
     .sp-cardline{display:block;width:max-content;max-width:92%;margin:1.05rem auto 0;text-align:center;font-family:var(--font-body);font-weight:300;font-size:.95rem;letter-spacing:.02em;line-height:1.5;color:var(--color-washi);opacity:.74;text-decoration:none;padding-bottom:.2rem;border-bottom:1px solid rgba(242,234,211,.32);transition:opacity .2s ease,border-color .2s ease}
 .sp-cardline:hover{opacity:1;border-color:rgba(242,234,211,.7)}
 body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{display:none}
+.sp-title a{color:inherit;text-decoration:none;transition:color .2s ease}.sp-title a:hover{color:var(--teal)} /* קישור לעמוד האמן */
 </style>
 <script defer src="/assets/clean-url.js"></script>
 <script defer src="/assets/share-next.js"></script>
@@ -312,7 +330,7 @@ body[data-state="sold"] .sp-cardline,body[data-state="done"] .sp-cardline{displa
   <a class="sp-back" href="../cloud"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>לליינאפ המלא</a>
 
   <div class="sp-kicker">Cloud Space &middot; Sol Therapy</div>
-  <h1 class="sp-title">בליס</h1>
+  <h1 class="sp-title"><a href="/artists/bliss" data-artist-link="1">בליס</a></h1>
   <p class="sp-line">מדיטציית סאונד עמוקה</p>
 
   <div class="sp-hero">

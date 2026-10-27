@@ -130,7 +130,16 @@
   },
   "performer": {
    "@type": "Person",
-   "name": "אייל תלמודי"
+   "@id": "https://sol-therapy.com/artists/eyal-talmudi#artist",
+   "name": "אייל תלמודי",
+   "url": "https://sol-therapy.com/artists/eyal-talmudi",
+   "sameAs": [
+    "https://he.wikipedia.org/wiki/אייל_תלמודי",
+    "https://www.eyaltalmudi.com/",
+    "https://open.spotify.com/artist/3txsiQTNeN28R782qJSoD9",
+    "https://music.apple.com/il/artist/eyal-talmudi/487826392",
+    "https://eyaltalmudi.bandcamp.com/"
+   ]
   },
   "organizer": {
    "@type": "Organization",
@@ -144,7 +153,8 @@
    "availability": "https://schema.org/SoldOut",
    "url": "https://www.eventer.co.il/r6tff",
    "price": "135"
-  }
+  },
+  "url": "https://sol-therapy.com/share/talmudi.html"
  },
  {
   "@context": "https://schema.org",
@@ -159,13 +169,19 @@
    {
     "@type": "ListItem",
     "position": 2,
-    "name": "CLOUD SPACE",
-    "item": "https://sol-therapy.com/cloud"
+    "name": "האמנים",
+    "item": "https://sol-therapy.com/artists"
    },
    {
     "@type": "ListItem",
     "position": 3,
     "name": "אייל תלמודי",
+    "item": "https://sol-therapy.com/artists/eyal-talmudi"
+   },
+   {
+    "@type": "ListItem",
+    "position": 4,
+    "name": "רביעי 15.7",
     "item": "https://sol-therapy.com/share/talmudi.html"
    }
   ]
@@ -292,6 +308,7 @@ body[data-state="live"] .sp-sticky{display:block}
 .sp-clips-dots .dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(242,234,211,.55);background:transparent;padding:0;cursor:pointer;transition:background .15s ease}
 .sp-clips-dots .dot.--on{background:#F2EAD3;border-color:#F2EAD3}
 @media(max-width:640px){.sp-clips-btn{width:38px;height:38px}.sp-clips-btn.--prev{inset-inline-start:-6px}.sp-clips-btn.--next{inset-inline-end:-6px}}
+.sp-title a{color:inherit;text-decoration:none;transition:color .2s ease}.sp-title a:hover{color:var(--teal)} /* קישור לעמוד האמן */
     </style>
 <script defer src="/assets/clean-url.js"></script>
 <script defer src="/assets/share-next.js"></script>
@@ -303,7 +320,7 @@ body[data-state="live"] .sp-sticky{display:block}
   <a class="sp-back" href="../cloud"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>לליינאפ המלא</a>
 
   <div class="sp-kicker">Cloud Space &middot; Sol Therapy</div>
-  <h1 class="sp-title">אייל תלמודי</h1>
+  <h1 class="sp-title"><a href="/artists/eyal-talmudi" data-artist-link="1">אייל תלמודי</a></h1>
   <p class="sp-line">מדיטציית סאונד עמוקה</p>
 
   <div class="sp-hero">

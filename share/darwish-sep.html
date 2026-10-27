@@ -132,14 +132,26 @@
   },
   "performer": {
    "@type": "Person",
-   "name": "דרוויש"
+   "@id": "https://sol-therapy.com/artists/darwish#artist",
+   "name": "דרוויש",
+   "url": "https://sol-therapy.com/artists/darwish",
+   "sameAs": [
+    "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%95%D7%95%D7%99%D7%A9_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "https://open.spotify.com/artist/0bOAJCeZ3yyYnk5AXayhNJ",
+    "https://music.apple.com/il/artist/darwish/446556546",
+    "https://www.youtube.com/@darwishmusic",
+    "https://www.instagram.com/djdarwish/",
+    "https://darwish2.bandcamp.com/",
+    "https://soundcloud.com/d-j-darwish"
+   ]
   },
   "organizer": {
    "@type": "Organization",
    "name": "Sol Therapy",
    "url": "https://sol-therapy.com"
   },
-  "image": "https://sol-therapy.com/assets/cloud/share/og-darwish-sep.jpg"
+  "image": "https://sol-therapy.com/assets/cloud/share/og-darwish-sep.jpg",
+  "url": "https://sol-therapy.com/share/darwish-sep.html"
  },
  {
   "@context": "https://schema.org",
@@ -154,13 +166,19 @@
    {
     "@type": "ListItem",
     "position": 2,
-    "name": "CLOUD SPACE",
-    "item": "https://sol-therapy.com/cloud"
+    "name": "האמנים",
+    "item": "https://sol-therapy.com/artists"
    },
    {
     "@type": "ListItem",
     "position": 3,
     "name": "דרוויש",
+    "item": "https://sol-therapy.com/artists/darwish"
+   },
+   {
+    "@type": "ListItem",
+    "position": 4,
+    "name": "שלישי 15.9",
     "item": "https://sol-therapy.com/share/darwish-sep.html"
    }
   ]
@@ -291,6 +309,7 @@ body[data-state="live"] .sp-sticky{display:block}
     body[data-state="cancelled"] .sp-flag.--sold{display:inline-flex}
 body[data-state="cancelled"] .sp-flag.--last,body[data-state="cancelled"] .sp-cta,body[data-state="cancelled"] .sp-rounds,body[data-state="cancelled"] .sp-sticky,body[data-state="cancelled"] .sp-cardline{display:none}
 .sp-cancelled{display:inline-block;margin:.9rem auto 0;padding:.45rem 1.1rem;border:1px solid #C0392B;border-radius:6px;color:#F2EAD3;font-family:var(--font-body);font-weight:400;font-size:1rem;letter-spacing:.03em}
+.sp-title a{color:inherit;text-decoration:none;transition:color .2s ease}.sp-title a:hover{color:var(--teal)} /* קישור לעמוד האמן */
 </style>
 <script defer src="/assets/clean-url.js"></script>
 <script defer src="/assets/share-next.js"></script>
@@ -302,7 +321,7 @@ body[data-state="cancelled"] .sp-flag.--last,body[data-state="cancelled"] .sp-ct
   <a class="sp-back" href="../cloud"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>לליינאפ המלא</a>
 
   <div class="sp-kicker">Cloud Space &middot; Sol Therapy</div>
-  <h1 class="sp-title">דרוויש</h1>
+  <h1 class="sp-title"><a href="/artists/darwish" data-artist-link="1">דרוויש</a></h1>
   <p class="sp-line">מדיטציית סאונד עמוקה</p>
 
   <div class="sp-hero">
