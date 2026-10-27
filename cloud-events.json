@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-26 13:51",
- "source_asof": "2026-10-26 12:25",
+ "generated": "2026-10-27 07:32",
+ "source_asof": "2026-10-26 21:56",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -621,7 +621,7 @@
    "time": "20:30",
    "iso": "2026-10-28 20:30",
    "state": "open",
-   "left": 17,
+   "left": 15,
    "eventer": "spb2f",
    "evening_sold": false,
    "evening_open_slug": "echo-oct"
@@ -760,7 +760,7 @@
    "time": "18:30",
    "iso": "2026-10-29 18:30",
    "state": "open",
-   "left": 14,
+   "left": 7,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
    "evening_sold": false,
@@ -787,8 +787,8 @@
    "sib_time": "20:30"
   },
   "brain-sister-oct-26": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הבריין סיסטר 2.0 (26.10)",
@@ -796,11 +796,10 @@
    "dow": "שני",
    "time": "19:30",
    "iso": "2026-10-26 19:30",
-   "state": "open",
+   "state": "past",
    "left": 9,
    "eventer": "rn12f",
-   "evening_sold": false,
-   "evening_open_slug": "brain-sister-oct-26"
+   "evening_sold": false
   },
   "ziv-nov": {
    "event_status": "scheduled",
@@ -829,7 +828,7 @@
    "time": "20:30",
    "iso": "2026-11-03 20:30",
    "state": "open",
-   "left": 125,
+   "left": 123,
    "eventer": "msx2f",
    "evening_sold": false,
    "evening_open_slug": "noa-argov-nov"
@@ -845,7 +844,7 @@
    "time": "18:30",
    "iso": "2026-11-04 18:30",
    "state": "open",
-   "left": 100,
+   "left": 96,
    "eventer": "d8d2f",
    "main_slug": "avraham-tal-nov",
    "evening_sold": false,
@@ -885,7 +884,7 @@
    "time": "20:30",
    "iso": "2026-11-05 20:30",
    "state": "open",
-   "left": 32,
+   "left": 28,
    "eventer": "ssx2f",
    "evening_sold": false,
    "evening_open_slug": "atar-miner-nov"
@@ -917,7 +916,7 @@
    "time": "20:30",
    "iso": "2026-11-12 20:30",
    "state": "open",
-   "left": 16,
+   "left": 10,
    "eventer": "zrx2f",
    "round_slug": "amdursky-nov-early",
    "round_state": "open",
@@ -954,7 +953,7 @@
    "time": "20:30",
    "iso": "2026-11-10 20:30",
    "state": "open",
-   "left": 95,
+   "left": 91,
    "eventer": "wtx2f",
    "evening_sold": false,
    "evening_open_slug": "ra-mochiach-nov"
@@ -970,7 +969,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 86,
+   "left": 80,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -986,7 +985,7 @@
    "time": "20:30",
    "iso": "2026-11-17 20:30",
    "state": "open",
-   "left": 120,
+   "left": 118,
    "eventer": "agk2f",
    "evening_sold": false,
    "evening_open_slug": "bentur-nov"
@@ -1005,10 +1004,9 @@
    "left": 0,
    "eventer": "cgk2f",
    "round_slug": "darwish-nov-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "darwish-nov-early",
+   "evening_sold": true,
    "sib_slug": "darwish-nov-early",
    "sib_time": "18:30"
   },
@@ -1023,7 +1021,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 112,
+   "left": 109,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1110,7 +1108,7 @@
   },
   "darwish-nov-early": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "דרוויש סבב מוקדם",
@@ -1118,12 +1116,11 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-11-18 18:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "c2x2f",
    "main_slug": "darwish-nov",
-   "evening_sold": false,
-   "evening_open_slug": "darwish-nov-early",
+   "evening_sold": true,
    "sib_slug": "darwish-nov",
    "sib_time": "20:30"
   },
