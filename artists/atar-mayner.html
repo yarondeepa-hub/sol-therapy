@@ -296,23 +296,23 @@ body[data-state="live"] .session-page{padding-bottom:7.5rem}
 <script defer src="/assets/clean-url.js"></script>
 </head>
 
-<body data-artist="atar-mayner" data-state="sold">
+<body data-artist="atar-mayner" data-state="live">
     <main class="session-page">
         <a href="/artists" class="session-page__back">&rarr; לכל האמנים</a>
 
         <p class="session-page__kicker">Cloud Space &middot; Sol Therapy</p>
         <h1 class="session-page__title">עטר מיינר</h1>
         <p class="session-page__lead">אלקטרוניקה אטמוספרית ומלודיות נוגעות</p>
-        <div class="sp-hero"><span class="sp-flag --sold">אזלו הכרטיסים</span><picture><source srcset="/assets/cloud/artists-bw/atar-miner-nov.webp" type="image/webp"><img src="/assets/cloud/artists-bw/atar-miner-nov.jpg" fetchpriority="high" alt="עטר מיינר - מדיטציית סאונד ב-CLOUD SPACE תל אביב" width="760" height="950"></picture></div>
+        <div class="sp-hero"><picture><source srcset="/assets/cloud/artists-bw/atar-miner-nov.webp" type="image/webp"><img src="/assets/cloud/artists-bw/atar-miner-nov.jpg" fetchpriority="high" alt="עטר מיינר - מדיטציית סאונד ב-CLOUD SPACE תל אביב" width="760" height="950"></picture></div>
 
         <section class="upcoming" data-has-upcoming="1">
             <h2 class="session-page__section-title">הערב הקרוב</h2>
-            <div class="upcoming__item" data-date="2026-11-05" data-slug="atar-miner-nov" data-click-location="artist-page">
-                <span class="upcoming__when">חמישי <span dir="ltr">5.11</span> · <span dir="ltr">20:30</span></span>
+            <div class="upcoming__item" data-date="2026-11-05" data-click-location="artist-page">
+                <span class="upcoming__when">חמישי <span dir="ltr">5.11</span></span>
                 <div class="upcoming__body"><a class="upcoming__name" href="/share/atar-miner-nov.html" data-track="artist_to_event" data-placement="upcoming_list" data-event-slug="atar-miner-nov">מדיטציית סאונד עמוקה</a><p class="upcoming__sub">אלקטרוניקה אטמוספרית ומלודיות נוגעות</p></div>
-                <span class="upcoming__book upcoming__book--sold" aria-disabled="true">אזל</span>
+                <div class="upcoming__round" data-slug="atar-miner-nov-b"><span class="upcoming__rtime"><span dir="ltr">18:30</span> · <span class="lbl">סבב מוקדם</span></span><a class="upcoming__book" href="https://www.eventer.co.il/0404f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="artist_upcoming" data-event-slug="atar-miner-nov-b">כרטיסים</a></div>
+                <div class="upcoming__round" data-slug="atar-miner-nov"><span class="upcoming__rtime"><span dir="ltr">20:30</span></span><span class="upcoming__book upcoming__book--sold" aria-disabled="true">אזל</span></div>
             </div>
-            <p class="upcoming__note" data-date="2026-11-05">הכרטיסים לסשן הזה אזלו. הליינאפ ממשיך - סשנים נוספים מתקיימים כל שבוע. <a href="/cloud" data-track="cloud_page_click" data-placement="sold_note">לליינאפ המלא</a></p>
             <p class="upcoming__note">קלאוד ספייס, שוקן 27, תל אביב · 135 ש&quot;ח</p>
             <a class="sp-cardline" href="/cloud-card" data-card-line="1" onclick="try{if(window.gtag){gtag('event','card_line_click',{event_category:'cloud_card',page_path:location.pathname})}}catch(e){}">שימו לב - יש לנו כרטיסייה - מנקבים וחוסכים</a>
         </section>
@@ -378,6 +378,9 @@ body[data-state="live"] .session-page{padding-bottom:7.5rem}
             <span class="archive-footer__copy">Sol Therapy 2026</span>
         </footer>
     </main>
+<div class="sp-sticky" data-slug="atar-miner-nov-b" data-click-location="artist-page-sticky" data-date="2026-11-05">
+  <a href="https://www.eventer.co.il/0404f" target="_blank" rel="noopener" data-track="ticket_click" data-placement="sticky" data-event-slug="atar-miner-nov-b"><span class="who">עטר מיינר · <span dir="ltr">5.11</span> · <span dir="ltr">18:30</span></span><span class="act">כרטיסים</span></a>
+</div>
 <script>
 (function(){
     var ARTIST = document.body.getAttribute('data-artist') || '';

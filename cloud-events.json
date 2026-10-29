@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-29 16:06",
- "source_asof": "2026-10-29 14:07",
+ "generated": "2026-10-29 18:19",
+ "source_asof": "2026-10-29 18:18",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -883,7 +883,13 @@
    "state": "sold",
    "left": 0,
    "eventer": "ssx2f",
-   "evening_sold": true
+   "round_slug": "atar-miner-nov-early",
+   "round_state": "open",
+   "round_time": "18:30",
+   "evening_sold": false,
+   "evening_open_slug": "atar-miner-nov-early",
+   "sib_slug": "atar-miner-nov-early",
+   "sib_time": "18:30"
   },
   "ravid-kahalani-nov": {
    "event_status": "scheduled",
@@ -949,7 +955,7 @@
    "time": "20:30",
    "iso": "2026-11-10 20:30",
    "state": "open",
-   "left": 86,
+   "left": 84,
    "eventer": "wtx2f",
    "evening_sold": false,
    "evening_open_slug": "ra-mochiach-nov"
@@ -1169,6 +1175,25 @@
    "left": 0,
    "eventer": "1bd2f",
    "evening_sold": true
+  },
+  "atar-miner-nov-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "עטר מיינר סבב מוקדם",
+   "date": "5.11",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-11-05 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "0404f",
+   "main_slug": "atar-miner-nov",
+   "evening_sold": false,
+   "evening_open_slug": "atar-miner-nov-early",
+   "sib_slug": "atar-miner-nov",
+   "sib_time": "20:30"
   }
  }
 }
