@@ -146,8 +146,15 @@
     if (r.sub) body.appendChild(el('p', 'upcoming__sub', r.sub));
     item.appendChild(body);
     var b = el('a', 'upcoming__book', BTN);
-    b.setAttribute('href', EVENTER + r.code); b.setAttribute('target', '_blank'); b.setAttribute('rel', 'noopener');
-    b.setAttribute('data-track', 'ticket_click'); b.setAttribute('data-placement', 'upcoming_list'); b.setAttribute('data-event-slug', r.slug);
+    // 29.10.2026: הכפתור לעמוד הערב (שם הפרטים והרכישה, כולל שני סבבים ומצב אזל); בלי עמוד ערב - לאיוונטר כמו קודם
+    if (r.href) {
+      b.setAttribute('href', r.href);
+      b.setAttribute('data-track', 'recording_to_event'); b.setAttribute('data-placement', 'upcoming_button');
+    } else {
+      b.setAttribute('href', EVENTER + r.code); b.setAttribute('target', '_blank'); b.setAttribute('rel', 'noopener');
+      b.setAttribute('data-track', 'ticket_click'); b.setAttribute('data-placement', 'upcoming_list');
+    }
+    b.setAttribute('data-event-slug', r.slug);
     item.appendChild(b);
     return item;
   }
@@ -165,6 +172,8 @@
     var same = items.length === rows.length && note && noteEl() && txt(noteEl()) === note;
     for (var i = 0; same && i < rows.length; i++) {
       if (items[i].getAttribute('data-code') !== rows[i].code || (items[i].getAttribute('data-own') === '1') !== !!rows[i].own) same = false;
+      var bk = items[i].querySelector('.upcoming__book');   // 29.10.2026: גם יעד הכפתור - שורה סטטית ישנה (לאיוונטר) נבנית מחדש
+      if (!bk || bk.getAttribute('href') !== (rows[i].href || (EVENTER + rows[i].code))) same = false;
     }
     if (!same) {
       for (var j = 0; j < items.length; j++) items[j].parentNode.removeChild(items[j]);
