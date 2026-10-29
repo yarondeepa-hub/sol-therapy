@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29 08:16",
+ "generated": "2026-10-29 10:49",
  "source_asof": "2026-10-29 08:13",
  "events": {
   "amichai-matias": {
@@ -627,7 +627,7 @@
   },
   "hadas-kleinman-oct": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "הדס קליינמן",
@@ -635,13 +635,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-10-29 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 2,
    "eventer": "npb2f",
    "round_slug": "hadas-kleinman-oct-early",
    "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "hadas-kleinman-oct",
    "sib_slug": "hadas-kleinman-oct-early",
    "sib_time": "18:30"
   },
@@ -761,7 +762,8 @@
    "left": 0,
    "eventer": "l8v2f",
    "main_slug": "hadas-kleinman-oct",
-   "evening_sold": true,
+   "evening_sold": false,
+   "evening_open_slug": "hadas-kleinman-oct",
    "sib_slug": "hadas-kleinman-oct",
    "sib_time": "20:30"
   },
