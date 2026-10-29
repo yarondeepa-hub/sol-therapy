@@ -803,8 +803,8 @@
   "ziv-nov": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "listed",
-   "unlisted_reason": "",
+   "visibility": "unlisted",
+   "unlisted_reason": "הוסר מהאתר 29.10 (ירון)",
    "name": "זיו",
    "date": "2.11",
    "dow": "שני",
@@ -819,8 +819,8 @@
   "noa-argov-nov": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "listed",
-   "unlisted_reason": "",
+   "visibility": "unlisted",
+   "unlisted_reason": "הוסר מהאתר 29.10 (ירון)",
    "name": "נועה ארגוב",
    "date": "3.11",
    "dow": "שלישי",
