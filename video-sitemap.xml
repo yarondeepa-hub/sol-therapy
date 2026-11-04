@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
+    <loc>https://sol-therapy.com/cloud-session-hadas-kleinman</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-hadas-kleinman-oct.jpg</video:thumbnail_loc>
+      <video:title>הדס קליינמן - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/ZljB3t5MFo4</video:player_loc>
+      <video:duration>3301</video:duration>
+      <video:publication_date>2026-11-04</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://sol-therapy.com/cloud-session-yehezkel-raz-oct-2026</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-raz-oct.jpg</video:thumbnail_loc>
