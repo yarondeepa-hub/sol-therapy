@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-05 07:22",
- "source_asof": "2026-11-04 22:09",
+ "generated": "2026-11-05 15:58",
+ "source_asof": "2026-11-05 15:42",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -868,7 +868,7 @@
   },
   "atar-miner-nov": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "עטר מיינר",
@@ -876,14 +876,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-11-05 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 15,
    "eventer": "ssx2f",
    "round_slug": "atar-miner-nov-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "atar-miner-nov-early",
+   "evening_open_slug": "atar-miner-nov",
    "sib_slug": "atar-miner-nov-early",
    "sib_time": "18:30"
   },
@@ -898,7 +898,7 @@
    "time": "20:30",
    "iso": "2026-11-09 20:30",
    "state": "open",
-   "left": 97,
+   "left": 95,
    "eventer": "nsx2f",
    "evening_sold": false,
    "evening_open_slug": "ravid-kahalani-nov"
@@ -935,7 +935,7 @@
    "time": "20:30",
    "iso": "2026-11-11 20:30",
    "state": "open",
-   "left": 101,
+   "left": 94,
    "eventer": "fgk2f",
    "evening_sold": false,
    "evening_open_slug": "talmudi-nov"
@@ -967,7 +967,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 50,
+   "left": 49,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -1019,7 +1019,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 97,
+   "left": 94,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1035,7 +1035,7 @@
    "time": "20:30",
    "iso": "2026-11-23 20:30",
    "state": "open",
-   "left": 122,
+   "left": 118,
    "eventer": "nwk2f",
    "evening_sold": false,
    "evening_open_slug": "kimel-nov"
@@ -1133,7 +1133,7 @@
    "time": "18:30",
    "iso": "2026-11-12 18:30",
    "state": "open",
-   "left": 16,
+   "left": 4,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
@@ -1183,7 +1183,7 @@
    "time": "18:30",
    "iso": "2026-11-05 18:30",
    "state": "open",
-   "left": 90,
+   "left": 85,
    "eventer": "0404f",
    "main_slug": "atar-miner-nov",
    "evening_sold": false,
