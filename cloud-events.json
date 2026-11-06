@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-05 15:58",
- "source_asof": "2026-11-05 15:42",
+ "generated": "2026-11-06 09:04",
+ "source_asof": "2026-11-06 08:41",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -867,8 +867,8 @@
    "sib_time": "18:30"
   },
   "atar-miner-nov": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "עטר מיינר",
@@ -876,14 +876,13 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-11-05 20:30",
-   "state": "open",
-   "left": 15,
+   "state": "past",
+   "left": 7,
    "eventer": "ssx2f",
    "round_slug": "atar-miner-nov-early",
-   "round_state": "open",
+   "round_state": "past",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "atar-miner-nov",
    "sib_slug": "atar-miner-nov-early",
    "sib_time": "18:30"
   },
@@ -935,7 +934,7 @@
    "time": "20:30",
    "iso": "2026-11-11 20:30",
    "state": "open",
-   "left": 94,
+   "left": 91,
    "eventer": "fgk2f",
    "evening_sold": false,
    "evening_open_slug": "talmudi-nov"
@@ -951,7 +950,7 @@
    "time": "20:30",
    "iso": "2026-11-10 20:30",
    "state": "open",
-   "left": 71,
+   "left": 70,
    "eventer": "wtx2f",
    "evening_sold": false,
    "evening_open_slug": "ra-mochiach-nov"
@@ -967,7 +966,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 49,
+   "left": 44,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -983,7 +982,7 @@
    "time": "20:30",
    "iso": "2026-11-17 20:30",
    "state": "open",
-   "left": 116,
+   "left": 114,
    "eventer": "agk2f",
    "evening_sold": false,
    "evening_open_slug": "bentur-nov"
@@ -1083,7 +1082,7 @@
    "time": "20:30",
    "iso": "2026-11-26 20:30",
    "state": "open",
-   "left": 102,
+   "left": 100,
    "eventer": "ktx2f",
    "evening_sold": false,
    "evening_open_slug": "yotam-avni-nov"
@@ -1133,7 +1132,7 @@
    "time": "18:30",
    "iso": "2026-11-12 18:30",
    "state": "open",
-   "left": 4,
+   "left": 3,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
@@ -1173,8 +1172,8 @@
    "evening_sold": true
   },
   "atar-miner-nov-early": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "עטר מיינר סבב מוקדם",
@@ -1182,12 +1181,11 @@
    "dow": "חמישי",
    "time": "18:30",
    "iso": "2026-11-05 18:30",
-   "state": "open",
-   "left": 85,
+   "state": "past",
+   "left": 83,
    "eventer": "0404f",
    "main_slug": "atar-miner-nov",
    "evening_sold": false,
-   "evening_open_slug": "atar-miner-nov-early",
    "sib_slug": "atar-miner-nov",
    "sib_time": "20:30"
   }
