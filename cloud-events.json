@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11 15:40",
+ "generated": "2026-11-11 17:38",
  "source_asof": "2026-11-11 09:17",
  "events": {
   "amichai-matias": {
@@ -903,7 +903,7 @@
   },
   "amdursky-nov": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי",
@@ -911,14 +911,13 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-11-12 20:30",
-   "state": "open",
-   "left": 11,
+   "state": "sold",
+   "left": 0,
    "eventer": "zrx2f",
    "round_slug": "amdursky-nov-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "amdursky-nov",
+   "evening_sold": true,
    "sib_slug": "amdursky-nov-early",
    "sib_time": "18:30"
   },
@@ -1121,7 +1120,7 @@
   },
   "amdursky-nov-early": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אסף אמדורסקי סבב מוקדם",
@@ -1129,12 +1128,11 @@
    "dow": "חמישי",
    "time": "18:30",
    "iso": "2026-11-12 18:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
-   "evening_sold": false,
-   "evening_open_slug": "amdursky-nov-early",
+   "evening_sold": true,
    "sib_slug": "amdursky-nov",
    "sib_time": "20:30"
   },
