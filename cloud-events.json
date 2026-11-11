@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11 17:38",
+ "generated": "2026-11-11 18:22",
  "source_asof": "2026-11-11 09:17",
  "events": {
   "amichai-matias": {
@@ -1424,6 +1424,22 @@
    "eventer": "d9p4f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits-dec"
+  },
+  "cloud-finale-dec": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "מסיבת הסיום של קלאוד ספייס",
+   "date": "31.12",
+   "dow": "חמישי",
+   "time": "20:00",
+   "iso": "2026-12-31 20:00",
+   "state": "open",
+   "left": 500,
+   "eventer": "hzm4f",
+   "evening_sold": false,
+   "evening_open_slug": "cloud-finale-dec"
   }
  }
 }
