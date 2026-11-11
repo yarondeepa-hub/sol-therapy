@@ -34,6 +34,8 @@
   function fmt(t, o){ return t.replace(/\{(\w+)\}/g, function(_, k){ return o[k] == null ? '' : o[k]; }); }
   function when(e){ var p = (e.iso || '').split(' '); return new Date(p[0] + 'T' + (p[1] || '23:59') + ':00'); }
   function cleanName(n){ return String(n || '').replace(/\s*\([^)]*\)\s*$/, '').trim(); }
+  // שם הסדרה בלי מספר המהדורה (QA 11.11.2026): הבלוק מציג ערב אחר של אותה סדרה, ולכן "5.0" של העמוד לא מתאים לתאריך של 4.0 או 6.0
+  function seriesName(n){ return String(n || '').replace(/\s+\d+\.\d+(?=\s|$)/g, '').replace(/\s{2,}/g, ' ').trim(); }
   function el(tag, cls, text){ var x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; }
   function track(loc, slug, href){ try { if (typeof window.gtag === 'function') window.gtag('event', 'share_next_click', { click_location: loc, target_slug: slug, source_page: page, link: href }); } catch (_) {} }
 
@@ -200,11 +202,15 @@
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(j){
       var ev = j && j.events; if (!ev) return;
-      var list = evenings(ev), mine = null;
+      var list = evenings(ev), mine = null, firstMine = null;
+      // הערב הקרוב של אותו אמן שעוד אפשר לקנות אליו; רק אם אין כזה - הקרוב שאזל (QA 11.11.2026: 6.12 הציג את 14.11 שאזל, ו-28.12 הפתוח לא הוצג)
       for (var i = 0; i < list.length; i++) {
-        if (key(list[i].main) === artist && !sameEvening(list[i].main, list[i].early)) { mine = list[i]; break; }
+        if (key(list[i].main) !== artist || sameEvening(list[i].main, list[i].early)) continue;
+        if (!firstMine) firstMine = list[i];
+        if (list[i].mainOpen || list[i].earlyOpen) { mine = list[i]; break; }
       }
-      var name = box.getAttribute('data-name') || (mine && cleanName(mine.m.name)) || '';
+      if (!mine) mine = firstMine;
+      var name = seriesName(box.getAttribute('data-name') || (mine && cleanName(mine.m.name)) || '');
       var notSelling = pageState !== 'live';
       refreshMore(list, mine && mine.main);
       if (!mine) {
@@ -213,7 +219,7 @@
       }
       var p = (mine.mainOpen || mine.earlyOpen) ? lastFlag(mine.main, mine.mainOpen ? mine.m.eventer : mine.e.eventer) : Promise.resolve(false);
       return p.then(function(flag){
-        render(mine, flag, name || cleanName(mine.m.name), notSelling);
+        render(mine, flag, name || seriesName(cleanName(mine.m.name)), notSelling);
         if (notSelling) liftMore();
       });
     })

@@ -768,6 +768,8 @@
             grid-column: span 2;
             aspect-ratio: 8 / 3;
         }
+        /* QA 11.11.2026: התמונות עברו ל-picture עם WebP; העטיפה שקופה לפריסה, כך שהתמונה נשארת ילד ישיר של הפריט */
+        .gallery-captioned__item picture { display: contents; }
         .gallery-captioned__poster-fallback {
             display: none;
         }
@@ -2200,38 +2202,37 @@
             </div>
             <div class="gallery-captioned__grid">
                 <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <img src="assets/events/hr-web/sol-amazon-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/sol-amazon-museum.webp" type="image/webp"><img src="assets/events/hr-web/sol-amazon-museum.jpg" alt="סול תרפי עבור הנהלת אמזון במוזיאון תל אביב" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">סול תרפי עבור הנהלת אמזון במוזיאון תל אביב</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-suzanne-dellal.jpg" alt="סול תרפי במרכז סוזן דלל" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/sol-suzanne-dellal.webp" type="image/webp"><img src="assets/events/hr-web/sol-suzanne-dellal.jpg" alt="סול תרפי במרכז סוזן דלל" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">סול תרפי במרכז סוזן דלל</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/sol-national-library.webp" type="image/webp"><img src="assets/events/hr-web/sol-national-library.jpg" alt="סול תרפי בספרייה הלאומית ירושלים" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">סול תרפי בספרייה הלאומית ירושלים</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/multisensory-experience.jpg" alt="חוויה רב חושית סול תרפי" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/multisensory-experience.webp" type="image/webp"><img src="assets/events/hr-web/multisensory-experience.jpg" alt="חוויה רב חושית סול תרפי" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">חוויה רב חושית סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <img src="assets/events/hr-web/sol-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/sol-amdursky-retreat.webp" type="image/webp"><img src="assets/events/hr-web/sol-amdursky-retreat.jpg" alt="אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">אסף אמדורסקי במדיטציית סאונד ריטריט סול תרפי</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--wide fade-in">
-                    <img src="assets/events/hr-web/desert-movement-moa.jpg" alt="ריטריט מואה במדבר" loading="lazy">
+                    <picture><source srcset="assets/events/hr-web/desert-movement-moa.webp" type="image/webp"><img src="assets/events/hr-web/desert-movement-moa.jpg" alt="ריטריט מואה במדבר" loading="lazy"></picture>
                     <div class="gallery-captioned__caption">ריטריט מואה במדבר</div>
                 </div>
                 <div class="gallery-captioned__item fade-in">
-                    <video poster="assets/events/hr-web/desert-vinyl-session-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="סשן ויניל במדבר">
-                        <source src="assets/events/hr-web/desert-vinyl-session.mp4" type="video/mp4">
+                    <video poster="assets/events/hr-web/desert-vinyl-session-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="סשן ויניל במדבר" data-lazy-video="assets/events/hr-web/desert-vinyl-session.mp4">
                     </video>
                     <img class="gallery-captioned__poster-fallback" src="assets/events/hr-web/desert-vinyl-session-poster.jpg" alt="סשן ויניל במדבר" loading="lazy">
                     <div class="gallery-captioned__caption">סשן ויניל במדבר</div>
                 </div>
                 <div class="gallery-captioned__item gallery-captioned__item--fullvideo fade-in">
-                    <video poster="assets/events/meditation-hall.webp" preload="none" autoplay muted loop playsinline aria-label="דוקומנטרי ריטריט מואה - סול תרפי" data-lazy-video="assets/events/moa-documentary.mp4"></video>
+                    <video data-poster="assets/events/meditation-hall.webp" preload="none" autoplay muted loop playsinline aria-label="דוקומנטרי ריטריט מואה - סול תרפי" data-lazy-video="assets/events/moa-documentary.mp4"></video>
                     <div class="gallery-captioned__caption">ריטריט מואה - סול תרפי</div>
                 </div>
             </div>
@@ -2733,25 +2734,42 @@
                 }
             }
 
-            function separateLabels() {
-                var labelH = isMobile ? 20 : 38, gap = isMobile ? 4 : 6, push = isMobile ? 1.8 : 0.5, bPad = CONFIG.boundaryPadding;
-                var passes = isMobile ? 3 : 1;
+            // QA 11.11.2026: החפיפה נבדקת על המלבן שהתווית באמת מצוירת בו - אותה הצמדה לשוליים כמו ב-draw והגובה בפועל.
+            // קודם נבדק מלבן משוער בלי ההצמדה, ותווית שנצמדה לשוליים חפפה לשכנה בלי שהבדיקה ראתה. גם מחזירה כמה חפיפות נשארו.
+            function labelBoxes() {
+                var out = [];
+                for (var k = 0; k < nodes.length; k++) {
+                    var n = nodes[k], lw = labels[k].offsetWidth || 80, lh = labels[k].offsetHeight || (isMobile ? 20 : 38);
+                    var lx = n.x - lw - CONFIG.textOffsetX;
+                    if (lx < 4) lx = 4;
+                    if (lx + lw > canvasW - 4) lx = canvasW - lw - 4;
+                    var ly = n.y - 12;
+                    if (ly < 2) ly = 2;
+                    if (ly + 24 > canvasH - 2) ly = canvasH - 26;
+                    out.push({ x1: lx, y1: ly, x2: lx + lw, y2: ly + lh, w: lw });
+                }
+                return out;
+            }
+
+            function separateLabels(passes) {
+                var gap = isMobile ? 4 : 6, push = isMobile ? 1.8 : 0.5, bPad = CONFIG.boundaryPadding;
+                passes = passes || (isMobile ? 3 : 1);
+                var hits = 0;
                 for (var p = 0; p < passes; p++) {
+                    hits = 0;
+                    var B = labelBoxes();
                     for (var i = 0; i < nodes.length; i++) {
-                        var ni = nodes[i], wi = labels[i].offsetWidth || 100;
-                        var ix1 = ni.x - wi - CONFIG.textOffsetX, iy1 = ni.y - 14;
-                        var ix2 = ni.x - CONFIG.textOffsetX, iy2 = iy1 + labelH;
+                        var ni = nodes[i];
                         for (var j = i + 1; j < nodes.length; j++) {
-                            var nj = nodes[j], wj = labels[j].offsetWidth || 100;
-                            var jx1 = nj.x - wj - CONFIG.textOffsetX, jy1 = nj.y - 14;
-                            var jx2 = nj.x - CONFIG.textOffsetX, jy2 = jy1 + labelH;
-                            if (ix1 < jx2 + gap && ix2 + gap > jx1 && iy1 < jy2 + gap && iy2 + gap > jy1) {
+                            var nj = nodes[j], bi = B[i], bj = B[j];
+                            if (bi.x1 < bj.x2 + gap && bi.x2 + gap > bj.x1 && bi.y1 < bj.y2 + gap && bi.y2 + gap > bj.y1) {
+                                hits++;
                                 var dy = ni.y - nj.y;
                                 if (Math.abs(dy) < 1) dy = (i % 2 === 0) ? 1 : -1;
                                 var sign = dy > 0 ? 1 : -1;
                                 ni.y += sign * push; nj.y -= sign * push;
                                 var dx = ni.x - nj.x;
-                                if (Math.abs(dx) < Math.max(wi, wj) * 0.3) {
+                                if (Math.abs(dx) < Math.max(bi.w, bj.w) * 0.3) {
                                     var signX = dx > 0 ? 1 : -1;
                                     ni.x += signX * push * 0.4; nj.x -= signX * push * 0.4;
                                 }
@@ -2760,7 +2778,9 @@
                         ni.x = Math.max(bPad, Math.min(canvasW - bPad, ni.x));
                         ni.y = Math.max(bPad, Math.min(canvasH - bPad, ni.y));
                     }
+                    if (!hits) break;
                 }
+                return hits;
             }
 
             function updateHover() {
@@ -2850,8 +2870,8 @@
                     resizeCanvas();
                     wasMobile = isMobile;
                     if (prevMobile !== isMobile) {
-                        initNodes(); calcConnections();
-                        if (isReducedMotion) draw();
+                        initNodes(); separateLabels(400); calcConnections();
+                        draw();
                         return;
                     }
                     if (oldW > 0 && oldH > 0) {
@@ -2870,14 +2890,17 @@
             function startPlexus() {
                 if (plexusStarted) return;
                 plexusStarted = true;
-                resizeCanvas(); initNodes(); calcConnections();
+                resizeCanvas(); initNodes(); separateLabels(400); calcConnections();
                 container.addEventListener('mousemove', onMouseMove);
                 container.addEventListener('mouseleave', onMouseLeave);
                 container.addEventListener('touchstart', onTouchStart, { passive: true });
                 container.addEventListener('touchmove', onTouchMove, { passive: true });
                 container.addEventListener('touchend', onTouchEnd);
                 window.addEventListener('resize', onResize);
-                if (isReducedMotion) { draw(); } else { animId = requestAnimationFrame(animate); }
+                // QA 11.11.2026: התוויות מקבלות מיקום מיד (בלי פריים שבו כולן יושבות בפינה), ומופרדות שוב כשהגופן נטען ורוחבן משתנה
+                draw();
+                if (!isReducedMotion) { animId = requestAnimationFrame(animate); }
+                if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function() { separateLabels(400); draw(); }); }
             }
 
             // Scroll-triggered: activate section + start plexus on visibility
@@ -2898,8 +2921,26 @@
             }
         })();
 
+        // QA 11.11.2026: פוסטר הדוקומנטרי נטען כשהוא מתקרב למסך (1500 פיקסלים לפני), וסרטון הוויניל במדבר נטען כמו הדוקומנטרי -
+        // רק כשהוא מתקרב, ולא בטעינה הראשונה (כ-660 קילו פחות בכניסה). המראה לא משתנה.
+        var lazyPosters = document.querySelectorAll('video[data-poster]');
+        function setPoster(v) { v.setAttribute('poster', v.getAttribute('data-poster')); v.removeAttribute('data-poster'); }
+        if (lazyPosters.length && 'IntersectionObserver' in window) {
+            var posterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) { setPoster(entry.target); posterObserver.unobserve(entry.target); }
+                });
+            }, { rootMargin: '1500px 0px' });
+            lazyPosters.forEach(function(v) { posterObserver.observe(v); });
+        } else {
+            lazyPosters.forEach(setPoster);
+        }
+
         // Lazy-load video when scrolled into view
         var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+        if (lazyVideos.length && !('IntersectionObserver' in window)) {
+            lazyVideos.forEach(function(video) { video.src = video.getAttribute('data-lazy-video'); video.removeAttribute('data-lazy-video'); });
+        }
         if (lazyVideos.length && 'IntersectionObserver' in window) {
             var videoObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {

@@ -516,7 +516,7 @@
 </style>
 <style>
 /* ===== Line-up card grid (DRAFT v4: rectangular compact, red live) ===== */
-.lp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.9rem 1.2rem;margin-top:.5rem}
+.lp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.9rem 1.2rem;margin-top:.5rem}
 .lp-card{display:flex;flex-direction:column}
 .lp-card__media{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--color-green-dark);border-radius:4px}
 .lp-card__media picture{display:contents}
@@ -539,8 +539,8 @@
 .lp-card__share svg{display:block}
 .lp-card__namelink{color:inherit;text-decoration:none;transition:color .2s ease}
 .lp-card__namelink:hover,.lp-card__namelink:focus-visible{color:#209CB4}
-@media(max-width:980px){.lp-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem 1.1rem}}
-@media(max-width:760px){.lp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){.lp-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem 1.1rem}}
+@media(max-width:760px){.lp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){
   .lp-grid{grid-template-columns:1fr;gap:1rem}
   .lp-card{flex-direction:row;gap:.9rem;align-items:center}
@@ -563,6 +563,8 @@
 .lp-card__actions{display:flex;align-items:center;gap:1rem;margin-top:auto;padding-top:.85rem}
 .lp-card__more{background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--color-muted);padding:.3rem 0;white-space:nowrap;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(148,148,149,.5);transition:color .2s ease,text-decoration-color .2s ease;-webkit-tap-highlight-color:transparent}
 .lp-card__more:hover{color:var(--color-washi);text-decoration-color:var(--color-washi)}
+/* QA 11.11.2026: שטח לחיצה בגובה 44 פיקסלים ל"על האמן"/"פרטים" - שכבה שקופה, המראה לא משתנה */
+.lp-card__more{position:relative}.lp-card__more::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 /* inline detail dropdown (artist bio) */
 .lp-detail{grid-column:1/-1;max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.22,.61,.36,1)}
 .lp-detail__inner{position:relative;display:flex;gap:1.7rem;background:rgba(242,234,211,.045);border:1px solid rgba(242,234,211,.1);border-radius:8px;padding:1.6rem 1.7rem;text-align:right;direction:rtl}
@@ -1616,7 +1618,7 @@
 .lp-card__more:hover{color:var(--color-washi);text-decoration:none;}
 .lp-card__more .chev{font-size:.62em;opacity:.8;}
 .lp-more-sm{display:none;}
-@media(max-width:560px){.lp-more-lg{display:none;}.lp-more-sm{display:inline;}}
+.lp-more-lg{display:none;}.lp-more-sm{display:inline;} /* QA 11.11.2026: הכיתוב הקצר בכל רוחב - כרטיס ארכיון (EVENT ENDED + ABOUT THE ARTIST) צריך 286 פיקסלים, והגריד במיכל של 1080 נותן לכל היותר 256; הארוך דחק את הגריד אל מחוץ למסך עד כ-1320 */
 .lp-card__actions{gap:.85rem;}
 @media(max-width:560px){.lp-card__actions{gap:.55rem;}.lp-card__btn{padding:.45rem .95rem;font-size:.74rem;}.lp-card__more{font-size:.64rem;letter-spacing:.1em;}}
 /* workshops: reserve consistent sub-title space so dates/buttons align across the row */

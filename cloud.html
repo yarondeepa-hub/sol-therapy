@@ -2053,7 +2053,7 @@
 
 <style>
 /* ===== Line-up card grid (DRAFT v4: rectangular compact, red live) ===== */
-.lp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.9rem 1.2rem;margin-top:.5rem}
+.lp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.9rem 1.2rem;margin-top:.5rem}
 .lp-card{display:flex;flex-direction:column}
 .lp-card__media{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--color-green-dark);border-radius:4px}
 .lp-card__media picture{display:contents}
@@ -2073,11 +2073,13 @@
 .lp-card__btn:hover{background:#17859B}
 .lp-card__share{background:none;border:none;cursor:pointer;color:var(--color-muted);display:inline-flex;align-items:center;justify-content:center;padding:.25rem;line-height:0;transition:color .2s ease;-webkit-tap-highlight-color:transparent}
 .lp-card__share:hover{color:#209CB4}.lp-card__when .lp-card__share{align-self:center;padding:.15rem;margin-inline-start:.2rem;opacity:.75}.lp-card__when .lp-card__share:hover{opacity:1}.lp-card__when .lp-card__share svg{width:15px;height:15px}
+/* QA 11.11.2026: שטח לחיצה של 44 פיקסלים לכפתור השיתוף - שכבה שקופה סביב האייקון, המראה לא משתנה */
+.lp-card__when .lp-card__share{position:relative}.lp-card__when .lp-card__share::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
 .lp-card__share svg{display:block}
 .lp-card__namelink{color:inherit;text-decoration:none;transition:color .2s ease}
 .lp-card__namelink:hover,.lp-card__namelink:focus-visible{color:#209CB4}
-@media(max-width:980px){.lp-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem 1.1rem}}
-@media(max-width:760px){.lp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){.lp-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem 1.1rem}}
+@media(max-width:760px){.lp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){
   .lp-grid{grid-template-columns:1fr;gap:1rem}
   .lp-card{flex-direction:row;gap:.9rem;align-items:center}
@@ -2100,6 +2102,8 @@
 .lp-card__actions{display:flex;align-items:center;gap:1rem;margin-top:auto;padding-top:.85rem}
 .lp-card__more{background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--color-muted);padding:.3rem 0;white-space:nowrap;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:rgba(148,148,149,.5);transition:color .2s ease,text-decoration-color .2s ease;-webkit-tap-highlight-color:transparent}
 .lp-card__more:hover{color:var(--color-washi);text-decoration-color:var(--color-washi)}
+/* QA 11.11.2026: שטח לחיצה בגובה 44 פיקסלים ל"על האמן"/"פרטים" - שכבה שקופה, המראה לא משתנה */
+.lp-card__more{position:relative}.lp-card__more::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 a.lp-card__more{line-height:normal;text-align:center}a.lp-card__more:focus-visible{outline-offset:0} /* "על האמן" כקישור לעמוד האמן (29.10.2026) - אותו מראה כמו הכפתור */
 /* inline detail dropdown (artist bio) */
 .lp-detail{grid-column:1/-1;max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.22,.61,.36,1)}

@@ -723,6 +723,9 @@
         .mobile-menu--open a:nth-child(3) { opacity: 0.6; transform: translateY(0); transition-delay: 0.20s; }
         .mobile-menu--open a:nth-child(4) { opacity: 0.6; transform: translateY(0); transition-delay: 0.26s; }
         .mobile-menu--open a:nth-child(5) { opacity: 0.6; transform: translateY(0); transition-delay: 0.32s; }
+        /* QA 11.11.2026: הילד הראשון הוא כפתור הסגירה, ולכן "לארגונים" ו"קשר" הם ילדים 6 ו-7 ולא קיבלו הופעה */
+        .mobile-menu--open a:nth-child(6) { opacity: 0.6; transform: translateY(0); transition-delay: 0.38s; }
+        .mobile-menu--open a:nth-child(7) { opacity: 0.6; transform: translateY(0); transition-delay: 0.44s; }
         .mobile-menu--open .mobile-menu__cta { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
         .mobile-menu a:hover,
         .mobile-menu a:focus {
@@ -3551,7 +3554,7 @@
                     <picture><source srcset="assets/events/meditation-hall.webp" type="image/webp"><img src="assets/events/meditation-hall.jpg" alt="אולם מדיטציה עם משתתפים שוכבים על מזרנים" loading="lazy" width="1920" height="1280"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--e" data-mosaic>
-                    <video poster="assets/events/meditation-hall.webp" preload="none" autoplay muted loop playsinline aria-label="קטע וידאו מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-new-video.mp4?v=2"></video>
+                    <video data-poster="assets/events/meditation-hall.webp" preload="none" autoplay muted loop playsinline aria-label="קטע וידאו מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-new-video.mp4?v=2"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--f" data-mosaic>
                     <picture><source srcset="assets/events/dj-perspective-bw.webp" type="image/webp"><img src="assets/events/dj-perspective-bw.jpg?v=2" alt="דיג'יי מצולם מהצד בשחור-לבן בזמן מופע" loading="lazy" width="1920" height="1280"></picture>
@@ -3569,10 +3572,10 @@
                     <picture><source srcset="assets/events/museum-wide.webp" type="image/webp"><img src="assets/events/museum-wide.jpg" alt="מבט רחב על אולם המוזיאון מלא במשתתפים שוכבים" loading="lazy" width="1920" height="1280"></picture>
                 </div>
                 <div class="mosaic__item mosaic__item--j" data-mosaic>
-                    <video poster="assets/events/dark-performance.webp" preload="none" autoplay muted loop playsinline aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי" data-lazy-video="assets/events/sol-mosaic-clip.mp4"></video>
+                    <video data-poster="assets/events/dark-performance.webp" preload="none" autoplay muted loop playsinline aria-label="קטע וידאו מרגעי שיא באירוע סול תרפי" data-lazy-video="assets/events/sol-mosaic-clip.mp4"></video>
                 </div>
                 <div class="mosaic__item mosaic__item--k" data-mosaic>
-                    <video poster="assets/events/gallery-wide-bottom-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-wide-bottom.mp4"></video>
+                    <video data-poster="assets/events/gallery-wide-bottom-poster.jpg" preload="none" autoplay muted loop playsinline aria-label="וידאו פנורמי מאירוע מדיטציית סאונד" data-lazy-video="assets/events/gallery-wide-bottom.mp4"></video>
                 </div>
             </div>
         </section>
@@ -4271,6 +4274,20 @@
     <script>
     // Lazy-load video when scrolled into view
     (function() {
+        // QA 11.11.2026: הפוסטרים של סרטוני הגלריה נטענים כשהם מתקרבים למסך (1500 פיקסלים לפני) ולא בטעינה הראשונה - כ-570 קילו פחות בכניסה. המראה לא משתנה.
+        var lazyPosters = document.querySelectorAll('video[data-poster]');
+        function setPoster(v) { v.setAttribute('poster', v.getAttribute('data-poster')); v.removeAttribute('data-poster'); }
+        if ('IntersectionObserver' in window) {
+            var posterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) { setPoster(entry.target); posterObserver.unobserve(entry.target); }
+                });
+            }, { rootMargin: '1500px 0px' });
+            lazyPosters.forEach(function(v) { posterObserver.observe(v); });
+        } else {
+            lazyPosters.forEach(setPoster);
+        }
+
         var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
         if (!lazyVideos.length) return;
 
