@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-12 12:51",
- "source_asof": "2026-11-12 07:59",
+ "generated": "2026-11-12 17:10",
+ "source_asof": "2026-11-12 17:08",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -963,7 +963,7 @@
    "time": "20:30",
    "iso": "2026-11-16 20:30",
    "state": "open",
-   "left": 2,
+   "left": 3,
    "eventer": "qgk2f",
    "evening_sold": false,
    "evening_open_slug": "raz-nov"
@@ -979,7 +979,7 @@
    "time": "20:30",
    "iso": "2026-11-17 20:30",
    "state": "open",
-   "left": 108,
+   "left": 103,
    "eventer": "agk2f",
    "evening_sold": false,
    "evening_open_slug": "bentur-nov"
@@ -1015,7 +1015,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 76,
+   "left": 70,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1031,7 +1031,7 @@
    "time": "20:30",
    "iso": "2026-11-23 20:30",
    "state": "open",
-   "left": 112,
+   "left": 111,
    "eventer": "nwk2f",
    "evening_sold": false,
    "evening_open_slug": "kimel-nov"
@@ -1047,7 +1047,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 103,
+   "left": 101,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1063,7 +1063,7 @@
    "time": "20:30",
    "iso": "2026-11-25 20:30",
    "state": "open",
-   "left": 99,
+   "left": 96,
    "eventer": "rsx2f",
    "evening_sold": false,
    "evening_open_slug": "kashpitzky-nov"
@@ -1129,7 +1129,7 @@
    "time": "18:30",
    "iso": "2026-11-12 18:30",
    "state": "open",
-   "left": 2,
+   "left": 5,
    "eventer": "kjx2f",
    "main_slug": "amdursky-nov",
    "evening_sold": false,
@@ -1148,7 +1148,7 @@
    "time": "10:00",
    "iso": "2026-11-27 10:00",
    "state": "open",
-   "left": 63,
+   "left": 61,
    "eventer": "pnd2f",
    "evening_sold": false,
    "evening_open_slug": "fine-nov"
@@ -1229,7 +1229,7 @@
    "time": "20:30",
    "iso": "2026-12-01 20:30",
    "state": "open",
-   "left": 116,
+   "left": 106,
    "eventer": "dhm4f",
    "evening_sold": false,
    "evening_open_slug": "astral-dec"
@@ -1261,7 +1261,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 119,
+   "left": 116,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1277,7 +1277,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 117,
+   "left": 113,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1293,10 +1293,15 @@
    "time": "20:30",
    "iso": "2026-12-09 20:30",
    "state": "open",
-   "left": 62,
+   "left": 2,
    "eventer": "a9p4f",
+   "round_slug": "smadar-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "smadar-dec"
+   "evening_open_slug": "smadar-dec",
+   "sib_slug": "smadar-dec-early",
+   "sib_time": "18:30"
   },
   "etnica-dec": {
    "event_status": "scheduled",
@@ -1309,7 +1314,7 @@
    "time": "20:30",
    "iso": "2026-12-10 20:30",
    "state": "open",
-   "left": 115,
+   "left": 85,
    "eventer": "59p4f",
    "evening_sold": false,
    "evening_open_slug": "etnica-dec"
@@ -1325,7 +1330,7 @@
    "time": "20:30",
    "iso": "2026-12-15 20:30",
    "state": "open",
-   "left": 100,
+   "left": 97,
    "eventer": "y9p4f",
    "evening_sold": false,
    "evening_open_slug": "raz-dec"
@@ -1341,7 +1346,7 @@
    "time": "20:30",
    "iso": "2026-12-16 20:30",
    "state": "open",
-   "left": 114,
+   "left": 95,
    "eventer": "69p4f",
    "evening_sold": false,
    "evening_open_slug": "freedom-fighters-dec"
@@ -1389,7 +1394,7 @@
    "time": "20:30",
    "iso": "2026-12-23 20:30",
    "state": "open",
-   "left": 101,
+   "left": 82,
    "eventer": "w9p4f",
    "evening_sold": false,
    "evening_open_slug": "eitan-reiter-dec"
@@ -1405,7 +1410,7 @@
    "time": "20:30",
    "iso": "2026-12-29 20:30",
    "state": "open",
-   "left": 116,
+   "left": 111,
    "eventer": "x9p4f",
    "evening_sold": false,
    "evening_open_slug": "eran-tzur-dec"
@@ -1441,6 +1446,25 @@
    "eventer": "hzm4f",
    "evening_sold": false,
    "evening_open_slug": "cloud-finale-dec"
+  },
+  "smadar-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "smadar-dec-early",
+   "date": "9.12",
+   "dow": "רביעי",
+   "time": "18:30",
+   "iso": "2026-12-09 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "1qq4f",
+   "main_slug": "smadar-dec",
+   "evening_sold": false,
+   "evening_open_slug": "smadar-dec-early",
+   "sib_slug": "smadar-dec",
+   "sib_time": "20:30"
   }
  }
 }
