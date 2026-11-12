@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-12 17:10",
- "source_asof": "2026-11-12 17:08",
+ "generated": "2026-11-12 18:57",
+ "source_asof": "2026-11-12 18:54",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1229,7 +1229,7 @@
    "time": "20:30",
    "iso": "2026-12-01 20:30",
    "state": "open",
-   "left": 106,
+   "left": 101,
    "eventer": "dhm4f",
    "evening_sold": false,
    "evening_open_slug": "astral-dec"
@@ -1261,7 +1261,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 116,
+   "left": 115,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1284,7 +1284,7 @@
   },
   "smadar-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "עמרי סמדר",
@@ -1292,14 +1292,14 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-12-09 20:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "a9p4f",
    "round_slug": "smadar-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "smadar-dec",
+   "evening_open_slug": "smadar-dec-early",
    "sib_slug": "smadar-dec-early",
    "sib_time": "18:30"
   },
@@ -1314,7 +1314,7 @@
    "time": "20:30",
    "iso": "2026-12-10 20:30",
    "state": "open",
-   "left": 85,
+   "left": 84,
    "eventer": "59p4f",
    "evening_sold": false,
    "evening_open_slug": "etnica-dec"
@@ -1346,7 +1346,7 @@
    "time": "20:30",
    "iso": "2026-12-16 20:30",
    "state": "open",
-   "left": 95,
+   "left": 92,
    "eventer": "69p4f",
    "evening_sold": false,
    "evening_open_slug": "freedom-fighters-dec"
@@ -1394,7 +1394,7 @@
    "time": "20:30",
    "iso": "2026-12-23 20:30",
    "state": "open",
-   "left": 82,
+   "left": 77,
    "eventer": "w9p4f",
    "evening_sold": false,
    "evening_open_slug": "eitan-reiter-dec"
@@ -1442,7 +1442,7 @@
    "time": "20:00",
    "iso": "2026-12-31 20:00",
    "state": "open",
-   "left": 498,
+   "left": 496,
    "eventer": "hzm4f",
    "evening_sold": false,
    "evening_open_slug": "cloud-finale-dec"
