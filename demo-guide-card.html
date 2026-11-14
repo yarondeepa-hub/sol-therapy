@@ -6,6 +6,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      // 14.11.2026: test traffic -> traffic_type=internal for the GA4 internal-traffic filter (localhost / 127.0.0.1, or qa-test / lead-mail-test in the URL; kept for the rest of the visit). Measurement only.
+      try{var solQA=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)||/qa-test|lead-mail-test/i.test(location.search);try{if(solQA)sessionStorage.setItem('solQA','1');else solQA=sessionStorage.getItem('solQA')==='1';}catch(_){}if(solQA)gtag('set',{traffic_type:'internal'});}catch(_){}
       gtag('config', 'G-C5VRCQ9M6V');
       gtag('config', 'AW-1040664815');
       (function(){

@@ -6,6 +6,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      // 14.11.2026: test traffic -> traffic_type=internal for the GA4 internal-traffic filter (localhost / 127.0.0.1, or qa-test / lead-mail-test in the URL; kept for the rest of the visit). Measurement only.
+      try{var solQA=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)||/qa-test|lead-mail-test/i.test(location.search);try{if(solQA)sessionStorage.setItem('solQA','1');else solQA=sessionStorage.getItem('solQA')==='1';}catch(_){}if(solQA)gtag('set',{traffic_type:'internal'});}catch(_){}
       gtag('config', 'G-C5VRCQ9M6V');
       gtag('config', 'AW-1040664815');
       (function(){
@@ -65,6 +67,21 @@
             try{ ls=JSON.parse(localStorage.getItem(SK)||'null'); if(!ls||!ls.v||!(now-ls.t<2592e6)) ls=null; }catch(_){ ls=null; }
             if(!ls&&cur&&cur!=='(direct)/(none)'){ ls={v:cur,t:now}; try{ localStorage.setItem(SK,JSON.stringify(ls)); }catch(_){} }
             solSrc=(ss&&ss!=='(direct)/(none)')?ss:(ls?ls.v:(ss||'(direct)/(none)'));
+          }catch(_){}
+          // 14.11.2026: the same sol_src also as an event parameter on the Eventer-intent click events (GA4 custom dimension "sol_src"). Measurement only - links unchanged.
+          try{
+            var SOL_EV={eventer_click:1,ticket_click:1,ticket_click_artist:1,sticky_tickets_click:1,recording_to_event:1,artist_to_event:1,share_next_click:1,upcoming_click:1}, g0=window.gtag;
+            if(solSrc&&typeof g0==='function'&&!g0.solSrcWrap){
+              var gw=function(c,n,p){
+                if(c==='event'&&SOL_EV[n]&&arguments.length<4){
+                  var q={}; if(p&&typeof p==='object'){ for(var k in p){ if(Object.prototype.hasOwnProperty.call(p,k)) q[k]=p[k]; } }
+                  if(!q.sol_src) q.sol_src=solSrc;
+                  return g0.call(this,c,n,q);
+                }
+                return g0.apply(this,arguments);
+              };
+              gw.solSrcWrap=1; window.gtag=gw;
+            }
           }catch(_){}
           document.addEventListener('click',function(e){
             try{
