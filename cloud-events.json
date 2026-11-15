@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-15 15:43",
- "source_asof": "2026-11-15 15:42",
+ "generated": "2026-11-15 18:36",
+ "source_asof": "2026-11-15 18:35",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1379,7 +1379,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 86,
+   "left": 84,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1395,10 +1395,15 @@
    "time": "20:30",
    "iso": "2026-12-23 20:30",
    "state": "open",
-   "left": 16,
+   "left": 14,
    "eventer": "w9p4f",
+   "round_slug": "eitan-reiter-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "eitan-reiter-dec"
+   "evening_open_slug": "eitan-reiter-dec",
+   "sib_slug": "eitan-reiter-dec-early",
+   "sib_time": "18:30"
   },
   "eran-tzur-dec": {
    "event_status": "scheduled",
@@ -1411,7 +1416,7 @@
    "time": "20:30",
    "iso": "2026-12-29 20:30",
    "state": "open",
-   "left": 87,
+   "left": 85,
    "eventer": "x9p4f",
    "evening_sold": false,
    "evening_open_slug": "eran-tzur-dec"
@@ -1483,6 +1488,25 @@
    "evening_sold": false,
    "evening_open_slug": "etnica-dec-early",
    "sib_slug": "etnica-dec",
+   "sib_time": "20:30"
+  },
+  "eitan-reiter-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "eitan-reiter-dec-early",
+   "date": "23.12",
+   "dow": "רביעי",
+   "time": "18:30",
+   "iso": "2026-12-23 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "a7q4f",
+   "main_slug": "eitan-reiter-dec",
+   "evening_sold": false,
+   "evening_open_slug": "eitan-reiter-dec-early",
+   "sib_slug": "eitan-reiter-dec",
    "sib_time": "20:30"
   }
  }
