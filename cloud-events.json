@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15 08:25",
+ "generated": "2026-11-15 09:47",
  "source_asof": "2026-11-15 07:53",
  "events": {
   "amichai-matias": {
@@ -1293,10 +1293,9 @@
    "left": 0,
    "eventer": "a9p4f",
    "round_slug": "smadar-dec-early",
-   "round_state": "open",
+   "round_state": "sold",
    "round_time": "18:30",
-   "evening_sold": false,
-   "evening_open_slug": "smadar-dec-early",
+   "evening_sold": true,
    "sib_slug": "smadar-dec-early",
    "sib_time": "18:30"
   },
@@ -1446,7 +1445,7 @@
   },
   "smadar-dec-early": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "smadar-dec-early",
@@ -1454,12 +1453,11 @@
    "dow": "רביעי",
    "time": "18:30",
    "iso": "2026-12-09 18:30",
-   "state": "open",
-   "left": 2,
+   "state": "sold",
+   "left": 0,
    "eventer": "1qq4f",
    "main_slug": "smadar-dec",
-   "evening_sold": false,
-   "evening_open_slug": "smadar-dec-early",
+   "evening_sold": true,
    "sib_slug": "smadar-dec",
    "sib_time": "20:30"
   }
