@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-15 15:33",
- "source_asof": "2026-11-15 15:30",
+ "generated": "2026-11-15 15:43",
+ "source_asof": "2026-11-15 15:42",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1226,7 +1226,7 @@
    "time": "20:30",
    "iso": "2026-12-01 20:30",
    "state": "open",
-   "left": 53,
+   "left": 51,
    "eventer": "dhm4f",
    "evening_sold": false,
    "evening_open_slug": "astral-dec"
@@ -1312,7 +1312,13 @@
    "state": "sold",
    "left": 0,
    "eventer": "59p4f",
-   "evening_sold": true
+   "round_slug": "etnica-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
+   "evening_sold": false,
+   "evening_open_slug": "etnica-dec-early",
+   "sib_slug": "etnica-dec-early",
+   "sib_time": "18:30"
   },
   "raz-dec": {
    "event_status": "scheduled",
@@ -1389,7 +1395,7 @@
    "time": "20:30",
    "iso": "2026-12-23 20:30",
    "state": "open",
-   "left": 18,
+   "left": 16,
    "eventer": "w9p4f",
    "evening_sold": false,
    "evening_open_slug": "eitan-reiter-dec"
@@ -1458,6 +1464,25 @@
    "main_slug": "smadar-dec",
    "evening_sold": true,
    "sib_slug": "smadar-dec",
+   "sib_time": "20:30"
+  },
+  "etnica-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "etnica-dec-early",
+   "date": "10.12",
+   "dow": "חמישי",
+   "time": "18:30",
+   "iso": "2026-12-10 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "j7q4f",
+   "main_slug": "etnica-dec",
+   "evening_sold": false,
+   "evening_open_slug": "etnica-dec-early",
+   "sib_slug": "etnica-dec",
    "sib_time": "20:30"
   }
  }
