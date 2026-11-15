@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-15 09:47",
- "source_asof": "2026-11-15 07:53",
+ "generated": "2026-11-15 15:33",
+ "source_asof": "2026-11-15 15:30",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -977,7 +977,7 @@
    "time": "20:30",
    "iso": "2026-11-17 20:30",
    "state": "open",
-   "left": 97,
+   "left": 95,
    "eventer": "agk2f",
    "evening_sold": false,
    "evening_open_slug": "bentur-nov"
@@ -1013,7 +1013,7 @@
    "time": "20:30",
    "iso": "2026-11-19 20:30",
    "state": "open",
-   "left": 61,
+   "left": 52,
    "eventer": "swk2f",
    "evening_sold": false,
    "evening_open_slug": "shuzin-nov"
@@ -1029,7 +1029,7 @@
    "time": "20:30",
    "iso": "2026-11-23 20:30",
    "state": "open",
-   "left": 106,
+   "left": 105,
    "eventer": "nwk2f",
    "evening_sold": false,
    "evening_open_slug": "kimel-nov"
@@ -1045,7 +1045,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 96,
+   "left": 91,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1093,7 +1093,7 @@
    "time": "20:30",
    "iso": "2026-11-30 20:30",
    "state": "open",
-   "left": 95,
+   "left": 93,
    "eventer": "3sx2f",
    "evening_sold": false,
    "evening_open_slug": "tomer-katz-nov"
@@ -1145,7 +1145,7 @@
    "time": "10:00",
    "iso": "2026-11-27 10:00",
    "state": "open",
-   "left": 43,
+   "left": 36,
    "eventer": "pnd2f",
    "evening_sold": false,
    "evening_open_slug": "fine-nov"
@@ -1226,7 +1226,7 @@
    "time": "20:30",
    "iso": "2026-12-01 20:30",
    "state": "open",
-   "left": 59,
+   "left": 53,
    "eventer": "dhm4f",
    "evening_sold": false,
    "evening_open_slug": "astral-dec"
@@ -1242,7 +1242,7 @@
    "time": "20:30",
    "iso": "2026-12-02 20:30",
    "state": "open",
-   "left": 103,
+   "left": 98,
    "eventer": "r9p4f",
    "evening_sold": false,
    "evening_open_slug": "maya-belsitzman-dec"
@@ -1258,7 +1258,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 109,
+   "left": 105,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1301,7 +1301,7 @@
   },
   "etnica-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אתניקה",
@@ -1309,11 +1309,10 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-12-10 20:30",
-   "state": "open",
-   "left": 22,
+   "state": "sold",
+   "left": 0,
    "eventer": "59p4f",
-   "evening_sold": false,
-   "evening_open_slug": "etnica-dec"
+   "evening_sold": true
   },
   "raz-dec": {
    "event_status": "scheduled",
@@ -1326,7 +1325,7 @@
    "time": "20:30",
    "iso": "2026-12-15 20:30",
    "state": "open",
-   "left": 82,
+   "left": 80,
    "eventer": "y9p4f",
    "evening_sold": false,
    "evening_open_slug": "raz-dec"
@@ -1342,7 +1341,7 @@
    "time": "20:30",
    "iso": "2026-12-16 20:30",
    "state": "open",
-   "left": 59,
+   "left": 52,
    "eventer": "69p4f",
    "evening_sold": false,
    "evening_open_slug": "freedom-fighters-dec"
@@ -1374,7 +1373,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 94,
+   "left": 86,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1390,7 +1389,7 @@
    "time": "20:30",
    "iso": "2026-12-23 20:30",
    "state": "open",
-   "left": 24,
+   "left": 18,
    "eventer": "w9p4f",
    "evening_sold": false,
    "evening_open_slug": "eitan-reiter-dec"
@@ -1406,7 +1405,7 @@
    "time": "20:30",
    "iso": "2026-12-29 20:30",
    "state": "open",
-   "left": 92,
+   "left": 87,
    "eventer": "x9p4f",
    "evening_sold": false,
    "evening_open_slug": "eran-tzur-dec"
