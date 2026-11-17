@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 16:19",
+ "generated": "2026-11-17 17:54",
  "source_asof": "2026-11-17 14:57",
  "events": {
   "amichai-matias": {
@@ -1185,7 +1185,7 @@
   },
   "brain-sister-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "brain-sister-dec",
@@ -1193,11 +1193,10 @@
    "dow": "ראשון",
    "time": "19:30",
    "iso": "2026-12-06 19:30",
-   "state": "open",
-   "left": 5,
+   "state": "sold",
+   "left": 0,
    "eventer": "llm4f",
-   "evening_sold": false,
-   "evening_open_slug": "brain-sister-dec"
+   "evening_sold": true
   },
   "brain-sister-dec-28": {
    "event_status": "scheduled",
