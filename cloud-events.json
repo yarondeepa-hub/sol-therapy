@@ -1355,8 +1355,8 @@
   "noam-rotem-dec": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "listed",
-   "unlisted_reason": "",
+   "visibility": "unlisted",
+   "unlisted_reason": "הוסר מהאתר 17.11 (ירון)",
    "name": "נועם רותם",
    "date": "17.12",
    "dow": "חמישי",
