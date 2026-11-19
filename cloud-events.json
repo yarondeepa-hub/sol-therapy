@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19 10:49",
- "source_asof": "2026-11-19 10:42",
+ "generated": "2026-11-19 12:53",
+ "source_asof": "2026-11-19 12:50",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1329,7 +1329,7 @@
    "time": "20:30",
    "iso": "2026-12-15 20:30",
    "state": "open",
-   "left": 47,
+   "left": 45,
    "eventer": "y9p4f",
    "evening_sold": false,
    "evening_open_slug": "raz-dec"
@@ -1419,7 +1419,7 @@
    "time": "20:30",
    "iso": "2026-12-29 20:30",
    "state": "open",
-   "left": 82,
+   "left": 80,
    "eventer": "x9p4f",
    "evening_sold": false,
    "evening_open_slug": "eran-tzur-dec"
@@ -1451,7 +1451,7 @@
    "time": "20:00",
    "iso": "2026-12-31 20:00",
    "state": "open",
-   "left": 495,
+   "left": 493,
    "eventer": "hzm4f",
    "evening_sold": false,
    "evening_open_slug": "cloud-finale-dec"
@@ -1485,7 +1485,7 @@
    "time": "18:30",
    "iso": "2026-12-10 18:30",
    "state": "open",
-   "left": 91,
+   "left": 89,
    "eventer": "j7q4f",
    "main_slug": "etnica-dec",
    "evening_sold": false,
@@ -1504,7 +1504,7 @@
    "time": "18:30",
    "iso": "2026-12-23 18:30",
    "state": "open",
-   "left": 84,
+   "left": 82,
    "eventer": "a7q4f",
    "main_slug": "eitan-reiter-dec",
    "evening_sold": false,
@@ -1531,8 +1531,8 @@
   "astral-dec-early": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "listed",
-   "unlisted_reason": "",
+   "visibility": "unlisted",
+   "unlisted_reason": "פורסם באיוונטר 19.11, עדיין לא נפתח באתר - להסיר מכאן כשמריצים cloud-open-round.py לאסטרל (באישור ירון)",
    "name": "astral-dec-early",
    "date": "1.12",
    "dow": "שלישי",
