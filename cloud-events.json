@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19 09:42",
- "source_asof": "2026-11-19 00:05",
+ "generated": "2026-11-19 10:49",
+ "source_asof": "2026-11-19 10:42",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1144,7 +1144,7 @@
    "time": "10:00",
    "iso": "2026-11-27 10:00",
    "state": "open",
-   "left": 20,
+   "left": 18,
    "eventer": "pnd2f",
    "evening_sold": false,
    "evening_open_slug": "fine-nov"
@@ -1345,10 +1345,15 @@
    "time": "20:30",
    "iso": "2026-12-16 20:30",
    "state": "open",
-   "left": 8,
+   "left": 6,
    "eventer": "69p4f",
+   "round_slug": "freedom-fighters-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "freedom-fighters-dec"
+   "evening_open_slug": "freedom-fighters-dec",
+   "sib_slug": "freedom-fighters-dec-early",
+   "sib_time": "18:30"
   },
   "noam-rotem-dec": {
    "event_status": "scheduled",
@@ -1377,7 +1382,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 78,
+   "left": 76,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1499,7 +1504,7 @@
    "time": "18:30",
    "iso": "2026-12-23 18:30",
    "state": "open",
-   "left": 87,
+   "left": 84,
    "eventer": "a7q4f",
    "main_slug": "eitan-reiter-dec",
    "evening_sold": false,
@@ -1522,6 +1527,41 @@
    "eventer": "8jq4f",
    "evening_sold": false,
    "evening_open_slug": "rak-house-dec"
+  },
+  "astral-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "astral-dec-early",
+   "date": "1.12",
+   "dow": "שלישי",
+   "time": "18:30",
+   "iso": "2026-12-01 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "",
+   "evening_sold": false,
+   "evening_open_slug": "astral-dec-early"
+  },
+  "freedom-fighters-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "freedom-fighters-dec-early",
+   "date": "16.12",
+   "dow": "רביעי",
+   "time": "18:30",
+   "iso": "2026-12-16 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "pvs4f",
+   "main_slug": "freedom-fighters-dec",
+   "evening_sold": false,
+   "evening_open_slug": "freedom-fighters-dec-early",
+   "sib_slug": "freedom-fighters-dec",
+   "sib_time": "20:30"
   }
  }
 }
