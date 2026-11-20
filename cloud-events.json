@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20 09:36",
+ "generated": "2026-11-20 09:38",
  "source_asof": "2026-11-20 09:33",
  "events": {
   "amichai-matias": {
@@ -1225,8 +1225,13 @@
    "state": "open",
    "left": 9,
    "eventer": "dhm4f",
+   "round_slug": "astral-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "astral-dec"
+   "evening_open_slug": "astral-dec",
+   "sib_slug": "astral-dec-early",
+   "sib_time": "18:30"
   },
   "maya-belsitzman-dec": {
    "event_status": "scheduled",
@@ -1530,8 +1535,8 @@
   "astral-dec-early": {
    "event_status": "scheduled",
    "sale_status": "open",
-   "visibility": "unlisted",
-   "unlisted_reason": "פורסם באיוונטר 19.11, עדיין לא נפתח באתר - להסיר מכאן כשמריצים cloud-open-round.py לאסטרל (באישור ירון)",
+   "visibility": "listed",
+   "unlisted_reason": "",
    "name": "אסטרל פרוג'קשן סבב מוקדם",
    "date": "1.12",
    "dow": "שלישי",
@@ -1539,9 +1544,12 @@
    "iso": "2026-12-01 18:30",
    "state": "open",
    "left": 125,
-   "eventer": "",
+   "eventer": "0vs4f",
+   "main_slug": "astral-dec",
    "evening_sold": false,
-   "evening_open_slug": "astral-dec-early"
+   "evening_open_slug": "astral-dec-early",
+   "sib_slug": "astral-dec",
+   "sib_time": "20:30"
   },
   "freedom-fighters-dec-early": {
    "event_status": "scheduled",
