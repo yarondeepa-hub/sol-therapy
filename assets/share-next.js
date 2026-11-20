@@ -206,6 +206,8 @@
       // הערב הקרוב של אותו אמן שעוד אפשר לקנות אליו; רק אם אין כזה - הקרוב שאזל (QA 11.11.2026: 6.12 הציג את 14.11 שאזל, ו-28.12 הפתוח לא הוצג)
       for (var i = 0; i < list.length; i++) {
         if (key(list[i].main) !== artist || sameEvening(list[i].main, list[i].early)) continue;
+        // "התאריך הבא" = רק ערב שאחרי הערב של העמוד (ירון 20.11.2026: בעמוד של 8.12 הוצג הבוקר של 27.11 - "תאריך עבר, לא הגיוני")
+        if (list[i].first <= ed) continue;
         if (!firstMine) firstMine = list[i];
         if (list[i].mainOpen || list[i].earlyOpen) { mine = list[i]; break; }
       }
