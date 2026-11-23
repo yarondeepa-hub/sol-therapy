@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23 08:09",
- "source_asof": "2026-11-23 08:07",
+ "generated": "2026-11-23 11:19",
+ "source_asof": "2026-11-23 11:16",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1027,7 +1027,7 @@
    "time": "20:30",
    "iso": "2026-11-23 20:30",
    "state": "open",
-   "left": 89,
+   "left": 87,
    "eventer": "nwk2f",
    "evening_sold": false,
    "evening_open_slug": "kimel-nov"
@@ -1059,7 +1059,7 @@
    "time": "20:30",
    "iso": "2026-11-25 20:30",
    "state": "open",
-   "left": 79,
+   "left": 76,
    "eventer": "rsx2f",
    "evening_sold": false,
    "evening_open_slug": "kashpitzky-nov"
@@ -1075,7 +1075,7 @@
    "time": "20:30",
    "iso": "2026-11-26 20:30",
    "state": "open",
-   "left": 78,
+   "left": 75,
    "eventer": "ktx2f",
    "evening_sold": false,
    "evening_open_slug": "yotam-avni-nov"
@@ -1243,7 +1243,7 @@
    "time": "20:30",
    "iso": "2026-12-02 20:30",
    "state": "open",
-   "left": 17,
+   "left": 15,
    "eventer": "r9p4f",
    "round_slug": "maya-belsitzman-dec-early",
    "round_state": "open",
@@ -1264,7 +1264,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 88,
+   "left": 86,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1280,7 +1280,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 59,
+   "left": 56,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1402,7 +1402,7 @@
   },
   "eitan-reiter-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "איתן רייטר",
@@ -1410,14 +1410,14 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-12-23 20:30",
-   "state": "open",
-   "left": 1,
+   "state": "sold",
+   "left": 0,
    "eventer": "w9p4f",
    "round_slug": "eitan-reiter-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "eitan-reiter-dec",
+   "evening_open_slug": "eitan-reiter-dec-early",
    "sib_slug": "eitan-reiter-dec-early",
    "sib_time": "18:30"
   },
@@ -1552,7 +1552,7 @@
    "time": "18:30",
    "iso": "2026-12-01 18:30",
    "state": "open",
-   "left": 108,
+   "left": 104,
    "eventer": "0vs4f",
    "main_slug": "astral-dec",
    "evening_sold": false,
