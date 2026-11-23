@@ -119,6 +119,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preload" as="image" type="image/avif" imagesrcset="assets/cloud/cloud-poster-nov-640-v2.avif 640w, assets/cloud/cloud-poster-nov-960-v2.avif 960w" imagesizes="(max-width: 560px) 315px, 480px" fetchpriority="high">
+    <link rel="preload" href="assets/fonts/heebo-v28-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Open Graph -->
     <meta property="og:title" content="קלאוד ספייס CLOUD SPACE - מרחב נשימה אורבני מבית סול תרפי">
@@ -1446,10 +1447,18 @@
     }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fonts (23.11.2026): self-hosted subsets of the same Google Fonts files, glyph-for-glyph identical (checked). Same single-weight faces and the same variable files as Google served (Heebo split Hebrew/Latin like Google), font-display:swap as before. Hebrew + basic Latin + digits + the punctuation in use. The main font is preloaded at the top of <head>. -->
+    <style>
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:300;font-display:swap;src:url('assets/fonts/heebo-v28-hebrew.woff2') format('woff2');unicode-range:U+0590-05FF, U+200C-200F, U+20AA, U+FB1D-FB4F}
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/heebo-v28-hebrew.woff2') format('woff2');unicode-range:U+0590-05FF, U+200C-200F, U+20AA, U+FB1D-FB4F}
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/heebo-v28-hebrew.woff2') format('woff2');unicode-range:U+0590-05FF, U+200C-200F, U+20AA, U+FB1D-FB4F}
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:300;font-display:swap;src:url('assets/fonts/heebo-v28-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0, U+00AB, U+00B7, U+00BB, U+00D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/heebo-v28-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0, U+00AB, U+00B7, U+00BB, U+00D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+        @font-face{font-family:'Heebo';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/heebo-v28-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0, U+00AB, U+00B7, U+00BB, U+00D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url('assets/fonts/inter-v20-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-v20-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-v20-latin.woff2') format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026}
+    </style>
 
     <style>
         @font-face {
