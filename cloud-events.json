@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-22 15:21",
- "source_asof": "2026-11-22 15:19",
+ "generated": "2026-11-23 08:07",
+ "source_asof": "2026-11-23 08:07",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1027,7 +1027,7 @@
    "time": "20:30",
    "iso": "2026-11-23 20:30",
    "state": "open",
-   "left": 90,
+   "left": 89,
    "eventer": "nwk2f",
    "evening_sold": false,
    "evening_open_slug": "kimel-nov"
@@ -1043,7 +1043,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 88,
+   "left": 86,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1075,7 +1075,7 @@
    "time": "20:30",
    "iso": "2026-11-26 20:30",
    "state": "open",
-   "left": 80,
+   "left": 78,
    "eventer": "ktx2f",
    "evening_sold": false,
    "evening_open_slug": "yotam-avni-nov"
@@ -1091,7 +1091,7 @@
    "time": "20:30",
    "iso": "2026-11-30 20:30",
    "state": "open",
-   "left": 89,
+   "left": 87,
    "eventer": "3sx2f",
    "evening_sold": false,
    "evening_open_slug": "tomer-katz-nov"
@@ -1243,7 +1243,7 @@
    "time": "20:30",
    "iso": "2026-12-02 20:30",
    "state": "open",
-   "left": 27,
+   "left": 17,
    "eventer": "r9p4f",
    "evening_sold": false,
    "evening_open_slug": "maya-belsitzman-dec"
@@ -1259,7 +1259,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 89,
+   "left": 88,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1275,7 +1275,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 70,
+   "left": 59,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1332,10 +1332,15 @@
    "time": "20:30",
    "iso": "2026-12-15 20:30",
    "state": "open",
-   "left": 16,
+   "left": 11,
    "eventer": "y9p4f",
+   "round_slug": "raz-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "raz-dec"
+   "evening_open_slug": "raz-dec",
+   "sib_slug": "raz-dec-early",
+   "sib_time": "18:30"
   },
   "freedom-fighters-dec": {
    "event_status": "scheduled",
@@ -1385,7 +1390,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 32,
+   "left": 29,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1422,7 +1427,7 @@
    "time": "20:30",
    "iso": "2026-12-29 20:30",
    "state": "open",
-   "left": 67,
+   "left": 64,
    "eventer": "x9p4f",
    "evening_sold": false,
    "evening_open_slug": "eran-tzur-dec"
@@ -1438,7 +1443,7 @@
    "time": "20:30",
    "iso": "2026-12-30 20:30",
    "state": "open",
-   "left": 119,
+   "left": 117,
    "eventer": "d9p4f",
    "evening_sold": false,
    "evening_open_slug": "nitai-hershkovits-dec"
@@ -1488,7 +1493,7 @@
    "time": "18:30",
    "iso": "2026-12-10 18:30",
    "state": "open",
-   "left": 74,
+   "left": 70,
    "eventer": "j7q4f",
    "main_slug": "etnica-dec",
    "evening_sold": false,
@@ -1507,7 +1512,7 @@
    "time": "18:30",
    "iso": "2026-12-23 18:30",
    "state": "open",
-   "left": 67,
+   "left": 66,
    "eventer": "a7q4f",
    "main_slug": "eitan-reiter-dec",
    "evening_sold": false,
@@ -1542,7 +1547,7 @@
    "time": "18:30",
    "iso": "2026-12-01 18:30",
    "state": "open",
-   "left": 111,
+   "left": 108,
    "eventer": "0vs4f",
    "main_slug": "astral-dec",
    "evening_sold": false,
@@ -1561,12 +1566,47 @@
    "time": "18:30",
    "iso": "2026-12-16 18:30",
    "state": "open",
-   "left": 110,
+   "left": 104,
    "eventer": "pvs4f",
    "main_slug": "freedom-fighters-dec",
    "evening_sold": false,
    "evening_open_slug": "freedom-fighters-dec-early",
    "sib_slug": "freedom-fighters-dec",
+   "sib_time": "20:30"
+  },
+  "maya-belsitzman-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "מאיה בלזיצמן סבב מוקדם",
+   "date": "2.12",
+   "dow": "רביעי",
+   "time": "18:30",
+   "iso": "2026-12-02 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "",
+   "evening_sold": false,
+   "evening_open_slug": "maya-belsitzman-dec-early"
+  },
+  "raz-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "יחזקאל רז סבב מוקדם",
+   "date": "15.12",
+   "dow": "שלישי",
+   "time": "18:30",
+   "iso": "2026-12-15 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "cgn4f",
+   "main_slug": "raz-dec",
+   "evening_sold": false,
+   "evening_open_slug": "raz-dec-early",
+   "sib_slug": "raz-dec",
    "sib_time": "20:30"
   }
  }
