@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24 13:09",
- "source_asof": "2026-11-24 13:07",
+ "generated": "2026-11-24 19:23",
+ "source_asof": "2026-11-24 19:15",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1042,7 +1042,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 81,
+   "left": 75,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1074,7 +1074,7 @@
    "time": "20:30",
    "iso": "2026-11-26 20:30",
    "state": "open",
-   "left": 71,
+   "left": 68,
    "eventer": "ktx2f",
    "evening_sold": false,
    "evening_open_slug": "yotam-avni-nov"
@@ -1233,7 +1233,7 @@
   },
   "maya-belsitzman-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "מאיה בלזיצמן",
@@ -1241,14 +1241,14 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-12-02 20:30",
-   "state": "open",
-   "left": 4,
+   "state": "sold",
+   "left": 0,
    "eventer": "r9p4f",
    "round_slug": "maya-belsitzman-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "maya-belsitzman-dec",
+   "evening_open_slug": "maya-belsitzman-dec-early",
    "sib_slug": "maya-belsitzman-dec-early",
    "sib_time": "18:30"
   },
@@ -1263,7 +1263,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 83,
+   "left": 82,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1279,7 +1279,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 46,
+   "left": 44,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1327,7 +1327,7 @@
   },
   "raz-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יחזקאל רז",
@@ -1335,14 +1335,14 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-12-15 20:30",
-   "state": "open",
-   "left": 7,
+   "state": "sold",
+   "left": 0,
    "eventer": "y9p4f",
    "round_slug": "raz-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "raz-dec",
+   "evening_open_slug": "raz-dec-early",
    "sib_slug": "raz-dec-early",
    "sib_time": "18:30"
   },
@@ -1394,7 +1394,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 23,
+   "left": 17,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1516,7 +1516,7 @@
    "time": "18:30",
    "iso": "2026-12-23 18:30",
    "state": "open",
-   "left": 51,
+   "left": 49,
    "eventer": "a7q4f",
    "main_slug": "eitan-reiter-dec",
    "evening_sold": false,
@@ -1535,7 +1535,7 @@
    "time": "17:00",
    "iso": "2026-12-05 17:00",
    "state": "open",
-   "left": 466,
+   "left": 463,
    "eventer": "8jq4f",
    "evening_sold": false,
    "evening_open_slug": "rak-house-dec"
@@ -1551,7 +1551,7 @@
    "time": "18:30",
    "iso": "2026-12-01 18:30",
    "state": "open",
-   "left": 96,
+   "left": 94,
    "eventer": "0vs4f",
    "main_slug": "astral-dec",
    "evening_sold": false,
@@ -1570,7 +1570,7 @@
    "time": "18:30",
    "iso": "2026-12-16 18:30",
    "state": "open",
-   "left": 100,
+   "left": 96,
    "eventer": "pvs4f",
    "main_slug": "freedom-fighters-dec",
    "evening_sold": false,
@@ -1615,6 +1615,22 @@
    "evening_open_slug": "raz-dec-early",
    "sib_slug": "raz-dec",
    "sib_time": "20:30"
+  },
+  "arbel-book-launch-dec": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "השקת עקבות של חופש",
+   "date": "18.12",
+   "dow": "שישי",
+   "time": "13:30",
+   "iso": "2026-12-18 13:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "",
+   "evening_sold": false,
+   "evening_open_slug": "arbel-book-launch-dec"
   }
  }
 }
