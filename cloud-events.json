@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24 19:23",
- "source_asof": "2026-11-24 19:15",
+ "generated": "2026-11-24 19:28",
+ "source_asof": "2026-11-24 19:27",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1348,7 +1348,7 @@
   },
   "freedom-fighters-dec": {
    "event_status": "scheduled",
-   "sale_status": "sold",
+   "sale_status": "open",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "פרידום פייטרס",
@@ -1356,14 +1356,14 @@
    "dow": "רביעי",
    "time": "20:30",
    "iso": "2026-12-16 20:30",
-   "state": "sold",
-   "left": 0,
+   "state": "open",
+   "left": 3,
    "eventer": "69p4f",
    "round_slug": "freedom-fighters-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "freedom-fighters-dec-early",
+   "evening_open_slug": "freedom-fighters-dec",
    "sib_slug": "freedom-fighters-dec-early",
    "sib_time": "18:30"
   },
@@ -1570,7 +1570,7 @@
    "time": "18:30",
    "iso": "2026-12-16 18:30",
    "state": "open",
-   "left": 96,
+   "left": 98,
    "eventer": "pvs4f",
    "main_slug": "freedom-fighters-dec",
    "evening_sold": false,
@@ -1589,7 +1589,7 @@
    "time": "18:30",
    "iso": "2026-12-02 18:30",
    "state": "open",
-   "left": 123,
+   "left": 122,
    "eventer": "vgn4f",
    "main_slug": "maya-belsitzman-dec",
    "evening_sold": false,
