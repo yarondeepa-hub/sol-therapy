@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23 22:22",
- "source_asof": "2026-11-23 22:10",
+ "generated": "2026-11-24 08:14",
+ "source_asof": "2026-11-24 08:10",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1017,8 +1017,8 @@
    "evening_sold": false
   },
   "kimel-nov": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "קארין קימל",
@@ -1026,11 +1026,10 @@
    "dow": "שני",
    "time": "20:30",
    "iso": "2026-11-23 20:30",
-   "state": "open",
+   "state": "past",
    "left": 84,
    "eventer": "nwk2f",
-   "evening_sold": false,
-   "evening_open_slug": "kimel-nov"
+   "evening_sold": false
   },
   "ben-aylon-nov": {
    "event_status": "scheduled",
@@ -1043,7 +1042,7 @@
    "time": "20:30",
    "iso": "2026-11-24 20:30",
    "state": "open",
-   "left": 85,
+   "left": 82,
    "eventer": "tsx2f",
    "evening_sold": false,
    "evening_open_slug": "ben-aylon-nov"
@@ -1395,7 +1394,7 @@
    "time": "20:30",
    "iso": "2026-12-22 20:30",
    "state": "open",
-   "left": 27,
+   "left": 25,
    "eventer": "19p4f",
    "evening_sold": false,
    "evening_open_slug": "avishai-cohen-dec"
@@ -1609,7 +1608,7 @@
    "time": "18:30",
    "iso": "2026-12-15 18:30",
    "state": "open",
-   "left": 125,
+   "left": 123,
    "eventer": "cgn4f",
    "main_slug": "raz-dec",
    "evening_sold": false,
