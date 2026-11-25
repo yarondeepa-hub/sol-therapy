@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24 21:43",
- "source_asof": "2026-11-24 21:34",
+ "generated": "2026-11-25 08:40",
+ "source_asof": "2026-11-25 08:39",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1032,8 +1032,8 @@
    "evening_sold": false
   },
   "ben-aylon-nov": {
-   "event_status": "scheduled",
-   "sale_status": "open",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "בן אילון",
@@ -1041,11 +1041,10 @@
    "dow": "שלישי",
    "time": "20:30",
    "iso": "2026-11-24 20:30",
-   "state": "open",
+   "state": "past",
    "left": 72,
    "eventer": "tsx2f",
-   "evening_sold": false,
-   "evening_open_slug": "ben-aylon-nov"
+   "evening_sold": false
   },
   "kashpitzky-nov": {
    "event_status": "scheduled",
@@ -1221,7 +1220,7 @@
    "time": "20:30",
    "iso": "2026-12-01 20:30",
    "state": "open",
-   "left": 2,
+   "left": 1,
    "eventer": "dhm4f",
    "round_slug": "astral-dec-early",
    "round_state": "open",
@@ -1279,7 +1278,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 44,
+   "left": 40,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1357,7 +1356,7 @@
    "time": "20:30",
    "iso": "2026-12-16 20:30",
    "state": "open",
-   "left": 3,
+   "left": 1,
    "eventer": "69p4f",
    "round_slug": "freedom-fighters-dec-early",
    "round_state": "open",
@@ -1535,7 +1534,7 @@
    "time": "17:00",
    "iso": "2026-12-05 17:00",
    "state": "open",
-   "left": 459,
+   "left": 457,
    "eventer": "8jq4f",
    "evening_sold": false,
    "evening_open_slug": "rak-house-dec"
@@ -1570,7 +1569,7 @@
    "time": "18:30",
    "iso": "2026-12-16 18:30",
    "state": "open",
-   "left": 97,
+   "left": 96,
    "eventer": "pvs4f",
    "main_slug": "freedom-fighters-dec",
    "evening_sold": false,
@@ -1589,7 +1588,7 @@
    "time": "18:30",
    "iso": "2026-12-02 18:30",
    "state": "open",
-   "left": 122,
+   "left": 119,
    "eventer": "vgn4f",
    "main_slug": "maya-belsitzman-dec",
    "evening_sold": false,
