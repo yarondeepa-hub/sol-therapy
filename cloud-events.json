@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26 08:56",
- "source_asof": "2026-11-26 08:34",
+ "generated": "2026-11-26 09:42",
+ "source_asof": "2026-11-26 09:42",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1088,7 +1088,7 @@
    "time": "20:30",
    "iso": "2026-11-30 20:30",
    "state": "open",
-   "left": 77,
+   "left": 76,
    "eventer": "3sx2f",
    "evening_sold": false,
    "evening_open_slug": "tomer-katz-nov"
@@ -1313,7 +1313,7 @@
    "time": "20:30",
    "iso": "2026-12-10 20:30",
    "state": "open",
-   "left": 1,
+   "left": 3,
    "eventer": "59p4f",
    "round_slug": "etnica-dec-early",
    "round_state": "open",
@@ -1394,8 +1394,13 @@
    "state": "open",
    "left": 7,
    "eventer": "19p4f",
+   "round_slug": "avishai-cohen-dec-early",
+   "round_state": "open",
+   "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "avishai-cohen-dec"
+   "evening_open_slug": "avishai-cohen-dec",
+   "sib_slug": "avishai-cohen-dec-early",
+   "sib_time": "18:30"
   },
   "eitan-reiter-dec": {
    "event_status": "scheduled",
@@ -1533,7 +1538,7 @@
    "time": "17:00",
    "iso": "2026-12-05 17:00",
    "state": "open",
-   "left": 455,
+   "left": 451,
    "eventer": "8jq4f",
    "evening_sold": false,
    "evening_open_slug": "rak-house-dec"
@@ -1549,7 +1554,7 @@
    "time": "18:30",
    "iso": "2026-12-01 18:30",
    "state": "open",
-   "left": 90,
+   "left": 87,
    "eventer": "0vs4f",
    "main_slug": "astral-dec",
    "evening_sold": false,
@@ -1625,10 +1630,29 @@
    "time": "13:30",
    "iso": "2026-12-18 13:30",
    "state": "open",
-   "left": 6,
+   "left": 4,
    "eventer": "",
    "evening_sold": false,
    "evening_open_slug": "arbel-book-launch-dec"
+  },
+  "avishai-cohen-dec-early": {
+   "event_status": "scheduled",
+   "sale_status": "open",
+   "visibility": "listed",
+   "unlisted_reason": "",
+   "name": "אבישי כהן סבב מוקדם",
+   "date": "22.12",
+   "dow": "שלישי",
+   "time": "18:30",
+   "iso": "2026-12-22 18:30",
+   "state": "open",
+   "left": 125,
+   "eventer": "krt4f",
+   "main_slug": "avishai-cohen-dec",
+   "evening_sold": false,
+   "evening_open_slug": "avishai-cohen-dec-early",
+   "sib_slug": "avishai-cohen-dec",
+   "sib_time": "20:30"
   }
  }
 }
