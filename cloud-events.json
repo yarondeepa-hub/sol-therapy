@@ -1621,7 +1621,7 @@
   },
   "arbel-book-launch-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "השקת עקבות של חופש",
@@ -1629,11 +1629,10 @@
    "dow": "שישי",
    "time": "13:30",
    "iso": "2026-12-18 13:30",
-   "state": "open",
-   "left": 4,
-   "eventer": "",
-   "evening_sold": false,
-   "evening_open_slug": "arbel-book-launch-dec"
+   "state": "sold",
+   "left": 0,
+   "eventer": "mzn4f",
+   "evening_sold": true
   },
   "avishai-cohen-dec-early": {
    "event_status": "scheduled",
