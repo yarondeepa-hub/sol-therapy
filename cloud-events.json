@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26 09:42",
- "source_asof": "2026-11-26 09:42",
+ "generated": "2026-11-26 12:04",
+ "source_asof": "2026-11-26 12:03",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1277,7 +1277,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 35,
+   "left": 33,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1304,7 +1304,7 @@
   },
   "etnica-dec": {
    "event_status": "scheduled",
-   "sale_status": "open",
+   "sale_status": "sold",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "אתניקה",
@@ -1312,14 +1312,14 @@
    "dow": "חמישי",
    "time": "20:30",
    "iso": "2026-12-10 20:30",
-   "state": "open",
-   "left": 3,
+   "state": "sold",
+   "left": 0,
    "eventer": "59p4f",
    "round_slug": "etnica-dec-early",
    "round_state": "open",
    "round_time": "18:30",
    "evening_sold": false,
-   "evening_open_slug": "etnica-dec",
+   "evening_open_slug": "etnica-dec-early",
    "sib_slug": "etnica-dec-early",
    "sib_time": "18:30"
   },
@@ -1554,7 +1554,7 @@
    "time": "18:30",
    "iso": "2026-12-01 18:30",
    "state": "open",
-   "left": 87,
+   "left": 85,
    "eventer": "0vs4f",
    "main_slug": "astral-dec",
    "evening_sold": false,
@@ -1611,7 +1611,7 @@
    "time": "18:30",
    "iso": "2026-12-15 18:30",
    "state": "open",
-   "left": 119,
+   "left": 114,
    "eventer": "cgn4f",
    "main_slug": "raz-dec",
    "evening_sold": false,
