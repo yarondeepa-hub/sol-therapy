@@ -117,7 +117,7 @@
 
   function button(label, slug, code){
     var a = el('a', 'sp-cta', label);
-    a.href = EVENTER + code + '?utm_content=share_next_date';
+    a.href = EVENTER + code + '?sol_loc=share_next_date';
     a.target = '_blank'; a.rel = 'noopener';
     a.setAttribute('data-slug', slug);
     return a;
