@@ -58,6 +58,20 @@
     </video:video>
   </url>
   <url>
+    <loc>https://sol-therapy.com/cloud-session-yotam-avni</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-yotam-avni.jpg</video:thumbnail_loc>
+      <video:title>יותם אבני - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/LfDRmez_PMY</video:player_loc>
+      <video:duration>3730</video:duration>
+      <video:publication_date>2026-08-29</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://sol-therapy.com/cloud-session-echo</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-echo.jpg</video:thumbnail_loc>
@@ -66,6 +80,76 @@
       <video:player_loc>https://www.youtube-nocookie.com/embed/XRVkaIAgvwc</video:player_loc>
       <video:duration>3937</video:duration>
       <video:publication_date>2026-08-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-itay-tzur</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-itay-tzur.jpg</video:thumbnail_loc>
+      <video:title>איתי צור - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/G5DEJZDPhdY</video:player_loc>
+      <video:duration>3756</video:duration>
+      <video:publication_date>2026-08-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-assaf-talmudi</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-asaf-talmudi.jpg</video:thumbnail_loc>
+      <video:title>אסף תלמודי - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/hqIkBqk874M</video:player_loc>
+      <video:duration>3580</video:duration>
+      <video:publication_date>2026-08-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-noa-argov</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-noa-argov.jpg</video:thumbnail_loc>
+      <video:title>נועה ארגוב - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/LkkxB3v1G3I</video:player_loc>
+      <video:duration>3769</video:duration>
+      <video:publication_date>2026-08-16</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-gorovich</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-gorovich.jpg</video:thumbnail_loc>
+      <video:title>גורוביץ - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/h7T7qg-CrgQ</video:player_loc>
+      <video:duration>3851</video:duration>
+      <video:publication_date>2026-08-17</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-lava-dome</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-lava-dome.jpg</video:thumbnail_loc>
+      <video:title>לאבה דום - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/cyaHPa2LJvw</video:player_loc>
+      <video:duration>3637</video:duration>
+      <video:publication_date>2026-08-09</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
       <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
@@ -86,6 +170,20 @@
     </video:video>
   </url>
   <url>
+    <loc>https://sol-therapy.com/cloud-session-yossi-fine</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-fine.jpg</video:thumbnail_loc>
+      <video:title>יוסי פיין - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/qLhLaRFsdrY</video:player_loc>
+      <video:duration>3714</video:duration>
+      <video:publication_date>2026-07-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://sol-therapy.com/cloud-session-assaf-amdursky</loc>
     <video:video>
       <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-amdursky.jpg</video:thumbnail_loc>
@@ -94,6 +192,62 @@
       <video:player_loc>https://www.youtube-nocookie.com/embed/N5B7Ctv7mK0</video:player_loc>
       <video:duration>3678</video:duration>
       <video:publication_date>2026-07-22</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-eyal-talmudi</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-talmudi.jpg</video:thumbnail_loc>
+      <video:title>אייל תלמודי - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/bDSd_5t2Igg</video:player_loc>
+      <video:duration>3872</video:duration>
+      <video:publication_date>2026-07-17</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-shuzin</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-shuzin.jpg</video:thumbnail_loc>
+      <video:title>שוזין - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/ea9TAEzUtOo</video:player_loc>
+      <video:duration>3531</video:duration>
+      <video:publication_date>2026-07-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-karin-kimel</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-kimel.jpg</video:thumbnail_loc>
+      <video:title>קארין קימל - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/QMFm8I7qubc</video:player_loc>
+      <video:duration>3541</video:duration>
+      <video:publication_date>2026-07-10</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://sol-therapy.com/cloud-session-sefi-zisling</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sol-therapy.com/assets/cloud/archive-zisling.jpg</video:thumbnail_loc>
+      <video:title>ספי ציזלינג - מדיטציית סאונד בקלאוד ספייס</video:title>
+      <video:description>הסשן המלא, הוקלט חי בקלאוד ספייס, שוקן 27 תל אביב.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/E1m6Nfq_VFU</video:player_loc>
+      <video:duration>3814</video:duration>
+      <video:publication_date>2026-07-09</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
       <video:uploader info="https://sol-therapy.com">Sol Therapy</video:uploader>
