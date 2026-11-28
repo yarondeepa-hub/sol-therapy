@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27 22:16",
- "source_asof": "2026-11-27 22:13",
+ "generated": "2026-11-28 08:02",
+ "source_asof": "2026-11-28 08:01",
  "events": {
   "amichai-matias": {
    "event_status": "past",
@@ -1129,8 +1129,8 @@
    "sib_time": "20:30"
   },
   "fine-nov": {
-   "event_status": "scheduled",
-   "sale_status": "sold",
+   "event_status": "past",
+   "sale_status": "ended",
    "visibility": "listed",
    "unlisted_reason": "",
    "name": "יוסי פיין בוקר",
@@ -1138,10 +1138,10 @@
    "dow": "שישי",
    "time": "10:00",
    "iso": "2026-11-27 10:00",
-   "state": "sold",
+   "state": "past",
    "left": 0,
    "eventer": "pnd2f",
-   "evening_sold": true
+   "evening_sold": false
   },
   "brain-sister-nov": {
    "event_status": "past",
@@ -1260,7 +1260,7 @@
    "time": "20:30",
    "iso": "2026-12-03 20:30",
    "state": "open",
-   "left": 70,
+   "left": 68,
    "eventer": "79p4f",
    "evening_sold": false,
    "evening_open_slug": "shai-ben-tzur-dec"
@@ -1276,7 +1276,7 @@
    "time": "20:30",
    "iso": "2026-12-08 20:30",
    "state": "open",
-   "left": 12,
+   "left": 9,
    "eventer": "29p4f",
    "evening_sold": false,
    "evening_open_slug": "fine-dec"
@@ -1499,7 +1499,7 @@
    "time": "18:30",
    "iso": "2026-12-10 18:30",
    "state": "open",
-   "left": 53,
+   "left": 51,
    "eventer": "j7q4f",
    "main_slug": "etnica-dec",
    "evening_sold": false,
